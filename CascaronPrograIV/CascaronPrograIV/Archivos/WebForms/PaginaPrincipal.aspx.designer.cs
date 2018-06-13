@@ -22,12 +22,21 @@ namespace CascaronPrograIV.Archivos.WebForms {
         protected global::System.Web.UI.HtmlControls.HtmlLink EstiloLogin;
         
         /// <summary>
-        /// form1 control.
+        /// frmPaginaPrincipal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm frmPaginaPrincipal;
+        
+        /// <summary>
+        /// divFuncionarios control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divFuncionarios;
     }
 }

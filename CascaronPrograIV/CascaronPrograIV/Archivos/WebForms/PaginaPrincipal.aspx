@@ -11,58 +11,107 @@
 
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="frmPaginaPrincipal" runat="server">
 
+        <br />
+        <br />
+        <br />
         <div style="text-align: center;">
             <h1>Pagina Principal</h1>
             <br />
 
             <br />
 
-            <table style="text-align: center; width: 70%;">
+            <!-- Se inicia el bloque que correspondería a los funcionarios -->
+            <div id="divFuncionarios" title="Para perfil de funcionario" style="border: groove; background-color:antiquewhite" runat="server">
+                <br />
 
-                <tr>
+                <!-- Se inicia la tabla -->
+                <table style="text-align: center; width: 100%;">
 
-                    <td style="width: 10%"></td>
-                    <td style="width: 20%">
-                        <asp:Label runat="server">Crear Solicitud de Viaticos</asp:Label>
-                    </td>
-                    <td style="width: 20%">
-                        <asp:Button runat="server" Text="Crear Solicitud Viaticos" Width="100%"></asp:Button>
-                    </td>
-                    <td style="width: 20%">
-                        <asp:Label runat="server">Crear Solicitud de Viaticos</asp:Label>
-                    </td>
-                    <td style="width: 20%">
-                        <asp:Button runat="server" Text="Crear Solicitud Viaticos" Width="100%"></asp:Button>
-                    </td>
+                    <!-- Se inicia Una nueva fila -->
+                    <tr>
 
-                    <td style="width: 10%"></td>
-                </tr>
+                        <!-- Se colocan columnas -->
+                        <td style="width: 5%"></td>
+                        <td style="width: 20%">
+                            <asp:Label runat="server">Crear Solicitud de Viaticos</asp:Label>
+                        </td>
+                        <td style="width: 20%">
+                            <asp:Button runat="server" Text="Crear Solicitud Viaticos" Width="100%" Height="100%"></asp:Button>
+                        </td>
 
-                <tr>
-                    <td style="width: 10%"></td>
+                        <td style="width: 10%"></td>
 
-                    <td style="width: 20%">
-                        <asp:Label runat="server">Consultar Solicitud de Viaticos</asp:Label>
-                    </td>
-                    <td style="width: 20%">
-                        <asp:Button runat="server" Text="Consultar Solicitud Viaticos" Width="100%"></asp:Button>
-                    </td>
-                    <td style="width: 20%">
-                        <asp:Label runat="server">Crear Solicitud de Viaticos</asp:Label>
-                    </td>
-                    <td style="width: 20%">
-                        <asp:Button runat="server" Text="Crear Solicitud Viaticos" Width="100%"></asp:Button>
-                    </td>
+                        <td style="width: 20%">
+                            <asp:Label runat="server">Consulta Solicitud de Viaticos</asp:Label>
+                        </td>
+                        <td style="width: 20%">
+                            <asp:Button runat="server" Text="Consulta Solicitud Viaticos" Width="100%" Height="100%"></asp:Button>
+                        </td>
 
-                    <td style="width: 10%"></td>
-                </tr>
+                        <td style="width: 5%"></td>
+                    </tr>
+                    <!-- Final de fila -->
 
 
+                    <!-- Se inicia una nueva fila -->
+                    <tr>
+
+                        <!-- Se colocan columnas -->
+                        <td style="width: 5%"></td>
+
+                        <td style="width: 20%">
+                            <asp:Label runat="server">Actualizar Solicitud de Viaticos</asp:Label>
+                        </td>
+                        <td style="width: 20%">
+                            <asp:Button runat="server" Text="Actualizar Solicitud Viaticos" Width="100%" Height="100%"></asp:Button>
+                        </td>
+
+                        <td style="width: 10%"></td>
+
+                        <td style="width: 20%">
+                            <asp:Label runat="server">Consulta Liquidacion de Viaticos</asp:Label>
+                        </td>
+                        <td style="width: 20%">
+                            <asp:Button runat="server" Text="Consulta Liquidacion Viaticos" Width="100%" Height="100%"></asp:Button>
+                        </td>
+
+                        <td style="width: 5%"></td>
+                    </tr>
+                    <!-- Final de fila -->
+
+                    <!-- Se inicia una nueva fila -->
+                    <tr>
+
+                        <!-- Se colocan columnas -->
+                        <td style="width: 5%"></td>
+
+                        <td style="width: 20%">
+                            <asp:Label runat="server">Liquidar Viaticos</asp:Label>
+                        </td>
+                        <td style="width: 20%">
+                            <asp:Button runat="server" Text="Liquidar Viaticos" Width="100%" Height="100%"></asp:Button>
+                        </td>
+
+                        <td style="width: 10%"></td>
+
+                        <td style="width: 20%">
+                            <asp:Label runat="server">Actualizar Liquidación de Viaticos</asp:Label>
+                        </td>
+                        <td style="width: 20%">
+                            <asp:Button runat="server" Text="Actualizar Liquidación Viaticos" Width="100%" Height="100%"></asp:Button>
+                        </td>
+
+                        <td style="width: 5%"></td>
+                    </tr>
+                    <!-- Final de fila -->
 
 
-            </table>
+
+                </table>
+                <br />
+            </div>
         </div>
     </form>
 </body>
