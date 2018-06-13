@@ -35,7 +35,7 @@
         <asp:Label CssClass="login-lost" ID="LblRegistrarse" runat="server" Text="Registrar Usuario" ForeColor="Black"></asp:Label>
             <br />
             <br />
-        <asp:Label CssClass="login-lost" ID="LblRecuperacion" runat="server" Text="Recuparar Datos de Ingreso" ForeColor="Black"></asp:Label>
+        <asp:Label CssClass="login-lost" ID="LblRecuperacion" runat="server" Text="Recuperar Datos de Ingreso." ForeColor="Black"></asp:Label>
             <br />
             <br />
         </div>
