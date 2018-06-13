@@ -29,7 +29,7 @@
         <div class="auto-style1">
         <asp:TextBox CssClass="login-input" ID="TbxUsuario" runat="server"></asp:TextBox>
         <asp:TextBox CssClass="login-input" ID="TbxPassword" runat="server"></asp:TextBox>
-        <asp:Button CssClass="login-button" ID="BtnIngresar" runat="server" Text="Ingresar" />
+        <asp:Button CssClass="login-button" ID="BtnIngresar" runat="server" Text="Ingresar" OnClick="BtnIngresar_Click" />
             <br />
             <br />
         <asp:Label CssClass="login-lost" ID="LblRegistrarse" runat="server" Text="Registrar Usuario" ForeColor="Black"></asp:Label>

@@ -19,74 +19,46 @@
 
             <br />
 
-            <table style="text-align: center;">
+            <table style="text-align: center; width: 70%;">
 
                 <tr>
-                    <td  style="width: 20%">
-                        <asp:Label runat="server">Crear Solicitud de Viaticos</asp:Label>
-                    </td>
-                    <td  style="width: 20%">
-                        <asp:button  runat="server" Text="Crear Solicitud Viaticos" Width="100%"></asp:button>
-                    </td>
-                    <td style="width: 20%"
 
-                    </td>
-                     <td  style="width: 20%">
+                    <td style="width: 10%"></td>
+                    <td style="width: 20%">
                         <asp:Label runat="server">Crear Solicitud de Viaticos</asp:Label>
                     </td>
-                    <td  style="width: 20%">
-                        <asp:button  runat="server" Text="Crear Solicitud Viaticos" Width="100%"></asp:button>
+                    <td style="width: 20%">
+                        <asp:Button runat="server" Text="Crear Solicitud Viaticos" Width="100%"></asp:Button>
                     </td>
-                  
+                    <td style="width: 20%">
+                        <asp:Label runat="server">Crear Solicitud de Viaticos</asp:Label>
+                    </td>
+                    <td style="width: 20%">
+                        <asp:Button runat="server" Text="Crear Solicitud Viaticos" Width="100%"></asp:Button>
+                    </td>
+
+                    <td style="width: 10%"></td>
                 </tr>
 
-                 <tr>
+                <tr>
+                    <td style="width: 10%"></td>
 
-                    <td  style="width: 20%">
+                    <td style="width: 20%">
                         <asp:Label runat="server">Consultar Solicitud de Viaticos</asp:Label>
                     </td>
-                    <td  style="width: 20%">
-                        <asp:button  runat="server" Text="Consultar Solicitud Viaticos"  Width="100%"></asp:button>
+                    <td style="width: 20%">
+                        <asp:Button runat="server" Text="Consultar Solicitud Viaticos" Width="100%"></asp:Button>
                     </td>
-                  
+                    <td style="width: 20%">
+                        <asp:Label runat="server">Crear Solicitud de Viaticos</asp:Label>
+                    </td>
+                    <td style="width: 20%">
+                        <asp:Button runat="server" Text="Crear Solicitud Viaticos" Width="100%"></asp:Button>
+                    </td>
+
+                    <td style="width: 10%"></td>
                 </tr>
 
-                <!--
-                <tr>
-                    <td>
-
-                        <asp:Label ID="Label1" runat="server" Text="Usuario:"></asp:Label>
-
-                    </td>
-                    <td>
-                        <asp:TextBox ID="txtUsuario" runat="server"></asp:TextBox>
-                    </td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>
-                        <asp:Label ID="Label2" runat="server" Text="Clave:"></asp:Label>
-                    </td>
-                    <td>
-                        <asp:TextBox ID="txtPass" runat="server"></asp:TextBox>
-                    </td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>
-                        <asp:Button ID="btnAgregar" OnClick="btnAgregar_Click" runat="server" Text="Iniciar sesión" />
-                    </td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td colspan="4">
-                        <asp:Label ID="lblAvisos" runat="server" ForeColor="Red" Font-Bold="true"></asp:Label></td>
-                </tr>
-                -->
 
 
 
