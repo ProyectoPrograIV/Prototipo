@@ -67,7 +67,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Archivos\HojasdeEstilos\EstiloLogin.css" />
+    <Content Include="Archivos\HojasdeEstilos\EstiloRegistro.css" />
+    <Content Include="Archivos\WebForms\Ingreso.aspx" />
     <Content Include="Archivos\WebForms\PaginaPrincipal.aspx" />
+    <Content Include="Archivos\WebForms\RegistroUsuario.aspx" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -77,8 +81,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Archivos\HojasdeEstilos\EstiloLogin.css" />
-    <Content Include="Archivos\WebForms\Ingreso.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -95,6 +97,13 @@
     </Compile>
     <Compile Include="Archivos\WebForms\PaginaPrincipal.aspx.designer.cs">
       <DependentUpon>PaginaPrincipal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\WebForms\RegistroUsuario.aspx.cs">
+      <DependentUpon>RegistroUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\WebForms\RegistroUsuario.aspx.designer.cs">
+      <DependentUpon>RegistroUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
