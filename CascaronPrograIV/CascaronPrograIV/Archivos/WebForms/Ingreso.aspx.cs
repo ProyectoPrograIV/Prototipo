@@ -13,5 +13,10 @@ namespace CascaronPrograIV.Archivos.WebForms
         {
 
         }
+
+        protected void BtnIngresar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("PaginaPrincipal.aspx");
+        }
     }
 }
