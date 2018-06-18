@@ -29,13 +29,13 @@
         <div class="auto-style1">
         <asp:TextBox CssClass="login-input" ID="TbxUsuario" runat="server"></asp:TextBox>
         <asp:TextBox CssClass="login-input" ID="TbxPassword" runat="server"></asp:TextBox>
-        <asp:Button CssClass="login-button" ID="BtnIngresar" runat="server" Text="Ingresar" OnClick="BtnIngresar_Click" />
+        <asp:Button CssClass="login-button" ID="BtnIngresar" runat="server" Text="Ingresar" />
             <br />
             <br />
         <asp:Label CssClass="login-lost" ID="LblRegistrarse" runat="server" Text="Registrar Usuario" ForeColor="Black"></asp:Label>
             <br />
             <br />
-        <asp:Label CssClass="login-lost" ID="LblRecuperacion" runat="server" Text="Recuperar Datos de Ingreso." ForeColor="Black"></asp:Label>
+        <asp:Label CssClass="login-lost" ID="LblRecuperacion" runat="server" Text="Recuparar Datos de Ingreso" ForeColor="Black"></asp:Label>
             <br />
             <br />
         </div>
