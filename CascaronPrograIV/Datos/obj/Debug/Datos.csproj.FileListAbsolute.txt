@@ -1,0 +1,5 @@
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Datos\bin\Debug\Datos.dll
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Datos\bin\Debug\Datos.pdb
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Datos\obj\Debug\Datos.dll
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Datos\obj\Debug\Datos.pdb

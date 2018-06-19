@@ -9,6 +9,21 @@
     -->
     <title>Pagina Principal</title>
 
+    <style type="text/css">
+        .auto-style1 {
+            width: 5%;
+            height: 29px;
+        }
+        .auto-style2 {
+            width: 20%;
+            height: 29px;
+        }
+        .auto-style3 {
+            width: 10%;
+            height: 29px;
+        }
+    </style>
+
 </head>
 <body>
     <form id="frmPaginaPrincipal" runat="server">
@@ -33,24 +48,24 @@
                     <tr>
 
                         <!-- Se colocan columnas -->
-                        <td style="width: 5%"></td>
-                        <td style="width: 20%">
+                        <td class="auto-style1"></td>
+                        <td class="auto-style2">
                             <asp:Label runat="server">Crear Solicitud de Viaticos</asp:Label>
                         </td>
-                        <td style="width: 20%">
+                        <td class="auto-style2">
                             <asp:Button runat="server" Text="Crear Solicitud Viaticos" Width="100%" Height="100%"></asp:Button>
                         </td>
 
-                        <td style="width: 10%"></td>
+                        <td class="auto-style3"></td>
 
-                        <td style="width: 20%">
+                        <td class="auto-style2">
                             <asp:Label runat="server">Consulta Solicitud de Viaticos</asp:Label>
                         </td>
-                        <td style="width: 20%">
+                        <td class="auto-style2">
                             <asp:Button runat="server" Text="Consulta Solicitud Viaticos" Width="100%" Height="100%"></asp:Button>
                         </td>
 
-                        <td style="width: 5%"></td>
+                        <td class="auto-style1"></td>
                     </tr>
                     <!-- Final de fila -->
 

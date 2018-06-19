@@ -13,5 +13,15 @@ namespace CascaronPrograIV.Archivos.WebForms
         {
 
         }
+
+        protected void BtnIngresar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Menu.aspx");
+        }
+
+        protected void LbtnRecuperar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("RecuperarDatos.aspx");
+        }
     }
 }

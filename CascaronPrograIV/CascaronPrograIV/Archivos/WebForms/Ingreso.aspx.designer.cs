@@ -13,15 +13,6 @@ namespace CascaronPrograIV.Archivos.WebForms {
     public partial class Ingreso {
         
         /// <summary>
-        /// Control EstiloLogin.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlLink EstiloLogin;
-        
-        /// <summary>
         /// Control TbxUsuario.
         /// </summary>
         /// <remarks>
@@ -49,21 +40,12 @@ namespace CascaronPrograIV.Archivos.WebForms {
         protected global::System.Web.UI.WebControls.Button BtnIngresar;
         
         /// <summary>
-        /// Control LblRegistrarse.
+        /// Control LinkButton1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblRegistrarse;
-        
-        /// <summary>
-        /// Control LblRecuperacion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblRecuperacion;
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
     }
 }
