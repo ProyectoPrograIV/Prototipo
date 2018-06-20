@@ -27,6 +27,9 @@
     </style>
 </head>
 <body>
+    <br />
+    <br />
+    <br />
     <form class="form" id="form1" runat="server">
         <br />
         <h1 class="regist-title">REGISTRAR NUEVO COLABORADOR</h1>

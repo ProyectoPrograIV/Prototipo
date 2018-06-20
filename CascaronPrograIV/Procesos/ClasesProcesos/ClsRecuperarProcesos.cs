@@ -29,7 +29,7 @@ namespace Procesos.ClasesProcesos
             {
                 Cliente.Send(Mensaje);
             }
-            catch (SmtpException e)
+            catch (SmtpException)
             {
 
             }

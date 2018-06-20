@@ -68,9 +68,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Archivos\HojasdeEstilos\EstiloLogin.css" />
+    <Content Include="Archivos\HojasdeEstilos\EstiloMenu.css" />
     <Content Include="Archivos\HojasdeEstilos\EstiloRecuperar.css" />
     <Content Include="Archivos\HojasdeEstilos\EstiloRegistro.css" />
     <Content Include="Archivos\WebForms\Ingreso.aspx" />
+    <Content Include="Archivos\WebForms\Menu.aspx" />
     <Content Include="Archivos\WebForms\PaginaPrincipal.aspx" />
     <Content Include="Archivos\WebForms\RecuperarDatos.aspx" />
     <Content Include="Archivos\WebForms\RegistroUsuario.aspx" />
@@ -92,6 +94,13 @@
     </Compile>
     <Compile Include="Archivos\WebForms\Ingreso.aspx.designer.cs">
       <DependentUpon>Ingreso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\WebForms\Menu.aspx.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\WebForms\Menu.aspx.designer.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
     </Compile>
     <Compile Include="Archivos\WebForms\PaginaPrincipal.aspx.cs">
       <DependentUpon>PaginaPrincipal.aspx</DependentUpon>
