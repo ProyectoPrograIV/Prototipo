@@ -12,15 +12,16 @@
 <body>
     <form runat="server">
     <div class="div">
-        <br />
-        <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" CssClass="Menu" BorderColor="Black" BorderStyle="Solid" BorderWidth="4px" ForeColor="White" RenderingMode="Table">
+        <asp:Menu ID="Menu1" runat="server" Orientation="Vertical" CssClass="Menu" BorderColor="Black" BorderStyle="Solid" BorderWidth="1px" ForeColor="Black">
             <Items>
-                <asp:MenuItem Text="Parametrizaciones" Value="Parametrizaciones"></asp:MenuItem>
-                <asp:MenuItem Text="Solicitud de Viaticos" Value="Solicitud de Viaticos"></asp:MenuItem>
+                <asp:MenuItem Text="Parametrizaciones" Value="Parametrizaciones" ImageUrl="~/Archivos/Recursos/Parametros.png"></asp:MenuItem>
+                <asp:MenuItem Text="Solicitud de Viaticos" Value="Solicitud de Viaticos" ImageUrl="~/Archivos/Recursos/Solicitud.png"></asp:MenuItem>
                 <asp:MenuItem Text="Orden de Viaticos" Value="Orden de Viaticos"></asp:MenuItem>
                 <asp:MenuItem Text="Liquidacion de Viaticos" Value="Liquidacion de Viaticos"></asp:MenuItem>
             </Items>
+            <StaticMenuItemStyle BorderWidth="2px" BorderStyle="None" VerticalPadding="10px"/>
         </asp:Menu>
+        <br />
     </div>
     </form>
 </body>
