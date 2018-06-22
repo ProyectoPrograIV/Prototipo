@@ -71,6 +71,8 @@
     <Content Include="Archivos\HojasdeEstilos\EstiloMenu.css" />
     <Content Include="Archivos\HojasdeEstilos\EstiloRecuperar.css" />
     <Content Include="Archivos\HojasdeEstilos\EstiloRegistro.css" />
+    <Content Include="Archivos\Recursos\Liquidacion.png" />
+    <Content Include="Archivos\Recursos\Orden.png" />
     <Content Include="Archivos\Recursos\Parametros.png" />
     <Content Include="Archivos\Recursos\Solicitud.png" />
     <Content Include="Archivos\WebForms\Ingreso.aspx" />
