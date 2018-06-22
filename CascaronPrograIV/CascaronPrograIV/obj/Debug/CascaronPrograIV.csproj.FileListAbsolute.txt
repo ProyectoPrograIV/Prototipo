@@ -64,3 +64,29 @@ C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\Dato
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\Procesos.dll
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\Datos.pdb
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\Procesos.pdb
+C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\csc.exe
+C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\vbc.exe
+C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\VBCSCompiler.exe
+C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\CascaronPrograIV.dll.config
+C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\CascaronPrograIV.dll
+C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\CascaronPrograIV.pdb
+C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\Datos.dll
+C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\Procesos.dll
+C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\Datos.pdb
+C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\Procesos.pdb
+C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\CascaronPrograIV.csprojAssemblyReference.cache
+C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\CascaronPrograIV.csproj.CoreCompileInputs.cache
+C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\CascaronPrograIV.csproj.CopyComplete
+C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\CascaronPrograIV.dll
+C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\CascaronPrograIV.pdb

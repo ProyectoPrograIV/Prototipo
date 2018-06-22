@@ -3,3 +3,9 @@ C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Datos\bin\Debug\Datos.pdb
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Datos\obj\Debug\Datos.dll
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Datos\obj\Debug\Datos.pdb
+C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\Datos\bin\Debug\Datos.dll
+C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\Datos\bin\Debug\Datos.pdb
+C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\Datos\obj\Debug\Datos.csprojAssemblyReference.cache
+C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\Datos\obj\Debug\Datos.dll
+C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\Datos\obj\Debug\Datos.pdb

@@ -5,3 +5,12 @@ C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Procesos\bin\Debug\Datos.
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Procesos\obj\Debug\Procesos.csprojResolveAssemblyReference.cache
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Procesos\obj\Debug\Procesos.dll
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Procesos\obj\Debug\Procesos.pdb
+C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\Procesos\bin\Debug\Procesos.dll
+C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\Procesos\bin\Debug\Procesos.pdb
+C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\Procesos\bin\Debug\Datos.dll
+C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\Procesos\bin\Debug\Datos.pdb
+C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\Procesos\obj\Debug\Procesos.csprojAssemblyReference.cache
+C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\Procesos\obj\Debug\Procesos.csproj.CoreCompileInputs.cache
+C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\Procesos\obj\Debug\Procesos.csproj.CopyComplete
+C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\Procesos\obj\Debug\Procesos.dll
+C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\Procesos\obj\Debug\Procesos.pdb

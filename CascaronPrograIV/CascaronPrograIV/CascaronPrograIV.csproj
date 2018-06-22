@@ -77,7 +77,6 @@
     <Content Include="Archivos\Recursos\Solicitud.png" />
     <Content Include="Archivos\WebForms\Ingreso.aspx" />
     <Content Include="Archivos\WebForms\Menu.aspx" />
-    <Content Include="Archivos\WebForms\PaginaPrincipal.aspx" />
     <Content Include="Archivos\WebForms\RecuperarDatos.aspx" />
     <Content Include="Archivos\WebForms\RegistroUsuario.aspx" />
     <Content Include="packages.config" />
@@ -105,13 +104,6 @@
     </Compile>
     <Compile Include="Archivos\WebForms\Menu.aspx.designer.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Archivos\WebForms\PaginaPrincipal.aspx.cs">
-      <DependentUpon>PaginaPrincipal.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Archivos\WebForms\PaginaPrincipal.aspx.designer.cs">
-      <DependentUpon>PaginaPrincipal.aspx</DependentUpon>
     </Compile>
     <Compile Include="Archivos\WebForms\RecuperarDatos.aspx.cs">
       <DependentUpon>RecuperarDatos.aspx</DependentUpon>
