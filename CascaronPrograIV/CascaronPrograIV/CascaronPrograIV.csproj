@@ -74,6 +74,7 @@
     <Content Include="Archivos\Recursos\Liquidacion.png" />
     <Content Include="Archivos\Recursos\Orden.png" />
     <Content Include="Archivos\Recursos\Parametros.png" />
+    <Content Include="Archivos\Recursos\Reportes.png" />
     <Content Include="Archivos\Recursos\Solicitud.png" />
     <Content Include="Archivos\WebForms\Ingreso.aspx" />
     <Content Include="Archivos\WebForms\Menu.aspx" />
