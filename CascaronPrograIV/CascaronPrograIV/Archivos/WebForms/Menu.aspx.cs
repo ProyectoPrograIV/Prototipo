@@ -13,5 +13,50 @@ namespace CascaronPrograIV.Archivos.WebForms
         {
 
         }
+
+        protected void Opciones_MenuItemClick(object sender, MenuEventArgs e)
+        {
+            if (e.Item.Value.ToString() == "Tarifas de Autobus")
+            {
+                WebFormViewer.Src = "~/Archivos/WebForms/Parametrizaciones/ParametroAutobus.aspx";
+            }
+            else if (e.Item.Value.ToString() == "Tarifas de Viaticos")
+            {
+                WebFormViewer.Src = "~/Archivos/WebForms/Parametrizaciones/ParametroViaticos.apsx";
+            }
+            else if (e.Item.Value.ToString() == "")
+            {
+                WebFormViewer.Src = "~/Archivos/WebForms/";
+            }
+            else if (e.Item.Value.ToString() == "")
+            {
+                WebFormViewer.Src = "~/Archivos/WebForms/";
+            }
+            else if (e.Item.Value.ToString() == "")
+            {
+                WebFormViewer.Src = "~/Archivos/WebForms/";
+            }
+            else if (e.Item.Value.ToString() == "")
+            {
+                WebFormViewer.Src = "~/Archivos/WebForms/";
+            }
+            else if (e.Item.Value.ToString() == "")
+            {
+                WebFormViewer.Src = "~/Archivos/WebForms/";
+            }
+            else if (e.Item.Value.ToString() == "")
+            {
+                WebFormViewer.Src = "~/Archivos/WebForms/";
+            }
+            else if (e.Item.Value.ToString() == "")
+            {
+                WebFormViewer.Src = "~/Archivos/WebForms/";
+            }
+            else if (e.Item.Value.ToString() == "Usuarios")
+            {
+                WebFormViewer.Src = "~/Archivos/WebForms/RegistroUsuario.aspx";
+            }
+            
+        }
     }
 }

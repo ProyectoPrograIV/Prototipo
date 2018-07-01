@@ -13,12 +13,21 @@ namespace CascaronPrograIV.Archivos.WebForms {
     public partial class Menu {
         
         /// <summary>
-        /// Control Menu1.
+        /// Control Opciones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Menu Menu1;
+        protected global::System.Web.UI.WebControls.Menu Opciones;
+        
+        /// <summary>
+        /// Control WebFormViewer.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlIframe WebFormViewer;
     }
 }

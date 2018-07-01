@@ -12,12 +12,11 @@
 <body>
     <form runat="server">
     <div class="div">
-        
         <div>
             <table style="width:100%;">
                 <tr>
                     <td style="width:15%">
-                        <asp:Menu ID="Menu1" runat="server" Orientation="Vertical" CssClass="Menu" BorderColor="Black" BorderStyle="Solid" BorderWidth="1px" ForeColor="Black" Height="100%">
+                        <asp:Menu ID="Opciones" runat="server" Orientation="Vertical" CssClass="Menu" BorderColor="Black" BorderStyle="None" ForeColor="Black" Height="50%" OnMenuItemClick="Opciones_MenuItemClick">
                             <DynamicHoverStyle BackColor="#F0776C" />
                             <DynamicMenuItemStyle VerticalPadding="10px" HorizontalPadding="4px"/>
                             <DynamicMenuStyle BackColor="White" BorderColor="Black" BorderStyle="Solid" BorderWidth="1px" />
@@ -27,30 +26,31 @@
                                     <asp:MenuItem Text="Tarifas de Viaticos" Value="Tarifas de Viaticos"></asp:MenuItem>
                                 </asp:MenuItem>
                                 <asp:MenuItem Text="Solicitud de Viaticos" Value="Solicitud de Viaticos" ImageUrl="~/Archivos/Recursos/Solicitud.png">
-                                    <asp:MenuItem Text="Creacion" Value="Nuevo elemento"></asp:MenuItem>
-                                    <asp:MenuItem Text="Consulta" Value="Nuevo elemento"></asp:MenuItem>
-                                    <asp:MenuItem Text="Actualizacion" Value="Nuevo elemento"></asp:MenuItem>
-                                    <asp:MenuItem Text="Verificacion" Value="Verificacion"></asp:MenuItem>
+                                    <asp:MenuItem Text="Creacion" Value="CreacionSolicitud" ImageUrl="~/Archivos/Recursos/Nuevo.png"></asp:MenuItem>
+                                    <asp:MenuItem Text="Consulta" Value="ConsultaSolicitud"></asp:MenuItem>
+                                    <asp:MenuItem Text="Actualizacion" Value="ActualizacionSolicitud"></asp:MenuItem>
+                                    <asp:MenuItem Text="Verificacion" Value="VerificacionSolicitud"></asp:MenuItem>
                                 </asp:MenuItem>
                                 <asp:MenuItem Text="Orden de Viaticos" Value="Orden de Viaticos" ImageUrl="~/Archivos/Recursos/Orden.png">
                                     <asp:MenuItem Text="Generacion" Value="Generacion"></asp:MenuItem>
-                                    <asp:MenuItem Text="Consulta" Value="Consulta"></asp:MenuItem>
-                                    <asp:MenuItem Text="Actualizacion" Value="Actualizacion"></asp:MenuItem>
+                                    <asp:MenuItem Text="Consulta" Value="ConsultaOrden"></asp:MenuItem>
+                                    <asp:MenuItem Text="Actualizacion" Value="ActualizacionOrden"></asp:MenuItem>
                                 </asp:MenuItem>
                                 <asp:MenuItem Text="Liquidacion de Viaticos" Value="Liquidacion de Viaticos" ImageUrl="~/Archivos/Recursos/Liquidacion.png">
-                                    <asp:MenuItem Text="Creacion" Value="Creacion"></asp:MenuItem>
-                                    <asp:MenuItem Text="Consulta" Value="Consulta"></asp:MenuItem>
-                                    <asp:MenuItem Text="Verificacion" Value="Verificacion"></asp:MenuItem>
-                                    <asp:MenuItem Text="Actualizacion" Value="Actualizacion"></asp:MenuItem>
+                                    <asp:MenuItem Text="Creacion" Value="CreacionLiquidacion"></asp:MenuItem>
+                                    <asp:MenuItem Text="Consulta" Value="ConsultaLiquidacion"></asp:MenuItem>
+                                    <asp:MenuItem Text="Actualizacion" Value="ActualizacionLiquidacion"></asp:MenuItem>
+                                    <asp:MenuItem Text="Verificacion" Value="VerificacionLiquidacion"></asp:MenuItem>
                                 </asp:MenuItem>
-                                <asp:MenuItem Text="Reportes" Value="Reportes" ImageUrl="~/Archivos/Recursos/Reportes.png"></asp:MenuItem>
+                                <asp:MenuItem Text="Reportes" Value="Reportes" ImageUrl="~/Archivos/Recursos/Reportes.png" NavigateUrl="~/Archivos/WebForms/Ingreso.aspx"></asp:MenuItem>
+                                <asp:MenuItem ImageUrl="~/Archivos/Recursos/Usuario.png" Text="Usuarios" Value="Usuarios"></asp:MenuItem>
                             </Items>
-                            <StaticHoverStyle BackColor="#F0776C" />
+                            <StaticHoverStyle BackColor="White" BorderStyle="Solid" BorderWidth="1px" />
                             <StaticMenuItemStyle VerticalPadding="10px" HorizontalPadding="4px"/>
                         </asp:Menu>
                     </td>
                     <td style="width:85%">
-
+                        <iframe id="WebFormViewer" runat="server" width="1270" height="950" style="border-style:none"></iframe>
                     </td>
                 </tr>
             </table>

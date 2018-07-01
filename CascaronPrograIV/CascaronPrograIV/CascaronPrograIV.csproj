@@ -71,13 +71,16 @@
     <Content Include="Archivos\HojasdeEstilos\EstiloMenu.css" />
     <Content Include="Archivos\HojasdeEstilos\EstiloRecuperar.css" />
     <Content Include="Archivos\HojasdeEstilos\EstiloRegistro.css" />
+    <Content Include="Archivos\HojasdeEstilos\Parametrizaciones\EstiloParamAutoBus.css" />
     <Content Include="Archivos\Recursos\Liquidacion.png" />
     <Content Include="Archivos\Recursos\Orden.png" />
     <Content Include="Archivos\Recursos\Parametros.png" />
     <Content Include="Archivos\Recursos\Reportes.png" />
     <Content Include="Archivos\Recursos\Solicitud.png" />
+    <Content Include="Archivos\Recursos\Usuario.png" />
     <Content Include="Archivos\WebForms\Ingreso.aspx" />
     <Content Include="Archivos\WebForms\Menu.aspx" />
+    <Content Include="Archivos\WebForms\Parametrizaciones\ParametroAutobus.aspx" />
     <Content Include="Archivos\WebForms\RecuperarDatos.aspx" />
     <Content Include="Archivos\WebForms\RegistroUsuario.aspx" />
     <Content Include="packages.config" />
@@ -106,6 +109,13 @@
     <Compile Include="Archivos\WebForms\Menu.aspx.designer.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Archivos\WebForms\Parametrizaciones\ParametroAutobus.aspx.cs">
+      <DependentUpon>ParametroAutobus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\WebForms\Parametrizaciones\ParametroAutobus.aspx.designer.cs">
+      <DependentUpon>ParametroAutobus.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Archivos\WebForms\RecuperarDatos.aspx.cs">
       <DependentUpon>RecuperarDatos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -131,6 +141,11 @@
       <Project>{30509394-a726-4307-bf36-50ac2b434966}</Project>
       <Name>Procesos</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Archivos\WebForms\Liquidacion\" />
+    <Folder Include="Archivos\WebForms\Orden\" />
+    <Folder Include="Archivos\WebForms\Solicitud\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

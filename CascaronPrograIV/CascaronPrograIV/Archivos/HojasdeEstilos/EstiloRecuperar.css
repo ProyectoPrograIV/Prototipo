@@ -5,9 +5,8 @@
 form {
     background: white;
     height: 60%;
-    width: 20%;
+    width: 60%;
     margin: 200px auto;
-    border-radius: 5px;
 }
 
 div {
@@ -33,11 +32,11 @@ div {
 }
 
 .TextBox{
-  width: 200px;
-  height: 40px;
+  width: 300px;
+  height: 50px;
   margin-bottom: 25px;
   padding-left:10px;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 300;
   color: #ADADAD;
   text-align:center;
@@ -47,7 +46,7 @@ div {
 }
 .button {
   width: 35%;
-  height: 30px;
+  height: 50px;
   padding: 0;
   font-size: 20px;
   color: #fff;
