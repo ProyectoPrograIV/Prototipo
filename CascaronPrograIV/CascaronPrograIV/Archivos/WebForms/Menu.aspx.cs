@@ -16,47 +16,75 @@ namespace CascaronPrograIV.Archivos.WebForms
 
         protected void Opciones_MenuItemClick(object sender, MenuEventArgs e)
         {
-            if (e.Item.Value.ToString() == "Tarifas de Autobus")
+            WebFormViewer.Src = IdentificadorPagina(e.Item.Value.ToString());
+        }
+
+        private String IdentificadorPagina(string sMenuitemValue)
+        {
+            if (sMenuitemValue == "Tarifas de Autobus")
             {
-                WebFormViewer.Src = "~/Archivos/WebForms/Parametrizaciones/ParametroAutobus.aspx";
+                return "~/Archivos/WebForms/Parametrizaciones/ParametroAutobus.aspx";
             }
-            else if (e.Item.Value.ToString() == "Tarifas de Viaticos")
+            else if (sMenuitemValue == "Tarifas de Viaticos")
             {
-                WebFormViewer.Src = "~/Archivos/WebForms/Parametrizaciones/ParametroViaticos.apsx";
+                return "~/Archivos/WebForms/Parametrizaciones/ParametroViaticos.aspx";
             }
-            else if (e.Item.Value.ToString() == "CreacionSolicitud")
+            else if (sMenuitemValue == "CreacionSolicitud")
             {
-                WebFormViewer.Src = "~/Archivos/WebForms/Solicitud/CreacionSolicitud.aspx";
+                return "~/Archivos/WebForms/Solicitud/CreacionViaticos.aspx";
             }
-            else if (e.Item.Value.ToString() == "")
+            else if (sMenuitemValue == "ConsultaSolicitud")
             {
-                WebFormViewer.Src = "~/Archivos/WebForms/";
+                return "~/Archivos/WebForms/Solicitud/ConsultaViaticos.aspx";
             }
-            else if (e.Item.Value.ToString() == "")
+            else if (sMenuitemValue == "ActualizacionSolicitud")
             {
-                WebFormViewer.Src = "~/Archivos/WebForms/";
+                return "~/Archivos/WebForms/Solicitud/ActualizacionViaticos.aspx";
             }
-            else if (e.Item.Value.ToString() == "")
+            else if (sMenuitemValue == "VerificacionSolicitud")
             {
-                WebFormViewer.Src = "~/Archivos/WebForms/";
+                return "~/Archivos/WebForms/Solicitud/VerificacionSolicitud.aspx";
             }
-            else if (e.Item.Value.ToString() == "")
+            else if (sMenuitemValue == "GeneracionOrden")
             {
-                WebFormViewer.Src = "~/Archivos/WebForms/";
+                return "~/Archivos/WebForms/Orden/GenerarOrden.aspx";
             }
-            else if (e.Item.Value.ToString() == "")
+            else if (sMenuitemValue == "ConsultaOrden")
             {
-                WebFormViewer.Src = "~/Archivos/WebForms/";
+                return "~/Archivos/WebForms/Orden/Consulta.aspx";
             }
-            else if (e.Item.Value.ToString() == "")
+            else if (sMenuitemValue == "ActualizacionOrden")
             {
-                WebFormViewer.Src = "~/Archivos/WebForms/";
+                return "~/Archivos/WebForms/Orden/Actulizacion.aspx";
             }
-            else if (e.Item.Value.ToString() == "Usuarios")
+            else if (sMenuitemValue == "CreacionLiquidacion")
             {
-                WebFormViewer.Src = "~/Archivos/WebForms/RegistroUsuario.aspx";
+                return "~/Archivos/WebForms/Liquidacion/Creacion.aspx";
             }
-            
+            else if (sMenuitemValue == "ConsultaLiquidacion")
+            {
+                return "~/Archivos/WebForms/Liquidacion/Consulta.aspx";
+            }
+            else if (sMenuitemValue == "ActualizacionLiquidacion")
+            {
+                return "~/Archivos/WebForms/Liquidacion/Actualizacion.aspx";
+            }
+            else if (sMenuitemValue == "VerificacionLiquidacion")
+            {
+                return "~/Archivos/WebForms/Liquidacion/Liquidacion.aspx";
+            }
+            else if (sMenuitemValue == "Usuarios")
+            {
+                return "~/Archivos/WebForms/RegistroUsuario.aspx";
+            }
+            else if (sMenuitemValue == "Reportes")
+            {
+                return "~/Archivos/WebForms/";
+            }
+            else
+            {
+                return string.Empty;
+            }
         }
     }
 }

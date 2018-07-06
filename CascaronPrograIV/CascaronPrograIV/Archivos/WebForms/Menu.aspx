@@ -15,7 +15,6 @@
                 $("#Opciones").toggle("fast", "swing");
                 //  alert("wtf dude");
             });
-
         });
     </script>
 </head>
