@@ -1,0 +1,26 @@
+﻿body {
+  background: #2d343d;
+}
+
+form {
+    background: white;
+    margin: 50px auto;
+    text-align: center;
+    width: 1050px;
+}
+
+h1 {
+    background-color: #12101e;
+    height: 50px;
+    padding: 5px 5px 5px 5px 5px;
+    color:white;
+}
+
+div {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.DataFrid {
+    width: 1050px;
+}

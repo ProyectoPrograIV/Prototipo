@@ -2,11 +2,11 @@
     background: #2d343d;
 }
 
-form {
+.formMenu{
     background: #ffffff;
-    width: 80%;
-    height: 800px;
-    margin: 20px auto;
+    width: 1350px;
+    height: 850px;
+    margin: 50px auto;
 }
 
 .Menu {
@@ -16,5 +16,25 @@ form {
     border-style: solid;
     border-radius: 5px;
     padding: 10px 10px 10px 10px;
-    height: 100%;
+    width: 220px;
+}
+
+.iframe {
+    margin-top: 5px;
+    width: 1080px;
+    height: 830px;
+    border: solid 1px black;
+    margin-left: 5px;
+}
+
+.divMenu {
+    float:left;
+    width: 250px;
+    height: 850px;
+}
+
+.divFrame {
+    float:left;
+    width: 1100px;
+    height: 850px;
 }

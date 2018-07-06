@@ -71,7 +71,14 @@
     <Content Include="Archivos\HojasdeEstilos\EstiloMenu.css" />
     <Content Include="Archivos\HojasdeEstilos\EstiloRecuperar.css" />
     <Content Include="Archivos\HojasdeEstilos\EstiloRegistro.css" />
+    <Content Include="Archivos\HojasdeEstilos\Orden\EstiloConsulta.css" />
+    <Content Include="Archivos\HojasdeEstilos\Orden\EstiloOrden.css" />
     <Content Include="Archivos\HojasdeEstilos\Parametrizaciones\EstiloParamAutoBus.css" />
+    <Content Include="Archivos\HojasdeEstilos\Parametrizaciones\EstiloParamViaticos.css" />
+    <Content Include="Archivos\HojasdeEstilos\Solicitud\EstiloActualizacion.css" />
+    <Content Include="Archivos\HojasdeEstilos\Solicitud\EstiloConsulta.css" />
+    <Content Include="Archivos\HojasdeEstilos\Solicitud\EstiloCreacionSolicitud.css" />
+    <Content Include="Archivos\HojasdeEstilos\Solicitud\EstiloVerificacion.css" />
     <Content Include="Archivos\Recursos\Liquidacion.png" />
     <Content Include="Archivos\Recursos\menutoggle.png" />
     <Content Include="Archivos\Recursos\Orden.png" />
