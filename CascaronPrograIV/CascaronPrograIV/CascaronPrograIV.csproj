@@ -83,11 +83,17 @@
     <Content Include="Archivos\WebForms\Ingreso.aspx" />
     <Content Include="Archivos\WebForms\jquery-3.3.1.min.js" />
     <Content Include="Archivos\WebForms\Menu.aspx" />
+    <Content Include="Archivos\WebForms\Orden\Actualizacion.aspx" />
+    <Content Include="Archivos\WebForms\Orden\Consulta.aspx" />
+    <Content Include="Archivos\WebForms\Orden\GenerarOrden.aspx" />
     <Content Include="Archivos\WebForms\Parametrizaciones\ParametroAutobus.aspx" />
+    <Content Include="Archivos\WebForms\Parametrizaciones\ParametroViaticos.aspx" />
     <Content Include="Archivos\WebForms\RecuperarDatos.aspx" />
     <Content Include="Archivos\WebForms\RegistroUsuario.aspx" />
-    <Content Include="Archivos\WebForms\Solicitud\ConsultaSolicitud.aspx" />
-    <Content Include="Archivos\WebForms\Solicitud\CreacionSolicitud.aspx" />
+    <Content Include="Archivos\WebForms\Solicitud\ActualizacionViaticos.aspx" />
+    <Content Include="Archivos\WebForms\Solicitud\ConsultaViaticos.aspx" />
+    <Content Include="Archivos\WebForms\Solicitud\CreacionViaticos.aspx" />
+    <Content Include="Archivos\WebForms\Solicitud\VerificacionSolicitud.aspx" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -114,12 +120,40 @@
     <Compile Include="Archivos\WebForms\Menu.aspx.designer.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Archivos\WebForms\Orden\Actualizacion.aspx.cs">
+      <DependentUpon>Actualizacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\WebForms\Orden\Actualizacion.aspx.designer.cs">
+      <DependentUpon>Actualizacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\WebForms\Orden\Consulta.aspx.cs">
+      <DependentUpon>Consulta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\WebForms\Orden\Consulta.aspx.designer.cs">
+      <DependentUpon>Consulta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\WebForms\Orden\GenerarOrden.aspx.cs">
+      <DependentUpon>GenerarOrden.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\WebForms\Orden\GenerarOrden.aspx.designer.cs">
+      <DependentUpon>GenerarOrden.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Archivos\WebForms\Parametrizaciones\ParametroAutobus.aspx.cs">
       <DependentUpon>ParametroAutobus.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Archivos\WebForms\Parametrizaciones\ParametroAutobus.aspx.designer.cs">
       <DependentUpon>ParametroAutobus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\WebForms\Parametrizaciones\ParametroViaticos.aspx.cs">
+      <DependentUpon>ParametroViaticos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\WebForms\Parametrizaciones\ParametroViaticos.aspx.designer.cs">
+      <DependentUpon>ParametroViaticos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Archivos\WebForms\RecuperarDatos.aspx.cs">
       <DependentUpon>RecuperarDatos.aspx</DependentUpon>
@@ -135,19 +169,33 @@
     <Compile Include="Archivos\WebForms\RegistroUsuario.aspx.designer.cs">
       <DependentUpon>RegistroUsuario.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Archivos\WebForms\Solicitud\ConsultaSolicitud.aspx.cs">
-      <DependentUpon>ConsultaSolicitud.aspx</DependentUpon>
+    <Compile Include="Archivos\WebForms\Solicitud\ActualizacionViaticos.aspx.cs">
+      <DependentUpon>ActualizacionViaticos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Archivos\WebForms\Solicitud\ConsultaSolicitud.aspx.designer.cs">
-      <DependentUpon>ConsultaSolicitud.aspx</DependentUpon>
+    <Compile Include="Archivos\WebForms\Solicitud\ActualizacionViaticos.aspx.designer.cs">
+      <DependentUpon>ActualizacionViaticos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Archivos\WebForms\Solicitud\CreacionSolicitud.aspx.cs">
-      <DependentUpon>CreacionSolicitud.aspx</DependentUpon>
+    <Compile Include="Archivos\WebForms\Solicitud\ConsultaViaticos.aspx.cs">
+      <DependentUpon>ConsultaViaticos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Archivos\WebForms\Solicitud\CreacionSolicitud.aspx.designer.cs">
-      <DependentUpon>CreacionSolicitud.aspx</DependentUpon>
+    <Compile Include="Archivos\WebForms\Solicitud\ConsultaViaticos.aspx.designer.cs">
+      <DependentUpon>ConsultaViaticos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\WebForms\Solicitud\CreacionViaticos.aspx.cs">
+      <DependentUpon>CreacionViaticos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\WebForms\Solicitud\CreacionViaticos.aspx.designer.cs">
+      <DependentUpon>CreacionViaticos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\WebForms\Solicitud\VerificacionSolicitud.aspx.cs">
+      <DependentUpon>VerificacionSolicitud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\WebForms\Solicitud\VerificacionSolicitud.aspx.designer.cs">
+      <DependentUpon>VerificacionSolicitud.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -163,7 +211,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Archivos\WebForms\Liquidacion\" />
-    <Folder Include="Archivos\WebForms\Orden\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
