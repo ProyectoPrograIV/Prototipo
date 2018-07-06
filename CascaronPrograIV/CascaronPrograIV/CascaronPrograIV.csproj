@@ -89,6 +89,7 @@
     <Content Include="Archivos\script\jquery-3.3.1.min.js" />
     <Content Include="Archivos\WebForms\Ingreso.aspx" />
     <Content Include="Archivos\WebForms\jquery-3.3.1.min.js" />
+    <Content Include="Archivos\WebForms\Liquidacion\Creacion.aspx" />
     <Content Include="Archivos\WebForms\Menu.aspx" />
     <Content Include="Archivos\WebForms\Orden\Actualizacion.aspx" />
     <Content Include="Archivos\WebForms\Orden\Consulta.aspx" />
@@ -119,6 +120,13 @@
     </Compile>
     <Compile Include="Archivos\WebForms\Ingreso.aspx.designer.cs">
       <DependentUpon>Ingreso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\WebForms\Liquidacion\Creacion.aspx.cs">
+      <DependentUpon>Creacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\WebForms\Liquidacion\Creacion.aspx.designer.cs">
+      <DependentUpon>Creacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Archivos\WebForms\Menu.aspx.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
@@ -216,9 +224,7 @@
       <Name>Procesos</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Archivos\WebForms\Liquidacion\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
