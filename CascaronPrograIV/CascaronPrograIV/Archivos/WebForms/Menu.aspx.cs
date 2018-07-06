@@ -24,9 +24,9 @@ namespace CascaronPrograIV.Archivos.WebForms
             {
                 WebFormViewer.Src = "~/Archivos/WebForms/Parametrizaciones/ParametroViaticos.apsx";
             }
-            else if (e.Item.Value.ToString() == "")
+            else if (e.Item.Value.ToString() == "CreacionSolicitud")
             {
-                WebFormViewer.Src = "~/Archivos/WebForms/";
+                WebFormViewer.Src = "~/Archivos/WebForms/Solicitud/CreacionSolicitud.aspx";
             }
             else if (e.Item.Value.ToString() == "")
             {

@@ -73,16 +73,21 @@
     <Content Include="Archivos\HojasdeEstilos\EstiloRegistro.css" />
     <Content Include="Archivos\HojasdeEstilos\Parametrizaciones\EstiloParamAutoBus.css" />
     <Content Include="Archivos\Recursos\Liquidacion.png" />
+    <Content Include="Archivos\Recursos\menutoggle.png" />
     <Content Include="Archivos\Recursos\Orden.png" />
     <Content Include="Archivos\Recursos\Parametros.png" />
     <Content Include="Archivos\Recursos\Reportes.png" />
     <Content Include="Archivos\Recursos\Solicitud.png" />
     <Content Include="Archivos\Recursos\Usuario.png" />
+    <Content Include="Archivos\script\jquery-3.3.1.min.js" />
     <Content Include="Archivos\WebForms\Ingreso.aspx" />
+    <Content Include="Archivos\WebForms\jquery-3.3.1.min.js" />
     <Content Include="Archivos\WebForms\Menu.aspx" />
     <Content Include="Archivos\WebForms\Parametrizaciones\ParametroAutobus.aspx" />
     <Content Include="Archivos\WebForms\RecuperarDatos.aspx" />
     <Content Include="Archivos\WebForms\RegistroUsuario.aspx" />
+    <Content Include="Archivos\WebForms\Solicitud\ConsultaSolicitud.aspx" />
+    <Content Include="Archivos\WebForms\Solicitud\CreacionSolicitud.aspx" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -130,6 +135,20 @@
     <Compile Include="Archivos\WebForms\RegistroUsuario.aspx.designer.cs">
       <DependentUpon>RegistroUsuario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Archivos\WebForms\Solicitud\ConsultaSolicitud.aspx.cs">
+      <DependentUpon>ConsultaSolicitud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\WebForms\Solicitud\ConsultaSolicitud.aspx.designer.cs">
+      <DependentUpon>ConsultaSolicitud.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\WebForms\Solicitud\CreacionSolicitud.aspx.cs">
+      <DependentUpon>CreacionSolicitud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\WebForms\Solicitud\CreacionSolicitud.aspx.designer.cs">
+      <DependentUpon>CreacionSolicitud.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -145,7 +164,6 @@
   <ItemGroup>
     <Folder Include="Archivos\WebForms\Liquidacion\" />
     <Folder Include="Archivos\WebForms\Orden\" />
-    <Folder Include="Archivos\WebForms\Solicitud\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
