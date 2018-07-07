@@ -11,7 +11,16 @@ namespace CascaronPrograIV.Archivos.WebForms.Parametrizaciones
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Gv_TarifaAutobus.Rows.Count == 0)
+            {
+                Gv_TarifaAutobus.DataSource = new string[] { };
+                Gv_TarifaAutobus.DataBind();
+            }
+        }
 
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

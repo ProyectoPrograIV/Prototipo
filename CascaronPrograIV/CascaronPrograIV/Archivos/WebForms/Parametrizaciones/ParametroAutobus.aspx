@@ -10,18 +10,38 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="divOpcion">
-            <asp:TextBox CssClass="textbox" ID="TextBox1" runat="server" Text="Fraccionamiento" onclick="this.value=''"></asp:TextBox>
-            <asp:TextBox CssClass="textbox" ID="TextBox2" runat="server" Text="Tarifa Normal" onclick="this.value=''"></asp:TextBox>
-            <asp:TextBox CssClass="textbox" ID="TextBox3" runat="server" Text="Operador" onclick="this.value=''"></asp:TextBox>
-            <asp:Button CssClass="button" ID="Button1" runat="server" Text="Agregar" />
+        <div class="divOpcion" style="width: 1050px;">
+            <h1>Ingreso de Nueva Tarifa</h1>
+            <asp:TextBox CssClass="textbox" ID="TextBox1" runat="server" Text="Codigo de Ruta" onclick="this.value=''"></asp:TextBox>
+            <asp:TextBox CssClass="textbox" ID="TextBox2" runat="server" Text="Codigo de Provincia" onclick="this.value=''"></asp:TextBox>
+            <asp:TextBox CssClass="textbox" ID="TextBox3" runat="server" Text="Tarifa" onclick="this.value=''"></asp:TextBox>
+            <asp:TextBox CssClass="textbox" ID="TextBox4" runat="server" Text="Fecha de Vigencia" onclick="this.value=''"></asp:TextBox>
+            <asp:TextBox CssClass="textbox" ID="TextBox5" runat="server" Text="Descripcion" onclick="this.value=''"></asp:TextBox>
+            <asp:TextBox CssClass="textbox" ID="TextBox6" runat="server" Text="Estado" onclick="this.value=''"></asp:TextBox>
+            <br />
+            <asp:Button CssClass="button" ID="Button1" runat="server" Text="Agregar" OnClick="Button1_Click" />
         </div>
         <div class="divGrid">
-        <asp:GridView ID="GridView1" runat="server" CellPadding="3" Width="100%" Height="100%" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px">
+        <asp:GridView ID="Gv_TarifaAutobus" runat="server" CellPadding="3" Width="100%" Height="300px" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" HorizontalAlign="Center" AutoGenerateColumns="False" ShowHeaderWhenEmpty="True">
             <Columns>
-                <asp:BoundField HeaderText="Fraccionamiento" ItemStyle-Width="45%" />
-                <asp:BoundField HeaderText="Tarifa Normal" ItemStyle-Width="10%" />
-                <asp:BoundField HeaderText="Operador" ItemStyle-Width="45%" />
+                <asp:BoundField HeaderText="Codigo de Ruta">
+                <HeaderStyle Width="10%" />
+                </asp:BoundField>
+                <asp:BoundField HeaderText="Codigo de Provincia">
+                <HeaderStyle Width="10%" />
+                </asp:BoundField>
+                <asp:BoundField HeaderText="Tarifa">
+                <HeaderStyle Width="15%" />
+                </asp:BoundField>
+                <asp:BoundField HeaderText="Fecha de Vigencia">
+                <HeaderStyle Width="20%" />
+                </asp:BoundField>
+                <asp:BoundField HeaderText="Descripcion">
+                <HeaderStyle Width="35%" />
+                </asp:BoundField>
+                <asp:BoundField HeaderText="Estado">
+                <HeaderStyle Width="10%" />
+                </asp:BoundField>
             </Columns>
             <FooterStyle BackColor="White" ForeColor="#000066" />
             <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" Height="90px" />

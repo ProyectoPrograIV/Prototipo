@@ -14,7 +14,11 @@
     <h1>Consulta de Orden</h1>
     </div>
         <div>
-            <asp:GridView CssClass="DataFrid" ID="GvConsultaOrden" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" ShowHeaderWhenEmpty="True">
+            <asp:TextBox CssClass="textbox" ID="TextBox1" runat="server"></asp:TextBox>
+            <asp:Button CssClass="button" ID="Button1" runat="server" Text="Buscar" />
+        </div>
+        <div>
+            <asp:GridView CssClass="DataFrid" ID="GvConsultaOrden" runat="server" CellPadding="4" ForeColor="#333333" AutoGenerateColumns="False" ShowHeaderWhenEmpty="True">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:BoundField HeaderText="1" />

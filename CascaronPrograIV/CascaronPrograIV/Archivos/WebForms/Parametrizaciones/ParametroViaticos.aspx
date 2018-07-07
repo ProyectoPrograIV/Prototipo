@@ -23,7 +23,7 @@
             <asp:Button CssClass="button" ID="Btn_Guardar" runat="server" Text="Guardar" OnClick="Btn_Guardar_Click" />
         </div>
         <div class="divGrid">
-            <asp:GridView CssClass="DataGrid" ID="Gv_ModViaticos" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" HeaderStyle-Height="50px" ShowHeaderWhenEmpty="True">
+            <asp:GridView CssClass="DataGrid" ID="Gv_ModViaticos" runat="server" CellPadding="4" ForeColor="#333333" AutoGenerateColumns="False" HeaderStyle-Height="50px" ShowHeaderWhenEmpty="True">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:BoundField HeaderText="Tipo de Tarifa" />

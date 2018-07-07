@@ -33,8 +33,8 @@
             </asp:GridView>
         </div>
         <div>
-            <asp:Button CssClass="button" ID="Button2" runat="server" Text="Aceptar" />
             <asp:Button CssClass="button" ID="Button3" runat="server" Text="Rechazar" />
+            <asp:Button CssClass="button" ID="Button2" runat="server" Text="Aceptar" />
         </div>
     </form>
 </body>

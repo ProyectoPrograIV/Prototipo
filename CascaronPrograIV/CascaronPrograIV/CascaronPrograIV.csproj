@@ -76,7 +76,6 @@
     <Content Include="Archivos\HojasdeEstilos\Liquidacion\EstiloCreacion.css" />
     <Content Include="Archivos\HojasdeEstilos\Liquidacion\EstiloVerificacion.css" />
     <Content Include="Archivos\HojasdeEstilos\Orden\EstiloConsulta.css" />
-    <Content Include="Archivos\HojasdeEstilos\Orden\EstiloOrden.css" />
     <Content Include="Archivos\HojasdeEstilos\Parametrizaciones\EstiloParamAutoBus.css" />
     <Content Include="Archivos\HojasdeEstilos\Parametrizaciones\EstiloParamViaticos.css" />
     <Content Include="Archivos\HojasdeEstilos\Solicitud\EstiloActualizacion.css" />
@@ -98,9 +97,7 @@
     <Content Include="Archivos\WebForms\Liquidacion\Creacion.aspx" />
     <Content Include="Archivos\WebForms\Liquidacion\Verificacion.aspx" />
     <Content Include="Archivos\WebForms\Menu.aspx" />
-    <Content Include="Archivos\WebForms\Orden\Actualizacion.aspx" />
     <Content Include="Archivos\WebForms\Orden\Consulta.aspx" />
-    <Content Include="Archivos\WebForms\Orden\GenerarOrden.aspx" />
     <Content Include="Archivos\WebForms\Parametrizaciones\ParametroAutobus.aspx" />
     <Content Include="Archivos\WebForms\Parametrizaciones\ParametroViaticos.aspx" />
     <Content Include="Archivos\WebForms\RecuperarDatos.aspx" />
@@ -163,26 +160,12 @@
     <Compile Include="Archivos\WebForms\Menu.aspx.designer.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Archivos\WebForms\Orden\Actualizacion.aspx.cs">
-      <DependentUpon>Actualizacion.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Archivos\WebForms\Orden\Actualizacion.aspx.designer.cs">
-      <DependentUpon>Actualizacion.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Archivos\WebForms\Orden\Consulta.aspx.cs">
       <DependentUpon>Consulta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Archivos\WebForms\Orden\Consulta.aspx.designer.cs">
       <DependentUpon>Consulta.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Archivos\WebForms\Orden\GenerarOrden.aspx.cs">
-      <DependentUpon>GenerarOrden.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Archivos\WebForms\Orden\GenerarOrden.aspx.designer.cs">
-      <DependentUpon>GenerarOrden.aspx</DependentUpon>
     </Compile>
     <Compile Include="Archivos\WebForms\Parametrizaciones\ParametroAutobus.aspx.cs">
       <DependentUpon>ParametroAutobus.aspx</DependentUpon>

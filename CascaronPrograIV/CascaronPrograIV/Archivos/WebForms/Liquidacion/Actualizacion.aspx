@@ -14,7 +14,7 @@
     <h1>Actualizacion de Liquidacion</h1>
     </div>
         <div class="divGrid">
-            <asp:GridView CssClass="DataGrid" ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
+            <asp:GridView CssClass="DataGrid" ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333">
                 <AlternatingRowStyle BackColor="White" />
                 <EditRowStyle BackColor="#2461BF" />
                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />

@@ -28,17 +28,6 @@ form {
     outline: 0;
 }
 
-.divbuttons {
-    padding-top:30px;
-}
-
-h1 {
-    background-color: #12101e;
-    height: 50px;
-    padding: 5px 5px 5px 5px 5px;
-    color:white;
-}
-
 .textbox {
     width: 200px;
     height: 30px;
@@ -55,3 +44,16 @@ h1 {
     border-radius: 4px;
     text-align: center;
 }
+
+.divbuttons {
+    padding-top:30px;
+}
+
+h1 {
+    background-color: #12101e;
+    height: 50px;
+    padding: 5px 5px 5px 5px 5px;
+    color:white;
+}
+
+
