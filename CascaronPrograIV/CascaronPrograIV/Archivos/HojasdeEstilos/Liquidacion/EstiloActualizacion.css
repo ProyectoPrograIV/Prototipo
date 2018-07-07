@@ -28,19 +28,8 @@ form {
     outline: 0;
 }
 
-.divbuttons {
-    padding-top:30px;
-}
-
-h1 {
-    background-color: #12101e;
-    height: 50px;
-    padding: 5px 5px 5px 5px 5px;
-    color:white;
-}
-
 .textbox {
-    width: 200px;
+    width: 180px;
     height: 30px;
     margin-bottom: 25px;
     margin-top: 25px;
@@ -54,4 +43,16 @@ h1 {
     border: 1px solid #ccc;
     border-radius: 4px;
     text-align: center;
+}
+
+.divGrid {
+    width: 1050px;
+    margin-bottom:20px;
+}
+
+h1 {
+    background-color: #12101e;
+    height: 50px;
+    padding: 5px 5px 5px 5px 5px;
+    color:white;
 }

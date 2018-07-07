@@ -13,8 +13,12 @@
         <div>
             <h1>Verificacion de Solicitudes de Viaticos</h1>
         </div>
+        <div>
+            <asp:TextBox CssClass="textbox" ID="TextBox1" runat="server"></asp:TextBox>
+            <asp:Button CssClass="button" ID="Button1" runat="server" Text="Buscar" />
+        </div>
     <div>
-        <asp:GridView CssClass="DataGrid" ID="GvVerificacion" runat="server" CellPadding="4" ForeColor="#333333" AutoGenerateColumns="False" ShowHeaderWhenEmpty="True">
+        <asp:GridView CssClass="DataGrid" ID="GvVerificacion" runat="server" CellPadding="4" ForeColor="#333333" AutoGenerateColumns="False" ShowHeaderWhenEmpty="True" Height="300px">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:BoundField HeaderText="1" />

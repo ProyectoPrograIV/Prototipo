@@ -10,7 +10,7 @@
 namespace CascaronPrograIV.Archivos.WebForms.Liquidacion {
     
     
-    public partial class Creacion {
+    public partial class Actualizacion {
         
         /// <summary>
         /// Control form1.
@@ -20,6 +20,15 @@ namespace CascaronPrograIV.Archivos.WebForms.Liquidacion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        
+        /// <summary>
+        /// Control GridView1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
         /// Control TbxFecha.
@@ -85,12 +94,12 @@ namespace CascaronPrograIV.Archivos.WebForms.Liquidacion {
         protected global::System.Web.UI.WebControls.TextBox TbxEstado;
         
         /// <summary>
-        /// Control BtnGuardar.
+        /// Control BtnActualizar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnGuardar;
+        protected global::System.Web.UI.WebControls.Button BtnActualizar;
     }
 }

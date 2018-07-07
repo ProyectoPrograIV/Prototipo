@@ -21,7 +21,7 @@
 <body>
     <form runat="server" class="formMenu">
         <div class="divMenu">
-            <asp:ImageButton ToolTip="Esconder/Mostrar Menú " ID="btnToggleMenu" runat="server" ImageUrl="~\Archivos\Recursos\menutoggle.png" Width="40px" Height="40px" />
+            <asp:ImageButton CssClass="Imagen" ToolTip="Esconder/Mostrar Menú " ID="btnToggleMenu" runat="server" ImageUrl="~\Archivos\Recursos\menutoggle.png" Width="40px" Height="40px" OnClick="btnToggleMenu_Click" />
             <asp:Menu ID="Opciones" runat="server" Orientation="Vertical" CssClass="Menu" BorderColor="Black" BorderStyle="None" ForeColor="Black" Height="50%" OnMenuItemClick="Opciones_MenuItemClick">
                 <DynamicHoverStyle BackColor="#F0776C" />
                 <DynamicMenuItemStyle VerticalPadding="10px" HorizontalPadding="4px" />

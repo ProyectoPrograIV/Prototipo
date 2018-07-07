@@ -7,10 +7,10 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace CascaronPrograIV.Archivos.WebForms.Solicitud {
+namespace CascaronPrograIV.Archivos.WebForms.Liquidacion {
     
     
-    public partial class ConsultaViaticos {
+    public partial class Consulta {
         
         /// <summary>
         /// Control form1.
@@ -31,21 +31,21 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud {
         protected global::System.Web.UI.WebControls.TextBox TextBox1;
         
         /// <summary>
-        /// Control Button1.
+        /// Control BtnFiltrar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button BtnFiltrar;
         
         /// <summary>
-        /// Control Gv_ConsultaSolicitud.
+        /// Control GridView1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView Gv_ConsultaSolicitud;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
     }
 }

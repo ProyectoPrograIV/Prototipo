@@ -6,45 +6,24 @@
 <head runat="server">
     <title></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link href="../../HojasdeEstilos/EstiloRegistro.css" rel="stylesheet" type="text/css" />
+    <link href="../../HojasdeEstilos/Liquidacion/EstiloCreacion.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            <h1>Liquidar viáticos</h1>
-            <table style="width: 100%;">
-                <tr>
-                    <td>
-                        <p>Fecha liquidación (hoy)</p>
-                    </td>
-                    <td>
-                        <asp:TextBox ID="txt1" runat="server" TextMode="Date" placeholder="Fecha Liquidación (Hoy)"></asp:TextBox>
-                    </td>
-                    
-                    <td>
-                  <asp:DropDownList ID="ddlSolicitudesActivas" runat="server">
-                      <asp:ListItem>SolicitudActiva 1</asp:ListItem>
-                      <asp:ListItem>SolicitudActiva 2</asp:ListItem>
-                      <asp:ListItem>SolicitudActiva 3</asp:ListItem>
-                  </asp:DropDownList>
-                        </td>
-                </tr>
-                <tr>
-                    <td>
-                        <asp:TextBox ID="TextBox2" runat="server" placeholder="Monto Entregado" Enabled="false"></asp:TextBox>
-                    </td>
-                    <td>
-                        <asp:TextBox ID="TextBox3" runat="server" placeholder="Monto Gastado"></asp:TextBox>
-                    </td>
-                    <td>
-                        <asp:TextBox ID="TextBox4" runat="server" placeholder="Cantidad Devolución" Enabled="false"></asp:TextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td><asp:Button ID="btnCrearLiquidación" runat="server" Text="Crear Liquidación" /></td>
-                </tr>
-            </table>
+            <h1>Crear Liquidacion de Viaticos</h1>
+        </div>
+        <div>
+            <asp:TextBox CssClass="textbox" ID="TbxFecha" runat="server" Text="Fecha de Liquidacion"></asp:TextBox>
+            <asp:TextBox CssClass="textbox" ID="TbxMontoDesayuno" runat="server" Text="Monto de Dasayuno"></asp:TextBox>
+            <asp:TextBox CssClass="textbox" ID="TbxMontoAlmuerzo" runat="server" Text="Monto de Almuerzo"></asp:TextBox>
+            <asp:TextBox CssClass="textbox" ID="TbxMontoCena" runat="server" Text="Monto de Cena"></asp:TextBox>
+            <asp:TextBox CssClass="textbox" ID="TbxMontoHospedaje" runat="server" Text="Monto de Hospedaje"></asp:TextBox>
+            <asp:TextBox CssClass="textbox" ID="TbxMontoPasaje" runat="server" Text="Monto de Pasaje"></asp:TextBox>
+            <asp:TextBox CssClass="textbox" ID="TbxEstado" runat="server" Text="Estado"></asp:TextBox>
+        </div>
+        <div>
+            <asp:Button CssClass="button" ID="BtnGuardar" runat="server" Text="Guardar" />
         </div>
     </form>
 </body>

@@ -9,10 +9,6 @@ form {
     text-align: center;
 }
 
-.DataGrid {
-    width: 1050px;
-}
-
 .button {
     width: 200px;
     height: 35px;
@@ -26,17 +22,6 @@ form {
     border-radius: 5px;
     cursor: pointer;
     outline: 0;
-}
-
-.divbuttons {
-    padding-top:30px;
-}
-
-h1 {
-    background-color: #12101e;
-    height: 50px;
-    padding: 5px 5px 5px 5px 5px;
-    color:white;
 }
 
 .textbox {
@@ -54,4 +39,11 @@ h1 {
     border: 1px solid #ccc;
     border-radius: 4px;
     text-align: center;
+}
+
+h1 {
+    background-color: #12101e;
+    height: 50px;
+    padding: 5px 5px 5px 5px 5px;
+    color:white;
 }

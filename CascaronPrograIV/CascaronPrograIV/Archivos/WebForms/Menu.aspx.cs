@@ -86,5 +86,10 @@ namespace CascaronPrograIV.Archivos.WebForms
                 return string.Empty;
             }
         }
+
+        protected void btnToggleMenu_Click(object sender, ImageClickEventArgs e)
+        {
+
+        }
     }
 }

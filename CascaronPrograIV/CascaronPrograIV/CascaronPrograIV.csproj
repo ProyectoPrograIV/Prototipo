@@ -71,6 +71,10 @@
     <Content Include="Archivos\HojasdeEstilos\EstiloMenu.css" />
     <Content Include="Archivos\HojasdeEstilos\EstiloRecuperar.css" />
     <Content Include="Archivos\HojasdeEstilos\EstiloRegistro.css" />
+    <Content Include="Archivos\HojasdeEstilos\Liquidacion\EstiloActualizacion.css" />
+    <Content Include="Archivos\HojasdeEstilos\Liquidacion\EstiloConsulta.css" />
+    <Content Include="Archivos\HojasdeEstilos\Liquidacion\EstiloCreacion.css" />
+    <Content Include="Archivos\HojasdeEstilos\Liquidacion\EstiloVerificacion.css" />
     <Content Include="Archivos\HojasdeEstilos\Orden\EstiloConsulta.css" />
     <Content Include="Archivos\HojasdeEstilos\Orden\EstiloOrden.css" />
     <Content Include="Archivos\HojasdeEstilos\Parametrizaciones\EstiloParamAutoBus.css" />
@@ -89,7 +93,10 @@
     <Content Include="Archivos\script\jquery-3.3.1.min.js" />
     <Content Include="Archivos\WebForms\Ingreso.aspx" />
     <Content Include="Archivos\WebForms\jquery-3.3.1.min.js" />
+    <Content Include="Archivos\WebForms\Liquidacion\Actualizacion.aspx" />
+    <Content Include="Archivos\WebForms\Liquidacion\Consulta.aspx" />
     <Content Include="Archivos\WebForms\Liquidacion\Creacion.aspx" />
+    <Content Include="Archivos\WebForms\Liquidacion\Verificacion.aspx" />
     <Content Include="Archivos\WebForms\Menu.aspx" />
     <Content Include="Archivos\WebForms\Orden\Actualizacion.aspx" />
     <Content Include="Archivos\WebForms\Orden\Consulta.aspx" />
@@ -121,12 +128,33 @@
     <Compile Include="Archivos\WebForms\Ingreso.aspx.designer.cs">
       <DependentUpon>Ingreso.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Archivos\WebForms\Liquidacion\Actualizacion.aspx.cs">
+      <DependentUpon>Actualizacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\WebForms\Liquidacion\Actualizacion.aspx.designer.cs">
+      <DependentUpon>Actualizacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\WebForms\Liquidacion\Consulta.aspx.cs">
+      <DependentUpon>Consulta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\WebForms\Liquidacion\Consulta.aspx.designer.cs">
+      <DependentUpon>Consulta.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Archivos\WebForms\Liquidacion\Creacion.aspx.cs">
       <DependentUpon>Creacion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Archivos\WebForms\Liquidacion\Creacion.aspx.designer.cs">
       <DependentUpon>Creacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\WebForms\Liquidacion\Verificacion.aspx.cs">
+      <DependentUpon>Verificacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Archivos\WebForms\Liquidacion\Verificacion.aspx.designer.cs">
+      <DependentUpon>Verificacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Archivos\WebForms\Menu.aspx.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
