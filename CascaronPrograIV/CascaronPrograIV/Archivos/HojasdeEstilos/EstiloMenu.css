@@ -7,6 +7,21 @@
     margin-left:-7px
 }
 
+#Encabezado {
+    text-align:center;
+}
+
+#Encabezado h1 {
+    font-size:80px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:900;
+    color:white;
+    background: #2d343d;
+    margin-right:auto;
+    margin-left:auto;
+	margin-top:0px;
+}
+
 #menu {
     list-style:none;
     height:100%;
@@ -53,30 +68,4 @@ a {
 a:hover {
     background: #2f2e42;
     font-size: 24px;
-}
-
-#menu li .drop {
-    background:url("img/drop.png") no-repeat right 8px;
-}
-#menu li:hover .drop {
-    background:url("img/drop.png") no-repeat right 7px;
-}
-
-.dropdown_columns {
-    margin:4px auto+5px;
-    position:absolute;
-    left:-999em;
-    text-align:center;
-    padding:10px 5px 10px 5px;
-    background-color: #2f2e42;
-    align-items:center;
-    -moz-border-radius: 0px 0px 5px 5px;
-    -webkit-border-radius: 0px 0px 5px 5px;
-    border-radius: 0px 0px 5px 5px;
-}
-
-.dropdown_columns {width: 258px;}
-
-#menu li:hover .dropdown_columns {
-    left: 0px;top:auto;
 }

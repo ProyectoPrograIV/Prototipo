@@ -6,18 +6,83 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $('#h1Crear').click(function () {
-                $('#DivCrear').toggle(999)
+                $('#DivCrear').toggle(999);
+                $('#DivConsultar').hide(999);
+                $('#DivActualizar').hide(999);
+                $('#DivVerificar').hide(999);
             });
-            $('#h1Consulta').click(function () {
-                $('#DivConsultar').toggle(999)
+            $('#h1Consultar').click(function () {
+                $('#DivConsultar').toggle(999);
+                $('#DivCrear').hide(999);
+                $('#DivActualizar').hide(999);
+                $('#DivVerificar').hide(999);
             });
+            $('#h1Actualizar').click(function () {
+                $('#DivActualizar').toggle(999);
+                $('#DivCrear').hide(999);
+                $('#DivConsultar').hide(999);
+                $('#DivVerificar').hide(999);
+            });
+            $('#h1Verificar').click(function () {
+                $('#DivVerificar').toggle(999);
+                $('#DivCrear').hide(999);
+                $('#DivActualizar').hide(999);
+                $('#DivConsultar').hide(999);
+            });
+            $('#liCrear').click(function () {
+                $('#DivCrear').toggle(999);
+                $('#DivVerificar').hide(999);
+                $('#DivActualizar').hide(999);
+                $('#DivConsultar').hide(999);
+            });
+            $('#liConsultar').click(function () {
+                $('#DivConsultar').toggle(999);
+                $('#DivCrear').hide(999);
+                $('#DivActualizar').hide(999);
+                $('#DivVerificar').hide(999);
+            });
+            $('#liActualizar').click(function () {
+                $('#DivActualizar').toggle(999);
+                $('#DivCrear').hide(999);
+                $('#DivVerificar').hide(999);
+                $('#DivConsultar').hide(999);
+            });
+            $('#liVerificar').click(function () {
+                $('#DivVerificar').toggle(999);
+                $('#DivCrear').hide(999);
+                $('#DivActualizar').hide(999);
+                $('#DivConsultar').hide(999);
+            });
+        });
+        $(document).ready(function () {  
+            $('#DivCrear').hide();
+            $('#DivConsultar').hide();
+            $('#DivActualizar').hide();
+            $('#DivVerificar').hide();
         });
     </script>
     <link href="../../HojasdeEstilos/Solicitud/EstiloSolicitud.css" rel="stylesheet" type="text/css" />
-    <div>
+    <br />
+    <div id="DivSubMenu">
+        <h2>Opciones</h2>
+        <ul id="menu">
+                <li id="liCrear">
+                    <a href="#DivCrear">Crear Solicitud</a>
+                </li>
+                <li id="liConsultar">
+                    <a href="#DivConsultar">Consultar Solicitud</a>
+                </li>
+                <li id="liActualizar">
+                    <a href="#DivActualizar">Actualizar Solicitud</a>
+                </li>
+                <li id="liVerificar">
+                    <a href="#DivVerificar">Verificar Solicitud</a>
+                </li>
+            </ul>
+    </div>
+    <div id="DivContenido">
         <h1 id="h1Crear" title="Click para mostrar contenido">Crear Solicitud de Viaticos <img src="../../Recursos/Mostrar.png"/></h1>
         <div id="DivCrear">
-            <br />
             <br />
                 <asp:TextBox CssClass="Textbox" ID="TextBox1" runat="server" Text="Fecha de Creacion"></asp:TextBox>
                 <asp:TextBox CssClass="Textbox" ID="TextBox2" runat="server" Text="Fecha de Regreso"></asp:TextBox>
@@ -31,11 +96,11 @@
                 <asp:TextBox CssClass="Textbox" ID="TextBox8" runat="server" Text="Hora de Salida"></asp:TextBox>
                 <asp:TextBox CssClass="Textbox" ID="TextBox9" runat="server" Text="Hora de Regreso"></asp:TextBox><br />
                 <br />
-                <asp:Button ID="Btn_Guardar" CssClass="Button" runat="server" Text="Guardar" />
+                <asp:Button ID="Btn_Guardar" CssClass="Button" runat="server" Text="Guardar" OnClick="Btn_Guardar_Click" />
         </div>
         <br />
         <br />
-        <h1 id="h1Consulta" title="Click para mostrar contenido">Consultar Solicitudes de Viaticos <img src="../../Recursos/Mostrar.png"/></h1>
+        <h1 id="h1Consultar" title="Click para mostrar contenido">Consultar Solicitudes de Viaticos <img src="../../Recursos/Mostrar.png"/></h1>
         <div id="DivConsultar">
             <asp:TextBox ID="TbxFiltrar" CssClass="TbxFiltrar" runat="server" Text="Buscar"></asp:TextBox>
             <div>
@@ -53,6 +118,18 @@
                     <SortedDescendingHeaderStyle BackColor="#4870BE" />
                 </asp:GridView>
             </div>
+        </div>
+        <br />
+        <br />
+        <h1 id="h1Actualizar" title="Click para mostrar contenido">Consultar Solicitudes de Viaticos <img src="../../Recursos/Mostrar.png"/></h1>
+        <div id="DivActualizar">
+
+        </div>
+        <br />
+        <br />
+        <h1 id="h1Verificar" title="Click para mostrar contenido">Consultar Solicitudes de Viaticos <img src="../../Recursos/Mostrar.png"/></h1>
+        <div id="DivVerificar">
+
         </div>
     </div>
 </asp:Content>
