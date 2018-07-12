@@ -2,10 +2,21 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <script src="../../script/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#h1Crear').click(function () {
+                $('#DivCrear').toggle(999)
+            });
+            $('#h1Consulta').click(function () {
+                $('#DivConsultar').toggle(999)
+            });
+        });
+    </script>
     <link href="../../HojasdeEstilos/Solicitud/EstiloSolicitud.css" rel="stylesheet" type="text/css" />
     <div>
+        <h1 id="h1Crear" title="Click para mostrar contenido">Crear Solicitud de Viaticos <img src="../../Recursos/Mostrar.png"/></h1>
         <div id="DivCrear">
-            <h1>Crear Solicitud de Viaticos</h1>
             <br />
             <br />
                 <asp:TextBox CssClass="Textbox" ID="TextBox1" runat="server" Text="Fecha de Creacion"></asp:TextBox>
@@ -24,8 +35,8 @@
         </div>
         <br />
         <br />
+        <h1 id="h1Consulta" title="Click para mostrar contenido">Consultar Solicitudes de Viaticos <img src="../../Recursos/Mostrar.png"/></h1>
         <div id="DivConsultar">
-            <h1>Consultar Solicitudes de Viaticos</h1>
             <asp:TextBox ID="TbxFiltrar" CssClass="TbxFiltrar" runat="server" Text="Buscar"></asp:TextBox>
             <div>
                 <asp:GridView CssClass="GridView" ID="GvConsultarSolicitud" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">

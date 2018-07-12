@@ -81,6 +81,7 @@
     <Content Include="Archivos\HojasdeEstilos\Solicitud\EstiloSolicitud.css" />
     <Content Include="Archivos\Recursos\Liquidacion.png" />
     <Content Include="Archivos\Recursos\menutoggle.png" />
+    <Content Include="Archivos\Recursos\Mostrar.png" />
     <Content Include="Archivos\Recursos\Orden.png" />
     <Content Include="Archivos\Recursos\Parametros.png" />
     <Content Include="Archivos\Recursos\Reportes.png" />
@@ -89,7 +90,6 @@
     <Content Include="Archivos\script\jquery-3.3.1.min.js" />
     <Content Include="Archivos\WebForms\Default.aspx" />
     <Content Include="Archivos\WebForms\Ingreso.aspx" />
-    <Content Include="Archivos\WebForms\jquery-3.3.1.min.js" />
     <Content Include="Archivos\WebForms\Liquidacion\Liquidacion.aspx" />
     <Content Include="Archivos\WebForms\Orden\Orden.aspx" />
     <Content Include="Archivos\WebForms\Parametrizaciones\Parametrizaciones.aspx" />
