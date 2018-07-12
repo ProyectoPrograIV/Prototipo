@@ -1,0 +1,99 @@
+﻿body {
+    
+}
+
+.Button {
+  width: 200px;
+  height: 40px;
+  padding: 0;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  background: #f0776c;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer; 
+  outline:0;
+}
+
+#DivCrear {
+    text-align:center;
+}
+
+#DivConsultar {
+    text-align:center;
+}
+
+#DivConsultar h2 {
+    color: white;
+    background-color: #f0776c;
+    width:100px;
+    text-align:center;
+    margin-left:47.5%
+}
+
+.DivLeft {
+    width:33%;
+    text-align:right;
+    float:left;
+    align-self:center;
+}
+
+.DivCenter {
+    width:33%;
+    text-align:center;
+    float:left;
+}
+
+.DivRight {
+    width:33%;
+    text-align:left;
+    float:left;
+}
+
+#DivCrear h1 {
+    color: white;
+    background-color: #2d343d;
+    font-size:50px;
+}
+
+#DivConsultar h1 {
+    color: white;
+    background-color: #808080;
+    font-size:50px;
+}
+
+.GridView {
+    width:100%;
+    height:auto;
+}
+
+.Textbox {
+    width: 200px;
+    height: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right:20px;
+    margin-left:20px;
+    text-align: center;
+    color: #ADADAD;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:900;
+    font-size:18px;
+    border-style: solid;
+}
+
+.TbxFiltrar {
+    width: 350px;
+    height: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right:20px;
+    margin-left:20px;
+    text-align: center;
+    color: #ADADAD;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:900;
+    font-size:22px;
+    border-style: solid;
+}

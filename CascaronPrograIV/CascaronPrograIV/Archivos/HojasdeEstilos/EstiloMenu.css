@@ -1,45 +1,82 @@
 ﻿body {
-    background: #2d343d;
-}
-
-.formMenu{
-    background: #ffffff;
-    width: 1350px;
-    height: 850px;
-    margin: 50px auto;
-}
-
-.Menu {
-    background: white;
-    font-size: 16px;
-    font-weight: 300;
-    border-style: solid;
-    border-radius: 5px;
-    padding: 10px 10px 10px 10px;
-    width: 220px;
-}
-
-.iframe {
-    margin-top: 5px;
-    width: 1080px;
-    height: 830px;
-    border: solid 1px black;
-    margin-left: 5px;
 }
 
 .divMenu {
-    float:left;
-    width: 250px;
-    height: 850px;
+    width: 100%;
+    height:auto;
+    margin-left:-7px
 }
 
-.divFrame {
-    float:left;
-    width: 1100px;
-    height: 850px;
+#menu {
+    list-style:none;
+    height:100%;
+    background: transparent;
+    width: 100%;
 }
 
-.Imagen{
-    margin-left:10px;
-    margin-top: 10px;
+#menu li {
+    float:left;
+    display:block;
+    text-align:left;
+    position:relative;
+    padding: 4px 10px 4px 10px;
+    border:none;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:20px; 
+    color: #ADADAD;
+    display:block;
+    outline:0;
+    text-decoration:solid;
+    width:auto;
+    background: transparent;
+    height:100%;
+}
+
+#menu li:hover {
+    padding: 4px 9px 4px 9px;
+    background: #2f2e42;
+    color: #ADADAD;
+}
+
+a {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:20px; 
+    color: #ADADAD;
+    display:block;
+    outline:0;
+    text-decoration:solid;
+    width: 100%;
+    text-align:left;
+}
+
+
+a:hover {
+    background: #2f2e42;
+    font-size: 24px;
+}
+
+#menu li .drop {
+    background:url("img/drop.png") no-repeat right 8px;
+}
+#menu li:hover .drop {
+    background:url("img/drop.png") no-repeat right 7px;
+}
+
+.dropdown_columns {
+    margin:4px auto+5px;
+    position:absolute;
+    left:-999em;
+    text-align:center;
+    padding:10px 5px 10px 5px;
+    background-color: #2f2e42;
+    align-items:center;
+    -moz-border-radius: 0px 0px 5px 5px;
+    -webkit-border-radius: 0px 0px 5px 5px;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.dropdown_columns {width: 258px;}
+
+#menu li:hover .dropdown_columns {
+    left: 0px;top:auto;
 }
