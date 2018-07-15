@@ -1,0 +1,154 @@
+﻿body {
+    
+}
+
+.Button {
+  width: 200px;
+  height: 40px;
+  padding: 0;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  background: #2d343d;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer; 
+  outline:0;
+}
+#DivSubMenu {
+    width: 15%;
+    height:100%;
+    float:left;
+    margin-top:30px;
+}
+
+#DivSubMenu h2{
+    margin-left:10px;
+    text-align:left;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#585f70;
+}
+
+.img{
+    height: 40px;
+    width: 40px;
+    margin-left: 10px;
+    margin-top:50px;
+}
+
+#DivContenido {
+    width: 85%;
+    float:left;
+    margin-top:30px;
+}
+
+#DivAutobus {
+    text-align:center;
+}
+
+#DivViaticos {
+    text-align:center;
+}
+
+
+#DivAutobus #GvTarifaAutobus {
+    width:100%;
+    height:auto;
+}
+
+#DivViaticos #GvTarifaViaticos {
+    width:100%;
+    height:auto;
+}
+
+#DivVerificar .Button {
+  margin-top: 20px;
+  margin-right: 40px;
+  margin-left: 40px;
+}
+
+h1 {
+    color: white;
+    background-color: #2d343d;
+    font-size:50px;
+    text-align:center;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 4px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+h1 img {
+    margin-left: 20px;
+}
+
+#menu {
+    list-style:none;
+    height:100%;
+    background: transparent;
+    width: 100%;
+    margin-left: 0px;
+}
+
+#menu li {
+    display:block;
+    text-align:left;
+    padding: 4px 10px 4px 10px;
+    border:none;
+    display:block;
+    outline:0;
+    text-decoration:solid;
+    width:auto;
+    background: transparent;
+    height:100%;
+    margin-top: 20px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 4px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+a {
+    background-color: transparent;
+    text-align:left;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:20px; 
+    color: #585f70;
+}
+
+a :hover {
+    background-color: #2f2e42;
+    color:white;
+    font-size: 24px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 4px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.Textbox {
+    width: 200px;
+    height: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right:20px;
+    margin-left:20px;
+    text-align: center;
+    color: #ADADAD;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:900;
+    font-size:18px;
+    border-style: solid;
+}
+
+.TbxFiltrar {
+    width: 350px;
+    height: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right:20px;
+    margin-left:20px;
+    text-align: center;
+    color: #ADADAD;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:900;
+    font-size:22px;
+    border-style: solid;
+}
