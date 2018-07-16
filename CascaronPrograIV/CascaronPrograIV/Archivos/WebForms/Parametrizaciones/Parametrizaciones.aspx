@@ -16,25 +16,17 @@
                     $('#DivContenido').css("width", "85%")
                 }
             });
-            $('#h1Autobus').click(function () {
-                $('#DivAutobus').toggle(999);
-                $('#DivViaticos').hide(999);
-            });
-            $('#h1Viaticos').click(function () {
-                $('#DivViaticos').toggle(999);
-                $('#DivAutobus').hide(999);
-            });
             $('#liAutobus').click(function () {
-                $('#DivAutobus').toggle(999);
-                $('#DivViaticos').hide(999);
+                $('#DivAutobus').toggle(400);
+                $('#DivViaticos').hide(400);
             });
             $('#liViaticos').click(function () {
-                $('#DivViaticos').toggle(999);
-                $('#DivAutobus').hide(999);
+                $('#DivViaticos').toggle(400);
+                $('#DivAutobus').hide(400);
             });
         });
         $(document).ready(function () {
-            $('#DivAutobus').hide();
+            $('#DivAutobus').show();
             $('#DivViaticos').hide();
         });
     </script>
@@ -56,11 +48,10 @@
         </ul>
     </div>
     <div id="DivContenido">
-        <h1 id="h1Autobus" title="Click para mostrar contenido">Actulizar Tarifas de Autobus
+        <div id="DivAutobus">
+            <h1 id="h1Autobus">Actulizar Tarifas de Autobus
             <img src="../../Recursos/Mostrar.png" />
         </h1>
-        <div id="DivAutobus">
-            <br />
             <asp:TextBox CssClass="TbxFiltrar" ID="TextBox7" runat="server" Text="Buscar"></asp:TextBox>
             <asp:GridView ID="GvTarifaAutobus" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
                 <AlternatingRowStyle BackColor="White" />
@@ -87,9 +78,9 @@
         </div>
         <br />
         <br />
-        <h1 id="h1Viaticos" title="Click para mostrar contenido">Actualizar Tarifas de Viaticos
-            <img src="../../Recursos/Mostrar.png" /></h1>
         <div id="DivViaticos">
+            <h1 id="h1Viaticos">Actualizar Tarifas de Viaticos
+            <img src="../../Recursos/Mostrar.png" /></h1>
             <asp:TextBox ID="TbxFiltrar" CssClass="TbxFiltrar" runat="server" Text="Buscar"></asp:TextBox>
             <asp:GridView CssClass="GridView" ID="GvTarifaViaticos" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
                 <AlternatingRowStyle BackColor="White" />

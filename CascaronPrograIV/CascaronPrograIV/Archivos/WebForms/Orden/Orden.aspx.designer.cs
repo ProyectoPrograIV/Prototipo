@@ -94,13 +94,13 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden {
         protected global::System.Web.UI.WebControls.TextBox TextBox9;
         
         /// <summary>
-        /// Control Btn_Guardar.
+        /// Control Btn_Generar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btn_Guardar;
+        protected global::System.Web.UI.WebControls.Button Btn_Generar;
         
         /// <summary>
         /// Control TbxFiltrar.

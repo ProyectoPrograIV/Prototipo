@@ -71,13 +71,11 @@
     <Content Include="Archivos\HojasdeEstilos\EstiloMenu.css" />
     <Content Include="Archivos\HojasdeEstilos\EstiloRecuperar.css" />
     <Content Include="Archivos\HojasdeEstilos\EstiloRegistro.css" />
-    <Content Include="Archivos\HojasdeEstilos\Liquidacion\EstiloActualizacion.css" />
-    <Content Include="Archivos\HojasdeEstilos\Liquidacion\EstiloConsulta.css" />
-    <Content Include="Archivos\HojasdeEstilos\Liquidacion\EstiloCreacion.css" />
-    <Content Include="Archivos\HojasdeEstilos\Liquidacion\EstiloVerificacion.css" />
+    <Content Include="Archivos\HojasdeEstilos\Liquidacion\EstiloLiquidacion.css" />
     <Content Include="Archivos\HojasdeEstilos\Orden\EstiloOrden.css" />
     <Content Include="Archivos\HojasdeEstilos\Parametrizaciones\EstiloParametros.css" />
     <Content Include="Archivos\HojasdeEstilos\Solicitud\EstiloSolicitud.css" />
+    <Content Include="Archivos\Recursos\company.png" />
     <Content Include="Archivos\Recursos\Liquidacion.png" />
     <Content Include="Archivos\Recursos\menutoggle.png" />
     <Content Include="Archivos\Recursos\Mostrar.png" />
