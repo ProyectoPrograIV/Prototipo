@@ -13,7 +13,6 @@
         <div>
             <br />
             <div class="div">
-                <br />
                 <asp:Label CssClass="label" Text="Recuperar Datos de Ingreso" runat="server" />
                 <br />
                 <br />

@@ -3,6 +3,5 @@ C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Entidades\bin\Debug\Entid
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Entidades\bin\Debug\Entidades.pdb
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Entidades\bin\Debug\EntityFramework.dll
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Entidades\bin\Debug\EntityFramework.xml
-C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Entidades\obj\Debug\Entidades.dll
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Entidades\obj\Debug\Entidades.pdb

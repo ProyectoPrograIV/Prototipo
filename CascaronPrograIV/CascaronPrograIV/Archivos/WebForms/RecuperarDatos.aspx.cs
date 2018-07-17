@@ -4,8 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Datos.ClasesDatos;
-using Procesos.ClasesProcesos;
 
 namespace CascaronPrograIV.Archivos.WebForms
 {
@@ -18,16 +16,6 @@ namespace CascaronPrograIV.Archivos.WebForms
 
         protected void BtnRecuperar_Click(object sender, EventArgs e)
         {
-            if (TbxCorreo.Text != "" && TbxNombreCompleto.Text != "" && TbxNumeroIdentificacion.Text != "")
-            {
-                ClsRecuperarDatos ObjRecuperarDatos = new ClsRecuperarDatos();
-                ClsRecuperarProcesos ObjRecuperarProcesos = new ClsRecuperarProcesos();
-                ObjRecuperarDatos.SNombreCompleto = TbxNombreCompleto.Text;
-                ObjRecuperarDatos.SIdentificacion = TbxNumeroIdentificacion.Text;
-                ObjRecuperarDatos.SCorreoElectronico = TbxCorreo.Text;
-                ObjRecuperarProcesos.Mensaje(ObjRecuperarDatos);
-                Response.Redirect("Ingreso.aspx");
-            }
         }
     }
 }
