@@ -23,3 +23,10 @@ C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\Procesos\obj
 C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\Procesos\obj\Debug\Procesos.csproj.CopyComplete
 C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\Procesos\obj\Debug\Procesos.dll
 C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\Procesos\obj\Debug\Procesos.pdb
+C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\Procesos\bin\Debug\Procesos.dll
+C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\Procesos\bin\Debug\Procesos.pdb
+C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\Procesos\bin\Debug\Datos.dll
+C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\Procesos\bin\Debug\Datos.pdb
+C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\Procesos\obj\Debug\Procesos.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\Procesos\obj\Debug\Procesos.dll
+C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\Procesos\obj\Debug\Procesos.pdb
