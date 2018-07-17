@@ -17,7 +17,7 @@
             <asp:Button CssClass="login-button" ID="BtnIngresar" runat="server" Text="Ingresar" OnClick="BtnIngresar_Click" />
             <div>
                 <br />
-                <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LbtnRecuperar_Click">Recuparar Datos de Ingreso</asp:LinkButton>
+                <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LbtnRecuperar_Click">Recuperar Datos de Ingreso</asp:LinkButton>
             </div>
         </div>
     </form>

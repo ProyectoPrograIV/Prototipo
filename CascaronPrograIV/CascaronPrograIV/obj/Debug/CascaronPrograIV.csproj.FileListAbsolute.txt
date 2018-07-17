@@ -114,3 +114,23 @@ C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\CascaronProg
 C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\CascaronPrograIV\obj\Debug\CascaronPrograIV.csprojResolveAssemblyReference.cache
 C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\CascaronPrograIV\obj\Debug\CascaronPrograIV.dll
 C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\CascaronPrograIV\obj\Debug\CascaronPrograIV.pdb
+C:\Users\leonardo.bonilla\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\csc.exe
+C:\Users\leonardo.bonilla\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\leonardo.bonilla\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\leonardo.bonilla\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\leonardo.bonilla\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\leonardo.bonilla\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\leonardo.bonilla\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\leonardo.bonilla\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\leonardo.bonilla\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\leonardo.bonilla\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\vbc.exe
+C:\Users\leonardo.bonilla\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\VBCSCompiler.exe
+C:\Users\leonardo.bonilla\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\leonardo.bonilla\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\CascaronPrograIV.dll.config
+C:\Users\leonardo.bonilla\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\CascaronPrograIV.dll
+C:\Users\leonardo.bonilla\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\CascaronPrograIV.pdb
+C:\Users\leonardo.bonilla\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\leonardo.bonilla\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\leonardo.bonilla\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\CascaronPrograIV.csprojResolveAssemblyReference.cache
+C:\Users\leonardo.bonilla\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\CascaronPrograIV.dll
+C:\Users\leonardo.bonilla\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\CascaronPrograIV.pdb
