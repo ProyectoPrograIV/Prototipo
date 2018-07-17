@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D83ECD1F-DCCE-4EF1-A330-D97A044D1907}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Entidades</RootNamespace>
+    <AssemblyName>Entidades</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EmpresaPK2.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmpresaPK2.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmpresaPK2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmpresaPK2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmpresaPK2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmpresaPK2.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TBL_CABECERALIQUIDACION.cs">
+      <DependentUpon>EmpresaPK2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_CABECERAORDENVIATICO.cs">
+      <DependentUpon>EmpresaPK2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_CANTON.cs">
+      <DependentUpon>EmpresaPK2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_DETALLESOLICITUDVIATICOS.cs">
+      <DependentUpon>EmpresaPK2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_DETALLEVIATICO.cs">
+      <DependentUpon>EmpresaPK2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_ESTADOS.cs">
+      <DependentUpon>EmpresaPK2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_MODTARIFARIOVIATICO.cs">
+      <DependentUpon>EmpresaPK2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_PERSONA.cs">
+      <DependentUpon>EmpresaPK2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_PROVINCIA.cs">
+      <DependentUpon>EmpresaPK2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_ROLUSUARIO.cs">
+      <DependentUpon>EmpresaPK2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_SOLICITUDVIATICOS.cs">
+      <DependentUpon>EmpresaPK2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_TARIFAAUTOBUS.cs">
+      <DependentUpon>EmpresaPK2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_USUARIO.cs">
+      <DependentUpon>EmpresaPK2.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="EmpresaPK2.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EmpresaPK2.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="EmpresaPK2.edmx.diagram">
+      <DependentUpon>EmpresaPK2.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EmpresaPK2.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EmpresaPK2.Context.cs</LastGenOutput>
+      <DependentUpon>EmpresaPK2.edmx</DependentUpon>
+    </Content>
+    <Content Include="EmpresaPK2.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EmpresaPK2.edmx</DependentUpon>
+      <LastGenOutput>EmpresaPK2.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
