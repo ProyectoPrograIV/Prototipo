@@ -14,3 +14,5 @@ C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\Datos\bin\De
 C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
 C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\Datos\obj\Debug\Datos.dll
 C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\Datos\obj\Debug\Datos.pdb
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Datos\bin\Debug\EntityFramework.dll
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Datos\bin\Debug\EntityFramework.xml

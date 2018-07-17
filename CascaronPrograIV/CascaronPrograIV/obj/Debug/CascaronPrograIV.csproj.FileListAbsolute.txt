@@ -38,10 +38,6 @@ C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\Micr
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\CascaronPrograIV.csprojResolveAssemblyReference.cache
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\CascaronPrograIV.dll
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\CascaronPrograIV.pdb
-C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\Datos.dll
-C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\Procesos.dll
-C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\Datos.pdb
-C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\Procesos.pdb
 C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\csc.exe
 C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
