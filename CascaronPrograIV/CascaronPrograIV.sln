@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentacion", "CascaronPrograIV\Presentacion.csproj", "{E527B42A-99C9-4F72-8DB7-50DA090CF31B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D9E0404F-3054-44B9-BEAF-86F266896FB2} = {D9E0404F-3054-44B9-BEAF-86F266896FB2}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E", "Entidades\E.csproj", "{D83ECD1F-DCCE-4EF1-A330-D97A044D1907}"
 EndProject

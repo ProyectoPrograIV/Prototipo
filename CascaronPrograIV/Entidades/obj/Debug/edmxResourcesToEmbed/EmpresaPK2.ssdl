@@ -1,0 +1,536 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EMPRESA_PK2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TBL_CANTON">
+    <Key>
+      <PropertyRef Name="CODIGOCANTON" />
+    </Key>
+    <Property Name="CODIGOCANTON" Type="tinyint" Nullable="false" />
+    <Property Name="CODIGOPROVINCIA" Type="tinyint" Nullable="false" />
+    <Property Name="DESCRIPCIONPROVINCIA" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_MODTARIFARIOVIATICO">
+    <Key>
+      <PropertyRef Name="ID_MODTARIFA" />
+    </Key>
+    <Property Name="ID_MODTARIFA" Type="smallint" Nullable="false" />
+    <Property Name="CODIGOPROVINCIA" Type="tinyint" Nullable="false" />
+    <Property Name="CODIGOCANTON" Type="tinyint" Nullable="false" />
+    <Property Name="TIPOTARIFA" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FECHATARIFA" Type="datetime" Nullable="false" />
+    <Property Name="MONTOTARIFA" Type="money" Nullable="false" />
+    <Property Name="ESTADOTARIFA" Type="smallint" Nullable="false" />
+    <Property Name="LOCALIDAD" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_PROVINCIA">
+    <Key>
+      <PropertyRef Name="CODIGOPROVINCIA" />
+    </Key>
+    <Property Name="CODIGOPROVINCIA" Type="tinyint" Nullable="false" />
+    <Property Name="DESCRIPCIONPROVINCIA" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_TARIFAAUTOBUS">
+    <Key>
+      <PropertyRef Name="CODIGORUTA" />
+    </Key>
+    <Property Name="CODIGORUTA" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="CODIGOPROVINCIA" Type="tinyint" Nullable="false" />
+    <Property Name="ESTADORUTA" Type="smallint" Nullable="false" />
+    <Property Name="TARIFAREGISTRADA" Type="money" Nullable="false" />
+    <Property Name="DESCRIPCIONRUTA" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FECHAVIGENCIA" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_ESTADOS">
+    <Key>
+      <PropertyRef Name="ID_CODIGO" />
+    </Key>
+    <Property Name="ID_CODIGO" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DESCODIGO" Type="nvarchar" MaxLength="75" Nullable="false" />
+    <Property Name="ESTADOCODIGO" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_PERSONA">
+    <Key>
+      <PropertyRef Name="ID_PERSONA" />
+    </Key>
+    <Property Name="ID_PERSONA" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="41" Nullable="false" />
+    <Property Name="PRIMERAPELLIDO" Type="varchar" MaxLength="36" Nullable="false" />
+    <Property Name="SEGUNDOAPELLIDO" Type="varchar" MaxLength="36" Nullable="false" />
+    <Property Name="NOMBREUSUARIO" Type="nvarchar" MaxLength="24" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_ROLUSUARIO">
+    <Key>
+      <PropertyRef Name="ID_ROL" />
+    </Key>
+    <Property Name="ID_ROL" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DESCRPCIONROL" Type="nvarchar" MaxLength="75" Nullable="false" />
+    <Property Name="ESTADOROL" Type="varchar" MaxLength="36" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_USUARIO">
+    <Key>
+      <PropertyRef Name="NOMBREUSUARIO" />
+    </Key>
+    <Property Name="NOMBREUSUARIO" Type="nvarchar" MaxLength="24" Nullable="false" />
+    <Property Name="CLAVEACCESO" Type="nvarchar" MaxLength="16" Nullable="false" />
+    <Property Name="ID_ROL" Type="smallint" Nullable="false" />
+    <Property Name="ROLUSUARIO" Type="varchar" MaxLength="36" Nullable="false" />
+    <Property Name="ESTADOUSARIO" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_CABECERALIQUIDACION">
+    <Key>
+      <PropertyRef Name="ID_LIQUIDACION" />
+    </Key>
+    <Property Name="ID_LIQUIDACION" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_ORDEN" Type="int" Nullable="false" />
+    <Property Name="ESTADOLIQUIDACION" Type="smallint" Nullable="false" />
+    <Property Name="FECHALIQUIDACION" Type="datetime" Nullable="false" />
+    <Property Name="MONTODESAYUNO" Type="money" Nullable="false" />
+    <Property Name="MONTOALMUERZO" Type="money" Nullable="false" />
+    <Property Name="MONTOCENA" Type="money" Nullable="false" />
+    <Property Name="MONTOHOSPEDAJE" Type="money" Nullable="false" />
+    <Property Name="MONTOPASAJE" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_CABECERAORDENVIATICO">
+    <Key>
+      <PropertyRef Name="ID_ORDEN" />
+    </Key>
+    <Property Name="ID_ORDEN" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_SOLICITUD" Type="int" Nullable="false" />
+    <Property Name="ID_LIQUIDACION" Type="int" Nullable="false" />
+    <Property Name="ESTADOORDEN" Type="smallint" Nullable="false" />
+    <Property Name="FECHAORDEN" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_DETALLESOLICITUDVIATICOS">
+    <Key>
+      <PropertyRef Name="ID_DETALLE" />
+    </Key>
+    <Property Name="ID_DETALLE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_SOLICITUD" Type="int" Nullable="false" />
+    <Property Name="ID_PERSONA" Type="smallint" Nullable="false" />
+    <Property Name="ID_MODTARIFA" Type="smallint" Nullable="false" />
+    <Property Name="CANTIDADVIATICOS" Type="smallint" Nullable="false" />
+    <Property Name="FECHAVIATICOS" Type="datetime" Nullable="false" />
+    <Property Name="CODIGORUTA" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="CANTIDADPASAJE" Type="smallint" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'EMPRESA_PK2.SCH_VIATICOS.TBL_DETALLEVIATICO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TBL_DETALLEVIATICO">
+    <Key>
+      <PropertyRef Name="ID_DETALLE" />
+      <PropertyRef Name="ID_ORDEN" />
+      <PropertyRef Name="CANTIDADDESAYUNO" />
+      <PropertyRef Name="MONTODESAYUNO" />
+      <PropertyRef Name="CANTIDADALMUERZO" />
+      <PropertyRef Name="MONTOALMUERZO" />
+      <PropertyRef Name="CANTIDADCENA" />
+      <PropertyRef Name="MONTOCENA" />
+      <PropertyRef Name="CANTIDADPASAJE" />
+      <PropertyRef Name="MONTOPASAJE" />
+    </Key>
+    <Property Name="ID_DETALLE" Type="int" Nullable="false" />
+    <Property Name="ID_ORDEN" Type="int" Nullable="false" />
+    <Property Name="CANTIDADDESAYUNO" Type="smallint" Nullable="false" />
+    <Property Name="MONTODESAYUNO" Type="money" Nullable="false" />
+    <Property Name="CANTIDADALMUERZO" Type="smallint" Nullable="false" />
+    <Property Name="MONTOALMUERZO" Type="money" Nullable="false" />
+    <Property Name="CANTIDADCENA" Type="smallint" Nullable="false" />
+    <Property Name="MONTOCENA" Type="money" Nullable="false" />
+    <Property Name="CANTIDADPASAJE" Type="smallint" Nullable="false" />
+    <Property Name="MONTOPASAJE" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_SOLICITUDVIATICOS">
+    <Key>
+      <PropertyRef Name="ID_SOLICITUD" />
+    </Key>
+    <Property Name="ID_SOLICITUD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBREUSUARIO" Type="nvarchar" MaxLength="24" Nullable="false" />
+    <Property Name="FECHACREACION" Type="datetime" Nullable="false" />
+    <Property Name="FECHASALIDA" Type="datetime" Nullable="false" />
+    <Property Name="FECHAREGRESO" Type="datetime" Nullable="false" />
+    <Property Name="ESTADOSOLICITUD" Type="smallint" Nullable="false" />
+    <Property Name="JUSTIFICACION" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DESTINO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="HORAREGRESO" Type="time" Precision="7" Nullable="false" />
+    <Property Name="HORASALIDA" Type="time" Precision="7" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_TBLCABECERALIQUIDACION_TBLCABECERAORDENVIATICO">
+    <End Role="TBL_CABECERAORDENVIATICO" Type="Self.TBL_CABECERAORDENVIATICO" Multiplicity="1" />
+    <End Role="TBL_CABECERALIQUIDACION" Type="Self.TBL_CABECERALIQUIDACION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_CABECERAORDENVIATICO">
+        <PropertyRef Name="ID_ORDEN" />
+      </Principal>
+      <Dependent Role="TBL_CABECERALIQUIDACION">
+        <PropertyRef Name="ID_ORDEN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLCABECERALIQUIDACION_TBLESTADOS">
+    <End Role="TBL_ESTADOS" Type="Self.TBL_ESTADOS" Multiplicity="1" />
+    <End Role="TBL_CABECERALIQUIDACION" Type="Self.TBL_CABECERALIQUIDACION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_ESTADOS">
+        <PropertyRef Name="ID_CODIGO" />
+      </Principal>
+      <Dependent Role="TBL_CABECERALIQUIDACION">
+        <PropertyRef Name="ESTADOLIQUIDACION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLCABECERAORDENVIATICO_TBLCABECERALIQUIDACION">
+    <End Role="TBL_CABECERALIQUIDACION" Type="Self.TBL_CABECERALIQUIDACION" Multiplicity="1" />
+    <End Role="TBL_CABECERAORDENVIATICO" Type="Self.TBL_CABECERAORDENVIATICO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_CABECERALIQUIDACION">
+        <PropertyRef Name="ID_LIQUIDACION" />
+      </Principal>
+      <Dependent Role="TBL_CABECERAORDENVIATICO">
+        <PropertyRef Name="ID_LIQUIDACION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLCABECERAORDENVIATICO_TBLESTADOS">
+    <End Role="TBL_ESTADOS" Type="Self.TBL_ESTADOS" Multiplicity="1" />
+    <End Role="TBL_CABECERAORDENVIATICO" Type="Self.TBL_CABECERAORDENVIATICO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_ESTADOS">
+        <PropertyRef Name="ID_CODIGO" />
+      </Principal>
+      <Dependent Role="TBL_CABECERAORDENVIATICO">
+        <PropertyRef Name="ESTADOORDEN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLCABECERAORDENVIATICO_TBLSOLICITUDVIATICOS">
+    <End Role="TBL_SOLICITUDVIATICOS" Type="Self.TBL_SOLICITUDVIATICOS" Multiplicity="1" />
+    <End Role="TBL_CABECERAORDENVIATICO" Type="Self.TBL_CABECERAORDENVIATICO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_SOLICITUDVIATICOS">
+        <PropertyRef Name="ID_SOLICITUD" />
+      </Principal>
+      <Dependent Role="TBL_CABECERAORDENVIATICO">
+        <PropertyRef Name="ID_SOLICITUD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLCANTON_TBLPROVINCIA">
+    <End Role="TBL_PROVINCIA" Type="Self.TBL_PROVINCIA" Multiplicity="1" />
+    <End Role="TBL_CANTON" Type="Self.TBL_CANTON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_PROVINCIA">
+        <PropertyRef Name="CODIGOPROVINCIA" />
+      </Principal>
+      <Dependent Role="TBL_CANTON">
+        <PropertyRef Name="CODIGOPROVINCIA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLDETALLESOLICITUDVIATICOS_TBLMODTARIFARIOVIATICO">
+    <End Role="TBL_MODTARIFARIOVIATICO" Type="Self.TBL_MODTARIFARIOVIATICO" Multiplicity="1" />
+    <End Role="TBL_DETALLESOLICITUDVIATICOS" Type="Self.TBL_DETALLESOLICITUDVIATICOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_MODTARIFARIOVIATICO">
+        <PropertyRef Name="ID_MODTARIFA" />
+      </Principal>
+      <Dependent Role="TBL_DETALLESOLICITUDVIATICOS">
+        <PropertyRef Name="ID_MODTARIFA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLDETALLESOLICITUDVIATICOS_TBLPERSONA">
+    <End Role="TBL_PERSONA" Type="Self.TBL_PERSONA" Multiplicity="1" />
+    <End Role="TBL_DETALLESOLICITUDVIATICOS" Type="Self.TBL_DETALLESOLICITUDVIATICOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_PERSONA">
+        <PropertyRef Name="ID_PERSONA" />
+      </Principal>
+      <Dependent Role="TBL_DETALLESOLICITUDVIATICOS">
+        <PropertyRef Name="ID_PERSONA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLDETALLESOLICITUDVIATICOS_TBLSOLICITUDVIATICOS">
+    <End Role="TBL_SOLICITUDVIATICOS" Type="Self.TBL_SOLICITUDVIATICOS" Multiplicity="1" />
+    <End Role="TBL_DETALLESOLICITUDVIATICOS" Type="Self.TBL_DETALLESOLICITUDVIATICOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_SOLICITUDVIATICOS">
+        <PropertyRef Name="ID_SOLICITUD" />
+      </Principal>
+      <Dependent Role="TBL_DETALLESOLICITUDVIATICOS">
+        <PropertyRef Name="ID_SOLICITUD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLDETALLESOLICITUDVIATICOS_TBLTARIFAAUTOBUS">
+    <End Role="TBL_TARIFAAUTOBUS" Type="Self.TBL_TARIFAAUTOBUS" Multiplicity="1" />
+    <End Role="TBL_DETALLESOLICITUDVIATICOS" Type="Self.TBL_DETALLESOLICITUDVIATICOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_TARIFAAUTOBUS">
+        <PropertyRef Name="CODIGORUTA" />
+      </Principal>
+      <Dependent Role="TBL_DETALLESOLICITUDVIATICOS">
+        <PropertyRef Name="CODIGORUTA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLDETALLEVIATICO_TBLCABECERAORDENVIATICO">
+    <End Role="TBL_CABECERAORDENVIATICO" Type="Self.TBL_CABECERAORDENVIATICO" Multiplicity="1" />
+    <End Role="TBL_DETALLEVIATICO" Type="Self.TBL_DETALLEVIATICO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_CABECERAORDENVIATICO">
+        <PropertyRef Name="ID_ORDEN" />
+      </Principal>
+      <Dependent Role="TBL_DETALLEVIATICO">
+        <PropertyRef Name="ID_ORDEN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLDETALLEVIATICO_TBLDETALLESOLICITUDVIATICOS">
+    <End Role="TBL_DETALLESOLICITUDVIATICOS" Type="Self.TBL_DETALLESOLICITUDVIATICOS" Multiplicity="1" />
+    <End Role="TBL_DETALLEVIATICO" Type="Self.TBL_DETALLEVIATICO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_DETALLESOLICITUDVIATICOS">
+        <PropertyRef Name="ID_DETALLE" />
+      </Principal>
+      <Dependent Role="TBL_DETALLEVIATICO">
+        <PropertyRef Name="ID_DETALLE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLMODTARIFARIOVIATICO_TBL_ESTADOS">
+    <End Role="TBL_ESTADOS" Type="Self.TBL_ESTADOS" Multiplicity="1" />
+    <End Role="TBL_MODTARIFARIOVIATICO" Type="Self.TBL_MODTARIFARIOVIATICO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_ESTADOS">
+        <PropertyRef Name="ID_CODIGO" />
+      </Principal>
+      <Dependent Role="TBL_MODTARIFARIOVIATICO">
+        <PropertyRef Name="ESTADOTARIFA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLMODTARIFARIOVIATICO_TBLCANTON">
+    <End Role="TBL_CANTON" Type="Self.TBL_CANTON" Multiplicity="1" />
+    <End Role="TBL_MODTARIFARIOVIATICO" Type="Self.TBL_MODTARIFARIOVIATICO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_CANTON">
+        <PropertyRef Name="CODIGOCANTON" />
+      </Principal>
+      <Dependent Role="TBL_MODTARIFARIOVIATICO">
+        <PropertyRef Name="CODIGOCANTON" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLMODTARIFARIOVIATICO_TBLPROVINCIA">
+    <End Role="TBL_PROVINCIA" Type="Self.TBL_PROVINCIA" Multiplicity="1" />
+    <End Role="TBL_MODTARIFARIOVIATICO" Type="Self.TBL_MODTARIFARIOVIATICO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_PROVINCIA">
+        <PropertyRef Name="CODIGOPROVINCIA" />
+      </Principal>
+      <Dependent Role="TBL_MODTARIFARIOVIATICO">
+        <PropertyRef Name="CODIGOPROVINCIA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLPERSONA_TBLUSUARIO">
+    <End Role="TBL_USUARIO" Type="Self.TBL_USUARIO" Multiplicity="1" />
+    <End Role="TBL_PERSONA" Type="Self.TBL_PERSONA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USUARIO">
+        <PropertyRef Name="NOMBREUSUARIO" />
+      </Principal>
+      <Dependent Role="TBL_PERSONA">
+        <PropertyRef Name="NOMBREUSUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLSOLICITUDVIATICOS_TBLESTADOS">
+    <End Role="TBL_ESTADOS" Type="Self.TBL_ESTADOS" Multiplicity="1" />
+    <End Role="TBL_SOLICITUDVIATICOS" Type="Self.TBL_SOLICITUDVIATICOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_ESTADOS">
+        <PropertyRef Name="ID_CODIGO" />
+      </Principal>
+      <Dependent Role="TBL_SOLICITUDVIATICOS">
+        <PropertyRef Name="ESTADOSOLICITUD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLSOLICITUDVIATICOS_TBLUSUARIO">
+    <End Role="TBL_USUARIO" Type="Self.TBL_USUARIO" Multiplicity="1" />
+    <End Role="TBL_SOLICITUDVIATICOS" Type="Self.TBL_SOLICITUDVIATICOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USUARIO">
+        <PropertyRef Name="NOMBREUSUARIO" />
+      </Principal>
+      <Dependent Role="TBL_SOLICITUDVIATICOS">
+        <PropertyRef Name="NOMBREUSUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLTARIFAAUTOBUS_TBLESTADOS">
+    <End Role="TBL_ESTADOS" Type="Self.TBL_ESTADOS" Multiplicity="1" />
+    <End Role="TBL_TARIFAAUTOBUS" Type="Self.TBL_TARIFAAUTOBUS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_ESTADOS">
+        <PropertyRef Name="ID_CODIGO" />
+      </Principal>
+      <Dependent Role="TBL_TARIFAAUTOBUS">
+        <PropertyRef Name="ESTADORUTA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLTARIFAAUTOBUS_TBLPROVINCIA">
+    <End Role="TBL_PROVINCIA" Type="Self.TBL_PROVINCIA" Multiplicity="1" />
+    <End Role="TBL_TARIFAAUTOBUS" Type="Self.TBL_TARIFAAUTOBUS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_PROVINCIA">
+        <PropertyRef Name="CODIGOPROVINCIA" />
+      </Principal>
+      <Dependent Role="TBL_TARIFAAUTOBUS">
+        <PropertyRef Name="CODIGOPROVINCIA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLUSUARIO_TBLESTADOS">
+    <End Role="TBL_ESTADOS" Type="Self.TBL_ESTADOS" Multiplicity="1" />
+    <End Role="TBL_USUARIO" Type="Self.TBL_USUARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_ESTADOS">
+        <PropertyRef Name="ID_CODIGO" />
+      </Principal>
+      <Dependent Role="TBL_USUARIO">
+        <PropertyRef Name="ESTADOUSARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLUSUARIO_TBLROLUSUARIO">
+    <End Role="TBL_ROLUSUARIO" Type="Self.TBL_ROLUSUARIO" Multiplicity="1" />
+    <End Role="TBL_USUARIO" Type="Self.TBL_USUARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_ROLUSUARIO">
+        <PropertyRef Name="ID_ROL" />
+      </Principal>
+      <Dependent Role="TBL_USUARIO">
+        <PropertyRef Name="ID_ROL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EMPRESA_PK2ModelStoreContainer">
+    <EntitySet Name="TBL_CANTON" EntityType="Self.TBL_CANTON" Schema="SCH_PARAMETROS" store:Type="Tables" />
+    <EntitySet Name="TBL_MODTARIFARIOVIATICO" EntityType="Self.TBL_MODTARIFARIOVIATICO" Schema="SCH_PARAMETROS" store:Type="Tables" />
+    <EntitySet Name="TBL_PROVINCIA" EntityType="Self.TBL_PROVINCIA" Schema="SCH_PARAMETROS" store:Type="Tables" />
+    <EntitySet Name="TBL_TARIFAAUTOBUS" EntityType="Self.TBL_TARIFAAUTOBUS" Schema="SCH_PARAMETROS" store:Type="Tables" />
+    <EntitySet Name="TBL_ESTADOS" EntityType="Self.TBL_ESTADOS" Schema="SCH_SEGURIDAD" store:Type="Tables" />
+    <EntitySet Name="TBL_PERSONA" EntityType="Self.TBL_PERSONA" Schema="SCH_SEGURIDAD" store:Type="Tables" />
+    <EntitySet Name="TBL_ROLUSUARIO" EntityType="Self.TBL_ROLUSUARIO" Schema="SCH_SEGURIDAD" store:Type="Tables" />
+    <EntitySet Name="TBL_USUARIO" EntityType="Self.TBL_USUARIO" Schema="SCH_SEGURIDAD" store:Type="Tables" />
+    <EntitySet Name="TBL_CABECERALIQUIDACION" EntityType="Self.TBL_CABECERALIQUIDACION" Schema="SCH_VIATICOS" store:Type="Tables" />
+    <EntitySet Name="TBL_CABECERAORDENVIATICO" EntityType="Self.TBL_CABECERAORDENVIATICO" Schema="SCH_VIATICOS" store:Type="Tables" />
+    <EntitySet Name="TBL_DETALLESOLICITUDVIATICOS" EntityType="Self.TBL_DETALLESOLICITUDVIATICOS" Schema="SCH_VIATICOS" store:Type="Tables" />
+    <EntitySet Name="TBL_SOLICITUDVIATICOS" EntityType="Self.TBL_SOLICITUDVIATICOS" Schema="SCH_VIATICOS" store:Type="Tables" />
+    <EntitySet Name="TBL_DETALLEVIATICO" EntityType="Self.TBL_DETALLEVIATICO" store:Type="Tables" store:Schema="SCH_VIATICOS">
+      <DefiningQuery>SELECT 
+[TBL_DETALLEVIATICO].[ID_DETALLE] AS [ID_DETALLE], 
+[TBL_DETALLEVIATICO].[ID_ORDEN] AS [ID_ORDEN], 
+[TBL_DETALLEVIATICO].[CANTIDADDESAYUNO] AS [CANTIDADDESAYUNO], 
+[TBL_DETALLEVIATICO].[MONTODESAYUNO] AS [MONTODESAYUNO], 
+[TBL_DETALLEVIATICO].[CANTIDADALMUERZO] AS [CANTIDADALMUERZO], 
+[TBL_DETALLEVIATICO].[MONTOALMUERZO] AS [MONTOALMUERZO], 
+[TBL_DETALLEVIATICO].[CANTIDADCENA] AS [CANTIDADCENA], 
+[TBL_DETALLEVIATICO].[MONTOCENA] AS [MONTOCENA], 
+[TBL_DETALLEVIATICO].[CANTIDADPASAJE] AS [CANTIDADPASAJE], 
+[TBL_DETALLEVIATICO].[MONTOPASAJE] AS [MONTOPASAJE]
+FROM [SCH_VIATICOS].[TBL_DETALLEVIATICO] AS [TBL_DETALLEVIATICO]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_TBLCABECERALIQUIDACION_TBLCABECERAORDENVIATICO" Association="Self.FK_TBLCABECERALIQUIDACION_TBLCABECERAORDENVIATICO">
+      <End Role="TBL_CABECERAORDENVIATICO" EntitySet="TBL_CABECERAORDENVIATICO" />
+      <End Role="TBL_CABECERALIQUIDACION" EntitySet="TBL_CABECERALIQUIDACION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLCABECERALIQUIDACION_TBLESTADOS" Association="Self.FK_TBLCABECERALIQUIDACION_TBLESTADOS">
+      <End Role="TBL_ESTADOS" EntitySet="TBL_ESTADOS" />
+      <End Role="TBL_CABECERALIQUIDACION" EntitySet="TBL_CABECERALIQUIDACION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLCABECERAORDENVIATICO_TBLCABECERALIQUIDACION" Association="Self.FK_TBLCABECERAORDENVIATICO_TBLCABECERALIQUIDACION">
+      <End Role="TBL_CABECERALIQUIDACION" EntitySet="TBL_CABECERALIQUIDACION" />
+      <End Role="TBL_CABECERAORDENVIATICO" EntitySet="TBL_CABECERAORDENVIATICO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLCABECERAORDENVIATICO_TBLESTADOS" Association="Self.FK_TBLCABECERAORDENVIATICO_TBLESTADOS">
+      <End Role="TBL_ESTADOS" EntitySet="TBL_ESTADOS" />
+      <End Role="TBL_CABECERAORDENVIATICO" EntitySet="TBL_CABECERAORDENVIATICO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLCABECERAORDENVIATICO_TBLSOLICITUDVIATICOS" Association="Self.FK_TBLCABECERAORDENVIATICO_TBLSOLICITUDVIATICOS">
+      <End Role="TBL_SOLICITUDVIATICOS" EntitySet="TBL_SOLICITUDVIATICOS" />
+      <End Role="TBL_CABECERAORDENVIATICO" EntitySet="TBL_CABECERAORDENVIATICO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLCANTON_TBLPROVINCIA" Association="Self.FK_TBLCANTON_TBLPROVINCIA">
+      <End Role="TBL_PROVINCIA" EntitySet="TBL_PROVINCIA" />
+      <End Role="TBL_CANTON" EntitySet="TBL_CANTON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLDETALLESOLICITUDVIATICOS_TBLMODTARIFARIOVIATICO" Association="Self.FK_TBLDETALLESOLICITUDVIATICOS_TBLMODTARIFARIOVIATICO">
+      <End Role="TBL_MODTARIFARIOVIATICO" EntitySet="TBL_MODTARIFARIOVIATICO" />
+      <End Role="TBL_DETALLESOLICITUDVIATICOS" EntitySet="TBL_DETALLESOLICITUDVIATICOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLDETALLESOLICITUDVIATICOS_TBLPERSONA" Association="Self.FK_TBLDETALLESOLICITUDVIATICOS_TBLPERSONA">
+      <End Role="TBL_PERSONA" EntitySet="TBL_PERSONA" />
+      <End Role="TBL_DETALLESOLICITUDVIATICOS" EntitySet="TBL_DETALLESOLICITUDVIATICOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLDETALLESOLICITUDVIATICOS_TBLSOLICITUDVIATICOS" Association="Self.FK_TBLDETALLESOLICITUDVIATICOS_TBLSOLICITUDVIATICOS">
+      <End Role="TBL_SOLICITUDVIATICOS" EntitySet="TBL_SOLICITUDVIATICOS" />
+      <End Role="TBL_DETALLESOLICITUDVIATICOS" EntitySet="TBL_DETALLESOLICITUDVIATICOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLDETALLESOLICITUDVIATICOS_TBLTARIFAAUTOBUS" Association="Self.FK_TBLDETALLESOLICITUDVIATICOS_TBLTARIFAAUTOBUS">
+      <End Role="TBL_TARIFAAUTOBUS" EntitySet="TBL_TARIFAAUTOBUS" />
+      <End Role="TBL_DETALLESOLICITUDVIATICOS" EntitySet="TBL_DETALLESOLICITUDVIATICOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLDETALLEVIATICO_TBLCABECERAORDENVIATICO" Association="Self.FK_TBLDETALLEVIATICO_TBLCABECERAORDENVIATICO">
+      <End Role="TBL_CABECERAORDENVIATICO" EntitySet="TBL_CABECERAORDENVIATICO" />
+      <End Role="TBL_DETALLEVIATICO" EntitySet="TBL_DETALLEVIATICO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLDETALLEVIATICO_TBLDETALLESOLICITUDVIATICOS" Association="Self.FK_TBLDETALLEVIATICO_TBLDETALLESOLICITUDVIATICOS">
+      <End Role="TBL_DETALLESOLICITUDVIATICOS" EntitySet="TBL_DETALLESOLICITUDVIATICOS" />
+      <End Role="TBL_DETALLEVIATICO" EntitySet="TBL_DETALLEVIATICO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLMODTARIFARIOVIATICO_TBL_ESTADOS" Association="Self.FK_TBLMODTARIFARIOVIATICO_TBL_ESTADOS">
+      <End Role="TBL_ESTADOS" EntitySet="TBL_ESTADOS" />
+      <End Role="TBL_MODTARIFARIOVIATICO" EntitySet="TBL_MODTARIFARIOVIATICO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLMODTARIFARIOVIATICO_TBLCANTON" Association="Self.FK_TBLMODTARIFARIOVIATICO_TBLCANTON">
+      <End Role="TBL_CANTON" EntitySet="TBL_CANTON" />
+      <End Role="TBL_MODTARIFARIOVIATICO" EntitySet="TBL_MODTARIFARIOVIATICO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLMODTARIFARIOVIATICO_TBLPROVINCIA" Association="Self.FK_TBLMODTARIFARIOVIATICO_TBLPROVINCIA">
+      <End Role="TBL_PROVINCIA" EntitySet="TBL_PROVINCIA" />
+      <End Role="TBL_MODTARIFARIOVIATICO" EntitySet="TBL_MODTARIFARIOVIATICO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLPERSONA_TBLUSUARIO" Association="Self.FK_TBLPERSONA_TBLUSUARIO">
+      <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
+      <End Role="TBL_PERSONA" EntitySet="TBL_PERSONA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLSOLICITUDVIATICOS_TBLESTADOS" Association="Self.FK_TBLSOLICITUDVIATICOS_TBLESTADOS">
+      <End Role="TBL_ESTADOS" EntitySet="TBL_ESTADOS" />
+      <End Role="TBL_SOLICITUDVIATICOS" EntitySet="TBL_SOLICITUDVIATICOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLSOLICITUDVIATICOS_TBLUSUARIO" Association="Self.FK_TBLSOLICITUDVIATICOS_TBLUSUARIO">
+      <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
+      <End Role="TBL_SOLICITUDVIATICOS" EntitySet="TBL_SOLICITUDVIATICOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLTARIFAAUTOBUS_TBLESTADOS" Association="Self.FK_TBLTARIFAAUTOBUS_TBLESTADOS">
+      <End Role="TBL_ESTADOS" EntitySet="TBL_ESTADOS" />
+      <End Role="TBL_TARIFAAUTOBUS" EntitySet="TBL_TARIFAAUTOBUS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLTARIFAAUTOBUS_TBLPROVINCIA" Association="Self.FK_TBLTARIFAAUTOBUS_TBLPROVINCIA">
+      <End Role="TBL_PROVINCIA" EntitySet="TBL_PROVINCIA" />
+      <End Role="TBL_TARIFAAUTOBUS" EntitySet="TBL_TARIFAAUTOBUS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLUSUARIO_TBLESTADOS" Association="Self.FK_TBLUSUARIO_TBLESTADOS">
+      <End Role="TBL_ESTADOS" EntitySet="TBL_ESTADOS" />
+      <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLUSUARIO_TBLROLUSUARIO" Association="Self.FK_TBLUSUARIO_TBLROLUSUARIO">
+      <End Role="TBL_ROLUSUARIO" EntitySet="TBL_ROLUSUARIO" />
+      <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

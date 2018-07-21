@@ -1,0 +1,14 @@
+C:\Users\ExtremeTech\Source\Repos\Prototipo\CascaronPrograIV\LN\bin\Debug\LN.dll
+C:\Users\ExtremeTech\Source\Repos\Prototipo\CascaronPrograIV\LN\bin\Debug\LN.pdb
+C:\Users\ExtremeTech\Source\Repos\Prototipo\CascaronPrograIV\LN\bin\Debug\AD.dll
+C:\Users\ExtremeTech\Source\Repos\Prototipo\CascaronPrograIV\LN\bin\Debug\Entidades.dll
+C:\Users\ExtremeTech\Source\Repos\Prototipo\CascaronPrograIV\LN\bin\Debug\EntityFramework.dll
+C:\Users\ExtremeTech\Source\Repos\Prototipo\CascaronPrograIV\LN\bin\Debug\AD.pdb
+C:\Users\ExtremeTech\Source\Repos\Prototipo\CascaronPrograIV\LN\bin\Debug\Entidades.pdb
+C:\Users\ExtremeTech\Source\Repos\Prototipo\CascaronPrograIV\LN\bin\Debug\Entidades.dll.config
+C:\Users\ExtremeTech\Source\Repos\Prototipo\CascaronPrograIV\LN\bin\Debug\EntityFramework.xml
+C:\Users\ExtremeTech\Source\Repos\Prototipo\CascaronPrograIV\LN\obj\Debug\LN.csprojAssemblyReference.cache
+C:\Users\ExtremeTech\Source\Repos\Prototipo\CascaronPrograIV\LN\obj\Debug\LN.csproj.CoreCompileInputs.cache
+C:\Users\ExtremeTech\Source\Repos\Prototipo\CascaronPrograIV\LN\obj\Debug\LN.csproj.CopyComplete
+C:\Users\ExtremeTech\Source\Repos\Prototipo\CascaronPrograIV\LN\obj\Debug\LN.dll
+C:\Users\ExtremeTech\Source\Repos\Prototipo\CascaronPrograIV\LN\obj\Debug\LN.pdb

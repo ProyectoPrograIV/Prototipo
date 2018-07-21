@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Entidades" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Entidades" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:64695/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="TBL_ROLUSUARIO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DESCRPCIONROL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADOROL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID_ROL" type="xs:short" />
+      <xs:element minOccurs="0" name="TBL_USUARIO" nillable="true" type="tns:ArrayOfTBL_USUARIO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TBL_ROLUSUARIO" nillable="true" type="tns:TBL_ROLUSUARIO" />
+  <xs:complexType name="ArrayOfTBL_USUARIO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TBL_USUARIO" nillable="true" type="tns:TBL_USUARIO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTBL_USUARIO" nillable="true" type="tns:ArrayOfTBL_USUARIO" />
+  <xs:complexType name="TBL_USUARIO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CLAVEACCESO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADOUSARIO" type="xs:short" />
+      <xs:element minOccurs="0" name="ID_ROL" type="xs:short" />
+      <xs:element minOccurs="0" name="NOMBREUSUARIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ROLUSUARIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TBL_ESTADOS" nillable="true" type="tns:TBL_ESTADOS" />
+      <xs:element minOccurs="0" name="TBL_PERSONA" nillable="true" type="tns:ArrayOfTBL_PERSONA" />
+      <xs:element minOccurs="0" name="TBL_ROLUSUARIO" nillable="true" type="tns:TBL_ROLUSUARIO" />
+      <xs:element minOccurs="0" name="TBL_SOLICITUDVIATICOS" nillable="true" type="tns:ArrayOfTBL_SOLICITUDVIATICOS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TBL_USUARIO" nillable="true" type="tns:TBL_USUARIO" />
+  <xs:complexType name="TBL_ESTADOS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DESCODIGO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADOCODIGO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID_CODIGO" type="xs:short" />
+      <xs:element minOccurs="0" name="TBL_CABECERALIQUIDACION" nillable="true" type="tns:ArrayOfTBL_CABECERALIQUIDACION" />
+      <xs:element minOccurs="0" name="TBL_CABECERAORDENVIATICO" nillable="true" type="tns:ArrayOfTBL_CABECERAORDENVIATICO" />
+      <xs:element minOccurs="0" name="TBL_MODTARIFARIOVIATICO" nillable="true" type="tns:ArrayOfTBL_MODTARIFARIOVIATICO" />
+      <xs:element minOccurs="0" name="TBL_SOLICITUDVIATICOS" nillable="true" type="tns:ArrayOfTBL_SOLICITUDVIATICOS" />
+      <xs:element minOccurs="0" name="TBL_TARIFAAUTOBUS" nillable="true" type="tns:ArrayOfTBL_TARIFAAUTOBUS" />
+      <xs:element minOccurs="0" name="TBL_USUARIO" nillable="true" type="tns:ArrayOfTBL_USUARIO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TBL_ESTADOS" nillable="true" type="tns:TBL_ESTADOS" />
+  <xs:complexType name="ArrayOfTBL_CABECERALIQUIDACION">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TBL_CABECERALIQUIDACION" nillable="true" type="tns:TBL_CABECERALIQUIDACION" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTBL_CABECERALIQUIDACION" nillable="true" type="tns:ArrayOfTBL_CABECERALIQUIDACION" />
+  <xs:complexType name="TBL_CABECERALIQUIDACION">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ESTADOLIQUIDACION" type="xs:short" />
+      <xs:element minOccurs="0" name="FECHALIQUIDACION" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ID_LIQUIDACION" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_ORDEN" type="xs:int" />
+      <xs:element minOccurs="0" name="MONTOALMUERZO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MONTOCENA" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MONTODESAYUNO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MONTOHOSPEDAJE" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MONTOPASAJE" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TBL_CABECERAORDENVIATICO" nillable="true" type="tns:TBL_CABECERAORDENVIATICO" />
+      <xs:element minOccurs="0" name="TBL_CABECERAORDENVIATICO1" nillable="true" type="tns:ArrayOfTBL_CABECERAORDENVIATICO" />
+      <xs:element minOccurs="0" name="TBL_ESTADOS" nillable="true" type="tns:TBL_ESTADOS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TBL_CABECERALIQUIDACION" nillable="true" type="tns:TBL_CABECERALIQUIDACION" />
+  <xs:complexType name="TBL_CABECERAORDENVIATICO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ESTADOORDEN" type="xs:short" />
+      <xs:element minOccurs="0" name="FECHAORDEN" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ID_LIQUIDACION" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_ORDEN" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_SOLICITUD" type="xs:int" />
+      <xs:element minOccurs="0" name="TBL_CABECERALIQUIDACION" nillable="true" type="tns:ArrayOfTBL_CABECERALIQUIDACION" />
+      <xs:element minOccurs="0" name="TBL_CABECERALIQUIDACION1" nillable="true" type="tns:TBL_CABECERALIQUIDACION" />
+      <xs:element minOccurs="0" name="TBL_DETALLEVIATICO" nillable="true" type="tns:ArrayOfTBL_DETALLEVIATICO" />
+      <xs:element minOccurs="0" name="TBL_ESTADOS" nillable="true" type="tns:TBL_ESTADOS" />
+      <xs:element minOccurs="0" name="TBL_SOLICITUDVIATICOS" nillable="true" type="tns:TBL_SOLICITUDVIATICOS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TBL_CABECERAORDENVIATICO" nillable="true" type="tns:TBL_CABECERAORDENVIATICO" />
+  <xs:complexType name="ArrayOfTBL_DETALLEVIATICO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TBL_DETALLEVIATICO" nillable="true" type="tns:TBL_DETALLEVIATICO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTBL_DETALLEVIATICO" nillable="true" type="tns:ArrayOfTBL_DETALLEVIATICO" />
+  <xs:complexType name="TBL_DETALLEVIATICO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CANTIDADALMUERZO" type="xs:short" />
+      <xs:element minOccurs="0" name="CANTIDADCENA" type="xs:short" />
+      <xs:element minOccurs="0" name="CANTIDADDESAYUNO" type="xs:short" />
+      <xs:element minOccurs="0" name="CANTIDADPASAJE" type="xs:short" />
+      <xs:element minOccurs="0" name="ID_DETALLE" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_ORDEN" type="xs:int" />
+      <xs:element minOccurs="0" name="MONTOALMUERZO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MONTOCENA" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MONTODESAYUNO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MONTOPASAJE" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TBL_CABECERAORDENVIATICO" nillable="true" type="tns:TBL_CABECERAORDENVIATICO" />
+      <xs:element minOccurs="0" name="TBL_DETALLESOLICITUDVIATICOS" nillable="true" type="tns:TBL_DETALLESOLICITUDVIATICOS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TBL_DETALLEVIATICO" nillable="true" type="tns:TBL_DETALLEVIATICO" />
+  <xs:complexType name="TBL_DETALLESOLICITUDVIATICOS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CANTIDADPASAJE" type="xs:short" />
+      <xs:element minOccurs="0" name="CANTIDADVIATICOS" type="xs:short" />
+      <xs:element minOccurs="0" name="CODIGORUTA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FECHAVIATICOS" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ID_DETALLE" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_MODTARIFA" type="xs:short" />
+      <xs:element minOccurs="0" name="ID_PERSONA" type="xs:short" />
+      <xs:element minOccurs="0" name="ID_SOLICITUD" type="xs:int" />
+      <xs:element minOccurs="0" name="TBL_DETALLEVIATICO" nillable="true" type="tns:ArrayOfTBL_DETALLEVIATICO" />
+      <xs:element minOccurs="0" name="TBL_MODTARIFARIOVIATICO" nillable="true" type="tns:TBL_MODTARIFARIOVIATICO" />
+      <xs:element minOccurs="0" name="TBL_PERSONA" nillable="true" type="tns:TBL_PERSONA" />
+      <xs:element minOccurs="0" name="TBL_SOLICITUDVIATICOS" nillable="true" type="tns:TBL_SOLICITUDVIATICOS" />
+      <xs:element minOccurs="0" name="TBL_TARIFAAUTOBUS" nillable="true" type="tns:TBL_TARIFAAUTOBUS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TBL_DETALLESOLICITUDVIATICOS" nillable="true" type="tns:TBL_DETALLESOLICITUDVIATICOS" />
+  <xs:complexType name="TBL_MODTARIFARIOVIATICO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGOCANTON" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="CODIGOPROVINCIA" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="ESTADOTARIFA" type="xs:short" />
+      <xs:element minOccurs="0" name="FECHATARIFA" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ID_MODTARIFA" type="xs:short" />
+      <xs:element minOccurs="0" name="LOCALIDAD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MONTOTARIFA" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TBL_CANTON" nillable="true" type="tns:TBL_CANTON" />
+      <xs:element minOccurs="0" name="TBL_DETALLESOLICITUDVIATICOS" nillable="true" type="tns:ArrayOfTBL_DETALLESOLICITUDVIATICOS" />
+      <xs:element minOccurs="0" name="TBL_ESTADOS" nillable="true" type="tns:TBL_ESTADOS" />
+      <xs:element minOccurs="0" name="TBL_PROVINCIA" nillable="true" type="tns:TBL_PROVINCIA" />
+      <xs:element minOccurs="0" name="TIPOTARIFA" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TBL_MODTARIFARIOVIATICO" nillable="true" type="tns:TBL_MODTARIFARIOVIATICO" />
+  <xs:complexType name="TBL_CANTON">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGOCANTON" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="CODIGOPROVINCIA" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="DESCRIPCIONPROVINCIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TBL_MODTARIFARIOVIATICO" nillable="true" type="tns:ArrayOfTBL_MODTARIFARIOVIATICO" />
+      <xs:element minOccurs="0" name="TBL_PROVINCIA" nillable="true" type="tns:TBL_PROVINCIA" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TBL_CANTON" nillable="true" type="tns:TBL_CANTON" />
+  <xs:complexType name="ArrayOfTBL_MODTARIFARIOVIATICO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TBL_MODTARIFARIOVIATICO" nillable="true" type="tns:TBL_MODTARIFARIOVIATICO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTBL_MODTARIFARIOVIATICO" nillable="true" type="tns:ArrayOfTBL_MODTARIFARIOVIATICO" />
+  <xs:complexType name="TBL_PROVINCIA">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGOPROVINCIA" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="DESCRIPCIONPROVINCIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TBL_CANTON" nillable="true" type="tns:ArrayOfTBL_CANTON" />
+      <xs:element minOccurs="0" name="TBL_MODTARIFARIOVIATICO" nillable="true" type="tns:ArrayOfTBL_MODTARIFARIOVIATICO" />
+      <xs:element minOccurs="0" name="TBL_TARIFAAUTOBUS" nillable="true" type="tns:ArrayOfTBL_TARIFAAUTOBUS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TBL_PROVINCIA" nillable="true" type="tns:TBL_PROVINCIA" />
+  <xs:complexType name="ArrayOfTBL_CANTON">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TBL_CANTON" nillable="true" type="tns:TBL_CANTON" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTBL_CANTON" nillable="true" type="tns:ArrayOfTBL_CANTON" />
+  <xs:complexType name="ArrayOfTBL_TARIFAAUTOBUS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TBL_TARIFAAUTOBUS" nillable="true" type="tns:TBL_TARIFAAUTOBUS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTBL_TARIFAAUTOBUS" nillable="true" type="tns:ArrayOfTBL_TARIFAAUTOBUS" />
+  <xs:complexType name="TBL_TARIFAAUTOBUS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGOPROVINCIA" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="CODIGORUTA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DESCRIPCIONRUTA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADORUTA" type="xs:short" />
+      <xs:element minOccurs="0" name="FECHAVIGENCIA" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TARIFAREGISTRADA" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TBL_DETALLESOLICITUDVIATICOS" nillable="true" type="tns:ArrayOfTBL_DETALLESOLICITUDVIATICOS" />
+      <xs:element minOccurs="0" name="TBL_ESTADOS" nillable="true" type="tns:TBL_ESTADOS" />
+      <xs:element minOccurs="0" name="TBL_PROVINCIA" nillable="true" type="tns:TBL_PROVINCIA" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TBL_TARIFAAUTOBUS" nillable="true" type="tns:TBL_TARIFAAUTOBUS" />
+  <xs:complexType name="ArrayOfTBL_DETALLESOLICITUDVIATICOS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TBL_DETALLESOLICITUDVIATICOS" nillable="true" type="tns:TBL_DETALLESOLICITUDVIATICOS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTBL_DETALLESOLICITUDVIATICOS" nillable="true" type="tns:ArrayOfTBL_DETALLESOLICITUDVIATICOS" />
+  <xs:complexType name="TBL_PERSONA">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID_PERSONA" type="xs:short" />
+      <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBREUSUARIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PRIMERAPELLIDO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SEGUNDOAPELLIDO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TBL_DETALLESOLICITUDVIATICOS" nillable="true" type="tns:ArrayOfTBL_DETALLESOLICITUDVIATICOS" />
+      <xs:element minOccurs="0" name="TBL_USUARIO" nillable="true" type="tns:TBL_USUARIO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TBL_PERSONA" nillable="true" type="tns:TBL_PERSONA" />
+  <xs:complexType name="TBL_SOLICITUDVIATICOS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DESTINO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADOSOLICITUD" type="xs:short" />
+      <xs:element minOccurs="0" name="FECHACREACION" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FECHAREGRESO" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FECHASALIDA" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="HORAREGRESO" type="ser:duration" />
+      <xs:element minOccurs="0" name="HORASALIDA" type="ser:duration" />
+      <xs:element minOccurs="0" name="ID_SOLICITUD" type="xs:int" />
+      <xs:element minOccurs="0" name="JUSTIFICACION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBREUSUARIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TBL_CABECERAORDENVIATICO" nillable="true" type="tns:ArrayOfTBL_CABECERAORDENVIATICO" />
+      <xs:element minOccurs="0" name="TBL_DETALLESOLICITUDVIATICOS" nillable="true" type="tns:ArrayOfTBL_DETALLESOLICITUDVIATICOS" />
+      <xs:element minOccurs="0" name="TBL_ESTADOS" nillable="true" type="tns:TBL_ESTADOS" />
+      <xs:element minOccurs="0" name="TBL_USUARIO" nillable="true" type="tns:TBL_USUARIO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TBL_SOLICITUDVIATICOS" nillable="true" type="tns:TBL_SOLICITUDVIATICOS" />
+  <xs:complexType name="ArrayOfTBL_CABECERAORDENVIATICO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TBL_CABECERAORDENVIATICO" nillable="true" type="tns:TBL_CABECERAORDENVIATICO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTBL_CABECERAORDENVIATICO" nillable="true" type="tns:ArrayOfTBL_CABECERAORDENVIATICO" />
+  <xs:complexType name="ArrayOfTBL_SOLICITUDVIATICOS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TBL_SOLICITUDVIATICOS" nillable="true" type="tns:TBL_SOLICITUDVIATICOS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTBL_SOLICITUDVIATICOS" nillable="true" type="tns:ArrayOfTBL_SOLICITUDVIATICOS" />
+  <xs:complexType name="ArrayOfTBL_PERSONA">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TBL_PERSONA" nillable="true" type="tns:TBL_PERSONA" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTBL_PERSONA" nillable="true" type="tns:ArrayOfTBL_PERSONA" />
+</xs:schema>

@@ -43,5 +43,15 @@
     <Compile Include="Negocios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AD\AD.csproj">
+      <Project>{7eeb9068-7010-46fd-9632-0857da309491}</Project>
+      <Name>AD</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidades\E.csproj">
+      <Project>{d83ecd1f-dcce-4ef1-a330-d97a044d1907}</Project>
+      <Name>E</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
