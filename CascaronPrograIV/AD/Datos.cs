@@ -14,11 +14,11 @@ namespace AD
         public static void InsertarRol(TBL_ROLUSUARIO obj) //Se recibe desde la aplicacion un objeto ya lleno para ingresar a la base de datos
 
         {
-            EMPRESA_PK2Entities entidad = null; //Se declara el objeto de entidad para la conexion
+            EmpresaPK2Entities entidad = null; //Se declara el objeto de entidad para la conexion
 
             try
             {
-                entidad = new EMPRESA_PK2Entities(); //Se instancia la entidad
+                entidad = new EmpresaPK2Entities(); //Se instancia la entidad
                 entidad.TBL_ROLUSUARIO.Add(obj);     //Se agrega (Este método integrado en LinQ es como hacer un insert)
                 entidad.SaveChanges();               //Al usar el método integrado "Add", se debe hacer commit o save changes.
                 
@@ -41,16 +41,16 @@ namespace AD
         public static void InsertarPersona(TBL_PERSONA obj) //Se recibe desde la aplicacion un objeto ya lleno para ingresar a la base de datos
 
         {
-            EMPRESA_PK2Entities entidad = null; //Se declara el objeto de entidad para la conexion
+            EmpresaPK2Entities entidad = null; //Se declara el objeto de entidad para la conexion
 
             try
             {
-                entidad = new EMPRESA_PK2Entities(); //Se instancia la entidad
+                entidad = new EmpresaPK2Entities(); //Se instancia la entidad
                 entidad.TBL_PERSONA.Add(obj);     //Se agrega (Este método integrado en LinQ es como hacer un insert)
                 entidad.SaveChanges();               //Al usar el método integrado "Add", se debe hacer commit o save changes.
 
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 throw;
             }
@@ -63,6 +63,26 @@ namespace AD
                 }
             }
         }
-
+        public static void InsertarUsuario(TBL_USUARIO obj)
+        {
+            EmpresaPK2Entities entidad = null;
+            try
+            {
+                entidad = new EmpresaPK2Entities();
+                entidad.SP_InsertarUsuario(obj.NOMBREUSUARIO, obj.CLAVEACCESO, obj.ID_ROL, obj.ESTADOUSARIO, obj.EMAIL);
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+            finally
+            {
+                if (entidad != null)
+                {
+                    entidad.Dispose();
+                }
+                entidad = null;
+            }
+        }
     }
 }

@@ -8,3 +8,10 @@ C:\Users\ExtremeTech\Source\Repos\Prototipo\CascaronPrograIV\Entidades\obj\Debug
 C:\Users\ExtremeTech\Source\Repos\Prototipo\CascaronPrograIV\Entidades\obj\Debug\E.csproj.CopyComplete
 C:\Users\ExtremeTech\Source\Repos\Prototipo\CascaronPrograIV\Entidades\obj\Debug\Entidades.dll
 C:\Users\ExtremeTech\Source\Repos\Prototipo\CascaronPrograIV\Entidades\obj\Debug\Entidades.pdb
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Entidades\bin\Debug\Entidades.dll.config
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Entidades\bin\Debug\Entidades.dll
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Entidades\bin\Debug\Entidades.pdb
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Entidades\bin\Debug\EntityFramework.dll
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Entidades\bin\Debug\EntityFramework.xml
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Entidades\obj\Debug\Entidades.dll
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Entidades\obj\Debug\Entidades.pdb

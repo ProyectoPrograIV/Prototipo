@@ -27,5 +27,10 @@ namespace S
         {
             Negocios.InsertarPersona(obj);
         }
+
+        public void InsertarUsuario(TBL_USUARIO obj)
+        {
+            Negocios.InsertarUsuario(obj);
+        }
     }
 }

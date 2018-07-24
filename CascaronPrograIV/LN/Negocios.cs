@@ -23,5 +23,10 @@ namespace LN
         {
             AD.Datos.InsertarPersona(obj);
         }
+
+        public static void InsertarUsuario(TBL_USUARIO obj)
+        {
+            AD.Datos.InsertarUsuario(obj);
+        }
     }
 }

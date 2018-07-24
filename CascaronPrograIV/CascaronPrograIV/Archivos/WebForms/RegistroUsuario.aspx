@@ -34,16 +34,15 @@
         <br />
         <h1 class="regist-title">REGISTRAR NUEVO COLABORADOR</h1>
         <br />
-        <asp:TextBox CssClass="BtnLeft" ID="TbxNombre" runat="server" Text="Nombre" OnClick="this.value=''"></asp:TextBox>
-        <asp:TextBox CssClass="BtnRight" ID="TextBox2" runat="server" Text="Apellidos" OnClick="this.value=''"></asp:TextBox>
+        <asp:TextBox CssClass="BtnLeft" placeholder="Nombre" ID="TbxNombre" runat="server"></asp:TextBox>
+        <asp:TextBox CssClass="BtnRight" placeholder="Apellidos" ID="Tbx_Apellidos" runat="server"></asp:TextBox>
         <br />
-        <asp:TextBox CssClass="BtnLeft" ID="TextBox3" runat="server" Text="Tipo de identificacion" OnClick="this.value=''"></asp:TextBox>
-        <asp:TextBox CssClass="BtnRight" ID="TextBox4" runat="server" Text="Identificacions" OnClick="this.value=''"></asp:TextBox>
+        <asp:TextBox CssClass="BtnRight" placeholder="Identificacion" ID="Tbx_Identificacion" runat="server"></asp:TextBox>
         <br />
-        <asp:TextBox CssClass="BtnLeft" ID="TextBox5" runat="server" Text="Usuario" OnClick="this.value=''"></asp:TextBox>
-        <asp:TextBox CssClass="BtnRight" ID="TextBox6" runat="server" Text="Contraseña" OnClick="this.value=''"></asp:TextBox>
+        <asp:TextBox CssClass="BtnLeft" placeholder="Usuario" ID="Tbx_Usuario" runat="server"></asp:TextBox>
+        <asp:TextBox CssClass="BtnRight" placeholder="Contraseña" ID="Tbx_Password" runat="server"></asp:TextBox>
         <br />
-        <asp:TextBox CssClass="BtnCenter" ID="TextBox1" runat="server" Text="Correo Electronico" OnClick="this.value=''"></asp:TextBox>
+        <asp:TextBox CssClass="BtnCenter" placeholder="Correo Electronico" ID="Tbx_Email" runat="server"></asp:TextBox>
         <br />
         <asp:Button CssClass="Regresar-button" ID="BtnRegresar" runat="server" Text="Regresar" OnClick="BtnRegresar_Click" />
         <asp:Button CssClass="auto-style3" ID="BtnGuardar" runat="server" Text="Guardar Colaborador" OnClick="BtnGuardar_Click" />

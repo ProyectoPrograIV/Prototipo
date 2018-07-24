@@ -18,7 +18,8 @@ namespace S
         void InsertarRol(TBL_ROLUSUARIO obj);
         [OperationContract]
         void InsertarPersona(TBL_PERSONA obj);
-
+        [OperationContract]
+        void InsertarUsuario(TBL_USUARIO obj);
     }
 
 

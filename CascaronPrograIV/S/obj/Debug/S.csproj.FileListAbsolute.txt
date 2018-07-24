@@ -15,3 +15,17 @@ C:\Users\ExtremeTech\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.cspro
 C:\Users\ExtremeTech\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.csproj.CopyComplete
 C:\Users\ExtremeTech\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.dll
 C:\Users\ExtremeTech\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.pdb
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\S\bin\S.dll.config
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\S\bin\S.dll
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\S\bin\S.pdb
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\S\bin\Entidades.dll
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\S\bin\LN.dll
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\S\bin\EntityFramework.dll
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\S\bin\AD.dll
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\S\bin\Entidades.pdb
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\S\bin\LN.pdb
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\S\bin\EntityFramework.xml
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\S\bin\AD.pdb
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.csprojResolveAssemblyReference.cache
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.dll
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.pdb

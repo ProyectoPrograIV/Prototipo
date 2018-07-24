@@ -1,160 +1,160 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="EMPRESA_PK2ModelStoreContainer" CdmEntityContainer="EMPRESA_PK2Entities">
+  <EntityContainerMapping StorageEntityContainer="EmpresaPK2ModelStoreContainer" CdmEntityContainer="EmpresaPK2Entities">
     <EntitySetMapping Name="TBL_CANTON">
-      <EntityTypeMapping TypeName="EMPRESA_PK2Model.TBL_CANTON">
+      <EntityTypeMapping TypeName="EmpresaPK2Model.TBL_CANTON">
         <MappingFragment StoreEntitySet="TBL_CANTON">
-          <ScalarProperty Name="CODIGOCANTON" ColumnName="CODIGOCANTON" />
-          <ScalarProperty Name="CODIGOPROVINCIA" ColumnName="CODIGOPROVINCIA" />
           <ScalarProperty Name="DESCRIPCIONPROVINCIA" ColumnName="DESCRIPCIONPROVINCIA" />
+          <ScalarProperty Name="CODIGOPROVINCIA" ColumnName="CODIGOPROVINCIA" />
+          <ScalarProperty Name="CODIGOCANTON" ColumnName="CODIGOCANTON" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TBL_MODTARIFARIOVIATICO">
-      <EntityTypeMapping TypeName="EMPRESA_PK2Model.TBL_MODTARIFARIOVIATICO">
+      <EntityTypeMapping TypeName="EmpresaPK2Model.TBL_MODTARIFARIOVIATICO">
         <MappingFragment StoreEntitySet="TBL_MODTARIFARIOVIATICO">
-          <ScalarProperty Name="ID_MODTARIFA" ColumnName="ID_MODTARIFA" />
-          <ScalarProperty Name="CODIGOPROVINCIA" ColumnName="CODIGOPROVINCIA" />
-          <ScalarProperty Name="CODIGOCANTON" ColumnName="CODIGOCANTON" />
-          <ScalarProperty Name="TIPOTARIFA" ColumnName="TIPOTARIFA" />
-          <ScalarProperty Name="FECHATARIFA" ColumnName="FECHATARIFA" />
-          <ScalarProperty Name="MONTOTARIFA" ColumnName="MONTOTARIFA" />
-          <ScalarProperty Name="ESTADOTARIFA" ColumnName="ESTADOTARIFA" />
           <ScalarProperty Name="LOCALIDAD" ColumnName="LOCALIDAD" />
+          <ScalarProperty Name="ESTADOTARIFA" ColumnName="ESTADOTARIFA" />
+          <ScalarProperty Name="MONTOTARIFA" ColumnName="MONTOTARIFA" />
+          <ScalarProperty Name="FECHATARIFA" ColumnName="FECHATARIFA" />
+          <ScalarProperty Name="TIPOTARIFA" ColumnName="TIPOTARIFA" />
+          <ScalarProperty Name="CODIGOCANTON" ColumnName="CODIGOCANTON" />
+          <ScalarProperty Name="CODIGOPROVINCIA" ColumnName="CODIGOPROVINCIA" />
+          <ScalarProperty Name="ID_MODTARIFA" ColumnName="ID_MODTARIFA" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TBL_PROVINCIA">
-      <EntityTypeMapping TypeName="EMPRESA_PK2Model.TBL_PROVINCIA">
+      <EntityTypeMapping TypeName="EmpresaPK2Model.TBL_PROVINCIA">
         <MappingFragment StoreEntitySet="TBL_PROVINCIA">
-          <ScalarProperty Name="CODIGOPROVINCIA" ColumnName="CODIGOPROVINCIA" />
           <ScalarProperty Name="DESCRIPCIONPROVINCIA" ColumnName="DESCRIPCIONPROVINCIA" />
+          <ScalarProperty Name="CODIGOPROVINCIA" ColumnName="CODIGOPROVINCIA" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TBL_TARIFAAUTOBUS">
-      <EntityTypeMapping TypeName="EMPRESA_PK2Model.TBL_TARIFAAUTOBUS">
+      <EntityTypeMapping TypeName="EmpresaPK2Model.TBL_TARIFAAUTOBUS">
         <MappingFragment StoreEntitySet="TBL_TARIFAAUTOBUS">
-          <ScalarProperty Name="CODIGORUTA" ColumnName="CODIGORUTA" />
-          <ScalarProperty Name="CODIGOPROVINCIA" ColumnName="CODIGOPROVINCIA" />
-          <ScalarProperty Name="ESTADORUTA" ColumnName="ESTADORUTA" />
-          <ScalarProperty Name="TARIFAREGISTRADA" ColumnName="TARIFAREGISTRADA" />
-          <ScalarProperty Name="DESCRIPCIONRUTA" ColumnName="DESCRIPCIONRUTA" />
           <ScalarProperty Name="FECHAVIGENCIA" ColumnName="FECHAVIGENCIA" />
+          <ScalarProperty Name="DESCRIPCIONRUTA" ColumnName="DESCRIPCIONRUTA" />
+          <ScalarProperty Name="TARIFAREGISTRADA" ColumnName="TARIFAREGISTRADA" />
+          <ScalarProperty Name="ESTADORUTA" ColumnName="ESTADORUTA" />
+          <ScalarProperty Name="CODIGOPROVINCIA" ColumnName="CODIGOPROVINCIA" />
+          <ScalarProperty Name="CODIGORUTA" ColumnName="CODIGORUTA" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TBL_ESTADOS">
-      <EntityTypeMapping TypeName="EMPRESA_PK2Model.TBL_ESTADOS">
+      <EntityTypeMapping TypeName="EmpresaPK2Model.TBL_ESTADOS">
         <MappingFragment StoreEntitySet="TBL_ESTADOS">
-          <ScalarProperty Name="ID_CODIGO" ColumnName="ID_CODIGO" />
-          <ScalarProperty Name="DESCODIGO" ColumnName="DESCODIGO" />
           <ScalarProperty Name="ESTADOCODIGO" ColumnName="ESTADOCODIGO" />
+          <ScalarProperty Name="DESCODIGO" ColumnName="DESCODIGO" />
+          <ScalarProperty Name="ID_CODIGO" ColumnName="ID_CODIGO" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TBL_PERSONA">
-      <EntityTypeMapping TypeName="EMPRESA_PK2Model.TBL_PERSONA">
+      <EntityTypeMapping TypeName="EmpresaPK2Model.TBL_PERSONA">
         <MappingFragment StoreEntitySet="TBL_PERSONA">
-          <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
-          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
-          <ScalarProperty Name="PRIMERAPELLIDO" ColumnName="PRIMERAPELLIDO" />
-          <ScalarProperty Name="SEGUNDOAPELLIDO" ColumnName="SEGUNDOAPELLIDO" />
           <ScalarProperty Name="NOMBREUSUARIO" ColumnName="NOMBREUSUARIO" />
+          <ScalarProperty Name="APELLIDOS" ColumnName="APELLIDOS" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TBL_ROLUSUARIO">
-      <EntityTypeMapping TypeName="EMPRESA_PK2Model.TBL_ROLUSUARIO">
+      <EntityTypeMapping TypeName="EmpresaPK2Model.TBL_ROLUSUARIO">
         <MappingFragment StoreEntitySet="TBL_ROLUSUARIO">
-          <ScalarProperty Name="ID_ROL" ColumnName="ID_ROL" />
-          <ScalarProperty Name="DESCRPCIONROL" ColumnName="DESCRPCIONROL" />
           <ScalarProperty Name="ESTADOROL" ColumnName="ESTADOROL" />
+          <ScalarProperty Name="DESCRPCIONROL" ColumnName="DESCRPCIONROL" />
+          <ScalarProperty Name="ID_ROL" ColumnName="ID_ROL" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TBL_USUARIO">
-      <EntityTypeMapping TypeName="EMPRESA_PK2Model.TBL_USUARIO">
+      <EntityTypeMapping TypeName="EmpresaPK2Model.TBL_USUARIO">
         <MappingFragment StoreEntitySet="TBL_USUARIO">
-          <ScalarProperty Name="NOMBREUSUARIO" ColumnName="NOMBREUSUARIO" />
-          <ScalarProperty Name="CLAVEACCESO" ColumnName="CLAVEACCESO" />
-          <ScalarProperty Name="ID_ROL" ColumnName="ID_ROL" />
-          <ScalarProperty Name="ROLUSUARIO" ColumnName="ROLUSUARIO" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
           <ScalarProperty Name="ESTADOUSARIO" ColumnName="ESTADOUSARIO" />
+          <ScalarProperty Name="ID_ROL" ColumnName="ID_ROL" />
+          <ScalarProperty Name="CLAVEACCESO" ColumnName="CLAVEACCESO" />
+          <ScalarProperty Name="NOMBREUSUARIO" ColumnName="NOMBREUSUARIO" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TBL_CABECERALIQUIDACION">
-      <EntityTypeMapping TypeName="EMPRESA_PK2Model.TBL_CABECERALIQUIDACION">
+      <EntityTypeMapping TypeName="EmpresaPK2Model.TBL_CABECERALIQUIDACION">
         <MappingFragment StoreEntitySet="TBL_CABECERALIQUIDACION">
-          <ScalarProperty Name="ID_LIQUIDACION" ColumnName="ID_LIQUIDACION" />
-          <ScalarProperty Name="ID_ORDEN" ColumnName="ID_ORDEN" />
-          <ScalarProperty Name="ESTADOLIQUIDACION" ColumnName="ESTADOLIQUIDACION" />
-          <ScalarProperty Name="FECHALIQUIDACION" ColumnName="FECHALIQUIDACION" />
-          <ScalarProperty Name="MONTODESAYUNO" ColumnName="MONTODESAYUNO" />
-          <ScalarProperty Name="MONTOALMUERZO" ColumnName="MONTOALMUERZO" />
-          <ScalarProperty Name="MONTOCENA" ColumnName="MONTOCENA" />
-          <ScalarProperty Name="MONTOHOSPEDAJE" ColumnName="MONTOHOSPEDAJE" />
           <ScalarProperty Name="MONTOPASAJE" ColumnName="MONTOPASAJE" />
+          <ScalarProperty Name="MONTOHOSPEDAJE" ColumnName="MONTOHOSPEDAJE" />
+          <ScalarProperty Name="MONTOCENA" ColumnName="MONTOCENA" />
+          <ScalarProperty Name="MONTOALMUERZO" ColumnName="MONTOALMUERZO" />
+          <ScalarProperty Name="MONTODESAYUNO" ColumnName="MONTODESAYUNO" />
+          <ScalarProperty Name="FECHALIQUIDACION" ColumnName="FECHALIQUIDACION" />
+          <ScalarProperty Name="ESTADOLIQUIDACION" ColumnName="ESTADOLIQUIDACION" />
+          <ScalarProperty Name="ID_ORDEN" ColumnName="ID_ORDEN" />
+          <ScalarProperty Name="ID_LIQUIDACION" ColumnName="ID_LIQUIDACION" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TBL_CABECERAORDENVIATICO">
-      <EntityTypeMapping TypeName="EMPRESA_PK2Model.TBL_CABECERAORDENVIATICO">
+      <EntityTypeMapping TypeName="EmpresaPK2Model.TBL_CABECERAORDENVIATICO">
         <MappingFragment StoreEntitySet="TBL_CABECERAORDENVIATICO">
-          <ScalarProperty Name="ID_ORDEN" ColumnName="ID_ORDEN" />
-          <ScalarProperty Name="ID_SOLICITUD" ColumnName="ID_SOLICITUD" />
-          <ScalarProperty Name="ID_LIQUIDACION" ColumnName="ID_LIQUIDACION" />
-          <ScalarProperty Name="ESTADOORDEN" ColumnName="ESTADOORDEN" />
           <ScalarProperty Name="FECHAORDEN" ColumnName="FECHAORDEN" />
+          <ScalarProperty Name="ESTADOORDEN" ColumnName="ESTADOORDEN" />
+          <ScalarProperty Name="ID_LIQUIDACION" ColumnName="ID_LIQUIDACION" />
+          <ScalarProperty Name="ID_SOLICITUD" ColumnName="ID_SOLICITUD" />
+          <ScalarProperty Name="ID_ORDEN" ColumnName="ID_ORDEN" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TBL_DETALLESOLICITUDVIATICOS">
-      <EntityTypeMapping TypeName="EMPRESA_PK2Model.TBL_DETALLESOLICITUDVIATICOS">
+      <EntityTypeMapping TypeName="EmpresaPK2Model.TBL_DETALLESOLICITUDVIATICOS">
         <MappingFragment StoreEntitySet="TBL_DETALLESOLICITUDVIATICOS">
-          <ScalarProperty Name="ID_DETALLE" ColumnName="ID_DETALLE" />
-          <ScalarProperty Name="ID_SOLICITUD" ColumnName="ID_SOLICITUD" />
-          <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
-          <ScalarProperty Name="ID_MODTARIFA" ColumnName="ID_MODTARIFA" />
-          <ScalarProperty Name="CANTIDADVIATICOS" ColumnName="CANTIDADVIATICOS" />
-          <ScalarProperty Name="FECHAVIATICOS" ColumnName="FECHAVIATICOS" />
-          <ScalarProperty Name="CODIGORUTA" ColumnName="CODIGORUTA" />
           <ScalarProperty Name="CANTIDADPASAJE" ColumnName="CANTIDADPASAJE" />
+          <ScalarProperty Name="CODIGORUTA" ColumnName="CODIGORUTA" />
+          <ScalarProperty Name="FECHAVIATICOS" ColumnName="FECHAVIATICOS" />
+          <ScalarProperty Name="CANTIDADVIATICOS" ColumnName="CANTIDADVIATICOS" />
+          <ScalarProperty Name="ID_MODTARIFA" ColumnName="ID_MODTARIFA" />
+          <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+          <ScalarProperty Name="ID_SOLICITUD" ColumnName="ID_SOLICITUD" />
+          <ScalarProperty Name="ID_DETALLE" ColumnName="ID_DETALLE" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TBL_SOLICITUDVIATICOS">
-      <EntityTypeMapping TypeName="EMPRESA_PK2Model.TBL_SOLICITUDVIATICOS">
+      <EntityTypeMapping TypeName="EmpresaPK2Model.TBL_SOLICITUDVIATICOS">
         <MappingFragment StoreEntitySet="TBL_SOLICITUDVIATICOS">
-          <ScalarProperty Name="ID_SOLICITUD" ColumnName="ID_SOLICITUD" />
-          <ScalarProperty Name="NOMBREUSUARIO" ColumnName="NOMBREUSUARIO" />
-          <ScalarProperty Name="FECHACREACION" ColumnName="FECHACREACION" />
-          <ScalarProperty Name="FECHASALIDA" ColumnName="FECHASALIDA" />
-          <ScalarProperty Name="FECHAREGRESO" ColumnName="FECHAREGRESO" />
-          <ScalarProperty Name="ESTADOSOLICITUD" ColumnName="ESTADOSOLICITUD" />
-          <ScalarProperty Name="JUSTIFICACION" ColumnName="JUSTIFICACION" />
-          <ScalarProperty Name="DESTINO" ColumnName="DESTINO" />
-          <ScalarProperty Name="HORAREGRESO" ColumnName="HORAREGRESO" />
           <ScalarProperty Name="HORASALIDA" ColumnName="HORASALIDA" />
+          <ScalarProperty Name="HORAREGRESO" ColumnName="HORAREGRESO" />
+          <ScalarProperty Name="DESTINO" ColumnName="DESTINO" />
+          <ScalarProperty Name="JUSTIFICACION" ColumnName="JUSTIFICACION" />
+          <ScalarProperty Name="ESTADOSOLICITUD" ColumnName="ESTADOSOLICITUD" />
+          <ScalarProperty Name="FECHAREGRESO" ColumnName="FECHAREGRESO" />
+          <ScalarProperty Name="FECHASALIDA" ColumnName="FECHASALIDA" />
+          <ScalarProperty Name="FECHACREACION" ColumnName="FECHACREACION" />
+          <ScalarProperty Name="NOMBREUSUARIO" ColumnName="NOMBREUSUARIO" />
+          <ScalarProperty Name="ID_SOLICITUD" ColumnName="ID_SOLICITUD" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TBL_DETALLEVIATICO">
-      <EntityTypeMapping TypeName="EMPRESA_PK2Model.TBL_DETALLEVIATICO">
+      <EntityTypeMapping TypeName="EmpresaPK2Model.TBL_DETALLEVIATICO">
         <MappingFragment StoreEntitySet="TBL_DETALLEVIATICO">
-          <ScalarProperty Name="ID_DETALLE" ColumnName="ID_DETALLE" />
-          <ScalarProperty Name="ID_ORDEN" ColumnName="ID_ORDEN" />
-          <ScalarProperty Name="CANTIDADDESAYUNO" ColumnName="CANTIDADDESAYUNO" />
-          <ScalarProperty Name="MONTODESAYUNO" ColumnName="MONTODESAYUNO" />
-          <ScalarProperty Name="CANTIDADALMUERZO" ColumnName="CANTIDADALMUERZO" />
-          <ScalarProperty Name="MONTOALMUERZO" ColumnName="MONTOALMUERZO" />
-          <ScalarProperty Name="CANTIDADCENA" ColumnName="CANTIDADCENA" />
-          <ScalarProperty Name="MONTOCENA" ColumnName="MONTOCENA" />
-          <ScalarProperty Name="CANTIDADPASAJE" ColumnName="CANTIDADPASAJE" />
           <ScalarProperty Name="MONTOPASAJE" ColumnName="MONTOPASAJE" />
+          <ScalarProperty Name="CANTIDADPASAJE" ColumnName="CANTIDADPASAJE" />
+          <ScalarProperty Name="MONTOCENA" ColumnName="MONTOCENA" />
+          <ScalarProperty Name="CANTIDADCENA" ColumnName="CANTIDADCENA" />
+          <ScalarProperty Name="MONTOALMUERZO" ColumnName="MONTOALMUERZO" />
+          <ScalarProperty Name="CANTIDADALMUERZO" ColumnName="CANTIDADALMUERZO" />
+          <ScalarProperty Name="MONTODESAYUNO" ColumnName="MONTODESAYUNO" />
+          <ScalarProperty Name="CANTIDADDESAYUNO" ColumnName="CANTIDADDESAYUNO" />
+          <ScalarProperty Name="ID_ORDEN" ColumnName="ID_ORDEN" />
+          <ScalarProperty Name="ID_DETALLE" ColumnName="ID_DETALLE" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_InsertarUsuario" FunctionName="EmpresaPK2Model.Store.SP_InsertarUsuario" />
   </EntityContainerMapping>
 </Mapping>

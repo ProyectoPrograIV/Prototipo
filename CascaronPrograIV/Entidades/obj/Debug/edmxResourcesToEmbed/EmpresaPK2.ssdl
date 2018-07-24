@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="EMPRESA_PK2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="EmpresaPK2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="TBL_CANTON">
     <Key>
       <PropertyRef Name="CODIGOCANTON" />
@@ -51,10 +51,9 @@
     <Key>
       <PropertyRef Name="ID_PERSONA" />
     </Key>
-    <Property Name="ID_PERSONA" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_PERSONA" Type="nvarchar" MaxLength="15" Nullable="false" />
     <Property Name="NOMBRE" Type="varchar" MaxLength="41" Nullable="false" />
-    <Property Name="PRIMERAPELLIDO" Type="varchar" MaxLength="36" Nullable="false" />
-    <Property Name="SEGUNDOAPELLIDO" Type="varchar" MaxLength="36" Nullable="false" />
+    <Property Name="APELLIDOS" Type="varchar" MaxLength="36" Nullable="false" />
     <Property Name="NOMBREUSUARIO" Type="nvarchar" MaxLength="24" Nullable="false" />
   </EntityType>
   <EntityType Name="TBL_ROLUSUARIO">
@@ -72,8 +71,8 @@
     <Property Name="NOMBREUSUARIO" Type="nvarchar" MaxLength="24" Nullable="false" />
     <Property Name="CLAVEACCESO" Type="nvarchar" MaxLength="16" Nullable="false" />
     <Property Name="ID_ROL" Type="smallint" Nullable="false" />
-    <Property Name="ROLUSUARIO" Type="varchar" MaxLength="36" Nullable="false" />
     <Property Name="ESTADOUSARIO" Type="smallint" Nullable="false" />
+    <Property Name="EMAIL" Type="nvarchar" MaxLength="40" Nullable="false" />
   </EntityType>
   <EntityType Name="TBL_CABECERALIQUIDACION">
     <Key>
@@ -105,15 +104,15 @@
     </Key>
     <Property Name="ID_DETALLE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ID_SOLICITUD" Type="int" Nullable="false" />
-    <Property Name="ID_PERSONA" Type="smallint" Nullable="false" />
+    <Property Name="ID_PERSONA" Type="nvarchar" MaxLength="15" Nullable="false" />
     <Property Name="ID_MODTARIFA" Type="smallint" Nullable="false" />
     <Property Name="CANTIDADVIATICOS" Type="smallint" Nullable="false" />
     <Property Name="FECHAVIATICOS" Type="datetime" Nullable="false" />
     <Property Name="CODIGORUTA" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="CANTIDADPASAJE" Type="smallint" Nullable="false" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'EMPRESA_PK2.SCH_VIATICOS.TBL_DETALLEVIATICO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'EmpresaPK2.SCH_VIATICOS.TBL_DETALLEVIATICO' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
   <EntityType Name="TBL_DETALLEVIATICO">
     <Key>
       <PropertyRef Name="ID_DETALLE" />
@@ -417,7 +416,14 @@ warning 6002: The table/view 'EMPRESA_PK2.SCH_VIATICOS.TBL_DETALLEVIATICO' does 
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="EMPRESA_PK2ModelStoreContainer">
+  <Function Name="SP_InsertarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NOMBREUSUARIO" Type="nvarchar" Mode="In" />
+    <Parameter Name="CLAVEACCESO" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_Rol" Type="smallint" Mode="In" />
+    <Parameter Name="EstadoUsuario" Type="smallint" Mode="In" />
+    <Parameter Name="email" Type="nvarchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="EmpresaPK2ModelStoreContainer">
     <EntitySet Name="TBL_CANTON" EntityType="Self.TBL_CANTON" Schema="SCH_PARAMETROS" store:Type="Tables" />
     <EntitySet Name="TBL_MODTARIFARIOVIATICO" EntityType="Self.TBL_MODTARIFARIOVIATICO" Schema="SCH_PARAMETROS" store:Type="Tables" />
     <EntitySet Name="TBL_PROVINCIA" EntityType="Self.TBL_PROVINCIA" Schema="SCH_PARAMETROS" store:Type="Tables" />
