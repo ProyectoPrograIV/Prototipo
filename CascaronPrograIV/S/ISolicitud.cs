@@ -15,7 +15,11 @@ namespace S
     {
         [OperationContract]
         Boolean GuardarSolicitud(TBL_SOLICITUDVIATICOS Obj_Solicitud);
+
         [OperationContract]
         DataTable ListarSolicitudes(TBL_SOLICITUDVIATICOS Obj_Solicitud);
+
+        [OperationContract]
+        List<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> ObtenerListaSolicitudesFuncionario(TBL_SOLICITUDVIATICOS obj);
     }
 }

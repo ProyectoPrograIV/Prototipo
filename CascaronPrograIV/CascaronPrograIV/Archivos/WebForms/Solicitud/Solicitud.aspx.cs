@@ -13,8 +13,18 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            GvConsultarSolicitud.DataSource = CargarDatos();
-            GvConsultarSolicitud.DataBind();
+            WCFSolicitud.SolicitudClient Cliente = new WCFSolicitud.SolicitudClient();
+            TBL_SOLICITUDVIATICOS Obj_Solicitud = new TBL_SOLICITUDVIATICOS();
+            Obj_Solicitud.NOMBREUSUARIO = "davidotno";
+            List<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> lista = Cliente.ObtenerListaSolicitudesFuncionario(Obj_Solicitud);
+
+            this.GvConsultarSolicitud.DataSource = null;
+            this.GvConsultarSolicitud.DataBind();
+            this.GvConsultarSolicitud.DataSource = lista;
+            this.GvConsultarSolicitud.DataBind();
+
+          //  GvConsultarSolicitud.DataSource = CargarDatos();
+          //  GvConsultarSolicitud.DataBind();
         }
 
         protected void Btn_Guardar_Click(object sender, EventArgs e)
@@ -37,13 +47,16 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
             }
         }
 
+        /*
         private DataTable CargarDatos()
         {
             WCFSolicitud.SolicitudClient Cliente = new WCFSolicitud.SolicitudClient();
             TBL_SOLICITUDVIATICOS Obj_Solicitud = new TBL_SOLICITUDVIATICOS();
             Obj_Solicitud.NOMBREUSUARIO = "davidotno";
-            return Cliente.ListarSolicitudes(Obj_Solicitud);
-        }
+            DataTable tabla = Cliente.ListarSolicitudes(Obj_Solicitud);
+            Cliente.Close();
+            return tabla;
+        }*/
 
         private Boolean Vacio()
         {

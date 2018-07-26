@@ -30,5 +30,11 @@ namespace S
         {
             return Cls_Solicitud_LN.ListarSolicitudes(Obj_Solicitud);
         }
+
+        public  List<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> ObtenerListaSolicitudesFuncionario(TBL_SOLICITUDVIATICOS obj)
+
+        {
+            return Cls_Solicitud_LN.ObtenerListaSolicitudesFuncionario(obj);
+        }
     }
 }

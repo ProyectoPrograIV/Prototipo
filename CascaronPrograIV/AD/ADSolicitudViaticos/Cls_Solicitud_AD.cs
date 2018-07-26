@@ -46,7 +46,7 @@ namespace AD.ADSolicitudViaticos
             catch (Exception e)
             {
 
-                throw;
+                throw e;
             }
         }
 
@@ -98,5 +98,42 @@ namespace AD.ADSolicitudViaticos
             }
             return dtReturn;
         }
+
+        public static List<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> ObtenerListaSolicitudesFuncionario(TBL_SOLICITUDVIATICOS obj)
+
+        {
+            EmpresaPK2Entities entidad = null; //Se declara el objeto de entidad para la conexion
+
+            //Se declara una Lista para llevar cada línea con un objeto resultado de la consulta
+            List < SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result > Lista = new List<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result>();
+            try
+            {
+                entidad = new EmpresaPK2Entities(); //Se instancia la entidad
+                var Resultado = entidad.SP_LISTAR_SOLICITUDES_FUNCIONARIO(obj.NOMBREUSUARIO).ToList();
+                if (Resultado != null)
+                {
+                    foreach (var item in Resultado) //Recorre lista
+                    {                        
+                        Lista.Add(item); //Agrega cada Linea a la lista que se devovlerá
+                    }
+
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+            finally
+            {
+                if (entidad != null)
+                {
+                    entidad.Dispose(); //En caso de que se haya inicializado la entidad pero falló la operación, cierra la conexion a la entidad.
+                }
+            }
+
+            return Lista;
+        }
+
     }
 }

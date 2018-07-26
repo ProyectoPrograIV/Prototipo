@@ -138,6 +138,7 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <Content Include="Properties\DataSources\Entidades.SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result.datasource" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

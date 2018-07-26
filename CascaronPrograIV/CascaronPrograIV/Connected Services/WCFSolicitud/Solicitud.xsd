@@ -246,4 +246,25 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfTBL_SOLICITUDVIATICOS" nillable="true" type="tns:ArrayOfTBL_SOLICITUDVIATICOS" />
+  <xs:complexType name="ArrayOfSP_LISTAR_SOLICITUDES_FUNCIONARIO_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result" nillable="true" type="tns:SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSP_LISTAR_SOLICITUDES_FUNCIONARIO_Result" nillable="true" type="tns:ArrayOfSP_LISTAR_SOLICITUDES_FUNCIONARIO_Result" />
+  <xs:complexType name="SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DESTINO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADOSOLICITUD" type="xs:short" />
+      <xs:element minOccurs="0" name="FECHACREACION" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FECHAREGRESO" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FECHASALIDA" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="HORAREGRESO" type="ser:duration" />
+      <xs:element minOccurs="0" name="HORASALIDA" type="ser:duration" />
+      <xs:element minOccurs="0" name="ID_SOLICITUD" type="xs:int" />
+      <xs:element minOccurs="0" name="JUSTIFICACION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBREUSUARIO" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result" nillable="true" type="tns:SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result" />
 </xs:schema>

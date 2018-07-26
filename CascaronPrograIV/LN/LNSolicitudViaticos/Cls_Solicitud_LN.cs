@@ -13,7 +13,7 @@ namespace LN.LNSolicitudViaticos
     {
         public static Boolean GuardarSolicitud(TBL_SOLICITUDVIATICOS Obj_Solicitud)
         {
-            if(Cls_Solicitud_AD.GuardarSolicitud(Obj_Solicitud) == true)
+            if (Cls_Solicitud_AD.GuardarSolicitud(Obj_Solicitud) == true)
             {
                 return true;
             }
@@ -25,6 +25,12 @@ namespace LN.LNSolicitudViaticos
         public static DataTable ListarSolicitudes(TBL_SOLICITUDVIATICOS Obj_Solicitud)
         {
             return Cls_Solicitud_AD.ListarSolicitudes(Obj_Solicitud);
+        }
+
+        public static List<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> ObtenerListaSolicitudesFuncionario(TBL_SOLICITUDVIATICOS obj)
+
+        {
+            return Cls_Solicitud_AD.ObtenerListaSolicitudesFuncionario(obj);
         }
     }
 }
