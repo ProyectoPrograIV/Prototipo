@@ -1,0 +1,162 @@
+﻿::-webkit-input-placeholder { /* Chrome */
+  color: #ADADAD;
+  opacity: 1;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #ADADAD;
+  opacity: 1;
+}
+:-moz-placeholder { /* Firefox 4 - 18 */
+  color: #ADADAD;
+  opacity: 1;
+}
+
+div {
+    text-align:center;
+}
+
+div h1 {
+    color: white;
+    background-color: #2d343d;
+    font-size:50px;
+    text-align:center;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+h3{
+    margin: 0px auto;
+    width:60%;
+    color: white;
+    background-color: transparent;
+    text-align:center;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    padding: 10px;
+}
+
+.Button {
+  width: 200px;
+  height: Auto;
+  padding: 10px;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  background: #2d343d;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer; 
+  outline:0;
+  margin-top:20px;
+}
+
+.Fecha {
+    width:20%;
+    text-align:center;
+    background-color: #2d343d;
+    padding: 20px;
+    display:inline-block;
+    margin:0px;
+}
+
+.GridView {
+    width: 100%;
+}
+
+.img{
+    height: 40px;
+    width: 40px;
+    margin-left: 10px;
+    margin-top:50px;
+}
+
+
+
+.TbxFecha {
+    width: 50px;
+    height: 50px;
+    margin:0px;
+    text-align: center;
+    color: #ADADAD;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:900;
+    font-size:16px;
+    border-style: solid;
+    display:inline-block;
+}
+
+.TbxFiltrar {
+    width: 350px;
+    height: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right:20px;
+    margin-left:20px;
+    text-align: center;
+    color: #ADADAD;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:900;
+    font-size:22px;
+    border-style: solid;
+}
+
+#DivSubMenu {
+    margin: 0px;
+    width: 15%;
+    float: left;
+}
+#DivContenido {
+    width: 85%;
+    float:left;
+}
+
+#SubMenu {
+    list-style:none;
+    margin-top:10px;
+    margin-left: 0px;
+}
+
+#DivSubMenu h2{
+    margin-left:10px;
+    text-align:left;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#585f70;
+}
+
+#SubMenu .Item {
+    display:block;
+    text-align:left;
+    border:none;
+    display:block;
+    outline:0;
+    text-decoration:solid;
+    width:auto;
+    background: transparent;
+    height: auto;
+    margin-top: 20px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+#SubMenu .Item .Link {
+    background-color: transparent;
+    text-align:left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px; 
+    color: #ADADAD;
+    text-decoration: none;
+}
+
+#SubMenu .Item .Link:hover {
+    background-color: #2f2e42;
+    color:white;
+    font-size: 24px;
+    padding: 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 4px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+}
+

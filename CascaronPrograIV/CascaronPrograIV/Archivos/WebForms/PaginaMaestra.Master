@@ -12,30 +12,35 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div id="Encabezado"><h1>Empresa PK2</h1></div>
+        <div id="Encabezado">
+            <h1>Empresa PK2</h1>
+        </div>
         <div class="divMenu">
             <ul id="menu">
                 <li>
                     <asp:HyperLink runat="server" NavigateUrl="~/Archivos/WebForms/Default.aspx">Inicio</asp:HyperLink>
                 </li>
-                <li><asp:HyperLink runat="server" NavigateUrl="~/Archivos/WebForms/Parametrizaciones/Parametrizaciones.aspx">Parametrizaciones</asp:HyperLink> 
+                <li>
+                    <asp:HyperLink runat="server" NavigateUrl="~/Archivos/WebForms/Parametrizaciones/Parametrizaciones.aspx">Parametrizaciones</asp:HyperLink>
                 </li>
-                <li><asp:HyperLink runat="server" NavigateUrl="~/Archivos/WebForms/Solicitud/Solicitud.aspx">Solicitud de Viaticos</asp:HyperLink>
+                <li>
+                    <asp:HyperLink runat="server" NavigateUrl="~/Archivos/WebForms/Solicitud/Solicitud.aspx">Solicitud de Viaticos</asp:HyperLink>
                 </li>
-                <li><asp:HyperLink runat="server" NavigateUrl="~/Archivos/WebForms/Orden/Orden.aspx">Orden de Viaticos</asp:HyperLink>
+                <li>
+                    <asp:HyperLink runat="server" NavigateUrl="~/Archivos/WebForms/Orden/Orden.aspx">Orden de Viaticos</asp:HyperLink>
                 </li>
-                <li><asp:HyperLink runat="server" NavigateUrl="~/Archivos/WebForms/Liquidacion/Liquidacion.aspx">Liquidacion de Viaticos</asp:HyperLink>
+                <li>
+                    <asp:HyperLink runat="server" NavigateUrl="~/Archivos/WebForms/Liquidacion/Liquidacion.aspx">Liquidacion de Viaticos</asp:HyperLink>
                 </li>
-                <li><asp:HyperLink runat="server" NavigateUrl="~/Archivos/WebForms/Reportes/Reportes.aspx">Reportes</asp:HyperLink>
+                <li>
+                    <asp:HyperLink runat="server" NavigateUrl="~/Archivos/WebForms/Reportes/Reportes.aspx">Reportes</asp:HyperLink>
                 </li>
             </ul>
         </div>
         <br />
         <br />
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
     </form>
 </body>
 </html>

@@ -49,7 +49,7 @@
     </div>
     <div id="DivContenido">
         <div id="DivAutobus">
-            <h1 id="h1Autobus">Actulizar Tarifas de Autobus
+            <h1 id="h1Autobus">Actualizar Tarifas de Autobus
             <img src="../../Recursos/Mostrar.png" />
         </h1>
             <asp:TextBox CssClass="TbxFiltrar" ID="TextBox7" runat="server" Text="Buscar"></asp:TextBox>

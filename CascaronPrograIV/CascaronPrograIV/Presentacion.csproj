@@ -77,6 +77,7 @@
     <Content Include="Archivos\HojasdeEstilos\Liquidacion\EstiloLiquidacion.css" />
     <Content Include="Archivos\HojasdeEstilos\Orden\EstiloOrden.css" />
     <Content Include="Archivos\HojasdeEstilos\Parametrizaciones\EstiloParametros.css" />
+    <Content Include="Archivos\HojasdeEstilos\Reportes\EstiloReportes.css" />
     <Content Include="Archivos\HojasdeEstilos\Solicitud\EstiloSolicitud.css" />
     <Content Include="Archivos\Recursos\company.png" />
     <Content Include="Archivos\Recursos\Liquidacion.png" />
