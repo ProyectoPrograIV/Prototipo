@@ -105,6 +105,13 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\WCFSolicitud\Solicitud.disco" />
+    <None Include="Connected Services\WCFSolicitud\configuration91.svcinfo" />
+    <None Include="Connected Services\WCFSolicitud\configuration.svcinfo" />
+    <None Include="Connected Services\WCFSolicitud\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="packages.config" />
     <Content Include="Archivos\WebForms\PaginaMaestra.Master" />
     <None Include="Connected Services\WCFServicio\Service1.wsdl" />
@@ -117,6 +124,20 @@
     <None Include="Connected Services\WCFServicio\Service12.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\WCFSolicitud\Solicitud.wsdl" />
+    <None Include="Connected Services\WCFSolicitud\Solicitud.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCFSolicitud\Solicitud1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCFSolicitud\Solicitud2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCFSolicitud\Solicitud3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Properties\DataSources\System.Data.DataTable.datasource" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -203,6 +224,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\WCFSolicitud\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -210,6 +236,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\WCFServicio\" />
+    <WCFMetadataStorage Include="Connected Services\WCFSolicitud\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entidades\E.csproj">

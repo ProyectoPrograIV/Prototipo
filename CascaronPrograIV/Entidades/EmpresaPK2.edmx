@@ -428,6 +428,33 @@ advertencia 6002: La tabla o vista 'EmpresaPK2.SCH_VIATICOS.TBL_DETALLEVIATICO' 
           <Parameter Name="EstadoUsuario" Type="smallint" Mode="In" />
           <Parameter Name="email" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="SP_ACTUALIZAR_SOLICITUDES_FUNCIONARIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS">
+          <Parameter Name="IDSOLICITUD" Type="int" Mode="In" />
+          <Parameter Name="NOMBREUSUARIO" Type="nvarchar" Mode="In" />
+          <Parameter Name="FECHASALIDA" Type="datetime" Mode="In" />
+          <Parameter Name="FECHAREGRESO" Type="datetime" Mode="In" />
+          <Parameter Name="ESTADOSOLICITUD" Type="smallint" Mode="In" />
+          <Parameter Name="JUSTIFICACION" Type="nvarchar" Mode="In" />
+          <Parameter Name="DESTINO" Type="varchar" Mode="In" />
+          <Parameter Name="HORAREGRESO" Type="time" Mode="In" />
+          <Parameter Name="HORASALIDA" Type="time" Mode="In" />
+        </Function>
+        <Function Name="SP_ELIMINAR_SOLICITUDES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS">
+          <Parameter Name="IDSOLICITUD" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_GUARDAR_SOLICITUDES_FUNCIONARIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS">
+          <Parameter Name="NOMBREUSUARIO" Type="nvarchar" Mode="In" />
+          <Parameter Name="FECHACREACION" Type="datetime" Mode="In" />
+          <Parameter Name="FECHASALIDA" Type="datetime" Mode="In" />
+          <Parameter Name="FECHAREGRESO" Type="datetime" Mode="In" />
+          <Parameter Name="JUSTIFICACION" Type="nvarchar" Mode="In" />
+          <Parameter Name="DESTINO" Type="varchar" Mode="In" />
+          <Parameter Name="HORAREGRESO" Type="time" Mode="In" />
+          <Parameter Name="HORASALIDA" Type="time" Mode="In" />
+        </Function>
+        <Function Name="SP_LISTAR_SOLICITUDES_FUNCIONARIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS">
+          <Parameter Name="USUARIO" Type="nvarchar" Mode="In" />
+        </Function>
         <EntityContainer Name="EmpresaPK2ModelStoreContainer">
           <EntitySet Name="TBL_CANTON" EntityType="Self.TBL_CANTON" Schema="SCH_PARAMETROS" store:Type="Tables" />
           <EntitySet Name="TBL_MODTARIFARIOVIATICO" EntityType="Self.TBL_MODTARIFARIOVIATICO" Schema="SCH_PARAMETROS" store:Type="Tables" />
@@ -656,6 +683,33 @@ FROM [SCH_VIATICOS].[TBL_DETALLEVIATICO] AS [TBL_DETALLEVIATICO]</DefiningQuery>
             <Parameter Name="ID_Rol" Mode="In" Type="Int16" />
             <Parameter Name="EstadoUsuario" Mode="In" Type="Int16" />
             <Parameter Name="email" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_ACTUALIZAR_SOLICITUDES_FUNCIONARIO">
+            <Parameter Name="IDSOLICITUD" Mode="In" Type="Int32" />
+            <Parameter Name="NOMBREUSUARIO" Mode="In" Type="String" />
+            <Parameter Name="FECHASALIDA" Mode="In" Type="DateTime" />
+            <Parameter Name="FECHAREGRESO" Mode="In" Type="DateTime" />
+            <Parameter Name="ESTADOSOLICITUD" Mode="In" Type="Int16" />
+            <Parameter Name="JUSTIFICACION" Mode="In" Type="String" />
+            <Parameter Name="DESTINO" Mode="In" Type="String" />
+            <Parameter Name="HORAREGRESO" Mode="In" Type="Time" />
+            <Parameter Name="HORASALIDA" Mode="In" Type="Time" />
+          </FunctionImport>
+          <FunctionImport Name="SP_ELIMINAR_SOLICITUDES">
+            <Parameter Name="IDSOLICITUD" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_GUARDAR_SOLICITUDES_FUNCIONARIO">
+            <Parameter Name="NOMBREUSUARIO" Mode="In" Type="String" />
+            <Parameter Name="FECHACREACION" Mode="In" Type="DateTime" />
+            <Parameter Name="FECHASALIDA" Mode="In" Type="DateTime" />
+            <Parameter Name="FECHAREGRESO" Mode="In" Type="DateTime" />
+            <Parameter Name="JUSTIFICACION" Mode="In" Type="String" />
+            <Parameter Name="DESTINO" Mode="In" Type="String" />
+            <Parameter Name="HORAREGRESO" Mode="In" Type="Time" />
+            <Parameter Name="HORASALIDA" Mode="In" Type="Time" />
+          </FunctionImport>
+          <FunctionImport Name="SP_LISTAR_SOLICITUDES_FUNCIONARIO" ReturnType="Collection(EmpresaPK2Model.SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result)">
+            <Parameter Name="USUARIO" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <EntityType Name="TBL_CANTON">
@@ -1116,6 +1170,18 @@ FROM [SCH_VIATICOS].[TBL_DETALLEVIATICO] AS [TBL_DETALLEVIATICO]</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <ComplexType Name="SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result">
+          <Property Type="Int32" Name="ID_SOLICITUD" Nullable="false" />
+          <Property Type="String" Name="NOMBREUSUARIO" Nullable="false" MaxLength="24" />
+          <Property Type="DateTime" Name="FECHACREACION" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="FECHASALIDA" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="FECHAREGRESO" Nullable="false" Precision="23" />
+          <Property Type="Int16" Name="ESTADOSOLICITUD" Nullable="false" />
+          <Property Type="String" Name="JUSTIFICACION" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="DESTINO" Nullable="false" MaxLength="50" />
+          <Property Type="Time" Name="HORAREGRESO" Nullable="false" />
+          <Property Type="Time" Name="HORASALIDA" Nullable="false" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1277,6 +1343,25 @@ FROM [SCH_VIATICOS].[TBL_DETALLEVIATICO] AS [TBL_DETALLEVIATICO]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="SP_InsertarUsuario" FunctionName="EmpresaPK2Model.Store.SP_InsertarUsuario" />
+          <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_SOLICITUDES_FUNCIONARIO" FunctionName="EmpresaPK2Model.Store.SP_ACTUALIZAR_SOLICITUDES_FUNCIONARIO" />
+          <FunctionImportMapping FunctionImportName="SP_ELIMINAR_SOLICITUDES" FunctionName="EmpresaPK2Model.Store.SP_ELIMINAR_SOLICITUDES" />
+          <FunctionImportMapping FunctionImportName="SP_GUARDAR_SOLICITUDES_FUNCIONARIO" FunctionName="EmpresaPK2Model.Store.SP_GUARDAR_SOLICITUDES_FUNCIONARIO" />
+          <FunctionImportMapping FunctionImportName="SP_LISTAR_SOLICITUDES_FUNCIONARIO" FunctionName="EmpresaPK2Model.Store.SP_LISTAR_SOLICITUDES_FUNCIONARIO">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result">
+                <ScalarProperty Name="ID_SOLICITUD" ColumnName="ID_SOLICITUD" />
+                <ScalarProperty Name="NOMBREUSUARIO" ColumnName="NOMBREUSUARIO" />
+                <ScalarProperty Name="FECHACREACION" ColumnName="FECHACREACION" />
+                <ScalarProperty Name="FECHASALIDA" ColumnName="FECHASALIDA" />
+                <ScalarProperty Name="FECHAREGRESO" ColumnName="FECHAREGRESO" />
+                <ScalarProperty Name="ESTADOSOLICITUD" ColumnName="ESTADOSOLICITUD" />
+                <ScalarProperty Name="JUSTIFICACION" ColumnName="JUSTIFICACION" />
+                <ScalarProperty Name="DESTINO" ColumnName="DESTINO" />
+                <ScalarProperty Name="HORAREGRESO" ColumnName="HORAREGRESO" />
+                <ScalarProperty Name="HORASALIDA" ColumnName="HORASALIDA" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

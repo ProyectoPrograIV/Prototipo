@@ -66,5 +66,101 @@ namespace Entidades
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_InsertarUsuario", nOMBREUSUARIOParameter, cLAVEACCESOParameter, iD_RolParameter, estadoUsuarioParameter, emailParameter);
         }
+    
+        public virtual int SP_ACTUALIZAR_SOLICITUDES_FUNCIONARIO(Nullable<int> iDSOLICITUD, string nOMBREUSUARIO, Nullable<System.DateTime> fECHASALIDA, Nullable<System.DateTime> fECHAREGRESO, Nullable<short> eSTADOSOLICITUD, string jUSTIFICACION, string dESTINO, Nullable<System.TimeSpan> hORAREGRESO, Nullable<System.TimeSpan> hORASALIDA)
+        {
+            var iDSOLICITUDParameter = iDSOLICITUD.HasValue ?
+                new ObjectParameter("IDSOLICITUD", iDSOLICITUD) :
+                new ObjectParameter("IDSOLICITUD", typeof(int));
+    
+            var nOMBREUSUARIOParameter = nOMBREUSUARIO != null ?
+                new ObjectParameter("NOMBREUSUARIO", nOMBREUSUARIO) :
+                new ObjectParameter("NOMBREUSUARIO", typeof(string));
+    
+            var fECHASALIDAParameter = fECHASALIDA.HasValue ?
+                new ObjectParameter("FECHASALIDA", fECHASALIDA) :
+                new ObjectParameter("FECHASALIDA", typeof(System.DateTime));
+    
+            var fECHAREGRESOParameter = fECHAREGRESO.HasValue ?
+                new ObjectParameter("FECHAREGRESO", fECHAREGRESO) :
+                new ObjectParameter("FECHAREGRESO", typeof(System.DateTime));
+    
+            var eSTADOSOLICITUDParameter = eSTADOSOLICITUD.HasValue ?
+                new ObjectParameter("ESTADOSOLICITUD", eSTADOSOLICITUD) :
+                new ObjectParameter("ESTADOSOLICITUD", typeof(short));
+    
+            var jUSTIFICACIONParameter = jUSTIFICACION != null ?
+                new ObjectParameter("JUSTIFICACION", jUSTIFICACION) :
+                new ObjectParameter("JUSTIFICACION", typeof(string));
+    
+            var dESTINOParameter = dESTINO != null ?
+                new ObjectParameter("DESTINO", dESTINO) :
+                new ObjectParameter("DESTINO", typeof(string));
+    
+            var hORAREGRESOParameter = hORAREGRESO.HasValue ?
+                new ObjectParameter("HORAREGRESO", hORAREGRESO) :
+                new ObjectParameter("HORAREGRESO", typeof(System.TimeSpan));
+    
+            var hORASALIDAParameter = hORASALIDA.HasValue ?
+                new ObjectParameter("HORASALIDA", hORASALIDA) :
+                new ObjectParameter("HORASALIDA", typeof(System.TimeSpan));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACTUALIZAR_SOLICITUDES_FUNCIONARIO", iDSOLICITUDParameter, nOMBREUSUARIOParameter, fECHASALIDAParameter, fECHAREGRESOParameter, eSTADOSOLICITUDParameter, jUSTIFICACIONParameter, dESTINOParameter, hORAREGRESOParameter, hORASALIDAParameter);
+        }
+    
+        public virtual int SP_ELIMINAR_SOLICITUDES(Nullable<int> iDSOLICITUD)
+        {
+            var iDSOLICITUDParameter = iDSOLICITUD.HasValue ?
+                new ObjectParameter("IDSOLICITUD", iDSOLICITUD) :
+                new ObjectParameter("IDSOLICITUD", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ELIMINAR_SOLICITUDES", iDSOLICITUDParameter);
+        }
+    
+        public virtual int SP_GUARDAR_SOLICITUDES_FUNCIONARIO(string nOMBREUSUARIO, Nullable<System.DateTime> fECHACREACION, Nullable<System.DateTime> fECHASALIDA, Nullable<System.DateTime> fECHAREGRESO, string jUSTIFICACION, string dESTINO, Nullable<System.TimeSpan> hORAREGRESO, Nullable<System.TimeSpan> hORASALIDA)
+        {
+            var nOMBREUSUARIOParameter = nOMBREUSUARIO != null ?
+                new ObjectParameter("NOMBREUSUARIO", nOMBREUSUARIO) :
+                new ObjectParameter("NOMBREUSUARIO", typeof(string));
+    
+            var fECHACREACIONParameter = fECHACREACION.HasValue ?
+                new ObjectParameter("FECHACREACION", fECHACREACION) :
+                new ObjectParameter("FECHACREACION", typeof(System.DateTime));
+    
+            var fECHASALIDAParameter = fECHASALIDA.HasValue ?
+                new ObjectParameter("FECHASALIDA", fECHASALIDA) :
+                new ObjectParameter("FECHASALIDA", typeof(System.DateTime));
+    
+            var fECHAREGRESOParameter = fECHAREGRESO.HasValue ?
+                new ObjectParameter("FECHAREGRESO", fECHAREGRESO) :
+                new ObjectParameter("FECHAREGRESO", typeof(System.DateTime));
+    
+            var jUSTIFICACIONParameter = jUSTIFICACION != null ?
+                new ObjectParameter("JUSTIFICACION", jUSTIFICACION) :
+                new ObjectParameter("JUSTIFICACION", typeof(string));
+    
+            var dESTINOParameter = dESTINO != null ?
+                new ObjectParameter("DESTINO", dESTINO) :
+                new ObjectParameter("DESTINO", typeof(string));
+    
+            var hORAREGRESOParameter = hORAREGRESO.HasValue ?
+                new ObjectParameter("HORAREGRESO", hORAREGRESO) :
+                new ObjectParameter("HORAREGRESO", typeof(System.TimeSpan));
+    
+            var hORASALIDAParameter = hORASALIDA.HasValue ?
+                new ObjectParameter("HORASALIDA", hORASALIDA) :
+                new ObjectParameter("HORASALIDA", typeof(System.TimeSpan));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_GUARDAR_SOLICITUDES_FUNCIONARIO", nOMBREUSUARIOParameter, fECHACREACIONParameter, fECHASALIDAParameter, fECHAREGRESOParameter, jUSTIFICACIONParameter, dESTINOParameter, hORAREGRESOParameter, hORASALIDAParameter);
+        }
+    
+        public virtual ObjectResult<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> SP_LISTAR_SOLICITUDES_FUNCIONARIO(string uSUARIO)
+        {
+            var uSUARIOParameter = uSUARIO != null ?
+                new ObjectParameter("USUARIO", uSUARIO) :
+                new ObjectParameter("USUARIO", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result>("SP_LISTAR_SOLICITUDES_FUNCIONARIO", uSUARIOParameter);
+        }
     }
 }

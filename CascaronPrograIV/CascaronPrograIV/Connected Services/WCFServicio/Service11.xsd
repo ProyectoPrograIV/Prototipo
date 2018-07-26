@@ -19,10 +19,10 @@
   <xs:complexType name="TBL_USUARIO">
     <xs:sequence>
       <xs:element minOccurs="0" name="CLAVEACCESO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EMAIL" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ESTADOUSARIO" type="xs:short" />
       <xs:element minOccurs="0" name="ID_ROL" type="xs:short" />
       <xs:element minOccurs="0" name="NOMBREUSUARIO" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ROLUSUARIO" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TBL_ESTADOS" nillable="true" type="tns:TBL_ESTADOS" />
       <xs:element minOccurs="0" name="TBL_PERSONA" nillable="true" type="tns:ArrayOfTBL_PERSONA" />
       <xs:element minOccurs="0" name="TBL_ROLUSUARIO" nillable="true" type="tns:TBL_ROLUSUARIO" />
@@ -113,7 +113,7 @@
       <xs:element minOccurs="0" name="FECHAVIATICOS" type="xs:dateTime" />
       <xs:element minOccurs="0" name="ID_DETALLE" type="xs:int" />
       <xs:element minOccurs="0" name="ID_MODTARIFA" type="xs:short" />
-      <xs:element minOccurs="0" name="ID_PERSONA" type="xs:short" />
+      <xs:element minOccurs="0" name="ID_PERSONA" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ID_SOLICITUD" type="xs:int" />
       <xs:element minOccurs="0" name="TBL_DETALLEVIATICO" nillable="true" type="tns:ArrayOfTBL_DETALLEVIATICO" />
       <xs:element minOccurs="0" name="TBL_MODTARIFARIOVIATICO" nillable="true" type="tns:TBL_MODTARIFARIOVIATICO" />
@@ -200,11 +200,10 @@
   <xs:element name="ArrayOfTBL_DETALLESOLICITUDVIATICOS" nillable="true" type="tns:ArrayOfTBL_DETALLESOLICITUDVIATICOS" />
   <xs:complexType name="TBL_PERSONA">
     <xs:sequence>
-      <xs:element minOccurs="0" name="ID_PERSONA" type="xs:short" />
+      <xs:element minOccurs="0" name="APELLIDOS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID_PERSONA" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NOMBRE" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NOMBREUSUARIO" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PRIMERAPELLIDO" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="SEGUNDOAPELLIDO" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TBL_DETALLESOLICITUDVIATICOS" nillable="true" type="tns:ArrayOfTBL_DETALLESOLICITUDVIATICOS" />
       <xs:element minOccurs="0" name="TBL_USUARIO" nillable="true" type="tns:TBL_USUARIO" />
     </xs:sequence>

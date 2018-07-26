@@ -74,17 +74,17 @@
             <h1 id="h1Crear" title="Click para mostrar contenido">Crear Solicitud de Viaticos
             <img src="../../Recursos/Mostrar.png" /></h1>
             <br />
-            <asp:TextBox CssClass="Textbox" ID="TextBox1" runat="server" Text="Fecha de Creacion"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TextBox2" runat="server" Text="Fecha de Regreso"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TextBox3" runat="server" Text="Estado de Solicitud"></asp:TextBox><br />
+            <asp:TextBox CssClass="Textbox" ID="TbxFechaCreacion" runat="server" Text="Fecha de Creacion"></asp:TextBox>
+            <asp:TextBox CssClass="Textbox" ID="TbxFechaRegreso" runat="server" Text="Fecha de Regreso"></asp:TextBox>
+            <br />
 
-            <asp:TextBox CssClass="Textbox" ID="TextBox4" runat="server" Text="Usuario"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TextBox5" runat="server" Text="Justificacion"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TextBox6" runat="server" Text="Destino"></asp:TextBox><br />
+            <asp:TextBox CssClass="Textbox" ID="TbxUsuario" runat="server" Text="Usuario"></asp:TextBox>
+            <asp:TextBox CssClass="Textbox" ID="TbxJustificacion" runat="server" Text="Justificacion"></asp:TextBox>
+            <asp:TextBox CssClass="Textbox" ID="TbxDestino" runat="server" Text="Destino"></asp:TextBox><br />
 
-            <asp:TextBox CssClass="Textbox" ID="TextBox7" runat="server" Text="Fecha de Salida"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TextBox8" runat="server" Text="Hora de Salida"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TextBox9" runat="server" Text="Hora de Regreso"></asp:TextBox><br />
+            <asp:TextBox CssClass="Textbox" ID="TbxFechaSalida" runat="server" Text="Fecha de Salida"></asp:TextBox>
+            <asp:TextBox CssClass="Textbox" ID="TbxHoraSalida" runat="server" Text="Hora de Salida"></asp:TextBox>
+            <asp:TextBox CssClass="Textbox" ID="TbxHoraRegreso" runat="server" Text="Hora de Regreso"></asp:TextBox><br />
             <br />
             <asp:Button ID="Btn_Guardar" CssClass="Button" runat="server" Text="Guardar" OnClick="Btn_Guardar_Click" />
         </div>
@@ -93,7 +93,7 @@
         <div id="DivConsultar">
             <h1 id="h1Consultar" title="Click para mostrar contenido">Consultar Solicitudes de Viaticos
             <img src="../../Recursos/Mostrar.png" /></h1>
-            <asp:TextBox ID="TbxFiltrar" CssClass="TbxFiltrar" runat="server" Text="Buscar"></asp:TextBox>
+            <asp:TextBox ID="TbxFiltrar" CssClass="TbxFiltrar" runat="server" Text="Buscar" OnTextChanged="TbxFiltrar_TextChanged"></asp:TextBox>
             <div>
                 <asp:GridView CssClass="GridView" ID="GvConsultarSolicitud" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
                     <AlternatingRowStyle BackColor="White" />

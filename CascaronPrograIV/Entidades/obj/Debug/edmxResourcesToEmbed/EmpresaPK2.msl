@@ -156,5 +156,24 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="SP_InsertarUsuario" FunctionName="EmpresaPK2Model.Store.SP_InsertarUsuario" />
+    <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_SOLICITUDES_FUNCIONARIO" FunctionName="EmpresaPK2Model.Store.SP_ACTUALIZAR_SOLICITUDES_FUNCIONARIO" />
+    <FunctionImportMapping FunctionImportName="SP_ELIMINAR_SOLICITUDES" FunctionName="EmpresaPK2Model.Store.SP_ELIMINAR_SOLICITUDES" />
+    <FunctionImportMapping FunctionImportName="SP_GUARDAR_SOLICITUDES_FUNCIONARIO" FunctionName="EmpresaPK2Model.Store.SP_GUARDAR_SOLICITUDES_FUNCIONARIO" />
+    <FunctionImportMapping FunctionImportName="SP_LISTAR_SOLICITUDES_FUNCIONARIO" FunctionName="EmpresaPK2Model.Store.SP_LISTAR_SOLICITUDES_FUNCIONARIO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result">
+          <ScalarProperty Name="ID_SOLICITUD" ColumnName="ID_SOLICITUD" />
+          <ScalarProperty Name="NOMBREUSUARIO" ColumnName="NOMBREUSUARIO" />
+          <ScalarProperty Name="FECHACREACION" ColumnName="FECHACREACION" />
+          <ScalarProperty Name="FECHASALIDA" ColumnName="FECHASALIDA" />
+          <ScalarProperty Name="FECHAREGRESO" ColumnName="FECHAREGRESO" />
+          <ScalarProperty Name="ESTADOSOLICITUD" ColumnName="ESTADOSOLICITUD" />
+          <ScalarProperty Name="JUSTIFICACION" ColumnName="JUSTIFICACION" />
+          <ScalarProperty Name="DESTINO" ColumnName="DESTINO" />
+          <ScalarProperty Name="HORAREGRESO" ColumnName="HORAREGRESO" />
+          <ScalarProperty Name="HORASALIDA" ColumnName="HORASALIDA" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

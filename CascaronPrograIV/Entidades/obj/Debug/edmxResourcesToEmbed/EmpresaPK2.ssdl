@@ -423,6 +423,33 @@ advertencia 6002: La tabla o vista 'EmpresaPK2.SCH_VIATICOS.TBL_DETALLEVIATICO' 
     <Parameter Name="EstadoUsuario" Type="smallint" Mode="In" />
     <Parameter Name="email" Type="nvarchar" Mode="In" />
   </Function>
+  <Function Name="SP_ACTUALIZAR_SOLICITUDES_FUNCIONARIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS">
+    <Parameter Name="IDSOLICITUD" Type="int" Mode="In" />
+    <Parameter Name="NOMBREUSUARIO" Type="nvarchar" Mode="In" />
+    <Parameter Name="FECHASALIDA" Type="datetime" Mode="In" />
+    <Parameter Name="FECHAREGRESO" Type="datetime" Mode="In" />
+    <Parameter Name="ESTADOSOLICITUD" Type="smallint" Mode="In" />
+    <Parameter Name="JUSTIFICACION" Type="nvarchar" Mode="In" />
+    <Parameter Name="DESTINO" Type="varchar" Mode="In" />
+    <Parameter Name="HORAREGRESO" Type="time" Mode="In" />
+    <Parameter Name="HORASALIDA" Type="time" Mode="In" />
+  </Function>
+  <Function Name="SP_ELIMINAR_SOLICITUDES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS">
+    <Parameter Name="IDSOLICITUD" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_GUARDAR_SOLICITUDES_FUNCIONARIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS">
+    <Parameter Name="NOMBREUSUARIO" Type="nvarchar" Mode="In" />
+    <Parameter Name="FECHACREACION" Type="datetime" Mode="In" />
+    <Parameter Name="FECHASALIDA" Type="datetime" Mode="In" />
+    <Parameter Name="FECHAREGRESO" Type="datetime" Mode="In" />
+    <Parameter Name="JUSTIFICACION" Type="nvarchar" Mode="In" />
+    <Parameter Name="DESTINO" Type="varchar" Mode="In" />
+    <Parameter Name="HORAREGRESO" Type="time" Mode="In" />
+    <Parameter Name="HORASALIDA" Type="time" Mode="In" />
+  </Function>
+  <Function Name="SP_LISTAR_SOLICITUDES_FUNCIONARIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS">
+    <Parameter Name="USUARIO" Type="nvarchar" Mode="In" />
+  </Function>
   <EntityContainer Name="EmpresaPK2ModelStoreContainer">
     <EntitySet Name="TBL_CANTON" EntityType="Self.TBL_CANTON" Schema="SCH_PARAMETROS" store:Type="Tables" />
     <EntitySet Name="TBL_MODTARIFARIOVIATICO" EntityType="Self.TBL_MODTARIFARIOVIATICO" Schema="SCH_PARAMETROS" store:Type="Tables" />
