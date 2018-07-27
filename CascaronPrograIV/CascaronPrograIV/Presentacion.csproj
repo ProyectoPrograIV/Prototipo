@@ -134,9 +134,6 @@
     <None Include="Connected Services\WCFSolicitud\Solicitud2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\WCFSolicitud\Solicitud3.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Properties\DataSources\System.Data.DataTable.datasource" />
     <Content Include="Properties\DataSources\Entidades.SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result.datasource" />
     <None Include="Web.Debug.config">

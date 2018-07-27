@@ -13,18 +13,7 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            WCFSolicitud.SolicitudClient Cliente = new WCFSolicitud.SolicitudClient();
-            TBL_SOLICITUDVIATICOS Obj_Solicitud = new TBL_SOLICITUDVIATICOS();
-            Obj_Solicitud.NOMBREUSUARIO = "davidotno";
-            List<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> lista = Cliente.ObtenerListaSolicitudesFuncionario(Obj_Solicitud);
-
-            this.GvConsultarSolicitud.DataSource = null;
-            this.GvConsultarSolicitud.DataBind();
-            this.GvConsultarSolicitud.DataSource = lista;
-            this.GvConsultarSolicitud.DataBind();
-
-          //  GvConsultarSolicitud.DataSource = CargarDatos();
-          //  GvConsultarSolicitud.DataBind();
+            LlenarGrid();
         }
 
         protected void Btn_Guardar_Click(object sender, EventArgs e)
@@ -47,16 +36,27 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
             }
         }
 
-        /*
-        private DataTable CargarDatos()
+        private void LlenarGrid()
+        {
+            GvConsultarSolicitud.DataSource = CargarDatos();
+            GvConsultarSolicitud.DataBind();
+            GvConsultarSolicitud.HeaderRow.Cells[0].Visible = false;
+            GvConsultarSolicitud.HeaderRow.Cells[5].Visible = false;
+            for (int i = 0; i < GvConsultarSolicitud.Rows.Count; i++)
+            {
+                GvConsultarSolicitud.Rows[i].Cells[0].Visible = false;
+                GvConsultarSolicitud.Rows[i].Cells[5].Visible = false;
+            }
+        }
+        
+        private List<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> CargarDatos()
         {
             WCFSolicitud.SolicitudClient Cliente = new WCFSolicitud.SolicitudClient();
             TBL_SOLICITUDVIATICOS Obj_Solicitud = new TBL_SOLICITUDVIATICOS();
             Obj_Solicitud.NOMBREUSUARIO = "davidotno";
-            DataTable tabla = Cliente.ListarSolicitudes(Obj_Solicitud);
-            Cliente.Close();
-            return tabla;
-        }*/
+            List<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> ListaSolicitudes = Cliente.ListarSolicitudes(Obj_Solicitud);
+            return ListaSolicitudes;
+        }
 
         private Boolean Vacio()
         {

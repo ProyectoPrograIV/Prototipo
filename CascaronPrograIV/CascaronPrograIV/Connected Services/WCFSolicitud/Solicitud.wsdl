@@ -5,7 +5,6 @@
       <xsd:import schemaLocation="http://localhost:64695/Solicitud.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:64695/Solicitud.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:64695/Solicitud.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Entidades" />
-      <xsd:import schemaLocation="http://localhost:64695/Solicitud.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="ISolicitud_GuardarSolicitud_InputMessage">
@@ -20,12 +19,6 @@
   <wsdl:message name="ISolicitud_ListarSolicitudes_OutputMessage">
     <wsdl:part name="parameters" element="tns:ListarSolicitudesResponse" />
   </wsdl:message>
-  <wsdl:message name="ISolicitud_ObtenerListaSolicitudesFuncionario_InputMessage">
-    <wsdl:part name="parameters" element="tns:ObtenerListaSolicitudesFuncionario" />
-  </wsdl:message>
-  <wsdl:message name="ISolicitud_ObtenerListaSolicitudesFuncionario_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ObtenerListaSolicitudesFuncionarioResponse" />
-  </wsdl:message>
   <wsdl:portType name="ISolicitud">
     <wsdl:operation name="GuardarSolicitud">
       <wsdl:input wsaw:Action="http://tempuri.org/ISolicitud/GuardarSolicitud" message="tns:ISolicitud_GuardarSolicitud_InputMessage" />
@@ -34,10 +27,6 @@
     <wsdl:operation name="ListarSolicitudes">
       <wsdl:input wsaw:Action="http://tempuri.org/ISolicitud/ListarSolicitudes" message="tns:ISolicitud_ListarSolicitudes_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISolicitud/ListarSolicitudesResponse" message="tns:ISolicitud_ListarSolicitudes_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="ObtenerListaSolicitudesFuncionario">
-      <wsdl:input wsaw:Action="http://tempuri.org/ISolicitud/ObtenerListaSolicitudesFuncionario" message="tns:ISolicitud_ObtenerListaSolicitudesFuncionario_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ISolicitud/ObtenerListaSolicitudesFuncionarioResponse" message="tns:ISolicitud_ObtenerListaSolicitudesFuncionario_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ISolicitud" type="tns:ISolicitud">
@@ -53,15 +42,6 @@
     </wsdl:operation>
     <wsdl:operation name="ListarSolicitudes">
       <soap:operation soapAction="http://tempuri.org/ISolicitud/ListarSolicitudes" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ObtenerListaSolicitudesFuncionario">
-      <soap:operation soapAction="http://tempuri.org/ISolicitud/ObtenerListaSolicitudesFuncionario" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

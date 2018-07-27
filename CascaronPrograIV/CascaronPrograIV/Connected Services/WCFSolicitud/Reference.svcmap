@@ -24,12 +24,11 @@
     <MetadataSource Address="http://localhost:64695/Solicitud.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Solicitud.wsdl" MetadataType="Wsdl" ID="58cc14e3-c3c3-4af5-becd-d15afa8f7dee" SourceId="1" SourceUrl="http://localhost:64695/Solicitud.svc?wsdl" />
-    <MetadataFile FileName="Solicitud3.xsd" MetadataType="Schema" ID="c19f9487-1ec6-412b-ac1d-0448cfdf524f" SourceId="1" SourceUrl="http://localhost:64695/Solicitud.svc?xsd=xsd3" />
     <MetadataFile FileName="Solicitud.xsd" MetadataType="Schema" ID="f927416c-6da0-467b-beff-dee3b50e2e65" SourceId="1" SourceUrl="http://localhost:64695/Solicitud.svc?xsd=xsd2" />
     <MetadataFile FileName="Solicitud1.xsd" MetadataType="Schema" ID="8757c8cc-acbd-4891-bdfc-23652d77e154" SourceId="1" SourceUrl="http://localhost:64695/Solicitud.svc?xsd=xsd1" />
-    <MetadataFile FileName="Solicitud2.xsd" MetadataType="Schema" ID="13bf5941-9144-4197-9d0c-470a2f71abe1" SourceId="1" SourceUrl="http://localhost:64695/Solicitud.svc?xsd=xsd0" />
+    <MetadataFile FileName="Solicitud.wsdl" MetadataType="Wsdl" ID="58cc14e3-c3c3-4af5-becd-d15afa8f7dee" SourceId="1" SourceUrl="http://localhost:64695/Solicitud.svc?wsdl" />
     <MetadataFile FileName="Solicitud.disco" MetadataType="Disco" ID="51420f30-ec33-4a8b-a2ef-4c74878463a0" SourceId="1" SourceUrl="http://localhost:64695/Solicitud.svc?disco" />
+    <MetadataFile FileName="Solicitud2.xsd" MetadataType="Schema" ID="13bf5941-9144-4197-9d0c-470a2f71abe1" SourceId="1" SourceUrl="http://localhost:64695/Solicitud.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
