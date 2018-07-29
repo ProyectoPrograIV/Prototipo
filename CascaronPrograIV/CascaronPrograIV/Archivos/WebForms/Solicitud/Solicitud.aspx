@@ -40,6 +40,12 @@
                 $('#DivActualizar').hide(400);
                 $('#DivConsultar').hide(400);
             });
+            $('#Btn_Guardar').click(function () {
+                $('#DivVerificar').toggle(400);
+                $('#DivCrear').hide(400);
+                $('#DivActualizar').hide(400);
+                $('#DivConsultar').hide(400);
+            });
         });
         $(document).ready(function () {
             $('#DivCrear').show();
@@ -71,22 +77,47 @@
     </div>
     <div id="DivContenido">
         <div id="DivCrear">
-            <h1 id="h1Crear" title="Click para mostrar contenido">Crear Solicitud de Viaticos
-            <img src="../../Recursos/Mostrar.png" /></h1>
-            <br />
-            <asp:TextBox CssClass="Textbox" ID="TbxFechaCreacion" runat="server" Text="Fecha de Creacion"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TbxFechaRegreso" runat="server" Text="Fecha de Regreso"></asp:TextBox>
-            <br />
-
-            <asp:TextBox CssClass="Textbox" ID="TbxUsuario" runat="server" Text="Usuario"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TbxJustificacion" runat="server" Text="Justificacion"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TbxDestino" runat="server" Text="Destino"></asp:TextBox><br />
-
-            <asp:TextBox CssClass="Textbox" ID="TbxFechaSalida" runat="server" Text="Fecha de Salida"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TbxHoraSalida" runat="server" Text="Hora de Salida"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TbxHoraRegreso" runat="server" Text="Hora de Regreso"></asp:TextBox><br />
-            <br />
-            <asp:Button ID="Btn_Guardar" CssClass="Button" runat="server" Text="Guardar" OnClick="Btn_Guardar_Click" />
+            <h1 id="h1Crear" title="Click para mostrar contenido">Crear Solicitud de Viaticos</h1>
+            <div id="Solicitud">
+                <br />
+                <asp:TextBox CssClass="Textbox" ID="TbxFechaRegreso" runat="server" placeholder="Fecha de Regreso"></asp:TextBox>
+                <asp:TextBox CssClass="Textbox" ID="TbxFechaSalida" runat="server" placeholder="Fecha de Salida"></asp:TextBox>
+                <br />
+                <asp:TextBox CssClass="Textbox" ID="TbxJustificacion" runat="server" placeholder="Justificacion"></asp:TextBox>
+                <asp:TextBox CssClass="Textbox" ID="TbxDestino" runat="server" placeholder="Destino"></asp:TextBox>
+                <br />
+                <asp:TextBox CssClass="Textbox" ID="TbxUsuario" runat="server" placeholder="Usuario"></asp:TextBox>
+                <asp:TextBox CssClass="Textbox" ID="TbxHoraSalida" runat="server" placeholder="Hora de Salida"></asp:TextBox>
+                <asp:TextBox CssClass="Textbox" ID="TbxHoraRegreso" runat="server" placeholder="Hora de Regreso"></asp:TextBox><br />
+                <br />
+                <asp:Button ID="Btn_Guardar" CssClass="Button" runat="server" Text="Guardar" OnClick="Btn_Guardar_Click" />
+                <div id="DivValidaciones">
+                    <asp:Label ID="Validaciones" runat="server"></asp:Label><br />
+                    <asp:RegularExpressionValidator ID="ValidadorFechaSalida" runat="server" ErrorMessage="Fecha de salida incorrecta, forma correcta ##/##/####" ControlToValidate="TbxFechaSalida" ValidationExpression="^\d{2}(/)\d{2}(/)\d{4}$"></asp:RegularExpressionValidator><br />
+                    <asp:RegularExpressionValidator ID="ValidadorFechaRegreso" runat="server" ErrorMessage="Fecha de regreso incorrecta, forma correcta ##/##/####" ControlToValidate="TbxFechaRegreso" ValidationExpression="^\d{2}(/)\d{2}(/)\d{4}$"></asp:RegularExpressionValidator><br />
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="RegularExpressionValidator"></asp:RegularExpressionValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="RegularExpressionValidator"></asp:RegularExpressionValidator>
+                </div>
+                <div>
+                    <br />
+                    <asp:TextBox CssClass="Textbox" ID="TextBox1" runat="server" placeholder="Fecha de Regreso"></asp:TextBox>
+                    <asp:TextBox CssClass="Textbox" ID="TextBox2" runat="server" placeholder="Fecha de Salida"></asp:TextBox>
+                    <br />
+                    <asp:TextBox CssClass="Textbox" ID="TextBox3" runat="server" placeholder="Justificacion"></asp:TextBox>
+                    <asp:TextBox CssClass="Textbox" ID="TextBox4" runat="server" placeholder="Destino"></asp:TextBox>
+                    <br />
+                    <br />
+                    <br />
+                    <asp:Button ID="Button4" CssClass="Button" runat="server" Text="Guardar" OnClick="Btn_Guardar_Click" />
+                    <div id="DivValidaciones2">
+                        <asp:Label ID="Label1" runat="server"></asp:Label><br />
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="Fecha de salida incorrecta, forma correcta ##/##/####" ControlToValidate="TbxFechaSalida" ValidationExpression="^\d{2}(/)\d{2}(/)\d{4}$"></asp:RegularExpressionValidator><br />
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ErrorMessage="Fecha de regreso incorrecta, forma correcta ##/##/####" ControlToValidate="TbxFechaRegreso" ValidationExpression="^\d{2}(/)\d{2}(/)\d{4}$"></asp:RegularExpressionValidator><br />
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ErrorMessage="RegularExpressionValidator"></asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ErrorMessage="RegularExpressionValidator"></asp:RegularExpressionValidator>
+                    </div>
+                </div>
+            </div>
         </div>
         <br />
         <br />

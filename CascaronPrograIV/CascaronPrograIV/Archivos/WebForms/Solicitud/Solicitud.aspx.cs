@@ -35,7 +35,7 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
                 }
             }
         }
-
+        
         private void LlenarGrid()
         {
             GvConsultarSolicitud.DataSource = CargarDatos();
@@ -60,14 +60,16 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
 
         private Boolean Vacio()
         {
-            if (TbxDestino.Text == "" || TbxFechaCreacion.Text == "" ||
+            if (TbxDestino.Text == "" ||
                 TbxFechaRegreso.Text == "" || TbxFechaSalida.Text == "" || TbxHoraRegreso.Text == "" ||
                 TbxHoraSalida.Text == "" || TbxJustificacion.Text == "" || TbxUsuario.Text == "")
             {
+                Validaciones.Text = "Complete los Campos Vacios";          
                 return true;
             }
             else
             {
+                Validaciones.Text = "";
                 return false;
             }
         }
@@ -77,7 +79,7 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
             TBL_SOLICITUDVIATICOS Obj_Solicitud;
             Obj_Solicitud = new TBL_SOLICITUDVIATICOS();
             Obj_Solicitud.DESTINO = TbxDestino.Text;
-            Obj_Solicitud.FECHACREACION = Convert.ToDateTime(TbxFechaCreacion.Text);
+            Obj_Solicitud.FECHACREACION = DateTime.Now;
             Obj_Solicitud.FECHAREGRESO = Convert.ToDateTime(TbxFechaRegreso.Text);
             Obj_Solicitud.FECHASALIDA = Convert.ToDateTime(TbxFechaSalida.Text);
             Obj_Solicitud.HORAREGRESO = TimeSpan.Parse(TbxHoraRegreso.Text, System.Globalization.CultureInfo.InvariantCulture);
