@@ -20,19 +20,12 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
         {
             if (Vacio() == false)
             {
-                WCFSolicitud.SolicitudClient Cliente = new WCFSolicitud.SolicitudClient();
-                if (Cliente.GuardarSolicitud(AsignarDatos()) == true)
-                {
-                    string script = "alert(\"Solicitud Guardada Exitosamente\");";
-                    ScriptManager.RegisterStartupScript(this, GetType(),
-                                          "ServerControlScript", script, true);
-                }
-                else
-                {
-                    string script = "alert(\"Error al Guardar su Solicitud\");";
-                    ScriptManager.RegisterStartupScript(this, GetType(),
-                                          "ServerControlScript", script, true);
-                }
+                LblInicio.Text = "El numero de solicitudes esta vacio.";
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Solicitud()", true);
+            }
+            else
+            {
+
             }
         }
         
@@ -92,6 +85,37 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
         protected void TbxFiltrar_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void BtnIniciar_Click(object sender, EventArgs e)
+        {
+            if (TbxCantidadSolicitudes.Text != "")
+            {
+                if (Convert.ToInt16(TbxCantidadSolicitudes.Text) > 0)
+                {
+                    ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Inicio()", true);
+                }
+                else
+                {
+                    LblInicio.Text = "El Numero de Solicitudes debe ser mayor a 0.";
+                    ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Negado()", true);
+                }
+            }
+            else
+            {
+                LblInicio.Text = "El numero de solicitudes esta vacio.";
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Negado()", true);
+            }
+        }
+
+        protected void Btn_SolcitudReg_Click(object sender, EventArgs e)
+        {
+            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Inicio()", true);
+        }
+
+        protected void BtnDetalleReg_Click(object sender, EventArgs e)
+        {
+            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Solicitud()", true);
         }
     }
 }

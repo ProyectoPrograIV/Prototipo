@@ -42,7 +42,6 @@ C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\CascaronProg
 C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\Presentacion.csproj.CopyComplete
 C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\CascaronPrograIV.dll
 C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\CascaronPrograIV.pdb
-C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\Presentacion.csprojResolveAssemblyReference.cache
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\csc.exe
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -59,7 +58,8 @@ C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\Casc
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\CascaronPrograIV.dll
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\CascaronPrograIV.pdb
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\EntityFramework.dll
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\Presentacion.csprojResolveAssemblyReference.cache
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\CascaronPrograIV.dll
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\CascaronPrograIV.pdb
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\EntityFramework.dll

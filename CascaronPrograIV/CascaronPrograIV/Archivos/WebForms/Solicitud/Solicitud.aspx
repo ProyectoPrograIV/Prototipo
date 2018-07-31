@@ -5,6 +5,21 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <script src="../../script/jquery-3.3.1.min.js"></script>
     <script type="text/javascript">
+        function Inicio() {
+            $('#Solicitud').show();
+            $('#InicioSolicitud').hide();
+            $('#DetalleViatico').hide();
+        };
+        function Negado() {
+            $('#InicioSolicitud').show();
+            $('#Solicitud').hide();
+            $('#DetalleViatico').hide();
+        };
+        function Solicitud() {
+            $('#InicioSolicitud').hide();
+            $('#Solicitud').hide();
+            $('#DetalleViatico').show();
+        };
         $(document).ready(function () {
             $('#Toggle').click(function () {
                 if ($('#DivSubMenu').is(":visible")) {
@@ -40,18 +55,14 @@
                 $('#DivActualizar').hide(400);
                 $('#DivConsultar').hide(400);
             });
-            $('#Btn_Guardar').click(function () {
-                $('#DivVerificar').toggle(400);
-                $('#DivCrear').hide(400);
-                $('#DivActualizar').hide(400);
-                $('#DivConsultar').hide(400);
-            });
         });
         $(document).ready(function () {
             $('#DivCrear').show();
             $('#DivConsultar').hide();
             $('#DivActualizar').hide();
             $('#DivVerificar').hide();
+            $('#Solicitud').hide();
+            $('#DetalleViatico').hide();
         });
     </script>
     <link href="../../HojasdeEstilos/Solicitud/EstiloSolicitud.css" rel="stylesheet" type="text/css" />
@@ -76,49 +87,64 @@
         </ul>
     </div>
     <div id="DivContenido">
-        <div id="DivCrear">
-            <h1 id="h1Crear" title="Click para mostrar contenido">Crear Solicitud de Viaticos</h1>
-            <div id="Solicitud">
-                <br />
-                <asp:TextBox CssClass="Textbox" ID="TbxFechaRegreso" runat="server" placeholder="Fecha de Regreso"></asp:TextBox>
-                <asp:TextBox CssClass="Textbox" ID="TbxFechaSalida" runat="server" placeholder="Fecha de Salida"></asp:TextBox>
-                <br />
-                <asp:TextBox CssClass="Textbox" ID="TbxJustificacion" runat="server" placeholder="Justificacion"></asp:TextBox>
-                <asp:TextBox CssClass="Textbox" ID="TbxDestino" runat="server" placeholder="Destino"></asp:TextBox>
-                <br />
-                <asp:TextBox CssClass="Textbox" ID="TbxUsuario" runat="server" placeholder="Usuario"></asp:TextBox>
-                <asp:TextBox CssClass="Textbox" ID="TbxHoraSalida" runat="server" placeholder="Hora de Salida"></asp:TextBox>
-                <asp:TextBox CssClass="Textbox" ID="TbxHoraRegreso" runat="server" placeholder="Hora de Regreso"></asp:TextBox><br />
-                <br />
-                <asp:Button ID="Btn_Guardar" CssClass="Button" runat="server" Text="Guardar" OnClick="Btn_Guardar_Click" />
-                <div id="DivValidaciones">
-                    <asp:Label ID="Validaciones" runat="server"></asp:Label><br />
-                    <asp:RegularExpressionValidator ID="ValidadorFechaSalida" runat="server" ErrorMessage="Fecha de salida incorrecta, forma correcta ##/##/####" ControlToValidate="TbxFechaSalida" ValidationExpression="^\d{2}(/)\d{2}(/)\d{4}$"></asp:RegularExpressionValidator><br />
-                    <asp:RegularExpressionValidator ID="ValidadorFechaRegreso" runat="server" ErrorMessage="Fecha de regreso incorrecta, forma correcta ##/##/####" ControlToValidate="TbxFechaRegreso" ValidationExpression="^\d{2}(/)\d{2}(/)\d{4}$"></asp:RegularExpressionValidator><br />
-                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="RegularExpressionValidator"></asp:RegularExpressionValidator>
-                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="RegularExpressionValidator"></asp:RegularExpressionValidator>
-                </div>
-                <div>
-                    <br />
-                    <asp:TextBox CssClass="Textbox" ID="TextBox1" runat="server" placeholder="Fecha de Regreso"></asp:TextBox>
-                    <asp:TextBox CssClass="Textbox" ID="TextBox2" runat="server" placeholder="Fecha de Salida"></asp:TextBox>
-                    <br />
-                    <asp:TextBox CssClass="Textbox" ID="TextBox3" runat="server" placeholder="Justificacion"></asp:TextBox>
-                    <asp:TextBox CssClass="Textbox" ID="TextBox4" runat="server" placeholder="Destino"></asp:TextBox>
-                    <br />
-                    <br />
-                    <br />
-                    <asp:Button ID="Button4" CssClass="Button" runat="server" Text="Guardar" OnClick="Btn_Guardar_Click" />
-                    <div id="DivValidaciones2">
-                        <asp:Label ID="Label1" runat="server"></asp:Label><br />
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="Fecha de salida incorrecta, forma correcta ##/##/####" ControlToValidate="TbxFechaSalida" ValidationExpression="^\d{2}(/)\d{2}(/)\d{4}$"></asp:RegularExpressionValidator><br />
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ErrorMessage="Fecha de regreso incorrecta, forma correcta ##/##/####" ControlToValidate="TbxFechaRegreso" ValidationExpression="^\d{2}(/)\d{2}(/)\d{4}$"></asp:RegularExpressionValidator><br />
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ErrorMessage="RegularExpressionValidator"></asp:RegularExpressionValidator>
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ErrorMessage="RegularExpressionValidator"></asp:RegularExpressionValidator>
+        <asp:ScriptManager runat="server" ID="ScripManagerCsharp" EnableCdn="true" EnablePageMethods="True">
+        </asp:ScriptManager>
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
+                <div id="DivCrear">
+                    <h1 id="h1Crear" title="Click para mostrar contenido">Crear Solicitud de Viaticos</h1>
+                    <div id="InicioSolicitud">
+
+                        <asp:TextBox CssClass="Textbox" ID="TbxCantidadSolicitudes" runat="server" placeholder="Cantidad de Solicitudes a Crear" Width="400px"></asp:TextBox>
+                        <br />
+                        <asp:Label ID="LblInicio" runat="server"></asp:Label>
+                        <br />
+                        <br />
+                        <asp:Button CssClass="Button" ID="BtnIniciar" runat="server" Text="Siguiente" OnClick="BtnIniciar_Click" />
+                    </div>
+                    <div id="Solicitud">
+                        <asp:TextBox CssClass="Textbox" ID="TbxFechaRegreso" runat="server" placeholder="Fecha de Regreso"></asp:TextBox>
+                        <asp:TextBox CssClass="Textbox" ID="TbxFechaSalida" runat="server" placeholder="Fecha de Salida"></asp:TextBox>
+                        <br />
+                        <asp:TextBox CssClass="Textbox" ID="TbxJustificacion" runat="server" placeholder="Justificacion"></asp:TextBox>
+                        <asp:TextBox CssClass="Textbox" ID="TbxDestino" runat="server" placeholder="Destino"></asp:TextBox>
+                        <br />
+                        <asp:TextBox CssClass="Textbox" ID="TbxUsuario" runat="server" placeholder="Usuario"></asp:TextBox>
+                        <asp:TextBox CssClass="Textbox" ID="TbxHoraSalida" runat="server" placeholder="Hora de Salida"></asp:TextBox>
+                        <asp:TextBox CssClass="Textbox" ID="TbxHoraRegreso" runat="server" placeholder="Hora de Regreso"></asp:TextBox><br />
+                        <br />
+                        <asp:Button ID="Btn_SolcitudReg" CssClass="Button" runat="server" Text="Regresar" OnClick="Btn_SolcitudReg_Click" />
+                        <asp:Button ID="Btn_SolicitudSig" CssClass="Button" runat="server" Text="Siguiente" OnClick="Btn_Guardar_Click"/>
+                        <div id="DivValidaciones">
+                            <asp:Label ID="Validaciones" runat="server"></asp:Label><br />
+                            <asp:RegularExpressionValidator ID="ValidadorFechaSalida" runat="server" ErrorMessage="Fecha de salida incorrecta, forma correcta ##/##/####" ControlToValidate="TbxFechaSalida" ValidationExpression="^\d{2}(/)\d{2}(/)\d{4}$"></asp:RegularExpressionValidator><br />
+                            <asp:RegularExpressionValidator ID="ValidadorFechaRegreso" runat="server" ErrorMessage="Fecha de regreso incorrecta, forma correcta ##/##/####" ControlToValidate="TbxFechaRegreso" ValidationExpression="^\d{2}(/)\d{2}(/)\d{4}$"></asp:RegularExpressionValidator><br />
+                        </div>
+                    </div>
+
+                    <div id="DetalleViatico">
+                        <br />
+                        <asp:TextBox CssClass="Textbox" ID="TextBox1" runat="server" placeholder="Cantidad de Desayunos"></asp:TextBox>
+                        <asp:TextBox CssClass="Textbox" ID="TextBox2" runat="server" placeholder="Cantidad de Almuerzos"></asp:TextBox>
+                        <asp:TextBox CssClass="Textbox" ID="TextBox23" runat="server" placeholder="Cantidad de Cenas"></asp:TextBox>
+                        <asp:TextBox CssClass="Textbox" ID="TextBox24" runat="server" placeholder="Cantidad de Pasajes"></asp:TextBox>
+                        <br />
+                        <asp:TextBox CssClass="Textbox" ID="TextBox3" runat="server" placeholder="Monto Total de Desayunos"></asp:TextBox>
+                        <asp:TextBox CssClass="Textbox" ID="TextBox4" runat="server" placeholder="Monto Total de Almuerzos"></asp:TextBox>
+                        <asp:TextBox CssClass="Textbox" ID="TextBox21" runat="server" placeholder="Monto Total de Cenas"></asp:TextBox>
+                        <asp:TextBox CssClass="Textbox" ID="TextBox22" runat="server" placeholder="Monto Total de Pasajes"></asp:TextBox>
+                        <br />
+                        <br />
+                        <br />
+                        <asp:Button ID="BtnDetalleReg" CssClass="Button" runat="server" Text="Regresar" OnClick="BtnDetalleReg_Click" />
+                        <asp:Button ID="BtnGuardar" CssClass="Button" runat="server" Text="Guardar" OnClick="Btn_Guardar_Click" />
+                        <div id="DivValidaciones2">
+                            <asp:Label ID="Label1" runat="server"></asp:Label><br />
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
         <br />
         <br />
         <div id="DivConsultar">
