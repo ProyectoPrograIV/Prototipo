@@ -32,5 +32,8 @@ namespace S
         {
             Negocios.InsertarUsuario(obj);
         }
+
+
+        public SP_INICIO_SESION_Result InicioSesion(TBL_USUARIO obj) => Negocios.InicioSesion(obj);
     }
 }

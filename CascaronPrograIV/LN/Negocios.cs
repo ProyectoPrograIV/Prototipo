@@ -28,5 +28,10 @@ namespace LN
         {
             AD.Datos.InsertarUsuario(obj);
         }
+
+        public static SP_INICIO_SESION_Result InicioSesion(TBL_USUARIO obj)
+        {
+           return Datos.InicioSesion(obj);
+        }
     }
 }

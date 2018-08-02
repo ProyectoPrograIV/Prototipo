@@ -20,6 +20,8 @@ namespace S
         void InsertarPersona(TBL_PERSONA obj);
         [OperationContract]
         void InsertarUsuario(TBL_USUARIO obj);
+        [OperationContract]
+        SP_INICIO_SESION_Result InicioSesion(TBL_USUARIO obj);
     }
 
 

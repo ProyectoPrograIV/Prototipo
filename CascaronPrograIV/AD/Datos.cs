@@ -84,5 +84,28 @@ namespace AD
                 entidad = null;
             }
         }
+
+        public static SP_INICIO_SESION_Result InicioSesion(TBL_USUARIO obj)
+        {
+            EmpresaPK2Entities Entidad = null;
+            try
+            {
+                Entidad = new EmpresaPK2Entities();
+                var resultado = Entidad.SP_INICIO_SESION(obj.NOMBREUSUARIO, obj.CLAVEACCESO).FirstOrDefault();
+                return resultado;
+            }
+            catch (Exception x)
+            {
+                throw x;
+                //return null;
+            }
+            finally
+            {
+                if (Entidad != null)
+                {
+                    Entidad.Dispose();
+                }
+            }
+        }
     }
 }

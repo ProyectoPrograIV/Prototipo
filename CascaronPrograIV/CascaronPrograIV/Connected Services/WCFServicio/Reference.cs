@@ -32,6 +32,12 @@ namespace CascaronPrograIV.WCFServicio {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertarUsuario", ReplyAction="http://tempuri.org/IService1/InsertarUsuarioResponse")]
         System.Threading.Tasks.Task InsertarUsuarioAsync(Entidades.TBL_USUARIO obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InicioSesion", ReplyAction="http://tempuri.org/IService1/InicioSesionResponse")]
+        Entidades.SP_INICIO_SESION_Result InicioSesion(Entidades.TBL_USUARIO obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InicioSesion", ReplyAction="http://tempuri.org/IService1/InicioSesionResponse")]
+        System.Threading.Tasks.Task<Entidades.SP_INICIO_SESION_Result> InicioSesionAsync(Entidades.TBL_USUARIO obj);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -83,6 +89,14 @@ namespace CascaronPrograIV.WCFServicio {
         
         public System.Threading.Tasks.Task InsertarUsuarioAsync(Entidades.TBL_USUARIO obj) {
             return base.Channel.InsertarUsuarioAsync(obj);
+        }
+        
+        public Entidades.SP_INICIO_SESION_Result InicioSesion(Entidades.TBL_USUARIO obj) {
+            return base.Channel.InicioSesion(obj);
+        }
+        
+        public System.Threading.Tasks.Task<Entidades.SP_INICIO_SESION_Result> InicioSesionAsync(Entidades.TBL_USUARIO obj) {
+            return base.Channel.InicioSesionAsync(obj);
         }
     }
 }

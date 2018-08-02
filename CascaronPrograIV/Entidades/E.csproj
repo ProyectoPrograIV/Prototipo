@@ -64,6 +64,12 @@
       <DependentUpon>EmpresaPK2.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SP_INICIO_SESION_Result.cs">
+      <DependentUpon>EmpresaPK2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_LISTADO_SOLICITUD_VIATICOS_Result.cs">
+      <DependentUpon>EmpresaPK2.tt</DependentUpon>
+    </Compile>
     <Compile Include="SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result.cs">
       <DependentUpon>EmpresaPK2.tt</DependentUpon>
     </Compile>
@@ -77,9 +83,6 @@
       <DependentUpon>EmpresaPK2.tt</DependentUpon>
     </Compile>
     <Compile Include="TBL_DETALLESOLICITUDVIATICOS.cs">
-      <DependentUpon>EmpresaPK2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TBL_DETALLEVIATICO.cs">
       <DependentUpon>EmpresaPK2.tt</DependentUpon>
     </Compile>
     <Compile Include="TBL_ESTADOS.cs">

@@ -11,7 +11,7 @@
           </Key>
           <Property Name="CODIGOCANTON" Type="tinyint" Nullable="false" />
           <Property Name="CODIGOPROVINCIA" Type="tinyint" Nullable="false" />
-          <Property Name="DESCRIPCIONPROVINCIA" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DESCRIPCIONCANTON" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="TBL_MODTARIFARIOVIATICO">
           <Key>
@@ -21,7 +21,7 @@
           <Property Name="CODIGOPROVINCIA" Type="tinyint" Nullable="false" />
           <Property Name="CODIGOCANTON" Type="tinyint" Nullable="false" />
           <Property Name="TIPOTARIFA" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="FECHATARIFA" Type="datetime" Nullable="false" />
+          <Property Name="FECHATARIFA" Type="date" Nullable="false" />
           <Property Name="MONTOTARIFA" Type="money" Nullable="false" />
           <Property Name="ESTADOTARIFA" Type="smallint" Nullable="false" />
           <Property Name="LOCALIDAD" Type="varchar" MaxLength="50" Nullable="false" />
@@ -38,11 +38,10 @@
             <PropertyRef Name="CODIGORUTA" />
           </Key>
           <Property Name="CODIGORUTA" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="CODIGOPROVINCIA" Type="tinyint" Nullable="false" />
           <Property Name="ESTADORUTA" Type="smallint" Nullable="false" />
           <Property Name="TARIFAREGISTRADA" Type="money" Nullable="false" />
-          <Property Name="DESCRIPCIONRUTA" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="FECHAVIGENCIA" Type="datetime" Nullable="false" />
+          <Property Name="DESCRIPCIONRUTA" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="FECHAVIGENCIA" Type="date" Nullable="false" />
         </EntityType>
         <EntityType Name="TBL_ESTADOS">
           <Key>
@@ -87,19 +86,18 @@
           <Property Name="ID_ORDEN" Type="int" Nullable="false" />
           <Property Name="ESTADOLIQUIDACION" Type="smallint" Nullable="false" />
           <Property Name="FECHALIQUIDACION" Type="datetime" Nullable="false" />
-          <Property Name="MONTODESAYUNO" Type="money" Nullable="false" />
-          <Property Name="MONTOALMUERZO" Type="money" Nullable="false" />
-          <Property Name="MONTOCENA" Type="money" Nullable="false" />
-          <Property Name="MONTOHOSPEDAJE" Type="money" Nullable="false" />
-          <Property Name="MONTOPASAJE" Type="money" Nullable="false" />
+          <Property Name="MONTODESAYUNO" Type="money" />
+          <Property Name="MONTOALMUERZO" Type="money" />
+          <Property Name="MONTOCENA" Type="money" />
+          <Property Name="MONTOHOSPEDAJE" Type="money" />
+          <Property Name="MONTOPASAJE" Type="money" />
         </EntityType>
         <EntityType Name="TBL_CABECERAORDENVIATICO">
           <Key>
             <PropertyRef Name="ID_ORDEN" />
           </Key>
           <Property Name="ID_ORDEN" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ID_SOLICITUD" Type="int" Nullable="false" />
-          <Property Name="ID_LIQUIDACION" Type="int" Nullable="false" />
+          <Property Name="ID_SOLICITUD" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="ESTADOORDEN" Type="smallint" Nullable="false" />
           <Property Name="FECHAORDEN" Type="datetime" Nullable="false" />
         </EntityType>
@@ -108,45 +106,26 @@
             <PropertyRef Name="ID_DETALLE" />
           </Key>
           <Property Name="ID_DETALLE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ID_SOLICITUD" Type="int" Nullable="false" />
+          <Property Name="ID_SOLICITUD" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="ID_PERSONA" Type="nvarchar" MaxLength="15" Nullable="false" />
-          <Property Name="ID_MODTARIFA" Type="smallint" Nullable="false" />
           <Property Name="CANTIDADVIATICOS" Type="smallint" Nullable="false" />
-          <Property Name="FECHAVIATICOS" Type="datetime" Nullable="false" />
+          <Property Name="CANTIDADDESAYUNO" Type="smallint" />
+          <Property Name="MONTODESAYUNO" Type="money" />
+          <Property Name="CANTIDADALMUERZO" Type="smallint" />
+          <Property Name="MONTOALMUERZO" Type="money" />
+          <Property Name="CANTIDADCENA" Type="smallint" />
+          <Property Name="MONTOCENA" Type="money" />
+          <Property Name="CANTIDADPASAJE" Type="smallint" />
+          <Property Name="MONTOPASAJE" Type="money" />
           <Property Name="CODIGORUTA" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="CANTIDADPASAJE" Type="smallint" Nullable="false" />
-        </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'EmpresaPK2.SCH_VIATICOS.TBL_DETALLEVIATICO' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
-        <EntityType Name="TBL_DETALLEVIATICO">
-          <Key>
-            <PropertyRef Name="ID_DETALLE" />
-            <PropertyRef Name="ID_ORDEN" />
-            <PropertyRef Name="CANTIDADDESAYUNO" />
-            <PropertyRef Name="MONTODESAYUNO" />
-            <PropertyRef Name="CANTIDADALMUERZO" />
-            <PropertyRef Name="MONTOALMUERZO" />
-            <PropertyRef Name="CANTIDADCENA" />
-            <PropertyRef Name="MONTOCENA" />
-            <PropertyRef Name="CANTIDADPASAJE" />
-            <PropertyRef Name="MONTOPASAJE" />
-          </Key>
-          <Property Name="ID_DETALLE" Type="int" Nullable="false" />
-          <Property Name="ID_ORDEN" Type="int" Nullable="false" />
-          <Property Name="CANTIDADDESAYUNO" Type="smallint" Nullable="false" />
-          <Property Name="MONTODESAYUNO" Type="money" Nullable="false" />
-          <Property Name="CANTIDADALMUERZO" Type="smallint" Nullable="false" />
-          <Property Name="MONTOALMUERZO" Type="money" Nullable="false" />
-          <Property Name="CANTIDADCENA" Type="smallint" Nullable="false" />
-          <Property Name="MONTOCENA" Type="money" Nullable="false" />
-          <Property Name="CANTIDADPASAJE" Type="smallint" Nullable="false" />
-          <Property Name="MONTOPASAJE" Type="money" Nullable="false" />
+          <Property Name="LOCALIDADHOSPEDAJE" Type="smallint" />
+          <Property Name="MONTOHOSPEDAJE" Type="money" />
         </EntityType>
         <EntityType Name="TBL_SOLICITUDVIATICOS">
           <Key>
             <PropertyRef Name="ID_SOLICITUD" />
           </Key>
-          <Property Name="ID_SOLICITUD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_SOLICITUD" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="NOMBREUSUARIO" Type="nvarchar" MaxLength="24" Nullable="false" />
           <Property Name="FECHACREACION" Type="datetime" Nullable="false" />
           <Property Name="FECHASALIDA" Type="datetime" Nullable="false" />
@@ -178,18 +157,6 @@ advertencia 6002: La tabla o vista 'EmpresaPK2.SCH_VIATICOS.TBL_DETALLEVIATICO' 
             </Principal>
             <Dependent Role="TBL_CABECERALIQUIDACION">
               <PropertyRef Name="ESTADOLIQUIDACION" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TBLCABECERAORDENVIATICO_TBLCABECERALIQUIDACION">
-          <End Role="TBL_CABECERALIQUIDACION" Type="Self.TBL_CABECERALIQUIDACION" Multiplicity="1" />
-          <End Role="TBL_CABECERAORDENVIATICO" Type="Self.TBL_CABECERAORDENVIATICO" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBL_CABECERALIQUIDACION">
-              <PropertyRef Name="ID_LIQUIDACION" />
-            </Principal>
-            <Dependent Role="TBL_CABECERAORDENVIATICO">
-              <PropertyRef Name="ID_LIQUIDACION" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -229,15 +196,15 @@ advertencia 6002: La tabla o vista 'EmpresaPK2.SCH_VIATICOS.TBL_DETALLEVIATICO' 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_TBLDETALLESOLICITUDVIATICOS_TBLMODTARIFARIOVIATICO">
-          <End Role="TBL_MODTARIFARIOVIATICO" Type="Self.TBL_MODTARIFARIOVIATICO" Multiplicity="1" />
+        <Association Name="FK_TBLDETALLESOLICITUDVIATICO_TBLMODTARIFARIOVIATICO">
+          <End Role="TBL_MODTARIFARIOVIATICO" Type="Self.TBL_MODTARIFARIOVIATICO" Multiplicity="0..1" />
           <End Role="TBL_DETALLESOLICITUDVIATICOS" Type="Self.TBL_DETALLESOLICITUDVIATICOS" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TBL_MODTARIFARIOVIATICO">
               <PropertyRef Name="ID_MODTARIFA" />
             </Principal>
             <Dependent Role="TBL_DETALLESOLICITUDVIATICOS">
-              <PropertyRef Name="ID_MODTARIFA" />
+              <PropertyRef Name="LOCALIDADHOSPEDAJE" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -274,30 +241,6 @@ advertencia 6002: La tabla o vista 'EmpresaPK2.SCH_VIATICOS.TBL_DETALLEVIATICO' 
             </Principal>
             <Dependent Role="TBL_DETALLESOLICITUDVIATICOS">
               <PropertyRef Name="CODIGORUTA" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TBLDETALLEVIATICO_TBLCABECERAORDENVIATICO">
-          <End Role="TBL_CABECERAORDENVIATICO" Type="Self.TBL_CABECERAORDENVIATICO" Multiplicity="1" />
-          <End Role="TBL_DETALLEVIATICO" Type="Self.TBL_DETALLEVIATICO" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBL_CABECERAORDENVIATICO">
-              <PropertyRef Name="ID_ORDEN" />
-            </Principal>
-            <Dependent Role="TBL_DETALLEVIATICO">
-              <PropertyRef Name="ID_ORDEN" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TBLDETALLEVIATICO_TBLDETALLESOLICITUDVIATICOS">
-          <End Role="TBL_DETALLESOLICITUDVIATICOS" Type="Self.TBL_DETALLESOLICITUDVIATICOS" Multiplicity="1" />
-          <End Role="TBL_DETALLEVIATICO" Type="Self.TBL_DETALLEVIATICO" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBL_DETALLESOLICITUDVIATICOS">
-              <PropertyRef Name="ID_DETALLE" />
-            </Principal>
-            <Dependent Role="TBL_DETALLEVIATICO">
-              <PropertyRef Name="ID_DETALLE" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -385,18 +328,6 @@ advertencia 6002: La tabla o vista 'EmpresaPK2.SCH_VIATICOS.TBL_DETALLEVIATICO' 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_TBLTARIFAAUTOBUS_TBLPROVINCIA">
-          <End Role="TBL_PROVINCIA" Type="Self.TBL_PROVINCIA" Multiplicity="1" />
-          <End Role="TBL_TARIFAAUTOBUS" Type="Self.TBL_TARIFAAUTOBUS" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBL_PROVINCIA">
-              <PropertyRef Name="CODIGOPROVINCIA" />
-            </Principal>
-            <Dependent Role="TBL_TARIFAAUTOBUS">
-              <PropertyRef Name="CODIGOPROVINCIA" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_TBLUSUARIO_TBLESTADOS">
           <End Role="TBL_ESTADOS" Type="Self.TBL_ESTADOS" Multiplicity="1" />
           <End Role="TBL_USUARIO" Type="Self.TBL_USUARIO" Multiplicity="*" />
@@ -427,6 +358,16 @@ advertencia 6002: La tabla o vista 'EmpresaPK2.SCH_VIATICOS.TBL_DETALLEVIATICO' 
           <Parameter Name="ID_Rol" Type="smallint" Mode="In" />
           <Parameter Name="EstadoUsuario" Type="smallint" Mode="In" />
           <Parameter Name="email" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SP_LISTADO_SOLICITUD_VIATICOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_REPORTES">
+          <Parameter Name="FECHAINICIO" Type="date" Mode="In" />
+          <Parameter Name="FECHAFINAL" Type="date" Mode="In" />
+          <Parameter Name="ID_PERSONA" Type="nvarchar" Mode="In" />
+          <Parameter Name="ESTADOS_SOLICITUD" Type="smallint" Mode="In" />
+        </Function>
+        <Function Name="SP_INICIO_SESION" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_SEGURIDAD">
+          <Parameter Name="NombreUsuario" Type="nvarchar" Mode="In" />
+          <Parameter Name="ClaveAcceso" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="SP_ACTUALIZAR_SOLICITUDES_FUNCIONARIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS">
           <Parameter Name="IDSOLICITUD" Type="int" Mode="In" />
@@ -468,20 +409,6 @@ advertencia 6002: La tabla o vista 'EmpresaPK2.SCH_VIATICOS.TBL_DETALLEVIATICO' 
           <EntitySet Name="TBL_CABECERAORDENVIATICO" EntityType="Self.TBL_CABECERAORDENVIATICO" Schema="SCH_VIATICOS" store:Type="Tables" />
           <EntitySet Name="TBL_DETALLESOLICITUDVIATICOS" EntityType="Self.TBL_DETALLESOLICITUDVIATICOS" Schema="SCH_VIATICOS" store:Type="Tables" />
           <EntitySet Name="TBL_SOLICITUDVIATICOS" EntityType="Self.TBL_SOLICITUDVIATICOS" Schema="SCH_VIATICOS" store:Type="Tables" />
-          <EntitySet Name="TBL_DETALLEVIATICO" EntityType="Self.TBL_DETALLEVIATICO" store:Type="Tables" store:Schema="SCH_VIATICOS">
-            <DefiningQuery>SELECT 
-[TBL_DETALLEVIATICO].[ID_DETALLE] AS [ID_DETALLE], 
-[TBL_DETALLEVIATICO].[ID_ORDEN] AS [ID_ORDEN], 
-[TBL_DETALLEVIATICO].[CANTIDADDESAYUNO] AS [CANTIDADDESAYUNO], 
-[TBL_DETALLEVIATICO].[MONTODESAYUNO] AS [MONTODESAYUNO], 
-[TBL_DETALLEVIATICO].[CANTIDADALMUERZO] AS [CANTIDADALMUERZO], 
-[TBL_DETALLEVIATICO].[MONTOALMUERZO] AS [MONTOALMUERZO], 
-[TBL_DETALLEVIATICO].[CANTIDADCENA] AS [CANTIDADCENA], 
-[TBL_DETALLEVIATICO].[MONTOCENA] AS [MONTOCENA], 
-[TBL_DETALLEVIATICO].[CANTIDADPASAJE] AS [CANTIDADPASAJE], 
-[TBL_DETALLEVIATICO].[MONTOPASAJE] AS [MONTOPASAJE]
-FROM [SCH_VIATICOS].[TBL_DETALLEVIATICO] AS [TBL_DETALLEVIATICO]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK_TBLCABECERALIQUIDACION_TBLCABECERAORDENVIATICO" Association="Self.FK_TBLCABECERALIQUIDACION_TBLCABECERAORDENVIATICO">
             <End Role="TBL_CABECERAORDENVIATICO" EntitySet="TBL_CABECERAORDENVIATICO" />
             <End Role="TBL_CABECERALIQUIDACION" EntitySet="TBL_CABECERALIQUIDACION" />
@@ -489,10 +416,6 @@ FROM [SCH_VIATICOS].[TBL_DETALLEVIATICO] AS [TBL_DETALLEVIATICO]</DefiningQuery>
           <AssociationSet Name="FK_TBLCABECERALIQUIDACION_TBLESTADOS" Association="Self.FK_TBLCABECERALIQUIDACION_TBLESTADOS">
             <End Role="TBL_ESTADOS" EntitySet="TBL_ESTADOS" />
             <End Role="TBL_CABECERALIQUIDACION" EntitySet="TBL_CABECERALIQUIDACION" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TBLCABECERAORDENVIATICO_TBLCABECERALIQUIDACION" Association="Self.FK_TBLCABECERAORDENVIATICO_TBLCABECERALIQUIDACION">
-            <End Role="TBL_CABECERALIQUIDACION" EntitySet="TBL_CABECERALIQUIDACION" />
-            <End Role="TBL_CABECERAORDENVIATICO" EntitySet="TBL_CABECERAORDENVIATICO" />
           </AssociationSet>
           <AssociationSet Name="FK_TBLCABECERAORDENVIATICO_TBLESTADOS" Association="Self.FK_TBLCABECERAORDENVIATICO_TBLESTADOS">
             <End Role="TBL_ESTADOS" EntitySet="TBL_ESTADOS" />
@@ -506,7 +429,7 @@ FROM [SCH_VIATICOS].[TBL_DETALLEVIATICO] AS [TBL_DETALLEVIATICO]</DefiningQuery>
             <End Role="TBL_PROVINCIA" EntitySet="TBL_PROVINCIA" />
             <End Role="TBL_CANTON" EntitySet="TBL_CANTON" />
           </AssociationSet>
-          <AssociationSet Name="FK_TBLDETALLESOLICITUDVIATICOS_TBLMODTARIFARIOVIATICO" Association="Self.FK_TBLDETALLESOLICITUDVIATICOS_TBLMODTARIFARIOVIATICO">
+          <AssociationSet Name="FK_TBLDETALLESOLICITUDVIATICO_TBLMODTARIFARIOVIATICO" Association="Self.FK_TBLDETALLESOLICITUDVIATICO_TBLMODTARIFARIOVIATICO">
             <End Role="TBL_MODTARIFARIOVIATICO" EntitySet="TBL_MODTARIFARIOVIATICO" />
             <End Role="TBL_DETALLESOLICITUDVIATICOS" EntitySet="TBL_DETALLESOLICITUDVIATICOS" />
           </AssociationSet>
@@ -521,14 +444,6 @@ FROM [SCH_VIATICOS].[TBL_DETALLEVIATICO] AS [TBL_DETALLEVIATICO]</DefiningQuery>
           <AssociationSet Name="FK_TBLDETALLESOLICITUDVIATICOS_TBLTARIFAAUTOBUS" Association="Self.FK_TBLDETALLESOLICITUDVIATICOS_TBLTARIFAAUTOBUS">
             <End Role="TBL_TARIFAAUTOBUS" EntitySet="TBL_TARIFAAUTOBUS" />
             <End Role="TBL_DETALLESOLICITUDVIATICOS" EntitySet="TBL_DETALLESOLICITUDVIATICOS" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TBLDETALLEVIATICO_TBLCABECERAORDENVIATICO" Association="Self.FK_TBLDETALLEVIATICO_TBLCABECERAORDENVIATICO">
-            <End Role="TBL_CABECERAORDENVIATICO" EntitySet="TBL_CABECERAORDENVIATICO" />
-            <End Role="TBL_DETALLEVIATICO" EntitySet="TBL_DETALLEVIATICO" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TBLDETALLEVIATICO_TBLDETALLESOLICITUDVIATICOS" Association="Self.FK_TBLDETALLEVIATICO_TBLDETALLESOLICITUDVIATICOS">
-            <End Role="TBL_DETALLESOLICITUDVIATICOS" EntitySet="TBL_DETALLESOLICITUDVIATICOS" />
-            <End Role="TBL_DETALLEVIATICO" EntitySet="TBL_DETALLEVIATICO" />
           </AssociationSet>
           <AssociationSet Name="FK_TBLMODTARIFARIOVIATICO_TBL_ESTADOS" Association="Self.FK_TBLMODTARIFARIOVIATICO_TBL_ESTADOS">
             <End Role="TBL_ESTADOS" EntitySet="TBL_ESTADOS" />
@@ -558,10 +473,6 @@ FROM [SCH_VIATICOS].[TBL_DETALLEVIATICO] AS [TBL_DETALLEVIATICO]</DefiningQuery>
             <End Role="TBL_ESTADOS" EntitySet="TBL_ESTADOS" />
             <End Role="TBL_TARIFAAUTOBUS" EntitySet="TBL_TARIFAAUTOBUS" />
           </AssociationSet>
-          <AssociationSet Name="FK_TBLTARIFAAUTOBUS_TBLPROVINCIA" Association="Self.FK_TBLTARIFAAUTOBUS_TBLPROVINCIA">
-            <End Role="TBL_PROVINCIA" EntitySet="TBL_PROVINCIA" />
-            <End Role="TBL_TARIFAAUTOBUS" EntitySet="TBL_TARIFAAUTOBUS" />
-          </AssociationSet>
           <AssociationSet Name="FK_TBLUSUARIO_TBLESTADOS" Association="Self.FK_TBLUSUARIO_TBLESTADOS">
             <End Role="TBL_ESTADOS" EntitySet="TBL_ESTADOS" />
             <End Role="TBL_USUARIO" EntitySet="TBL_USUARIO" />
@@ -576,6 +487,50 @@ FROM [SCH_VIATICOS].[TBL_DETALLEVIATICO] AS [TBL_DETALLEVIATICO]</DefiningQuery>
     <edmx:ConceptualModels>
       <Schema Namespace="EmpresaPK2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="EmpresaPK2Entities" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="SP_InsertarUsuario">
+            <Parameter Name="NOMBREUSUARIO" Mode="In" Type="String" />
+            <Parameter Name="CLAVEACCESO" Mode="In" Type="String" />
+            <Parameter Name="ID_Rol" Mode="In" Type="Int16" />
+            <Parameter Name="EstadoUsuario" Mode="In" Type="Int16" />
+            <Parameter Name="email" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_ACTUALIZAR_SOLICITUDES_FUNCIONARIO">
+            <Parameter Name="IDSOLICITUD" Mode="In" Type="Int32" />
+            <Parameter Name="NOMBREUSUARIO" Mode="In" Type="String" />
+            <Parameter Name="FECHASALIDA" Mode="In" Type="DateTime" />
+            <Parameter Name="FECHAREGRESO" Mode="In" Type="DateTime" />
+            <Parameter Name="ESTADOSOLICITUD" Mode="In" Type="Int16" />
+            <Parameter Name="JUSTIFICACION" Mode="In" Type="String" />
+            <Parameter Name="DESTINO" Mode="In" Type="String" />
+            <Parameter Name="HORAREGRESO" Mode="In" Type="Time" />
+            <Parameter Name="HORASALIDA" Mode="In" Type="Time" />
+          </FunctionImport>
+          <FunctionImport Name="SP_ELIMINAR_SOLICITUDES">
+          <Parameter Name="IDSOLICITUD" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_GUARDAR_SOLICITUDES_FUNCIONARIO">
+            <Parameter Name="NOMBREUSUARIO" Mode="In" Type="String" />
+            <Parameter Name="FECHACREACION" Mode="In" Type="DateTime" />
+            <Parameter Name="FECHASALIDA" Mode="In" Type="DateTime" />
+            <Parameter Name="FECHAREGRESO" Mode="In" Type="DateTime" />
+            <Parameter Name="JUSTIFICACION" Mode="In" Type="String" />
+            <Parameter Name="DESTINO" Mode="In" Type="String" />
+            <Parameter Name="HORAREGRESO" Mode="In" Type="Time" />
+            <Parameter Name="HORASALIDA" Mode="In" Type="Time" />
+          </FunctionImport>
+          <FunctionImport Name="SP_LISTAR_SOLICITUDES_FUNCIONARIO" ReturnType="Collection(EmpresaPK2Model.SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result)">
+          <Parameter Name="USUARIO" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_LISTADO_SOLICITUD_VIATICOS" ReturnType="Collection(EmpresaPK2Model.SP_LISTADO_SOLICITUD_VIATICOS_Result)">
+            <Parameter Name="FECHAINICIO" Mode="In" Type="DateTime" />
+            <Parameter Name="FECHAFINAL" Mode="In" Type="DateTime" />
+            <Parameter Name="ID_PERSONA" Mode="In" Type="String" />
+            <Parameter Name="ESTADOS_SOLICITUD" Mode="In" Type="Int16" />
+          </FunctionImport>
+          <FunctionImport Name="SP_INICIO_SESION" ReturnType="Collection(EmpresaPK2Model.SP_INICIO_SESION_Result)">
+            <Parameter Name="NombreUsuario" Mode="In" Type="String" />
+            <Parameter Name="ClaveAcceso" Mode="In" Type="String" />
+          </FunctionImport>
           <EntitySet Name="TBL_CANTON" EntityType="EmpresaPK2Model.TBL_CANTON" />
           <EntitySet Name="TBL_MODTARIFARIOVIATICO" EntityType="EmpresaPK2Model.TBL_MODTARIFARIOVIATICO" />
           <EntitySet Name="TBL_PROVINCIA" EntityType="EmpresaPK2Model.TBL_PROVINCIA" />
@@ -588,7 +543,6 @@ FROM [SCH_VIATICOS].[TBL_DETALLEVIATICO] AS [TBL_DETALLEVIATICO]</DefiningQuery>
           <EntitySet Name="TBL_CABECERAORDENVIATICO" EntityType="EmpresaPK2Model.TBL_CABECERAORDENVIATICO" />
           <EntitySet Name="TBL_DETALLESOLICITUDVIATICOS" EntityType="EmpresaPK2Model.TBL_DETALLESOLICITUDVIATICOS" />
           <EntitySet Name="TBL_SOLICITUDVIATICOS" EntityType="EmpresaPK2Model.TBL_SOLICITUDVIATICOS" />
-          <EntitySet Name="TBL_DETALLEVIATICO" EntityType="EmpresaPK2Model.TBL_DETALLEVIATICO" />
           <AssociationSet Name="FK_TBLCANTON_TBLPROVINCIA" Association="EmpresaPK2Model.FK_TBLCANTON_TBLPROVINCIA">
             <End Role="TBL_PROVINCIA" EntitySet="TBL_PROVINCIA" />
             <End Role="TBL_CANTON" EntitySet="TBL_CANTON" />
@@ -597,7 +551,7 @@ FROM [SCH_VIATICOS].[TBL_DETALLEVIATICO] AS [TBL_DETALLEVIATICO]</DefiningQuery>
             <End Role="TBL_CANTON" EntitySet="TBL_CANTON" />
             <End Role="TBL_MODTARIFARIOVIATICO" EntitySet="TBL_MODTARIFARIOVIATICO" />
           </AssociationSet>
-          <AssociationSet Name="FK_TBLDETALLESOLICITUDVIATICOS_TBLMODTARIFARIOVIATICO" Association="EmpresaPK2Model.FK_TBLDETALLESOLICITUDVIATICOS_TBLMODTARIFARIOVIATICO">
+          <AssociationSet Name="FK_TBLDETALLESOLICITUDVIATICO_TBLMODTARIFARIOVIATICO" Association="EmpresaPK2Model.FK_TBLDETALLESOLICITUDVIATICO_TBLMODTARIFARIOVIATICO">
             <End Role="TBL_MODTARIFARIOVIATICO" EntitySet="TBL_MODTARIFARIOVIATICO" />
             <End Role="TBL_DETALLESOLICITUDVIATICOS" EntitySet="TBL_DETALLESOLICITUDVIATICOS" />
           </AssociationSet>
@@ -608,10 +562,6 @@ FROM [SCH_VIATICOS].[TBL_DETALLEVIATICO] AS [TBL_DETALLEVIATICO]</DefiningQuery>
           <AssociationSet Name="FK_TBLMODTARIFARIOVIATICO_TBLPROVINCIA" Association="EmpresaPK2Model.FK_TBLMODTARIFARIOVIATICO_TBLPROVINCIA">
             <End Role="TBL_PROVINCIA" EntitySet="TBL_PROVINCIA" />
             <End Role="TBL_MODTARIFARIOVIATICO" EntitySet="TBL_MODTARIFARIOVIATICO" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TBLTARIFAAUTOBUS_TBLPROVINCIA" Association="EmpresaPK2Model.FK_TBLTARIFAAUTOBUS_TBLPROVINCIA">
-            <End Role="TBL_PROVINCIA" EntitySet="TBL_PROVINCIA" />
-            <End Role="TBL_TARIFAAUTOBUS" EntitySet="TBL_TARIFAAUTOBUS" />
           </AssociationSet>
           <AssociationSet Name="FK_TBLDETALLESOLICITUDVIATICOS_TBLTARIFAAUTOBUS" Association="EmpresaPK2Model.FK_TBLDETALLESOLICITUDVIATICOS_TBLTARIFAAUTOBUS">
             <End Role="TBL_TARIFAAUTOBUS" EntitySet="TBL_TARIFAAUTOBUS" />
@@ -657,68 +607,52 @@ FROM [SCH_VIATICOS].[TBL_DETALLEVIATICO] AS [TBL_DETALLEVIATICO]</DefiningQuery>
             <End Role="TBL_CABECERAORDENVIATICO" EntitySet="TBL_CABECERAORDENVIATICO" />
             <End Role="TBL_CABECERALIQUIDACION" EntitySet="TBL_CABECERALIQUIDACION" />
           </AssociationSet>
-          <AssociationSet Name="FK_TBLCABECERAORDENVIATICO_TBLCABECERALIQUIDACION" Association="EmpresaPK2Model.FK_TBLCABECERAORDENVIATICO_TBLCABECERALIQUIDACION">
-            <End Role="TBL_CABECERALIQUIDACION" EntitySet="TBL_CABECERALIQUIDACION" />
-            <End Role="TBL_CABECERAORDENVIATICO" EntitySet="TBL_CABECERAORDENVIATICO" />
-          </AssociationSet>
           <AssociationSet Name="FK_TBLCABECERAORDENVIATICO_TBLSOLICITUDVIATICOS" Association="EmpresaPK2Model.FK_TBLCABECERAORDENVIATICO_TBLSOLICITUDVIATICOS">
             <End Role="TBL_SOLICITUDVIATICOS" EntitySet="TBL_SOLICITUDVIATICOS" />
             <End Role="TBL_CABECERAORDENVIATICO" EntitySet="TBL_CABECERAORDENVIATICO" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TBLDETALLEVIATICO_TBLCABECERAORDENVIATICO" Association="EmpresaPK2Model.FK_TBLDETALLEVIATICO_TBLCABECERAORDENVIATICO">
-            <End Role="TBL_CABECERAORDENVIATICO" EntitySet="TBL_CABECERAORDENVIATICO" />
-            <End Role="TBL_DETALLEVIATICO" EntitySet="TBL_DETALLEVIATICO" />
           </AssociationSet>
           <AssociationSet Name="FK_TBLDETALLESOLICITUDVIATICOS_TBLSOLICITUDVIATICOS" Association="EmpresaPK2Model.FK_TBLDETALLESOLICITUDVIATICOS_TBLSOLICITUDVIATICOS">
             <End Role="TBL_SOLICITUDVIATICOS" EntitySet="TBL_SOLICITUDVIATICOS" />
             <End Role="TBL_DETALLESOLICITUDVIATICOS" EntitySet="TBL_DETALLESOLICITUDVIATICOS" />
           </AssociationSet>
-          <AssociationSet Name="FK_TBLDETALLEVIATICO_TBLDETALLESOLICITUDVIATICOS" Association="EmpresaPK2Model.FK_TBLDETALLEVIATICO_TBLDETALLESOLICITUDVIATICOS">
-            <End Role="TBL_DETALLESOLICITUDVIATICOS" EntitySet="TBL_DETALLESOLICITUDVIATICOS" />
-            <End Role="TBL_DETALLEVIATICO" EntitySet="TBL_DETALLEVIATICO" />
-          </AssociationSet>
-          <FunctionImport Name="SP_InsertarUsuario">
-            <Parameter Name="NOMBREUSUARIO" Mode="In" Type="String" />
-            <Parameter Name="CLAVEACCESO" Mode="In" Type="String" />
-            <Parameter Name="ID_Rol" Mode="In" Type="Int16" />
-            <Parameter Name="EstadoUsuario" Mode="In" Type="Int16" />
-            <Parameter Name="email" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SP_ACTUALIZAR_SOLICITUDES_FUNCIONARIO">
-            <Parameter Name="IDSOLICITUD" Mode="In" Type="Int32" />
-            <Parameter Name="NOMBREUSUARIO" Mode="In" Type="String" />
-            <Parameter Name="FECHASALIDA" Mode="In" Type="DateTime" />
-            <Parameter Name="FECHAREGRESO" Mode="In" Type="DateTime" />
-            <Parameter Name="ESTADOSOLICITUD" Mode="In" Type="Int16" />
-            <Parameter Name="JUSTIFICACION" Mode="In" Type="String" />
-            <Parameter Name="DESTINO" Mode="In" Type="String" />
-            <Parameter Name="HORAREGRESO" Mode="In" Type="Time" />
-            <Parameter Name="HORASALIDA" Mode="In" Type="Time" />
-          </FunctionImport>
-          <FunctionImport Name="SP_ELIMINAR_SOLICITUDES">
-            <Parameter Name="IDSOLICITUD" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="SP_GUARDAR_SOLICITUDES_FUNCIONARIO">
-            <Parameter Name="NOMBREUSUARIO" Mode="In" Type="String" />
-            <Parameter Name="FECHACREACION" Mode="In" Type="DateTime" />
-            <Parameter Name="FECHASALIDA" Mode="In" Type="DateTime" />
-            <Parameter Name="FECHAREGRESO" Mode="In" Type="DateTime" />
-            <Parameter Name="JUSTIFICACION" Mode="In" Type="String" />
-            <Parameter Name="DESTINO" Mode="In" Type="String" />
-            <Parameter Name="HORAREGRESO" Mode="In" Type="Time" />
-            <Parameter Name="HORASALIDA" Mode="In" Type="Time" />
-          </FunctionImport>
-          <FunctionImport Name="SP_LISTAR_SOLICITUDES_FUNCIONARIO" ReturnType="Collection(EmpresaPK2Model.SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result)">
-            <Parameter Name="USUARIO" Mode="In" Type="String" />
-          </FunctionImport>
         </EntityContainer>
+        <ComplexType Name="SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result">
+          <Property Type="Int32" Name="ID_SOLICITUD" Nullable="false" />
+          <Property Type="String" Name="NOMBREUSUARIO" Nullable="false" MaxLength="24" />
+          <Property Type="DateTime" Name="FECHACREACION" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="FECHASALIDA" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="FECHAREGRESO" Nullable="false" Precision="23" />
+          <Property Type="Int16" Name="ESTADOSOLICITUD" Nullable="false" />
+          <Property Type="String" Name="JUSTIFICACION" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="DESTINO" Nullable="false" MaxLength="50" />
+          <Property Type="Time" Name="HORAREGRESO" Nullable="false" />
+          <Property Type="Time" Name="HORASALIDA" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="SP_LISTADO_SOLICITUD_VIATICOS_Result">
+          <Property Type="String" Name="ID_SOLICITUD" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="ID_PERSONA" Nullable="false" MaxLength="15" />
+          <Property Type="Int16" Name="CANTIDADPASAJE" Nullable="true" />
+          <Property Type="Int16" Name="CANTIDADVIATICOS" Nullable="false" />
+          <Property Type="DateTime" Name="FECHACREACION" Nullable="false" Precision="23" />
+          <Property Type="String" Name="JUSTIFICACION" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="DESTINO" Nullable="false" MaxLength="50" />
+          <Property Type="Int16" Name="ESTADOSOLICITUD" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="SP_INICIO_SESION_Result">
+          <Property Type="String" Name="NOMBREUSUARIO" Nullable="false" MaxLength="24" />
+          <Property Type="String" Name="ID_PERSONA" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="NOMBRE" Nullable="false" MaxLength="41" />
+          <Property Type="Int16" Name="ID_ROL" Nullable="false" />
+          <Property Type="String" Name="ROL" Nullable="false" MaxLength="75" />
+          <Property Type="String" Name="EMAIL" Nullable="false" MaxLength="40" />
+        </ComplexType>
         <EntityType Name="TBL_CANTON">
           <Key>
             <PropertyRef Name="CODIGOCANTON" />
           </Key>
           <Property Name="CODIGOCANTON" Type="Byte" Nullable="false" />
           <Property Name="CODIGOPROVINCIA" Type="Byte" Nullable="false" />
-          <Property Name="DESCRIPCIONPROVINCIA" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPCIONCANTON" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="TBL_PROVINCIA" Relationship="EmpresaPK2Model.FK_TBLCANTON_TBLPROVINCIA" FromRole="TBL_CANTON" ToRole="TBL_PROVINCIA" />
           <NavigationProperty Name="TBL_MODTARIFARIOVIATICO" Relationship="EmpresaPK2Model.FK_TBLMODTARIFARIOVIATICO_TBLCANTON" FromRole="TBL_CANTON" ToRole="TBL_MODTARIFARIOVIATICO" />
         </EntityType>
@@ -730,12 +664,12 @@ FROM [SCH_VIATICOS].[TBL_DETALLEVIATICO] AS [TBL_DETALLEVIATICO]</DefiningQuery>
           <Property Name="CODIGOPROVINCIA" Type="Byte" Nullable="false" />
           <Property Name="CODIGOCANTON" Type="Byte" Nullable="false" />
           <Property Name="TIPOTARIFA" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="FECHATARIFA" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FECHATARIFA" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="MONTOTARIFA" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
           <Property Name="ESTADOTARIFA" Type="Int16" Nullable="false" />
           <Property Name="LOCALIDAD" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="TBL_CANTON" Relationship="EmpresaPK2Model.FK_TBLMODTARIFARIOVIATICO_TBLCANTON" FromRole="TBL_MODTARIFARIOVIATICO" ToRole="TBL_CANTON" />
-          <NavigationProperty Name="TBL_DETALLESOLICITUDVIATICOS" Relationship="EmpresaPK2Model.FK_TBLDETALLESOLICITUDVIATICOS_TBLMODTARIFARIOVIATICO" FromRole="TBL_MODTARIFARIOVIATICO" ToRole="TBL_DETALLESOLICITUDVIATICOS" />
+          <NavigationProperty Name="TBL_DETALLESOLICITUDVIATICOS" Relationship="EmpresaPK2Model.FK_TBLDETALLESOLICITUDVIATICO_TBLMODTARIFARIOVIATICO" FromRole="TBL_MODTARIFARIOVIATICO" ToRole="TBL_DETALLESOLICITUDVIATICOS" />
           <NavigationProperty Name="TBL_ESTADOS" Relationship="EmpresaPK2Model.FK_TBLMODTARIFARIOVIATICO_TBL_ESTADOS" FromRole="TBL_MODTARIFARIOVIATICO" ToRole="TBL_ESTADOS" />
           <NavigationProperty Name="TBL_PROVINCIA" Relationship="EmpresaPK2Model.FK_TBLMODTARIFARIOVIATICO_TBLPROVINCIA" FromRole="TBL_MODTARIFARIOVIATICO" ToRole="TBL_PROVINCIA" />
         </EntityType>
@@ -747,19 +681,16 @@ FROM [SCH_VIATICOS].[TBL_DETALLEVIATICO] AS [TBL_DETALLEVIATICO]</DefiningQuery>
           <Property Name="DESCRIPCIONPROVINCIA" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="TBL_CANTON" Relationship="EmpresaPK2Model.FK_TBLCANTON_TBLPROVINCIA" FromRole="TBL_PROVINCIA" ToRole="TBL_CANTON" />
           <NavigationProperty Name="TBL_MODTARIFARIOVIATICO" Relationship="EmpresaPK2Model.FK_TBLMODTARIFARIOVIATICO_TBLPROVINCIA" FromRole="TBL_PROVINCIA" ToRole="TBL_MODTARIFARIOVIATICO" />
-          <NavigationProperty Name="TBL_TARIFAAUTOBUS" Relationship="EmpresaPK2Model.FK_TBLTARIFAAUTOBUS_TBLPROVINCIA" FromRole="TBL_PROVINCIA" ToRole="TBL_TARIFAAUTOBUS" />
         </EntityType>
         <EntityType Name="TBL_TARIFAAUTOBUS">
           <Key>
             <PropertyRef Name="CODIGORUTA" />
           </Key>
           <Property Name="CODIGORUTA" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="CODIGOPROVINCIA" Type="Byte" Nullable="false" />
           <Property Name="ESTADORUTA" Type="Int16" Nullable="false" />
           <Property Name="TARIFAREGISTRADA" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-          <Property Name="DESCRIPCIONRUTA" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="FECHAVIGENCIA" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="TBL_PROVINCIA" Relationship="EmpresaPK2Model.FK_TBLTARIFAAUTOBUS_TBLPROVINCIA" FromRole="TBL_TARIFAAUTOBUS" ToRole="TBL_PROVINCIA" />
+          <Property Name="DESCRIPCIONRUTA" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FECHAVIGENCIA" Type="DateTime" Nullable="false" Precision="0" />
           <NavigationProperty Name="TBL_DETALLESOLICITUDVIATICOS" Relationship="EmpresaPK2Model.FK_TBLDETALLESOLICITUDVIATICOS_TBLTARIFAAUTOBUS" FromRole="TBL_TARIFAAUTOBUS" ToRole="TBL_DETALLESOLICITUDVIATICOS" />
           <NavigationProperty Name="TBL_ESTADOS" Relationship="EmpresaPK2Model.FK_TBLTARIFAAUTOBUS_TBLESTADOS" FromRole="TBL_TARIFAAUTOBUS" ToRole="TBL_ESTADOS" />
         </EntityType>
@@ -819,53 +750,55 @@ FROM [SCH_VIATICOS].[TBL_DETALLEVIATICO] AS [TBL_DETALLEVIATICO]</DefiningQuery>
           <Property Name="ID_ORDEN" Type="Int32" Nullable="false" />
           <Property Name="ESTADOLIQUIDACION" Type="Int16" Nullable="false" />
           <Property Name="FECHALIQUIDACION" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="MONTODESAYUNO" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-          <Property Name="MONTOALMUERZO" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-          <Property Name="MONTOCENA" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-          <Property Name="MONTOHOSPEDAJE" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-          <Property Name="MONTOPASAJE" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="MONTODESAYUNO" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="MONTOALMUERZO" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="MONTOCENA" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="MONTOHOSPEDAJE" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="MONTOPASAJE" Type="Decimal" Precision="19" Scale="4" />
           <NavigationProperty Name="TBL_ESTADOS" Relationship="EmpresaPK2Model.FK_TBLCABECERALIQUIDACION_TBLESTADOS" FromRole="TBL_CABECERALIQUIDACION" ToRole="TBL_ESTADOS" />
           <NavigationProperty Name="TBL_CABECERAORDENVIATICO" Relationship="EmpresaPK2Model.FK_TBLCABECERALIQUIDACION_TBLCABECERAORDENVIATICO" FromRole="TBL_CABECERALIQUIDACION" ToRole="TBL_CABECERAORDENVIATICO" />
-          <NavigationProperty Name="TBL_CABECERAORDENVIATICO1" Relationship="EmpresaPK2Model.FK_TBLCABECERAORDENVIATICO_TBLCABECERALIQUIDACION" FromRole="TBL_CABECERALIQUIDACION" ToRole="TBL_CABECERAORDENVIATICO" />
         </EntityType>
         <EntityType Name="TBL_CABECERAORDENVIATICO">
           <Key>
             <PropertyRef Name="ID_ORDEN" />
           </Key>
           <Property Name="ID_ORDEN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ID_SOLICITUD" Type="Int32" Nullable="false" />
-          <Property Name="ID_LIQUIDACION" Type="Int32" Nullable="false" />
+          <Property Name="ID_SOLICITUD" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="ESTADOORDEN" Type="Int16" Nullable="false" />
           <Property Name="FECHAORDEN" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="TBL_ESTADOS" Relationship="EmpresaPK2Model.FK_TBLCABECERAORDENVIATICO_TBLESTADOS" FromRole="TBL_CABECERAORDENVIATICO" ToRole="TBL_ESTADOS" />
           <NavigationProperty Name="TBL_CABECERALIQUIDACION" Relationship="EmpresaPK2Model.FK_TBLCABECERALIQUIDACION_TBLCABECERAORDENVIATICO" FromRole="TBL_CABECERAORDENVIATICO" ToRole="TBL_CABECERALIQUIDACION" />
-          <NavigationProperty Name="TBL_CABECERALIQUIDACION1" Relationship="EmpresaPK2Model.FK_TBLCABECERAORDENVIATICO_TBLCABECERALIQUIDACION" FromRole="TBL_CABECERAORDENVIATICO" ToRole="TBL_CABECERALIQUIDACION" />
           <NavigationProperty Name="TBL_SOLICITUDVIATICOS" Relationship="EmpresaPK2Model.FK_TBLCABECERAORDENVIATICO_TBLSOLICITUDVIATICOS" FromRole="TBL_CABECERAORDENVIATICO" ToRole="TBL_SOLICITUDVIATICOS" />
-          <NavigationProperty Name="TBL_DETALLEVIATICO" Relationship="EmpresaPK2Model.FK_TBLDETALLEVIATICO_TBLCABECERAORDENVIATICO" FromRole="TBL_CABECERAORDENVIATICO" ToRole="TBL_DETALLEVIATICO" />
         </EntityType>
         <EntityType Name="TBL_DETALLESOLICITUDVIATICOS">
           <Key>
             <PropertyRef Name="ID_DETALLE" />
           </Key>
           <Property Name="ID_DETALLE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ID_SOLICITUD" Type="Int32" Nullable="false" />
+          <Property Name="ID_SOLICITUD" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="ID_PERSONA" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
-          <Property Name="ID_MODTARIFA" Type="Int16" Nullable="false" />
           <Property Name="CANTIDADVIATICOS" Type="Int16" Nullable="false" />
-          <Property Name="FECHAVIATICOS" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CANTIDADDESAYUNO" Type="Int16" />
+          <Property Name="MONTODESAYUNO" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="CANTIDADALMUERZO" Type="Int16" />
+          <Property Name="MONTOALMUERZO" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="CANTIDADCENA" Type="Int16" />
+          <Property Name="MONTOCENA" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="CANTIDADPASAJE" Type="Int16" />
+          <Property Name="MONTOPASAJE" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="CODIGORUTA" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="CANTIDADPASAJE" Type="Int16" Nullable="false" />
-          <NavigationProperty Name="TBL_MODTARIFARIOVIATICO" Relationship="EmpresaPK2Model.FK_TBLDETALLESOLICITUDVIATICOS_TBLMODTARIFARIOVIATICO" FromRole="TBL_DETALLESOLICITUDVIATICOS" ToRole="TBL_MODTARIFARIOVIATICO" />
+          <Property Name="LOCALIDADHOSPEDAJE" Type="Int16" />
+          <Property Name="MONTOHOSPEDAJE" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="TBL_MODTARIFARIOVIATICO" Relationship="EmpresaPK2Model.FK_TBLDETALLESOLICITUDVIATICO_TBLMODTARIFARIOVIATICO" FromRole="TBL_DETALLESOLICITUDVIATICOS" ToRole="TBL_MODTARIFARIOVIATICO" />
           <NavigationProperty Name="TBL_TARIFAAUTOBUS" Relationship="EmpresaPK2Model.FK_TBLDETALLESOLICITUDVIATICOS_TBLTARIFAAUTOBUS" FromRole="TBL_DETALLESOLICITUDVIATICOS" ToRole="TBL_TARIFAAUTOBUS" />
           <NavigationProperty Name="TBL_PERSONA" Relationship="EmpresaPK2Model.FK_TBLDETALLESOLICITUDVIATICOS_TBLPERSONA" FromRole="TBL_DETALLESOLICITUDVIATICOS" ToRole="TBL_PERSONA" />
           <NavigationProperty Name="TBL_SOLICITUDVIATICOS" Relationship="EmpresaPK2Model.FK_TBLDETALLESOLICITUDVIATICOS_TBLSOLICITUDVIATICOS" FromRole="TBL_DETALLESOLICITUDVIATICOS" ToRole="TBL_SOLICITUDVIATICOS" />
-          <NavigationProperty Name="TBL_DETALLEVIATICO" Relationship="EmpresaPK2Model.FK_TBLDETALLEVIATICO_TBLDETALLESOLICITUDVIATICOS" FromRole="TBL_DETALLESOLICITUDVIATICOS" ToRole="TBL_DETALLEVIATICO" />
         </EntityType>
         <EntityType Name="TBL_SOLICITUDVIATICOS">
           <Key>
             <PropertyRef Name="ID_SOLICITUD" />
           </Key>
-          <Property Name="ID_SOLICITUD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_SOLICITUD" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="NOMBREUSUARIO" Type="String" Nullable="false" MaxLength="24" FixedLength="false" Unicode="true" />
           <Property Name="FECHACREACION" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="FECHASALIDA" Type="DateTime" Nullable="false" Precision="3" />
@@ -879,32 +812,6 @@ FROM [SCH_VIATICOS].[TBL_DETALLEVIATICO] AS [TBL_DETALLEVIATICO]</DefiningQuery>
           <NavigationProperty Name="TBL_USUARIO" Relationship="EmpresaPK2Model.FK_TBLSOLICITUDVIATICOS_TBLUSUARIO" FromRole="TBL_SOLICITUDVIATICOS" ToRole="TBL_USUARIO" />
           <NavigationProperty Name="TBL_CABECERAORDENVIATICO" Relationship="EmpresaPK2Model.FK_TBLCABECERAORDENVIATICO_TBLSOLICITUDVIATICOS" FromRole="TBL_SOLICITUDVIATICOS" ToRole="TBL_CABECERAORDENVIATICO" />
           <NavigationProperty Name="TBL_DETALLESOLICITUDVIATICOS" Relationship="EmpresaPK2Model.FK_TBLDETALLESOLICITUDVIATICOS_TBLSOLICITUDVIATICOS" FromRole="TBL_SOLICITUDVIATICOS" ToRole="TBL_DETALLESOLICITUDVIATICOS" />
-        </EntityType>
-        <EntityType Name="TBL_DETALLEVIATICO">
-          <Key>
-            <PropertyRef Name="ID_DETALLE" />
-            <PropertyRef Name="ID_ORDEN" />
-            <PropertyRef Name="CANTIDADDESAYUNO" />
-            <PropertyRef Name="MONTODESAYUNO" />
-            <PropertyRef Name="CANTIDADALMUERZO" />
-            <PropertyRef Name="MONTOALMUERZO" />
-            <PropertyRef Name="CANTIDADCENA" />
-            <PropertyRef Name="MONTOCENA" />
-            <PropertyRef Name="CANTIDADPASAJE" />
-            <PropertyRef Name="MONTOPASAJE" />
-          </Key>
-          <Property Name="ID_DETALLE" Type="Int32" Nullable="false" />
-          <Property Name="ID_ORDEN" Type="Int32" Nullable="false" />
-          <Property Name="CANTIDADDESAYUNO" Type="Int16" Nullable="false" />
-          <Property Name="MONTODESAYUNO" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-          <Property Name="CANTIDADALMUERZO" Type="Int16" Nullable="false" />
-          <Property Name="MONTOALMUERZO" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-          <Property Name="CANTIDADCENA" Type="Int16" Nullable="false" />
-          <Property Name="MONTOCENA" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-          <Property Name="CANTIDADPASAJE" Type="Int16" Nullable="false" />
-          <Property Name="MONTOPASAJE" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-          <NavigationProperty Name="TBL_CABECERAORDENVIATICO" Relationship="EmpresaPK2Model.FK_TBLDETALLEVIATICO_TBLCABECERAORDENVIATICO" FromRole="TBL_DETALLEVIATICO" ToRole="TBL_CABECERAORDENVIATICO" />
-          <NavigationProperty Name="TBL_DETALLESOLICITUDVIATICOS" Relationship="EmpresaPK2Model.FK_TBLDETALLEVIATICO_TBLDETALLESOLICITUDVIATICOS" FromRole="TBL_DETALLEVIATICO" ToRole="TBL_DETALLESOLICITUDVIATICOS" />
         </EntityType>
         <Association Name="FK_TBLCANTON_TBLPROVINCIA">
           <End Type="EmpresaPK2Model.TBL_PROVINCIA" Role="TBL_PROVINCIA" Multiplicity="1" />
@@ -930,15 +837,15 @@ FROM [SCH_VIATICOS].[TBL_DETALLEVIATICO] AS [TBL_DETALLEVIATICO]</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_TBLDETALLESOLICITUDVIATICOS_TBLMODTARIFARIOVIATICO">
-          <End Type="EmpresaPK2Model.TBL_MODTARIFARIOVIATICO" Role="TBL_MODTARIFARIOVIATICO" Multiplicity="1" />
+        <Association Name="FK_TBLDETALLESOLICITUDVIATICO_TBLMODTARIFARIOVIATICO">
+          <End Type="EmpresaPK2Model.TBL_MODTARIFARIOVIATICO" Role="TBL_MODTARIFARIOVIATICO" Multiplicity="0..1" />
           <End Type="EmpresaPK2Model.TBL_DETALLESOLICITUDVIATICOS" Role="TBL_DETALLESOLICITUDVIATICOS" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TBL_MODTARIFARIOVIATICO">
               <PropertyRef Name="ID_MODTARIFA" />
             </Principal>
             <Dependent Role="TBL_DETALLESOLICITUDVIATICOS">
-              <PropertyRef Name="ID_MODTARIFA" />
+              <PropertyRef Name="LOCALIDADHOSPEDAJE" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -962,18 +869,6 @@ FROM [SCH_VIATICOS].[TBL_DETALLEVIATICO] AS [TBL_DETALLEVIATICO]</DefiningQuery>
               <PropertyRef Name="CODIGOPROVINCIA" />
             </Principal>
             <Dependent Role="TBL_MODTARIFARIOVIATICO">
-              <PropertyRef Name="CODIGOPROVINCIA" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TBLTARIFAAUTOBUS_TBLPROVINCIA">
-          <End Type="EmpresaPK2Model.TBL_PROVINCIA" Role="TBL_PROVINCIA" Multiplicity="1" />
-          <End Type="EmpresaPK2Model.TBL_TARIFAAUTOBUS" Role="TBL_TARIFAAUTOBUS" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBL_PROVINCIA">
-              <PropertyRef Name="CODIGOPROVINCIA" />
-            </Principal>
-            <Dependent Role="TBL_TARIFAAUTOBUS">
               <PropertyRef Name="CODIGOPROVINCIA" />
             </Dependent>
           </ReferentialConstraint>
@@ -1110,18 +1005,6 @@ FROM [SCH_VIATICOS].[TBL_DETALLEVIATICO] AS [TBL_DETALLEVIATICO]</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_TBLCABECERAORDENVIATICO_TBLCABECERALIQUIDACION">
-          <End Type="EmpresaPK2Model.TBL_CABECERALIQUIDACION" Role="TBL_CABECERALIQUIDACION" Multiplicity="1" />
-          <End Type="EmpresaPK2Model.TBL_CABECERAORDENVIATICO" Role="TBL_CABECERAORDENVIATICO" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBL_CABECERALIQUIDACION">
-              <PropertyRef Name="ID_LIQUIDACION" />
-            </Principal>
-            <Dependent Role="TBL_CABECERAORDENVIATICO">
-              <PropertyRef Name="ID_LIQUIDACION" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_TBLCABECERAORDENVIATICO_TBLSOLICITUDVIATICOS">
           <End Type="EmpresaPK2Model.TBL_SOLICITUDVIATICOS" Role="TBL_SOLICITUDVIATICOS" Multiplicity="1" />
           <End Type="EmpresaPK2Model.TBL_CABECERAORDENVIATICO" Role="TBL_CABECERAORDENVIATICO" Multiplicity="*" />
@@ -1131,18 +1014,6 @@ FROM [SCH_VIATICOS].[TBL_DETALLEVIATICO] AS [TBL_DETALLEVIATICO]</DefiningQuery>
             </Principal>
             <Dependent Role="TBL_CABECERAORDENVIATICO">
               <PropertyRef Name="ID_SOLICITUD" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TBLDETALLEVIATICO_TBLCABECERAORDENVIATICO">
-          <End Type="EmpresaPK2Model.TBL_CABECERAORDENVIATICO" Role="TBL_CABECERAORDENVIATICO" Multiplicity="1" />
-          <End Type="EmpresaPK2Model.TBL_DETALLEVIATICO" Role="TBL_DETALLEVIATICO" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBL_CABECERAORDENVIATICO">
-              <PropertyRef Name="ID_ORDEN" />
-            </Principal>
-            <Dependent Role="TBL_DETALLEVIATICO">
-              <PropertyRef Name="ID_ORDEN" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1158,40 +1029,62 @@ FROM [SCH_VIATICOS].[TBL_DETALLEVIATICO] AS [TBL_DETALLEVIATICO]</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_TBLDETALLEVIATICO_TBLDETALLESOLICITUDVIATICOS">
-          <End Type="EmpresaPK2Model.TBL_DETALLESOLICITUDVIATICOS" Role="TBL_DETALLESOLICITUDVIATICOS" Multiplicity="1" />
-          <End Type="EmpresaPK2Model.TBL_DETALLEVIATICO" Role="TBL_DETALLEVIATICO" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBL_DETALLESOLICITUDVIATICOS">
-              <PropertyRef Name="ID_DETALLE" />
-            </Principal>
-            <Dependent Role="TBL_DETALLEVIATICO">
-              <PropertyRef Name="ID_DETALLE" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <ComplexType Name="SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result">
-          <Property Type="Int32" Name="ID_SOLICITUD" Nullable="false" />
-          <Property Type="String" Name="NOMBREUSUARIO" Nullable="false" MaxLength="24" />
-          <Property Type="DateTime" Name="FECHACREACION" Nullable="false" Precision="23" />
-          <Property Type="DateTime" Name="FECHASALIDA" Nullable="false" Precision="23" />
-          <Property Type="DateTime" Name="FECHAREGRESO" Nullable="false" Precision="23" />
-          <Property Type="Int16" Name="ESTADOSOLICITUD" Nullable="false" />
-          <Property Type="String" Name="JUSTIFICACION" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="DESTINO" Nullable="false" MaxLength="50" />
-          <Property Type="Time" Name="HORAREGRESO" Nullable="false" />
-          <Property Type="Time" Name="HORASALIDA" Nullable="false" />
-        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="EmpresaPK2ModelStoreContainer" CdmEntityContainer="EmpresaPK2Entities">
+          <FunctionImportMapping FunctionImportName="SP_InsertarUsuario" FunctionName="EmpresaPK2Model.Store.SP_InsertarUsuario" />
+          <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_SOLICITUDES_FUNCIONARIO" FunctionName="EmpresaPK2Model.Store.SP_ACTUALIZAR_SOLICITUDES_FUNCIONARIO" />
+          <FunctionImportMapping FunctionImportName="SP_ELIMINAR_SOLICITUDES" FunctionName="EmpresaPK2Model.Store.SP_ELIMINAR_SOLICITUDES" />
+          <FunctionImportMapping FunctionImportName="SP_GUARDAR_SOLICITUDES_FUNCIONARIO" FunctionName="EmpresaPK2Model.Store.SP_GUARDAR_SOLICITUDES_FUNCIONARIO" />
+          <FunctionImportMapping FunctionImportName="SP_LISTAR_SOLICITUDES_FUNCIONARIO" FunctionName="EmpresaPK2Model.Store.SP_LISTAR_SOLICITUDES_FUNCIONARIO">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result">
+                <ScalarProperty Name="ID_SOLICITUD" ColumnName="ID_SOLICITUD" />
+                <ScalarProperty Name="NOMBREUSUARIO" ColumnName="NOMBREUSUARIO" />
+                <ScalarProperty Name="FECHACREACION" ColumnName="FECHACREACION" />
+                <ScalarProperty Name="FECHASALIDA" ColumnName="FECHASALIDA" />
+                <ScalarProperty Name="FECHAREGRESO" ColumnName="FECHAREGRESO" />
+                <ScalarProperty Name="ESTADOSOLICITUD" ColumnName="ESTADOSOLICITUD" />
+                <ScalarProperty Name="JUSTIFICACION" ColumnName="JUSTIFICACION" />
+                <ScalarProperty Name="DESTINO" ColumnName="DESTINO" />
+                <ScalarProperty Name="HORAREGRESO" ColumnName="HORAREGRESO" />
+                <ScalarProperty Name="HORASALIDA" ColumnName="HORASALIDA" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_LISTADO_SOLICITUD_VIATICOS" FunctionName="EmpresaPK2Model.Store.SP_LISTADO_SOLICITUD_VIATICOS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTADO_SOLICITUD_VIATICOS_Result">
+                <ScalarProperty Name="ID_SOLICITUD" ColumnName="ID_SOLICITUD" />
+                <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+                <ScalarProperty Name="CANTIDADPASAJE" ColumnName="CANTIDADPASAJE" />
+                <ScalarProperty Name="CANTIDADVIATICOS" ColumnName="CANTIDADVIATICOS" />
+                <ScalarProperty Name="FECHACREACION" ColumnName="FECHACREACION" />
+                <ScalarProperty Name="JUSTIFICACION" ColumnName="JUSTIFICACION" />
+                <ScalarProperty Name="DESTINO" ColumnName="DESTINO" />
+                <ScalarProperty Name="ESTADOSOLICITUD" ColumnName="ESTADOSOLICITUD" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_INICIO_SESION" FunctionName="EmpresaPK2Model.Store.SP_INICIO_SESION">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_INICIO_SESION_Result">
+                <ScalarProperty Name="NOMBREUSUARIO" ColumnName="NOMBREUSUARIO" />
+                <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="ID_ROL" ColumnName="ID_ROL" />
+                <ScalarProperty Name="ROL" ColumnName="ROL" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <EntitySetMapping Name="TBL_CANTON">
             <EntityTypeMapping TypeName="EmpresaPK2Model.TBL_CANTON">
               <MappingFragment StoreEntitySet="TBL_CANTON">
-                <ScalarProperty Name="DESCRIPCIONPROVINCIA" ColumnName="DESCRIPCIONPROVINCIA" />
+                <ScalarProperty Name="DESCRIPCIONCANTON" ColumnName="DESCRIPCIONCANTON" />
                 <ScalarProperty Name="CODIGOPROVINCIA" ColumnName="CODIGOPROVINCIA" />
                 <ScalarProperty Name="CODIGOCANTON" ColumnName="CODIGOCANTON" />
               </MappingFragment>
@@ -1226,7 +1119,6 @@ FROM [SCH_VIATICOS].[TBL_DETALLEVIATICO] AS [TBL_DETALLEVIATICO]</DefiningQuery>
                 <ScalarProperty Name="DESCRIPCIONRUTA" ColumnName="DESCRIPCIONRUTA" />
                 <ScalarProperty Name="TARIFAREGISTRADA" ColumnName="TARIFAREGISTRADA" />
                 <ScalarProperty Name="ESTADORUTA" ColumnName="ESTADORUTA" />
-                <ScalarProperty Name="CODIGOPROVINCIA" ColumnName="CODIGOPROVINCIA" />
                 <ScalarProperty Name="CODIGORUTA" ColumnName="CODIGORUTA" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1290,7 +1182,6 @@ FROM [SCH_VIATICOS].[TBL_DETALLEVIATICO] AS [TBL_DETALLEVIATICO]</DefiningQuery>
               <MappingFragment StoreEntitySet="TBL_CABECERAORDENVIATICO">
                 <ScalarProperty Name="FECHAORDEN" ColumnName="FECHAORDEN" />
                 <ScalarProperty Name="ESTADOORDEN" ColumnName="ESTADOORDEN" />
-                <ScalarProperty Name="ID_LIQUIDACION" ColumnName="ID_LIQUIDACION" />
                 <ScalarProperty Name="ID_SOLICITUD" ColumnName="ID_SOLICITUD" />
                 <ScalarProperty Name="ID_ORDEN" ColumnName="ID_ORDEN" />
               </MappingFragment>
@@ -1299,11 +1190,18 @@ FROM [SCH_VIATICOS].[TBL_DETALLEVIATICO] AS [TBL_DETALLEVIATICO]</DefiningQuery>
           <EntitySetMapping Name="TBL_DETALLESOLICITUDVIATICOS">
             <EntityTypeMapping TypeName="EmpresaPK2Model.TBL_DETALLESOLICITUDVIATICOS">
               <MappingFragment StoreEntitySet="TBL_DETALLESOLICITUDVIATICOS">
-                <ScalarProperty Name="CANTIDADPASAJE" ColumnName="CANTIDADPASAJE" />
+                <ScalarProperty Name="MONTOHOSPEDAJE" ColumnName="MONTOHOSPEDAJE" />
+                <ScalarProperty Name="LOCALIDADHOSPEDAJE" ColumnName="LOCALIDADHOSPEDAJE" />
                 <ScalarProperty Name="CODIGORUTA" ColumnName="CODIGORUTA" />
-                <ScalarProperty Name="FECHAVIATICOS" ColumnName="FECHAVIATICOS" />
+                <ScalarProperty Name="MONTOPASAJE" ColumnName="MONTOPASAJE" />
+                <ScalarProperty Name="CANTIDADPASAJE" ColumnName="CANTIDADPASAJE" />
+                <ScalarProperty Name="MONTOCENA" ColumnName="MONTOCENA" />
+                <ScalarProperty Name="CANTIDADCENA" ColumnName="CANTIDADCENA" />
+                <ScalarProperty Name="MONTOALMUERZO" ColumnName="MONTOALMUERZO" />
+                <ScalarProperty Name="CANTIDADALMUERZO" ColumnName="CANTIDADALMUERZO" />
+                <ScalarProperty Name="MONTODESAYUNO" ColumnName="MONTODESAYUNO" />
+                <ScalarProperty Name="CANTIDADDESAYUNO" ColumnName="CANTIDADDESAYUNO" />
                 <ScalarProperty Name="CANTIDADVIATICOS" ColumnName="CANTIDADVIATICOS" />
-                <ScalarProperty Name="ID_MODTARIFA" ColumnName="ID_MODTARIFA" />
                 <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
                 <ScalarProperty Name="ID_SOLICITUD" ColumnName="ID_SOLICITUD" />
                 <ScalarProperty Name="ID_DETALLE" ColumnName="ID_DETALLE" />
@@ -1326,42 +1224,6 @@ FROM [SCH_VIATICOS].[TBL_DETALLEVIATICO] AS [TBL_DETALLEVIATICO]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TBL_DETALLEVIATICO">
-            <EntityTypeMapping TypeName="EmpresaPK2Model.TBL_DETALLEVIATICO">
-              <MappingFragment StoreEntitySet="TBL_DETALLEVIATICO">
-                <ScalarProperty Name="MONTOPASAJE" ColumnName="MONTOPASAJE" />
-                <ScalarProperty Name="CANTIDADPASAJE" ColumnName="CANTIDADPASAJE" />
-                <ScalarProperty Name="MONTOCENA" ColumnName="MONTOCENA" />
-                <ScalarProperty Name="CANTIDADCENA" ColumnName="CANTIDADCENA" />
-                <ScalarProperty Name="MONTOALMUERZO" ColumnName="MONTOALMUERZO" />
-                <ScalarProperty Name="CANTIDADALMUERZO" ColumnName="CANTIDADALMUERZO" />
-                <ScalarProperty Name="MONTODESAYUNO" ColumnName="MONTODESAYUNO" />
-                <ScalarProperty Name="CANTIDADDESAYUNO" ColumnName="CANTIDADDESAYUNO" />
-                <ScalarProperty Name="ID_ORDEN" ColumnName="ID_ORDEN" />
-                <ScalarProperty Name="ID_DETALLE" ColumnName="ID_DETALLE" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="SP_InsertarUsuario" FunctionName="EmpresaPK2Model.Store.SP_InsertarUsuario" />
-          <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_SOLICITUDES_FUNCIONARIO" FunctionName="EmpresaPK2Model.Store.SP_ACTUALIZAR_SOLICITUDES_FUNCIONARIO" />
-          <FunctionImportMapping FunctionImportName="SP_ELIMINAR_SOLICITUDES" FunctionName="EmpresaPK2Model.Store.SP_ELIMINAR_SOLICITUDES" />
-          <FunctionImportMapping FunctionImportName="SP_GUARDAR_SOLICITUDES_FUNCIONARIO" FunctionName="EmpresaPK2Model.Store.SP_GUARDAR_SOLICITUDES_FUNCIONARIO" />
-          <FunctionImportMapping FunctionImportName="SP_LISTAR_SOLICITUDES_FUNCIONARIO" FunctionName="EmpresaPK2Model.Store.SP_LISTAR_SOLICITUDES_FUNCIONARIO">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result">
-                <ScalarProperty Name="ID_SOLICITUD" ColumnName="ID_SOLICITUD" />
-                <ScalarProperty Name="NOMBREUSUARIO" ColumnName="NOMBREUSUARIO" />
-                <ScalarProperty Name="FECHACREACION" ColumnName="FECHACREACION" />
-                <ScalarProperty Name="FECHASALIDA" ColumnName="FECHASALIDA" />
-                <ScalarProperty Name="FECHAREGRESO" ColumnName="FECHAREGRESO" />
-                <ScalarProperty Name="ESTADOSOLICITUD" ColumnName="ESTADOSOLICITUD" />
-                <ScalarProperty Name="JUSTIFICACION" ColumnName="JUSTIFICACION" />
-                <ScalarProperty Name="DESTINO" ColumnName="DESTINO" />
-                <ScalarProperty Name="HORAREGRESO" ColumnName="HORAREGRESO" />
-                <ScalarProperty Name="HORASALIDA" ColumnName="HORASALIDA" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

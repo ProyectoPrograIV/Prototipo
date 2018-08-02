@@ -106,9 +106,7 @@
             <h1>Listado de Viaticos</h1>
             <div class="Fecha">
                 <h3>Fecha Inicial</h3>
-                <asp:TextBox CssClass="TbxFecha" ID="TbxDay" runat="server" placeholder="Dia"></asp:TextBox>
-                <asp:TextBox CssClass="TbxFecha" ID="TbxMonth" runat="server" placeholder="Mes"></asp:TextBox>
-                <asp:TextBox CssClass="TbxFecha" ID="TbxYear" runat="server" placeholder="Año"></asp:TextBox>
+                <asp:TextBox CssClass="TbxFecha" ID="TbxDay" runat="server" TextMode="Date" placeholder="Dia" Width="125px"></asp:TextBox>
             </div>
             <div class="Fecha">
                 <h3>Fecha Final</h3>
