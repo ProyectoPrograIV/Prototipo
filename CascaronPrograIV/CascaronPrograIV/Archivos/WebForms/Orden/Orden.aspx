@@ -60,17 +60,17 @@
             <h1 id="h1Generar">Generar Orden de Viaticos
             <img src="../../Recursos/Mostrar.png" /></h1>
             <br />
-            <asp:TextBox CssClass="Textbox" ID="TextBox1" runat="server" Text="Fecha de Creacion"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TextBox2" runat="server" Text="Fecha de Regreso"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TextBox3" runat="server" Text="Estado de Solicitud"></asp:TextBox><br />
+            <asp:TextBox CssClass="Textbox" ID="TextBox1" runat="server" Placeholder="Fecha de Creacion"></asp:TextBox>
+            <asp:TextBox CssClass="Textbox" ID="TextBox2" runat="server" Placeholder="Fecha de Regreso"></asp:TextBox>
+            <asp:TextBox CssClass="Textbox" ID="TextBox3" runat="server" Placeholder="Estado de Solicitud"></asp:TextBox><br />
 
-            <asp:TextBox CssClass="Textbox" ID="TextBox4" runat="server" Text="Usuario"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TextBox5" runat="server" Text="Justificacion"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TextBox6" runat="server" Text="Destino"></asp:TextBox><br />
+            <asp:TextBox CssClass="Textbox" ID="TextBox4" runat="server" Placeholder="Usuario"></asp:TextBox>
+            <asp:TextBox CssClass="Textbox" ID="TextBox5" runat="server" Placeholder="Justificacion"></asp:TextBox>
+            <asp:TextBox CssClass="Textbox" ID="TextBox6" runat="server" Placeholder="Destino"></asp:TextBox><br />
 
-            <asp:TextBox CssClass="Textbox" ID="TextBox7" runat="server" Text="Fecha de Salida"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TextBox8" runat="server" Text="Hora de Salida"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TextBox9" runat="server" Text="Hora de Regreso"></asp:TextBox><br />
+            <asp:TextBox CssClass="Textbox" ID="TextBox7" runat="server" Placeholder="Fecha de Salida"></asp:TextBox>
+            <asp:TextBox CssClass="Textbox" ID="TextBox8" runat="server" Placeholder="Hora de Salida"></asp:TextBox>
+            <asp:TextBox CssClass="Textbox" ID="TextBox9" runat="server" Placeholder="Hora de Regreso"></asp:TextBox><br />
             <br />
             <asp:Button ID="Btn_Generar" CssClass="Button" runat="server" Text="Generar" />
         </div>
