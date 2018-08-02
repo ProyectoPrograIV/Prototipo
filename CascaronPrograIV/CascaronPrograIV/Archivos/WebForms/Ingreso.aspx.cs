@@ -12,11 +12,12 @@ namespace CascaronPrograIV.Archivos.WebForms
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Session["sesion"] = null;
         }
 
         protected void BtnIngresar_Click(object sender, EventArgs e)
         {
+           
             TBL_USUARIO obj = new TBL_USUARIO();
             obj.NOMBREUSUARIO = this.TbxUsuario.Text;
             obj.CLAVEACCESO = this.TbxPassword.Text;
@@ -28,12 +29,12 @@ namespace CascaronPrograIV.Archivos.WebForms
             if (sesion == null)
             {
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Error al iniciar sesion')", true);
-
-            }
+                            }
 
             else
             {
                 Session["sesion"] = sesion;
+                
                 Response.Redirect("Default.aspx");
             }
         }
