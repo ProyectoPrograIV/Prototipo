@@ -14,7 +14,7 @@ namespace CascaronPrograIV.Archivos.WebForms
         {
             SP_INICIO_SESION_Result sesion = (SP_INICIO_SESION_Result)Session["sesion"];
 
-            if (sesion.ID_ROL ==12) //El 12 corresponde a administrador
+            if (sesion.ID_ROL ==11) //El 11 corresponde a administrador
             {
                 hlParametrizaciones.Visible = true;
                 hlSolicitud.Visible = true;
@@ -30,7 +30,7 @@ namespace CascaronPrograIV.Archivos.WebForms
                 hlReportes.Visible = true;
             }
 
-            if (sesion.ID_ROL == 11) //El 11 corresponde a funcionario
+            if (sesion.ID_ROL == 9) //El 9 corresponde a funcionario
             {
                 hlSolicitud.Visible = true;
                 hlLiquidacion.Visible = true;
