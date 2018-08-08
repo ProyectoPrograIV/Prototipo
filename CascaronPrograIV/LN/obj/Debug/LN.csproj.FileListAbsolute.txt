@@ -51,3 +51,14 @@ C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\LN\obj\Debug\LN.cspro
 C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\LN\obj\Debug\LN.csproj.CopyComplete
 C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\LN\obj\Debug\LN.dll
 C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\LN\obj\Debug\LN.pdb
+C:\Users\usuario\Source\Repos\Prototipo\CascaronPrograIV\LN\bin\Debug\LN.dll
+C:\Users\usuario\Source\Repos\Prototipo\CascaronPrograIV\LN\bin\Debug\LN.pdb
+C:\Users\usuario\Source\Repos\Prototipo\CascaronPrograIV\LN\bin\Debug\AD.dll
+C:\Users\usuario\Source\Repos\Prototipo\CascaronPrograIV\LN\bin\Debug\Entidades.dll
+C:\Users\usuario\Source\Repos\Prototipo\CascaronPrograIV\LN\bin\Debug\EntityFramework.dll
+C:\Users\usuario\Source\Repos\Prototipo\CascaronPrograIV\LN\bin\Debug\AD.pdb
+C:\Users\usuario\Source\Repos\Prototipo\CascaronPrograIV\LN\bin\Debug\Entidades.pdb
+C:\Users\usuario\Source\Repos\Prototipo\CascaronPrograIV\LN\bin\Debug\EntityFramework.xml
+C:\Users\usuario\Source\Repos\Prototipo\CascaronPrograIV\LN\obj\Debug\LN.csprojResolveAssemblyReference.cache
+C:\Users\usuario\Source\Repos\Prototipo\CascaronPrograIV\LN\obj\Debug\LN.dll
+C:\Users\usuario\Source\Repos\Prototipo\CascaronPrograIV\LN\obj\Debug\LN.pdb

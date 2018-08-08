@@ -43,3 +43,12 @@ C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\AD\obj\Debug\AD.cspro
 C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\AD\obj\Debug\AD.csproj.CopyComplete
 C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\AD\obj\Debug\AD.dll
 C:\Users\sony user\Source\Repos\Prototipo\CascaronPrograIV\AD\obj\Debug\AD.pdb
+C:\Users\usuario\Source\Repos\Prototipo\CascaronPrograIV\AD\bin\Debug\AD.dll
+C:\Users\usuario\Source\Repos\Prototipo\CascaronPrograIV\AD\bin\Debug\AD.pdb
+C:\Users\usuario\Source\Repos\Prototipo\CascaronPrograIV\AD\bin\Debug\Entidades.dll
+C:\Users\usuario\Source\Repos\Prototipo\CascaronPrograIV\AD\bin\Debug\EntityFramework.dll
+C:\Users\usuario\Source\Repos\Prototipo\CascaronPrograIV\AD\bin\Debug\Entidades.pdb
+C:\Users\usuario\Source\Repos\Prototipo\CascaronPrograIV\AD\bin\Debug\EntityFramework.xml
+C:\Users\usuario\Source\Repos\Prototipo\CascaronPrograIV\AD\obj\Debug\AD.csprojResolveAssemblyReference.cache
+C:\Users\usuario\Source\Repos\Prototipo\CascaronPrograIV\AD\obj\Debug\AD.dll
+C:\Users\usuario\Source\Repos\Prototipo\CascaronPrograIV\AD\obj\Debug\AD.pdb

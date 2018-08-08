@@ -21,6 +21,8 @@ namespace CascaronPrograIV.Archivos.WebForms
                 hlOrden.Visible = true;
                 hlLiquidacion.Visible = true;
                 hlReportes.Visible = true;
+                hlRegistro.Visible = true;
+
             }
 
             if (sesion.ID_ROL == 10) //El 10 corresponde a jefatura
@@ -37,5 +39,6 @@ namespace CascaronPrograIV.Archivos.WebForms
                 hlReportes.Visible = true;
             }
         }
+        
     }
 }
