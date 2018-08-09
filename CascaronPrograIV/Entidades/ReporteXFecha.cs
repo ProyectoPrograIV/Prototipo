@@ -14,10 +14,69 @@ namespace Entidades
         private string nomUsuario;
         private short iDPersona;
 
-        public DateTime FechaInicio { get => fechaInicio; set => fechaInicio = value; }
-        public DateTime FechaFinal { get => fechaFinal; set => fechaFinal = value; }
-        public short Estado { get => estado; set => estado = value; }
-        public string NomUsuario { get => nomUsuario; set => nomUsuario = value; }
-        public short IDPersona { get => iDPersona; set => iDPersona = value; }
+        public DateTime FechaInicio
+        {
+            get
+            {
+                return fechaInicio;
+            }
+
+            set
+            {
+                fechaInicio = value;
+            }
+        }
+
+        public DateTime FechaFinal
+        {
+            get
+            {
+                return fechaFinal;
+            }
+
+            set
+            {
+                fechaFinal = value;
+            }
+        }
+
+        public short Estado
+        {
+            get
+            {
+                return estado;
+            }
+
+            set
+            {
+                estado = value;
+            }
+        }
+
+        public string NomUsuario
+        {
+            get
+            {
+                return nomUsuario;
+            }
+
+            set
+            {
+                nomUsuario = value;
+            }
+        }
+
+        public short IDPersona
+        {
+            get
+            {
+                return iDPersona;
+            }
+
+            set
+            {
+                iDPersona = value;
+            }
+        }
     }
 }

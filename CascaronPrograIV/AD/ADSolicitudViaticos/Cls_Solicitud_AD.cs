@@ -63,5 +63,67 @@ namespace AD.ADSolicitudViaticos
             }
             return Lista;
         }
+
+        public static List<SP_LISTAR_LOCALIDAD_Result> ListarLocalidad()
+        {
+            EmpresaPK2Entities entidad = null; //Se declara el objeto de entidad para la conexion
+            //Se declara una Lista para llevar cada línea con un objeto resultado de la consulta
+            List<SP_LISTAR_LOCALIDAD_Result> Lista = new List<SP_LISTAR_LOCALIDAD_Result>();
+            try
+            {
+                entidad = new EmpresaPK2Entities(); //Se instancia la entidad
+                var Resultado = entidad.SP_LISTAR_LOCALIDAD().ToList();
+                if (Resultado != null)
+                {
+                    foreach (var item in Resultado) //Recorre lista
+                    {
+                        Lista.Add(item); //Agrega cada Linea a la lista que se devovlerá
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                if (entidad != null)
+                {
+                    entidad.Dispose(); //En caso de que se haya inicializado la entidad pero falló la operación, cierra la conexion a la entidad.
+                }
+            }
+            return Lista;
+        }
+
+        public static List<SP_LISTAR_RUTAS_Result> ListarRutas()
+        {
+            EmpresaPK2Entities entidad = null; //Se declara el objeto de entidad para la conexion
+            //Se declara una Lista para llevar cada línea con un objeto resultado de la consulta
+            List<SP_LISTAR_RUTAS_Result> Lista = new List<SP_LISTAR_RUTAS_Result>();
+            try
+            {
+                entidad = new EmpresaPK2Entities(); //Se instancia la entidad
+                var Resultado = entidad.SP_LISTAR_RUTAS().ToList();
+                if (Resultado != null)
+                {
+                    foreach (var item in Resultado) //Recorre lista
+                    {
+                        Lista.Add(item); //Agrega cada Linea a la lista que se devovlerá
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                if (entidad != null)
+                {
+                    entidad.Dispose(); //En caso de que se haya inicializado la entidad pero falló la operación, cierra la conexion a la entidad.
+                }
+            }
+            return Lista;
+        }
     }
 }

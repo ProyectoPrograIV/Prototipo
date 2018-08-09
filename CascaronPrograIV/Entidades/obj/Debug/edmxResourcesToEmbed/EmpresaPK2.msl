@@ -215,5 +215,21 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_LISTAR_LOCALIDAD" FunctionName="EmpresaPK2Model.Store.SP_LISTAR_LOCALIDAD">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTAR_LOCALIDAD_Result">
+          <ScalarProperty Name="ID_MODTARIFA" ColumnName="ID_MODTARIFA" />
+          <ScalarProperty Name="LOCALIDAD" ColumnName="LOCALIDAD" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_LISTAR_RUTAS" FunctionName="EmpresaPK2Model.Store.SP_LISTAR_RUTAS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTAR_RUTAS_Result">
+          <ScalarProperty Name="CODIGORUTA" ColumnName="CODIGORUTA" />
+          <ScalarProperty Name="DESCRIPCIONRUTA" ColumnName="DESCRIPCIONRUTA" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

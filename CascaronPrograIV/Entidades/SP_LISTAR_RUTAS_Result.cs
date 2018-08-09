@@ -11,11 +11,9 @@ namespace Entidades
 {
     using System;
     
-    public partial class SP_LISTADO_ORDEN_VIATICOS_Result
+    public partial class SP_LISTAR_RUTAS_Result
     {
-        public System.DateTime FECHAORDEN { get; set; }
-        public int ID_ORDEN { get; set; }
-        public string ID_SOLICITUD { get; set; }
-        public short ESTADOORDEN { get; set; }
+        public string CODIGORUTA { get; set; }
+        public string DESCRIPCIONRUTA { get; set; }
     }
 }

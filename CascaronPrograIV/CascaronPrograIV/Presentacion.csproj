@@ -139,6 +139,8 @@
     <Content Include="Properties\DataSources\System.Data.DataTable.datasource" />
     <Content Include="Properties\DataSources\Entidades.SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result.datasource" />
     <Content Include="Properties\DataSources\Entidades.SP_INICIO_SESION_Result.datasource" />
+    <Content Include="Properties\DataSources\Entidades.SP_LISTAR_LOCALIDAD_Result.datasource" />
+    <Content Include="Properties\DataSources\Entidades.SP_LISTAR_RUTAS_Result.datasource" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -94,7 +94,6 @@
                 <div id="DivCrear">
                     <h1 id="h1Crear" title="Click para mostrar contenido">Crear Solicitud de Viaticos</h1>
                     <div id="InicioSolicitud">
-
                         <asp:TextBox CssClass="Textbox" ID="TbxCantidadSolicitudes" runat="server" placeholder="Cantidad de Solicitudes a Crear" Width="400px"></asp:TextBox>
                         <br />
                         <asp:Label ID="LblInicio" runat="server"></asp:Label>
@@ -114,7 +113,7 @@
                         <asp:TextBox CssClass="Textbox" ID="TbxHoraRegreso" runat="server" placeholder="Hora de Regreso"></asp:TextBox><br />
                         <br />
                         <asp:Button ID="Btn_SolcitudReg" CssClass="Button" runat="server" Text="Regresar" OnClick="Btn_SolcitudReg_Click" />
-                        <asp:Button ID="Btn_SolicitudSig" CssClass="Button" runat="server" Text="Siguiente" OnClick="Btn_Guardar_Click"/>
+                        <asp:Button ID="Btn_SolicitudSig" CssClass="Button" runat="server" Text="Siguiente" OnClick="Btn_SolicitudSig_Click"/>
                         <div id="DivValidaciones">
                             <asp:Label ID="Validaciones" runat="server"></asp:Label><br />
                             <asp:RegularExpressionValidator ID="ValidadorFechaSalida" runat="server" ErrorMessage="Fecha de salida incorrecta, forma correcta ##/##/####" ControlToValidate="TbxFechaSalida" ValidationExpression="^\d{2}(/)\d{2}(/)\d{4}$"></asp:RegularExpressionValidator><br />
@@ -124,20 +123,23 @@
 
                     <div id="DetalleViatico">
                         <br />
-                        <asp:TextBox CssClass="Textbox" ID="TextBox1" runat="server" placeholder="Cantidad de Desayunos"></asp:TextBox>
-                        <asp:TextBox CssClass="Textbox" ID="TextBox2" runat="server" placeholder="Cantidad de Almuerzos"></asp:TextBox>
-                        <asp:TextBox CssClass="Textbox" ID="TextBox23" runat="server" placeholder="Cantidad de Cenas"></asp:TextBox>
-                        <asp:TextBox CssClass="Textbox" ID="TextBox24" runat="server" placeholder="Cantidad de Pasajes"></asp:TextBox>
+                        <asp:TextBox CssClass="Textbox" ID="Tbx_CantDes" runat="server" placeholder="Cantidad de Desayunos"></asp:TextBox>
+                        <asp:TextBox CssClass="Textbox" ID="Tbx_CantAlm" runat="server" placeholder="Cantidad de Almuerzos"></asp:TextBox>
+                        <asp:TextBox CssClass="Textbox" ID="Tbx_CantCenas" runat="server" placeholder="Cantidad de Cenas"></asp:TextBox>
+                        <asp:TextBox CssClass="Textbox" ID="Tbx_CantPasaj" runat="server" placeholder="Cantidad de Pasajes"></asp:TextBox>
                         <br />
-                        <asp:TextBox CssClass="Textbox" ID="TextBox3" runat="server" placeholder="Monto Total de Desayunos"></asp:TextBox>
-                        <asp:TextBox CssClass="Textbox" ID="TextBox4" runat="server" placeholder="Monto Total de Almuerzos"></asp:TextBox>
-                        <asp:TextBox CssClass="Textbox" ID="TextBox21" runat="server" placeholder="Monto Total de Cenas"></asp:TextBox>
-                        <asp:TextBox CssClass="Textbox" ID="TextBox22" runat="server" placeholder="Monto Total de Pasajes"></asp:TextBox>
+                        <asp:TextBox CssClass="Textbox" ID="Tbx_MontDes" runat="server" placeholder="Monto Total de Desayunos"></asp:TextBox>
+                        <asp:TextBox CssClass="Textbox" ID="Tbx_MontAlm" runat="server" placeholder="Monto Total de Almuerzos"></asp:TextBox>
+                        <asp:TextBox CssClass="Textbox" ID="Tbx_MontCenas" runat="server" placeholder="Monto Total de Cenas"></asp:TextBox>
+                        <asp:TextBox CssClass="Textbox" ID="Tbx_MontPasaj" runat="server" placeholder="Monto Total de Pasajes"></asp:TextBox>
+                        <br />
+                        <asp:DropDownList CssClass="DDL" ID="Ddl_Ruta" runat="server"></asp:DropDownList>
+                        <asp:DropDownList CssClass="DDL" ID="Ddl_Hospedaje" runat="server"></asp:DropDownList>
                         <br />
                         <br />
                         <br />
                         <asp:Button ID="BtnDetalleReg" CssClass="Button" runat="server" Text="Regresar" OnClick="BtnDetalleReg_Click" />
-                        <asp:Button ID="BtnGuardar" CssClass="Button" runat="server" Text="Guardar" OnClick="Btn_Guardar_Click" />
+                        <asp:Button ID="BtnGuardar" CssClass="Button" runat="server" Text="Guardar" />
                         <div id="DivValidaciones2">
                             <asp:Label ID="Label1" runat="server"></asp:Label><br />
                         </div>
@@ -202,7 +204,7 @@
             <asp:TextBox CssClass="Textbox" ID="TextBox17" runat="server" Text="Hora de Salida"></asp:TextBox>
             <asp:TextBox CssClass="Textbox" ID="TextBox18" runat="server" Text="Hora de Regreso"></asp:TextBox><br />
             <br />
-            <asp:Button ID="Button1" CssClass="Button" runat="server" Text="Guardar" OnClick="Btn_Guardar_Click" />
+            <asp:Button ID="Button1" CssClass="Button" runat="server" Text="Guardar" />
         </div>
         <br />
         <br />

@@ -354,6 +354,7 @@
     <Parameter Name="EstadoUsuario" Type="smallint" Mode="In" />
     <Parameter Name="email" Type="nvarchar" Mode="In" />
   </Function>
+  <Function Name="SP_LISTAR_RUTAS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_PARAMETROS" />
   <Function Name="SP_LISTADO_LIQUIDACION_VIATICOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_REPORTES">
     <Parameter Name="FECHAINICIO" Type="date" Mode="In" />
     <Parameter Name="FECHAFINAL" Type="date" Mode="In" />
@@ -400,6 +401,7 @@
     <Parameter Name="HORAREGRESO" Type="time" Mode="In" />
     <Parameter Name="HORASALIDA" Type="time" Mode="In" />
   </Function>
+  <Function Name="SP_LISTAR_LOCALIDAD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS" />
   <Function Name="SP_LISTAR_SOLICITUDES_FUNCIONARIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS">
     <Parameter Name="USUARIO" Type="nvarchar" Mode="In" />
   </Function>

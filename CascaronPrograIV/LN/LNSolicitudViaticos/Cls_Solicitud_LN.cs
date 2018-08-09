@@ -26,5 +26,13 @@ namespace LN.LNSolicitudViaticos
         {
             return Cls_Solicitud_AD.ListarSolicitudes(Obj_Solicitud);
         }
+        public static List<SP_LISTAR_LOCALIDAD_Result> ListarLocalidad()
+        {
+            return Cls_Solicitud_AD.ListarLocalidad();
+        }
+        public static List<SP_LISTAR_RUTAS_Result> ListarRutas()
+        {
+            return Cls_Solicitud_AD.ListarRutas();
+        }
     }
 }

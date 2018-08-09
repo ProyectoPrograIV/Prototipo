@@ -141,6 +141,8 @@
       <Parameter Name="NOMBREUSUARIO" Mode="In" Type="String" />
       <Parameter Name="ESTADOS_SOLICITUD" Mode="In" Type="Int16" />
     </FunctionImport>
+    <FunctionImport Name="SP_LISTAR_LOCALIDAD" ReturnType="Collection(EmpresaPK2Model.SP_LISTAR_LOCALIDAD_Result)" />
+    <FunctionImport Name="SP_LISTAR_RUTAS" ReturnType="Collection(EmpresaPK2Model.SP_LISTAR_RUTAS_Result)" />
   </EntityContainer>
   <ComplexType Name="SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result">
     <Property Type="Int32" Name="ID_SOLICITUD" Nullable="false" />
@@ -571,5 +573,13 @@
     <Property Type="Int32" Name="ID_ORDEN" Nullable="false" />
     <Property Type="String" Name="ID_SOLICITUD" Nullable="false" MaxLength="30" />
     <Property Type="Int16" Name="ESTADOORDEN" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_LISTAR_LOCALIDAD_Result">
+    <Property Type="Int16" Name="ID_MODTARIFA" Nullable="false" />
+    <Property Type="String" Name="LOCALIDAD" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SP_LISTAR_RUTAS_Result">
+    <Property Type="String" Name="CODIGORUTA" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="DESCRIPCIONRUTA" Nullable="false" MaxLength="100" />
   </ComplexType>
 </Schema>

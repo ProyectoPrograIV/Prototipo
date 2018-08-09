@@ -30,5 +30,15 @@ namespace S
         {
             return Cls_Solicitud_LN.ListarSolicitudes(Obj_Solicitud);
         }
+
+        public List<SP_LISTAR_LOCALIDAD_Result> ListarLocalidad()
+        {
+            return Cls_Solicitud_LN.ListarLocalidad();
+        }
+
+        public List<SP_LISTAR_RUTAS_Result> ListarRutas()
+        {
+            return Cls_Solicitud_LN.ListarRutas();
+        }
     }
 }

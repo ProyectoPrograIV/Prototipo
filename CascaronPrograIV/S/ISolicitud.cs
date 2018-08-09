@@ -18,6 +18,11 @@ namespace S
 
         [OperationContract]
         List<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> ListarSolicitudes(TBL_SOLICITUDVIATICOS Obj_Solicitud);
-        
+
+        [OperationContract]
+        List<SP_LISTAR_LOCALIDAD_Result> ListarLocalidad();
+
+        [OperationContract]
+        List<SP_LISTAR_RUTAS_Result> ListarRutas();
     }
 }

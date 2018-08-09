@@ -16,11 +16,11 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
             LlenarGrid();
         }
 
-        protected void Btn_Guardar_Click(object sender, EventArgs e)
+        protected void Btn_SolicitudSig_Click(object sender, EventArgs e)
         {
             if (Vacio() == false)
             {
-                LblInicio.Text = "El numero de solicitudes esta vacio.";
+                CargarLocalidad();
                 ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Solicitud()", true);
             }
             else
@@ -29,72 +29,6 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
             }
         }
         
-        private void LlenarGrid()
-        {
-            GvConsultarSolicitud.DataSource = CargarDatos();
-            GvConsultarSolicitud.DataBind();
-            if (GvConsultarSolicitud.Columns.Count != 0)
-            {
-                GvConsultarSolicitud.HeaderRow.Cells[0].Visible = false;
-                GvConsultarSolicitud.HeaderRow.Cells[5].Visible = false;
-                for (int i = 0; i < GvConsultarSolicitud.Rows.Count; i++)
-                {
-                    GvConsultarSolicitud.Rows[i].Cells[0].Visible = false;
-                    GvConsultarSolicitud.Rows[i].Cells[5].Visible = false;
-                }
-            }
-            else
-            {
-                DataTable dt = new DataTable();
-                dt.Columns.Add("Informacion", typeof(string));
-                DataRow row = dt.NewRow();
-                row[0] = "No se encontraron solicitudes";
-                dt.Rows.Add(row);
-                GvConsultarSolicitud.DataSource = dt;
-                GvConsultarSolicitud.DataBind();
-            }
-        }
-        
-        private List<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> CargarDatos()
-        {
-            WCFSolicitud.SolicitudClient Cliente = new WCFSolicitud.SolicitudClient();
-            TBL_SOLICITUDVIATICOS Obj_Solicitud = new TBL_SOLICITUDVIATICOS();
-            Obj_Solicitud.NOMBREUSUARIO = "davidotno";
-            List<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> ListaSolicitudes = Cliente.ListarSolicitudes(Obj_Solicitud);
-            return ListaSolicitudes;
-        }
-
-        private Boolean Vacio()
-        {
-            if (TbxDestino.Text == "" ||
-                TbxFechaRegreso.Text == "" || TbxFechaSalida.Text == "" || TbxHoraRegreso.Text == "" ||
-                TbxHoraSalida.Text == "" || TbxJustificacion.Text == "" || TbxUsuario.Text == "")
-            {
-                Validaciones.Text = "Complete los Campos Vacios";          
-                return true;
-            }
-            else
-            {
-                Validaciones.Text = "";
-                return false;
-            }
-        }
-
-        private TBL_SOLICITUDVIATICOS AsignarDatos()
-        {
-            TBL_SOLICITUDVIATICOS Obj_Solicitud;
-            Obj_Solicitud = new TBL_SOLICITUDVIATICOS();
-            Obj_Solicitud.DESTINO = TbxDestino.Text;
-            Obj_Solicitud.FECHACREACION = DateTime.Now;
-            Obj_Solicitud.FECHAREGRESO = Convert.ToDateTime(TbxFechaRegreso.Text);
-            Obj_Solicitud.FECHASALIDA = Convert.ToDateTime(TbxFechaSalida.Text);
-            Obj_Solicitud.HORAREGRESO = TimeSpan.Parse(TbxHoraRegreso.Text, System.Globalization.CultureInfo.InvariantCulture);
-            Obj_Solicitud.HORASALIDA = TimeSpan.Parse(TbxHoraSalida.Text, System.Globalization.CultureInfo.InvariantCulture);
-            Obj_Solicitud.JUSTIFICACION = TbxJustificacion.Text;
-            Obj_Solicitud.NOMBREUSUARIO = TbxUsuario.Text;
-            return Obj_Solicitud;
-        }
-
         protected void TbxFiltrar_TextChanged(object sender, EventArgs e)
         {
 
@@ -130,5 +64,96 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
         {
             ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Solicitud()", true);
         }
+
+        #region Metodos Crear
+        private Boolean Vacio()
+        {
+            if (TbxDestino.Text == "" ||
+                TbxFechaRegreso.Text == "" || TbxFechaSalida.Text == "" || TbxHoraRegreso.Text == "" ||
+                TbxHoraSalida.Text == "" || TbxJustificacion.Text == "" || TbxUsuario.Text == "")
+            {
+                Validaciones.Text = "Complete los Campos Vacios";
+                return true;
+            }
+            else
+            {
+                Validaciones.Text = "";
+                return false;
+            }
+        }
+        private TBL_SOLICITUDVIATICOS AsignarDatos()
+        {
+            TBL_SOLICITUDVIATICOS Obj_Solicitud;
+            Obj_Solicitud = new TBL_SOLICITUDVIATICOS();
+            Obj_Solicitud.DESTINO = TbxDestino.Text;
+            Obj_Solicitud.FECHACREACION = DateTime.Now;
+            Obj_Solicitud.FECHAREGRESO = Convert.ToDateTime(TbxFechaRegreso.Text);
+            Obj_Solicitud.FECHASALIDA = Convert.ToDateTime(TbxFechaSalida.Text);
+            Obj_Solicitud.HORAREGRESO = TimeSpan.Parse(TbxHoraRegreso.Text, System.Globalization.CultureInfo.InvariantCulture);
+            Obj_Solicitud.HORASALIDA = TimeSpan.Parse(TbxHoraSalida.Text, System.Globalization.CultureInfo.InvariantCulture);
+            Obj_Solicitud.JUSTIFICACION = TbxJustificacion.Text;
+            Obj_Solicitud.NOMBREUSUARIO = TbxUsuario.Text;
+            return Obj_Solicitud;
+        }
+        private void CargarLocalidad()
+        {
+            WCFSolicitud.SolicitudClient Cliente = new WCFSolicitud.SolicitudClient();
+            List<SP_LISTAR_LOCALIDAD_Result> ListaLocalidad = Cliente.ListarLocalidad();
+            Ddl_Hospedaje.DataSource = ListaLocalidad;
+            Ddl_Hospedaje.DataValueField = "ID_MODTARIFA";
+            Ddl_Hospedaje.DataTextField = "LOCALIDAD";
+            Ddl_Hospedaje.DataBind();
+        }
+        private void CargarRutas()
+        {
+            WCFSolicitud.SolicitudClient Cliente = new WCFSolicitud.SolicitudClient();
+            List<SP_LISTAR_RUTAS_Result> ListaRutas = Cliente.ListarRutas();
+            Ddl_Ruta.DataSource = ListaRutas;
+            Ddl_Ruta.DataValueField = "CODIGORUTA";
+            Ddl_Ruta.DataTextField = "DESCRIPCIONRUTA";
+            Ddl_Ruta.DataBind();
+        }
+        #endregion
+        #region Metodos Consulta
+        private void LlenarGrid()
+        {
+            GvConsultarSolicitud.DataSource = CargarDatos();
+            GvConsultarSolicitud.DataBind();
+            if (GvConsultarSolicitud.Columns.Count != 0)
+            {
+                GvConsultarSolicitud.HeaderRow.Cells[0].Visible = false;
+                GvConsultarSolicitud.HeaderRow.Cells[5].Visible = false;
+                for (int i = 0; i < GvConsultarSolicitud.Rows.Count; i++)
+                {
+                    GvConsultarSolicitud.Rows[i].Cells[0].Visible = false;
+                    GvConsultarSolicitud.Rows[i].Cells[5].Visible = false;
+                }
+            }
+            else
+            {
+                DataTable dt = new DataTable();
+                dt.Columns.Add("Informacion", typeof(string));
+                DataRow row = dt.NewRow();
+                row[0] = "No se encontraron solicitudes";
+                dt.Rows.Add(row);
+                GvConsultarSolicitud.DataSource = dt;
+                GvConsultarSolicitud.DataBind();
+            }
+        }
+        private List<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> CargarDatos()
+        {
+            WCFSolicitud.SolicitudClient Cliente = new WCFSolicitud.SolicitudClient();
+            TBL_SOLICITUDVIATICOS Obj_Solicitud = new TBL_SOLICITUDVIATICOS();
+            Obj_Solicitud.NOMBREUSUARIO = "davidotno";
+            List<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> ListaSolicitudes = Cliente.ListarSolicitudes(Obj_Solicitud);
+            return ListaSolicitudes;
+        }
+        #endregion
+        #region Metodos Actualizar
+
+        #endregion
+        #region Metodos Verificar
+
+        #endregion
     }
 }

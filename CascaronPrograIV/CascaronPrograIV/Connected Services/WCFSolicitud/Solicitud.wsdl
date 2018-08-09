@@ -19,6 +19,18 @@
   <wsdl:message name="ISolicitud_ListarSolicitudes_OutputMessage">
     <wsdl:part name="parameters" element="tns:ListarSolicitudesResponse" />
   </wsdl:message>
+  <wsdl:message name="ISolicitud_ListarLocalidad_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarLocalidad" />
+  </wsdl:message>
+  <wsdl:message name="ISolicitud_ListarLocalidad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarLocalidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISolicitud_ListarRutas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarRutas" />
+  </wsdl:message>
+  <wsdl:message name="ISolicitud_ListarRutas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarRutasResponse" />
+  </wsdl:message>
   <wsdl:portType name="ISolicitud">
     <wsdl:operation name="GuardarSolicitud">
       <wsdl:input wsaw:Action="http://tempuri.org/ISolicitud/GuardarSolicitud" message="tns:ISolicitud_GuardarSolicitud_InputMessage" />
@@ -27,6 +39,14 @@
     <wsdl:operation name="ListarSolicitudes">
       <wsdl:input wsaw:Action="http://tempuri.org/ISolicitud/ListarSolicitudes" message="tns:ISolicitud_ListarSolicitudes_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISolicitud/ListarSolicitudesResponse" message="tns:ISolicitud_ListarSolicitudes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarLocalidad">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISolicitud/ListarLocalidad" message="tns:ISolicitud_ListarLocalidad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISolicitud/ListarLocalidadResponse" message="tns:ISolicitud_ListarLocalidad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarRutas">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISolicitud/ListarRutas" message="tns:ISolicitud_ListarRutas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISolicitud/ListarRutasResponse" message="tns:ISolicitud_ListarRutas_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ISolicitud" type="tns:ISolicitud">
@@ -42,6 +62,24 @@
     </wsdl:operation>
     <wsdl:operation name="ListarSolicitudes">
       <soap:operation soapAction="http://tempuri.org/ISolicitud/ListarSolicitudes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarLocalidad">
+      <soap:operation soapAction="http://tempuri.org/ISolicitud/ListarLocalidad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarRutas">
+      <soap:operation soapAction="http://tempuri.org/ISolicitud/ListarRutas" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
