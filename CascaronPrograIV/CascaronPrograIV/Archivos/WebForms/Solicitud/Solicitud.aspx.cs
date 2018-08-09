@@ -33,12 +33,25 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
         {
             GvConsultarSolicitud.DataSource = CargarDatos();
             GvConsultarSolicitud.DataBind();
-            GvConsultarSolicitud.HeaderRow.Cells[0].Visible = false;
-            GvConsultarSolicitud.HeaderRow.Cells[5].Visible = false;
-            for (int i = 0; i < GvConsultarSolicitud.Rows.Count; i++)
+            if (GvConsultarSolicitud.Columns.Count != 0)
             {
-                GvConsultarSolicitud.Rows[i].Cells[0].Visible = false;
-                GvConsultarSolicitud.Rows[i].Cells[5].Visible = false;
+                GvConsultarSolicitud.HeaderRow.Cells[0].Visible = false;
+                GvConsultarSolicitud.HeaderRow.Cells[5].Visible = false;
+                for (int i = 0; i < GvConsultarSolicitud.Rows.Count; i++)
+                {
+                    GvConsultarSolicitud.Rows[i].Cells[0].Visible = false;
+                    GvConsultarSolicitud.Rows[i].Cells[5].Visible = false;
+                }
+            }
+            else
+            {
+                DataTable dt = new DataTable();
+                dt.Columns.Add("Informacion", typeof(string));
+                DataRow row = dt.NewRow();
+                row[0] = "No se encontraron solicitudes";
+                dt.Rows.Add(row);
+                GvConsultarSolicitud.DataSource = dt;
+                GvConsultarSolicitud.DataBind();
             }
         }
         
