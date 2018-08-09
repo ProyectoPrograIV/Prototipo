@@ -129,6 +129,18 @@
       <End Role="TBL_SOLICITUDVIATICOS" EntitySet="TBL_SOLICITUDVIATICOS" />
       <End Role="TBL_DETALLESOLICITUDVIATICOS" EntitySet="TBL_DETALLESOLICITUDVIATICOS" />
     </AssociationSet>
+    <FunctionImport Name="SP_LISTADO_LIQUIDACION_VIATICOS" ReturnType="Collection(EmpresaPK2Model.SP_LISTADO_LIQUIDACION_VIATICOS_Result)">
+      <Parameter Name="FECHAINICIO" Mode="In" Type="DateTime" />
+      <Parameter Name="FECHAFINAL" Mode="In" Type="DateTime" />
+      <Parameter Name="NOMBREUSUARIO" Mode="In" Type="String" />
+      <Parameter Name="ESTADOS_SOLICITUD" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="SP_LISTADO_ORDEN_VIATICOS" ReturnType="Collection(EmpresaPK2Model.SP_LISTADO_ORDEN_VIATICOS_Result)">
+      <Parameter Name="FECHAINICIO" Mode="In" Type="DateTime" />
+      <Parameter Name="FECHAFINAL" Mode="In" Type="DateTime" />
+      <Parameter Name="NOMBREUSUARIO" Mode="In" Type="String" />
+      <Parameter Name="ESTADOS_SOLICITUD" Mode="In" Type="Int16" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result">
     <Property Type="Int32" Name="ID_SOLICITUD" Nullable="false" />
@@ -543,4 +555,21 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <ComplexType Name="SP_LISTADO_LIQUIDACION_VIATICOS_Result">
+    <Property Type="DateTime" Name="FECHALIQUIDACION" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="ID_LIQUIDACION" Nullable="false" />
+    <Property Type="Int32" Name="ID_ORDEN" Nullable="false" />
+    <Property Type="Decimal" Name="MONTODESAYUNO" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="MONTOALMUERZO" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="MONTOCENA" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="MONTOPASAJE" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="MONTOHOSPEDAJE" Nullable="true" Precision="19" />
+    <Property Type="Int16" Name="ESTADOLIQUIDACION" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_LISTADO_ORDEN_VIATICOS_Result">
+    <Property Type="DateTime" Name="FECHAORDEN" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="ID_ORDEN" Nullable="false" />
+    <Property Type="String" Name="ID_SOLICITUD" Nullable="false" MaxLength="30" />
+    <Property Type="Int16" Name="ESTADOORDEN" Nullable="false" />
+  </ComplexType>
 </Schema>

@@ -190,5 +190,30 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_LISTADO_LIQUIDACION_VIATICOS" FunctionName="EmpresaPK2Model.Store.SP_LISTADO_LIQUIDACION_VIATICOS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTADO_LIQUIDACION_VIATICOS_Result">
+          <ScalarProperty Name="FECHALIQUIDACION" ColumnName="FECHALIQUIDACION" />
+          <ScalarProperty Name="ID_LIQUIDACION" ColumnName="ID_LIQUIDACION" />
+          <ScalarProperty Name="ID_ORDEN" ColumnName="ID_ORDEN" />
+          <ScalarProperty Name="MONTODESAYUNO" ColumnName="MONTODESAYUNO" />
+          <ScalarProperty Name="MONTOALMUERZO" ColumnName="MONTOALMUERZO" />
+          <ScalarProperty Name="MONTOCENA" ColumnName="MONTOCENA" />
+          <ScalarProperty Name="MONTOPASAJE" ColumnName="MONTOPASAJE" />
+          <ScalarProperty Name="MONTOHOSPEDAJE" ColumnName="MONTOHOSPEDAJE" />
+          <ScalarProperty Name="ESTADOLIQUIDACION" ColumnName="ESTADOLIQUIDACION" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_LISTADO_ORDEN_VIATICOS" FunctionName="EmpresaPK2Model.Store.SP_LISTADO_ORDEN_VIATICOS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTADO_ORDEN_VIATICOS_Result">
+          <ScalarProperty Name="FECHAORDEN" ColumnName="FECHAORDEN" />
+          <ScalarProperty Name="ID_ORDEN" ColumnName="ID_ORDEN" />
+          <ScalarProperty Name="ID_SOLICITUD" ColumnName="ID_SOLICITUD" />
+          <ScalarProperty Name="ESTADOORDEN" ColumnName="ESTADOORDEN" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

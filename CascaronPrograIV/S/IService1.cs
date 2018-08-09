@@ -22,10 +22,19 @@ namespace S
         void InsertarUsuario(TBL_USUARIO obj);
         [OperationContract]
         SP_INICIO_SESION_Result InicioSesion(TBL_USUARIO obj);
+
+        #region Metodos para reportería.
+        [OperationContract]
+        List<SP_LISTADO_LIQUIDACION_VIATICOS_Result> ObtenerListaLiquidacion(ReporteXFecha obj);
+        [OperationContract]
+        List<SP_LISTADO_ORDEN_VIATICOS_Result> ObtenerListaOrden(ReporteXFecha obj);
+        [OperationContract]
+        List<SP_LISTADO_SOLICITUD_VIATICOS_Result> ObtenerListaSolicitud(ReporteXFecha obj);
+        #endregion
     }
 
 
     // Use a data contract as illustrated in the sample below to add composite types to service operations.
-   // [DataContract]
+    // [DataContract]
 
 }

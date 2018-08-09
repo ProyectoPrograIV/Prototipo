@@ -34,6 +34,23 @@ namespace S
         }
 
 
+        #region Metodos para reportería.
+        public  List<SP_LISTADO_LIQUIDACION_VIATICOS_Result> ObtenerListaLiquidacion(ReporteXFecha obj)
+        {
+            return LNReportes.ObtenerListaLiquidacion(obj);
+        }
+
+        public  List<SP_LISTADO_ORDEN_VIATICOS_Result> ObtenerListaOrden(ReporteXFecha obj)
+        {
+            return LNReportes.ObtenerListaOrden(obj);
+        }
+
+        public  List<SP_LISTADO_SOLICITUD_VIATICOS_Result> ObtenerListaSolicitud(ReporteXFecha obj)
+        {
+            return LNReportes.ObtenerListaSolicitud(obj);
+        }
+        #endregion
+
         public SP_INICIO_SESION_Result InicioSesion(TBL_USUARIO obj) => Negocios.InicioSesion(obj);
     }
 }

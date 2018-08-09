@@ -195,5 +195,47 @@ namespace Entidades
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_INICIO_SESION_Result>("SP_INICIO_SESION", nombreUsuarioParameter, claveAccesoParameter);
         }
+    
+        public virtual ObjectResult<SP_LISTADO_LIQUIDACION_VIATICOS_Result> SP_LISTADO_LIQUIDACION_VIATICOS(Nullable<System.DateTime> fECHAINICIO, Nullable<System.DateTime> fECHAFINAL, string nOMBREUSUARIO, Nullable<short> eSTADOS_SOLICITUD)
+        {
+            var fECHAINICIOParameter = fECHAINICIO.HasValue ?
+                new ObjectParameter("FECHAINICIO", fECHAINICIO) :
+                new ObjectParameter("FECHAINICIO", typeof(System.DateTime));
+    
+            var fECHAFINALParameter = fECHAFINAL.HasValue ?
+                new ObjectParameter("FECHAFINAL", fECHAFINAL) :
+                new ObjectParameter("FECHAFINAL", typeof(System.DateTime));
+    
+            var nOMBREUSUARIOParameter = nOMBREUSUARIO != null ?
+                new ObjectParameter("NOMBREUSUARIO", nOMBREUSUARIO) :
+                new ObjectParameter("NOMBREUSUARIO", typeof(string));
+    
+            var eSTADOS_SOLICITUDParameter = eSTADOS_SOLICITUD.HasValue ?
+                new ObjectParameter("ESTADOS_SOLICITUD", eSTADOS_SOLICITUD) :
+                new ObjectParameter("ESTADOS_SOLICITUD", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTADO_LIQUIDACION_VIATICOS_Result>("SP_LISTADO_LIQUIDACION_VIATICOS", fECHAINICIOParameter, fECHAFINALParameter, nOMBREUSUARIOParameter, eSTADOS_SOLICITUDParameter);
+        }
+    
+        public virtual ObjectResult<SP_LISTADO_ORDEN_VIATICOS_Result> SP_LISTADO_ORDEN_VIATICOS(Nullable<System.DateTime> fECHAINICIO, Nullable<System.DateTime> fECHAFINAL, string nOMBREUSUARIO, Nullable<short> eSTADOS_SOLICITUD)
+        {
+            var fECHAINICIOParameter = fECHAINICIO.HasValue ?
+                new ObjectParameter("FECHAINICIO", fECHAINICIO) :
+                new ObjectParameter("FECHAINICIO", typeof(System.DateTime));
+    
+            var fECHAFINALParameter = fECHAFINAL.HasValue ?
+                new ObjectParameter("FECHAFINAL", fECHAFINAL) :
+                new ObjectParameter("FECHAFINAL", typeof(System.DateTime));
+    
+            var nOMBREUSUARIOParameter = nOMBREUSUARIO != null ?
+                new ObjectParameter("NOMBREUSUARIO", nOMBREUSUARIO) :
+                new ObjectParameter("NOMBREUSUARIO", typeof(string));
+    
+            var eSTADOS_SOLICITUDParameter = eSTADOS_SOLICITUD.HasValue ?
+                new ObjectParameter("ESTADOS_SOLICITUD", eSTADOS_SOLICITUD) :
+                new ObjectParameter("ESTADOS_SOLICITUD", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTADO_ORDEN_VIATICOS_Result>("SP_LISTADO_ORDEN_VIATICOS", fECHAINICIOParameter, fECHAFINALParameter, nOMBREUSUARIOParameter, eSTADOS_SOLICITUDParameter);
+        }
     }
 }
