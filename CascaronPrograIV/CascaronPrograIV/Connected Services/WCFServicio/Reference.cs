@@ -38,6 +38,24 @@ namespace CascaronPrograIV.WCFServicio {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InicioSesion", ReplyAction="http://tempuri.org/IService1/InicioSesionResponse")]
         System.Threading.Tasks.Task<Entidades.SP_INICIO_SESION_Result> InicioSesionAsync(Entidades.TBL_USUARIO obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerListaLiquidacion", ReplyAction="http://tempuri.org/IService1/ObtenerListaLiquidacionResponse")]
+        System.Collections.Generic.List<Entidades.SP_LISTADO_LIQUIDACION_VIATICOS_Result> ObtenerListaLiquidacion(Entidades.ReporteXFecha obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerListaLiquidacion", ReplyAction="http://tempuri.org/IService1/ObtenerListaLiquidacionResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTADO_LIQUIDACION_VIATICOS_Result>> ObtenerListaLiquidacionAsync(Entidades.ReporteXFecha obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerListaOrden", ReplyAction="http://tempuri.org/IService1/ObtenerListaOrdenResponse")]
+        System.Collections.Generic.List<Entidades.SP_LISTADO_ORDEN_VIATICOS_Result> ObtenerListaOrden(Entidades.ReporteXFecha obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerListaOrden", ReplyAction="http://tempuri.org/IService1/ObtenerListaOrdenResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTADO_ORDEN_VIATICOS_Result>> ObtenerListaOrdenAsync(Entidades.ReporteXFecha obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerListaSolicitud", ReplyAction="http://tempuri.org/IService1/ObtenerListaSolicitudResponse")]
+        System.Collections.Generic.List<Entidades.SP_LISTADO_SOLICITUD_VIATICOS_Result> ObtenerListaSolicitud(Entidades.ReporteXFecha obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerListaSolicitud", ReplyAction="http://tempuri.org/IService1/ObtenerListaSolicitudResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTADO_SOLICITUD_VIATICOS_Result>> ObtenerListaSolicitudAsync(Entidades.ReporteXFecha obj);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -97,6 +115,30 @@ namespace CascaronPrograIV.WCFServicio {
         
         public System.Threading.Tasks.Task<Entidades.SP_INICIO_SESION_Result> InicioSesionAsync(Entidades.TBL_USUARIO obj) {
             return base.Channel.InicioSesionAsync(obj);
+        }
+        
+        public System.Collections.Generic.List<Entidades.SP_LISTADO_LIQUIDACION_VIATICOS_Result> ObtenerListaLiquidacion(Entidades.ReporteXFecha obj) {
+            return base.Channel.ObtenerListaLiquidacion(obj);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTADO_LIQUIDACION_VIATICOS_Result>> ObtenerListaLiquidacionAsync(Entidades.ReporteXFecha obj) {
+            return base.Channel.ObtenerListaLiquidacionAsync(obj);
+        }
+        
+        public System.Collections.Generic.List<Entidades.SP_LISTADO_ORDEN_VIATICOS_Result> ObtenerListaOrden(Entidades.ReporteXFecha obj) {
+            return base.Channel.ObtenerListaOrden(obj);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTADO_ORDEN_VIATICOS_Result>> ObtenerListaOrdenAsync(Entidades.ReporteXFecha obj) {
+            return base.Channel.ObtenerListaOrdenAsync(obj);
+        }
+        
+        public System.Collections.Generic.List<Entidades.SP_LISTADO_SOLICITUD_VIATICOS_Result> ObtenerListaSolicitud(Entidades.ReporteXFecha obj) {
+            return base.Channel.ObtenerListaSolicitud(obj);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTADO_SOLICITUD_VIATICOS_Result>> ObtenerListaSolicitudAsync(Entidades.ReporteXFecha obj) {
+            return base.Channel.ObtenerListaSolicitudAsync(obj);
         }
     }
 }

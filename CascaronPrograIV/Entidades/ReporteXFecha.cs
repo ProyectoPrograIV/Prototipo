@@ -12,7 +12,7 @@ namespace Entidades
         private DateTime fechaFinal;
         private short estado;
         private string nomUsuario;
-        private short iDPersona;
+        private string iDPersona;
 
         public DateTime FechaInicio
         {
@@ -66,7 +66,7 @@ namespace Entidades
             }
         }
 
-        public short IDPersona
+        public string IDPersona
         {
             get
             {
@@ -78,5 +78,6 @@ namespace Entidades
                 iDPersona = value;
             }
         }
+   
     }
 }

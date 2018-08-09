@@ -22,7 +22,7 @@ namespace AD
                 contexto = new EmpresaPK2Entities();
                 ListaResultados = new List<SP_LISTADO_LIQUIDACION_VIATICOS_Result>();
 
-                var resultado = contexto.SP_LISTADO_LIQUIDACION_VIATICOS(obj.FechaInicio, obj.FechaFinal, obj.NomUsuario, obj.IDPersona).ToList();
+                var resultado = contexto.SP_LISTADO_LIQUIDACION_VIATICOS(obj.FechaInicio, obj.FechaFinal, obj.NomUsuario, obj.Estado).ToList();
 
                 foreach (var item in resultado)
                 {
@@ -53,7 +53,7 @@ namespace AD
                 contexto = new EmpresaPK2Entities();
                 ListaResultados = new List<SP_LISTADO_ORDEN_VIATICOS_Result>();
 
-                var resultado = contexto.SP_LISTADO_ORDEN_VIATICOS(obj.FechaInicio, obj.FechaFinal, obj.NomUsuario, obj.IDPersona).ToList();
+                var resultado = contexto.SP_LISTADO_ORDEN_VIATICOS(obj.FechaInicio, obj.FechaFinal, obj.NomUsuario, obj.Estado).ToList();
 
                 foreach (var item in resultado)
                 {
@@ -84,7 +84,7 @@ namespace AD
                 contexto = new EmpresaPK2Entities();
                 ListaResultados = new List<SP_LISTADO_SOLICITUD_VIATICOS_Result>();
 
-                var resultado = contexto.SP_LISTADO_SOLICITUD_VIATICOS(obj.FechaInicio, obj.FechaFinal, obj.NomUsuario, obj.IDPersona).ToList();
+                var resultado = contexto.SP_LISTADO_SOLICITUD_VIATICOS(obj.FechaInicio, obj.FechaFinal,obj.IDPersona, obj.Estado).ToList();
 
                 foreach (var item in resultado)
                 {

@@ -106,19 +106,24 @@
             <h1>Listado de Viaticos</h1>
             <div class="Fecha">
                 <h3>Fecha Inicial</h3>
-                <asp:TextBox CssClass="TbxFecha" ID="TbxDay" runat="server" TextMode="Date" placeholder="Dia" Width="125px"></asp:TextBox>
+                <asp:TextBox CssClass="TbxFecha" ID="txtFechaInicial" runat="server" TextMode="Date"></asp:TextBox>
+                   
             </div>
+               <asp:RequiredFieldValidator ID="RFV1" runat="server" ErrorMessage="Debe llenar este espacio" ControlToValidate="txtFechaInicial" ForeColor="Red"></asp:RequiredFieldValidator>
+      
             <div class="Fecha">
                 <h3>Fecha Final</h3>
-                <asp:TextBox CssClass="TbxFecha" ID="TextBox1" runat="server" placeholder="Dia"></asp:TextBox>
-                <asp:TextBox CssClass="TbxFecha" ID="TextBox2" runat="server" placeholder="Mes"></asp:TextBox>
-                <asp:TextBox CssClass="TbxFecha" ID="TextBox3" runat="server" placeholder="Año"></asp:TextBox>
+                <asp:TextBox CssClass="TbxFecha" ID="txtFechaFinal" runat="server" TextMode="Date" ></asp:TextBox>
+
+                
             </div>
+            <asp:RequiredFieldValidator ID="RFV2" runat="server" ErrorMessage="Debe llenar este espacio" ControlToValidate="txtFechaFinal" ForeColor="Red"></asp:RequiredFieldValidator>
+      
             <br />
-            <asp:Button CssClass="Button" ID="Button1" runat="server" Text="Buscar Viaticos" />
+            <asp:Button CssClass="Button" ID="btnBuscarViaticos" runat="server" Text="Buscar Viaticos" OnClick="btnBuscar_Click"/>
             <br />
             <br />
-            <asp:GridView CssClass="GridView" ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None">
+            <asp:GridView CssClass="GridView" ID="gvViaticos" runat="server" AutoGenerateColumns="true" CellPadding="4" ForeColor="#333333" GridLines="None">
                 <AlternatingRowStyle BackColor="White" />
                 <EditRowStyle BackColor="#2461BF" />
                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />

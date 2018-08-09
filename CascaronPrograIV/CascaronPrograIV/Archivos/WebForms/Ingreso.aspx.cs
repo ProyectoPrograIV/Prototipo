@@ -41,24 +41,24 @@ namespace CascaronPrograIV.Archivos.WebForms
         }
         protected void BtnIngresar_Click(object sender, EventArgs e)
         {
-           
+
             TBL_USUARIO obj = new TBL_USUARIO();
             obj.NOMBREUSUARIO = this.TbxUsuario.Text;
-            obj.CLAVEACCESO =cifrarPass(this.TbxPassword.Text);
+            obj.CLAVEACCESO = cifrarPass(this.TbxPassword.Text);
 
-           WCFServicio.Service1Client serv = new WCFServicio.Service1Client();
+            WCFServicio.Service1Client serv = new WCFServicio.Service1Client();
 
             SP_INICIO_SESION_Result sesion = serv.InicioSesion(obj);
 
             if (sesion == null)
             {
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Error al iniciar sesion')", true);
-                            }
+            }
 
             else
             {
                 Session["sesion"] = sesion;
-                
+
                 Response.Redirect("Default.aspx");
             }
         }
