@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <meta charset="utf-8" />
     <script src="../../script/jquery-3.3.1.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
@@ -17,7 +18,12 @@
                 }
             });
             $('#LiViaticos').click(function () {
+                 $('#Div1').hide();
                 $('#Div1').toggle(400);
+                $('#h1TituloDiv').text('Listado Viáticos')
+                $("#<%=btnBuscarViaticos.ClientID%>").val('Buscar Viaticos');
+
+               $("#<%=btnBuscarViaticos.ClientID%>").attr('value','1');
                 $('#Div2').hide();
                 $('#Div3').hide();
                 $('#Div4').hide();
@@ -25,17 +31,31 @@
                 $('#Div6').hide();
             });
             $('#LiSolicitudes').click(function () {
+                $('#h1TituloDiv').text('Listado Solicitudes')
                 $('#Div1').hide();
-                $('#Div2').toggle(400);
+                 $('#Div1').toggle(400);
+                 $("#<%=btnBuscarViaticos.ClientID%>").val('Buscar Solicitudes');
+
+                $("#<%=btnBuscarViaticos.ClientID%>").attr('value','2');
+     
                 $('#Div3').hide();
                 $('#Div4').hide();
                 $('#Div5').hide();
                 $('#Div6').hide();
             });
             $('#LiLiquidaciones').click(function () {
-                $('#Div1').hide();
-                $('#Div2').hide();
-                $('#Div3').toggle(400);
+               // $('#Div1').hide();
+               // $('#Div2').hide();
+                //$('#Div3').toggle(400);
+                
+                $('#h1TituloDiv').text('Listado Liquidaciones')
+                 $('#Div1').hide();
+                $('#Div1').toggle(400);
+
+                 $("#<%=btnBuscarViaticos.ClientID%>").val('Buscar Liquidaciones');
+
+               $("#<%=btnBuscarViaticos.ClientID%>").attr('value','3');
+     
                 $('#Div4').hide();
                 $('#Div5').hide();
                 $('#Div6').hide();
@@ -103,7 +123,7 @@
     </div>
     <div id="DivContenido">
         <div id="Div1">
-            <h1>Listado de Viaticos</h1>
+            <h1 id="h1TituloDiv">Listado de Viaticos</h1>
             <div class="Fecha">
                 <h3>Fecha Inicial</h3>
                 <asp:TextBox CssClass="TbxFecha" ID="txtFechaInicial" runat="server" TextMode="Date"></asp:TextBox>
