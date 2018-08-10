@@ -107,5 +107,56 @@ namespace AD
                 }
             }
         }
+
+        #region Obtener Valores de Sistema
+        public static List<TBL_ROLUSUARIO> ObtenerRoles ()
+        {
+            EmpresaPK2Entities contexto = null;
+            List<TBL_ROLUSUARIO> ListaResultado = null;
+            try
+            {
+                contexto = new EmpresaPK2Entities();
+
+                var consulta = (from reg in contexto.TBL_ROLUSUARIO
+                                where reg.ESTADOROL.ToUpper().Equals("Activo")                                
+                                select reg).ToList();
+                ListaResultado = consulta;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (contexto != null) contexto.Dispose();
+            }
+
+            return ListaResultado;
+        }
+
+        public static List<TBL_ESTADOS> ObtenerEstados()
+        {
+            EmpresaPK2Entities contexto = null;
+            List<TBL_ESTADOS> ListaResultado = null;
+            try
+            {
+                contexto = new EmpresaPK2Entities();
+
+                var consulta = (from reg in contexto.TBL_ESTADOS
+                                select reg).ToList();
+                ListaResultado = consulta;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (contexto != null) contexto.Dispose();
+            }
+
+            return ListaResultado;
+        }
+        #endregion
     }
 }

@@ -51,6 +51,20 @@ namespace S
         }
         #endregion
 
-        public SP_INICIO_SESION_Result InicioSesion(TBL_USUARIO obj) => Negocios.InicioSesion(obj);
+        #region Obtener Valores de Sistema
+        public List<TBL_ROLUSUARIO> ObtenerRoles()
+        {
+
+            return Negocios.ObtenerRoles();
+        }
+
+        public List<TBL_ESTADOS> ObtenerEstados()
+        {
+            return Negocios.ObtenerEstados();
+        }
+        #endregion
+    
+
+    public SP_INICIO_SESION_Result InicioSesion(TBL_USUARIO obj) => Negocios.InicioSesion(obj);
     }
 }

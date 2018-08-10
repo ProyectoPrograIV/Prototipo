@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using LN.LNSolicitudViaticos;
+using LN;
 using Entidades;
 using System.Data;
 
@@ -40,5 +41,18 @@ namespace S
         {
             return Cls_Solicitud_LN.ListarRutas();
         }
+
+        #region Obtener Valores de Sistema
+        public  List<TBL_ROLUSUARIO> ObtenerRoles()
+        {
+
+            return Negocios.ObtenerRoles();
+        }
+
+        public  List<TBL_ESTADOS> ObtenerEstados()
+        {
+            return Negocios.ObtenerEstados();
+        }
+        #endregion
     }
 }

@@ -56,6 +56,18 @@ namespace CascaronPrograIV.WCFServicio {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerListaSolicitud", ReplyAction="http://tempuri.org/IService1/ObtenerListaSolicitudResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTADO_SOLICITUD_VIATICOS_Result>> ObtenerListaSolicitudAsync(Entidades.ReporteXFecha obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerRoles", ReplyAction="http://tempuri.org/IService1/ObtenerRolesResponse")]
+        System.Collections.Generic.List<Entidades.TBL_ROLUSUARIO> ObtenerRoles();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerRoles", ReplyAction="http://tempuri.org/IService1/ObtenerRolesResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.TBL_ROLUSUARIO>> ObtenerRolesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerEstados", ReplyAction="http://tempuri.org/IService1/ObtenerEstadosResponse")]
+        System.Collections.Generic.List<Entidades.TBL_ESTADOS> ObtenerEstados();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerEstados", ReplyAction="http://tempuri.org/IService1/ObtenerEstadosResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.TBL_ESTADOS>> ObtenerEstadosAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -139,6 +151,22 @@ namespace CascaronPrograIV.WCFServicio {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTADO_SOLICITUD_VIATICOS_Result>> ObtenerListaSolicitudAsync(Entidades.ReporteXFecha obj) {
             return base.Channel.ObtenerListaSolicitudAsync(obj);
+        }
+        
+        public System.Collections.Generic.List<Entidades.TBL_ROLUSUARIO> ObtenerRoles() {
+            return base.Channel.ObtenerRoles();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.TBL_ROLUSUARIO>> ObtenerRolesAsync() {
+            return base.Channel.ObtenerRolesAsync();
+        }
+        
+        public System.Collections.Generic.List<Entidades.TBL_ESTADOS> ObtenerEstados() {
+            return base.Channel.ObtenerEstados();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.TBL_ESTADOS>> ObtenerEstadosAsync() {
+            return base.Channel.ObtenerEstadosAsync();
         }
     }
 }

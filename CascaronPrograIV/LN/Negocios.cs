@@ -33,5 +33,18 @@ namespace LN
         {
            return Datos.InicioSesion(obj);
         }
+
+        #region Obtener Valores de Sistema
+        public static List<TBL_ROLUSUARIO> ObtenerRoles()
+        {
+           
+            return Datos.ObtenerRoles();
+        }
+
+        public static List<TBL_ESTADOS> ObtenerEstados()
+        {
+            return Datos.ObtenerEstados();
+        }
+        #endregion
     }
 }

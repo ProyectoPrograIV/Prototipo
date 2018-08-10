@@ -31,6 +31,14 @@ namespace S
         [OperationContract]
         List<SP_LISTADO_SOLICITUD_VIATICOS_Result> ObtenerListaSolicitud(ReporteXFecha obj);
         #endregion
+
+        #region Obtener Valores de Sistema
+        [OperationContract]
+        List<TBL_ROLUSUARIO> ObtenerRoles();
+        [OperationContract]
+        List<TBL_ESTADOS> ObtenerEstados();
+        #endregion
+
     }
 
 

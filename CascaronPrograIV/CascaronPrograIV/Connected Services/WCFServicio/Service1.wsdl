@@ -49,6 +49,18 @@
   <wsdl:message name="IService1_ObtenerListaSolicitud_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerListaSolicitudResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_ObtenerRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerRoles" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ObtenerRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ObtenerEstados_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerEstados" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ObtenerEstados_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerEstadosResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="InsertarRol">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertarRol" message="tns:IService1_InsertarRol_InputMessage" />
@@ -77,6 +89,14 @@
     <wsdl:operation name="ObtenerListaSolicitud">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ObtenerListaSolicitud" message="tns:IService1_ObtenerListaSolicitud_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/ObtenerListaSolicitudResponse" message="tns:IService1_ObtenerListaSolicitud_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ObtenerRoles" message="tns:IService1_ObtenerRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ObtenerRolesResponse" message="tns:IService1_ObtenerRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEstados">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ObtenerEstados" message="tns:IService1_ObtenerEstados_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ObtenerEstadosResponse" message="tns:IService1_ObtenerEstados_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -137,6 +157,24 @@
     </wsdl:operation>
     <wsdl:operation name="ObtenerListaSolicitud">
       <soap:operation soapAction="http://tempuri.org/IService1/ObtenerListaSolicitud" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRoles">
+      <soap:operation soapAction="http://tempuri.org/IService1/ObtenerRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEstados">
+      <soap:operation soapAction="http://tempuri.org/IService1/ObtenerEstados" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

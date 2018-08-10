@@ -238,7 +238,7 @@
       <xs:element minOccurs="0" name="Estado" type="xs:short" />
       <xs:element minOccurs="0" name="FechaFinal" type="xs:dateTime" />
       <xs:element minOccurs="0" name="FechaInicio" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="IDPersona" type="xs:short" />
+      <xs:element minOccurs="0" name="IDPersona" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NomUsuario" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
@@ -297,4 +297,16 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SP_LISTADO_SOLICITUD_VIATICOS_Result" nillable="true" type="tns:SP_LISTADO_SOLICITUD_VIATICOS_Result" />
+  <xs:complexType name="ArrayOfTBL_ROLUSUARIO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TBL_ROLUSUARIO" nillable="true" type="tns:TBL_ROLUSUARIO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTBL_ROLUSUARIO" nillable="true" type="tns:ArrayOfTBL_ROLUSUARIO" />
+  <xs:complexType name="ArrayOfTBL_ESTADOS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TBL_ESTADOS" nillable="true" type="tns:TBL_ESTADOS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTBL_ESTADOS" nillable="true" type="tns:ArrayOfTBL_ESTADOS" />
 </xs:schema>

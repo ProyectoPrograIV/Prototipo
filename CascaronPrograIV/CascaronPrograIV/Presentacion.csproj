@@ -144,6 +144,8 @@
     <Content Include="Properties\DataSources\Entidades.SP_LISTADO_LIQUIDACION_VIATICOS_Result.datasource" />
     <Content Include="Properties\DataSources\Entidades.SP_LISTADO_ORDEN_VIATICOS_Result.datasource" />
     <Content Include="Properties\DataSources\Entidades.SP_LISTADO_SOLICITUD_VIATICOS_Result.datasource" />
+    <Content Include="Properties\DataSources\Entidades.TBL_ESTADOS.datasource" />
+    <Content Include="Properties\DataSources\Entidades.TBL_ROLUSUARIO.datasource" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
