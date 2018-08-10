@@ -22,12 +22,23 @@ namespace CascaronPrograIV.Archivos.WebForms.Reportes
             ReporteXFecha obj = new ReporteXFecha();
             obj.FechaInicio = Convert.ToDateTime( txtFechaInicial.Text);
             obj.FechaFinal = Convert.ToDateTime(txtFechaFinal.Text);
-            obj.IDPersona = sesion.ID_PERSONA;
-            obj.NomUsuario = sesion.ID_PERSONA;
-            obj.Estado = 11;
+            
+            //Este se debe llenar con el DropdownList apunto de existir
+            obj.Estado = 12;
+
+            if (sesion.ID_ROL == 9  )
+            {   //Si se trata de funcionario, entonces solo podran ser accesibles los reportes con su identificacion
+                obj.IDPersona = sesion.ID_PERSONA;
+                obj.NomUsuario = sesion.ID_PERSONA;
+            }
+            else
+            { 
+                //Sin identificacion para jefatura, revisa solicitudes de todos los funcionarios.
+                obj.IDPersona = "";
+                obj.NomUsuario = "";
+            }
 
 
-           
             if (Convert.ToDateTime(txtFechaFinal.Text) > DateTime.Now || Convert.ToDateTime(txtFechaInicial.Text) > DateTime.Now)
             {
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('La fecha final no puede ser mayor a hoy.')", true);
