@@ -16,10 +16,10 @@ namespace CascaronPrograIV.WCFSolicitud {
     public interface ISolicitud {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISolicitud/GuardarSolicitud", ReplyAction="http://tempuri.org/ISolicitud/GuardarSolicitudResponse")]
-        bool GuardarSolicitud(Entidades.TBL_SOLICITUDVIATICOS Obj_Solicitud);
+        bool GuardarSolicitud(Entidades.TBL_SOLICITUDVIATICOS Obj_Solicitud, Entidades.TBL_DETALLESOLICITUDVIATICOS Obj_SolicitudDetalle);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISolicitud/GuardarSolicitud", ReplyAction="http://tempuri.org/ISolicitud/GuardarSolicitudResponse")]
-        System.Threading.Tasks.Task<bool> GuardarSolicitudAsync(Entidades.TBL_SOLICITUDVIATICOS Obj_Solicitud);
+        System.Threading.Tasks.Task<bool> GuardarSolicitudAsync(Entidades.TBL_SOLICITUDVIATICOS Obj_Solicitud, Entidades.TBL_DETALLESOLICITUDVIATICOS Obj_SolicitudDetalle);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISolicitud/ListarSolicitudes", ReplyAction="http://tempuri.org/ISolicitud/ListarSolicitudesResponse")]
         System.Collections.Generic.List<Entidades.SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> ListarSolicitudes(Entidades.TBL_SOLICITUDVIATICOS Obj_Solicitud);
@@ -38,6 +38,12 @@ namespace CascaronPrograIV.WCFSolicitud {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISolicitud/ListarRutas", ReplyAction="http://tempuri.org/ISolicitud/ListarRutasResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTAR_RUTAS_Result>> ListarRutasAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISolicitud/ListarPersonas", ReplyAction="http://tempuri.org/ISolicitud/ListarPersonasResponse")]
+        System.Collections.Generic.List<Entidades.SP_LISTAR_PERSONAS_Result> ListarPersonas();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISolicitud/ListarPersonas", ReplyAction="http://tempuri.org/ISolicitud/ListarPersonasResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTAR_PERSONAS_Result>> ListarPersonasAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -67,12 +73,12 @@ namespace CascaronPrograIV.WCFSolicitud {
                 base(binding, remoteAddress) {
         }
         
-        public bool GuardarSolicitud(Entidades.TBL_SOLICITUDVIATICOS Obj_Solicitud) {
-            return base.Channel.GuardarSolicitud(Obj_Solicitud);
+        public bool GuardarSolicitud(Entidades.TBL_SOLICITUDVIATICOS Obj_Solicitud, Entidades.TBL_DETALLESOLICITUDVIATICOS Obj_SolicitudDetalle) {
+            return base.Channel.GuardarSolicitud(Obj_Solicitud, Obj_SolicitudDetalle);
         }
         
-        public System.Threading.Tasks.Task<bool> GuardarSolicitudAsync(Entidades.TBL_SOLICITUDVIATICOS Obj_Solicitud) {
-            return base.Channel.GuardarSolicitudAsync(Obj_Solicitud);
+        public System.Threading.Tasks.Task<bool> GuardarSolicitudAsync(Entidades.TBL_SOLICITUDVIATICOS Obj_Solicitud, Entidades.TBL_DETALLESOLICITUDVIATICOS Obj_SolicitudDetalle) {
+            return base.Channel.GuardarSolicitudAsync(Obj_Solicitud, Obj_SolicitudDetalle);
         }
         
         public System.Collections.Generic.List<Entidades.SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> ListarSolicitudes(Entidades.TBL_SOLICITUDVIATICOS Obj_Solicitud) {
@@ -97,6 +103,14 @@ namespace CascaronPrograIV.WCFSolicitud {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTAR_RUTAS_Result>> ListarRutasAsync() {
             return base.Channel.ListarRutasAsync();
+        }
+        
+        public System.Collections.Generic.List<Entidades.SP_LISTAR_PERSONAS_Result> ListarPersonas() {
+            return base.Channel.ListarPersonas();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTAR_PERSONAS_Result>> ListarPersonasAsync() {
+            return base.Channel.ListarPersonasAsync();
         }
     }
 }

@@ -11,9 +11,9 @@ namespace LN.LNSolicitudViaticos
 {
     public class Cls_Solicitud_LN
     {
-        public static Boolean GuardarSolicitud(TBL_SOLICITUDVIATICOS Obj_Solicitud)
+        public static Boolean GuardarSolicitud(TBL_SOLICITUDVIATICOS Obj_Solicitud, TBL_DETALLESOLICITUDVIATICOS Obj_SolicitudDetalle)
         {
-            if (Cls_Solicitud_AD.GuardarSolicitud(Obj_Solicitud) == true)
+            if (Cls_Solicitud_AD.GuardarSolicitud(Obj_Solicitud, Obj_SolicitudDetalle) == true)
             {
                 return true;
             }
@@ -33,6 +33,10 @@ namespace LN.LNSolicitudViaticos
         public static List<SP_LISTAR_RUTAS_Result> ListarRutas()
         {
             return Cls_Solicitud_AD.ListarRutas();
+        }
+        public static List<SP_LISTAR_PERSONAS_Result> ListarPersonas()
+        {
+            return Cls_Solicitud_AD.ListarPersonas();
         }
     }
 }

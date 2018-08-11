@@ -5,7 +5,6 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using LN.LNSolicitudViaticos;
-using LN;
 using Entidades;
 using System.Data;
 
@@ -15,9 +14,9 @@ namespace S
     // NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione Solicitud.svc o Solicitud.svc.cs en el Explorador de soluciones e inicie la depuración.
     public class Solicitud : ISolicitud
     {
-        public Boolean GuardarSolicitud(TBL_SOLICITUDVIATICOS Obj_Solicitud)
+        public Boolean GuardarSolicitud(TBL_SOLICITUDVIATICOS Obj_Solicitud, TBL_DETALLESOLICITUDVIATICOS Obj_SolicitudDetalle)
         {
-            if (Cls_Solicitud_LN.GuardarSolicitud(Obj_Solicitud) == true)
+            if (Cls_Solicitud_LN.GuardarSolicitud(Obj_Solicitud, Obj_SolicitudDetalle) == true)
             {
                 return true;
             }
@@ -42,17 +41,9 @@ namespace S
             return Cls_Solicitud_LN.ListarRutas();
         }
 
-        #region Obtener Valores de Sistema
-        public  List<TBL_ROLUSUARIO> ObtenerRoles()
+        public List<SP_LISTAR_PERSONAS_Result> ListarPersonas()
         {
-
-            return Negocios.ObtenerRoles();
+            return Cls_Solicitud_LN.ListarPersonas();
         }
-
-        public  List<TBL_ESTADOS> ObtenerEstados()
-        {
-            return Negocios.ObtenerEstados();
-        }
-        #endregion
     }
 }

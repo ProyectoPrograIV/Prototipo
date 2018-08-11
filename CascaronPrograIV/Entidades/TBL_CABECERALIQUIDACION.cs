@@ -17,7 +17,7 @@ namespace Entidades
         public int ID_LIQUIDACION { get; set; }
         public int ID_ORDEN { get; set; }
         public short ESTADOLIQUIDACION { get; set; }
-        public System.DateTime FECHALIQUIDACION { get; set; }
+        public Nullable<System.DateTime> FECHALIQUIDACION { get; set; }
         public Nullable<decimal> MONTODESAYUNO { get; set; }
         public Nullable<decimal> MONTOALMUERZO { get; set; }
         public Nullable<decimal> MONTOCENA { get; set; }

@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Archivos/WebForms/PaginaMaestra.Master" AutoEventWireup="true" CodeBehind="Solicitud.aspx.cs" Inherits="CascaronPrograIV.Archivos.WebForms.Solicitud.Solicitud" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <script src="../../script/jquery-3.3.1.min.js"></script>
@@ -93,22 +94,28 @@
             <ContentTemplate>
                 <div id="DivCrear">
                     <h1 id="h1Crear" title="Click para mostrar contenido">Crear Solicitud de Viaticos</h1>
-                    <div id="InicioSolicitud">
-                        <asp:TextBox CssClass="Textbox" ID="TbxCantidadSolicitudes" runat="server" placeholder="Cantidad de Solicitudes a Crear" Width="400px"></asp:TextBox>
+                    <div id="InicioSolicitud" style="text-align:center">
+                        <asp:DropDownList CssClass="DDL" ID="Ddl_PersonasSolicitud" runat="server">
+                        </asp:DropDownList>
                         <br />
-                        <asp:Label ID="LblInicio" runat="server"></asp:Label>
                         <br />
+                        <asp:Button CssClass="Button" ID="BtnAgregar" runat="server" Text="Agregar Persona" />
+                        <br />
+                        <asp:BulletedList CssClass="BL" ID="Bl_ListaPersonas" runat="server">
+                        </asp:BulletedList>
                         <br />
                         <asp:Button CssClass="Button" ID="BtnIniciar" runat="server" Text="Siguiente" OnClick="BtnIniciar_Click" />
+                        <br />
                     </div>
                     <div id="Solicitud">
+                        <asp:TextBox ID="TbxUsuario" runat="server" CssClass="Textbox" placeholder="Usuario" ReadOnly="True"></asp:TextBox>
+                        <br />
                         <asp:TextBox CssClass="Textbox" ID="TbxFechaRegreso" runat="server" placeholder="Fecha de Regreso"></asp:TextBox>
                         <asp:TextBox CssClass="Textbox" ID="TbxFechaSalida" runat="server" placeholder="Fecha de Salida"></asp:TextBox>
                         <br />
                         <asp:TextBox CssClass="Textbox" ID="TbxJustificacion" runat="server" placeholder="Justificacion"></asp:TextBox>
                         <asp:TextBox CssClass="Textbox" ID="TbxDestino" runat="server" placeholder="Destino"></asp:TextBox>
                         <br />
-                        <asp:TextBox CssClass="Textbox" ID="TbxUsuario" runat="server" placeholder="Usuario"></asp:TextBox>
                         <asp:TextBox CssClass="Textbox" ID="TbxHoraSalida" runat="server" placeholder="Hora de Salida"></asp:TextBox>
                         <asp:TextBox CssClass="Textbox" ID="TbxHoraRegreso" runat="server" placeholder="Hora de Regreso"></asp:TextBox><br />
                         <br />
@@ -134,6 +141,8 @@
                         <asp:TextBox CssClass="Textbox" ID="Tbx_MontPasaj" runat="server" placeholder="Monto Total de Pasajes"></asp:TextBox>
                         <br />
                         <asp:DropDownList CssClass="DDL" ID="Ddl_Ruta" runat="server"></asp:DropDownList>
+                        <br />
+                        <br />
                         <asp:DropDownList CssClass="DDL" ID="Ddl_Hospedaje" runat="server"></asp:DropDownList>
                         <br />
                         <br />
@@ -178,7 +187,7 @@
             <asp:TextBox CssClass="Textbox" ID="TextBox20" runat="server" Text="Buscar"></asp:TextBox>
             <br />
             <br />
-            <asp:GridView ID="GvActualizar" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
+            <asp:GridView CssClass="GridView" ID="GvActualizar" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GvActualizar_SelectedIndexChanged">
                 <AlternatingRowStyle BackColor="White" />
                 <EditRowStyle BackColor="#2461BF" />
                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -192,19 +201,31 @@
                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
             </asp:GridView>
             <br />
-            <asp:TextBox CssClass="Textbox" ID="TextBox10" runat="server" Text="Fecha de Creacion"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TextBox11" runat="server" Text="Fecha de Regreso"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TextBox12" runat="server" Text="Estado de Solicitud"></asp:TextBox><br />
-
-            <asp:TextBox CssClass="Textbox" ID="TextBox13" runat="server" Text="Usuario"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TextBox14" runat="server" Text="Justificacion"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TextBox15" runat="server" Text="Destino"></asp:TextBox><br />
-
-            <asp:TextBox CssClass="Textbox" ID="TextBox16" runat="server" Text="Fecha de Salida"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TextBox17" runat="server" Text="Hora de Salida"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TextBox18" runat="server" Text="Hora de Regreso"></asp:TextBox><br />
+            <asp:TextBox CssClass="Textbox" ID="TbxActuFechaRegreso" runat="server" placeholder="Fecha de Regreso"></asp:TextBox>
+            <asp:TextBox CssClass="Textbox" ID="TbxActuFechaSalida" runat="server" placeholder="Fecha de Salida"></asp:TextBox>
+            <asp:TextBox CssClass="Textbox" ID="TbxActuJustificacion" runat="server" placeholder="Justificacion"></asp:TextBox>
+            <asp:TextBox CssClass="Textbox" ID="TbxActuDestino" runat="server" placeholder="Destino"></asp:TextBox>
             <br />
-            <asp:Button ID="Button1" CssClass="Button" runat="server" Text="Guardar" />
+            <asp:TextBox CssClass="Textbox" ID="TbxActuHoraSalida" runat="server" placeholder="Hora de Salida"></asp:TextBox>
+            <asp:TextBox CssClass="Textbox" ID="TbxActuHoraRegreso" runat="server" placeholder="Hora de Regreso"></asp:TextBox>
+            <asp:TextBox CssClass="Textbox" ID="TbxActuCantDesayunos" runat="server"></asp:TextBox>
+            <asp:TextBox CssClass="Textbox" ID="TbxActuCantAlmuerzos" runat="server"></asp:TextBox>
+            <br />
+            <asp:TextBox CssClass="Textbox" ID="TbxActuCantCenas" runat="server"></asp:TextBox>
+            <asp:TextBox CssClass="Textbox" ID="TbxActuCantPasajes" runat="server"></asp:TextBox>
+            <asp:TextBox CssClass="Textbox" ID="TbxActuMontDesayunos" runat="server"></asp:TextBox>
+            <asp:TextBox CssClass="Textbox" ID="TbxActuMontAlmuerzos" runat="server"></asp:TextBox>
+            <br />
+            <asp:TextBox CssClass="Textbox" ID="TbxActuMontCenas" runat="server"></asp:TextBox>
+            <asp:TextBox CssClass="Textbox" ID="TbxActuMontPasajes" runat="server"></asp:TextBox>
+            <br />
+            <asp:DropDownList CssClass="DDL" ID="Ddl_ActuRutas" runat="server"></asp:DropDownList>
+            <br />
+            <br />
+            <asp:DropDownList CssClass="DDL" ID="Ddl_ActuLocalidad" runat="server"></asp:DropDownList>
+            <br />
+            <br />
+            <asp:Button ID="Button1" CssClass="Button" runat="server" Text="Modificar" />
         </div>
         <br />
         <br />

@@ -5,7 +5,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="DESTINO" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ESTADOSOLICITUD" type="xs:short" />
-      <xs:element minOccurs="0" name="FECHACREACION" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FECHACREACION" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="FECHAREGRESO" type="xs:dateTime" />
       <xs:element minOccurs="0" name="FECHASALIDA" type="xs:dateTime" />
       <xs:element minOccurs="0" name="HORAREGRESO" type="ser:duration" />
@@ -29,7 +29,7 @@
   <xs:complexType name="TBL_CABECERAORDENVIATICO">
     <xs:sequence>
       <xs:element minOccurs="0" name="ESTADOORDEN" type="xs:short" />
-      <xs:element minOccurs="0" name="FECHAORDEN" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FECHAORDEN" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="ID_ORDEN" type="xs:int" />
       <xs:element minOccurs="0" name="ID_SOLICITUD" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TBL_CABECERALIQUIDACION" nillable="true" type="tns:ArrayOfTBL_CABECERALIQUIDACION" />
@@ -47,7 +47,7 @@
   <xs:complexType name="TBL_CABECERALIQUIDACION">
     <xs:sequence>
       <xs:element minOccurs="0" name="ESTADOLIQUIDACION" type="xs:short" />
-      <xs:element minOccurs="0" name="FECHALIQUIDACION" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FECHALIQUIDACION" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="ID_LIQUIDACION" type="xs:int" />
       <xs:element minOccurs="0" name="ID_ORDEN" type="xs:int" />
       <xs:element minOccurs="0" name="MONTOALMUERZO" nillable="true" type="xs:decimal" />
@@ -269,4 +269,17 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SP_LISTAR_RUTAS_Result" nillable="true" type="tns:SP_LISTAR_RUTAS_Result" />
+  <xs:complexType name="ArrayOfSP_LISTAR_PERSONAS_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SP_LISTAR_PERSONAS_Result" nillable="true" type="tns:SP_LISTAR_PERSONAS_Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSP_LISTAR_PERSONAS_Result" nillable="true" type="tns:ArrayOfSP_LISTAR_PERSONAS_Result" />
+  <xs:complexType name="SP_LISTAR_PERSONAS_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID_PERSONA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRECOMPLETO" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SP_LISTAR_PERSONAS_Result" nillable="true" type="tns:SP_LISTAR_PERSONAS_Result" />
 </xs:schema>

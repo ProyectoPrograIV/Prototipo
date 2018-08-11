@@ -31,22 +31,31 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud {
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
-        /// Control TbxCantidadSolicitudes.
+        /// Control Ddl_PersonasSolicitud.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TbxCantidadSolicitudes;
+        protected global::System.Web.UI.WebControls.DropDownList Ddl_PersonasSolicitud;
         
         /// <summary>
-        /// Control LblInicio.
+        /// Control BtnAgregar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblInicio;
+        protected global::System.Web.UI.WebControls.Button BtnAgregar;
+        
+        /// <summary>
+        /// Control Bl_ListaPersonas.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.BulletedList Bl_ListaPersonas;
         
         /// <summary>
         /// Control BtnIniciar.
@@ -56,6 +65,15 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BtnIniciar;
+        
+        /// <summary>
+        /// Control TbxUsuario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TbxUsuario;
         
         /// <summary>
         /// Control TbxFechaRegreso.
@@ -92,15 +110,6 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TbxDestino;
-        
-        /// <summary>
-        /// Control TbxUsuario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TbxUsuario;
         
         /// <summary>
         /// Control TbxHoraSalida.
@@ -319,85 +328,148 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud {
         protected global::System.Web.UI.WebControls.GridView GvActualizar;
         
         /// <summary>
-        /// Control TextBox10.
+        /// Control TbxActuFechaRegreso.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox10;
+        protected global::System.Web.UI.WebControls.TextBox TbxActuFechaRegreso;
         
         /// <summary>
-        /// Control TextBox11.
+        /// Control TbxActuFechaSalida.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox11;
+        protected global::System.Web.UI.WebControls.TextBox TbxActuFechaSalida;
         
         /// <summary>
-        /// Control TextBox12.
+        /// Control TbxActuJustificacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox12;
+        protected global::System.Web.UI.WebControls.TextBox TbxActuJustificacion;
         
         /// <summary>
-        /// Control TextBox13.
+        /// Control TbxActuDestino.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox13;
+        protected global::System.Web.UI.WebControls.TextBox TbxActuDestino;
         
         /// <summary>
-        /// Control TextBox14.
+        /// Control TbxActuHoraSalida.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox14;
+        protected global::System.Web.UI.WebControls.TextBox TbxActuHoraSalida;
         
         /// <summary>
-        /// Control TextBox15.
+        /// Control TbxActuHoraRegreso.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox15;
+        protected global::System.Web.UI.WebControls.TextBox TbxActuHoraRegreso;
         
         /// <summary>
-        /// Control TextBox16.
+        /// Control TbxActuCantDesayunos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox16;
+        protected global::System.Web.UI.WebControls.TextBox TbxActuCantDesayunos;
         
         /// <summary>
-        /// Control TextBox17.
+        /// Control TbxActuCantAlmuerzos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox17;
+        protected global::System.Web.UI.WebControls.TextBox TbxActuCantAlmuerzos;
         
         /// <summary>
-        /// Control TextBox18.
+        /// Control TbxActuCantCenas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox18;
+        protected global::System.Web.UI.WebControls.TextBox TbxActuCantCenas;
+        
+        /// <summary>
+        /// Control TbxActuCantPasajes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TbxActuCantPasajes;
+        
+        /// <summary>
+        /// Control TbxActuMontDesayunos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TbxActuMontDesayunos;
+        
+        /// <summary>
+        /// Control TbxActuMontAlmuerzos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TbxActuMontAlmuerzos;
+        
+        /// <summary>
+        /// Control TbxActuMontCenas.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TbxActuMontCenas;
+        
+        /// <summary>
+        /// Control TbxActuMontPasajes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TbxActuMontPasajes;
+        
+        /// <summary>
+        /// Control Ddl_ActuRutas.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList Ddl_ActuRutas;
+        
+        /// <summary>
+        /// Control Ddl_ActuLocalidad.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList Ddl_ActuLocalidad;
         
         /// <summary>
         /// Control Button1.

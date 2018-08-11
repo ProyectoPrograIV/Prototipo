@@ -22,7 +22,7 @@ namespace Entidades
     
         public string ID_SOLICITUD { get; set; }
         public string NOMBREUSUARIO { get; set; }
-        public System.DateTime FECHACREACION { get; set; }
+        public Nullable<System.DateTime> FECHACREACION { get; set; }
         public System.DateTime FECHASALIDA { get; set; }
         public System.DateTime FECHAREGRESO { get; set; }
         public short ESTADOSOLICITUD { get; set; }

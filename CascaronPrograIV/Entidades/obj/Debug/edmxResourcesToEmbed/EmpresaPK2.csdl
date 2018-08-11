@@ -23,6 +23,7 @@
       <Parameter Name="IDSOLICITUD" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="SP_GUARDAR_SOLICITUDES_FUNCIONARIO">
+      <Parameter Name="ID_SOLICITUD" Mode="In" Type="String" />
       <Parameter Name="NOMBREUSUARIO" Mode="In" Type="String" />
       <Parameter Name="FECHACREACION" Mode="In" Type="DateTime" />
       <Parameter Name="FECHASALIDA" Mode="In" Type="DateTime" />
@@ -143,6 +144,26 @@
     </FunctionImport>
     <FunctionImport Name="SP_LISTAR_LOCALIDAD" ReturnType="Collection(EmpresaPK2Model.SP_LISTAR_LOCALIDAD_Result)" />
     <FunctionImport Name="SP_LISTAR_RUTAS" ReturnType="Collection(EmpresaPK2Model.SP_LISTAR_RUTAS_Result)" />
+    <FunctionImport Name="SP_GUARDAR_DETALLEVIATICOS">
+      <Parameter Name="ID_SOLICITUD" Mode="In" Type="String" />
+      <Parameter Name="ID_PERSONA" Mode="In" Type="String" />
+      <Parameter Name="CANTIDADVIATICOS" Mode="In" Type="Int16" />
+      <Parameter Name="CANTIDADDESAYUNOS" Mode="In" Type="Int16" />
+      <Parameter Name="CANTIDADALMUERZOS" Mode="In" Type="Int16" />
+      <Parameter Name="CANTIDADCENAS" Mode="In" Type="Int16" />
+      <Parameter Name="CANTIDADPASAJE" Mode="In" Type="Int16" />
+      <Parameter Name="MONTODESAYUNO" Mode="In" Type="Decimal" />
+      <Parameter Name="MONTOALMUERZO" Mode="In" Type="Decimal" />
+      <Parameter Name="MONTOCENA" Mode="In" Type="Decimal" />
+      <Parameter Name="MONTOPASAJE" Mode="In" Type="Decimal" />
+      <Parameter Name="MONTOHOSPEDAJE" Mode="In" Type="Decimal" />
+      <Parameter Name="CODIGORUTA" Mode="In" Type="String" />
+      <Parameter Name="LOCALIDADHOSPEDAJE" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="SP_LISTAR_SOLICITUDES_ACTUALIZAR" ReturnType="Collection(EmpresaPK2Model.SP_LISTAR_SOLICITUDES_ACTUALIZAR_Result)">
+      <Parameter Name="NOMBREUSUARIO" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_LISTAR_PERSONAS" ReturnType="Collection(EmpresaPK2Model.SP_LISTAR_PERSONAS_Result)" />
   </EntityContainer>
   <ComplexType Name="SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result">
     <Property Type="Int32" Name="ID_SOLICITUD" Nullable="false" />
@@ -277,7 +298,7 @@
     <Property Name="ID_LIQUIDACION" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ID_ORDEN" Type="Int32" Nullable="false" />
     <Property Name="ESTADOLIQUIDACION" Type="Int16" Nullable="false" />
-    <Property Name="FECHALIQUIDACION" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FECHALIQUIDACION" Type="DateTime" Precision="0" />
     <Property Name="MONTODESAYUNO" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="MONTOALMUERZO" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="MONTOCENA" Type="Decimal" Precision="19" Scale="4" />
@@ -293,7 +314,7 @@
     <Property Name="ID_ORDEN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ID_SOLICITUD" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
     <Property Name="ESTADOORDEN" Type="Int16" Nullable="false" />
-    <Property Name="FECHAORDEN" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FECHAORDEN" Type="DateTime" Precision="0" />
     <NavigationProperty Name="TBL_ESTADOS" Relationship="EmpresaPK2Model.FK_TBLCABECERAORDENVIATICO_TBLESTADOS" FromRole="TBL_CABECERAORDENVIATICO" ToRole="TBL_ESTADOS" />
     <NavigationProperty Name="TBL_CABECERALIQUIDACION" Relationship="EmpresaPK2Model.FK_TBLCABECERALIQUIDACION_TBLCABECERAORDENVIATICO" FromRole="TBL_CABECERAORDENVIATICO" ToRole="TBL_CABECERALIQUIDACION" />
     <NavigationProperty Name="TBL_SOLICITUDVIATICOS" Relationship="EmpresaPK2Model.FK_TBLCABECERAORDENVIATICO_TBLSOLICITUDVIATICOS" FromRole="TBL_CABECERAORDENVIATICO" ToRole="TBL_SOLICITUDVIATICOS" />
@@ -328,7 +349,7 @@
     </Key>
     <Property Name="ID_SOLICITUD" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
     <Property Name="NOMBREUSUARIO" Type="String" Nullable="false" MaxLength="24" FixedLength="false" Unicode="true" />
-    <Property Name="FECHACREACION" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FECHACREACION" Type="DateTime" Precision="0" />
     <Property Name="FECHASALIDA" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="FECHAREGRESO" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="ESTADOSOLICITUD" Type="Int16" Nullable="false" />
@@ -581,5 +602,23 @@
   <ComplexType Name="SP_LISTAR_RUTAS_Result">
     <Property Type="String" Name="CODIGORUTA" Nullable="false" MaxLength="20" />
     <Property Type="String" Name="DESCRIPCIONRUTA" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="SP_LISTAR_SOLICITUDES_ACTUALIZAR_Result">
+    <Property Type="DateTime" Name="FECHASALIDA" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="FECHAREGRESO" Nullable="false" Precision="23" />
+    <Property Type="String" Name="JUSTIFICACION" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="DESTINO" Nullable="false" MaxLength="50" />
+    <Property Type="Time" Name="HORAREGRESO" Nullable="false" />
+    <Property Type="Time" Name="HORASALIDA" Nullable="false" />
+    <Property Type="Int16" Name="CANTIDADDESAYUNO" Nullable="true" />
+    <Property Type="Int16" Name="CANTIDADALMUERZO" Nullable="true" />
+    <Property Type="Int16" Name="CANTIDADCENA" Nullable="true" />
+    <Property Type="Int16" Name="CANTIDADPASAJE" Nullable="true" />
+    <Property Type="String" Name="CODIGORUTA" Nullable="false" MaxLength="20" />
+    <Property Type="Int16" Name="LOCALIDADHOSPEDAJE" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_LISTAR_PERSONAS_Result">
+    <Property Type="String" Name="ID_PERSONA" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="NOMBRECOMPLETO" Nullable="false" MaxLength="82" />
   </ComplexType>
 </Schema>

@@ -100,13 +100,13 @@ namespace CascaronPrograIV.Archivos.WebForms.Reportes
 
             if (sesion.ID_ROL == 9)
             {   //Si se trata de funcionario, entonces solo podran ser accesibles los reportes con su identificacion
-                obj.IDPersona = sesion.ID_PERSONA;
+                //obj.IDPersona = sesion.ID_PERSONA;//Corregir
                 obj.NomUsuario = sesion.ID_PERSONA;
             }
             else
             {
                 //Sin identificacion para jefatura, revisa solicitudes de todos los funcionarios.
-                obj.IDPersona = "";
+                //obj.IDPersona = "";//corregir
                 obj.NomUsuario = "";
             }
             if (Convert.ToDateTime(txtFechaFinal.Text) > DateTime.Now || Convert.ToDateTime(txtFechaInicial.Text) > DateTime.Now)

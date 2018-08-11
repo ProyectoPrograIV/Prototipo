@@ -116,8 +116,12 @@ namespace Entidades
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ELIMINAR_SOLICITUDES", iDSOLICITUDParameter);
         }
     
-        public virtual int SP_GUARDAR_SOLICITUDES_FUNCIONARIO(string nOMBREUSUARIO, Nullable<System.DateTime> fECHACREACION, Nullable<System.DateTime> fECHASALIDA, Nullable<System.DateTime> fECHAREGRESO, string jUSTIFICACION, string dESTINO, Nullable<System.TimeSpan> hORAREGRESO, Nullable<System.TimeSpan> hORASALIDA)
+        public virtual int SP_GUARDAR_SOLICITUDES_FUNCIONARIO(string iD_SOLICITUD, string nOMBREUSUARIO, Nullable<System.DateTime> fECHACREACION, Nullable<System.DateTime> fECHASALIDA, Nullable<System.DateTime> fECHAREGRESO, string jUSTIFICACION, string dESTINO, Nullable<System.TimeSpan> hORAREGRESO, Nullable<System.TimeSpan> hORASALIDA)
         {
+            var iD_SOLICITUDParameter = iD_SOLICITUD != null ?
+                new ObjectParameter("ID_SOLICITUD", iD_SOLICITUD) :
+                new ObjectParameter("ID_SOLICITUD", typeof(string));
+    
             var nOMBREUSUARIOParameter = nOMBREUSUARIO != null ?
                 new ObjectParameter("NOMBREUSUARIO", nOMBREUSUARIO) :
                 new ObjectParameter("NOMBREUSUARIO", typeof(string));
@@ -150,7 +154,7 @@ namespace Entidades
                 new ObjectParameter("HORASALIDA", hORASALIDA) :
                 new ObjectParameter("HORASALIDA", typeof(System.TimeSpan));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_GUARDAR_SOLICITUDES_FUNCIONARIO", nOMBREUSUARIOParameter, fECHACREACIONParameter, fECHASALIDAParameter, fECHAREGRESOParameter, jUSTIFICACIONParameter, dESTINOParameter, hORAREGRESOParameter, hORASALIDAParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_GUARDAR_SOLICITUDES_FUNCIONARIO", iD_SOLICITUDParameter, nOMBREUSUARIOParameter, fECHACREACIONParameter, fECHASALIDAParameter, fECHAREGRESOParameter, jUSTIFICACIONParameter, dESTINOParameter, hORAREGRESOParameter, hORASALIDAParameter);
         }
     
         public virtual ObjectResult<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> SP_LISTAR_SOLICITUDES_FUNCIONARIO(string uSUARIO)
@@ -246,6 +250,81 @@ namespace Entidades
         public virtual ObjectResult<SP_LISTAR_RUTAS_Result> SP_LISTAR_RUTAS()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_RUTAS_Result>("SP_LISTAR_RUTAS");
+        }
+    
+        public virtual int SP_GUARDAR_DETALLEVIATICOS(string iD_SOLICITUD, string iD_PERSONA, Nullable<short> cANTIDADVIATICOS, Nullable<short> cANTIDADDESAYUNOS, Nullable<short> cANTIDADALMUERZOS, Nullable<short> cANTIDADCENAS, Nullable<short> cANTIDADPASAJE, Nullable<decimal> mONTODESAYUNO, Nullable<decimal> mONTOALMUERZO, Nullable<decimal> mONTOCENA, Nullable<decimal> mONTOPASAJE, Nullable<decimal> mONTOHOSPEDAJE, string cODIGORUTA, Nullable<short> lOCALIDADHOSPEDAJE)
+        {
+            var iD_SOLICITUDParameter = iD_SOLICITUD != null ?
+                new ObjectParameter("ID_SOLICITUD", iD_SOLICITUD) :
+                new ObjectParameter("ID_SOLICITUD", typeof(string));
+    
+            var iD_PERSONAParameter = iD_PERSONA != null ?
+                new ObjectParameter("ID_PERSONA", iD_PERSONA) :
+                new ObjectParameter("ID_PERSONA", typeof(string));
+    
+            var cANTIDADVIATICOSParameter = cANTIDADVIATICOS.HasValue ?
+                new ObjectParameter("CANTIDADVIATICOS", cANTIDADVIATICOS) :
+                new ObjectParameter("CANTIDADVIATICOS", typeof(short));
+    
+            var cANTIDADDESAYUNOSParameter = cANTIDADDESAYUNOS.HasValue ?
+                new ObjectParameter("CANTIDADDESAYUNOS", cANTIDADDESAYUNOS) :
+                new ObjectParameter("CANTIDADDESAYUNOS", typeof(short));
+    
+            var cANTIDADALMUERZOSParameter = cANTIDADALMUERZOS.HasValue ?
+                new ObjectParameter("CANTIDADALMUERZOS", cANTIDADALMUERZOS) :
+                new ObjectParameter("CANTIDADALMUERZOS", typeof(short));
+    
+            var cANTIDADCENASParameter = cANTIDADCENAS.HasValue ?
+                new ObjectParameter("CANTIDADCENAS", cANTIDADCENAS) :
+                new ObjectParameter("CANTIDADCENAS", typeof(short));
+    
+            var cANTIDADPASAJEParameter = cANTIDADPASAJE.HasValue ?
+                new ObjectParameter("CANTIDADPASAJE", cANTIDADPASAJE) :
+                new ObjectParameter("CANTIDADPASAJE", typeof(short));
+    
+            var mONTODESAYUNOParameter = mONTODESAYUNO.HasValue ?
+                new ObjectParameter("MONTODESAYUNO", mONTODESAYUNO) :
+                new ObjectParameter("MONTODESAYUNO", typeof(decimal));
+    
+            var mONTOALMUERZOParameter = mONTOALMUERZO.HasValue ?
+                new ObjectParameter("MONTOALMUERZO", mONTOALMUERZO) :
+                new ObjectParameter("MONTOALMUERZO", typeof(decimal));
+    
+            var mONTOCENAParameter = mONTOCENA.HasValue ?
+                new ObjectParameter("MONTOCENA", mONTOCENA) :
+                new ObjectParameter("MONTOCENA", typeof(decimal));
+    
+            var mONTOPASAJEParameter = mONTOPASAJE.HasValue ?
+                new ObjectParameter("MONTOPASAJE", mONTOPASAJE) :
+                new ObjectParameter("MONTOPASAJE", typeof(decimal));
+    
+            var mONTOHOSPEDAJEParameter = mONTOHOSPEDAJE.HasValue ?
+                new ObjectParameter("MONTOHOSPEDAJE", mONTOHOSPEDAJE) :
+                new ObjectParameter("MONTOHOSPEDAJE", typeof(decimal));
+    
+            var cODIGORUTAParameter = cODIGORUTA != null ?
+                new ObjectParameter("CODIGORUTA", cODIGORUTA) :
+                new ObjectParameter("CODIGORUTA", typeof(string));
+    
+            var lOCALIDADHOSPEDAJEParameter = lOCALIDADHOSPEDAJE.HasValue ?
+                new ObjectParameter("LOCALIDADHOSPEDAJE", lOCALIDADHOSPEDAJE) :
+                new ObjectParameter("LOCALIDADHOSPEDAJE", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_GUARDAR_DETALLEVIATICOS", iD_SOLICITUDParameter, iD_PERSONAParameter, cANTIDADVIATICOSParameter, cANTIDADDESAYUNOSParameter, cANTIDADALMUERZOSParameter, cANTIDADCENASParameter, cANTIDADPASAJEParameter, mONTODESAYUNOParameter, mONTOALMUERZOParameter, mONTOCENAParameter, mONTOPASAJEParameter, mONTOHOSPEDAJEParameter, cODIGORUTAParameter, lOCALIDADHOSPEDAJEParameter);
+        }
+    
+        public virtual ObjectResult<SP_LISTAR_SOLICITUDES_ACTUALIZAR_Result> SP_LISTAR_SOLICITUDES_ACTUALIZAR(string nOMBREUSUARIO)
+        {
+            var nOMBREUSUARIOParameter = nOMBREUSUARIO != null ?
+                new ObjectParameter("NOMBREUSUARIO", nOMBREUSUARIO) :
+                new ObjectParameter("NOMBREUSUARIO", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_SOLICITUDES_ACTUALIZAR_Result>("SP_LISTAR_SOLICITUDES_ACTUALIZAR", nOMBREUSUARIOParameter);
+        }
+    
+        public virtual ObjectResult<SP_LISTAR_PERSONAS_Result> SP_LISTAR_PERSONAS()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_PERSONAS_Result>("SP_LISTAR_PERSONAS");
         }
     }
 }

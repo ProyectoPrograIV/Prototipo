@@ -2,10 +2,16 @@
     
 }
 
+.BL{
+    width:50%;
+    height:auto;
+    margin: 30px auto;
+}
+
 .DDL{
     width:auto;
     height: 40px;
-    padding: 0;
+    padding: 0px;
     font-size: 20px;
     color: #ADADAD;
     text-align: center;

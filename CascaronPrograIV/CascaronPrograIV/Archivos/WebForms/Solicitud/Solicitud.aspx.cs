@@ -11,16 +11,31 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
 {
     public partial class Solicitud : System.Web.UI.Page
     {
+        SP_INICIO_SESION_Result sesion;
         protected void Page_Load(object sender, EventArgs e)
         {
-            LlenarGrid();
+            ReadOnlyFields();
+            LlenarGridConsulta();
+            LlenarGridActualizar();
+            CargarLocalidad();
+            CargarRutas();
+            CargarPersonas();
+            sesion = (SP_INICIO_SESION_Result)Session["sesion"];
+        }
+
+        private void ReadOnlyFields()
+        {
+            TbxUsuario.ReadOnly = true;
+            Tbx_MontAlm.ReadOnly = true;
+            Tbx_MontCenas.ReadOnly = true;
+            Tbx_MontDes.ReadOnly = true;
+            Tbx_MontPasaj.ReadOnly = true;
         }
 
         protected void Btn_SolicitudSig_Click(object sender, EventArgs e)
         {
             if (Vacio() == false)
             {
-                CargarLocalidad();
                 ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Solicitud()", true);
             }
             else
@@ -36,21 +51,20 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
 
         protected void BtnIniciar_Click(object sender, EventArgs e)
         {
-            if (TbxCantidadSolicitudes.Text != "")
+            if (Ddl_PersonasSolicitud.SelectedIndex != 0)
             {
-                if (Convert.ToInt16(TbxCantidadSolicitudes.Text) > 0)
+                if (Convert.ToInt16(0) > 0)
                 {
+                    TbxUsuario.Text = sesion.NOMBREUSUARIO.ToString();
                     ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Inicio()", true);
                 }
                 else
                 {
-                    LblInicio.Text = "El Numero de Solicitudes debe ser mayor a 0.";
                     ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Negado()", true);
                 }
             }
             else
             {
-                LblInicio.Text = "El numero de solicitudes esta vacio.";
                 ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Negado()", true);
             }
         }
@@ -81,7 +95,7 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
                 return false;
             }
         }
-        private TBL_SOLICITUDVIATICOS AsignarDatos()
+        private TBL_SOLICITUDVIATICOS AsignarDatosSolicitud()
         {
             TBL_SOLICITUDVIATICOS Obj_Solicitud;
             Obj_Solicitud = new TBL_SOLICITUDVIATICOS();
@@ -95,6 +109,18 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
             Obj_Solicitud.NOMBREUSUARIO = TbxUsuario.Text;
             return Obj_Solicitud;
         }
+        private void CargarPersonas()
+        {
+            WCFSolicitud.SolicitudClient Cliente = new WCFSolicitud.SolicitudClient();
+            var ListaPersonas = Cliente.ListarPersonas();
+
+            Ddl_PersonasSolicitud.DataSource = ListaPersonas;
+            Ddl_PersonasSolicitud.DataValueField = "ID_PERSONA";
+            Ddl_PersonasSolicitud.DataTextField = "NOMBRECOMPLETO";
+            DataBind();
+            Ddl_PersonasSolicitud.Items.Insert(0, new ListItem("Añadir personas adicionales a la solicitud", "null"));
+
+        }
         private void CargarLocalidad()
         {
             WCFSolicitud.SolicitudClient Cliente = new WCFSolicitud.SolicitudClient();
@@ -103,6 +129,7 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
             Ddl_Hospedaje.DataValueField = "ID_MODTARIFA";
             Ddl_Hospedaje.DataTextField = "LOCALIDAD";
             Ddl_Hospedaje.DataBind();
+            Ddl_Hospedaje.Items.Insert(0, new ListItem("Seleccione una localidad", "null"));
         }
         private void CargarRutas()
         {
@@ -112,10 +139,12 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
             Ddl_Ruta.DataValueField = "CODIGORUTA";
             Ddl_Ruta.DataTextField = "DESCRIPCIONRUTA";
             Ddl_Ruta.DataBind();
+            Ddl_Ruta.Items.Insert(0, new ListItem("Seleccione una ruta", "null"));
         }
         #endregion
+
         #region Metodos Consulta
-        private void LlenarGrid()
+        private void LlenarGridConsulta()
         {
             GvConsultarSolicitud.DataSource = CargarDatos();
             GvConsultarSolicitud.DataBind();
@@ -149,11 +178,54 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
             return ListaSolicitudes;
         }
         #endregion
-        #region Metodos Actualizar
 
+        #region Metodos Actualizar
+        private void LlenarGridActualizar()
+        {
+            GvActualizar.DataSource = CargarDatos();
+            GvActualizar.DataBind();
+            if (GvActualizar.Columns.Count != 0)
+            {
+                GvActualizar.HeaderRow.Cells[0].Visible = false;
+                GvActualizar.HeaderRow.Cells[5].Visible = false;
+                for (int i = 0; i < GvActualizar.Rows.Count; i++)
+                {
+                    GvActualizar.Rows[i].Cells[0].Visible = false;
+                    GvActualizar.Rows[i].Cells[5].Visible = false;
+                }
+            }
+            else
+            {
+                DataTable dt = new DataTable();
+                dt.Columns.Add("Informacion", typeof(string));
+                DataRow row = dt.NewRow();
+                row[0] = "No se encontraron solicitudes";
+                dt.Rows.Add(row);
+                GvActualizar.DataSource = dt;
+                GvActualizar.DataBind();
+            }
+        }
+        protected void GvActualizar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TbxActuFechaSalida.Text = GvActualizar.SelectedRow.Cells[0].Text;
+            TbxActuFechaRegreso.Text = GvActualizar.SelectedRow.Cells[1].Text;
+            TbxActuJustificacion.Text = GvActualizar.SelectedRow.Cells[2].Text;
+            TbxActuDestino.Text = GvActualizar.SelectedRow.Cells[3].Text;
+            TbxActuHoraRegreso.Text = GvActualizar.SelectedRow.Cells[4].Text;
+            TbxActuHoraSalida.Text = GvActualizar.SelectedRow.Cells[5].Text;
+            TbxActuCantDesayunos.Text = GvActualizar.SelectedRow.Cells[6].Text;
+            TbxActuCantAlmuerzos.Text = GvActualizar.SelectedRow.Cells[7].Text;
+            TbxActuCantCenas.Text = GvActualizar.SelectedRow.Cells[8].Text;
+            TbxActuCantPasajes.Text = GvActualizar.SelectedRow.Cells[9].Text;
+            Ddl_ActuRutas.SelectedIndex = Convert.ToInt32(GvActualizar.SelectedRow.Cells[10].Text);
+            Ddl_ActuLocalidad.SelectedIndex = Convert.ToInt32(GvActualizar.SelectedRow.Cells[11].Text);
+        }
         #endregion
+
         #region Metodos Verificar
 
         #endregion
+
+
     }
 }

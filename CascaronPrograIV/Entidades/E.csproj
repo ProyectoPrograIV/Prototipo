@@ -80,7 +80,13 @@
     <Compile Include="SP_LISTAR_LOCALIDAD_Result.cs">
       <DependentUpon>EmpresaPK2.tt</DependentUpon>
     </Compile>
+    <Compile Include="SP_LISTAR_PERSONAS_Result.cs">
+      <DependentUpon>EmpresaPK2.tt</DependentUpon>
+    </Compile>
     <Compile Include="SP_LISTAR_RUTAS_Result.cs">
+      <DependentUpon>EmpresaPK2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_LISTAR_SOLICITUDES_ACTUALIZAR_Result.cs">
       <DependentUpon>EmpresaPK2.tt</DependentUpon>
     </Compile>
     <Compile Include="SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result.cs">

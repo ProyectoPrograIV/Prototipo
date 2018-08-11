@@ -22,7 +22,7 @@ namespace Entidades
         public int ID_ORDEN { get; set; }
         public string ID_SOLICITUD { get; set; }
         public short ESTADOORDEN { get; set; }
-        public System.DateTime FECHAORDEN { get; set; }
+        public Nullable<System.DateTime> FECHAORDEN { get; set; }
     
         public virtual TBL_ESTADOS TBL_ESTADOS { get; set; }
         public virtual ICollection<TBL_CABECERALIQUIDACION> TBL_CABECERALIQUIDACION { get; set; }

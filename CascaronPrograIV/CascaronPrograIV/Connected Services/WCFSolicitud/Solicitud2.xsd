@@ -5,6 +5,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="Obj_Solicitud" nillable="true" type="q1:TBL_SOLICITUDVIATICOS" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="Obj_SolicitudDetalle" nillable="true" type="q2:TBL_DETALLESOLICITUDVIATICOS" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -18,14 +19,14 @@
   <xs:element name="ListarSolicitudes">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="Obj_Solicitud" nillable="true" type="q2:TBL_SOLICITUDVIATICOS" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="Obj_Solicitud" nillable="true" type="q3:TBL_SOLICITUDVIATICOS" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ListarSolicitudesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="ListarSolicitudesResult" nillable="true" type="q3:ArrayOfSP_LISTAR_SOLICITUDES_FUNCIONARIO_Result" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="ListarSolicitudesResult" nillable="true" type="q4:ArrayOfSP_LISTAR_SOLICITUDES_FUNCIONARIO_Result" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -37,7 +38,7 @@
   <xs:element name="ListarLocalidadResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="ListarLocalidadResult" nillable="true" type="q4:ArrayOfSP_LISTAR_LOCALIDAD_Result" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="ListarLocalidadResult" nillable="true" type="q5:ArrayOfSP_LISTAR_LOCALIDAD_Result" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -49,7 +50,19 @@
   <xs:element name="ListarRutasResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="ListarRutasResult" nillable="true" type="q5:ArrayOfSP_LISTAR_RUTAS_Result" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="ListarRutasResult" nillable="true" type="q6:ArrayOfSP_LISTAR_RUTAS_Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarPersonas">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarPersonasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="ListarPersonasResult" nillable="true" type="q7:ArrayOfSP_LISTAR_PERSONAS_Result" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
