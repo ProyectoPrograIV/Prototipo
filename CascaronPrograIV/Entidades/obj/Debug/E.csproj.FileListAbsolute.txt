@@ -35,14 +35,6 @@ C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\Entidades\ob
 C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\Entidades\obj\Debug\E.csproj.CopyComplete
 C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\Entidades\obj\Debug\Entidades.dll
 C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\Entidades\obj\Debug\Entidades.pdb
-C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Entidades\bin\Debug\Entidades.dll.config
-C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Entidades\bin\Debug\Entidades.dll
-C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Entidades\bin\Debug\Entidades.pdb
-C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Entidades\bin\Debug\EntityFramework.dll
-C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Entidades\bin\Debug\EntityFramework.xml
-C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Entidades\obj\Debug\Entidades.dll
-C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Entidades\obj\Debug\Entidades.pdb
-C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Entidades\obj\Debug\E.csprojResolveAssemblyReference.cache
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\Entidades\bin\Debug\Entidades.dll.config
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\Entidades\bin\Debug\Entidades.dll
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\Entidades\bin\Debug\Entidades.pdb
@@ -52,3 +44,13 @@ C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\Entidades\obj\De
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\Entidades\obj\Debug\E.csproj.CopyComplete
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\Entidades\obj\Debug\Entidades.dll
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\Entidades\obj\Debug\Entidades.pdb
+C:\Users\David\source\repos\Prototipo\CascaronPrograIV\Entidades\bin\Debug\Entidades.dll.config
+C:\Users\David\source\repos\Prototipo\CascaronPrograIV\Entidades\bin\Debug\Entidades.dll
+C:\Users\David\source\repos\Prototipo\CascaronPrograIV\Entidades\bin\Debug\Entidades.pdb
+C:\Users\David\source\repos\Prototipo\CascaronPrograIV\Entidades\bin\Debug\EntityFramework.dll
+C:\Users\David\source\repos\Prototipo\CascaronPrograIV\Entidades\bin\Debug\EntityFramework.xml
+C:\Users\David\source\repos\Prototipo\CascaronPrograIV\Entidades\obj\Debug\E.csprojAssemblyReference.cache
+C:\Users\David\source\repos\Prototipo\CascaronPrograIV\Entidades\obj\Debug\E.csproj.CoreCompileInputs.cache
+C:\Users\David\source\repos\Prototipo\CascaronPrograIV\Entidades\obj\Debug\E.csproj.CopyComplete
+C:\Users\David\source\repos\Prototipo\CascaronPrograIV\Entidades\obj\Debug\Entidades.dll
+C:\Users\David\source\repos\Prototipo\CascaronPrograIV\Entidades\obj\Debug\Entidades.pdb

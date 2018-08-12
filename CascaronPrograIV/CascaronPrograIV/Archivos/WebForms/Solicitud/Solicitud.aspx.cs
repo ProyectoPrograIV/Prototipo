@@ -14,13 +14,16 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
         SP_INICIO_SESION_Result sesion;
         protected void Page_Load(object sender, EventArgs e)
         {
-            ReadOnlyFields();
-            LlenarGridConsulta();
-            LlenarGridActualizar();
-            CargarLocalidad();
-            CargarRutas();
-            CargarPersonas();
-            sesion = (SP_INICIO_SESION_Result)Session["sesion"];
+            if (!IsPostBack)
+            {
+                ReadOnlyFields();
+                LlenarGridConsulta();
+                LlenarGridActualizar();
+                CargarLocalidad();
+                CargarRutas();
+                CargarPersonas();
+                sesion = (SP_INICIO_SESION_Result)Session["sesion"];
+            }
         }
 
         private void ReadOnlyFields()

@@ -22,15 +22,6 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud {
         protected global::System.Web.UI.ScriptManager ScripManagerCsharp;
         
         /// <summary>
-        /// Control Ddl_PersonasSolicitud.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList Ddl_PersonasSolicitud;
-        
-        /// <summary>
         /// Control UpdateList.
         /// </summary>
         /// <remarks>
@@ -38,6 +29,15 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdateList;
+        
+        /// <summary>
+        /// Control Ddl_PersonasSolicitud.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList Ddl_PersonasSolicitud;
         
         /// <summary>
         /// Control BtnAgregarPersona.
