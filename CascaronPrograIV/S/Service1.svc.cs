@@ -63,8 +63,21 @@ namespace S
             return Negocios.ObtenerEstados();
         }
         #endregion
-    
 
-    public SP_INICIO_SESION_Result InicioSesion(TBL_USUARIO obj) => Negocios.InicioSesion(obj);
+        #region Metodos Orden Viaticos
+
+        public List<SP_OBTENER_ORDEN_VIATICOS_Result> ObtenerOrden(OrdenDeViaticos obj)
+        {
+            return LNOrdenViaticos.ObtenerOrden(obj);
+        }
+
+        public void GenerarOrden(TBL_CABECERAORDENVIATICO obj)
+        {
+            LNOrdenViaticos.GenerarOrden(obj);
+        }
+
+        #endregion
+
+        public SP_INICIO_SESION_Result InicioSesion(TBL_USUARIO obj) => Negocios.InicioSesion(obj);
     }
 }

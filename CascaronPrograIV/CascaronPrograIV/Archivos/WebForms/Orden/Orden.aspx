@@ -72,7 +72,7 @@
             <asp:TextBox CssClass="Textbox" ID="TextBox8" runat="server" Placeholder="Hora de Salida"></asp:TextBox>
             <asp:TextBox CssClass="Textbox" ID="TextBox9" runat="server" Placeholder="Hora de Regreso"></asp:TextBox><br />
             <br />
-            <asp:Button ID="Btn_Generar" CssClass="Button" runat="server" Text="Generar" />
+            <asp:Button ID="Btn_Generar" CssClass="Button" runat="server" Text="Generar" OnClick="Btn_Generar_Click" />
         </div>
         <br />
         <br />

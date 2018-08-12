@@ -326,5 +326,14 @@ namespace Entidades
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_PERSONAS_Result>("SP_LISTAR_PERSONAS");
         }
+    
+        public virtual ObjectResult<SP_OBTENER_ORDEN_VIATICOS_Result> SP_OBTENER_ORDEN_VIATICOS(string nOMBREUSUARIO)
+        {
+            var nOMBREUSUARIOParameter = nOMBREUSUARIO != null ?
+                new ObjectParameter("NOMBREUSUARIO", nOMBREUSUARIO) :
+                new ObjectParameter("NOMBREUSUARIO", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_OBTENER_ORDEN_VIATICOS_Result>("SP_OBTENER_ORDEN_VIATICOS", nOMBREUSUARIOParameter);
+        }
     }
 }

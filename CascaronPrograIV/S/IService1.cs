@@ -32,6 +32,15 @@ namespace S
         List<SP_LISTADO_SOLICITUD_VIATICOS_Result> ObtenerListaSolicitud(ReporteXFecha obj);
         #endregion
 
+        #region Metodos Orden Viaticos
+        [OperationContract]
+        void GenerarOrden(TBL_CABECERAORDENVIATICO obj);
+        [OperationContract]
+        List<SP_OBTENER_ORDEN_VIATICOS_Result> ObtenerOrden(OrdenDeViaticos obj);
+
+        #endregion
+
+
         #region Obtener Valores de Sistema
         [OperationContract]
         List<TBL_ROLUSUARIO> ObtenerRoles();

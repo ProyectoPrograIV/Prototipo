@@ -164,6 +164,9 @@
       <Parameter Name="NOMBREUSUARIO" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="SP_LISTAR_PERSONAS" ReturnType="Collection(EmpresaPK2Model.SP_LISTAR_PERSONAS_Result)" />
+    <FunctionImport Name="SP_OBTENER_ORDEN_VIATICOS" ReturnType="Collection(EmpresaPK2Model.SP_OBTENER_ORDEN_VIATICOS_Result)">
+      <Parameter Name="NOMBREUSUARIO" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result">
     <Property Type="Int32" Name="ID_SOLICITUD" Nullable="false" />
@@ -620,5 +623,12 @@
   <ComplexType Name="SP_LISTAR_PERSONAS_Result">
     <Property Type="String" Name="ID_PERSONA" Nullable="false" MaxLength="15" />
     <Property Type="String" Name="NOMBRECOMPLETO" Nullable="false" MaxLength="82" />
+  </ComplexType>
+  <ComplexType Name="SP_OBTENER_ORDEN_VIATICOS_Result">
+    <Property Type="DateTime" Name="FECHAORDEN" Nullable="true" />
+    <Property Type="Int32" Name="ID_ORDEN" Nullable="false" />
+    <Property Type="String" Name="ID_SOLICITUD" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="NOMBREUSUARIO" Nullable="false" MaxLength="24" />
+    <Property Type="Int16" Name="ESTADOORDEN" Nullable="false" />
   </ComplexType>
 </Schema>
