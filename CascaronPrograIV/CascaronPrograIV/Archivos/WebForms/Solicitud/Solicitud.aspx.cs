@@ -220,12 +220,29 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
             Ddl_ActuRutas.SelectedIndex = Convert.ToInt32(GvActualizar.SelectedRow.Cells[10].Text);
             Ddl_ActuLocalidad.SelectedIndex = Convert.ToInt32(GvActualizar.SelectedRow.Cells[11].Text);
         }
+
         #endregion
 
         #region Metodos Verificar
 
         #endregion
 
+        protected void BtnAgregarPersona_Click(object sender, EventArgs e)
+        {
+            if (Ddl_PersonasSolicitud.SelectedValue != "null")
+            {
+                Bl_ListaPersonas.Items.Add(Ddl_PersonasSolicitud.SelectedValue + " " + Ddl_PersonasSolicitud.SelectedItem);
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Negado()", true);
+            }
+            else
+            {
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Negado()", true);
+            }
+        }
 
+        protected void Ddl_PersonasSolicitud_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            BtnAgregarPersona_Click(null ,null);
+        }
     }
 }

@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Archivos/WebForms/PaginaMaestra.Master" AutoEventWireup="true" CodeBehind="Solicitud.aspx.cs" Inherits="CascaronPrograIV.Archivos.WebForms.Solicitud.Solicitud" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <script src="../../script/jquery-3.3.1.min.js"></script>
@@ -90,72 +89,69 @@
     <div id="DivContenido">
         <asp:ScriptManager runat="server" ID="ScripManagerCsharp" EnableCdn="true" EnablePageMethods="True">
         </asp:ScriptManager>
-        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-            <ContentTemplate>
-                <div id="DivCrear">
-                    <h1 id="h1Crear" title="Click para mostrar contenido">Crear Solicitud de Viaticos</h1>
-                    <div id="InicioSolicitud" style="text-align:center">
-                        <asp:DropDownList CssClass="DDL" ID="Ddl_PersonasSolicitud" runat="server">
-                        </asp:DropDownList>
-                        <br />
-                        <br />
-                        <asp:Button CssClass="Button" ID="BtnAgregar" runat="server" Text="Agregar Persona" />
+        <div id="DivCrear">
+            <h1 id="h1Crear" title="Click para mostrar contenido">Crear Solicitud de Viaticos</h1>
+            <div id="InicioSolicitud" style="text-align: center">
+                <asp:DropDownList CssClass="DDL" ID="Ddl_PersonasSolicitud" runat="server" OnSelectedIndexChanged="Ddl_PersonasSolicitud_SelectedIndexChanged"></asp:DropDownList>
+                <asp:UpdatePanel ID="UpdateList" runat="server">
+                    <ContentTemplate>
+                        <asp:Button CssClass="Button" ID="BtnAgregarPersona" runat="server" Text="Agregar Persona" UseSubmitBehavior="true" OnClick="BtnAgregarPersona_Click" />
                         <br />
                         <asp:BulletedList CssClass="BL" ID="Bl_ListaPersonas" runat="server">
                         </asp:BulletedList>
                         <br />
-                        <asp:Button CssClass="Button" ID="BtnIniciar" runat="server" Text="Siguiente" OnClick="BtnIniciar_Click" />
-                        <br />
-                    </div>
-                    <div id="Solicitud">
-                        <asp:TextBox ID="TbxUsuario" runat="server" CssClass="Textbox" placeholder="Usuario" ReadOnly="True"></asp:TextBox>
-                        <br />
-                        <asp:TextBox CssClass="Textbox" ID="TbxFechaRegreso" runat="server" placeholder="Fecha de Regreso"></asp:TextBox>
-                        <asp:TextBox CssClass="Textbox" ID="TbxFechaSalida" runat="server" placeholder="Fecha de Salida"></asp:TextBox>
-                        <br />
-                        <asp:TextBox CssClass="Textbox" ID="TbxJustificacion" runat="server" placeholder="Justificacion"></asp:TextBox>
-                        <asp:TextBox CssClass="Textbox" ID="TbxDestino" runat="server" placeholder="Destino"></asp:TextBox>
-                        <br />
-                        <asp:TextBox CssClass="Textbox" ID="TbxHoraSalida" runat="server" placeholder="Hora de Salida"></asp:TextBox>
-                        <asp:TextBox CssClass="Textbox" ID="TbxHoraRegreso" runat="server" placeholder="Hora de Regreso"></asp:TextBox><br />
-                        <br />
-                        <asp:Button ID="Btn_SolcitudReg" CssClass="Button" runat="server" Text="Regresar" OnClick="Btn_SolcitudReg_Click" />
-                        <asp:Button ID="Btn_SolicitudSig" CssClass="Button" runat="server" Text="Siguiente" OnClick="Btn_SolicitudSig_Click"/>
-                        <div id="DivValidaciones">
-                            <asp:Label ID="Validaciones" runat="server"></asp:Label><br />
-                            <asp:RegularExpressionValidator ID="ValidadorFechaSalida" runat="server" ErrorMessage="Fecha de salida incorrecta, forma correcta ##/##/####" ControlToValidate="TbxFechaSalida" ValidationExpression="^\d{2}(/)\d{2}(/)\d{4}$"></asp:RegularExpressionValidator><br />
-                            <asp:RegularExpressionValidator ID="ValidadorFechaRegreso" runat="server" ErrorMessage="Fecha de regreso incorrecta, forma correcta ##/##/####" ControlToValidate="TbxFechaRegreso" ValidationExpression="^\d{2}(/)\d{2}(/)\d{4}$"></asp:RegularExpressionValidator><br />
-                        </div>
-                    </div>
-
-                    <div id="DetalleViatico">
-                        <br />
-                        <asp:TextBox CssClass="Textbox" ID="Tbx_CantDes" runat="server" placeholder="Cantidad de Desayunos"></asp:TextBox>
-                        <asp:TextBox CssClass="Textbox" ID="Tbx_CantAlm" runat="server" placeholder="Cantidad de Almuerzos"></asp:TextBox>
-                        <asp:TextBox CssClass="Textbox" ID="Tbx_CantCenas" runat="server" placeholder="Cantidad de Cenas"></asp:TextBox>
-                        <asp:TextBox CssClass="Textbox" ID="Tbx_CantPasaj" runat="server" placeholder="Cantidad de Pasajes"></asp:TextBox>
-                        <br />
-                        <asp:TextBox CssClass="Textbox" ID="Tbx_MontDes" runat="server" placeholder="Monto Total de Desayunos"></asp:TextBox>
-                        <asp:TextBox CssClass="Textbox" ID="Tbx_MontAlm" runat="server" placeholder="Monto Total de Almuerzos"></asp:TextBox>
-                        <asp:TextBox CssClass="Textbox" ID="Tbx_MontCenas" runat="server" placeholder="Monto Total de Cenas"></asp:TextBox>
-                        <asp:TextBox CssClass="Textbox" ID="Tbx_MontPasaj" runat="server" placeholder="Monto Total de Pasajes"></asp:TextBox>
-                        <br />
-                        <asp:DropDownList CssClass="DDL" ID="Ddl_Ruta" runat="server"></asp:DropDownList>
-                        <br />
-                        <br />
-                        <asp:DropDownList CssClass="DDL" ID="Ddl_Hospedaje" runat="server"></asp:DropDownList>
-                        <br />
-                        <br />
-                        <br />
-                        <asp:Button ID="BtnDetalleReg" CssClass="Button" runat="server" Text="Regresar" OnClick="BtnDetalleReg_Click" />
-                        <asp:Button ID="BtnGuardar" CssClass="Button" runat="server" Text="Guardar" />
-                        <div id="DivValidaciones2">
-                            <asp:Label ID="Label1" runat="server"></asp:Label><br />
-                        </div>
-                    </div>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+                <asp:Button CssClass="Button" ID="BtnIniciar" runat="server" Text="Siguiente" OnClick="BtnIniciar_Click" />
+                <br />
+            </div>
+            <div id="Solicitud">
+                <asp:TextBox ID="TbxUsuario" runat="server" CssClass="Textbox" placeholder="Usuario" ReadOnly="True"></asp:TextBox>
+                <br />
+                <asp:TextBox CssClass="Textbox" ID="TbxFechaRegreso" runat="server" placeholder="Fecha de Regreso"></asp:TextBox>
+                <asp:TextBox CssClass="Textbox" ID="TbxFechaSalida" runat="server" placeholder="Fecha de Salida"></asp:TextBox>
+                <br />
+                <asp:TextBox CssClass="Textbox" ID="TbxJustificacion" runat="server" placeholder="Justificacion"></asp:TextBox>
+                <asp:TextBox CssClass="Textbox" ID="TbxDestino" runat="server" placeholder="Destino"></asp:TextBox>
+                <br />
+                <asp:TextBox CssClass="Textbox" ID="TbxHoraSalida" runat="server" placeholder="Hora de Salida"></asp:TextBox>
+                <asp:TextBox CssClass="Textbox" ID="TbxHoraRegreso" runat="server" placeholder="Hora de Regreso"></asp:TextBox><br />
+                <br />
+                <asp:Button ID="Btn_SolcitudReg" CssClass="Button" runat="server" Text="Regresar" OnClick="Btn_SolcitudReg_Click" />
+                <asp:Button ID="Btn_SolicitudSig" CssClass="Button" runat="server" Text="Siguiente" OnClick="Btn_SolicitudSig_Click" />
+                <div id="DivValidaciones">
+                    <asp:Label ID="Validaciones" runat="server"></asp:Label><br />
+                    <asp:RegularExpressionValidator ID="ValidadorFechaSalida" runat="server" ErrorMessage="Fecha de salida incorrecta, forma correcta ##/##/####" ControlToValidate="TbxFechaSalida" ValidationExpression="^\d{2}(/)\d{2}(/)\d{4}$"></asp:RegularExpressionValidator><br />
+                    <asp:RegularExpressionValidator ID="ValidadorFechaRegreso" runat="server" ErrorMessage="Fecha de regreso incorrecta, forma correcta ##/##/####" ControlToValidate="TbxFechaRegreso" ValidationExpression="^\d{2}(/)\d{2}(/)\d{4}$"></asp:RegularExpressionValidator><br />
                 </div>
-            </ContentTemplate>
-        </asp:UpdatePanel>
+            </div>
+
+            <div id="DetalleViatico">
+                <br />
+                <asp:TextBox CssClass="Textbox" ID="Tbx_CantDes" runat="server" placeholder="Cantidad de Desayunos"></asp:TextBox>
+                <asp:TextBox CssClass="Textbox" ID="Tbx_CantAlm" runat="server" placeholder="Cantidad de Almuerzos"></asp:TextBox>
+                <asp:TextBox CssClass="Textbox" ID="Tbx_CantCenas" runat="server" placeholder="Cantidad de Cenas"></asp:TextBox>
+                <asp:TextBox CssClass="Textbox" ID="Tbx_CantPasaj" runat="server" placeholder="Cantidad de Pasajes"></asp:TextBox>
+                <br />
+                <asp:TextBox CssClass="Textbox" ID="Tbx_MontDes" runat="server" placeholder="Monto Total de Desayunos"></asp:TextBox>
+                <asp:TextBox CssClass="Textbox" ID="Tbx_MontAlm" runat="server" placeholder="Monto Total de Almuerzos"></asp:TextBox>
+                <asp:TextBox CssClass="Textbox" ID="Tbx_MontCenas" runat="server" placeholder="Monto Total de Cenas"></asp:TextBox>
+                <asp:TextBox CssClass="Textbox" ID="Tbx_MontPasaj" runat="server" placeholder="Monto Total de Pasajes"></asp:TextBox>
+                <br />
+                <asp:DropDownList CssClass="DDL" ID="Ddl_Ruta" runat="server"></asp:DropDownList>
+                <br />
+                <br />
+                <asp:DropDownList CssClass="DDL" ID="Ddl_Hospedaje" runat="server"></asp:DropDownList>
+                <br />
+                <br />
+                <br />
+                <asp:Button ID="BtnDetalleReg" CssClass="Button" runat="server" Text="Regresar" OnClick="BtnDetalleReg_Click" />
+                <asp:Button ID="BtnGuardar" CssClass="Button" runat="server" Text="Guardar" />
+                <div id="DivValidaciones2">
+                    <asp:Label ID="Label1" runat="server"></asp:Label><br />
+                </div>
+            </div>
+        </div>
         <br />
         <br />
         <div id="DivConsultar">
