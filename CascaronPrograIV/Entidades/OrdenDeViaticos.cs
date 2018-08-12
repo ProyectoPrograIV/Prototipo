@@ -9,8 +9,10 @@ namespace Entidades
     public class OrdenDeViaticos
     {
         private string nomUsuario;
-        
 
+        public string NomUsuario { get => nomUsuario; set => nomUsuario = value; }
+
+        /* get set NO
         public string NomUsuario
         {
             get
@@ -22,6 +24,6 @@ namespace Entidades
             {
                 nomUsuario = value;
             }
-        }
+        }*/
     }
 }

@@ -48,7 +48,7 @@ namespace AD
             {
                 contexto = new EmpresaPK2Entities();
 
-                contexto.pa_InsertarUsuario(usuario.nomUsuario, usuario.pass, usuario.activo);
+                //contexto.pa_InsertarUsuario(usuario.nomUsuario, usuario.pass, usuario.activo);
             }
             catch (Exception ex)
             {

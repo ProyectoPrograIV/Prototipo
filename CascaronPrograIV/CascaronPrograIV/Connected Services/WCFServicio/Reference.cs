@@ -8,6 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using Entidades;
+
 namespace CascaronPrograIV.WCFServicio {
     
     
@@ -51,12 +53,21 @@ namespace CascaronPrograIV.WCFServicio {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerListaOrden", ReplyAction="http://tempuri.org/IService1/ObtenerListaOrdenResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTADO_ORDEN_VIATICOS_Result>> ObtenerListaOrdenAsync(Entidades.ReporteXFecha obj);
         
+
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerListaSolicitud", ReplyAction="http://tempuri.org/IService1/ObtenerListaSolicitudResponse")]
         System.Collections.Generic.List<Entidades.SP_LISTADO_SOLICITUD_VIATICOS_Result> ObtenerListaSolicitud(Entidades.ReporteXFecha obj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerListaSolicitud", ReplyAction="http://tempuri.org/IService1/ObtenerListaSolicitudResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTADO_SOLICITUD_VIATICOS_Result>> ObtenerListaSolicitudAsync(Entidades.ReporteXFecha obj);
-        
+
+        /*SP_OBTENER_ORDEN_VIATICOS_Result ObtenerOrden(OrdenDeViaticos obj)
+        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IService1/ObtenerOrden", ReplyAction = "http://tempuri.org/IService1/ObtenerOrdenResponse")]
+        System.Collections.Generic.List<Entidades.SP_OBTENER_ORDEN_VIATICOS_Result> ObtenerOrden(Entidades.OrdenDeViaticos obj);
+
+        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IService1/ObtenerListaSolicitud", ReplyAction = "http://tempuri.org/IService1/ObtenerListaSolicitudResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades./SP_OBTENER_ORDEN_VIATICOS_Result>> ObtenerOrdenAsync(Entidades.OrdenDeViaticos obj);
+        */
+
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerRoles", ReplyAction="http://tempuri.org/IService1/ObtenerRolesResponse")]
         System.Collections.Generic.List<Entidades.TBL_ROLUSUARIO> ObtenerRoles();
         
@@ -145,6 +156,7 @@ namespace CascaronPrograIV.WCFServicio {
             return base.Channel.ObtenerListaOrdenAsync(obj);
         }
         
+
         public System.Collections.Generic.List<Entidades.SP_LISTADO_SOLICITUD_VIATICOS_Result> ObtenerListaSolicitud(Entidades.ReporteXFecha obj) {
             return base.Channel.ObtenerListaSolicitud(obj);
         }
@@ -152,7 +164,17 @@ namespace CascaronPrograIV.WCFServicio {
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTADO_SOLICITUD_VIATICOS_Result>> ObtenerListaSolicitudAsync(Entidades.ReporteXFecha obj) {
             return base.Channel.ObtenerListaSolicitudAsync(obj);
         }
-        
+
+        /*public System.Collections.Generic.List<Entidades.SP_OBTENER_ORDEN_VIATICOS_Result> ObtenerOrden(Entidades.OrdenDeViaticos obj)
+        {
+            return base.Channel.ObtenerOrden(obj);
+        }
+
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_OBTENER_ORDEN_VIATICOS_Result>> ObtenerOrdenAsync(Entidades.OrdenDeViaticos obj)
+        {
+            return base.Channel.OrdenDeViaticosAsync(obj);
+        }*/
+
         public System.Collections.Generic.List<Entidades.TBL_ROLUSUARIO> ObtenerRoles() {
             return base.Channel.ObtenerRoles();
         }

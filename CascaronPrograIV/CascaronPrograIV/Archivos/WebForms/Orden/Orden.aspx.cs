@@ -15,7 +15,25 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
         {
             if (!IsPostBack)
             {
+                //GvConsultarSolicitud
+            }
+        }
 
+        private void CargarUsuarios()
+        {
+            try
+            {
+                //List<TBL_CABECERAORDENVIATICO> lista = ConexxServicios.ConexxServicios.ObtenerUsuarios();
+                //ViewState["lstUsuarios"] = lista;
+
+                this.GvConsultarSolicitud.DataSource = null;
+                this.GvConsultarSolicitud.DataBind();
+                //this.GvConsultarSolicitud.DataSource = lista;
+                this.GvConsultarSolicitud.DataBind();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
 

@@ -77,6 +77,8 @@ C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\bin\AD.pdb
 C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.csproj.CopyComplete
 C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.dll
 C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.pdb
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.csprojAssemblyReference.cache
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.csproj.CoreCompileInputs.cache
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\bin\S.dll.config
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\bin\S.dll
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\bin\S.pdb
@@ -89,8 +91,6 @@ C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\bin\Entidades.
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\bin\LN.pdb
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\bin\EntityFramework.xml
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\bin\AD.pdb
-C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.csprojAssemblyReference.cache
-C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.csproj.CoreCompileInputs.cache
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.csproj.CopyComplete
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.dll
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.pdb
