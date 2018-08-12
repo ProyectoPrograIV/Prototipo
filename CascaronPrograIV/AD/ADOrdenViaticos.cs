@@ -41,5 +41,29 @@ namespace AD
 
             return lista;
         }
+
+        public static void GenerarOrden(TBL_CABECERAORDENVIATICO obj)
+        {
+            try
+            {
+                contexto = new EmpresaPK2Entities();
+
+                contexto.pa_InsertarUsuario(usuario.nomUsuario, usuario.pass, usuario.activo);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (contexto != null)
+                {
+                    contexto.Dispose();
+                }
+                contexto = null;
+            }
+        }
+
+
     }
 }

@@ -13,10 +13,15 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
 
+            }
         }
 
-        
+        protected void Btn_Generar_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
