@@ -146,7 +146,7 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
             Ddl_Ruta.DataBind();
             Ddl_Ruta.Items.Insert(0, new ListItem("Seleccione una ruta", "null"));
         }
-        protected void BtnAgregarPersona_Click(object sender, EventArgs e)
+        protected void BtnAgregarPersona_Click(object sender, EventArgs e)//Evento para boton agregar que agrega una persona que este seleccionada en el combobox
         {
             if (Ddl_PersonasSolicitud.SelectedValue != "null")
             {
@@ -187,8 +187,8 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
                 ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Negado()", true);
             }
 
-        }//Evento para boton agregar que agrega una persona que este seleccionada en el combobox
-        private Boolean ComprobarListaPersonas()
+        }
+        private Boolean ComprobarListaPersonas()//Comprueba que la ppersona no este agregada.
         {
             Boolean Respuesta = false;
             if (dt != null)
@@ -211,7 +211,7 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
             {
                 return Respuesta;
             }
-        }//Comprueba que la ppersona no este agregada.
+        }
         protected void BtnGuardar_Click(object sender, EventArgs e)
         {
 
