@@ -18,12 +18,13 @@
                 }
             });
             $('#LiViaticos').click(function () {
-                 $('#Div1').hide();
+
+                $('#__VIEWSTATE').val('1')
+                $('#Div1').hide();
                 $('#Div1').toggle(400);
                 $('#h1TituloDiv').text('Listado Viáticos')
                 $("#<%=btnBuscarViaticos.ClientID%>").val('Buscar Viaticos');
 
-               $("#<%=btnBuscarViaticos.ClientID%>").attr('value','1');
                 $('#Div2').hide();
                 $('#Div3').hide();
                 $('#Div4').hide();
@@ -31,31 +32,31 @@
                 $('#Div6').hide();
             });
             $('#LiSolicitudes').click(function () {
+                $('#__VIEWSTATE').val('2')
                 $('#h1TituloDiv').text('Listado Solicitudes')
                 $('#Div1').hide();
-                 $('#Div1').toggle(400);
-                 $("#<%=btnBuscarViaticos.ClientID%>").val('Buscar Solicitudes');
+                $('#Div1').toggle(400);
+                $("#<%=btnBuscarViaticos.ClientID%>").val('Buscar Solicitudes');
 
-                $("#<%=btnBuscarViaticos.ClientID%>").attr('value','2');
-     
+
                 $('#Div3').hide();
                 $('#Div4').hide();
                 $('#Div5').hide();
                 $('#Div6').hide();
             });
             $('#LiLiquidaciones').click(function () {
-               // $('#Div1').hide();
-               // $('#Div2').hide();
+                $('#__VIEWSTATE').val('3')
+                // $('#Div1').hide();
+                // $('#Div2').hide();
                 //$('#Div3').toggle(400);
-                
+
                 $('#h1TituloDiv').text('Listado Liquidaciones')
-                 $('#Div1').hide();
+                $('#Div1').hide();
                 $('#Div1').toggle(400);
 
-                 $("#<%=btnBuscarViaticos.ClientID%>").val('Buscar Liquidaciones');
+                $("#<%=btnBuscarViaticos.ClientID%>").val('Buscar Liquidaciones');
 
-               $("#<%=btnBuscarViaticos.ClientID%>").attr('value','3');
-     
+
                 $('#Div4').hide();
                 $('#Div5').hide();
                 $('#Div6').hide();
@@ -127,20 +128,20 @@
             <div class="Fecha">
                 <h3>Fecha Inicial</h3>
                 <asp:TextBox CssClass="TbxFecha" ID="txtFechaInicial" runat="server" TextMode="Date"></asp:TextBox>
-                   
+
             </div>
-               <asp:RequiredFieldValidator ID="RFV1" runat="server" ErrorMessage="Debe llenar este espacio" ControlToValidate="txtFechaInicial" ForeColor="Red"></asp:RequiredFieldValidator>
-      
+            <asp:RequiredFieldValidator ID="RFV1" runat="server" ErrorMessage="Debe llenar este espacio" ControlToValidate="txtFechaInicial" ForeColor="Red"></asp:RequiredFieldValidator>
+
             <div class="Fecha">
                 <h3>Fecha Final</h3>
-                <asp:TextBox CssClass="TbxFecha" ID="txtFechaFinal" runat="server" TextMode="Date" ></asp:TextBox>
+                <asp:TextBox CssClass="TbxFecha" ID="txtFechaFinal" runat="server" TextMode="Date"></asp:TextBox>
 
-                
+
             </div>
             <asp:RequiredFieldValidator ID="RFV2" runat="server" ErrorMessage="Debe llenar este espacio" ControlToValidate="txtFechaFinal" ForeColor="Red"></asp:RequiredFieldValidator>
-      
+
             <br />
-            <asp:Button CssClass="Button" ID="btnBuscarViaticos" runat="server" Text="Buscar Viaticos" OnClick="btnBuscar_Click"/>
+            <asp:Button CssClass="Button" ID="btnBuscarViaticos" runat="server" Text="Buscar Viaticos" OnClick="btnBuscar_Click" />
             <br />
             <br />
             <asp:GridView CssClass="GridView" ID="gvViaticos" runat="server" AutoGenerateColumns="true" CellPadding="4" ForeColor="#333333" GridLines="None">

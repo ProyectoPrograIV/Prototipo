@@ -12,14 +12,21 @@ namespace CascaronPrograIV.Archivos.WebForms.Reportes
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+            //Page.ClientScript.RegisterHiddenField("vCode", ((int) ViewState["TipoReporte"]).ToString());
             if (!IsPostBack)
             {
-
+                ViewState["TipoReporte"] = 1;
             }
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
+
+            int x = Convert.ToInt32(ViewState["TipoReporte"]);
+
+            CompletarConsulta(x);
+            /*
             switch (btnBuscarViaticos.Text)
             {                
                 case "Buscar Viaticos":
@@ -31,9 +38,9 @@ namespace CascaronPrograIV.Archivos.WebForms.Reportes
                 case "Buscar Liquidaciones":
                     CompletarConsulta(3);
                     break;
-             
+           
 
-            }
+            }  */
 
             /*
             SP_INICIO_SESION_Result sesion = (SP_INICIO_SESION_Result)Session["sesion"];
