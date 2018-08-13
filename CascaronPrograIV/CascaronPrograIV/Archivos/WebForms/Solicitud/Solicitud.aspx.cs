@@ -12,6 +12,7 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
     public partial class Solicitud : System.Web.UI.Page
     {
         SP_INICIO_SESION_Result sesion;
+        static DataTable dt;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -43,7 +44,7 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
             }
             else
             {
-
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Inicio()", true);
             }
         }
         
@@ -54,32 +55,18 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
 
         protected void BtnIniciar_Click(object sender, EventArgs e)
         {
-            if (Ddl_PersonasSolicitud.SelectedIndex != 0)
-            {
-                if (Convert.ToInt16(0) > 0)
-                {
-                    TbxUsuario.Text = sesion.NOMBREUSUARIO.ToString();
-                    ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Inicio()", true);
-                }
-                else
-                {
-                    ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Negado()", true);
-                }
-            }
-            else
-            {
-                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Negado()", true);
-            }
+            TbxUsuario.Text = sesion.NOMBREUSUARIO.ToString();
+            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Inicio()", true);
         }
 
         protected void Btn_SolcitudReg_Click(object sender, EventArgs e)
         {
-            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Inicio()", true);
+            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Negado()", true);
         }
 
         protected void BtnDetalleReg_Click(object sender, EventArgs e)
         {
-            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Solicitud()", true);
+            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Inicio()", true);
         }
 
         #region Metodos Crear
@@ -112,6 +99,21 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
             Obj_Solicitud.NOMBREUSUARIO = TbxUsuario.Text;
             return Obj_Solicitud;
         }
+        /*private TBL_DETALLESOLICITUDVIATICOS AsignarDetalles()
+        {
+            TBL_DETALLESOLICITUDVIATICOS Obj_DetalleViaticos;
+            foreach (DataRow Persona in GvPersonas.Rows)
+            {
+                Obj_DetalleViaticos = new TBL_DETALLESOLICITUDVIATICOS();
+                Obj_DetalleViaticos.CANTIDADDESAYUNO = Convert.ToInt16(Tbx_CantDes.Text);
+                Obj_DetalleViaticos.CANTIDADALMUERZO = Convert.ToInt16(Tbx_CantAlm.Text);
+                Obj_DetalleViaticos.CANTIDADCENA = Convert.ToInt16(Tbx_CantCenas.Text);
+                Obj_DetalleViaticos.CANTIDADPASAJE = Convert.ToInt16(Tbx_CantPasaj.Text);
+                Obj_DetalleViaticos.CANTIDADVIATICOS = Convert.ToInt16(Obj_DetalleViaticos.CANTIDADDESAYUNO + Obj_DetalleViaticos.CANTIDADALMUERZO + Obj_DetalleViaticos.CANTIDADCENA + Obj_DetalleViaticos.CANTIDADPASAJE);
+                Obj_DetalleViaticos.CODIGORUTA = Ddl_Ruta.SelectedValue.ToString();
+                Obj_DetalleViaticos.ID_PERSONA = Persona[0].ToString();
+            }
+        }*/
         private void CargarPersonas()
         {
             WCFSolicitud.SolicitudClient Cliente = new WCFSolicitud.SolicitudClient();
@@ -143,6 +145,77 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
             Ddl_Ruta.DataTextField = "DESCRIPCIONRUTA";
             Ddl_Ruta.DataBind();
             Ddl_Ruta.Items.Insert(0, new ListItem("Seleccione una ruta", "null"));
+        }
+
+        protected void BtnAgregarPersona_Click(object sender, EventArgs e)
+        {
+            if (Ddl_PersonasSolicitud.SelectedValue != "null")
+            {
+                if (ComprobarListaPersonas() == false)
+                {
+                    if (dt != null)
+                    {
+                        DataTable dt1 = dt;
+                        DataRow Row = dt1.NewRow();
+                        Row[0] = Ddl_PersonasSolicitud.SelectedValue.ToString();
+                        Row[1] = Ddl_PersonasSolicitud.SelectedItem.ToString();
+                        dt.Rows.Add(Row);
+                        GvPersonas.DataSource = dt1;
+                        GvPersonas.DataBind();
+                        ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Negado()", true);
+                    }
+                    else
+                    {
+                        dt = new DataTable();
+                        dt.Columns.Add(new DataColumn("Idetificacion", typeof(string)));
+                        dt.Columns.Add(new DataColumn("Nombre Completo", typeof(string)));
+                        DataRow Row = dt.NewRow();
+                        Row[0] = Ddl_PersonasSolicitud.SelectedValue.ToString();
+                        Row[1] = Ddl_PersonasSolicitud.SelectedItem.ToString();
+                        dt.Rows.Add(Row);
+                        GvPersonas.DataSource = dt;
+                        GvPersonas.DataBind();
+                        ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Negado()", true);
+                    }
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Negado()", true);
+                }
+            }
+            else
+            {
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Negado()", true);
+            }
+
+        }
+        private Boolean ComprobarListaPersonas()
+        {
+            Boolean Respuesta = false;
+            if (dt != null)
+            {
+                foreach (DataRow Persona in dt.Rows)
+                {
+                    if (Persona[0].ToString() == Ddl_PersonasSolicitud.SelectedValue.ToString())
+                    {
+                        Respuesta = true;
+                        return Respuesta;
+                    }
+                    else
+                    {
+                        Respuesta = false;
+                    }
+                }
+                return Respuesta;
+            }
+            else
+            {
+                return Respuesta;
+            }
+        }
+        protected void BtnGuardar_Click(object sender, EventArgs e)
+        {
+
         }
         #endregion
 
@@ -180,6 +253,7 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
             List<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> ListaSolicitudes = Cliente.ListarSolicitudes(Obj_Solicitud);
             return ListaSolicitudes;
         }
+        
         #endregion
 
         #region Metodos Actualizar
@@ -229,23 +303,5 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
         #region Metodos Verificar
 
         #endregion
-
-        protected void BtnAgregarPersona_Click(object sender, EventArgs e)
-        {
-            if (Ddl_PersonasSolicitud.SelectedValue != "null")
-            {
-                Bl_ListaPersonas.Items.Add(Ddl_PersonasSolicitud.SelectedValue + " " + Ddl_PersonasSolicitud.SelectedItem);
-                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Negado()", true);
-            }
-            else
-            {
-                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Negado()", true);
-            }
-        }
-
-        protected void Ddl_PersonasSolicitud_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            BtnAgregarPersona_Click(null ,null);
-        }
     }
 }

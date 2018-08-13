@@ -93,12 +93,23 @@
             <ContentTemplate>
                 <div id="DivCrear">
                     <h1 id="h1Crear" title="Click para mostrar contenido">Crear Solicitud de Viaticos</h1>
-                    <div id="InicioSolicitud" style="text-align: center">
+                    <div id="InicioSolicitud" style="text-align:center">
                         <asp:DropDownList CssClass="DDL" ID="Ddl_PersonasSolicitud" runat="server"></asp:DropDownList>
                         <asp:Button CssClass="Button" ID="BtnAgregarPersona" runat="server" Text="Agregar Persona" OnClick="BtnAgregarPersona_Click" />
                         <br />
-                        <asp:BulletedList CssClass="BL" ID="Bl_ListaPersonas" runat="server">
-                        </asp:BulletedList>
+                        <asp:GridView CssClass="GvPersonas" ID="GvPersonas" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" ShowHeaderWhenEmpty="True">
+                            <AlternatingRowStyle BackColor="White" />
+                            <EditRowStyle BackColor="#2461BF" />
+                            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                            <RowStyle BackColor="#EFF3FB" />
+                            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                            <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                            <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                            <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                            <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                        </asp:GridView>
                         <br />
                         <asp:Button CssClass="Button" ID="BtnIniciar" runat="server" Text="Siguiente" OnClick="BtnIniciar_Click" />
                         <br />
@@ -144,7 +155,7 @@
                         <br />
                         <br />
                         <asp:Button ID="BtnDetalleReg" CssClass="Button" runat="server" Text="Regresar" OnClick="BtnDetalleReg_Click" />
-                        <asp:Button ID="BtnGuardar" CssClass="Button" runat="server" Text="Guardar" />
+                        <asp:Button ID="BtnGuardar" CssClass="Button" runat="server" Text="Guardar" OnClick="BtnGuardar_Click" />
                         <div id="DivValidaciones2">
                             <asp:Label ID="Label1" runat="server"></asp:Label><br />
                         </div>
