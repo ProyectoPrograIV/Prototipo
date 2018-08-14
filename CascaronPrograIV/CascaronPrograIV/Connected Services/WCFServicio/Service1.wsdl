@@ -49,6 +49,18 @@
   <wsdl:message name="IService1_ObtenerListaSolicitud_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerListaSolicitudResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_GenerarOrden_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerarOrden" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GenerarOrden_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerarOrdenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ObtenerOrden_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerOrden" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ObtenerOrden_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerOrdenResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_ObtenerRoles_InputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerRoles" />
   </wsdl:message>
@@ -89,6 +101,14 @@
     <wsdl:operation name="ObtenerListaSolicitud">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ObtenerListaSolicitud" message="tns:IService1_ObtenerListaSolicitud_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/ObtenerListaSolicitudResponse" message="tns:IService1_ObtenerListaSolicitud_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerarOrden">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GenerarOrden" message="tns:IService1_GenerarOrden_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GenerarOrdenResponse" message="tns:IService1_GenerarOrden_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerOrden">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ObtenerOrden" message="tns:IService1_ObtenerOrden_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ObtenerOrdenResponse" message="tns:IService1_ObtenerOrden_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ObtenerRoles">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ObtenerRoles" message="tns:IService1_ObtenerRoles_InputMessage" />
@@ -157,6 +177,24 @@
     </wsdl:operation>
     <wsdl:operation name="ObtenerListaSolicitud">
       <soap:operation soapAction="http://tempuri.org/IService1/ObtenerListaSolicitud" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerarOrden">
+      <soap:operation soapAction="http://tempuri.org/IService1/GenerarOrden" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerOrden">
+      <soap:operation soapAction="http://tempuri.org/IService1/ObtenerOrden" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

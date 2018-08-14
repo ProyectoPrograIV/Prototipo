@@ -13,6 +13,60 @@ namespace CascaronPrograIV.Archivos.WebForms.Reportes {
     public partial class Reportes {
         
         /// <summary>
+        /// lbViaticos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbViaticos;
+        
+        /// <summary>
+        /// lbSolicitudes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbSolicitudes;
+        
+        /// <summary>
+        /// lbLiquidaciones control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbLiquidaciones;
+        
+        /// <summary>
+        /// lbSolicitudesPendientes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbSolicitudesPendientes;
+        
+        /// <summary>
+        /// lbLiquidacionesPendientes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbLiquidacionesPendientes;
+        
+        /// <summary>
+        /// lbLiquidacionesPendAprobar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbLiquidacionesPendAprobar;
+        
+        /// <summary>
         /// txtFechaInicial control.
         /// </summary>
         /// <remarks>
@@ -47,6 +101,15 @@ namespace CascaronPrograIV.Archivos.WebForms.Reportes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RFV2;
+        
+        /// <summary>
+        /// ddlEstados control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlEstados;
         
         /// <summary>
         /// btnBuscarViaticos control.

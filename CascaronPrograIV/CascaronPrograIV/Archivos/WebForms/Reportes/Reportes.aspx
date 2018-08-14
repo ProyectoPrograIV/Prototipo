@@ -10,7 +10,7 @@
             $('#Toggle').click(function () {
                 if ($('#DivSubMenu').is(":visible")) {
                     $('#DivSubMenu').toggle(100);
-                    $('#DivContenido').css("width", "100%")
+                    $('#DivContenido').css("width", "100%");
                 }
                 else if ($('#DivSubMenu').is(":hidden")) {
                     $('#DivSubMenu').toggle(100);
@@ -19,10 +19,10 @@
             });
             $('#LiViaticos').click(function () {
 
-                $('#__VIEWSTATE').val('1')
+                //  $('#__VIEWSTATE').val('1');
                 $('#Div1').hide();
                 $('#Div1').toggle(400);
-                $('#h1TituloDiv').text('Listado Viáticos')
+                $('#h1TituloDiv').text('Listado Viáticos');
                 $("#<%=btnBuscarViaticos.ClientID%>").val('Buscar Viaticos');
 
                 $('#Div2').hide();
@@ -32,8 +32,8 @@
                 $('#Div6').hide();
             });
             $('#LiSolicitudes').click(function () {
-                $('#__VIEWSTATE').val('2')
-                $('#h1TituloDiv').text('Listado Solicitudes')
+                //   $('#__VIEWSTATE').val('2');
+                $('#h1TituloDiv').text('Listado Solicitudes');
                 $('#Div1').hide();
                 $('#Div1').toggle(400);
                 $("#<%=btnBuscarViaticos.ClientID%>").val('Buscar Solicitudes');
@@ -45,12 +45,12 @@
                 $('#Div6').hide();
             });
             $('#LiLiquidaciones').click(function () {
-                $('#__VIEWSTATE').val('3')
+                //  $('#__VIEWSTATE').val('3');
                 // $('#Div1').hide();
                 // $('#Div2').hide();
                 //$('#Div3').toggle(400);
 
-                $('#h1TituloDiv').text('Listado Liquidaciones')
+                $('#h1TituloDiv').text('Listado Liquidaciones');
                 $('#Div1').hide();
                 $('#Div1').toggle(400);
 
@@ -103,22 +103,23 @@
         <h2>Opciones</h2>
         <ul id="SubMenu">
             <li class="Item" id="LiViaticos">
-                <a class="Link" href="#">Listado de Viaticos</a>
+                <asp:LinkButton ID="lbViaticos" runat="server" class="Link">Listado de Viaticos</asp:LinkButton>
             </li>
+
             <li class="Item" id="LiSolicitudes">
-                <a class="Link" href="#">Listado de Solicitudes</a>
+                <asp:LinkButton ID="lbSolicitudes" runat="server" class="Link">Listado de Solicitudes</asp:LinkButton>
             </li>
             <li class="Item" id="LiLiquidaciones">
-                <a class="Link" href="#">Listado de Liquidaciones</a>
+                <asp:LinkButton ID="lbLiquidaciones" runat="server" class="Link">Listado de Liquidaciones</asp:LinkButton>
             </li>
             <li class="Item" id="LiSolicitudPendiente">
-                <a class="Link" href="#">Solicitudes Pendientes de Aprobar</a>
+                <asp:LinkButton ID="lbSolicitudesPendientes" runat="server" class="Link">Listado de Liquidaciones</asp:LinkButton>
             </li>
             <li class="Item" id="LiLiquidacionTramitar">
-                <a class="Link" href="#">Liquidaciones Pendientes de Tramitar</a>
+                <asp:LinkButton ID="lbLiquidacionesPendientes" runat="server" class="Link">Listado de Liquidaciones</asp:LinkButton>
             </li>
             <li class="Item" id="LiLiquidacionesAprobar">
-                <a class="Link" href="#">Liquidaciones Pendientes de Aprobar</a>
+                <asp:LinkButton ID="lbLiquidacionesPendAprobar" runat="server" class="Link">Listado de Liquidaciones</asp:LinkButton>
             </li>
         </ul>
     </div>
@@ -129,19 +130,24 @@
                 <h3>Fecha Inicial</h3>
                 <asp:TextBox CssClass="TbxFecha" ID="txtFechaInicial" runat="server" TextMode="Date"></asp:TextBox>
 
+
+
             </div>
             <asp:RequiredFieldValidator ID="RFV1" runat="server" ErrorMessage="Debe llenar este espacio" ControlToValidate="txtFechaInicial" ForeColor="Red"></asp:RequiredFieldValidator>
 
             <div class="Fecha">
                 <h3>Fecha Final</h3>
                 <asp:TextBox CssClass="TbxFecha" ID="txtFechaFinal" runat="server" TextMode="Date"></asp:TextBox>
-
-
             </div>
             <asp:RequiredFieldValidator ID="RFV2" runat="server" ErrorMessage="Debe llenar este espacio" ControlToValidate="txtFechaFinal" ForeColor="Red"></asp:RequiredFieldValidator>
 
+            <div class="Fecha">
+                <h3>Filtrar por Estado</h3>
+                <asp:DropDownList ID="ddlEstados" runat="server" AutoPostBack="true" OnTextChanged="ddlEstados_TextChanged"></asp:DropDownList>
+            </div>
+
             <br />
-            <asp:Button CssClass="Button" ID="btnBuscarViaticos" runat="server" Text="Buscar Viaticos" OnClick="btnBuscar_Click" />
+            <asp:Button CssClass="Button" ID="btnBuscarViaticos" UseSubmitBehavior="false" runat="server" Text="Buscar Viaticos" OnClick="btnBuscar_Click" />
             <br />
             <br />
             <asp:GridView CssClass="GridView" ID="gvViaticos" runat="server" AutoGenerateColumns="true" CellPadding="4" ForeColor="#333333" GridLines="None">

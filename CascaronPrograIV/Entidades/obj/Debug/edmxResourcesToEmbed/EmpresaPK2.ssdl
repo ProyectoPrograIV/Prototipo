@@ -378,6 +378,7 @@
     <Parameter Name="ClaveAcceso" Type="nvarchar" Mode="In" />
   </Function>
   <Function Name="SP_LISTAR_PERSONAS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_SEGURIDAD" />
+  <Function Name="SP_OBTENER_ESTADOS_ACTIVOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_SEGURIDAD" />
   <Function Name="SP_ACTUALIZAR_SOLICITUDES_FUNCIONARIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS">
     <Parameter Name="IDSOLICITUD" Type="int" Mode="In" />
     <Parameter Name="NOMBREUSUARIO" Type="nvarchar" Mode="In" />

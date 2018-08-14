@@ -100,6 +100,9 @@
     <Content Include="Archivos\WebForms\RegistroUsuario.aspx" />
     <Content Include="Archivos\WebForms\Reportes\Reportes.aspx" />
     <Content Include="Archivos\WebForms\Solicitud\Solicitud.aspx" />
+    <Content Include="Connected Services\WCFServicio\CascaronPrograIV.WCFServicio.SP_OBTENER_ORDEN_VIATICOS_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\WCFServicio\Service1.disco" />
     <None Include="Connected Services\WCFServicio\configuration91.svcinfo" />
     <None Include="Connected Services\WCFServicio\configuration.svcinfo" />
@@ -142,6 +145,11 @@
     <Content Include="Properties\DataSources\Entidades.SP_LISTAR_LOCALIDAD_Result.datasource" />
     <Content Include="Properties\DataSources\Entidades.SP_LISTAR_RUTAS_Result.datasource" />
     <Content Include="Properties\DataSources\Entidades.SP_LISTAR_PERSONAS_Result.datasource" />
+    <Content Include="Properties\DataSources\Entidades.SP_LISTADO_LIQUIDACION_VIATICOS_Result1.datasource" />
+    <Content Include="Properties\DataSources\Entidades.SP_LISTADO_ORDEN_VIATICOS_Result1.datasource" />
+    <Content Include="Properties\DataSources\Entidades.SP_LISTADO_SOLICITUD_VIATICOS_Result1.datasource" />
+    <Content Include="Properties\DataSources\Entidades.TBL_ESTADOS1.datasource" />
+    <Content Include="Properties\DataSources\Entidades.TBL_ROLUSUARIO1.datasource" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -383,6 +383,7 @@
           <Parameter Name="ClaveAcceso" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="SP_LISTAR_PERSONAS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_SEGURIDAD" />
+        <Function Name="SP_OBTENER_ESTADOS_ACTIVOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_SEGURIDAD" />
         <Function Name="SP_ACTUALIZAR_SOLICITUDES_FUNCIONARIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS">
           <Parameter Name="IDSOLICITUD" Type="int" Mode="In" />
           <Parameter Name="NOMBREUSUARIO" Type="nvarchar" Mode="In" />
@@ -689,8 +690,9 @@
           </FunctionImport>
           <FunctionImport Name="SP_LISTAR_PERSONAS" ReturnType="Collection(EmpresaPK2Model.SP_LISTAR_PERSONAS_Result)" />
           <FunctionImport Name="SP_OBTENER_ORDEN_VIATICOS" ReturnType="Collection(EmpresaPK2Model.SP_OBTENER_ORDEN_VIATICOS_Result)">
-            <Parameter Name="NOMBREUSUARIO" Mode="In" Type="String" />
+          <Parameter Name="NOMBREUSUARIO" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="SP_OBTENER_ESTADOS_ACTIVOS" ReturnType="Collection(EmpresaPK2Model.SP_OBTENER_ESTADOS_ACTIVOS_Result)" />
         </EntityContainer>
         <ComplexType Name="SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result">
           <Property Type="Int32" Name="ID_SOLICITUD" Nullable="false" />
@@ -1155,6 +1157,10 @@
           <Property Type="String" Name="NOMBREUSUARIO" Nullable="false" MaxLength="24" />
           <Property Type="Int16" Name="ESTADOORDEN" Nullable="false" />
         </ComplexType>
+        <ComplexType Name="SP_OBTENER_ESTADOS_ACTIVOS_Result">
+          <Property Type="Int16" Name="ID_CODIGO" Nullable="false" />
+          <Property Type="String" Name="DESCODIGO" Nullable="false" MaxLength="75" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1426,6 +1432,14 @@
                 <ScalarProperty Name="ID_SOLICITUD" ColumnName="ID_SOLICITUD" />
                 <ScalarProperty Name="NOMBREUSUARIO" ColumnName="NOMBREUSUARIO" />
                 <ScalarProperty Name="ESTADOORDEN" ColumnName="ESTADOORDEN" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_OBTENER_ESTADOS_ACTIVOS" FunctionName="EmpresaPK2Model.Store.SP_OBTENER_ESTADOS_ACTIVOS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_OBTENER_ESTADOS_ACTIVOS_Result">
+                <ScalarProperty Name="ID_CODIGO" ColumnName="ID_CODIGO" />
+                <ScalarProperty Name="DESCODIGO" ColumnName="DESCODIGO" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

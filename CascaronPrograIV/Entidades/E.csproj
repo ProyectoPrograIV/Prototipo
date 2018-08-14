@@ -93,6 +93,9 @@
     <Compile Include="SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result.cs">
       <DependentUpon>EmpresaPK2.tt</DependentUpon>
     </Compile>
+    <Compile Include="SP_OBTENER_ESTADOS_ACTIVOS_Result.cs">
+      <DependentUpon>EmpresaPK2.tt</DependentUpon>
+    </Compile>
     <Compile Include="SP_OBTENER_ORDEN_VIATICOS_Result.cs">
       <DependentUpon>EmpresaPK2.tt</DependentUpon>
     </Compile>

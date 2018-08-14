@@ -142,9 +142,20 @@ namespace AD
             {
                 contexto = new EmpresaPK2Entities();
 
-                var consulta = (from reg in contexto.TBL_ESTADOS
-                                select reg).ToList();
-                ListaResultado = consulta;
+                var consulta = contexto.SP_OBTENER_ESTADOS_ACTIVOS().ToList();
+                if (consulta != null)
+                {
+                    ListaResultado = new List<TBL_ESTADOS>();
+                    foreach (var item in consulta)
+                    {
+                        TBL_ESTADOS obj = new TBL_ESTADOS();
+                        obj.DESCODIGO = item.DESCODIGO;
+                        obj.ID_CODIGO = item.ID_CODIGO;
+
+                        ListaResultado.Add(obj);
+                    }
+                }
+               
             }
             catch (Exception ex)
             {
