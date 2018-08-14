@@ -13,6 +13,7 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
     {
         SP_INICIO_SESION_Result sesion;
         static DataTable dt;
+        string idSolicitud = "2";
         protected void Page_Load(object sender, EventArgs e)
         {
             sesion = (SP_INICIO_SESION_Result)Session["sesion"];
@@ -85,10 +86,12 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
                 return false;
             }
         }
+
         private TBL_SOLICITUDVIATICOS AsignarDatosSolicitud()
         {
             TBL_SOLICITUDVIATICOS Obj_Solicitud;
             Obj_Solicitud = new TBL_SOLICITUDVIATICOS();
+            Obj_Solicitud.ID_SOLICITUD = idSolicitud;
             Obj_Solicitud.DESTINO = TbxDestino.Text;
             Obj_Solicitud.FECHACREACION = DateTime.Now;
             Obj_Solicitud.FECHAREGRESO = Convert.ToDateTime(TbxFechaRegreso.Text);
@@ -99,52 +102,78 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
             Obj_Solicitud.NOMBREUSUARIO = TbxUsuario.Text;
             return Obj_Solicitud;
         }
-        private TBL_DETALLESOLICITUDVIATICOS AsignarDetalles(String idSolicitud)
+        private List<TBL_DETALLESOLICITUDVIATICOS> AsignarDetalles()
         {
-            TBL_DETALLESOLICITUDVIATICOS Obj_DetalleViaticos;
+            int i = 0;
+            List<TBL_DETALLESOLICITUDVIATICOS> Array_DetalleViaticos = new List<TBL_DETALLESOLICITUDVIATICOS>();
+            TBL_DETALLESOLICITUDVIATICOS Obj_DetalleViaticos = new TBL_DETALLESOLICITUDVIATICOS();
             foreach (DataRow Persona in dt.Rows)
             {
-                Obj_DetalleViaticos = new TBL_DETALLESOLICITUDVIATICOS();
                 Obj_DetalleViaticos.CANTIDADDESAYUNO = Convert.ToInt16(Tbx_CantDes.Text);
                 Obj_DetalleViaticos.CANTIDADALMUERZO = Convert.ToInt16(Tbx_CantAlm.Text);
                 Obj_DetalleViaticos.CANTIDADCENA = Convert.ToInt16(Tbx_CantCenas.Text);
                 Obj_DetalleViaticos.CANTIDADPASAJE = Convert.ToInt16(Tbx_CantPasaj.Text);
-                Obj_DetalleViaticos.CANTIDADVIATICOS = Convert.ToInt16(Obj_DetalleViaticos.CANTIDADDESAYUNO + Obj_DetalleViaticos.CANTIDADALMUERZO + Obj_DetalleViaticos.CANTIDADCENA + Obj_DetalleViaticos.CANTIDADPASAJE);
+                Obj_DetalleViaticos.CANTIDADVIATICOS = Convert.ToInt16(Obj_DetalleViaticos.CANTIDADDESAYUNO + Obj_DetalleViaticos.CANTIDADALMUERZO + Obj_DetalleViaticos.CANTIDADCENA + Obj_DetalleViaticos.CANTIDADPASAJE); 
+                Obj_DetalleViaticos.MONTODESAYUNO = ObtenerMontos("Desayuno", Convert.ToInt32(Obj_DetalleViaticos.CANTIDADDESAYUNO), 0);
+                Obj_DetalleViaticos.MONTOALMUERZO = ObtenerMontos("Almuerzo", Convert.ToInt32(Obj_DetalleViaticos.CANTIDADALMUERZO), 0);
+                Obj_DetalleViaticos.MONTOCENA = ObtenerMontos("Cena", Convert.ToInt32(Obj_DetalleViaticos.CANTIDADCENA), 0);
+                Obj_DetalleViaticos.MONTOPASAJE = ObtenerMontos("Ruta", Convert.ToInt32(Obj_DetalleViaticos.CANTIDADPASAJE), Convert.ToInt32(Ddl_Ruta.SelectedValue));
+                Obj_DetalleViaticos.MONTOHOSPEDAJE = ObtenerMontos("Hospedaje", 
+                    Convert.ToInt32((Convert.ToDateTime(TbxFechaRegreso.Text)-Convert.ToDateTime(TbxFechaSalida.Text)).TotalDays), 
+                    Convert.ToInt32(Ddl_Hospedaje.SelectedValue));
                 Obj_DetalleViaticos.CODIGORUTA = Ddl_Ruta.SelectedValue.ToString();
                 Obj_DetalleViaticos.ID_PERSONA = Persona[0].ToString();
                 Obj_DetalleViaticos.ID_SOLICITUD = idSolicitud;
                 Obj_DetalleViaticos.LOCALIDADHOSPEDAJE = Convert.ToInt16(Ddl_Hospedaje.SelectedValue.ToString());
-                Obj_DetalleViaticos.MONTODESAYUNO = ObtenerMontos("Desayuno", Convert.ToInt32(Obj_DetalleViaticos.CANTIDADDESAYUNO));
-                Obj_DetalleViaticos.MONTOALMUERZO = ObtenerMontos("Almuerzo", Convert.ToInt32(Obj_DetalleViaticos.CANTIDADALMUERZO));
-                Obj_DetalleViaticos.MONTOCENA = ObtenerMontos("Cena", Convert.ToInt32(Obj_DetalleViaticos.CANTIDADCENA));
-                Obj_DetalleViaticos.MONTOPASAJE = 
+                Array_DetalleViaticos.Add(Obj_DetalleViaticos);
+                i++;
             }
+            return Array_DetalleViaticos;
         }
-        private int ObtenerMontos(String sTipo, int iCantidad)
+        private Decimal ObtenerMontos(String sTipo, int iCantidad, int iIdRuta_Hosppedaje)
         {
-            int total;
-            int Cena = 5150;
-            int Almuerzo = 5150;
-            int Desayuno = 3200;
-            switch (sTipo)
+            Decimal total = 0;
+            Decimal Cena;
+            Decimal Almuerzo;
+            Decimal Desayuno;
+            Decimal Ruta;
+            Decimal Hospedaje;
+            WCFSolicitud.SolicitudClient Cliente = new WCFSolicitud.SolicitudClient();
+            if (sTipo == "Ruta")
             {
-                case "Desayuno":
-                    total = iCantidad * Desayuno;
-                    return total;
-                case "Almuerzo":
-                    total = iCantidad * Almuerzo;
-                    return total;
-                case "Cena":
-                    total = iCantidad * Cena;
-                    return total;
-                case "Ruta":
-                    total = iCantidad * 1;
-                    return total;
-                default:
-                    total = 0;
-                    return total;
+                List<SP_LISTARMONTORUTA_Result> MontoRuta = Cliente.MontoRuta(iIdRuta_Hosppedaje.ToString());
+                Ruta = MontoRuta[0].TARIFAREGISTRADA;
+                total = iCantidad * Ruta;
+                return total;
             }
-
+            else
+            {
+                List<SP_LISTARMONTOS_Result> Montos = Cliente.Montos(iIdRuta_Hosppedaje);
+                foreach (SP_LISTARMONTOS_Result Monto in Montos)
+                {
+                    if (Monto.TIPOTARIFA.ToString().ToUpper().Trim() == sTipo.ToUpper().Trim())
+                    {
+                        Desayuno = Monto.MONTOTARIFA;
+                        total = iCantidad * Desayuno;
+                    }
+                    else if (Monto.TIPOTARIFA.ToString().ToUpper().Trim() == sTipo.ToUpper().Trim())
+                    {
+                        Almuerzo = Monto.MONTOTARIFA;
+                        total = iCantidad * Almuerzo;
+                    }
+                    else if (Monto.TIPOTARIFA.ToString().ToUpper().Trim() == sTipo.ToUpper().Trim())
+                    {
+                        Cena = Monto.MONTOTARIFA;
+                        total = iCantidad * Cena;
+                    }
+                    else if (Monto.TIPOTARIFA.ToString().ToUpper().Trim() == sTipo.ToUpper().Trim()) 
+                    {
+                        Hospedaje = Monto.MONTOTARIFA;
+                        total = iCantidad * Hospedaje;
+                    }
+                }
+                return total;
+            }
         }
         private void CargarPersonas()
         {
@@ -265,7 +294,17 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
         }
         protected void BtnGuardar_Click(object sender, EventArgs e)
         {
-
+            WCFSolicitud.SolicitudClient Cliente = new WCFSolicitud.SolicitudClient();
+            if(Cliente.GuardarSolicitudDetalle(AsignarDatosSolicitud(), AsignarDetalles()) == true)
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Solicitud Guardada')", true);
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Negado()", true);
+            }
+            else
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Solicitud No Guardada')", true);
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Solicitud()", true);
+            }
         }
         #endregion
 

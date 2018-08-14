@@ -78,6 +78,12 @@
     <Compile Include="SP_LISTADO_SOLICITUD_VIATICOS_Result.cs">
       <DependentUpon>EmpresaPK2.tt</DependentUpon>
     </Compile>
+    <Compile Include="SP_LISTARMONTORUTA_Result.cs">
+      <DependentUpon>EmpresaPK2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_LISTARMONTOS_Result.cs">
+      <DependentUpon>EmpresaPK2.tt</DependentUpon>
+    </Compile>
     <Compile Include="SP_LISTAR_LOCALIDAD_Result.cs">
       <DependentUpon>EmpresaPK2.tt</DependentUpon>
     </Compile>

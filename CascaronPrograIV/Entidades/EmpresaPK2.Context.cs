@@ -335,5 +335,23 @@ namespace Entidades
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_OBTENER_ORDEN_VIATICOS_Result>("SP_OBTENER_ORDEN_VIATICOS", nOMBREUSUARIOParameter);
         }
+    
+        public virtual ObjectResult<SP_LISTARMONTORUTA_Result> SP_LISTARMONTORUTA(string iDRUTA)
+        {
+            var iDRUTAParameter = iDRUTA != null ?
+                new ObjectParameter("IDRUTA", iDRUTA) :
+                new ObjectParameter("IDRUTA", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTARMONTORUTA_Result>("SP_LISTARMONTORUTA", iDRUTAParameter);
+        }
+    
+        public virtual ObjectResult<SP_LISTARMONTOS_Result> SP_LISTARMONTOS(Nullable<int> iDHOSPEDAJE)
+        {
+            var iDHOSPEDAJEParameter = iDHOSPEDAJE.HasValue ?
+                new ObjectParameter("IDHOSPEDAJE", iDHOSPEDAJE) :
+                new ObjectParameter("IDHOSPEDAJE", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTARMONTOS_Result>("SP_LISTARMONTOS", iDHOSPEDAJEParameter);
+        }
     }
 }

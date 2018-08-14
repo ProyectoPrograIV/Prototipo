@@ -167,6 +167,12 @@
     <FunctionImport Name="SP_OBTENER_ORDEN_VIATICOS" ReturnType="Collection(EmpresaPK2Model.SP_OBTENER_ORDEN_VIATICOS_Result)">
       <Parameter Name="NOMBREUSUARIO" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="SP_LISTARMONTORUTA" ReturnType="Collection(EmpresaPK2Model.SP_LISTARMONTORUTA_Result)">
+      <Parameter Name="IDRUTA" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_LISTARMONTOS" ReturnType="Collection(EmpresaPK2Model.SP_LISTARMONTOS_Result)">
+      <Parameter Name="IDHOSPEDAJE" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result">
     <Property Type="Int32" Name="ID_SOLICITUD" Nullable="false" />
@@ -630,5 +636,14 @@
     <Property Type="String" Name="ID_SOLICITUD" Nullable="false" MaxLength="30" />
     <Property Type="String" Name="NOMBREUSUARIO" Nullable="false" MaxLength="24" />
     <Property Type="Int16" Name="ESTADOORDEN" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_LISTARMONTORUTA_Result">
+    <Property Type="String" Name="CODIGORUTA" Nullable="false" MaxLength="20" />
+    <Property Type="Decimal" Name="TARIFAREGISTRADA" Nullable="false" Precision="19" />
+  </ComplexType>
+  <ComplexType Name="SP_LISTARMONTOS_Result">
+    <Property Type="Int16" Name="ID_MODTARIFA" Nullable="false" />
+    <Property Type="String" Name="TIPOTARIFA" Nullable="false" MaxLength="50" />
+    <Property Type="Decimal" Name="MONTOTARIFA" Nullable="false" Precision="19" />
   </ComplexType>
 </Schema>

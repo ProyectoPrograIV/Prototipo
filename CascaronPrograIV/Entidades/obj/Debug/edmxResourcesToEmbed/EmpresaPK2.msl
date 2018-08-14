@@ -269,5 +269,22 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_LISTARMONTORUTA" FunctionName="EmpresaPK2Model.Store.SP_LISTARMONTORUTA">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTARMONTORUTA_Result">
+          <ScalarProperty Name="CODIGORUTA" ColumnName="CODIGORUTA" />
+          <ScalarProperty Name="TARIFAREGISTRADA" ColumnName="TARIFAREGISTRADA" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_LISTARMONTOS" FunctionName="EmpresaPK2Model.Store.SP_LISTARMONTOS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTARMONTOS_Result">
+          <ScalarProperty Name="ID_MODTARIFA" ColumnName="ID_MODTARIFA" />
+          <ScalarProperty Name="TIPOTARIFA" ColumnName="TIPOTARIFA" />
+          <ScalarProperty Name="MONTOTARIFA" ColumnName="MONTOTARIFA" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>
