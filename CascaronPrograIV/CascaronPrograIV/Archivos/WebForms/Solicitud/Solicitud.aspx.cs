@@ -99,10 +99,10 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
             Obj_Solicitud.NOMBREUSUARIO = TbxUsuario.Text;
             return Obj_Solicitud;
         }
-        /*private TBL_DETALLESOLICITUDVIATICOS AsignarDetalles()
+        private TBL_DETALLESOLICITUDVIATICOS AsignarDetalles(String idSolicitud)
         {
             TBL_DETALLESOLICITUDVIATICOS Obj_DetalleViaticos;
-            foreach (DataRow Persona in GvPersonas.Rows)
+            foreach (DataRow Persona in dt.Rows)
             {
                 Obj_DetalleViaticos = new TBL_DETALLESOLICITUDVIATICOS();
                 Obj_DetalleViaticos.CANTIDADDESAYUNO = Convert.ToInt16(Tbx_CantDes.Text);
@@ -112,8 +112,40 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
                 Obj_DetalleViaticos.CANTIDADVIATICOS = Convert.ToInt16(Obj_DetalleViaticos.CANTIDADDESAYUNO + Obj_DetalleViaticos.CANTIDADALMUERZO + Obj_DetalleViaticos.CANTIDADCENA + Obj_DetalleViaticos.CANTIDADPASAJE);
                 Obj_DetalleViaticos.CODIGORUTA = Ddl_Ruta.SelectedValue.ToString();
                 Obj_DetalleViaticos.ID_PERSONA = Persona[0].ToString();
+                Obj_DetalleViaticos.ID_SOLICITUD = idSolicitud;
+                Obj_DetalleViaticos.LOCALIDADHOSPEDAJE = Convert.ToInt16(Ddl_Hospedaje.SelectedValue.ToString());
+                Obj_DetalleViaticos.MONTODESAYUNO = ObtenerMontos("Desayuno", Convert.ToInt32(Obj_DetalleViaticos.CANTIDADDESAYUNO));
+                Obj_DetalleViaticos.MONTOALMUERZO = ObtenerMontos("Almuerzo", Convert.ToInt32(Obj_DetalleViaticos.CANTIDADALMUERZO));
+                Obj_DetalleViaticos.MONTOCENA = ObtenerMontos("Cena", Convert.ToInt32(Obj_DetalleViaticos.CANTIDADCENA));
+                Obj_DetalleViaticos.MONTOPASAJE = 
             }
-        }*/
+        }
+        private int ObtenerMontos(String sTipo, int iCantidad)
+        {
+            int total;
+            int Cena = 5150;
+            int Almuerzo = 5150;
+            int Desayuno = 3200;
+            switch (sTipo)
+            {
+                case "Desayuno":
+                    total = iCantidad * Desayuno;
+                    return total;
+                case "Almuerzo":
+                    total = iCantidad * Almuerzo;
+                    return total;
+                case "Cena":
+                    total = iCantidad * Cena;
+                    return total;
+                case "Ruta":
+                    total = iCantidad * 1;
+                    return total;
+                default:
+                    total = 0;
+                    return total;
+            }
+
+        }
         private void CargarPersonas()
         {
             WCFSolicitud.SolicitudClient Cliente = new WCFSolicitud.SolicitudClient();
@@ -212,6 +244,25 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
                 return Respuesta;
             }
         }
+        protected void GvPersonas_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Delete")
+            {
+                int index = Convert.ToInt32(e.CommandArgument);
+                dt.Rows.RemoveAt(index);
+                GvPersonas.DeleteRow(index);
+                GvPersonas.DataSource = dt;
+                GvPersonas.DataBind();
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Negado()", true);
+            }
+            else
+            {
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Negado()", true);
+            }
+        }
+        protected void GvPersonas_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+        }
         protected void BtnGuardar_Click(object sender, EventArgs e)
         {
 
@@ -302,26 +353,6 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
         #region Metodos Verificar
 
         #endregion
-
-        protected void GvPersonas_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
-            if (e.CommandName == "Delete")
-            {
-                int index = Convert.ToInt32(e.CommandArgument);
-                dt.Rows.RemoveAt(index);
-                GvPersonas.DeleteRow(index);
-                GvPersonas.DataSource = dt;
-                GvPersonas.DataBind();
-                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Negado()", true);
-            }
-            else
-            {
-                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Negado()", true);
-            }
-        }
-
-        protected void GvPersonas_RowDeleting(object sender, GridViewDeleteEventArgs e)
-        {
-        }
+        
     }
 }
