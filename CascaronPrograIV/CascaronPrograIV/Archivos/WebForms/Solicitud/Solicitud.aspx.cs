@@ -91,7 +91,6 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
         {
             TBL_SOLICITUDVIATICOS Obj_Solicitud;
             Obj_Solicitud = new TBL_SOLICITUDVIATICOS();
-            Obj_Solicitud.ID_SOLICITUD = idSolicitud;
             Obj_Solicitud.DESTINO = TbxDestino.Text;
             Obj_Solicitud.FECHACREACION = DateTime.Now;
             Obj_Solicitud.FECHAREGRESO = Convert.ToDateTime(TbxFechaRegreso.Text);
@@ -104,11 +103,10 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
         }
         private List<TBL_DETALLESOLICITUDVIATICOS> AsignarDetalles()
         {
-            int i = 0;
             List<TBL_DETALLESOLICITUDVIATICOS> Array_DetalleViaticos = new List<TBL_DETALLESOLICITUDVIATICOS>();
-            TBL_DETALLESOLICITUDVIATICOS Obj_DetalleViaticos = new TBL_DETALLESOLICITUDVIATICOS();
             foreach (DataRow Persona in dt.Rows)
             {
+                TBL_DETALLESOLICITUDVIATICOS Obj_DetalleViaticos = new TBL_DETALLESOLICITUDVIATICOS();
                 Obj_DetalleViaticos.CANTIDADDESAYUNO = Convert.ToInt16(Tbx_CantDes.Text);
                 Obj_DetalleViaticos.CANTIDADALMUERZO = Convert.ToInt16(Tbx_CantAlm.Text);
                 Obj_DetalleViaticos.CANTIDADCENA = Convert.ToInt16(Tbx_CantCenas.Text);
@@ -123,10 +121,8 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
                     Convert.ToInt32(Ddl_Hospedaje.SelectedValue));
                 Obj_DetalleViaticos.CODIGORUTA = Ddl_Ruta.SelectedValue.ToString();
                 Obj_DetalleViaticos.ID_PERSONA = Persona[0].ToString();
-                Obj_DetalleViaticos.ID_SOLICITUD = idSolicitud;
                 Obj_DetalleViaticos.LOCALIDADHOSPEDAJE = Convert.ToInt16(Ddl_Hospedaje.SelectedValue.ToString());
                 Array_DetalleViaticos.Add(Obj_DetalleViaticos);
-                i++;
             }
             return Array_DetalleViaticos;
         }

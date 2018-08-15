@@ -22,17 +22,6 @@
     <FunctionImport Name="SP_ELIMINAR_SOLICITUDES">
       <Parameter Name="IDSOLICITUD" Mode="In" Type="Int32" />
     </FunctionImport>
-    <FunctionImport Name="SP_GUARDAR_SOLICITUDES_FUNCIONARIO">
-      <Parameter Name="ID_SOLICITUD" Mode="In" Type="String" />
-      <Parameter Name="NOMBREUSUARIO" Mode="In" Type="String" />
-      <Parameter Name="FECHACREACION" Mode="In" Type="DateTime" />
-      <Parameter Name="FECHASALIDA" Mode="In" Type="DateTime" />
-      <Parameter Name="FECHAREGRESO" Mode="In" Type="DateTime" />
-      <Parameter Name="JUSTIFICACION" Mode="In" Type="String" />
-      <Parameter Name="DESTINO" Mode="In" Type="String" />
-      <Parameter Name="HORAREGRESO" Mode="In" Type="Time" />
-      <Parameter Name="HORASALIDA" Mode="In" Type="Time" />
-    </FunctionImport>
     <FunctionImport Name="SP_LISTAR_SOLICITUDES_FUNCIONARIO" ReturnType="Collection(EmpresaPK2Model.SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result)">
       <Parameter Name="USUARIO" Mode="In" Type="String" />
     </FunctionImport>
@@ -172,6 +161,16 @@
     </FunctionImport>
     <FunctionImport Name="SP_LISTARMONTOS" ReturnType="Collection(EmpresaPK2Model.SP_LISTARMONTOS_Result)">
       <Parameter Name="IDHOSPEDAJE" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GUARDAR_SOLICITUDES_FUNCIONARIO" ReturnType="Collection(String)">
+      <Parameter Name="NOMBREUSUARIO" Mode="In" Type="String" />
+      <Parameter Name="FECHACREACION" Mode="In" Type="DateTime" />
+      <Parameter Name="FECHASALIDA" Mode="In" Type="DateTime" />
+      <Parameter Name="FECHAREGRESO" Mode="In" Type="DateTime" />
+      <Parameter Name="JUSTIFICACION" Mode="In" Type="String" />
+      <Parameter Name="DESTINO" Mode="In" Type="String" />
+      <Parameter Name="HORAREGRESO" Mode="In" Type="Time" />
+      <Parameter Name="HORASALIDA" Mode="In" Type="Time" />
     </FunctionImport>
   </EntityContainer>
   <ComplexType Name="SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result">

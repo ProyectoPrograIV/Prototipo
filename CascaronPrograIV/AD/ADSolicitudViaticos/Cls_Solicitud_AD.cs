@@ -17,11 +17,11 @@ namespace AD.ADSolicitudViaticos
             try
             {
                 Entidad = new EmpresaPK2Entities();
-                Entidad.SP_GUARDAR_SOLICITUDES_FUNCIONARIO(Obj_Solicitud.ID_SOLICITUD, Obj_Solicitud.NOMBREUSUARIO, Obj_Solicitud.FECHACREACION, Obj_Solicitud.FECHASALIDA, Obj_Solicitud.FECHAREGRESO,
-                    Obj_Solicitud.JUSTIFICACION, Obj_Solicitud.DESTINO, Obj_Solicitud.HORAREGRESO, Obj_Solicitud.HORASALIDA);
+                var idsolicitud = Entidad.SP_GUARDAR_SOLICITUDES_FUNCIONARIO(Obj_Solicitud.NOMBREUSUARIO, Obj_Solicitud.FECHACREACION, Obj_Solicitud.FECHASALIDA, Obj_Solicitud.FECHAREGRESO,
+                    Obj_Solicitud.JUSTIFICACION, Obj_Solicitud.DESTINO, Obj_Solicitud.HORAREGRESO, Obj_Solicitud.HORASALIDA).FirstOrDefault();
                 foreach (TBL_DETALLESOLICITUDVIATICOS Detalle in Obj_DetalleSolicitud)
                 {
-                    Entidad.SP_GUARDAR_DETALLEVIATICOS(Detalle.ID_SOLICITUD, Detalle.ID_PERSONA, Detalle.CANTIDADVIATICOS, Detalle.CANTIDADDESAYUNO,
+                    Entidad.SP_GUARDAR_DETALLEVIATICOS(idsolicitud, Detalle.ID_PERSONA, Detalle.CANTIDADVIATICOS, Detalle.CANTIDADDESAYUNO,
                     Detalle.CANTIDADALMUERZO, Detalle.CANTIDADCENA, Detalle.CANTIDADPASAJE, Detalle.MONTODESAYUNO, Detalle.MONTOALMUERZO,
                     Detalle.MONTOCENA, Detalle.MONTOPASAJE, Detalle.MONTOHOSPEDAJE, Detalle.CODIGORUTA, Detalle.LOCALIDADHOSPEDAJE);
                 }
@@ -39,6 +39,7 @@ namespace AD.ADSolicitudViaticos
                 }
             }
         }
+        
         
         public static List<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> ListarSolicitudes(TBL_SOLICITUDVIATICOS Obj_Solicitud)
         {

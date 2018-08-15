@@ -116,47 +116,6 @@ namespace Entidades
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ELIMINAR_SOLICITUDES", iDSOLICITUDParameter);
         }
     
-        public virtual int SP_GUARDAR_SOLICITUDES_FUNCIONARIO(string iD_SOLICITUD, string nOMBREUSUARIO, Nullable<System.DateTime> fECHACREACION, Nullable<System.DateTime> fECHASALIDA, Nullable<System.DateTime> fECHAREGRESO, string jUSTIFICACION, string dESTINO, Nullable<System.TimeSpan> hORAREGRESO, Nullable<System.TimeSpan> hORASALIDA)
-        {
-            var iD_SOLICITUDParameter = iD_SOLICITUD != null ?
-                new ObjectParameter("ID_SOLICITUD", iD_SOLICITUD) :
-                new ObjectParameter("ID_SOLICITUD", typeof(string));
-    
-            var nOMBREUSUARIOParameter = nOMBREUSUARIO != null ?
-                new ObjectParameter("NOMBREUSUARIO", nOMBREUSUARIO) :
-                new ObjectParameter("NOMBREUSUARIO", typeof(string));
-    
-            var fECHACREACIONParameter = fECHACREACION.HasValue ?
-                new ObjectParameter("FECHACREACION", fECHACREACION) :
-                new ObjectParameter("FECHACREACION", typeof(System.DateTime));
-    
-            var fECHASALIDAParameter = fECHASALIDA.HasValue ?
-                new ObjectParameter("FECHASALIDA", fECHASALIDA) :
-                new ObjectParameter("FECHASALIDA", typeof(System.DateTime));
-    
-            var fECHAREGRESOParameter = fECHAREGRESO.HasValue ?
-                new ObjectParameter("FECHAREGRESO", fECHAREGRESO) :
-                new ObjectParameter("FECHAREGRESO", typeof(System.DateTime));
-    
-            var jUSTIFICACIONParameter = jUSTIFICACION != null ?
-                new ObjectParameter("JUSTIFICACION", jUSTIFICACION) :
-                new ObjectParameter("JUSTIFICACION", typeof(string));
-    
-            var dESTINOParameter = dESTINO != null ?
-                new ObjectParameter("DESTINO", dESTINO) :
-                new ObjectParameter("DESTINO", typeof(string));
-    
-            var hORAREGRESOParameter = hORAREGRESO.HasValue ?
-                new ObjectParameter("HORAREGRESO", hORAREGRESO) :
-                new ObjectParameter("HORAREGRESO", typeof(System.TimeSpan));
-    
-            var hORASALIDAParameter = hORASALIDA.HasValue ?
-                new ObjectParameter("HORASALIDA", hORASALIDA) :
-                new ObjectParameter("HORASALIDA", typeof(System.TimeSpan));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_GUARDAR_SOLICITUDES_FUNCIONARIO", iD_SOLICITUDParameter, nOMBREUSUARIOParameter, fECHACREACIONParameter, fECHASALIDAParameter, fECHAREGRESOParameter, jUSTIFICACIONParameter, dESTINOParameter, hORAREGRESOParameter, hORASALIDAParameter);
-        }
-    
         public virtual ObjectResult<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> SP_LISTAR_SOLICITUDES_FUNCIONARIO(string uSUARIO)
         {
             var uSUARIOParameter = uSUARIO != null ?
@@ -352,6 +311,43 @@ namespace Entidades
                 new ObjectParameter("IDHOSPEDAJE", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTARMONTOS_Result>("SP_LISTARMONTOS", iDHOSPEDAJEParameter);
+        }
+    
+        public virtual ObjectResult<string> SP_GUARDAR_SOLICITUDES_FUNCIONARIO(string nOMBREUSUARIO, Nullable<System.DateTime> fECHACREACION, Nullable<System.DateTime> fECHASALIDA, Nullable<System.DateTime> fECHAREGRESO, string jUSTIFICACION, string dESTINO, Nullable<System.TimeSpan> hORAREGRESO, Nullable<System.TimeSpan> hORASALIDA)
+        {
+            var nOMBREUSUARIOParameter = nOMBREUSUARIO != null ?
+                new ObjectParameter("NOMBREUSUARIO", nOMBREUSUARIO) :
+                new ObjectParameter("NOMBREUSUARIO", typeof(string));
+    
+            var fECHACREACIONParameter = fECHACREACION.HasValue ?
+                new ObjectParameter("FECHACREACION", fECHACREACION) :
+                new ObjectParameter("FECHACREACION", typeof(System.DateTime));
+    
+            var fECHASALIDAParameter = fECHASALIDA.HasValue ?
+                new ObjectParameter("FECHASALIDA", fECHASALIDA) :
+                new ObjectParameter("FECHASALIDA", typeof(System.DateTime));
+    
+            var fECHAREGRESOParameter = fECHAREGRESO.HasValue ?
+                new ObjectParameter("FECHAREGRESO", fECHAREGRESO) :
+                new ObjectParameter("FECHAREGRESO", typeof(System.DateTime));
+    
+            var jUSTIFICACIONParameter = jUSTIFICACION != null ?
+                new ObjectParameter("JUSTIFICACION", jUSTIFICACION) :
+                new ObjectParameter("JUSTIFICACION", typeof(string));
+    
+            var dESTINOParameter = dESTINO != null ?
+                new ObjectParameter("DESTINO", dESTINO) :
+                new ObjectParameter("DESTINO", typeof(string));
+    
+            var hORAREGRESOParameter = hORAREGRESO.HasValue ?
+                new ObjectParameter("HORAREGRESO", hORAREGRESO) :
+                new ObjectParameter("HORAREGRESO", typeof(System.TimeSpan));
+    
+            var hORASALIDAParameter = hORASALIDA.HasValue ?
+                new ObjectParameter("HORASALIDA", hORASALIDA) :
+                new ObjectParameter("HORASALIDA", typeof(System.TimeSpan));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("SP_GUARDAR_SOLICITUDES_FUNCIONARIO", nOMBREUSUARIOParameter, fECHACREACIONParameter, fECHASALIDAParameter, fECHAREGRESOParameter, jUSTIFICACIONParameter, dESTINOParameter, hORAREGRESOParameter, hORASALIDAParameter);
         }
     }
 }

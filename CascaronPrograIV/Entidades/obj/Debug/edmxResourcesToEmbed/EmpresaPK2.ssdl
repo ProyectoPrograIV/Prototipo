@@ -415,7 +415,6 @@
     <Parameter Name="LOCALIDADHOSPEDAJE" Type="smallint" Mode="In" />
   </Function>
   <Function Name="SP_GUARDAR_SOLICITUDES_FUNCIONARIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS">
-    <Parameter Name="ID_SOLICITUD" Type="nvarchar" Mode="In" />
     <Parameter Name="NOMBREUSUARIO" Type="nvarchar" Mode="In" />
     <Parameter Name="FECHACREACION" Type="datetime" Mode="In" />
     <Parameter Name="FECHASALIDA" Type="datetime" Mode="In" />

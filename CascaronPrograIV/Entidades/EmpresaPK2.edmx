@@ -420,7 +420,6 @@
           <Parameter Name="LOCALIDADHOSPEDAJE" Type="smallint" Mode="In" />
         </Function>
         <Function Name="SP_GUARDAR_SOLICITUDES_FUNCIONARIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS">
-          <Parameter Name="ID_SOLICITUD" Type="nvarchar" Mode="In" />
           <Parameter Name="NOMBREUSUARIO" Type="nvarchar" Mode="In" />
           <Parameter Name="FECHACREACION" Type="datetime" Mode="In" />
           <Parameter Name="FECHASALIDA" Type="datetime" Mode="In" />
@@ -551,17 +550,6 @@
           </FunctionImport>
           <FunctionImport Name="SP_ELIMINAR_SOLICITUDES">
           <Parameter Name="IDSOLICITUD" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="SP_GUARDAR_SOLICITUDES_FUNCIONARIO">
-            <Parameter Name="ID_SOLICITUD" Mode="In" Type="String" />
-            <Parameter Name="NOMBREUSUARIO" Mode="In" Type="String" />
-            <Parameter Name="FECHACREACION" Mode="In" Type="DateTime" />
-            <Parameter Name="FECHASALIDA" Mode="In" Type="DateTime" />
-            <Parameter Name="FECHAREGRESO" Mode="In" Type="DateTime" />
-            <Parameter Name="JUSTIFICACION" Mode="In" Type="String" />
-            <Parameter Name="DESTINO" Mode="In" Type="String" />
-            <Parameter Name="HORAREGRESO" Mode="In" Type="Time" />
-            <Parameter Name="HORASALIDA" Mode="In" Type="Time" />
           </FunctionImport>
           <FunctionImport Name="SP_LISTAR_SOLICITUDES_FUNCIONARIO" ReturnType="Collection(EmpresaPK2Model.SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result)">
           <Parameter Name="USUARIO" Mode="In" Type="String" />
@@ -701,7 +689,17 @@
           <Parameter Name="IDRUTA" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SP_LISTARMONTOS" ReturnType="Collection(EmpresaPK2Model.SP_LISTARMONTOS_Result)">
-            <Parameter Name="IDHOSPEDAJE" Mode="In" Type="Int32" />
+          <Parameter Name="IDHOSPEDAJE" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_GUARDAR_SOLICITUDES_FUNCIONARIO" ReturnType="Collection(String)">
+            <Parameter Name="NOMBREUSUARIO" Mode="In" Type="String" />
+            <Parameter Name="FECHACREACION" Mode="In" Type="DateTime" />
+            <Parameter Name="FECHASALIDA" Mode="In" Type="DateTime" />
+            <Parameter Name="FECHAREGRESO" Mode="In" Type="DateTime" />
+            <Parameter Name="JUSTIFICACION" Mode="In" Type="String" />
+            <Parameter Name="DESTINO" Mode="In" Type="String" />
+            <Parameter Name="HORAREGRESO" Mode="In" Type="Time" />
+            <Parameter Name="HORASALIDA" Mode="In" Type="Time" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result">
@@ -1185,7 +1183,6 @@
           <FunctionImportMapping FunctionImportName="SP_InsertarUsuario" FunctionName="EmpresaPK2Model.Store.SP_InsertarUsuario" />
           <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_SOLICITUDES_FUNCIONARIO" FunctionName="EmpresaPK2Model.Store.SP_ACTUALIZAR_SOLICITUDES_FUNCIONARIO" />
           <FunctionImportMapping FunctionImportName="SP_ELIMINAR_SOLICITUDES" FunctionName="EmpresaPK2Model.Store.SP_ELIMINAR_SOLICITUDES" />
-          <FunctionImportMapping FunctionImportName="SP_GUARDAR_SOLICITUDES_FUNCIONARIO" FunctionName="EmpresaPK2Model.Store.SP_GUARDAR_SOLICITUDES_FUNCIONARIO" />
           <FunctionImportMapping FunctionImportName="SP_LISTAR_SOLICITUDES_FUNCIONARIO" FunctionName="EmpresaPK2Model.Store.SP_LISTAR_SOLICITUDES_FUNCIONARIO">
             <ResultMapping>
               <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result">
@@ -1467,6 +1464,7 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_GUARDAR_SOLICITUDES_FUNCIONARIO" FunctionName="EmpresaPK2Model.Store.SP_GUARDAR_SOLICITUDES_FUNCIONARIO" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

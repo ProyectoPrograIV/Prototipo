@@ -53,3 +53,4 @@ C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Entidades\obj\Debug\E.csp
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Entidades\obj\Debug\E.csproj.CopyComplete
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Entidades\obj\Debug\Entidades.dll
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Entidades\obj\Debug\Entidades.pdb
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Entidades\obj\Debug\E.csprojAssemblyReference.cache
