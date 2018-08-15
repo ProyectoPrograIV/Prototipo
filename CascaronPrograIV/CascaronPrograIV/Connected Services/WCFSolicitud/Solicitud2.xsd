@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:64695/Solicitud.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Entidades" />
-  <xs:element name="GuardarSolicitud">
+  <xs:element name="GuardarSolicitudDetalle">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="Obj_Solicitud" nillable="true" type="q1:TBL_SOLICITUDVIATICOS" />
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="Obj_SolicitudDetalle" nillable="true" type="q2:TBL_DETALLESOLICITUDVIATICOS" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="Obj_SolicitudDetalle" nillable="true" type="q2:ArrayOfTBL_DETALLESOLICITUDVIATICOS" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GuardarSolicitudResponse">
+  <xs:element name="GuardarSolicitudDetalleResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="GuardarSolicitudResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="GuardarSolicitudDetalleResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -63,6 +63,34 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="ListarPersonasResult" nillable="true" type="q7:ArrayOfSP_LISTAR_PERSONAS_Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MontoRuta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sIdRuta" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MontoRutaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="MontoRutaResult" nillable="true" type="q8:ArrayOfSP_LISTARMONTORUTA_Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Montos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="iIdHospedaje" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MontosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="MontosResult" nillable="true" type="q9:ArrayOfSP_LISTARMONTOS_Result" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

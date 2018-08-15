@@ -14,7 +14,7 @@ namespace S
     public interface ISolicitud
     {
         [OperationContract]
-        Boolean GuardarSolicitud(TBL_SOLICITUDVIATICOS Obj_Solicitud, TBL_DETALLESOLICITUDVIATICOS Obj_SolicitudDetalle);
+        Boolean GuardarSolicitudDetalle(TBL_SOLICITUDVIATICOS Obj_Solicitud, List<TBL_DETALLESOLICITUDVIATICOS> Obj_SolicitudDetalle);
 
         [OperationContract]
         List<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> ListarSolicitudes(TBL_SOLICITUDVIATICOS Obj_Solicitud);
@@ -27,5 +27,11 @@ namespace S
 
         [OperationContract]
         List<SP_LISTAR_PERSONAS_Result> ListarPersonas();
+
+        [OperationContract]
+        List<SP_LISTARMONTORUTA_Result> MontoRuta(string sIdRuta);
+
+        [OperationContract]
+        List<SP_LISTARMONTOS_Result> Montos(int iIdHospedaje);
     }
 }

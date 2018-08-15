@@ -63,49 +63,6 @@ C:\Users\usuario\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\De
 C:\Users\usuario\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\CascaronPrograIV.dll
 C:\Users\usuario\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\CascaronPrograIV.pdb
 C:\Users\usuario\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\EntityFramework.dll
-C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\csc.exe
-C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\vbc.exe
-C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\VBCSCompiler.exe
-C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\CascaronPrograIV.dll.config
-C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\CascaronPrograIV.dll
-C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\CascaronPrograIV.pdb
-C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
-C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\Presentacion.csproj.CopyComplete
-C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\CascaronPrograIV.dll
-C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\CascaronPrograIV.pdb
-C:\Users\David\source\repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\csc.exe
-C:\Users\David\source\repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\David\source\repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\David\source\repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\David\source\repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\David\source\repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\David\source\repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\David\source\repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\David\source\repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\David\source\repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\vbc.exe
-C:\Users\David\source\repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\VBCSCompiler.exe
-C:\Users\David\source\repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\David\source\repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\CascaronPrograIV.dll.config
-C:\Users\David\source\repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\CascaronPrograIV.dll
-C:\Users\David\source\repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\CascaronPrograIV.pdb
-C:\Users\David\source\repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\David\source\repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\David\source\repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\Presentacion.csprojAssemblyReference.cache
-C:\Users\David\source\repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
-C:\Users\David\source\repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\Presentacion.csproj.CopyComplete
-C:\Users\David\source\repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\CascaronPrograIV.dll
-C:\Users\David\source\repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\CascaronPrograIV.pdb
 C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\csc.exe
 C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -128,3 +85,46 @@ C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\CascaronProg
 C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\CascaronPrograIV.dll
 C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\CascaronPrograIV.pdb
 C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\Presentacion.csprojAssemblyReference.cache
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\csc.exe
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\vbc.exe
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\VBCSCompiler.exe
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\CascaronPrograIV.dll.config
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\CascaronPrograIV.dll
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\CascaronPrograIV.pdb
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\Presentacion.csproj.CopyComplete
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\CascaronPrograIV.dll
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\CascaronPrograIV.pdb
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\csc.exe
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\vbc.exe
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\VBCSCompiler.exe
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\CascaronPrograIV.dll.config
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\CascaronPrograIV.dll
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\CascaronPrograIV.pdb
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\Presentacion.csproj.CopyComplete
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\CascaronPrograIV.dll
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\CascaronPrograIV.pdb
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\Presentacion.csprojAssemblyReference.cache

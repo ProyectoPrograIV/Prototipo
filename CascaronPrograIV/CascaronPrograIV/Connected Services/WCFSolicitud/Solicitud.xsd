@@ -282,4 +282,31 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SP_LISTAR_PERSONAS_Result" nillable="true" type="tns:SP_LISTAR_PERSONAS_Result" />
+  <xs:complexType name="ArrayOfSP_LISTARMONTORUTA_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SP_LISTARMONTORUTA_Result" nillable="true" type="tns:SP_LISTARMONTORUTA_Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSP_LISTARMONTORUTA_Result" nillable="true" type="tns:ArrayOfSP_LISTARMONTORUTA_Result" />
+  <xs:complexType name="SP_LISTARMONTORUTA_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGORUTA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TARIFAREGISTRADA" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SP_LISTARMONTORUTA_Result" nillable="true" type="tns:SP_LISTARMONTORUTA_Result" />
+  <xs:complexType name="ArrayOfSP_LISTARMONTOS_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SP_LISTARMONTOS_Result" nillable="true" type="tns:SP_LISTARMONTOS_Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSP_LISTARMONTOS_Result" nillable="true" type="tns:ArrayOfSP_LISTARMONTOS_Result" />
+  <xs:complexType name="SP_LISTARMONTOS_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID_MODTARIFA" type="xs:short" />
+      <xs:element minOccurs="0" name="MONTOTARIFA" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TIPOTARIFA" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SP_LISTARMONTOS_Result" nillable="true" type="tns:SP_LISTARMONTOS_Result" />
 </xs:schema>
