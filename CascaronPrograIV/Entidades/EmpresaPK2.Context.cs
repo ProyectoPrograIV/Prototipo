@@ -354,5 +354,44 @@ namespace Entidades
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_OBTENER_ESTADOS_ACTIVOS_Result>("SP_OBTENER_ESTADOS_ACTIVOS");
         }
+    
+        public virtual int SP_ACTUALIZAR_MODTARIFAVIATICO(Nullable<short> iD_MODTARIFA, Nullable<System.DateTime> fECHATARIFA, Nullable<decimal> mONTOTARIFA, Nullable<short> eSTADOTARIFA)
+        {
+            var iD_MODTARIFAParameter = iD_MODTARIFA.HasValue ?
+                new ObjectParameter("ID_MODTARIFA", iD_MODTARIFA) :
+                new ObjectParameter("ID_MODTARIFA", typeof(short));
+    
+            var fECHATARIFAParameter = fECHATARIFA.HasValue ?
+                new ObjectParameter("FECHATARIFA", fECHATARIFA) :
+                new ObjectParameter("FECHATARIFA", typeof(System.DateTime));
+    
+            var mONTOTARIFAParameter = mONTOTARIFA.HasValue ?
+                new ObjectParameter("MONTOTARIFA", mONTOTARIFA) :
+                new ObjectParameter("MONTOTARIFA", typeof(decimal));
+    
+            var eSTADOTARIFAParameter = eSTADOTARIFA.HasValue ?
+                new ObjectParameter("ESTADOTARIFA", eSTADOTARIFA) :
+                new ObjectParameter("ESTADOTARIFA", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACTUALIZAR_MODTARIFAVIATICO", iD_MODTARIFAParameter, fECHATARIFAParameter, mONTOTARIFAParameter, eSTADOTARIFAParameter);
+        }
+    
+        public virtual ObjectResult<SP_LISTAR_MODTARIFAVIATICO_Result> SP_LISTAR_MODTARIFAVIATICO()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_MODTARIFAVIATICO_Result>("SP_LISTAR_MODTARIFAVIATICO");
+        }
+    
+        public virtual ObjectResult<SP_OBTENER_CANTON_PROVINCIA_Result> SP_OBTENER_CANTON_PROVINCIA(Nullable<byte> cODIGOCANTON, Nullable<byte> cODIGOPROVINCIA)
+        {
+            var cODIGOCANTONParameter = cODIGOCANTON.HasValue ?
+                new ObjectParameter("CODIGOCANTON", cODIGOCANTON) :
+                new ObjectParameter("CODIGOCANTON", typeof(byte));
+    
+            var cODIGOPROVINCIAParameter = cODIGOPROVINCIA.HasValue ?
+                new ObjectParameter("CODIGOPROVINCIA", cODIGOPROVINCIA) :
+                new ObjectParameter("CODIGOPROVINCIA", typeof(byte));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_OBTENER_CANTON_PROVINCIA_Result>("SP_OBTENER_CANTON_PROVINCIA", cODIGOCANTONParameter, cODIGOPROVINCIAParameter);
+        }
     }
 }
