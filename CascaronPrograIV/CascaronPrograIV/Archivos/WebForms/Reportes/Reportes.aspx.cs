@@ -13,11 +13,8 @@ namespace CascaronPrograIV.Archivos.WebForms.Reportes
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            //Page.ClientScript.RegisterHiddenField("vCode", ((int) ViewState["TipoReporte"]).ToString());
-            if (!this.Page.IsPostBack)
+           if (!this.Page.IsPostBack)
             {
-                ViewState["TipoReporte"] = 1;
-                // ViewState["SelectedItem"] = "Pendiente";
                 List<TBL_ESTADOS> ListaEstados = ObtenerEstados();
                 this.ddlEstados.DataSource = null;
                 ddlEstados.DataBind();
@@ -25,24 +22,19 @@ namespace CascaronPrograIV.Archivos.WebForms.Reportes
                 ddlEstados.DataTextField = "DESCODIGO";
                 ddlEstados.DataValueField = "ID_CODIGO";
                 ddlEstados.DataBind();
-                ddlEstados.Items.Insert(0, new ListItem("--Seleccionar--", "0"));
-            }
-            else
-            {
-       /*         ddlEstados.ClearSelection(); //making sure the previous selection has been cleared
-                if (ViewState["SelectedItem"] != null)
-                {
-                    string dummy = (string)ViewState["SelectedItem"];
-                    ddlEstados.Items.FindByText(dummy).Selected = true;
-                }*/
+             
+                ddlTipoReporte.Items.Insert(0, new ListItem("Viaticos", "1"));
+                ddlTipoReporte.Items.Insert(0, new ListItem("Solicitudes", "2"));
+                ddlTipoReporte.Items.Insert(0, new ListItem("Liquidaciones", "3"));
+
+                txtFechaFinal.Text = DateTime.Today.ToString("yyyy-MM-dd");
+                txtFechaInicial.Text = DateTime.Today.ToString("yyyy-MM-dd");
             }
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
-        {
-            // string dummy = (string) ViewState["TipoReporte"];
-            int x = Convert.ToInt32(ViewState["TipoReporte"]);
-
+        {            
+            int x = Convert.ToInt32( ddlTipoReporte.SelectedValue);
             CompletarConsulta(x);
 
         }
@@ -53,20 +45,17 @@ namespace CascaronPrograIV.Archivos.WebForms.Reportes
             ReporteXFecha obj = new ReporteXFecha();
             obj.FechaInicio = Convert.ToDateTime(txtFechaInicial.Text);
             obj.FechaFinal = Convert.ToDateTime(txtFechaFinal.Text);
-
-            //Este se debe llenar con el DropdownList apunto de existir
+            
             obj.Estado = Convert.ToInt16(ddlEstados.SelectedValue);
 
             if (sesion.ID_ROL == 9)
             {   //Si se trata de funcionario, entonces solo podran ser accesibles los reportes con su identificacion
-                //obj.IDPersona = sesion.ID_PERSONA;//Corregir
                 obj.IDPersona = sesion.ID_PERSONA;
                 obj.NomUsuario = sesion.NOMBREUSUARIO;
             }
             else
             {
                 //Sin identificacion para jefatura, revisa solicitudes de todos los funcionarios.
-                //obj.IDPersona = "";//corregir
                 obj.NomUsuario = "";
                 obj.IDPersona = "";
             }
@@ -105,7 +94,7 @@ namespace CascaronPrograIV.Archivos.WebForms.Reportes
                         gvViaticos.DataSource = null;
                         break;
                 }
-                if (gvViaticos.DataSource == null)
+                if (gvViaticos.DataSource == null )
                 {
                     ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('No se han encontrado datos con estos criterios.')", true);
 
@@ -163,11 +152,14 @@ namespace CascaronPrograIV.Archivos.WebForms.Reportes
 
         protected void ddlEstados_TextChanged(object sender, EventArgs e)
         {
-            string x = ddlEstados.SelectedItem.ToString();
-            ViewState["SelectedItem"] = x;
+           // string x = ddlEstados.SelectedItem.ToString();
+           // ViewState["SelectedItem"] = x;
 
         }
 
-
+        protected void ddlTipoReporte_TextChanged(object sender, EventArgs e)
+        {
+            h1TituloDiv.InnerText = "Reporte de " + ddlTipoReporte.SelectedItem;
+        }
     }
 }
