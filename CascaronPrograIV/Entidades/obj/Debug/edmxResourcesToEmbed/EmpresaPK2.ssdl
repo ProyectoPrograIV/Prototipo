@@ -354,12 +354,23 @@
     <Parameter Name="EstadoUsuario" Type="smallint" Mode="In" />
     <Parameter Name="email" Type="nvarchar" Mode="In" />
   </Function>
+  <Function Name="SP_ACTUALIZAR_MODTARIFAVIATICO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_PARAMETROS">
+    <Parameter Name="ID_MODTARIFA" Type="smallint" Mode="In" />
+    <Parameter Name="FECHATARIFA" Type="date" Mode="In" />
+    <Parameter Name="MONTOTARIFA" Type="money" Mode="In" />
+    <Parameter Name="ESTADOTARIFA" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="SP_LISTAR_MODTARIFAVIATICO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_PARAMETROS" />
   <Function Name="SP_LISTAR_RUTAS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_PARAMETROS" />
   <Function Name="SP_LISTARMONTORUTA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_PARAMETROS">
     <Parameter Name="IDRUTA" Type="nvarchar" Mode="In" />
   </Function>
   <Function Name="SP_LISTARMONTOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_PARAMETROS">
     <Parameter Name="IDHOSPEDAJE" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_OBTENER_CANTON_PROVINCIA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_PARAMETROS">
+    <Parameter Name="CODIGOCANTON" Type="tinyint" Mode="In" />
+    <Parameter Name="CODIGOPROVINCIA" Type="tinyint" Mode="In" />
   </Function>
   <Function Name="SP_LISTADO_LIQUIDACION_VIATICOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_REPORTES">
     <Parameter Name="FECHAINICIO" Type="date" Mode="In" />

@@ -1,6 +1,17 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Archivos/WebForms/PaginaMaestra.Master" AutoEventWireup="true" CodeBehind="Parametrizaciones.aspx.cs" Inherits="CascaronPrograIV.Archivos.WebForms.Parametrizaciones.Parametrizaciones" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .auto-style2 {
+            margin: 20px;
+            text-align: center;
+            color: #ADADAD;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 900;
+            font-size: 22px;
+            border-style: solid;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <script src="../../script/jquery-3.3.1.min.js"></script>
@@ -82,8 +93,39 @@
         <div id="DivViaticos">
             <h1 id="h1Viaticos">Actualizar Tarifas de Viaticos
             <img src="../../Recursos/Mostrar.png" /></h1>
-            <asp:TextBox ID="TbxFiltrar" CssClass="TbxFiltrar" runat="server" Text="Buscar"></asp:TextBox>
-            <asp:GridView CssClass="GridView" ID="GvTarifaViaticos" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
+            
+            
+            
+            
+            
+            
+            
+           
+            <table style="width: 100%;">
+                <tr>
+                    <td><asp:TextBox ID="TbxFiltrar" CssClass="auto-style2" runat="server" placeholder="Id Tarifa Viatico" Width="195px"></asp:TextBox></td>
+                    <td><asp:TextBox CssClass="Textbox" ID="TbxTipoTarifa" runat="server" placeholder="Tipo de Tarifa"></asp:TextBox></td>
+                    <td><asp:TextBox CssClass="Textbox" ID="TbxMonto" runat="server" placeholder="Monto"></asp:TextBox></td>
+                </tr>
+                <tr>
+                    <td><asp:TextBox CssClass="Textbox" ID="TbxFecha" runat="server" placeholder="Fecha"></asp:TextBox><br /></td>
+                    <td><asp:TextBox CssClass="Textbox" ID="TbxLocalidad" runat="server" placeholder="Localidad"></asp:TextBox></td>
+                    <td><asp:TextBox CssClass="Textbox" ID="Tbxprovincia" runat="server" placeholder="Provincia"></asp:TextBox></td>
+                </tr>
+                <tr>
+                    <td><asp:TextBox CssClass="Textbox" ID="TbxCanton" runat="server" placeholder="Canton"></asp:TextBox><br /></td>
+                    <td> <asp:TextBox CssClass="Textbox" ID="TbxEstado" runat="server" placeholder="Estado" ></asp:TextBox></td>
+                  
+                </tr>
+                <tr>
+                     <td colspan="3"> <asp:Button ID="btnActualizar" CssClass="Button" runat="server" Text="Actualizar" /> </td>
+
+                </tr> 
+                 
+            </table>
+
+           
+            <asp:GridView CssClass="GridView" ID="GvTarifaViaticos" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" OnSelectedIndexChanged="GvTarifaViaticos_SelectedIndexChanged">
                 <AlternatingRowStyle BackColor="White" />
                 <EditRowStyle BackColor="#2461BF" />
                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -95,17 +137,26 @@
                 <SortedAscendingHeaderStyle BackColor="#6D95E1" />
                 <SortedDescendingCellStyle BackColor="#E9EBEF" />
                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
+              <Columns>
+                  <asp:CommandField ShowSelectButton="true" SelectText="Selecione" ItemStyle-Width="4%" />
+                  <asp:BoundField HeaderText="ID TARIFA" DataField="ID_MODTARIFA"  ItemStyle-Width="12%"/>
+                  <asp:BoundField HeaderText="PROVINCIA" DataField="CODIGOPROVINCIA"  ItemStyle-Width="12%" />
+                  <asp:BoundField HeaderText="CANTON" DataField="CODIGOCANTON"  ItemStyle-Width="12%" />
+                  <asp:BoundField HeaderText="TIPO" DataField="TIPOTARIFA"  ItemStyle-Width="12%" />
+                  <asp:BoundField HeaderText="FECHA" DataField="FECHATARIFA"  ItemStyle-Width="12%"/>
+                  <asp:BoundField HeaderText="MONTO" DataField="MONTOTARIFA"  ItemStyle-Width="12%" />
+                  <asp:BoundField HeaderText="ESTADO" DataField="ESTADOTARIFA"  ItemStyle-Width="12%" />
+                  <asp:BoundField HeaderText="LOCALIDAD" DataField="LOCALIDAD"  ItemStyle-Width="12%" />                         
+              </Columns>
+
+
             </asp:GridView>
-            <asp:TextBox CssClass="Textbox" ID="TextBox8" runat="server" Text="Tipo de Tarifa"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TextBox9" runat="server" Text="Monto"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TextBox10" runat="server" Text="Fecha"></asp:TextBox><br />
-            <asp:TextBox CssClass="Textbox" ID="TextBox11" runat="server" Text="Localidad"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TextBox12" runat="server" Text="Provincia"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TextBox13" runat="server" Text="Canton"></asp:TextBox><br />
-            <asp:TextBox CssClass="Textbox" ID="TextBox14" runat="server" Text="Estado"></asp:TextBox>
+         
             <br />
             <br />
-            <asp:Button ID="Button1" CssClass="Button" runat="server" Text="Actualizar" />
+
+
+            
         </div>
         <br />
         <br />

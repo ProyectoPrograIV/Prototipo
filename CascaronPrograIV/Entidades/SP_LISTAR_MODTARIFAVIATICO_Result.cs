@@ -10,7 +10,7 @@
 namespace Entidades
 {
     using System;
-    
+    [Serializable]
     public partial class SP_LISTAR_MODTARIFAVIATICO_Result
     {
         public short ID_MODTARIFA { get; set; }

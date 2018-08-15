@@ -13,7 +13,7 @@
         <h1 class="login-title">Ingreso a PK2</h1>
         <div>
             <asp:TextBox CssClass="login-input" ID="TbxUsuario" runat="server" Placeholder="Usuario"></asp:TextBox>
-            <asp:TextBox CssClass="login-input" ID="TbxPassword" runat="server" Placeholder="Password"></asp:TextBox>
+            <asp:TextBox CssClass="login-input" ID="TbxPassword" runat="server" Placeholder="Password" TextMode="Password"></asp:TextBox>
             <asp:Button CssClass="login-button" ID="BtnIngresar" runat="server" Text="Ingresar" OnClick="BtnIngresar_Click" />
             <div>
                 <br />
