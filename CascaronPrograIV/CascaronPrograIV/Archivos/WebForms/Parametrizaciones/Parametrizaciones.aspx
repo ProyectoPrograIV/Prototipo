@@ -65,6 +65,7 @@
                 <SortedAscendingHeaderStyle BackColor="#6D95E1" />
                 <SortedDescendingCellStyle BackColor="#E9EBEF" />
                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
+
             </asp:GridView>
             <asp:TextBox CssClass="Textbox" ID="TextBox1" runat="server" Text="Codigo de Ruta"></asp:TextBox>
             <asp:TextBox CssClass="Textbox" ID="TextBox2" runat="server" Text="Provincia"></asp:TextBox>
