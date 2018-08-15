@@ -93,6 +93,32 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GenerarOrden">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="obj" nillable="true" type="q12:TBL_CABECERAORDENVIATICO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerarOrdenResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerOrden">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="obj" nillable="true" type="q13:OrdenDeViaticos" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerOrdenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="ObtenerOrdenResult" nillable="true" type="q14:ArrayOfSP_OBTENER_ORDEN_VIATICOS_Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="ObtenerRoles">
     <xs:complexType>
       <xs:sequence />
@@ -101,7 +127,7 @@
   <xs:element name="ObtenerRolesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="ObtenerRolesResult" nillable="true" type="q12:ArrayOfTBL_ROLUSUARIO" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="ObtenerRolesResult" nillable="true" type="q15:ArrayOfTBL_ROLUSUARIO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -113,7 +139,7 @@
   <xs:element name="ObtenerEstadosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="ObtenerEstadosResult" nillable="true" type="q13:ArrayOfTBL_ESTADOS" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="ObtenerEstadosResult" nillable="true" type="q16:ArrayOfTBL_ESTADOS" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

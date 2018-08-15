@@ -53,7 +53,7 @@
   <xs:complexType name="TBL_CABECERALIQUIDACION">
     <xs:sequence>
       <xs:element minOccurs="0" name="ESTADOLIQUIDACION" type="xs:short" />
-      <xs:element minOccurs="0" name="FECHALIQUIDACION" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FECHALIQUIDACION" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="ID_LIQUIDACION" type="xs:int" />
       <xs:element minOccurs="0" name="ID_ORDEN" type="xs:int" />
       <xs:element minOccurs="0" name="MONTOALMUERZO" nillable="true" type="xs:decimal" />
@@ -69,7 +69,7 @@
   <xs:complexType name="TBL_CABECERAORDENVIATICO">
     <xs:sequence>
       <xs:element minOccurs="0" name="ESTADOORDEN" type="xs:short" />
-      <xs:element minOccurs="0" name="FECHAORDEN" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FECHAORDEN" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="ID_ORDEN" type="xs:int" />
       <xs:element minOccurs="0" name="ID_SOLICITUD" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TBL_CABECERALIQUIDACION" nillable="true" type="tns:ArrayOfTBL_CABECERALIQUIDACION" />
@@ -82,7 +82,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="DESTINO" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ESTADOSOLICITUD" type="xs:short" />
-      <xs:element minOccurs="0" name="FECHACREACION" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FECHACREACION" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="FECHAREGRESO" type="xs:dateTime" />
       <xs:element minOccurs="0" name="FECHASALIDA" type="xs:dateTime" />
       <xs:element minOccurs="0" name="HORAREGRESO" type="ser:duration" />
@@ -297,6 +297,28 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SP_LISTADO_SOLICITUD_VIATICOS_Result" nillable="true" type="tns:SP_LISTADO_SOLICITUD_VIATICOS_Result" />
+  <xs:complexType name="OrdenDeViaticos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NomUsuario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrdenDeViaticos" nillable="true" type="tns:OrdenDeViaticos" />
+  <xs:complexType name="ArrayOfSP_OBTENER_ORDEN_VIATICOS_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SP_OBTENER_ORDEN_VIATICOS_Result" nillable="true" type="tns:SP_OBTENER_ORDEN_VIATICOS_Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSP_OBTENER_ORDEN_VIATICOS_Result" nillable="true" type="tns:ArrayOfSP_OBTENER_ORDEN_VIATICOS_Result" />
+  <xs:complexType name="SP_OBTENER_ORDEN_VIATICOS_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ESTADOORDEN" type="xs:short" />
+      <xs:element minOccurs="0" name="FECHAORDEN" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ID_ORDEN" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_SOLICITUD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBREUSUARIO" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SP_OBTENER_ORDEN_VIATICOS_Result" nillable="true" type="tns:SP_OBTENER_ORDEN_VIATICOS_Result" />
   <xs:complexType name="ArrayOfTBL_ROLUSUARIO">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="TBL_ROLUSUARIO" nillable="true" type="tns:TBL_ROLUSUARIO" />

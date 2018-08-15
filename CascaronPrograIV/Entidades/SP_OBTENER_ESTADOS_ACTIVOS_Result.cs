@@ -11,12 +11,9 @@ namespace Entidades
 {
     using System;
     
-    public partial class SP_OBTENER_ORDEN_VIATICOS_Result
+    public partial class SP_OBTENER_ESTADOS_ACTIVOS_Result
     {
-        public Nullable<System.DateTime> FECHAORDEN { get; set; }
-        public int ID_ORDEN { get; set; }
-        public string ID_SOLICITUD { get; set; }
-        public string NOMBREUSUARIO { get; set; }
-        public short ESTADOORDEN { get; set; }
+        public short ID_CODIGO { get; set; }
+        public string DESCODIGO { get; set; }
     }
 }

@@ -12,87 +12,39 @@ namespace CascaronPrograIV.Archivos.WebForms.Reportes
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
             //Page.ClientScript.RegisterHiddenField("vCode", ((int) ViewState["TipoReporte"]).ToString());
-            if (!IsPostBack)
+            if (!this.Page.IsPostBack)
             {
                 ViewState["TipoReporte"] = 1;
+                // ViewState["SelectedItem"] = "Pendiente";
+                List<TBL_ESTADOS> ListaEstados = ObtenerEstados();
+                this.ddlEstados.DataSource = null;
+                ddlEstados.DataBind();
+                ddlEstados.DataSource = ListaEstados;
+                ddlEstados.DataTextField = "DESCODIGO";
+                ddlEstados.DataValueField = "ID_CODIGO";
+                ddlEstados.DataBind();
+                ddlEstados.Items.Insert(0, new ListItem("--Seleccionar--", "0"));
+            }
+            else
+            {
+       /*         ddlEstados.ClearSelection(); //making sure the previous selection has been cleared
+                if (ViewState["SelectedItem"] != null)
+                {
+                    string dummy = (string)ViewState["SelectedItem"];
+                    ddlEstados.Items.FindByText(dummy).Selected = true;
+                }*/
             }
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-
+            // string dummy = (string) ViewState["TipoReporte"];
             int x = Convert.ToInt32(ViewState["TipoReporte"]);
 
             CompletarConsulta(x);
-            /*
-            switch (btnBuscarViaticos.Text)
-            {                
-                case "Buscar Viaticos":
-                    CompletarConsulta(1);
-                    break;
-                case "Buscar Solicitudes":
-                    CompletarConsulta(2);
-                    break;
-                case "Buscar Liquidaciones":
-                    CompletarConsulta(3);
-                    break;
-           
 
-            }  */
-
-            /*
-            SP_INICIO_SESION_Result sesion = (SP_INICIO_SESION_Result)Session["sesion"];
-            ReporteXFecha obj = new ReporteXFecha();
-            obj.FechaInicio = Convert.ToDateTime(txtFechaInicial.Text);
-            obj.FechaFinal = Convert.ToDateTime(txtFechaFinal.Text);
-
-            //Este se debe llenar con el DropdownList apunto de existir
-            obj.Estado = 12;
-
-            if (sesion.ID_ROL == 9)
-            {   //Si se trata de funcionario, entonces solo podran ser accesibles los reportes con su identificacion
-                obj.IDPersona = sesion.ID_PERSONA;
-                obj.NomUsuario = sesion.ID_PERSONA;
-            }
-            else
-            {
-                //Sin identificacion para jefatura, revisa solicitudes de todos los funcionarios.
-                obj.IDPersona = "";
-                obj.NomUsuario = "";
-            }
-
-
-            if (Convert.ToDateTime(txtFechaFinal.Text) > DateTime.Now || Convert.ToDateTime(txtFechaInicial.Text) > DateTime.Now)
-            {
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('La fecha final no puede ser mayor a hoy.')", true);
-
-            }
-            else if (Convert.ToDateTime(txtFechaFinal.Text) < Convert.ToDateTime(txtFechaInicial.Text))
-            {
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('La fecha final no puede ser mayor a la fecha inicial.')", true);
-
-            }
-            else
-
-            {
-                gvViaticos.DataSource = null;
-                gvViaticos.DataBind();
-                gvViaticos.DataSource = this.ObtenerListaOrden(obj);
-                if (gvViaticos.DataSource == null)
-                {
-                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('No se han encontrado datos con estos criterios.')", true);
-
-                }
-            }
-
-
-            gvViaticos.DataBind();
-
-            gvViaticos.Visible = true;
-
-    */
         }
 
         private void CompletarConsulta(int consulta)
@@ -103,18 +55,20 @@ namespace CascaronPrograIV.Archivos.WebForms.Reportes
             obj.FechaFinal = Convert.ToDateTime(txtFechaFinal.Text);
 
             //Este se debe llenar con el DropdownList apunto de existir
-            obj.Estado = 12;
+            obj.Estado = Convert.ToInt16(ddlEstados.SelectedValue);
 
             if (sesion.ID_ROL == 9)
             {   //Si se trata de funcionario, entonces solo podran ser accesibles los reportes con su identificacion
                 //obj.IDPersona = sesion.ID_PERSONA;//Corregir
-                obj.NomUsuario = sesion.ID_PERSONA;
+                obj.IDPersona = sesion.ID_PERSONA;
+                obj.NomUsuario = sesion.NOMBREUSUARIO;
             }
             else
             {
                 //Sin identificacion para jefatura, revisa solicitudes de todos los funcionarios.
                 //obj.IDPersona = "";//corregir
                 obj.NomUsuario = "";
+                obj.IDPersona = "";
             }
             if (Convert.ToDateTime(txtFechaFinal.Text) > DateTime.Now || Convert.ToDateTime(txtFechaInicial.Text) > DateTime.Now)
             {
@@ -164,20 +118,6 @@ namespace CascaronPrograIV.Archivos.WebForms.Reportes
             gvViaticos.Visible = true;
         }
 
-        protected void btnBuscarViaticos_Click(object sender, EventArgs e)
-        {
-            CompletarConsulta(1);
-        }
-
-        protected void btnBuscarSolicitudes_Click(object sender, EventArgs e)
-        {
-            CompletarConsulta(2);
-        }
-        
-        protected void btnBuscarLiquidaciones_Click(object sender, EventArgs e)
-        {
-            CompletarConsulta(3);
-        }
 
         #region Metodos para obtener datos
         private List<SP_LISTADO_LIQUIDACION_VIATICOS_Result> ObtenerListaLiquidacion(ReporteXFecha obj)
@@ -188,6 +128,15 @@ namespace CascaronPrograIV.Archivos.WebForms.Reportes
             servicio.Close();
             return listaObjetos;
 
+        }
+
+        private List<TBL_ESTADOS> ObtenerEstados()
+        {
+            WCFServicio.Service1Client servicio = new WCFServicio.Service1Client();
+            List<TBL_ESTADOS> listaObjetos = null;
+            listaObjetos = servicio.ObtenerEstados();
+            servicio.Close();
+            return listaObjetos;
         }
 
         private List<SP_LISTADO_ORDEN_VIATICOS_Result> ObtenerListaOrden(ReporteXFecha obj)
@@ -211,6 +160,14 @@ namespace CascaronPrograIV.Archivos.WebForms.Reportes
         }
 
         #endregion
+
+        protected void ddlEstados_TextChanged(object sender, EventArgs e)
+        {
+            string x = ddlEstados.SelectedItem.ToString();
+            ViewState["SelectedItem"] = x;
+
+        }
+
 
     }
 }
