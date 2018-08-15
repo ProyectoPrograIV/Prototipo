@@ -15,6 +15,7 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
         static DataTable dt;
         protected void Page_Load(object sender, EventArgs e)
         {
+            sesion = (SP_INICIO_SESION_Result)Session["sesion"];
             if (!IsPostBack)
             {
                 ReadOnlyFields();
@@ -23,7 +24,6 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
                 CargarLocalidad();
                 CargarRutas();
                 CargarPersonas();
-                sesion = (SP_INICIO_SESION_Result)Session["sesion"];
             }
         }
 
@@ -302,5 +302,26 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
         #region Metodos Verificar
 
         #endregion
+
+        protected void GvPersonas_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Delete")
+            {
+                int index = Convert.ToInt32(e.CommandArgument);
+                dt.Rows.RemoveAt(index);
+                GvPersonas.DeleteRow(index);
+                GvPersonas.DataSource = dt;
+                GvPersonas.DataBind();
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Negado()", true);
+            }
+            else
+            {
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Negado()", true);
+            }
+        }
+
+        protected void GvPersonas_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+        }
     }
 }
