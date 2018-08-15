@@ -97,3 +97,17 @@ C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\
 C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.csproj.CopyComplete
 C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.dll
 C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.pdb
+C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\S\bin\S.dll.config
+C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\S\bin\S.dll
+C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\S\bin\S.pdb
+C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\S\bin\Entidades.dll
+C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\S\bin\LN.dll
+C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\S\bin\EntityFramework.dll
+C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\S\bin\AD.dll
+C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\S\bin\Entidades.pdb
+C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\S\bin\LN.pdb
+C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\S\bin\EntityFramework.xml
+C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\S\bin\AD.pdb
+C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\S\obj\Debug\S.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\S\obj\Debug\S.dll
+C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\S\obj\Debug\S.pdb
