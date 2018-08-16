@@ -23,8 +23,10 @@ namespace CascaronPrograIV.Archivos.WebForms.Parametrizaciones
                 Entidades.SP_LISTAR_MODTARIFAVIATICO_Result Consulta = new Entidades.SP_LISTAR_MODTARIFAVIATICO_Result();
                 WCFServicio.Service1Client servicio = new WCFServicio.Service1Client();
                 List<Entidades.SP_LISTAR_MODTARIFAVIATICO_Result> resultado = servicio.ObtenerMODTARIFASVIATICOS();
-                //el view state es un tipo de variable de sesion solo funciona cuando se está en la pagina
-               
+                /*el view state es un tipo de variable de sesion solo funciona cuando se está en la pagina
+               se crea variable de sesion para cargar el listado de la tabla MOD TarifaViatico, para 
+                poder utilizarlo a la hora de poner los datos en los textbox con seleccione de GV,
+                y evitar que se pierda por la paginacion del GV*/
                 ViewState["lstMODTARIFAVIATICO"] = resultado;
                 //carga el DV 
                 this.GvTarifaViaticos.DataSource = null;
@@ -52,6 +54,30 @@ namespace CascaronPrograIV.Archivos.WebForms.Parametrizaciones
         protected void GvTarifaViaticos_SelectedIndexChanged(object sender, EventArgs e)
         {
           
+        }
+
+        protected void GvTarifaViaticos_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            this.GvTarifaViaticos.PageIndex = e.NewPageIndex;//crea los nuevos indices de pagina
+            CargarUsuarios();
+        }
+
+        protected void GvTarifaViaticos_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
+        {
+            int IndicePagina = GvTarifaViaticos.PageIndex;
+            int index = (IndicePagina*10)+e.NewSelectedIndex;
+            //Asiga lo cargado en la variable de sesion
+            List<SP_LISTAR_MODTARIFAVIATICO_Result> resultado=(List<SP_LISTAR_MODTARIFAVIATICO_Result>)ViewState["lstMODTARIFAVIATICO"];
+            this.TbxCanton.Text = resultado[index].CODIGOCANTON.ToString();
+            this.Tbxprovincia.Text = resultado[index].CODIGOPROVINCIA.ToString();
+            this.TbxEstado.Text = resultado[index].ESTADOTARIFA.ToString();
+            this.TbxFecha.Text = resultado[index].FECHATARIFA.ToString();
+            this.TbxFiltrar.Text = resultado[index].ID_MODTARIFA.ToString();
+            this.TbxLocalidad.Text = resultado[index].LOCALIDAD.ToString();
+            this.TbxMonto.Text = resultado[index].MONTOTARIFA.ToString();
+            this.TbxTipoTarifa.Text = resultado[index].TIPOTARIFA.ToString();
+
+
         }
     }
 }

@@ -64,7 +64,8 @@
             <img src="../../Recursos/Mostrar.png" />
         </h1>
             <asp:TextBox CssClass="TbxFiltrar" ID="TextBox7" runat="server" Text="Buscar"></asp:TextBox>
-            <asp:GridView ID="GvTarifaAutobus" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
+            <asp:GridView ID="GvTarifaAutobus"  runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" 
+                  >
                 <AlternatingRowStyle BackColor="White" />
                 <EditRowStyle BackColor="#2461BF" />
                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -125,7 +126,8 @@
             </table>
 
            
-            <asp:GridView CssClass="GridView" ID="GvTarifaViaticos" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" OnSelectedIndexChanged="GvTarifaViaticos_SelectedIndexChanged">
+            <asp:GridView CssClass="GridView" ID="GvTarifaViaticos" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False"
+                 OnSelectedIndexChanged="GvTarifaViaticos_SelectedIndexChanged" AllowPaging="true" PageSize="10" OnPageIndexChanging="GvTarifaViaticos_PageIndexChanging" OnSelectedIndexChanging="GvTarifaViaticos_SelectedIndexChanging">
                 <AlternatingRowStyle BackColor="White" />
                 <EditRowStyle BackColor="#2461BF" />
                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
