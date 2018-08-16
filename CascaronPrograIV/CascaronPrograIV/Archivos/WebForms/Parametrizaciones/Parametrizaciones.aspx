@@ -104,22 +104,25 @@
            
             <table style="width: 100%;">
                 <tr>
-                    <td><asp:TextBox ID="TbxFiltrar" CssClass="auto-style2" runat="server" placeholder="Id Tarifa Viatico" Width="195px"></asp:TextBox></td>
-                    <td><asp:TextBox CssClass="Textbox" ID="TbxTipoTarifa" runat="server" placeholder="Tipo de Tarifa"></asp:TextBox></td>
-                    <td><asp:TextBox CssClass="Textbox" ID="TbxMonto" runat="server" placeholder="Monto"></asp:TextBox></td>
+                    <td><h5>ID TARIFA</h5><asp:TextBox ID="TbxFiltrar" CssClass="auto-style2" runat="server" placeholder="Id Tarifa Viatico" Width="195px" ReadOnly="True"></asp:TextBox></td>
+                    <td><h5>TIPO TARIFA</h5><asp:TextBox CssClass="Textbox" ID="TbxTipoTarifa" runat="server" placeholder="Tipo de Tarifa" ReadOnly="True"></asp:TextBox></td>
+                    <td><h5>MONTO DE TARIFA</h5><asp:TextBox CssClass="Textbox" ID="TbxMonto" runat="server" placeholder="Monto"></asp:TextBox></td>
                 </tr>
                 <tr>
-                    <td><asp:TextBox CssClass="Textbox" ID="TbxFecha" runat="server" placeholder="Fecha"></asp:TextBox><br /></td>
-                    <td><asp:TextBox CssClass="Textbox" ID="TbxLocalidad" runat="server" placeholder="Localidad"></asp:TextBox></td>
-                    <td><asp:TextBox CssClass="Textbox" ID="Tbxprovincia" runat="server" placeholder="Provincia"></asp:TextBox></td>
+                    <td><h5>FECHA</h5><asp:TextBox CssClass="Textbox" ID="TbxFecha" runat="server" placeholder="Fecha"></asp:TextBox><br /></td>
+                    <td><h5>LOCALIDAD</h5><asp:TextBox CssClass="Textbox" ID="TbxLocalidad" runat="server" placeholder="Localidad" ReadOnly="True"></asp:TextBox></td>
+                    <td><h5>PROVINCIA</h5><asp:TextBox CssClass="Textbox" ID="Tbxprovincia" runat="server" placeholder="Provincia" ReadOnly="True"></asp:TextBox></td>
                 </tr>
                 <tr>
-                    <td><asp:TextBox CssClass="Textbox" ID="TbxCanton" runat="server" placeholder="Canton"></asp:TextBox><br /></td>
-                    <td> <asp:TextBox CssClass="Textbox" ID="TbxEstado" runat="server" placeholder="Estado" ></asp:TextBox></td>
-                  
+                    <td><h5>CANTON</h5><asp:TextBox CssClass="Textbox" ID="TbxCanton" runat="server" placeholder="Canton" ReadOnly="True"></asp:TextBox><br /></td>
+                    <td><h5>ESTADO TARIFA</h5> <asp:DropDownList ID="cbEstado" runat="server">
+                        <asp:ListItem Value="10">Activo</asp:ListItem>
+                        <asp:ListItem Value="9">Inactivo</asp:ListItem>
+                        </asp:DropDownList> </td>
+                  <td> </td>
                 </tr>
                 <tr>
-                     <td colspan="3"> <asp:Button ID="btnActualizar" CssClass="Button" runat="server" Text="Actualizar" /> </td>
+                     <td colspan="3"> <asp:Button ID="btnActualizar" CssClass="Button" runat="server" Text="Actualizar" OnClick="btnActualizar_Click" /> </td>
 
                 </tr> 
                  

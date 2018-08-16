@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using Entidades;
 using System.Collections;
 
+
 namespace CascaronPrograIV.Archivos.WebForms.Parametrizaciones
 {
     public partial class Parametrizaciones : System.Web.UI.Page
@@ -95,14 +96,14 @@ namespace CascaronPrograIV.Archivos.WebForms.Parametrizaciones
             }
             if((resultado[index].ESTADOTARIFA)==10)
             {
-                this.TbxEstado.Text = "Activo";
+                this.cbEstado.SelectedIndex= 0;
             }else if ((resultado[index].ESTADOTARIFA) == 9)
                 {
-                    this.TbxEstado.Text = "Inactivo";
+                this.cbEstado.SelectedIndex = 1;
                 }
-            
-            
-            this.TbxFecha.Text = resultado[index].FECHATARIFA.ToString();
+
+
+            this.TbxFecha.Text = (resultado[index].FECHATARIFA).ToShortDateString();
             this.TbxFiltrar.Text = resultado[index].ID_MODTARIFA.ToString();
             this.TbxLocalidad.Text = resultado[index].LOCALIDAD.ToString();
             this.TbxMonto.Text = resultado[index].MONTOTARIFA.ToString();
@@ -110,5 +111,61 @@ namespace CascaronPrograIV.Archivos.WebForms.Parametrizaciones
 
 
         }
+
+        private void Borrar()
+        {
+            this.TbxFecha.Text = "";
+            this.TbxFiltrar.Text = "";
+            this.TbxLocalidad.Text = "";
+            this.TbxMonto.Text = "";
+            this.TbxTipoTarifa.Text = "";
+            this.TbxCanton.Text= "";
+            this.Tbxprovincia.Text= "";
+            this.cbEstado.SelectedIndex= 0;
+        }
+
+        protected void btnActualizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int respuesta = 0;
+                Int16 estado=0;
+                WCFServicio.Service1Client servicio = new WCFServicio.Service1Client();
+                SP_LISTAR_MODTARIFAVIATICO_Result objModelo = new SP_LISTAR_MODTARIFAVIATICO_Result();
+                ArrayList listModelo = new ArrayList();
+                if (cbEstado.SelectedIndex==0)
+                {
+                    estado = 10;
+                }else if (cbEstado.SelectedIndex==1)
+                {
+                    estado = 9;
+                }
+                objModelo.ID_MODTARIFA = Convert.ToInt16(TbxFiltrar.Text);
+                objModelo.FECHATARIFA = Convert.ToDateTime(TbxFecha.Text);
+                objModelo.MONTOTARIFA = Convert.ToDecimal(TbxMonto.Text);
+                objModelo.ESTADOTARIFA= estado;
+
+                /*Se crea un objeto de tipo clsUsario del BLL, para encapsular la informacion
+                 digitada por el usuario y manipular la misma en la capa de negocios*/
+
+                respuesta = servicio.ActualizarMODTARIFASVIATICOS(objModelo);
+
+                if (respuesta == 0)
+                {
+                    this.Page.Response.Write("<script language='JavaScript'>window.alert('" + " NO SE PUDO REALIZAR LA ACTUALIZACION" + "');</script>");
+                }
+
+                Borrar();
+                CargarUsuarios();
+
+
+            }
+            catch (Exception)
+            {
+
+                this.Page.Response.Write("<script language='JavaScript'>window.alert('" + " NO SE PUDO REALIZAR LA ACTUALIZACION" + "');</script>");
+            }
+            
+        }
     }
-}
+    }
