@@ -5,11 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Entidades;
+using System.Collections;
 
 namespace CascaronPrograIV.Archivos.WebForms.Parametrizaciones
 {
     public partial class Parametrizaciones : System.Web.UI.Page
     {
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -64,13 +66,42 @@ namespace CascaronPrograIV.Archivos.WebForms.Parametrizaciones
 
         protected void GvTarifaViaticos_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
         {
+            WCFServicio.Service1Client servicio = new WCFServicio.Service1Client();
+           
             int IndicePagina = GvTarifaViaticos.PageIndex;
             int index = (IndicePagina*10)+e.NewSelectedIndex;
             //Asiga lo cargado en la variable de sesion
+            List<SP_OBTENER_CANTON_PROVINCIA_Result> listaIDs = new List<SP_OBTENER_CANTON_PROVINCIA_Result>();
             List<SP_LISTAR_MODTARIFAVIATICO_Result> resultado=(List<SP_LISTAR_MODTARIFAVIATICO_Result>)ViewState["lstMODTARIFAVIATICO"];
-            this.TbxCanton.Text = resultado[index].CODIGOCANTON.ToString();
-            this.Tbxprovincia.Text = resultado[index].CODIGOPROVINCIA.ToString();
-            this.TbxEstado.Text = resultado[index].ESTADOTARIFA.ToString();
+            //se crea objeto tipos Ids 
+            IdCantonIdProvincia IDS = new IdCantonIdProvincia();
+            //se crea lista Array donde se almacenaran los IDs de Canton y Provincia
+            ArrayList lstIDS = new ArrayList();
+            //se carga objeto tipo Ids con los ids de provincia y canton
+            
+            IDS.PropIdCanton= resultado[index].CODIGOCANTON;
+            IDS.PropIdProvincia= resultado[index].CODIGOPROVINCIA;
+            lstIDS.Add(IDS);//se agrega objeto a la lista
+            ViewState["lstIdCantonIdProvincia"] = lstIDS;//se almacena lista en variable de sesion         
+            listaIDs = servicio.ObtenerIDS_CANTON_PROVINCIA(IDS);
+            if (listaIDs.Count != 0)
+            {
+                foreach (SP_OBTENER_CANTON_PROVINCIA_Result item in listaIDs)
+                {
+                    Tbxprovincia.Text = item.DESCRIPCIONPROVINCIA;
+                    TbxCanton.Text = item.DESCRIPCIONCANTON;
+               
+                }
+            }
+            if((resultado[index].ESTADOTARIFA)==10)
+            {
+                this.TbxEstado.Text = "Activo";
+            }else if ((resultado[index].ESTADOTARIFA) == 9)
+                {
+                    this.TbxEstado.Text = "Inactivo";
+                }
+            
+            
             this.TbxFecha.Text = resultado[index].FECHATARIFA.ToString();
             this.TbxFiltrar.Text = resultado[index].ID_MODTARIFA.ToString();
             this.TbxLocalidad.Text = resultado[index].LOCALIDAD.ToString();

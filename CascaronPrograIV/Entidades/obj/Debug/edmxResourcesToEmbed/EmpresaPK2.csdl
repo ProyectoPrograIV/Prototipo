@@ -181,8 +181,8 @@
     </FunctionImport>
     <FunctionImport Name="SP_LISTAR_MODTARIFAVIATICO" ReturnType="Collection(EmpresaPK2Model.SP_LISTAR_MODTARIFAVIATICO_Result)" />
     <FunctionImport Name="SP_OBTENER_CANTON_PROVINCIA" ReturnType="Collection(EmpresaPK2Model.SP_OBTENER_CANTON_PROVINCIA_Result)">
-      <Parameter Name="CODIGOCANTON" Mode="In" Type="Byte" />
-      <Parameter Name="CODIGOPROVINCIA" Mode="In" Type="Byte" />
+      <Parameter Name="CODIGOCANTON" Mode="In" Type="Int32" />
+      <Parameter Name="CODIGOPROVINCIA" Mode="In" Type="Int32" />
     </FunctionImport>
   </EntityContainer>
   <ComplexType Name="SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result">

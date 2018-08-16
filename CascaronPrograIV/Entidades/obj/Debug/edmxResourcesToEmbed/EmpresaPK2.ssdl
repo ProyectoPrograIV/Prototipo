@@ -369,8 +369,8 @@
     <Parameter Name="IDHOSPEDAJE" Type="int" Mode="In" />
   </Function>
   <Function Name="SP_OBTENER_CANTON_PROVINCIA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_PARAMETROS">
-    <Parameter Name="CODIGOCANTON" Type="tinyint" Mode="In" />
-    <Parameter Name="CODIGOPROVINCIA" Type="tinyint" Mode="In" />
+    <Parameter Name="CODIGOCANTON" Type="int" Mode="In" />
+    <Parameter Name="CODIGOPROVINCIA" Type="int" Mode="In" />
   </Function>
   <Function Name="SP_LISTADO_LIQUIDACION_VIATICOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_REPORTES">
     <Parameter Name="FECHAINICIO" Type="date" Mode="In" />

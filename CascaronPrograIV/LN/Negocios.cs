@@ -48,9 +48,20 @@ namespace LN
         #endregion
 
         #region Metodos Parametrizaciones
+        //se obtine de BD la lista de las tarifas de Viaticos y Hospedaje
         public static List<SP_LISTAR_MODTARIFAVIATICO_Result> ObtenerMODTARIFASVIATICOS()
         {          
             return Datos.ObtenerMODTARIFASVIATICOS();
+        }
+        //se actualiza desde la aplicacion la lista de las tarifas de Viaticos y Hospedaje
+        public static int ActualizarMODTARIFASVIATICOS(SP_LISTAR_MODTARIFAVIATICO_Result obj)
+        {
+            return Datos.ActualizarMODTARIFASVIATICOS(obj);
+        }
+
+        public static List<SP_OBTENER_CANTON_PROVINCIA_Result> ObtenerIDS_CANTON_PROVINCIA(IdCantonIdProvincia obj)
+        {      
+            return Datos.ObtenerIDS_CANTON_PROVINCIA(obj);
         }
         #endregion
     }
