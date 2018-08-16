@@ -61,3 +61,4 @@ C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\Entidades\bi
 C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\Entidades\bin\Debug\Entidades.pdb
 C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\Entidades\bin\Debug\EntityFramework.dll
 C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\Entidades\bin\Debug\EntityFramework.xml
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\Entidades\obj\Debug\E.csprojAssemblyReference.cache

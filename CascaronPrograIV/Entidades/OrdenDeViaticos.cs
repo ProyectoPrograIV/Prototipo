@@ -22,25 +22,5 @@ namespace Entidades
                 nomUsuario = value;
             }
         }
-
-        /* public string NomUsuario { /*get => NomUsuario1; set => NomUsuario1 = value;*/
     }
-
-            /* get set NO
-            public string NomUsuario
-            {
-                get
-                {
-                    return nomUsuario;
-                }
-
-                set
-                {
-                    nomUsuario = value;
-                }
-            }
-
-        }*/
-
-      
-    }
+}

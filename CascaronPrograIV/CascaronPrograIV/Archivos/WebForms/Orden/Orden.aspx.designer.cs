@@ -103,13 +103,22 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden {
         protected global::System.Web.UI.WebControls.Button Btn_Generar;
         
         /// <summary>
-        /// Control TbxFiltrar.
+        /// Control txtBuscar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TbxFiltrar;
+        protected global::System.Web.UI.WebControls.TextBox txtBuscar;
+        
+        /// <summary>
+        /// Control btnBuscar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnBuscar;
         
         /// <summary>
         /// Control GvConsultarSolicitud.
@@ -220,12 +229,12 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden {
         protected global::System.Web.UI.WebControls.TextBox TextBox18;
         
         /// <summary>
-        /// Control Button1.
+        /// Control btnGuardar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnGuardar;
     }
 }

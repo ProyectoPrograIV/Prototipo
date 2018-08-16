@@ -220,10 +220,10 @@ namespace CascaronPrograIV.WCFServicio {
         System.Threading.Tasks.Task GenerarOrdenAsync(Entidades.TBL_CABECERAORDENVIATICO obj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerOrden", ReplyAction="http://tempuri.org/IService1/ObtenerOrdenResponse")]
-        System.Collections.Generic.List<CascaronPrograIV.WCFServicio.SP_OBTENER_ORDEN_VIATICOS_Result> ObtenerOrden(CascaronPrograIV.WCFServicio.OrdenDeViaticos obj);
+        System.Collections.Generic.List<Entidades.SP_OBTENER_ORDEN_VIATICOS_Result> ObtenerOrden(Entidades.OrdenDeViaticos obj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerOrden", ReplyAction="http://tempuri.org/IService1/ObtenerOrdenResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<CascaronPrograIV.WCFServicio.SP_OBTENER_ORDEN_VIATICOS_Result>> ObtenerOrdenAsync(CascaronPrograIV.WCFServicio.OrdenDeViaticos obj);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_OBTENER_ORDEN_VIATICOS_Result>> ObtenerOrdenAsync(Entidades.OrdenDeViaticos obj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerRoles", ReplyAction="http://tempuri.org/IService1/ObtenerRolesResponse")]
         System.Collections.Generic.List<Entidades.TBL_ROLUSUARIO> ObtenerRoles();
@@ -329,11 +329,11 @@ namespace CascaronPrograIV.WCFServicio {
             return base.Channel.GenerarOrdenAsync(obj);
         }
         
-        public System.Collections.Generic.List<CascaronPrograIV.WCFServicio.SP_OBTENER_ORDEN_VIATICOS_Result> ObtenerOrden(CascaronPrograIV.WCFServicio.OrdenDeViaticos obj) {
+        public System.Collections.Generic.List<Entidades.SP_OBTENER_ORDEN_VIATICOS_Result> ObtenerOrden(Entidades.OrdenDeViaticos obj) {
             return base.Channel.ObtenerOrden(obj);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<CascaronPrograIV.WCFServicio.SP_OBTENER_ORDEN_VIATICOS_Result>> ObtenerOrdenAsync(CascaronPrograIV.WCFServicio.OrdenDeViaticos obj) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_OBTENER_ORDEN_VIATICOS_Result>> ObtenerOrdenAsync(Entidades.OrdenDeViaticos obj) {
             return base.Channel.ObtenerOrdenAsync(obj);
         }
         

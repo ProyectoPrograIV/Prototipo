@@ -15,20 +15,29 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
         {
             if (!IsPostBack)
             {
-                //GvConsultarSolicitud
+                CargarOrden();
             }
         }
 
-        private void CargarUsuarios()
+        private List<SP_OBTENER_ORDEN_VIATICOS_Result> ObtenerListaOrden(OrdenDeViaticos obj)
+        {
+            WCFServicio.Service1Client servicio = new WCFServicio.Service1Client();
+            List<SP_OBTENER_ORDEN_VIATICOS_Result> lista = null;
+            lista = servicio.ObtenerOrden(obj);
+            servicio.Close();
+            return lista;
+
+        }
+
+        private void CargarOrden()
         {
             try
             {
-                //List<TBL_CABECERAORDENVIATICO> lista = ConexxServicios.ConexxServicios.ObtenerUsuarios();
-                //ViewState["lstUsuarios"] = lista;
+                OrdenDeViaticos obj = new OrdenDeViaticos();
 
                 this.GvConsultarSolicitud.DataSource = null;
                 this.GvConsultarSolicitud.DataBind();
-                //this.GvConsultarSolicitud.DataSource = lista;
+                this.GvConsultarSolicitud.DataSource = this.ObtenerListaOrden(obj);
                 this.GvConsultarSolicitud.DataBind();
             }
             catch (Exception ex)
@@ -40,6 +49,13 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
         protected void Btn_Generar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            OrdenDeViaticos obj = new OrdenDeViaticos();
+            obj.NomUsuario = txtBuscar.Text.Trim();
+            GvConsultarSolicitud.DataSource = this.ObtenerListaOrden(obj);
         }
     }
 }
