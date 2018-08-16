@@ -106,10 +106,16 @@
                 <tr>
                     <td><h5>ID TARIFA</h5><asp:TextBox ID="TbxFiltrar" CssClass="auto-style2" runat="server" placeholder="Id Tarifa Viatico" Width="195px" ReadOnly="True"></asp:TextBox></td>
                     <td><h5>TIPO TARIFA</h5><asp:TextBox CssClass="Textbox" ID="TbxTipoTarifa" runat="server" placeholder="Tipo de Tarifa" ReadOnly="True"></asp:TextBox></td>
-                    <td><h5>MONTO DE TARIFA</h5><asp:TextBox CssClass="Textbox" ID="TbxMonto" runat="server" placeholder="Monto"></asp:TextBox></td>
+                    <td><h5>MONTO DE TARIFA</h5><asp:TextBox CssClass="Textbox" ID="TbxMonto" runat="server" placeholder="Monto"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TbxMonto" ErrorMessage="Ingrese el Monto de Tarifa" ForeColor="Red" ValidationGroup="TARIFA_HOSPEDA">*</asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TbxMonto" Display="Dynamic" ErrorMessage="Solo puede Ingresar Numeros" ForeColor="Red" ValidationExpression="^(\d|-)?(\d|,)*\.?\d*$" ValidationGroup="TARIFA_HOSPEDA">*</asp:RegularExpressionValidator>
+                    </td>
                 </tr>
                 <tr>
-                    <td><h5>FECHA</h5><asp:TextBox CssClass="Textbox" ID="TbxFecha" runat="server" placeholder="Fecha"></asp:TextBox><br /></td>
+                    <td><h5>FECHA</h5><asp:TextBox CssClass="Textbox" ID="TbxFecha" runat="server" placeholder="Fecha"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TbxFecha" ErrorMessage="Ingrese la Fecha de Vecimiento" ForeColor="Red" ValidationGroup="TARIFA_HOSPEDA">*</asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="TbxFecha" ErrorMessage="Formato de Fecha Invalido, Ejm: 30/11/2017" ForeColor="Red" ValidationExpression="^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$" ValidationGroup="TARIFA_HOSPEDA">*</asp:RegularExpressionValidator>
+                        <br /></td>
                     <td><h5>LOCALIDAD</h5><asp:TextBox CssClass="Textbox" ID="TbxLocalidad" runat="server" placeholder="Localidad" ReadOnly="True"></asp:TextBox></td>
                     <td><h5>PROVINCIA</h5><asp:TextBox CssClass="Textbox" ID="Tbxprovincia" runat="server" placeholder="Provincia" ReadOnly="True"></asp:TextBox></td>
                 </tr>
@@ -119,10 +125,12 @@
                         <asp:ListItem Value="10">Activo</asp:ListItem>
                         <asp:ListItem Value="9">Inactivo</asp:ListItem>
                         </asp:DropDownList> </td>
-                  <td> </td>
+                  <td> 
+                      <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" ValidationGroup="TARIFA_HOSPEDA" />
+                    </td>
                 </tr>
                 <tr>
-                     <td colspan="3"> <asp:Button ID="btnActualizar" CssClass="Button" runat="server" Text="Actualizar" OnClick="btnActualizar_Click" /> </td>
+                     <td colspan="3"> <asp:Button ID="btnActualizar" CssClass="Button" runat="server" Text="Actualizar" OnClick="btnActualizar_Click" ValidationGroup="TARIFA_HOSPEDA" /> </td>
 
                 </tr> 
                  
