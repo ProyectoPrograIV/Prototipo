@@ -48,6 +48,12 @@ namespace S
         List<TBL_ESTADOS> ObtenerEstados();
         #endregion
 
+        #region Metodos de Parametrizaciones
+        [OperationContract]
+        List<SP_LISTAR_MODTARIFAVIATICO_Result> ObtenerMODTARIFASVIATICOS();
+
+        #endregion
+
     }
 
 

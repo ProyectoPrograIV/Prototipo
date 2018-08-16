@@ -46,5 +46,12 @@ namespace LN
             return Datos.ObtenerEstados();
         }
         #endregion
+
+        #region Metodos Parametrizaciones
+        public static List<SP_LISTAR_MODTARIFAVIATICO_Result> ObtenerMODTARIFASVIATICOS()
+        {          
+            return Datos.ObtenerMODTARIFASVIATICOS();
+        }
+        #endregion
     }
 }

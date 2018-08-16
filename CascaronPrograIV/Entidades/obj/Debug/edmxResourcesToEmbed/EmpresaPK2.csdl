@@ -173,6 +173,17 @@
       <Parameter Name="HORASALIDA" Mode="In" Type="Time" />
     </FunctionImport>
     <FunctionImport Name="SP_OBTENER_ESTADOS_ACTIVOS" ReturnType="Collection(EmpresaPK2Model.SP_OBTENER_ESTADOS_ACTIVOS_Result)" />
+    <FunctionImport Name="SP_ACTUALIZAR_MODTARIFAVIATICO">
+      <Parameter Name="ID_MODTARIFA" Mode="In" Type="Int16" />
+      <Parameter Name="FECHATARIFA" Mode="In" Type="DateTime" />
+      <Parameter Name="MONTOTARIFA" Mode="In" Type="Decimal" />
+      <Parameter Name="ESTADOTARIFA" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="SP_LISTAR_MODTARIFAVIATICO" ReturnType="Collection(EmpresaPK2Model.SP_LISTAR_MODTARIFAVIATICO_Result)" />
+    <FunctionImport Name="SP_OBTENER_CANTON_PROVINCIA" ReturnType="Collection(EmpresaPK2Model.SP_OBTENER_CANTON_PROVINCIA_Result)">
+      <Parameter Name="CODIGOCANTON" Mode="In" Type="Byte" />
+      <Parameter Name="CODIGOPROVINCIA" Mode="In" Type="Byte" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result">
     <Property Type="Int32" Name="ID_SOLICITUD" Nullable="false" />
@@ -649,5 +660,19 @@
   <ComplexType Name="SP_OBTENER_ESTADOS_ACTIVOS_Result">
     <Property Type="Int16" Name="ID_CODIGO" Nullable="false" />
     <Property Type="String" Name="DESCODIGO" Nullable="false" MaxLength="75" />
+  </ComplexType>
+  <ComplexType Name="SP_LISTAR_MODTARIFAVIATICO_Result">
+    <Property Type="Int16" Name="ID_MODTARIFA" Nullable="false" />
+    <Property Type="Byte" Name="CODIGOPROVINCIA" Nullable="false" />
+    <Property Type="Byte" Name="CODIGOCANTON" Nullable="false" />
+    <Property Type="String" Name="TIPOTARIFA" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="FECHATARIFA" Nullable="false" />
+    <Property Type="Decimal" Name="MONTOTARIFA" Nullable="false" Precision="19" />
+    <Property Type="Int16" Name="ESTADOTARIFA" Nullable="false" />
+    <Property Type="String" Name="LOCALIDAD" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SP_OBTENER_CANTON_PROVINCIA_Result">
+    <Property Type="String" Name="DESCRIPCIONCANTON" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="DESCRIPCIONPROVINCIA" Nullable="false" MaxLength="50" />
   </ComplexType>
 </Schema>

@@ -144,6 +144,13 @@
     <None Include="Connected Services\WCFSolicitud\Solicitud2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Properties\DataSources\Entidades.SP_LISTADO_LIQUIDACION_VIATICOS_Result2.datasource" />
+    <Content Include="Properties\DataSources\Entidades.SP_LISTADO_ORDEN_VIATICOS_Result2.datasource" />
+    <Content Include="Properties\DataSources\Entidades.SP_LISTADO_SOLICITUD_VIATICOS_Result2.datasource" />
+    <Content Include="Properties\DataSources\Entidades.SP_LISTAR_MODTARIFAVIATICO_Result.datasource" />
+    <Content Include="Properties\DataSources\Entidades.SP_OBTENER_ORDEN_VIATICOS_Result.datasource" />
+    <Content Include="Properties\DataSources\Entidades.TBL_ESTADOS2.datasource" />
+    <Content Include="Properties\DataSources\Entidades.TBL_ROLUSUARIO2.datasource" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

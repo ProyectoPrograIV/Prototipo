@@ -78,6 +78,16 @@ namespace S
 
         #endregion
 
+        #region Metodos de Parametrizaciones
+        public List<SP_LISTAR_MODTARIFAVIATICO_Result> ObtenerMODTARIFASVIATICOS()
+        {
+
+           return Negocios.ObtenerMODTARIFASVIATICOS();
+        }
+
+
+        #endregion
+
         public SP_INICIO_SESION_Result InicioSesion(TBL_USUARIO obj) => Negocios.InicioSesion(obj);
     }
 }

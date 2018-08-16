@@ -169,5 +169,54 @@ namespace AD
             return ListaResultado;
         }
         #endregion
+
+        #region Metodos de Parametrizaciones
+         public static List<SP_LISTAR_MODTARIFAVIATICO_Result> ObtenerMODTARIFASVIATICOS()
+        {
+            //se crea el array list dond se almacenará el resultado
+            /*Mediante el contexto de datos se pasan los parametros al procedimiento
+            almacenado, y a la vez se convierte el dato que retorna a String, puesto
+            que al utilizar Linq To SQL el valor retornado es un IEnumerable u Object*/
+            EmpresaPK2Entities Entidad = new EmpresaPK2Entities();
+            List<SP_LISTAR_MODTARIFAVIATICO_Result> lstresultado = new List<SP_LISTAR_MODTARIFAVIATICO_Result>();
+            /*Se trasladan los datos ingresados por el usuario al objeto "usuario"*/
+            try
+            {
+
+                var consulta = Entidad.SP_LISTAR_MODTARIFAVIATICO();
+                if (consulta != null)//se consulta si no es nula la respuesta
+                {
+                    foreach (var item in consulta)//recorre el resultado de la consulta
+                    {
+                        //se instancia un objeto tipo Atencion Odontologica para cargarlo con lo obtenido en BD
+                        SP_LISTAR_MODTARIFAVIATICO_Result u = new SP_LISTAR_MODTARIFAVIATICO_Result();
+                        u.CODIGOCANTON = item.CODIGOCANTON;
+                        u.CODIGOPROVINCIA = item.CODIGOPROVINCIA;
+                        u.ESTADOTARIFA = item.ESTADOTARIFA;
+                        u.FECHATARIFA = item.FECHATARIFA;
+                        u.ID_MODTARIFA = item.ID_MODTARIFA;
+                        u.LOCALIDAD = item.LOCALIDAD;
+                        u.MONTOTARIFA = item.MONTOTARIFA;
+                        u.TIPOTARIFA = item.TIPOTARIFA;
+
+                        //se agregar  el objeto cargado obtenido de BD al array
+                        lstresultado.Add(u);
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                if (Entidad != null) Entidad.Dispose();//se cierra la sesion abierta con BD
+            }
+            //se retorna el objeto cargado obtenido de BD
+            return lstresultado;
+        }
+
+        #endregion
     }
 }
