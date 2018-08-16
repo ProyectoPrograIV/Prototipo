@@ -16,7 +16,7 @@ namespace CascaronPrograIV.Archivos.WebForms.Reportes
             //Page.ClientScript.RegisterHiddenField("vCode", ((int) ViewState["TipoReporte"]).ToString());
             if (!this.Page.IsPostBack)
             {
-                ViewState["TipoReporte"] = 1;
+                ViewState["TipoReporte"] = 2;
                 // ViewState["SelectedItem"] = "Pendiente";
                 List<TBL_ESTADOS> ListaEstados = ObtenerEstados();
                 this.ddlEstados.DataSource = null;

@@ -127,4 +127,3 @@ C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debu
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\Presentacion.csproj.CopyComplete
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\CascaronPrograIV.dll
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\CascaronPrograIV.pdb
-C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\Presentacion.csprojAssemblyReference.cache

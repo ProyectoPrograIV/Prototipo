@@ -349,5 +349,10 @@ namespace Entidades
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("SP_GUARDAR_SOLICITUDES_FUNCIONARIO", nOMBREUSUARIOParameter, fECHACREACIONParameter, fECHASALIDAParameter, fECHAREGRESOParameter, jUSTIFICACIONParameter, dESTINOParameter, hORAREGRESOParameter, hORASALIDAParameter);
         }
+    
+        public virtual ObjectResult<SP_OBTENER_ESTADOS_ACTIVOS_Result> SP_OBTENER_ESTADOS_ACTIVOS()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_OBTENER_ESTADOS_ACTIVOS_Result>("SP_OBTENER_ESTADOS_ACTIVOS");
+        }
     }
 }

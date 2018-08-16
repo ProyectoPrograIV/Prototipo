@@ -13,7 +13,61 @@ namespace CascaronPrograIV.Archivos.WebForms.Reportes {
     public partial class Reportes {
         
         /// <summary>
-        /// txtFechaInicial control.
+        /// Control lbViaticos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbViaticos;
+        
+        /// <summary>
+        /// Control lbSolicitudes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbSolicitudes;
+        
+        /// <summary>
+        /// Control lbLiquidaciones.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbLiquidaciones;
+        
+        /// <summary>
+        /// Control lbSolicitudesPendientes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbSolicitudesPendientes;
+        
+        /// <summary>
+        /// Control lbLiquidacionesPendientes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbLiquidacionesPendientes;
+        
+        /// <summary>
+        /// Control lbLiquidacionesPendAprobar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbLiquidacionesPendAprobar;
+        
+        /// <summary>
+        /// Control txtFechaInicial.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
@@ -49,7 +103,16 @@ namespace CascaronPrograIV.Archivos.WebForms.Reportes {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RFV2;
         
         /// <summary>
-        /// btnBuscarViaticos control.
+        /// Control ddlEstados.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlEstados;
+        
+        /// <summary>
+        /// Control btnBuscarViaticos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.

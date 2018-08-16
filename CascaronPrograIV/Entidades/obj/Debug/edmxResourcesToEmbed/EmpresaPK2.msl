@@ -286,5 +286,13 @@
       </ResultMapping>
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="SP_GUARDAR_SOLICITUDES_FUNCIONARIO" FunctionName="EmpresaPK2Model.Store.SP_GUARDAR_SOLICITUDES_FUNCIONARIO" />
+    <FunctionImportMapping FunctionImportName="SP_OBTENER_ESTADOS_ACTIVOS" FunctionName="EmpresaPK2Model.Store.SP_OBTENER_ESTADOS_ACTIVOS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_OBTENER_ESTADOS_ACTIVOS_Result">
+          <ScalarProperty Name="ID_CODIGO" ColumnName="ID_CODIGO" />
+          <ScalarProperty Name="DESCODIGO" ColumnName="DESCODIGO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>
