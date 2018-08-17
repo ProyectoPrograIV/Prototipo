@@ -111,12 +111,13 @@ namespace AD
         #region Obtener Valores de Sistema
         public static List<TBL_ROLUSUARIO> ObtenerRoles ()
         {
+            //Metodo para obtener la lista de roles disponibles. 
             EmpresaPK2Entities contexto = null;
             List<TBL_ROLUSUARIO> ListaResultado = null;
             try
             {
                 contexto = new EmpresaPK2Entities();
-
+                
                 var consulta = (from reg in contexto.TBL_ROLUSUARIO
                                 where reg.ESTADOROL.ToUpper().Equals("Activo")                                
                                 select reg).ToList();

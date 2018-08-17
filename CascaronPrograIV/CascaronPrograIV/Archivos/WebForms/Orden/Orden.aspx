@@ -1,5 +1,31 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Archivos/WebForms/PaginaMaestra.Master" AutoEventWireup="true" CodeBehind="Orden.aspx.cs" Inherits="CascaronPrograIV.Archivos.WebForms.Orden.Orden" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .auto-style2 {
+            margin: 20px;
+            text-align: center;
+            color: #ADADAD;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 900;
+            font-size: 22px;
+            border-style: solid;
+        }
+
+        .auto-style3 {
+            border-style: none;
+            border-color: inherit;
+            border-width: 0;
+            padding: 0;
+            font-size: 20px;
+            color: #fff;
+            text-align: center;
+            background: #2d343d;
+            border-radius: 5px;
+            cursor: pointer;
+            outline: 0;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <script src="../../script/jquery-3.3.1.min.js"></script>
@@ -77,10 +103,12 @@
         <br />
         <br />
         <div id="DivConsultar">
-            <h1 id="h1Consultar">Consultar Orden de Viaticos <img src="../../Recursos/Mostrar.png" /></h1>
-            <asp:TextBox ID="TbxFiltrar" CssClass="TbxFiltrar" runat="server" Text="Buscar"></asp:TextBox>
+            <h1 id="h1Consultar">Consultar Orden de Viaticos
+                <img src="../../Recursos/Mostrar.png" /></h1>
+            <asp:TextBox ID="txtBuscar" CssClass="auto-style2" runat="server" PlaceHolder="Buscar" Height="39px" Width="208px"></asp:TextBox>
+            <asp:Button ID="btnBuscar" CssClass="auto-style3" runat="server" Text="Buscar" Height="40px" OnClick="btnBuscar_Click" Width="150px" />
             <div>
-                <asp:GridView CssClass="GridView" ID="GvConsultarSolicitud" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
+                <asp:GridView CssClass="GridView" ID="GvConsultarSolicitud" AutoGenerateColumns="true" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
                     <AlternatingRowStyle BackColor="White" />
                     <EditRowStyle BackColor="#2461BF" />
                     <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -98,12 +126,13 @@
         <br />
         <br />
         <div id="DivActualizar">
-            <h1 id="h1Actualizar">Actualizar Orden de Viaticos <img src="../../Recursos/Mostrar.png" /></h1>
+            <h1 id="h1Actualizar">Actualizar Orden de Viaticos
+                <img src="../../Recursos/Mostrar.png" /></h1>
             <br />
-            <asp:TextBox CssClass="Textbox" ID="TextBox20" runat="server" Text="Buscar"></asp:TextBox>
+            <asp:TextBox CssClass="Textbox" ID="TextBox20" runat="server" PlaceHolder="nombre usuario"></asp:TextBox>
             <br />
             <br />
-            <asp:GridView ID="GvActualizar" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
+            <asp:GridView ID="GvActualizar" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GvActualizar_SelectedIndexChanged">
                 <AlternatingRowStyle BackColor="White" />
                 <EditRowStyle BackColor="#2461BF" />
                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -117,19 +146,19 @@
                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
             </asp:GridView>
             <br />
-            <asp:TextBox CssClass="Textbox" ID="TextBox10" runat="server" Text="Fecha de Creacion"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TextBox11" runat="server" Text="Fecha de Regreso"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TextBox12" runat="server" Text="Estado de Solicitud"></asp:TextBox><br />
+            <asp:TextBox CssClass="Textbox" ID="TextBox10" runat="server" PlaceHolder="Fecha de Creacion"></asp:TextBox>
+            <asp:TextBox CssClass="Textbox" ID="TextBox11" runat="server" PlaceHolder="Fecha de Regreso"></asp:TextBox>
+            <asp:TextBox CssClass="Textbox" ID="TextBox12" runat="server" PlaceHolder="Estado de Solicitud"></asp:TextBox><br />
 
-            <asp:TextBox CssClass="Textbox" ID="TextBox13" runat="server" Text="Usuario"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TextBox14" runat="server" Text="Justificacion"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TextBox15" runat="server" Text="Destino"></asp:TextBox><br />
+            <asp:TextBox CssClass="Textbox" ID="TextBox13" runat="server" PlaceHolder="Usuario"></asp:TextBox>
+            <asp:TextBox CssClass="Textbox" ID="TextBox14" runat="server" PlaceHolder="Justificacion"></asp:TextBox>
+            <asp:TextBox CssClass="Textbox" ID="TextBox15" runat="server" PlaceHolder="Destino"></asp:TextBox><br />
 
-            <asp:TextBox CssClass="Textbox" ID="TextBox16" runat="server" Text="Fecha de Salida"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TextBox17" runat="server" Text="Hora de Salida"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TextBox18" runat="server" Text="Hora de Regreso"></asp:TextBox><br />
+            <asp:TextBox CssClass="Textbox" ID="TextBox16" runat="server" PlaceHolder="Fecha de Salida"></asp:TextBox>
+            <asp:TextBox CssClass="Textbox" ID="TextBox17" runat="server" PlaceHolder="Hora de Salida"></asp:TextBox>
+            <asp:TextBox CssClass="Textbox" ID="TextBox18" runat="server" PlaceHolder="Hora de Regreso"></asp:TextBox><br />
             <br />
-            <asp:Button ID="Button1" CssClass="Button" runat="server" Text="Guardar" />
+            <asp:Button ID="btnGuardar" CssClass="Button" runat="server" Text="Guardar" />
         </div>
         <br />
         <br />

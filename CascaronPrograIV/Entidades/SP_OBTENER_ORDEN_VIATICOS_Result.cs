@@ -13,7 +13,7 @@ namespace Entidades
     
     public partial class SP_OBTENER_ORDEN_VIATICOS_Result
     {
-        public Nullable<System.DateTime> FECHAORDEN { get; set; }
+        public System.DateTime FECHAORDEN { get; set; }
         public int ID_ORDEN { get; set; }
         public string ID_SOLICITUD { get; set; }
         public string NOMBREUSUARIO { get; set; }
