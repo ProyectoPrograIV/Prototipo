@@ -12,6 +12,8 @@ namespace LN
     {
 
         #region Metodos para reportería.
+
+        //Se obtienen los tres tipos de listas para reportería.
         public static List<SP_LISTADO_LIQUIDACION_VIATICOS_Result> ObtenerListaLiquidacion(ReporteXFecha obj)
         {           
             return ADReportes.ObtenerListaLiquidacion(obj);

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
+    //esta clase es utilizada para realizar el filtro para busqueda de reportes.
     public class ReporteXFecha
     {
         private DateTime fechaInicio;
