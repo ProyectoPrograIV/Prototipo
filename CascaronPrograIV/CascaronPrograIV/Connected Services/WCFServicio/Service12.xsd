@@ -155,4 +155,32 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ActualizarMODTARIFASVIATICOS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="obj" nillable="true" type="q18:SP_LISTAR_MODTARIFAVIATICO_Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarMODTARIFASVIATICOSResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ActualizarMODTARIFASVIATICOSResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerIDS_CANTON_PROVINCIA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="obj" nillable="true" type="q19:IdCantonIdProvincia" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerIDS_CANTON_PROVINCIAResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="ObtenerIDS_CANTON_PROVINCIAResult" nillable="true" type="q20:ArrayOfSP_OBTENER_CANTON_PROVINCIA_Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

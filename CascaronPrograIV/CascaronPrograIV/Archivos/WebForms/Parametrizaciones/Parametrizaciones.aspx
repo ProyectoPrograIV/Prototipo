@@ -64,7 +64,8 @@
             <img src="../../Recursos/Mostrar.png" />
         </h1>
             <asp:TextBox CssClass="TbxFiltrar" ID="TextBox7" runat="server" Text="Buscar"></asp:TextBox>
-            <asp:GridView ID="GvTarifaAutobus" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
+            <asp:GridView ID="GvTarifaAutobus"  runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" 
+                  >
                 <AlternatingRowStyle BackColor="White" />
                 <EditRowStyle BackColor="#2461BF" />
                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -103,29 +104,41 @@
            
             <table style="width: 100%;">
                 <tr>
-                    <td><asp:TextBox ID="TbxFiltrar" CssClass="auto-style2" runat="server" placeholder="Id Tarifa Viatico" Width="195px"></asp:TextBox></td>
-                    <td><asp:TextBox CssClass="Textbox" ID="TbxTipoTarifa" runat="server" placeholder="Tipo de Tarifa"></asp:TextBox></td>
-                    <td><asp:TextBox CssClass="Textbox" ID="TbxMonto" runat="server" placeholder="Monto"></asp:TextBox></td>
+                    <td><h5>ID TARIFA</h5><asp:TextBox ID="TbxFiltrar" CssClass="auto-style2" runat="server" placeholder="Id Tarifa Viatico" Width="195px" ReadOnly="True"></asp:TextBox></td>
+                    <td><h5>TIPO TARIFA</h5><asp:TextBox CssClass="Textbox" ID="TbxTipoTarifa" runat="server" placeholder="Tipo de Tarifa" ReadOnly="True"></asp:TextBox></td>
+                    <td><h5>MONTO DE TARIFA</h5><asp:TextBox CssClass="Textbox" ID="TbxMonto" runat="server" placeholder="Monto"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TbxMonto" ErrorMessage="Ingrese el Monto de Tarifa" ForeColor="Red" ValidationGroup="TARIFA_HOSPEDA">*</asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TbxMonto" Display="Dynamic" ErrorMessage="Solo puede Ingresar Numeros" ForeColor="Red" ValidationExpression="^(\d|-)?(\d|,)*\.?\d*$" ValidationGroup="TARIFA_HOSPEDA">*</asp:RegularExpressionValidator>
+                    </td>
                 </tr>
                 <tr>
-                    <td><asp:TextBox CssClass="Textbox" ID="TbxFecha" runat="server" placeholder="Fecha"></asp:TextBox><br /></td>
-                    <td><asp:TextBox CssClass="Textbox" ID="TbxLocalidad" runat="server" placeholder="Localidad"></asp:TextBox></td>
-                    <td><asp:TextBox CssClass="Textbox" ID="Tbxprovincia" runat="server" placeholder="Provincia"></asp:TextBox></td>
+                    <td><h5>FECHA</h5><asp:TextBox CssClass="Textbox" ID="TbxFecha" runat="server" placeholder="Fecha"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TbxFecha" ErrorMessage="Ingrese la Fecha de Vecimiento" ForeColor="Red" ValidationGroup="TARIFA_HOSPEDA">*</asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="TbxFecha" ErrorMessage="Formato de Fecha Invalido, Ejm: 30/11/2017" ForeColor="Red" ValidationExpression="^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$" ValidationGroup="TARIFA_HOSPEDA">*</asp:RegularExpressionValidator>
+                        <br /></td>
+                    <td><h5>LOCALIDAD</h5><asp:TextBox CssClass="Textbox" ID="TbxLocalidad" runat="server" placeholder="Localidad" ReadOnly="True"></asp:TextBox></td>
+                    <td><h5>PROVINCIA</h5><asp:TextBox CssClass="Textbox" ID="Tbxprovincia" runat="server" placeholder="Provincia" ReadOnly="True"></asp:TextBox></td>
                 </tr>
                 <tr>
-                    <td><asp:TextBox CssClass="Textbox" ID="TbxCanton" runat="server" placeholder="Canton"></asp:TextBox><br /></td>
-                    <td> <asp:TextBox CssClass="Textbox" ID="TbxEstado" runat="server" placeholder="Estado" ></asp:TextBox></td>
-                  
+                    <td><h5>CANTON</h5><asp:TextBox CssClass="Textbox" ID="TbxCanton" runat="server" placeholder="Canton" ReadOnly="True"></asp:TextBox><br /></td>
+                    <td><h5>ESTADO TARIFA</h5> <asp:DropDownList ID="cbEstado" runat="server">
+                        <asp:ListItem Value="10">Activo</asp:ListItem>
+                        <asp:ListItem Value="9">Inactivo</asp:ListItem>
+                        </asp:DropDownList> </td>
+                  <td> 
+                      <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" ValidationGroup="TARIFA_HOSPEDA" />
+                    </td>
                 </tr>
                 <tr>
-                     <td colspan="3"> <asp:Button ID="btnActualizar" CssClass="Button" runat="server" Text="Actualizar" /> </td>
+                     <td colspan="3"> <asp:Button ID="btnActualizar" CssClass="Button" runat="server" Text="Actualizar" OnClick="btnActualizar_Click" ValidationGroup="TARIFA_HOSPEDA" /> </td>
 
                 </tr> 
                  
             </table>
 
            
-            <asp:GridView CssClass="GridView" ID="GvTarifaViaticos" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" OnSelectedIndexChanged="GvTarifaViaticos_SelectedIndexChanged">
+            <asp:GridView CssClass="GridView" ID="GvTarifaViaticos" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False"
+                 OnSelectedIndexChanged="GvTarifaViaticos_SelectedIndexChanged" AllowPaging="true" PageSize="10" OnPageIndexChanging="GvTarifaViaticos_PageIndexChanging" OnSelectedIndexChanging="GvTarifaViaticos_SelectedIndexChanging">
                 <AlternatingRowStyle BackColor="White" />
                 <EditRowStyle BackColor="#2461BF" />
                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />

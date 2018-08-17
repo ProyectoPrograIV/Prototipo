@@ -79,6 +79,18 @@
   <wsdl:message name="IService1_ObtenerMODTARIFASVIATICOS_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerMODTARIFASVIATICOSResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_ActualizarMODTARIFASVIATICOS_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarMODTARIFASVIATICOS" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ActualizarMODTARIFASVIATICOS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarMODTARIFASVIATICOSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ObtenerIDS_CANTON_PROVINCIA_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerIDS_CANTON_PROVINCIA" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ObtenerIDS_CANTON_PROVINCIA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerIDS_CANTON_PROVINCIAResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="InsertarRol">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertarRol" message="tns:IService1_InsertarRol_InputMessage" />
@@ -127,6 +139,14 @@
     <wsdl:operation name="ObtenerMODTARIFASVIATICOS">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ObtenerMODTARIFASVIATICOS" message="tns:IService1_ObtenerMODTARIFASVIATICOS_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/ObtenerMODTARIFASVIATICOSResponse" message="tns:IService1_ObtenerMODTARIFASVIATICOS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarMODTARIFASVIATICOS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ActualizarMODTARIFASVIATICOS" message="tns:IService1_ActualizarMODTARIFASVIATICOS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ActualizarMODTARIFASVIATICOSResponse" message="tns:IService1_ActualizarMODTARIFASVIATICOS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerIDS_CANTON_PROVINCIA">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ObtenerIDS_CANTON_PROVINCIA" message="tns:IService1_ObtenerIDS_CANTON_PROVINCIA_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ObtenerIDS_CANTON_PROVINCIAResponse" message="tns:IService1_ObtenerIDS_CANTON_PROVINCIA_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -232,6 +252,24 @@
     </wsdl:operation>
     <wsdl:operation name="ObtenerMODTARIFASVIATICOS">
       <soap:operation soapAction="http://tempuri.org/IService1/ObtenerMODTARIFASVIATICOS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarMODTARIFASVIATICOS">
+      <soap:operation soapAction="http://tempuri.org/IService1/ActualizarMODTARIFASVIATICOS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerIDS_CANTON_PROVINCIA">
+      <soap:operation soapAction="http://tempuri.org/IService1/ObtenerIDS_CANTON_PROVINCIA" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

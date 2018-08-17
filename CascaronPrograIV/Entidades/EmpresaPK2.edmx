@@ -374,8 +374,8 @@
           <Parameter Name="IDHOSPEDAJE" Type="int" Mode="In" />
         </Function>
         <Function Name="SP_OBTENER_CANTON_PROVINCIA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_PARAMETROS">
-          <Parameter Name="CODIGOCANTON" Type="tinyint" Mode="In" />
-          <Parameter Name="CODIGOPROVINCIA" Type="tinyint" Mode="In" />
+          <Parameter Name="CODIGOCANTON" Type="int" Mode="In" />
+          <Parameter Name="CODIGOPROVINCIA" Type="int" Mode="In" />
         </Function>
         <Function Name="SP_LISTADO_LIQUIDACION_VIATICOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_REPORTES">
           <Parameter Name="FECHAINICIO" Type="date" Mode="In" />
@@ -722,8 +722,8 @@
           </FunctionImport>
           <FunctionImport Name="SP_LISTAR_MODTARIFAVIATICO" ReturnType="Collection(EmpresaPK2Model.SP_LISTAR_MODTARIFAVIATICO_Result)" />
           <FunctionImport Name="SP_OBTENER_CANTON_PROVINCIA" ReturnType="Collection(EmpresaPK2Model.SP_OBTENER_CANTON_PROVINCIA_Result)">
-            <Parameter Name="CODIGOCANTON" Mode="In" Type="Byte" />
-            <Parameter Name="CODIGOPROVINCIA" Mode="In" Type="Byte" />
+            <Parameter Name="CODIGOCANTON" Mode="In" Type="Int32" />
+            <Parameter Name="CODIGOPROVINCIA" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result">

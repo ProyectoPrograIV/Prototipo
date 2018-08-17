@@ -16,14 +16,19 @@ namespace AD
         #region Metodos para reportería.
         public static List<SP_LISTADO_LIQUIDACION_VIATICOS_Result> ObtenerListaLiquidacion(ReporteXFecha obj)
         {
+            //Se instancia una lista para guardar los resultados de la consulta.
             List<SP_LISTADO_LIQUIDACION_VIATICOS_Result> ListaResultados = null;
             try
             {
+                //Se inicializa el contexto, para abrir la comunicacion a la base de datos.
                 contexto = new EmpresaPK2Entities();
+                //Se inicializa la lista de resultados para que se reconozca el tipo de objeto
                 ListaResultados = new List<SP_LISTADO_LIQUIDACION_VIATICOS_Result>();
 
+                //Se realiza la copnsulta de datos para la consulta realizada.
                 var resultado = contexto.SP_LISTADO_LIQUIDACION_VIATICOS(obj.FechaInicio, obj.FechaFinal, obj.NomUsuario, obj.Estado).ToList();
 
+                //para cada objeto o item en la lista obtenida, se agregará a la lista de reusltados
                 foreach (var item in resultado)
                 {
                     ListaResultados.Add(item);
@@ -32,16 +37,16 @@ namespace AD
             }
             catch (Exception)
             {
-
                 throw;
             }
             finally
-            {
+            {   //Al finalizar, ya sea que ejecute correctamente todas las instrucciones o que entre en el catch, Cerrara el objeto de entidad.
                 if (contexto != null)
                 {
                     contexto.Dispose();
                 }
             }
+            //Devuelve la lista de resultados.
             return ListaResultados;
         }
 

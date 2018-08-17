@@ -111,12 +111,13 @@ namespace AD
         #region Obtener Valores de Sistema
         public static List<TBL_ROLUSUARIO> ObtenerRoles ()
         {
+            //Metodo para obtener la lista de roles disponibles. 
             EmpresaPK2Entities contexto = null;
             List<TBL_ROLUSUARIO> ListaResultado = null;
             try
             {
                 contexto = new EmpresaPK2Entities();
-
+                
                 var consulta = (from reg in contexto.TBL_ROLUSUARIO
                                 where reg.ESTADOROL.ToUpper().Equals("Activo")                                
                                 select reg).ToList();
@@ -198,6 +199,74 @@ namespace AD
                         u.LOCALIDAD = item.LOCALIDAD;
                         u.MONTOTARIFA = item.MONTOTARIFA;
                         u.TIPOTARIFA = item.TIPOTARIFA;
+
+                        //se agregar  el objeto cargado obtenido de BD al array
+                        lstresultado.Add(u);
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                if (Entidad != null) Entidad.Dispose();//se cierra la sesion abierta con BD
+            }
+            //se retorna el objeto cargado obtenido de BD
+            return lstresultado;
+        }
+
+        public static int ActualizarMODTARIFASVIATICOS(SP_LISTAR_MODTARIFAVIATICO_Result obj)
+        {
+            //se crea el array list dond se almacenará el resultado
+            /*Mediante el contexto de datos se pasan los parametros al procedimiento
+            almacenado, y a la vez se convierte el dato que retorna a String, puesto
+            que al utilizar Linq To SQL el valor retornado es un IEnumerable u Object*/
+            EmpresaPK2Entities Entidad = new EmpresaPK2Entities();
+
+            /*Se trasladan los datos ingresados por el usuario al objeto "usuario"*/
+            try
+            {
+  
+            Entidad.SP_ACTUALIZAR_MODTARIFAVIATICO(obj.ID_MODTARIFA,obj.FECHATARIFA,obj.MONTOTARIFA,obj.ESTADOTARIFA);
+                return 1;
+            }
+            catch (Exception )
+            {
+                return 0;
+            }
+            finally
+            {
+                if (Entidad != null) Entidad.Dispose();//se cierra la sesion abierta con BD
+            }
+            //se retorna el objeto cargado obtenido de BD
+          
+        }
+
+        public static List<SP_OBTENER_CANTON_PROVINCIA_Result> ObtenerIDS_CANTON_PROVINCIA(IdCantonIdProvincia obj)
+        {
+            //se crea el array list dond se almacenará el resultado
+            /*Mediante el contexto de datos se pasan los parametros al procedimiento
+            almacenado, y a la vez se convierte el dato que retorna a String, puesto
+            que al utilizar Linq To SQL el valor retornado es un IEnumerable u Object*/
+            EmpresaPK2Entities Entidad = new EmpresaPK2Entities();
+            List<SP_OBTENER_CANTON_PROVINCIA_Result> lstresultado = new List<SP_OBTENER_CANTON_PROVINCIA_Result>();
+            /*Se trasladan los datos ingresados por el usuario al objeto "usuario"*/
+            try
+            {
+
+                var consulta = Entidad.SP_OBTENER_CANTON_PROVINCIA(obj.PropIdCanton,obj.PropIdProvincia);
+                if (consulta != null)//se consulta si no es nula la respuesta
+                {
+                    foreach (var item in consulta)//recorre el resultado de la consulta
+                    {
+                        //se instancia un objeto tipo Atencion Odontologica para cargarlo con lo obtenido en BD
+                        SP_OBTENER_CANTON_PROVINCIA_Result u = new SP_OBTENER_CANTON_PROVINCIA_Result();
+                        u.DESCRIPCIONCANTON = item.DESCRIPCIONCANTON;
+                        u.DESCRIPCIONPROVINCIA = item.DESCRIPCIONPROVINCIA;
+                        
 
                         //se agregar  el objeto cargado obtenido de BD al array
                         lstresultado.Add(u);

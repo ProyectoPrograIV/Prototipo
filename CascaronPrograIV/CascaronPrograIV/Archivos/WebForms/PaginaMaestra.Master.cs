@@ -14,6 +14,7 @@ namespace CascaronPrograIV.Archivos.WebForms
         {
             SP_INICIO_SESION_Result sesion = (SP_INICIO_SESION_Result)Session["sesion"];
 
+         
             if (sesion.ID_ROL ==11) //El 11 corresponde a administrador
             {
                 hlParametrizaciones.Visible = true;

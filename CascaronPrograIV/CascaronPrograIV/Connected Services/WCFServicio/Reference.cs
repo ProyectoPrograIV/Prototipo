@@ -86,6 +86,18 @@ namespace CascaronPrograIV.WCFServicio {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerMODTARIFASVIATICOS", ReplyAction="http://tempuri.org/IService1/ObtenerMODTARIFASVIATICOSResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTAR_MODTARIFAVIATICO_Result>> ObtenerMODTARIFASVIATICOSAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ActualizarMODTARIFASVIATICOS", ReplyAction="http://tempuri.org/IService1/ActualizarMODTARIFASVIATICOSResponse")]
+        int ActualizarMODTARIFASVIATICOS(Entidades.SP_LISTAR_MODTARIFAVIATICO_Result obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ActualizarMODTARIFASVIATICOS", ReplyAction="http://tempuri.org/IService1/ActualizarMODTARIFASVIATICOSResponse")]
+        System.Threading.Tasks.Task<int> ActualizarMODTARIFASVIATICOSAsync(Entidades.SP_LISTAR_MODTARIFAVIATICO_Result obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerIDS_CANTON_PROVINCIA", ReplyAction="http://tempuri.org/IService1/ObtenerIDS_CANTON_PROVINCIAResponse")]
+        System.Collections.Generic.List<Entidades.SP_OBTENER_CANTON_PROVINCIA_Result> ObtenerIDS_CANTON_PROVINCIA(Entidades.IdCantonIdProvincia obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerIDS_CANTON_PROVINCIA", ReplyAction="http://tempuri.org/IService1/ObtenerIDS_CANTON_PROVINCIAResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_OBTENER_CANTON_PROVINCIA_Result>> ObtenerIDS_CANTON_PROVINCIAAsync(Entidades.IdCantonIdProvincia obj);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -209,6 +221,22 @@ namespace CascaronPrograIV.WCFServicio {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTAR_MODTARIFAVIATICO_Result>> ObtenerMODTARIFASVIATICOSAsync() {
             return base.Channel.ObtenerMODTARIFASVIATICOSAsync();
+        }
+        
+        public int ActualizarMODTARIFASVIATICOS(Entidades.SP_LISTAR_MODTARIFAVIATICO_Result obj) {
+            return base.Channel.ActualizarMODTARIFASVIATICOS(obj);
+        }
+        
+        public System.Threading.Tasks.Task<int> ActualizarMODTARIFASVIATICOSAsync(Entidades.SP_LISTAR_MODTARIFAVIATICO_Result obj) {
+            return base.Channel.ActualizarMODTARIFASVIATICOSAsync(obj);
+        }
+        
+        public System.Collections.Generic.List<Entidades.SP_OBTENER_CANTON_PROVINCIA_Result> ObtenerIDS_CANTON_PROVINCIA(Entidades.IdCantonIdProvincia obj) {
+            return base.Channel.ObtenerIDS_CANTON_PROVINCIA(obj);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_OBTENER_CANTON_PROVINCIA_Result>> ObtenerIDS_CANTON_PROVINCIAAsync(Entidades.IdCantonIdProvincia obj) {
+            return base.Channel.ObtenerIDS_CANTON_PROVINCIAAsync(obj);
         }
     }
 }

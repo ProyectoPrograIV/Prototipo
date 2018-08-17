@@ -12,7 +12,7 @@ namespace CascaronPrograIV.Archivos.WebForms.Reportes
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //Cuando no es postback, carga todos los valores iniciales de los dropdownlist y cajas de texto.
            if (!this.Page.IsPostBack)
             {
                 List<TBL_ESTADOS> ListaEstados = ObtenerEstados();
@@ -34,6 +34,7 @@ namespace CascaronPrograIV.Archivos.WebForms.Reportes
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {            
+            //Obtiene el valor actual del combobox de tipo de reporte seleccionado y luego lo envía para ejecutar la consulta
             int x = Convert.ToInt32( ddlTipoReporte.SelectedValue);
             CompletarConsulta(x);
 
@@ -41,12 +42,16 @@ namespace CascaronPrograIV.Archivos.WebForms.Reportes
 
         private void CompletarConsulta(int consulta)
         {
+            //Obtiene la instancia de la sesion, para utilizarla en el reporte
             SP_INICIO_SESION_Result sesion = (SP_INICIO_SESION_Result)Session["sesion"];
+            //Se crea un objeto que se llena para indicar los filtros de busqueda de la consulta
             ReporteXFecha obj = new ReporteXFecha();
             obj.FechaInicio = Convert.ToDateTime(txtFechaInicial.Text);
             obj.FechaFinal = Convert.ToDateTime(txtFechaFinal.Text);
             
             obj.Estado = Convert.ToInt16(ddlEstados.SelectedValue);
+            
+
 
             if (sesion.ID_ROL == 9)
             {   //Si se trata de funcionario, entonces solo podran ser accesibles los reportes con su identificacion
@@ -55,10 +60,11 @@ namespace CascaronPrograIV.Archivos.WebForms.Reportes
             }
             else
             {
-                //Sin identificacion para jefatura, revisa solicitudes de todos los funcionarios.
+                //Sin identificacion para jefatura o administracion, revisa solicitudes de todos los funcionarios.
                 obj.NomUsuario = "";
                 obj.IDPersona = "";
             }
+            //Verifica el inicio y fin de las fechas, y muestra un mensaje en caso de ser incorrectas
             if (Convert.ToDateTime(txtFechaFinal.Text) > DateTime.Now || Convert.ToDateTime(txtFechaInicial.Text) > DateTime.Now)
             {
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('La fecha final no puede ser mayor a hoy.')", true);
@@ -71,9 +77,11 @@ namespace CascaronPrograIV.Archivos.WebForms.Reportes
             }
             else
 
-            {
+            {   //Limpia el origen de datos del gridview
                 gvViaticos.DataSource = null;
                 gvViaticos.DataBind();
+
+                //asigna a la fuente de datos del gridview la lista corrrespondiente a la consulta que se está realizando.
                 switch (consulta)
                 {
                     case 1:
@@ -94,8 +102,9 @@ namespace CascaronPrograIV.Archivos.WebForms.Reportes
                         gvViaticos.DataSource = null;
                         break;
                 }
-                if (gvViaticos.DataSource == null )
+                if (gvViaticos.DataSource == null)
                 {
+                    //Muestra un mensaje en caso de que la consulta no traiga valores.
                     ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('No se han encontrado datos con estos criterios.')", true);
 
                 }
@@ -109,6 +118,8 @@ namespace CascaronPrograIV.Archivos.WebForms.Reportes
 
 
         #region Metodos para obtener datos
+        //Estos metodos se encargan de consumir los servicios realizados en la capa de servicios, Se inicializan para luego ser utilizados para llenar una lista. Luego se cierra el servicio.
+
         private List<SP_LISTADO_LIQUIDACION_VIATICOS_Result> ObtenerListaLiquidacion(ReporteXFecha obj)
         {
             WCFServicio.Service1Client servicio = new WCFServicio.Service1Client();

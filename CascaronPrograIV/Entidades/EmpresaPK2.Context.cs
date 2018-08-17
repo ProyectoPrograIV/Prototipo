@@ -381,15 +381,15 @@ namespace Entidades
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_MODTARIFAVIATICO_Result>("SP_LISTAR_MODTARIFAVIATICO");
         }
     
-        public virtual ObjectResult<SP_OBTENER_CANTON_PROVINCIA_Result> SP_OBTENER_CANTON_PROVINCIA(Nullable<byte> cODIGOCANTON, Nullable<byte> cODIGOPROVINCIA)
+        public virtual ObjectResult<SP_OBTENER_CANTON_PROVINCIA_Result> SP_OBTENER_CANTON_PROVINCIA(Nullable<int> cODIGOCANTON, Nullable<int> cODIGOPROVINCIA)
         {
             var cODIGOCANTONParameter = cODIGOCANTON.HasValue ?
                 new ObjectParameter("CODIGOCANTON", cODIGOCANTON) :
-                new ObjectParameter("CODIGOCANTON", typeof(byte));
+                new ObjectParameter("CODIGOCANTON", typeof(int));
     
             var cODIGOPROVINCIAParameter = cODIGOPROVINCIA.HasValue ?
                 new ObjectParameter("CODIGOPROVINCIA", cODIGOPROVINCIA) :
-                new ObjectParameter("CODIGOPROVINCIA", typeof(byte));
+                new ObjectParameter("CODIGOPROVINCIA", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_OBTENER_CANTON_PROVINCIA_Result>("SP_OBTENER_CANTON_PROVINCIA", cODIGOCANTONParameter, cODIGOPROVINCIAParameter);
         }
