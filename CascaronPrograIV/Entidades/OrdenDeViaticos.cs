@@ -10,9 +10,6 @@ namespace Entidades
     {
         private string nomUsuario;
 
-        public string NomUsuario { get => nomUsuario; set => nomUsuario = value; }
-
-        /* get set NO
         public string NomUsuario
         {
             get
@@ -24,6 +21,26 @@ namespace Entidades
             {
                 nomUsuario = value;
             }
-        }*/
+        }
+
+        /* public string NomUsuario { /*get => NomUsuario1; set => NomUsuario1 = value;*/
     }
-}
+
+            /* get set NO
+            public string NomUsuario
+            {
+                get
+                {
+                    return nomUsuario;
+                }
+
+                set
+                {
+                    nomUsuario = value;
+                }
+            }
+
+        }*/
+
+      
+    }

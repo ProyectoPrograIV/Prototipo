@@ -78,6 +78,24 @@ namespace S
 
         #endregion
 
+        #region Metodos de Parametrizaciones
+        public List<SP_LISTAR_MODTARIFAVIATICO_Result> ObtenerMODTARIFASVIATICOS()
+        {
+
+           return Negocios.ObtenerMODTARIFASVIATICOS();
+        }
+
+        public int ActualizarMODTARIFASVIATICOS(SP_LISTAR_MODTARIFAVIATICO_Result obj)
+        {
+            return Negocios.ActualizarMODTARIFASVIATICOS(obj);
+        }
+        public List<SP_OBTENER_CANTON_PROVINCIA_Result> ObtenerIDS_CANTON_PROVINCIA(IdCantonIdProvincia obj)
+        {
+            return Negocios.ObtenerIDS_CANTON_PROVINCIA(obj);
+        }
+
+        #endregion
+
         public SP_INICIO_SESION_Result InicioSesion(TBL_USUARIO obj) => Negocios.InicioSesion(obj);
     }
 }

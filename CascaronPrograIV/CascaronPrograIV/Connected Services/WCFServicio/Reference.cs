@@ -9,163 +9,7 @@
 //------------------------------------------------------------------------------
 
 namespace CascaronPrograIV.WCFServicio {
-    using System.Runtime.Serialization;
-    using System;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OrdenDeViaticos", Namespace="http://schemas.datacontract.org/2004/07/Entidades")]
-    [System.SerializableAttribute()]
-    public partial class OrdenDeViaticos : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NomUsuarioField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NomUsuario {
-            get {
-                return this.NomUsuarioField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NomUsuarioField, value) != true)) {
-                    this.NomUsuarioField = value;
-                    this.RaisePropertyChanged("NomUsuario");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SP_OBTENER_ORDEN_VIATICOS_Result", Namespace="http://schemas.datacontract.org/2004/07/Entidades")]
-    [System.SerializableAttribute()]
-    public partial class SP_OBTENER_ORDEN_VIATICOS_Result : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private short ESTADOORDENField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> FECHAORDENField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ID_ORDENField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ID_SOLICITUDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NOMBREUSUARIOField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public short ESTADOORDEN {
-            get {
-                return this.ESTADOORDENField;
-            }
-            set {
-                if ((this.ESTADOORDENField.Equals(value) != true)) {
-                    this.ESTADOORDENField = value;
-                    this.RaisePropertyChanged("ESTADOORDEN");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> FECHAORDEN {
-            get {
-                return this.FECHAORDENField;
-            }
-            set {
-                if ((this.FECHAORDENField.Equals(value) != true)) {
-                    this.FECHAORDENField = value;
-                    this.RaisePropertyChanged("FECHAORDEN");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ID_ORDEN {
-            get {
-                return this.ID_ORDENField;
-            }
-            set {
-                if ((this.ID_ORDENField.Equals(value) != true)) {
-                    this.ID_ORDENField = value;
-                    this.RaisePropertyChanged("ID_ORDEN");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ID_SOLICITUD {
-            get {
-                return this.ID_SOLICITUDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ID_SOLICITUDField, value) != true)) {
-                    this.ID_SOLICITUDField = value;
-                    this.RaisePropertyChanged("ID_SOLICITUD");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NOMBREUSUARIO {
-            get {
-                return this.NOMBREUSUARIOField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NOMBREUSUARIOField, value) != true)) {
-                    this.NOMBREUSUARIOField = value;
-                    this.RaisePropertyChanged("NOMBREUSUARIO");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WCFServicio.IService1")]
@@ -220,10 +64,10 @@ namespace CascaronPrograIV.WCFServicio {
         System.Threading.Tasks.Task GenerarOrdenAsync(Entidades.TBL_CABECERAORDENVIATICO obj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerOrden", ReplyAction="http://tempuri.org/IService1/ObtenerOrdenResponse")]
-        System.Collections.Generic.List<CascaronPrograIV.WCFServicio.SP_OBTENER_ORDEN_VIATICOS_Result> ObtenerOrden(CascaronPrograIV.WCFServicio.OrdenDeViaticos obj);
+        System.Collections.Generic.List<Entidades.SP_OBTENER_ORDEN_VIATICOS_Result> ObtenerOrden(Entidades.OrdenDeViaticos obj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerOrden", ReplyAction="http://tempuri.org/IService1/ObtenerOrdenResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<CascaronPrograIV.WCFServicio.SP_OBTENER_ORDEN_VIATICOS_Result>> ObtenerOrdenAsync(CascaronPrograIV.WCFServicio.OrdenDeViaticos obj);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_OBTENER_ORDEN_VIATICOS_Result>> ObtenerOrdenAsync(Entidades.OrdenDeViaticos obj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerRoles", ReplyAction="http://tempuri.org/IService1/ObtenerRolesResponse")]
         System.Collections.Generic.List<Entidades.TBL_ROLUSUARIO> ObtenerRoles();
@@ -236,6 +80,24 @@ namespace CascaronPrograIV.WCFServicio {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerEstados", ReplyAction="http://tempuri.org/IService1/ObtenerEstadosResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.TBL_ESTADOS>> ObtenerEstadosAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerMODTARIFASVIATICOS", ReplyAction="http://tempuri.org/IService1/ObtenerMODTARIFASVIATICOSResponse")]
+        System.Collections.Generic.List<Entidades.SP_LISTAR_MODTARIFAVIATICO_Result> ObtenerMODTARIFASVIATICOS();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerMODTARIFASVIATICOS", ReplyAction="http://tempuri.org/IService1/ObtenerMODTARIFASVIATICOSResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTAR_MODTARIFAVIATICO_Result>> ObtenerMODTARIFASVIATICOSAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ActualizarMODTARIFASVIATICOS", ReplyAction="http://tempuri.org/IService1/ActualizarMODTARIFASVIATICOSResponse")]
+        int ActualizarMODTARIFASVIATICOS(Entidades.SP_LISTAR_MODTARIFAVIATICO_Result obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ActualizarMODTARIFASVIATICOS", ReplyAction="http://tempuri.org/IService1/ActualizarMODTARIFASVIATICOSResponse")]
+        System.Threading.Tasks.Task<int> ActualizarMODTARIFASVIATICOSAsync(Entidades.SP_LISTAR_MODTARIFAVIATICO_Result obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerIDS_CANTON_PROVINCIA", ReplyAction="http://tempuri.org/IService1/ObtenerIDS_CANTON_PROVINCIAResponse")]
+        System.Collections.Generic.List<Entidades.SP_OBTENER_CANTON_PROVINCIA_Result> ObtenerIDS_CANTON_PROVINCIA(Entidades.IdCantonIdProvincia obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerIDS_CANTON_PROVINCIA", ReplyAction="http://tempuri.org/IService1/ObtenerIDS_CANTON_PROVINCIAResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_OBTENER_CANTON_PROVINCIA_Result>> ObtenerIDS_CANTON_PROVINCIAAsync(Entidades.IdCantonIdProvincia obj);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -329,11 +191,11 @@ namespace CascaronPrograIV.WCFServicio {
             return base.Channel.GenerarOrdenAsync(obj);
         }
         
-        public System.Collections.Generic.List<CascaronPrograIV.WCFServicio.SP_OBTENER_ORDEN_VIATICOS_Result> ObtenerOrden(CascaronPrograIV.WCFServicio.OrdenDeViaticos obj) {
+        public System.Collections.Generic.List<Entidades.SP_OBTENER_ORDEN_VIATICOS_Result> ObtenerOrden(Entidades.OrdenDeViaticos obj) {
             return base.Channel.ObtenerOrden(obj);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<CascaronPrograIV.WCFServicio.SP_OBTENER_ORDEN_VIATICOS_Result>> ObtenerOrdenAsync(CascaronPrograIV.WCFServicio.OrdenDeViaticos obj) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_OBTENER_ORDEN_VIATICOS_Result>> ObtenerOrdenAsync(Entidades.OrdenDeViaticos obj) {
             return base.Channel.ObtenerOrdenAsync(obj);
         }
         
@@ -351,6 +213,30 @@ namespace CascaronPrograIV.WCFServicio {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.TBL_ESTADOS>> ObtenerEstadosAsync() {
             return base.Channel.ObtenerEstadosAsync();
+        }
+        
+        public System.Collections.Generic.List<Entidades.SP_LISTAR_MODTARIFAVIATICO_Result> ObtenerMODTARIFASVIATICOS() {
+            return base.Channel.ObtenerMODTARIFASVIATICOS();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTAR_MODTARIFAVIATICO_Result>> ObtenerMODTARIFASVIATICOSAsync() {
+            return base.Channel.ObtenerMODTARIFASVIATICOSAsync();
+        }
+        
+        public int ActualizarMODTARIFASVIATICOS(Entidades.SP_LISTAR_MODTARIFAVIATICO_Result obj) {
+            return base.Channel.ActualizarMODTARIFASVIATICOS(obj);
+        }
+        
+        public System.Threading.Tasks.Task<int> ActualizarMODTARIFASVIATICOSAsync(Entidades.SP_LISTAR_MODTARIFAVIATICO_Result obj) {
+            return base.Channel.ActualizarMODTARIFASVIATICOSAsync(obj);
+        }
+        
+        public System.Collections.Generic.List<Entidades.SP_OBTENER_CANTON_PROVINCIA_Result> ObtenerIDS_CANTON_PROVINCIA(Entidades.IdCantonIdProvincia obj) {
+            return base.Channel.ObtenerIDS_CANTON_PROVINCIA(obj);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_OBTENER_CANTON_PROVINCIA_Result>> ObtenerIDS_CANTON_PROVINCIAAsync(Entidades.IdCantonIdProvincia obj) {
+            return base.Channel.ObtenerIDS_CANTON_PROVINCIAAsync(obj);
         }
     }
 }

@@ -294,5 +294,28 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_MODTARIFAVIATICO" FunctionName="EmpresaPK2Model.Store.SP_ACTUALIZAR_MODTARIFAVIATICO" />
+    <FunctionImportMapping FunctionImportName="SP_LISTAR_MODTARIFAVIATICO" FunctionName="EmpresaPK2Model.Store.SP_LISTAR_MODTARIFAVIATICO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTAR_MODTARIFAVIATICO_Result">
+          <ScalarProperty Name="ID_MODTARIFA" ColumnName="ID_MODTARIFA" />
+          <ScalarProperty Name="CODIGOPROVINCIA" ColumnName="CODIGOPROVINCIA" />
+          <ScalarProperty Name="CODIGOCANTON" ColumnName="CODIGOCANTON" />
+          <ScalarProperty Name="TIPOTARIFA" ColumnName="TIPOTARIFA" />
+          <ScalarProperty Name="FECHATARIFA" ColumnName="FECHATARIFA" />
+          <ScalarProperty Name="MONTOTARIFA" ColumnName="MONTOTARIFA" />
+          <ScalarProperty Name="ESTADOTARIFA" ColumnName="ESTADOTARIFA" />
+          <ScalarProperty Name="LOCALIDAD" ColumnName="LOCALIDAD" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_OBTENER_CANTON_PROVINCIA" FunctionName="EmpresaPK2Model.Store.SP_OBTENER_CANTON_PROVINCIA">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_OBTENER_CANTON_PROVINCIA_Result">
+          <ScalarProperty Name="DESCRIPCIONCANTON" ColumnName="DESCRIPCIONCANTON" />
+          <ScalarProperty Name="DESCRIPCIONPROVINCIA" ColumnName="DESCRIPCIONPROVINCIA" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

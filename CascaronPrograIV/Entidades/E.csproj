@@ -63,6 +63,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EmpresaPK2.edmx</DependentUpon>
     </Compile>
+    <Compile Include="IdCantonIdProvincia.cs" />
     <Compile Include="OrdenDeViaticos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReporteXFecha.cs" />
@@ -87,6 +88,9 @@
     <Compile Include="SP_LISTAR_LOCALIDAD_Result.cs">
       <DependentUpon>EmpresaPK2.tt</DependentUpon>
     </Compile>
+    <Compile Include="SP_LISTAR_MODTARIFAVIATICO_Result.cs">
+      <DependentUpon>EmpresaPK2.tt</DependentUpon>
+    </Compile>
     <Compile Include="SP_LISTAR_PERSONAS_Result.cs">
       <DependentUpon>EmpresaPK2.tt</DependentUpon>
     </Compile>
@@ -97,6 +101,9 @@
       <DependentUpon>EmpresaPK2.tt</DependentUpon>
     </Compile>
     <Compile Include="SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result.cs">
+      <DependentUpon>EmpresaPK2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_OBTENER_CANTON_PROVINCIA_Result.cs">
       <DependentUpon>EmpresaPK2.tt</DependentUpon>
     </Compile>
     <Compile Include="SP_OBTENER_ESTADOS_ACTIVOS_Result.cs">
