@@ -15,9 +15,16 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
         {
             if (!IsPostBack)
             {
+                ddlEstado.Items.Add("Inactivo");
+                ddlEstado.Items.Add("Activo");
+                ddlEstado.Items.Add("Pendiente");
+                ddlEstado.Items.Add("Aprobado");
+                ddlEstado.Items.Add("Rechazado");
+
                 CargarOrden();
             }
         }
+        #region Metodos Para Obtener
 
         private List<SP_OBTENER_ORDEN_VIATICOS_Result> ObtenerListaOrden(OrdenDeViaticos obj)
         {
@@ -28,7 +35,7 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
             return lista;
 
         }
-        
+
         private void CargarOrden()
         {
             try
@@ -46,6 +53,9 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
             }
         }
 
+        #endregion
+
+        #region Metodos Internos
         protected void Btn_Generar_Click(object sender, EventArgs e)
         {
 
@@ -63,5 +73,8 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
         {
 
         }
+
+        #endregion
+
     }
 }
