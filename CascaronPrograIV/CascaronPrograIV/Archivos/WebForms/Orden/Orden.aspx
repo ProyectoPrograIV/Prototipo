@@ -2,17 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
-        .auto-style2 {
-            margin: 20px;
-            text-align: center;
-            color: #ADADAD;
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight: 900;
-            font-size: 22px;
-            border-style: solid;
-        }
-
-        .auto-style3 {
+        .auto-style4 {
             border-style: none;
             border-color: inherit;
             border-width: 0;
@@ -24,6 +14,16 @@
             border-radius: 5px;
             cursor: pointer;
             outline: 0;
+            margin-left: 0px;
+        }
+        .auto-style5 {
+            margin: 20px 0px;
+            text-align: center;
+            color: #ADADAD;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 900;
+            font-size: 22px;
+            border-style: solid;
         }
     </style>
 </asp:Content>
@@ -88,21 +88,21 @@
 
             <asp:TextBox CssClass="Textbox" ID="txtID" runat="server" Placeholder="ID Solicitud"></asp:TextBox>
             <asp:TextBox CssClass="Textbox" ID="txtUsuario" runat="server" Placeholder="Usuario"></asp:TextBox>
-            <asp:DropDownList ID="ddlEstado" CssClass="TbxFiltrar" runat="server"></asp:DropDownList>
-            <br />            
-            <asp:TextBox CssClass="Textbox" ID="TextBox5" runat="server" Placeholder="Justificacion"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TextBox6" runat="server" Placeholder="Destino"></asp:TextBox>
-            <br />
-            <asp:TextBox CssClass="Textbox" ID="TextBox7" runat="server" Placeholder="Fecha de Salida"></asp:TextBox>
+            <asp:DropDownList ID="ddlEstado" CssClass="auto-style5" runat="server" Width="280px"></asp:DropDownList>
+            <asp:TextBox CssClass="Textbox" ID="txtFecha" runat="server" Placeholder="Fecha de Creacion"></asp:TextBox><br/>
             <asp:Button ID="Btn_Generar" CssClass="Button" runat="server" Text="Generar" OnClick="Btn_Generar_Click" />
+            <div id="DivValidaciones">
+                <br /><asp:Label ID="Validaciones" runat="server"></asp:Label><br />
+                <asp:RegularExpressionValidator ID="ValidadorFecha" runat="server" ErrorMessage="Fecha de creacion de solicitud incorrecta, forma correcta DD/MM/YYYY" ValidationExpression="^\d{2}(/)\d{2}(/)\d{4}$" Display="Dynamic" ControlToValidate="txtFecha"></asp:RegularExpressionValidator><br />
+            </div>
         </div>
         <br />
         <br />
         <div id="DivConsultar">
             <h1 id="h1Consultar">Consultar Orden de Viaticos
                 <img src="../../Recursos/Mostrar.png" /></h1>
-            <asp:TextBox ID="txtBuscar" CssClass="auto-style2" runat="server" PlaceHolder="Buscar" Height="39px" Width="208px"></asp:TextBox>
-            <asp:Button ID="btnBuscar" CssClass="auto-style3" runat="server" Text="Buscar" Height="40px" OnClick="btnBuscar_Click" Width="150px" />
+            <asp:TextBox ID="txtBuscar" CssClass="Textbox" runat="server" PlaceHolder="Buscar" Height="39px" Width="177px"></asp:TextBox> <br/>
+            <asp:Button ID="btnBuscar" CssClass="auto-style4" runat="server" Text="Buscar" Height="46px" OnClick="btnBuscar_Click" Width="150px" /> <br />
             <div>
                 <asp:GridView CssClass="GridView" ID="GvConsultarSolicitud" AutoGenerateColumns="true" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
                     <AlternatingRowStyle BackColor="White" />

@@ -17,14 +17,11 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
             {
                 ddlEstado.Items.Add("Inactivo");
                 ddlEstado.Items.Add("Activo");
-                ddlEstado.Items.Add("Pendiente");
-                ddlEstado.Items.Add("Aprobado");
-                ddlEstado.Items.Add("Rechazado");
 
                 CargarOrden();
             }
         }
-        #region Metodos Para Obtener
+        #region Metodos Para Obtener y buscar
 
         private List<SP_OBTENER_ORDEN_VIATICOS_Result> ObtenerListaOrden(OrdenDeViaticos obj)
         {
@@ -53,14 +50,6 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
             }
         }
 
-        #endregion
-
-        #region Metodos Internos
-        protected void Btn_Generar_Click(object sender, EventArgs e)
-        {
-
-        }
-
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
             OrdenDeViaticos obj = new OrdenDeViaticos();
@@ -68,6 +57,64 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
             GvConsultarSolicitud.DataSource = this.ObtenerListaOrden(obj);
             CargarOrden();
         }
+
+        #endregion
+
+        #region Metodos Para Generar
+
+        protected void Btn_Generar_Click(object sender, EventArgs e)
+        {
+            GenerarOrden();
+        }
+
+        private void GenerarOrden()
+        {
+            try
+            {
+                TBL_CABECERAORDENVIATICO orden = new TBL_CABECERAORDENVIATICO();
+                TBL_SOLICITUDVIATICOS solicitudv = new TBL_SOLICITUDVIATICOS();
+
+                orden.ID_SOLICITUD = txtID.Text.Trim();
+                solicitudv.NOMBREUSUARIO = txtUsuario.Text.Trim();
+                solicitudv.ESTADOSOLICITUD = Convert.ToInt16(ddlEstado.SelectedValue.ToString());
+                orden.ESTADOORDEN = Convert.ToInt16(ddlEstado.SelectedValue.ToString());
+                orden.FECHAORDEN = Convert.ToDateTime(txtFecha.Text.Trim());
+
+                GenerarOrden(orden, solicitudv);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        public static int GenerarOrden(TBL_CABECERAORDENVIATICO orden, TBL_SOLICITUDVIATICOS solicitud)
+        {
+            WCFServicio.Service1Client objservicio = null;
+
+            try
+            {
+                objservicio = new WCFServicio.Service1Client();
+
+                return objservicio.GenerarOrden(orden, solicitud);
+            }
+            finally
+            {
+                if (objservicio != null)
+                    objservicio.Close();
+            }
+        }
+
+        #endregion
+
+        #region Buscar Consulta
+
+
+
+        #endregion
+
+        #region Metodos para Actualizar
 
         protected void GvActualizar_SelectedIndexChanged(object sender, EventArgs e)
         {

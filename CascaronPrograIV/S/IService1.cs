@@ -34,7 +34,7 @@ namespace S
 
         #region Metodos Orden Viaticos
         [OperationContract]
-        void GenerarOrden(TBL_CABECERAORDENVIATICO obj);
+        int GenerarOrden(TBL_CABECERAORDENVIATICO orden, TBL_SOLICITUDVIATICOS solicitud);
         [OperationContract]
         List<SP_OBTENER_ORDEN_VIATICOS_Result> ObtenerOrden(OrdenDeViaticos obj);
 

@@ -58,7 +58,7 @@ namespace CascaronPrograIV.WCFServicio {
         System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTADO_SOLICITUD_VIATICOS_Result>> ObtenerListaSolicitudAsync(Entidades.ReporteXFecha obj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GenerarOrden", ReplyAction="http://tempuri.org/IService1/GenerarOrdenResponse")]
-        void GenerarOrden(Entidades.TBL_CABECERAORDENVIATICO obj);
+        int GenerarOrden(Entidades.TBL_CABECERAORDENVIATICO obj,Entidades.TBL_SOLICITUDVIATICOS solicitud);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GenerarOrden", ReplyAction="http://tempuri.org/IService1/GenerarOrdenResponse")]
         System.Threading.Tasks.Task GenerarOrdenAsync(Entidades.TBL_CABECERAORDENVIATICO obj);
@@ -201,8 +201,8 @@ namespace CascaronPrograIV.WCFServicio {
             return base.Channel.ObtenerListaSolicitudAsync(obj);
         }
         
-        public void GenerarOrden(Entidades.TBL_CABECERAORDENVIATICO obj) {
-            base.Channel.GenerarOrden(obj);
+        public int GenerarOrden(Entidades.TBL_CABECERAORDENVIATICO obj, Entidades.TBL_SOLICITUDVIATICOS solicitud) {
+           return base.Channel.GenerarOrden(obj, solicitud);
         }
         
         public System.Threading.Tasks.Task GenerarOrdenAsync(Entidades.TBL_CABECERAORDENVIATICO obj) {

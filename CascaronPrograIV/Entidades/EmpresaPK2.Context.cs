@@ -394,11 +394,19 @@ namespace Entidades
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_OBTENER_CANTON_PROVINCIA_Result>("SP_OBTENER_CANTON_PROVINCIA", cODIGOCANTONParameter, cODIGOPROVINCIAParameter);
         }
     
-        public virtual int SP_GENERAR_ORDEN_VIATICOS(string iDSOLICITUD, Nullable<System.DateTime> fECHAORDEN, Nullable<short> eSTADOORDEN)
+        public virtual int SP_GENERAR_ORDEN_VIATICOS(string iDSOLICITUD, string nOMBREUSUARIO, Nullable<short> eSTADOSOLICITUD, Nullable<System.DateTime> fECHAORDEN, Nullable<short> eSTADOORDEN)
         {
             var iDSOLICITUDParameter = iDSOLICITUD != null ?
                 new ObjectParameter("IDSOLICITUD", iDSOLICITUD) :
                 new ObjectParameter("IDSOLICITUD", typeof(string));
+    
+            var nOMBREUSUARIOParameter = nOMBREUSUARIO != null ?
+                new ObjectParameter("NOMBREUSUARIO", nOMBREUSUARIO) :
+                new ObjectParameter("NOMBREUSUARIO", typeof(string));
+    
+            var eSTADOSOLICITUDParameter = eSTADOSOLICITUD.HasValue ?
+                new ObjectParameter("ESTADOSOLICITUD", eSTADOSOLICITUD) :
+                new ObjectParameter("ESTADOSOLICITUD", typeof(short));
     
             var fECHAORDENParameter = fECHAORDEN.HasValue ?
                 new ObjectParameter("FECHAORDEN", fECHAORDEN) :
@@ -408,7 +416,46 @@ namespace Entidades
                 new ObjectParameter("ESTADOORDEN", eSTADOORDEN) :
                 new ObjectParameter("ESTADOORDEN", typeof(short));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_GENERAR_ORDEN_VIATICOS", iDSOLICITUDParameter, fECHAORDENParameter, eSTADOORDENParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_GENERAR_ORDEN_VIATICOS", iDSOLICITUDParameter, nOMBREUSUARIOParameter, eSTADOSOLICITUDParameter, fECHAORDENParameter, eSTADOORDENParameter);
+        }
+    
+        public virtual int SP_ACTUALIZAR_TARIFASAUTOBUSES(string cODIGORUTA, Nullable<short> eSTADO, Nullable<decimal> tARIFA, string dESCRIPCION, Nullable<System.DateTime> fECHAVIGENCIA)
+        {
+            var cODIGORUTAParameter = cODIGORUTA != null ?
+                new ObjectParameter("CODIGORUTA", cODIGORUTA) :
+                new ObjectParameter("CODIGORUTA", typeof(string));
+    
+            var eSTADOParameter = eSTADO.HasValue ?
+                new ObjectParameter("ESTADO", eSTADO) :
+                new ObjectParameter("ESTADO", typeof(short));
+    
+            var tARIFAParameter = tARIFA.HasValue ?
+                new ObjectParameter("TARIFA", tARIFA) :
+                new ObjectParameter("TARIFA", typeof(decimal));
+    
+            var dESCRIPCIONParameter = dESCRIPCION != null ?
+                new ObjectParameter("DESCRIPCION", dESCRIPCION) :
+                new ObjectParameter("DESCRIPCION", typeof(string));
+    
+            var fECHAVIGENCIAParameter = fECHAVIGENCIA.HasValue ?
+                new ObjectParameter("FECHAVIGENCIA", fECHAVIGENCIA) :
+                new ObjectParameter("FECHAVIGENCIA", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACTUALIZAR_TARIFASAUTOBUSES", cODIGORUTAParameter, eSTADOParameter, tARIFAParameter, dESCRIPCIONParameter, fECHAVIGENCIAParameter);
+        }
+    
+        public virtual ObjectResult<SP_BUSCAR_TARIFAAUTOBUS_Result> SP_BUSCAR_TARIFAAUTOBUS(string cODIGORUTA)
+        {
+            var cODIGORUTAParameter = cODIGORUTA != null ?
+                new ObjectParameter("CODIGORUTA", cODIGORUTA) :
+                new ObjectParameter("CODIGORUTA", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_BUSCAR_TARIFAAUTOBUS_Result>("SP_BUSCAR_TARIFAAUTOBUS", cODIGORUTAParameter);
+        }
+    
+        public virtual ObjectResult<SP_LISTAR_TARIFASAUTOBUSES_Result> SP_LISTAR_TARIFASAUTOBUSES()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_TARIFASAUTOBUSES_Result>("SP_LISTAR_TARIFASAUTOBUSES");
         }
     }
 }

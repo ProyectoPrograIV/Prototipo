@@ -184,6 +184,13 @@
       <Parameter Name="CODIGOCANTON" Mode="In" Type="Int32" />
       <Parameter Name="CODIGOPROVINCIA" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="SP_GENERAR_ORDEN_VIATICOS">
+      <Parameter Name="IDSOLICITUD" Mode="In" Type="String" />
+      <Parameter Name="NOMBREUSUARIO" Mode="In" Type="String" />
+      <Parameter Name="ESTADOSOLICITUD" Mode="In" Type="Int16" />
+      <Parameter Name="FECHAORDEN" Mode="In" Type="DateTime" />
+      <Parameter Name="ESTADOORDEN" Mode="In" Type="Int16" />
+    </FunctionImport>
     <FunctionImport Name="SP_ACTUALIZAR_TARIFASAUTOBUSES">
       <Parameter Name="CODIGORUTA" Mode="In" Type="String" />
       <Parameter Name="ESTADO" Mode="In" Type="Int16" />

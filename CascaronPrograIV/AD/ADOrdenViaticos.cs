@@ -42,13 +42,14 @@ namespace AD
             return lista;
         }
 
-        public static void GenerarOrden(TBL_CABECERAORDENVIATICO obj)
+        public static int GenerarOrden(TBL_CABECERAORDENVIATICO orden, TBL_SOLICITUDVIATICOS solicitud)
         {
             try
             {
                 contexto = new EmpresaPK2Entities();
 
-                //contexto.pa_InsertarUsuario(usuario.nomUsuario, usuario.pass, usuario.activo);
+                contexto.SP_GENERAR_ORDEN_VIATICOS(orden.ID_SOLICITUD, solicitud.NOMBREUSUARIO,
+                                solicitud.ESTADOSOLICITUD, orden.FECHAORDEN, orden.ESTADOORDEN);
             }
             catch (Exception ex)
             {
@@ -62,6 +63,9 @@ namespace AD
                 }
                 contexto = null;
             }
+
+            return 1;
+
         }
 
 
