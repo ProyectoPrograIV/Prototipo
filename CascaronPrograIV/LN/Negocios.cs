@@ -76,6 +76,7 @@ namespace LN
         //se pasa hacia las otras capas el metodo para actualizar las Tarifas de Bus
         public static int ActualizarTarifaAutobus(TBL_TARIFAAUTOBUS obj)
         {
+            int prueba;
             return Datos.ActualizarTarifaAutobus(obj);
         }
 
