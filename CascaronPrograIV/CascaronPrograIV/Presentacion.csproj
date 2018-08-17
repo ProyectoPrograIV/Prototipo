@@ -152,6 +152,8 @@
     <Content Include="Properties\DataSources\Entidades.TBL_ESTADOS2.datasource" />
     <Content Include="Properties\DataSources\Entidades.TBL_ROLUSUARIO2.datasource" />
     <Content Include="Properties\DataSources\Entidades.SP_OBTENER_CANTON_PROVINCIA_Result.datasource" />
+    <Content Include="Properties\DataSources\Entidades.SP_BUSCAR_TARIFAAUTOBUS_Result.datasource" />
+    <Content Include="Properties\DataSources\Entidades.SP_LISTAR_TARIFASAUTOBUSES_Result.datasource" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

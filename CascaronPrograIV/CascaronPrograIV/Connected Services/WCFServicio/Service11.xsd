@@ -312,7 +312,7 @@
   <xs:complexType name="SP_OBTENER_ORDEN_VIATICOS_Result">
     <xs:sequence>
       <xs:element minOccurs="0" name="ESTADOORDEN" type="xs:short" />
-      <xs:element minOccurs="0" name="FECHAORDEN" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FECHAORDEN" type="xs:dateTime" />
       <xs:element minOccurs="0" name="ID_ORDEN" type="xs:int" />
       <xs:element minOccurs="0" name="ID_SOLICITUD" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NOMBREUSUARIO" nillable="true" type="xs:string" />
@@ -339,14 +339,14 @@
   <xs:element name="ArrayOfSP_LISTAR_MODTARIFAVIATICO_Result" nillable="true" type="tns:ArrayOfSP_LISTAR_MODTARIFAVIATICO_Result" />
   <xs:complexType name="SP_LISTAR_MODTARIFAVIATICO_Result">
     <xs:sequence>
-      <xs:element name="_x003C_CODIGOCANTON_x003E_k__BackingField" type="xs:unsignedByte" />
-      <xs:element name="_x003C_CODIGOPROVINCIA_x003E_k__BackingField" type="xs:unsignedByte" />
-      <xs:element name="_x003C_ESTADOTARIFA_x003E_k__BackingField" type="xs:short" />
-      <xs:element name="_x003C_FECHATARIFA_x003E_k__BackingField" type="xs:dateTime" />
-      <xs:element name="_x003C_ID_MODTARIFA_x003E_k__BackingField" type="xs:short" />
-      <xs:element name="_x003C_LOCALIDAD_x003E_k__BackingField" nillable="true" type="xs:string" />
-      <xs:element name="_x003C_MONTOTARIFA_x003E_k__BackingField" type="xs:decimal" />
-      <xs:element name="_x003C_TIPOTARIFA_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGOCANTON" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="CODIGOPROVINCIA" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="ESTADOTARIFA" type="xs:short" />
+      <xs:element minOccurs="0" name="FECHATARIFA" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ID_MODTARIFA" type="xs:short" />
+      <xs:element minOccurs="0" name="LOCALIDAD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MONTOTARIFA" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TIPOTARIFA" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SP_LISTAR_MODTARIFAVIATICO_Result" nillable="true" type="tns:SP_LISTAR_MODTARIFAVIATICO_Result" />
@@ -370,4 +370,36 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SP_OBTENER_CANTON_PROVINCIA_Result" nillable="true" type="tns:SP_OBTENER_CANTON_PROVINCIA_Result" />
+  <xs:complexType name="ArrayOfSP_LISTAR_TARIFASAUTOBUSES_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SP_LISTAR_TARIFASAUTOBUSES_Result" nillable="true" type="tns:SP_LISTAR_TARIFASAUTOBUSES_Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSP_LISTAR_TARIFASAUTOBUSES_Result" nillable="true" type="tns:ArrayOfSP_LISTAR_TARIFASAUTOBUSES_Result" />
+  <xs:complexType name="SP_LISTAR_TARIFASAUTOBUSES_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGORUTA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DESCRIPCIONRUTA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADORUTA" type="xs:short" />
+      <xs:element minOccurs="0" name="FECHAVIGENCIA" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TARIFAREGISTRADA" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SP_LISTAR_TARIFASAUTOBUSES_Result" nillable="true" type="tns:SP_LISTAR_TARIFASAUTOBUSES_Result" />
+  <xs:complexType name="ArrayOfSP_BUSCAR_TARIFAAUTOBUS_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SP_BUSCAR_TARIFAAUTOBUS_Result" nillable="true" type="tns:SP_BUSCAR_TARIFAAUTOBUS_Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSP_BUSCAR_TARIFAAUTOBUS_Result" nillable="true" type="tns:ArrayOfSP_BUSCAR_TARIFAAUTOBUS_Result" />
+  <xs:complexType name="SP_BUSCAR_TARIFAAUTOBUS_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGORUTA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DESCRIPCIONRUTA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADORUTA" type="xs:short" />
+      <xs:element minOccurs="0" name="FECHAVIGENCIA" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TARIFAREGISTRADA" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SP_BUSCAR_TARIFAAUTOBUS_Result" nillable="true" type="tns:SP_BUSCAR_TARIFAAUTOBUS_Result" />
 </xs:schema>

@@ -91,6 +91,24 @@
   <wsdl:message name="IService1_ObtenerIDS_CANTON_PROVINCIA_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerIDS_CANTON_PROVINCIAResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_ObtenerTARIFASAUTOBUSES_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTARIFASAUTOBUSES" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ObtenerTARIFASAUTOBUSES_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTARIFASAUTOBUSESResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_BuscarTarifaAutobusXId_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarTarifaAutobusXId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_BuscarTarifaAutobusXId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarTarifaAutobusXIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ActualizarTarifaAutobus_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarTarifaAutobus" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ActualizarTarifaAutobus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarTarifaAutobusResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="InsertarRol">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertarRol" message="tns:IService1_InsertarRol_InputMessage" />
@@ -147,6 +165,18 @@
     <wsdl:operation name="ObtenerIDS_CANTON_PROVINCIA">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ObtenerIDS_CANTON_PROVINCIA" message="tns:IService1_ObtenerIDS_CANTON_PROVINCIA_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/ObtenerIDS_CANTON_PROVINCIAResponse" message="tns:IService1_ObtenerIDS_CANTON_PROVINCIA_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTARIFASAUTOBUSES">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ObtenerTARIFASAUTOBUSES" message="tns:IService1_ObtenerTARIFASAUTOBUSES_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ObtenerTARIFASAUTOBUSESResponse" message="tns:IService1_ObtenerTARIFASAUTOBUSES_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarTarifaAutobusXId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/BuscarTarifaAutobusXId" message="tns:IService1_BuscarTarifaAutobusXId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/BuscarTarifaAutobusXIdResponse" message="tns:IService1_BuscarTarifaAutobusXId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarTarifaAutobus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ActualizarTarifaAutobus" message="tns:IService1_ActualizarTarifaAutobus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ActualizarTarifaAutobusResponse" message="tns:IService1_ActualizarTarifaAutobus_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -270,6 +300,33 @@
     </wsdl:operation>
     <wsdl:operation name="ObtenerIDS_CANTON_PROVINCIA">
       <soap:operation soapAction="http://tempuri.org/IService1/ObtenerIDS_CANTON_PROVINCIA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTARIFASAUTOBUSES">
+      <soap:operation soapAction="http://tempuri.org/IService1/ObtenerTARIFASAUTOBUSES" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarTarifaAutobusXId">
+      <soap:operation soapAction="http://tempuri.org/IService1/BuscarTarifaAutobusXId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarTarifaAutobus">
+      <soap:operation soapAction="http://tempuri.org/IService1/ActualizarTarifaAutobus" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

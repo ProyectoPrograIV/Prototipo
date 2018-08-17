@@ -57,6 +57,13 @@ namespace S
         [OperationContract]
         List<SP_OBTENER_CANTON_PROVINCIA_Result> ObtenerIDS_CANTON_PROVINCIA(IdCantonIdProvincia obj);
 
+        [OperationContract]
+        List<SP_LISTAR_TARIFASAUTOBUSES_Result> ObtenerTARIFASAUTOBUSES();
+        [OperationContract]
+        List<SP_BUSCAR_TARIFAAUTOBUS_Result> BuscarTarifaAutobusXId(TBL_TARIFAAUTOBUS obj);
+        [OperationContract]
+        int ActualizarTarifaAutobus(TBL_TARIFAAUTOBUS obj);
+
         #endregion
 
     }
