@@ -12,12 +12,13 @@ namespace CascaronPrograIV.Archivos.WebForms.Parametrizaciones
 {
     public partial class Parametrizaciones : System.Web.UI.Page
     {
+     
         
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
                 CargarTarifasHospedaje();
-            CargarTarifasAutoBuses();
+           // CargarTarifasAutoBuses();
         }
 
         private void CargarTarifasHospedaje()//metodo carga el el modelo tarifa viatico en data view
