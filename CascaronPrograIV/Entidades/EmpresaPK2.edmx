@@ -365,19 +365,8 @@
           <Parameter Name="MONTOTARIFA" Type="money" Mode="In" />
           <Parameter Name="ESTADOTARIFA" Type="smallint" Mode="In" />
         </Function>
-        <Function Name="SP_ACTUALIZAR_TARIFASAUTOBUSES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_PARAMETROS">
-          <Parameter Name="CODIGORUTA" Type="nvarchar" Mode="In" />
-          <Parameter Name="ESTADO" Type="smallint" Mode="In" />
-          <Parameter Name="TARIFA" Type="money" Mode="In" />
-          <Parameter Name="DESCRIPCION" Type="nvarchar" Mode="In" />
-          <Parameter Name="FECHAVIGENCIA" Type="date" Mode="In" />
-        </Function>
-        <Function Name="SP_BUSCAR_TARIFAAUTOBUS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_PARAMETROS">
-          <Parameter Name="CODIGORUTA" Type="nvarchar" Mode="In" />
-        </Function>
         <Function Name="SP_LISTAR_MODTARIFAVIATICO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_PARAMETROS" />
         <Function Name="SP_LISTAR_RUTAS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_PARAMETROS" />
-        <Function Name="SP_LISTAR_TARIFASAUTOBUSES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_PARAMETROS" />
         <Function Name="SP_LISTARMONTORUTA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_PARAMETROS">
           <Parameter Name="IDRUTA" Type="nvarchar" Mode="In" />
         </Function>
@@ -425,6 +414,11 @@
         </Function>
         <Function Name="SP_ELIMINAR_SOLICITUDES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS">
           <Parameter Name="IDSOLICITUD" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_GENERAR_ORDEN_VIATICOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS">
+          <Parameter Name="IDSOLICITUD" Type="nvarchar" Mode="In" />
+          <Parameter Name="FECHAORDEN" Type="datetime" Mode="In" />
+          <Parameter Name="ESTADOORDEN" Type="smallint" Mode="In" />
         </Function>
         <Function Name="SP_GUARDAR_DETALLEVIATICOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS">
           <Parameter Name="ID_SOLICITUD" Type="nvarchar" Mode="In" />
@@ -736,17 +730,11 @@
             <Parameter Name="CODIGOCANTON" Mode="In" Type="Int32" />
             <Parameter Name="CODIGOPROVINCIA" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="SP_ACTUALIZAR_TARIFASAUTOBUSES">
-            <Parameter Name="CODIGORUTA" Mode="In" Type="String" />
-            <Parameter Name="ESTADO" Mode="In" Type="Int16" />
-            <Parameter Name="TARIFA" Mode="In" Type="Decimal" />
-            <Parameter Name="DESCRIPCION" Mode="In" Type="String" />
-            <Parameter Name="FECHAVIGENCIA" Mode="In" Type="DateTime" />
+          <FunctionImport Name="SP_GENERAR_ORDEN_VIATICOS">
+            <Parameter Name="IDSOLICITUD" Mode="In" Type="String" />
+            <Parameter Name="FECHAORDEN" Mode="In" Type="DateTime" />
+            <Parameter Name="ESTADOORDEN" Mode="In" Type="Int16" />
           </FunctionImport>
-          <FunctionImport Name="SP_BUSCAR_TARIFAAUTOBUS" ReturnType="Collection(EmpresaPK2Model.SP_BUSCAR_TARIFAAUTOBUS_Result)">
-            <Parameter Name="CODIGORUTA" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SP_LISTAR_TARIFASAUTOBUSES" ReturnType="Collection(EmpresaPK2Model.SP_LISTAR_TARIFASAUTOBUSES_Result)" />
         </EntityContainer>
         <ComplexType Name="SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result">
           <Property Type="Int32" Name="ID_SOLICITUD" Nullable="false" />
@@ -1238,20 +1226,6 @@
           <Property Type="String" Name="DESCRIPCIONCANTON" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="DESCRIPCIONPROVINCIA" Nullable="false" MaxLength="50" />
         </ComplexType>
-        <ComplexType Name="SP_BUSCAR_TARIFAAUTOBUS_Result">
-          <Property Type="String" Name="CODIGORUTA" Nullable="false" MaxLength="20" />
-          <Property Type="Int16" Name="ESTADORUTA" Nullable="false" />
-          <Property Type="Decimal" Name="TARIFAREGISTRADA" Nullable="false" Precision="19" />
-          <Property Type="String" Name="DESCRIPCIONRUTA" Nullable="false" MaxLength="100" />
-          <Property Type="DateTime" Name="FECHAVIGENCIA" Nullable="false" />
-        </ComplexType>
-        <ComplexType Name="SP_LISTAR_TARIFASAUTOBUSES_Result">
-          <Property Type="String" Name="CODIGORUTA" Nullable="false" MaxLength="20" />
-          <Property Type="Int16" Name="ESTADORUTA" Nullable="false" />
-          <Property Type="Decimal" Name="TARIFAREGISTRADA" Nullable="false" Precision="19" />
-          <Property Type="String" Name="DESCRIPCIONRUTA" Nullable="false" MaxLength="100" />
-          <Property Type="DateTime" Name="FECHAVIGENCIA" Nullable="false" />
-        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1574,29 +1548,7 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_TARIFASAUTOBUSES" FunctionName="EmpresaPK2Model.Store.SP_ACTUALIZAR_TARIFASAUTOBUSES" />
-          <FunctionImportMapping FunctionImportName="SP_BUSCAR_TARIFAAUTOBUS" FunctionName="EmpresaPK2Model.Store.SP_BUSCAR_TARIFAAUTOBUS">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_BUSCAR_TARIFAAUTOBUS_Result">
-                <ScalarProperty Name="CODIGORUTA" ColumnName="CODIGORUTA" />
-                <ScalarProperty Name="ESTADORUTA" ColumnName="ESTADORUTA" />
-                <ScalarProperty Name="TARIFAREGISTRADA" ColumnName="TARIFAREGISTRADA" />
-                <ScalarProperty Name="DESCRIPCIONRUTA" ColumnName="DESCRIPCIONRUTA" />
-                <ScalarProperty Name="FECHAVIGENCIA" ColumnName="FECHAVIGENCIA" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="SP_LISTAR_TARIFASAUTOBUSES" FunctionName="EmpresaPK2Model.Store.SP_LISTAR_TARIFASAUTOBUSES">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTAR_TARIFASAUTOBUSES_Result">
-                <ScalarProperty Name="CODIGORUTA" ColumnName="CODIGORUTA" />
-                <ScalarProperty Name="ESTADORUTA" ColumnName="ESTADORUTA" />
-                <ScalarProperty Name="TARIFAREGISTRADA" ColumnName="TARIFAREGISTRADA" />
-                <ScalarProperty Name="DESCRIPCIONRUTA" ColumnName="DESCRIPCIONRUTA" />
-                <ScalarProperty Name="FECHAVIGENCIA" ColumnName="FECHAVIGENCIA" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_GENERAR_ORDEN_VIATICOS" FunctionName="EmpresaPK2Model.Store.SP_GENERAR_ORDEN_VIATICOS" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
