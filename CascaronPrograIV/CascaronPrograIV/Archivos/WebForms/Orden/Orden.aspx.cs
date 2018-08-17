@@ -28,7 +28,7 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
             return lista;
 
         }
-
+        
         private void CargarOrden()
         {
             try
@@ -56,6 +56,12 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
             OrdenDeViaticos obj = new OrdenDeViaticos();
             obj.NomUsuario = txtBuscar.Text.Trim();
             GvConsultarSolicitud.DataSource = this.ObtenerListaOrden(obj);
+            CargarOrden();
+        }
+
+        protected void GvActualizar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

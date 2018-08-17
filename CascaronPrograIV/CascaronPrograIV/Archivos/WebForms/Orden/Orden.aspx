@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Archivos/WebForms/PaginaMaestra.Master" AutoEventWireup="true" CodeBehind="Orden.aspx.cs" Inherits="CascaronPrograIV.Archivos.WebForms.Orden.Orden" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .auto-style2 {
@@ -10,6 +11,7 @@
             font-size: 22px;
             border-style: solid;
         }
+
         .auto-style3 {
             border-style: none;
             border-color: inherit;
@@ -101,11 +103,12 @@
         <br />
         <br />
         <div id="DivConsultar">
-            <h1 id="h1Consultar">Consultar Orden de Viaticos <img src="../../Recursos/Mostrar.png" /></h1>
+            <h1 id="h1Consultar">Consultar Orden de Viaticos
+                <img src="../../Recursos/Mostrar.png" /></h1>
             <asp:TextBox ID="txtBuscar" CssClass="auto-style2" runat="server" PlaceHolder="Buscar" Height="39px" Width="208px"></asp:TextBox>
             <asp:Button ID="btnBuscar" CssClass="auto-style3" runat="server" Text="Buscar" Height="40px" OnClick="btnBuscar_Click" Width="150px" />
             <div>
-                <asp:GridView CssClass="GridView" ID="GvConsultarSolicitud" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
+                <asp:GridView CssClass="GridView" ID="GvConsultarSolicitud" AutoGenerateColumns="true" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
                     <AlternatingRowStyle BackColor="White" />
                     <EditRowStyle BackColor="#2461BF" />
                     <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -123,12 +126,13 @@
         <br />
         <br />
         <div id="DivActualizar">
-            <h1 id="h1Actualizar">Actualizar Orden de Viaticos <img src="../../Recursos/Mostrar.png" /></h1>
+            <h1 id="h1Actualizar">Actualizar Orden de Viaticos
+                <img src="../../Recursos/Mostrar.png" /></h1>
             <br />
             <asp:TextBox CssClass="Textbox" ID="TextBox20" runat="server" PlaceHolder="nombre usuario"></asp:TextBox>
             <br />
             <br />
-            <asp:GridView ID="GvActualizar" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
+            <asp:GridView ID="GvActualizar" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GvActualizar_SelectedIndexChanged">
                 <AlternatingRowStyle BackColor="White" />
                 <EditRowStyle BackColor="#2461BF" />
                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
