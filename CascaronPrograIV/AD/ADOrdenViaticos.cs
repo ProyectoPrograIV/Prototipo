@@ -19,13 +19,13 @@ namespace AD
                 lista = new List<SP_OBTENER_ORDEN_VIATICOS_Result>();
                 contexto = new EmpresaPK2Entities();
 
-                var consulta = contexto.SP_OBTENER_ORDEN_VIATICOS(obj.NomUsuario).ToList(); 
+                var consulta = contexto.SP_OBTENER_ORDEN_VIATICOS(obj.NomUsuario).ToList();
 
                 if (consulta != null)
                 {
                     foreach (var item in consulta)
                     {
-                       
+
                         lista.Add(item);
                     }
                 }
@@ -42,7 +42,7 @@ namespace AD
             return lista;
         }
 
-        public static int GenerarOrden(TBL_CABECERAORDENVIATICO orden, TBL_SOLICITUDVIATICOS solicitud)
+        public static int GenerarOrdenViaticos(TBL_CABECERAORDENVIATICO orden, TBL_SOLICITUDVIATICOS solicitud)
         {
             try
             {

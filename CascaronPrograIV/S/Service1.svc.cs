@@ -71,9 +71,9 @@ namespace S
             return LNOrdenViaticos.ObtenerOrden(obj);
         }
 
-        public int GenerarOrden(TBL_CABECERAORDENVIATICO orden, TBL_SOLICITUDVIATICOS solicitud)
+        public int GenerarOrdenViaticos(TBL_CABECERAORDENVIATICO orden, TBL_SOLICITUDVIATICOS solicitud)
         {
-            return LNOrdenViaticos.GenerarOrden(orden, solicitud);
+            return LNOrdenViaticos.GenerarOrdenViaticos(orden, solicitud);
         }
 
         #endregion

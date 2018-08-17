@@ -16,11 +16,11 @@ namespace LN
         }
 
 
-        public static int GenerarOrden(TBL_CABECERAORDENVIATICO orden, TBL_SOLICITUDVIATICOS solicitud)
+        public static int GenerarOrdenViaticos(TBL_CABECERAORDENVIATICO orden, TBL_SOLICITUDVIATICOS solicitud)
         {
-            return AD.ADOrdenViaticos.GenerarOrden(orden, solicitud);
+            return AD.ADOrdenViaticos.GenerarOrdenViaticos(orden, solicitud);
         }
-        
+
 
     }
 }

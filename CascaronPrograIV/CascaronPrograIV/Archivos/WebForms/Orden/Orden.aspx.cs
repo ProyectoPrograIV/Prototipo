@@ -80,7 +80,7 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
                 orden.ESTADOORDEN = Convert.ToInt16(ddlEstado.SelectedValue.ToString());
                 orden.FECHAORDEN = Convert.ToDateTime(txtFecha.Text.Trim());
 
-                GenerarOrden(orden, solicitudv);
+                GenerarOrdenViaticos(orden, solicitudv);
             }
             catch (Exception ex)
             {
@@ -89,7 +89,7 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
 
         }
 
-        public static int GenerarOrden(TBL_CABECERAORDENVIATICO orden, TBL_SOLICITUDVIATICOS solicitud)
+        public static int GenerarOrdenViaticos(TBL_CABECERAORDENVIATICO orden, TBL_SOLICITUDVIATICOS solicitud)
         {
             WCFServicio.Service1Client objservicio = null;
 
@@ -97,7 +97,7 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
             {
                 objservicio = new WCFServicio.Service1Client();
 
-                return objservicio.GenerarOrden(orden, solicitud);
+                return objservicio.GenerarOrdenViaticos(orden, solicitud);
             }
             finally
             {
@@ -105,12 +105,6 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
                     objservicio.Close();
             }
         }
-
-        #endregion
-
-        #region Buscar Consulta
-
-
 
         #endregion
 

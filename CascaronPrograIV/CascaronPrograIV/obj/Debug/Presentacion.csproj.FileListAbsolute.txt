@@ -148,3 +148,5 @@ C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\Presentacion.csproj.CopyComplete
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\CascaronPrograIV.dll
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\CascaronPrograIV.pdb
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\EntityFramework.dll
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\Presentacion.csprojAssemblyReference.cache
