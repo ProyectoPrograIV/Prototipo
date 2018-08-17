@@ -317,5 +317,28 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_TARIFASAUTOBUSES" FunctionName="EmpresaPK2Model.Store.SP_ACTUALIZAR_TARIFASAUTOBUSES" />
+    <FunctionImportMapping FunctionImportName="SP_BUSCAR_TARIFAAUTOBUS" FunctionName="EmpresaPK2Model.Store.SP_BUSCAR_TARIFAAUTOBUS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_BUSCAR_TARIFAAUTOBUS_Result">
+          <ScalarProperty Name="CODIGORUTA" ColumnName="CODIGORUTA" />
+          <ScalarProperty Name="ESTADORUTA" ColumnName="ESTADORUTA" />
+          <ScalarProperty Name="TARIFAREGISTRADA" ColumnName="TARIFAREGISTRADA" />
+          <ScalarProperty Name="DESCRIPCIONRUTA" ColumnName="DESCRIPCIONRUTA" />
+          <ScalarProperty Name="FECHAVIGENCIA" ColumnName="FECHAVIGENCIA" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_LISTAR_TARIFASAUTOBUSES" FunctionName="EmpresaPK2Model.Store.SP_LISTAR_TARIFASAUTOBUSES">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTAR_TARIFASAUTOBUSES_Result">
+          <ScalarProperty Name="CODIGORUTA" ColumnName="CODIGORUTA" />
+          <ScalarProperty Name="ESTADORUTA" ColumnName="ESTADORUTA" />
+          <ScalarProperty Name="TARIFAREGISTRADA" ColumnName="TARIFAREGISTRADA" />
+          <ScalarProperty Name="DESCRIPCIONRUTA" ColumnName="DESCRIPCIONRUTA" />
+          <ScalarProperty Name="FECHAVIGENCIA" ColumnName="FECHAVIGENCIA" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -94,6 +94,22 @@ namespace S
             return Negocios.ObtenerIDS_CANTON_PROVINCIA(obj);
         }
 
+        //se carga todo lo que tiene la tabla de Tarifas Autobuses
+        public  List<SP_LISTAR_TARIFASAUTOBUSES_Result> ObtenerTARIFASAUTOBUSES()
+        {
+            return Negocios.ObtenerTARIFASAUTOBUSES();
+        }
+        //se pasa el metodo Buscar Tarifas por ID de tarifa
+        public List<SP_BUSCAR_TARIFAAUTOBUS_Result> BuscarTarifaAutobusXId(TBL_TARIFAAUTOBUS obj)
+        {
+            return Negocios.BuscarTarifaAutobusXId(obj);
+        }
+        //se pasa hacia las otras capas el metodo para actualizar las Tarifas de Bus
+        public int ActualizarTarifaAutobus(TBL_TARIFAAUTOBUS obj)
+        {
+            return Negocios.ActualizarTarifaAutobus(obj);
+        }
+
         #endregion
 
         public SP_INICIO_SESION_Result InicioSesion(TBL_USUARIO obj) => Negocios.InicioSesion(obj);

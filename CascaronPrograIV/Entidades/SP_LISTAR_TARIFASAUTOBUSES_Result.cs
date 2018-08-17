@@ -11,15 +11,12 @@ namespace Entidades
 {
     using System;
     
-    public partial class SP_LISTAR_MODTARIFAVIATICO_Result
+    public partial class SP_LISTAR_TARIFASAUTOBUSES_Result
     {
-        public short ID_MODTARIFA { get; set; }
-        public byte CODIGOPROVINCIA { get; set; }
-        public byte CODIGOCANTON { get; set; }
-        public string TIPOTARIFA { get; set; }
-        public System.DateTime FECHATARIFA { get; set; }
-        public decimal MONTOTARIFA { get; set; }
-        public short ESTADOTARIFA { get; set; }
-        public string LOCALIDAD { get; set; }
+        public string CODIGORUTA { get; set; }
+        public short ESTADORUTA { get; set; }
+        public decimal TARIFAREGISTRADA { get; set; }
+        public string DESCRIPCIONRUTA { get; set; }
+        public System.DateTime FECHAVIGENCIA { get; set; }
     }
 }

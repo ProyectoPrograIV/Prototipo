@@ -98,6 +98,24 @@ namespace CascaronPrograIV.WCFServicio {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerIDS_CANTON_PROVINCIA", ReplyAction="http://tempuri.org/IService1/ObtenerIDS_CANTON_PROVINCIAResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_OBTENER_CANTON_PROVINCIA_Result>> ObtenerIDS_CANTON_PROVINCIAAsync(Entidades.IdCantonIdProvincia obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerTARIFASAUTOBUSES", ReplyAction="http://tempuri.org/IService1/ObtenerTARIFASAUTOBUSESResponse")]
+        System.Collections.Generic.List<Entidades.SP_LISTAR_TARIFASAUTOBUSES_Result> ObtenerTARIFASAUTOBUSES();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerTARIFASAUTOBUSES", ReplyAction="http://tempuri.org/IService1/ObtenerTARIFASAUTOBUSESResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTAR_TARIFASAUTOBUSES_Result>> ObtenerTARIFASAUTOBUSESAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/BuscarTarifaAutobusXId", ReplyAction="http://tempuri.org/IService1/BuscarTarifaAutobusXIdResponse")]
+        System.Collections.Generic.List<Entidades.SP_BUSCAR_TARIFAAUTOBUS_Result> BuscarTarifaAutobusXId(Entidades.TBL_TARIFAAUTOBUS obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/BuscarTarifaAutobusXId", ReplyAction="http://tempuri.org/IService1/BuscarTarifaAutobusXIdResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_BUSCAR_TARIFAAUTOBUS_Result>> BuscarTarifaAutobusXIdAsync(Entidades.TBL_TARIFAAUTOBUS obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ActualizarTarifaAutobus", ReplyAction="http://tempuri.org/IService1/ActualizarTarifaAutobusResponse")]
+        int ActualizarTarifaAutobus(Entidades.TBL_TARIFAAUTOBUS obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ActualizarTarifaAutobus", ReplyAction="http://tempuri.org/IService1/ActualizarTarifaAutobusResponse")]
+        System.Threading.Tasks.Task<int> ActualizarTarifaAutobusAsync(Entidades.TBL_TARIFAAUTOBUS obj);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -237,6 +255,30 @@ namespace CascaronPrograIV.WCFServicio {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_OBTENER_CANTON_PROVINCIA_Result>> ObtenerIDS_CANTON_PROVINCIAAsync(Entidades.IdCantonIdProvincia obj) {
             return base.Channel.ObtenerIDS_CANTON_PROVINCIAAsync(obj);
+        }
+        
+        public System.Collections.Generic.List<Entidades.SP_LISTAR_TARIFASAUTOBUSES_Result> ObtenerTARIFASAUTOBUSES() {
+            return base.Channel.ObtenerTARIFASAUTOBUSES();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTAR_TARIFASAUTOBUSES_Result>> ObtenerTARIFASAUTOBUSESAsync() {
+            return base.Channel.ObtenerTARIFASAUTOBUSESAsync();
+        }
+        
+        public System.Collections.Generic.List<Entidades.SP_BUSCAR_TARIFAAUTOBUS_Result> BuscarTarifaAutobusXId(Entidades.TBL_TARIFAAUTOBUS obj) {
+            return base.Channel.BuscarTarifaAutobusXId(obj);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_BUSCAR_TARIFAAUTOBUS_Result>> BuscarTarifaAutobusXIdAsync(Entidades.TBL_TARIFAAUTOBUS obj) {
+            return base.Channel.BuscarTarifaAutobusXIdAsync(obj);
+        }
+        
+        public int ActualizarTarifaAutobus(Entidades.TBL_TARIFAAUTOBUS obj) {
+            return base.Channel.ActualizarTarifaAutobus(obj);
+        }
+        
+        public System.Threading.Tasks.Task<int> ActualizarTarifaAutobusAsync(Entidades.TBL_TARIFAAUTOBUS obj) {
+            return base.Channel.ActualizarTarifaAutobusAsync(obj);
         }
     }
 }

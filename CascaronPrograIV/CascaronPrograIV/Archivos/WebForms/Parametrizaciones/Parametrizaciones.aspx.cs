@@ -16,10 +16,11 @@ namespace CascaronPrograIV.Archivos.WebForms.Parametrizaciones
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
-                CargarUsuarios();
+                CargarTarifasHospedaje();
+            CargarTarifasAutoBuses();
         }
 
-        private void CargarUsuarios()//metodo carga el el modelo tarifa viatico en data view
+        private void CargarTarifasHospedaje()//metodo carga el el modelo tarifa viatico en data view
         {
             try
             {
@@ -45,6 +46,30 @@ namespace CascaronPrograIV.Archivos.WebForms.Parametrizaciones
             }
         }
 
+
+        private void CargarTarifasAutoBuses()//metodo carga el el modelo tarifa viatico en data view
+        {
+            try
+            {
+                Entidades.SP_LISTAR_TARIFASAUTOBUSES_Result Consulta = new Entidades.SP_LISTAR_TARIFASAUTOBUSES_Result();
+                WCFServicio.Service1Client servicio = new WCFServicio.Service1Client();
+
+                List<Entidades.SP_LISTAR_TARIFASAUTOBUSES_Result> resultado = servicio.ObtenerTARIFASAUTOBUSES();
+              
+                //carga el DV 
+                this.GvTarifaAutobus.DataSource = null;
+                this.GvTarifaAutobus.DataBind();
+                this.GvTarifaAutobus.DataSource = resultado;
+                this.GvTarifaAutobus.DataBind();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         private List<SP_LISTAR_MODTARIFAVIATICO_Result> ObtenerMODTARIFASVIATICOS()
         {
             WCFServicio.Service1Client servicio = new WCFServicio.Service1Client();
@@ -62,7 +87,7 @@ namespace CascaronPrograIV.Archivos.WebForms.Parametrizaciones
         protected void GvTarifaViaticos_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             this.GvTarifaViaticos.PageIndex = e.NewPageIndex;//crea los nuevos indices de pagina
-            CargarUsuarios();
+            CargarTarifasHospedaje();
         }
 
         protected void GvTarifaViaticos_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
@@ -156,7 +181,7 @@ namespace CascaronPrograIV.Archivos.WebForms.Parametrizaciones
                 }
 
                 Borrar();
-                CargarUsuarios();
+                CargarTarifasHospedaje();
 
 
             }
@@ -166,6 +191,12 @@ namespace CascaronPrograIV.Archivos.WebForms.Parametrizaciones
                 this.Page.Response.Write("<script language='JavaScript'>window.alert('" + " NO SE PUDO REALIZAR LA ACTUALIZACION" + "');</script>");
             }
             
+        }
+
+        protected void GvTarifaAutobus_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            this.GvTarifaAutobus.PageIndex = e.NewPageIndex;//crea los nuevos indices de pagina
+
         }
     }
     }

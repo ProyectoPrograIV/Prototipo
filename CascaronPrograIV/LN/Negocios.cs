@@ -58,11 +58,28 @@ namespace LN
         {
             return Datos.ActualizarMODTARIFASVIATICOS(obj);
         }
-
+        //se otiene el canton crrepondiente al Id
         public static List<SP_OBTENER_CANTON_PROVINCIA_Result> ObtenerIDS_CANTON_PROVINCIA(IdCantonIdProvincia obj)
         {      
             return Datos.ObtenerIDS_CANTON_PROVINCIA(obj);
         }
+        //se carga todo lo que tiene la tabla de Tarifas Autobuses
+        public static List<SP_LISTAR_TARIFASAUTOBUSES_Result> ObtenerTARIFASAUTOBUSES()
+        {
+            return Datos.ObtenerTARIFASAUTOBUSES();
+        }
+        //se pasa el metodo Buscar Tarifas por ID de tarifa
+        public static List<SP_BUSCAR_TARIFAAUTOBUS_Result> BuscarTarifaAutobusXId(TBL_TARIFAAUTOBUS obj)
+        {
+            return Datos.BuscarTarifaAutobusXId(obj);
+        }
+        //se pasa hacia las otras capas el metodo para actualizar las Tarifas de Bus
+        public static int ActualizarTarifaAutobus(TBL_TARIFAAUTOBUS obj)
+        {
+            return Datos.ActualizarTarifaAutobus(obj);
+        }
+
+
         #endregion
     }
 }

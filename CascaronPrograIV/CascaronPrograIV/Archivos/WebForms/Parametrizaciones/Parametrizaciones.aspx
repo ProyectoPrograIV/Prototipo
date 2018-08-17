@@ -11,6 +11,28 @@
             font-size: 22px;
             border-style: solid;
         }
+        .auto-style3 {
+            margin: 20px;
+            text-align: center;
+            color: #ADADAD;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 900;
+            font-size: 18px;
+            border-style: solid;
+        }
+        .auto-style4 {
+            border-style: none;
+            border-color: inherit;
+            border-width: 0;
+            padding: 0;
+            font-size: 20px;
+            color: #fff;
+            text-align: center;
+            background: #2d343d;
+            border-radius: 5px;
+            cursor: pointer;
+            outline: 0;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -63,9 +85,30 @@
             <h1 id="h1Autobus">Actualizar Tarifas de Autobus
             <img src="../../Recursos/Mostrar.png" />
         </h1>
-            <asp:TextBox CssClass="TbxFiltrar" ID="TextBox7" runat="server" Text="Buscar"></asp:TextBox>
-            <asp:GridView ID="GvTarifaAutobus"  runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" 
-                  >
+
+            <table style="width: 100%;">
+                <tr>
+                    <td><h3>Id Ruta</h3><asp:TextBox CssClass="auto-style3" ID="TbxIdRuta" runat="server" placeholder="Ingrese Id Ruta" Width="202px" Height="35px"></asp:TextBox></td>
+                    <td><h3>Estado Ruta</h3>  <asp:DropDownList ID="DropDownList1" runat="server" Height="52px" Width="191px">
+                        <asp:ListItem Value="10">Activo</asp:ListItem>
+                        <asp:ListItem Value="9">Inactivo</asp:ListItem>
+                        </asp:DropDownList> </td>
+                    <td><h3>Tarifa</h3><asp:TextBox CssClass="Textbox" ID="TbxTarifa" runat="server" placeholder="Tarifa"></asp:TextBox></td>
+                </tr>
+                <tr>
+                    
+                    <td><h3>Descripcion</h3><asp:TextBox CssClass="Textbox" ID="TbxDescripcion" runat="server" placeholder="Descripcion"></asp:TextBox></td>
+                    <td><h3>Fecha Vigencia</h3><asp:TextBox CssClass="Textbox" ID="TbxFechaVigente" runat="server" placeholder="Fecha Vigente"></asp:TextBox></td>
+                    <td><asp:Button ID="Btn_Actualizar" CssClass="Button" runat="server" Text="Actualizar"/></td>
+                </tr>
+                <tr>                     
+                    <td colspan="2"><asp:ValidationSummary ID="ValidationTarifaBuses" runat="server" /></td>  
+                    <td><asp:Button ID="Btn_Buscar" CssClass="auto-style4" runat="server" Text="BUSCAR CON ID TARIFA" Width="258px"/> </td>                             
+                </tr>
+            </table>
+           
+            <asp:GridView ID="GvTarifaAutobus"  runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" 
+                AllowPaging="true" PageSize="100" OnPageIndexChanging="GvTarifaAutobus_PageIndexChanging"   >
                 <AlternatingRowStyle BackColor="White" />
                 <EditRowStyle BackColor="#2461BF" />
                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -78,16 +121,19 @@
                 <SortedDescendingCellStyle BackColor="#E9EBEF" />
                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
 
+               <Columns>                
+                  <asp:BoundField HeaderText="CODIGO RUTA" DataField="CODIGORUTA"  ItemStyle-Width="12%"/>
+                  <asp:BoundField HeaderText="ESTADO RUTA" DataField="ESTADORUTA"  ItemStyle-Width="12%" />
+                  <asp:BoundField HeaderText="TARIFA REGISTRADA" DataField="TARIFAREGISTRADA"  ItemStyle-Width="12%" />
+                  <asp:BoundField HeaderText="DESCRIPCION RUTA" DataField="DESCRIPCIONRUTA"  ItemStyle-Width="50%" />
+                  <asp:BoundField HeaderText="FECHA VIGENCIA" DataField="FECHA VIGENCIA"  ItemStyle-Width="12%"/>                        
+              </Columns>
+
             </asp:GridView>
-            <asp:TextBox CssClass="Textbox" ID="TextBox1" runat="server" Text="Codigo de Ruta"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TextBox2" runat="server" Text="Provincia"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TextBox3" runat="server" Text="Tarifa"></asp:TextBox><br />
-            <asp:TextBox CssClass="Textbox" ID="TextBox4" runat="server" Text="Descripcion"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TextBox5" runat="server" Text="Fecha Vigente"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TextBox6" runat="server" Text="Estado"></asp:TextBox><br />
-            <br />
-            <br />
-            <asp:Button ID="Btn_Actualizar" CssClass="Button" runat="server" Text="Actualizar" />
+            
+           
+        
+            
         </div>
         <br />
         <br />
@@ -138,7 +184,8 @@
 
            
             <asp:GridView CssClass="GridView" ID="GvTarifaViaticos" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False"
-                 OnSelectedIndexChanged="GvTarifaViaticos_SelectedIndexChanged" AllowPaging="true" PageSize="10" OnPageIndexChanging="GvTarifaViaticos_PageIndexChanging" OnSelectedIndexChanging="GvTarifaViaticos_SelectedIndexChanging">
+                 OnSelectedIndexChanged="GvTarifaViaticos_SelectedIndexChanged" AllowPaging="true" PageSize="10" OnPageIndexChanging="GvTarifaViaticos_PageIndexChanging"
+                 OnSelectedIndexChanging="GvTarifaViaticos_SelectedIndexChanging">
                 <AlternatingRowStyle BackColor="White" />
                 <EditRowStyle BackColor="#2461BF" />
                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />

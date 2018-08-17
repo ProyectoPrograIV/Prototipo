@@ -360,8 +360,19 @@
     <Parameter Name="MONTOTARIFA" Type="money" Mode="In" />
     <Parameter Name="ESTADOTARIFA" Type="smallint" Mode="In" />
   </Function>
+  <Function Name="SP_ACTUALIZAR_TARIFASAUTOBUSES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_PARAMETROS">
+    <Parameter Name="CODIGORUTA" Type="nvarchar" Mode="In" />
+    <Parameter Name="ESTADO" Type="smallint" Mode="In" />
+    <Parameter Name="TARIFA" Type="money" Mode="In" />
+    <Parameter Name="DESCRIPCION" Type="nvarchar" Mode="In" />
+    <Parameter Name="FECHAVIGENCIA" Type="date" Mode="In" />
+  </Function>
+  <Function Name="SP_BUSCAR_TARIFAAUTOBUS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_PARAMETROS">
+    <Parameter Name="CODIGORUTA" Type="nvarchar" Mode="In" />
+  </Function>
   <Function Name="SP_LISTAR_MODTARIFAVIATICO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_PARAMETROS" />
   <Function Name="SP_LISTAR_RUTAS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_PARAMETROS" />
+  <Function Name="SP_LISTAR_TARIFASAUTOBUSES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_PARAMETROS" />
   <Function Name="SP_LISTARMONTORUTA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_PARAMETROS">
     <Parameter Name="IDRUTA" Type="nvarchar" Mode="In" />
   </Function>
