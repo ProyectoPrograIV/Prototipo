@@ -202,6 +202,9 @@
       <Parameter Name="CODIGORUTA" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="SP_LISTAR_TARIFASAUTOBUSES" ReturnType="Collection(EmpresaPK2Model.SP_LISTAR_TARIFASAUTOBUSES_Result)" />
+    <FunctionImport Name="SP_LISTAR_ORDEN" ReturnType="Collection(EmpresaPK2Model.SP_LISTAR_ORDEN_Result)">
+      <Parameter Name="ID_ORDEN" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result">
     <Property Type="Int32" Name="ID_SOLICITUD" Nullable="false" />
@@ -706,5 +709,11 @@
     <Property Type="Decimal" Name="TARIFAREGISTRADA" Nullable="false" Precision="19" />
     <Property Type="String" Name="DESCRIPCIONRUTA" Nullable="false" MaxLength="100" />
     <Property Type="DateTime" Name="FECHAVIGENCIA" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_LISTAR_ORDEN_Result">
+    <Property Type="Int32" Name="ID_ORDEN" Nullable="false" />
+    <Property Type="String" Name="ID_SOLICITUD" Nullable="false" MaxLength="30" />
+    <Property Type="Int16" Name="ESTADOORDEN" Nullable="false" />
+    <Property Type="DateTime" Name="FECHAORDEN" Nullable="true" />
   </ComplexType>
 </Schema>
