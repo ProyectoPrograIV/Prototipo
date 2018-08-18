@@ -458,13 +458,9 @@ namespace Entidades
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_TARIFASAUTOBUSES_Result>("SP_LISTAR_TARIFASAUTOBUSES");
         }
     
-        public virtual ObjectResult<SP_LISTAR_ORDEN_Result> SP_LISTAR_ORDEN(Nullable<int> iD_ORDEN)
+        public virtual ObjectResult<SP_LISTAR_ORDEN_Result> SP_LISTAR_ORDEN()
         {
-            var iD_ORDENParameter = iD_ORDEN.HasValue ?
-                new ObjectParameter("ID_ORDEN", iD_ORDEN) :
-                new ObjectParameter("ID_ORDEN", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_ORDEN_Result>("SP_LISTAR_ORDEN", iD_ORDENParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_ORDEN_Result>("SP_LISTAR_ORDEN");
         }
     }
 }

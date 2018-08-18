@@ -35,17 +35,17 @@ namespace S
 
 
         #region Metodos para reportería.
-        public  List<SP_LISTADO_LIQUIDACION_VIATICOS_Result> ObtenerListaLiquidacion(ReporteXFecha obj)
+        public List<SP_LISTADO_LIQUIDACION_VIATICOS_Result> ObtenerListaLiquidacion(ReporteXFecha obj)
         {
             return LNReportes.ObtenerListaLiquidacion(obj);
         }
 
-        public  List<SP_LISTADO_ORDEN_VIATICOS_Result> ObtenerListaOrden(ReporteXFecha obj)
+        public List<SP_LISTADO_ORDEN_VIATICOS_Result> ObtenerListaOrden(ReporteXFecha obj)
         {
             return LNReportes.ObtenerListaOrden(obj);
         }
 
-        public  List<SP_LISTADO_SOLICITUD_VIATICOS_Result> ObtenerListaSolicitud(ReporteXFecha obj)
+        public List<SP_LISTADO_SOLICITUD_VIATICOS_Result> ObtenerListaSolicitud(ReporteXFecha obj)
         {
             return LNReportes.ObtenerListaSolicitud(obj);
         }
@@ -69,6 +69,11 @@ namespace S
         public List<SP_OBTENER_ORDEN_VIATICOS_Result> ObtenerOrden(OrdenDeViaticos obj)
         {
             return LNOrdenViaticos.ObtenerOrden(obj);
+        }
+
+        public List<TBL_CABECERAORDENVIATICO> ListarOrdenes(TBL_CABECERAORDENVIATICO orden)
+        {
+            return LNOrdenViaticos.ListarOrdenes(orden);
         }
 
         public int GenerarOrdenViaticos(TBL_CABECERAORDENVIATICO orden, TBL_SOLICITUDVIATICOS solicitud)
