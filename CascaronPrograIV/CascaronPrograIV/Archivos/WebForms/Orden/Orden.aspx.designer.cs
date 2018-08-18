@@ -49,15 +49,6 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden {
         protected global::System.Web.UI.WebControls.TextBox txtFecha;
         
         /// <summary>
-        /// Control Btn_Generar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btn_Generar;
-        
-        /// <summary>
         /// Control Validaciones.
         /// </summary>
         /// <remarks>
@@ -74,6 +65,15 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator ValidadorFecha;
+        
+        /// <summary>
+        /// Control Btn_Generar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Btn_Generar;
         
         /// <summary>
         /// Control txtBuscar.
@@ -103,13 +103,13 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden {
         protected global::System.Web.UI.WebControls.GridView GvConsultarSolicitud;
         
         /// <summary>
-        /// Control TextBox20.
+        /// Control txtActualizar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox20;
+        protected global::System.Web.UI.WebControls.TextBox txtActualizar;
         
         /// <summary>
         /// Control GvActualizar.
@@ -121,31 +121,22 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden {
         protected global::System.Web.UI.WebControls.GridView GvActualizar;
         
         /// <summary>
-        /// Control TextBox10.
+        /// Control txtFechaOrden.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox10;
+        protected global::System.Web.UI.WebControls.TextBox txtFechaOrden;
         
         /// <summary>
-        /// Control TextBox11.
+        /// Control ddlEstadosActualizar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox11;
-        
-        /// <summary>
-        /// Control TextBox12.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox12;
+        protected global::System.Web.UI.WebControls.DropDownList ddlEstadosActualizar;
         
         /// <summary>
         /// Control TextBox13.

@@ -17,6 +17,8 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
             {
                 ddlEstado.Items.Add("Inactivo");
                 ddlEstado.Items.Add("Activo");
+                ddlEstadosActualizar.Items.Add("Inactivo");
+                ddlEstadosActualizar.Items.Add("Activo");
 
                 CargarOrden();
             }

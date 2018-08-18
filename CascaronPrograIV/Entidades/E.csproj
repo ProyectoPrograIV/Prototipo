@@ -94,6 +94,9 @@
     <Compile Include="SP_LISTAR_MODTARIFAVIATICO_Result.cs">
       <DependentUpon>EmpresaPK2.tt</DependentUpon>
     </Compile>
+    <Compile Include="SP_LISTAR_ORDEN_Result.cs">
+      <DependentUpon>EmpresaPK2.tt</DependentUpon>
+    </Compile>
     <Compile Include="SP_LISTAR_PERSONAS_Result.cs">
       <DependentUpon>EmpresaPK2.tt</DependentUpon>
     </Compile>

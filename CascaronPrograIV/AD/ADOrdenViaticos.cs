@@ -68,6 +68,24 @@ namespace AD
 
         }
 
+        public static int ActualizarOrdenViaticos(TBL_CABECERAORDENVIATICO orden)
+        {
+            try
+            {
+                contexto = new EmpresaPK2Entities();
+                //contexto.sp_ModificarUsuario(usuario.nomUsuario, usuario.pass, usuario.activo);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (contexto != null) contexto.Dispose();
+            }
+
+            return 1;
+        }
 
     }
 }
