@@ -147,7 +147,7 @@
                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
             </asp:GridView>
             <br />
-            <asp:TextBox CssClass="Textbox" ID="txtFechaOrden" runat="server" PlaceHolder="Fecha de Creacion" OnTextChanged="txtFechaOrden_TextChanged"></asp:TextBox>
+            <asp:TextBox CssClass="Textbox" ID="txtFechaOrden" runat="server" PlaceHolder="Fecha de Creacion" ></asp:TextBox>
             <asp:DropDownList ID="ddlEstadosActualizar" CssClass="auto-style5" runat="server" Width="280px"></asp:DropDownList>
             <br />
             <asp:TextBox CssClass="Textbox" ID="TextBox13" runat="server" PlaceHolder="Usuario"></asp:TextBox>
