@@ -117,7 +117,18 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
 
         }
 
+        /*private List<SP_LISTAR_ORDEN_Result> ListarOrdenes()
+        {
+            WCFSolicitud.SolicitudClient Cliente = new WCFSolicitud.SolicitudClient();
+            TBL_SOLICITUDVIATICOS Obj_Solicitud = new TBL_SOLICITUDVIATICOS();
+            Obj_Solicitud.NOMBREUSUARIO = "davidotno";
+            List<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> ListaSolicitudes = Cliente.ListarSolicitudes(Obj_Solicitud);
+            return ListaSolicitudes;
+        }*/
+
+
         #endregion
+
 
     }
 }

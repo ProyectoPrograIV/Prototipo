@@ -388,6 +388,10 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
         #region Metodos Verificar
 
         #endregion
-        
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
