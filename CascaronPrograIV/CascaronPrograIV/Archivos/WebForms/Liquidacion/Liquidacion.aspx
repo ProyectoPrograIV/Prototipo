@@ -96,7 +96,7 @@
             <asp:TextBox CssClass="Textbox" ID="TextBox5" runat="server" Text="Monto de Hospedaje"></asp:TextBox>
             <asp:TextBox CssClass="Textbox" ID="TextBox6" runat="server" Text="Monto de Pasaje"></asp:TextBox><br />
             <br />
-            <asp:Button ID="Btn_Guardar" CssClass="Button" runat="server" Text="Liquidar" />
+            <asp:Button ID="Btn_Guardar" CssClass="Button" runat="server" Text="Liquidar" OnClick="Btn_Guardar_Click" />
         </div>
         <br />
         <br />

@@ -201,5 +201,102 @@ namespace CascaronPrograIV.Archivos.WebForms.Parametrizaciones
             CargarTarifasAutoBuses();
 
         }
+
+        protected void Btn_ActualizarBus_Click(object sender, EventArgs e)
+        {
+           try
+            {
+                int respuesta = 0;
+                Int16 estado = 0;
+                WCFServicio.Service1Client servicio = new WCFServicio.Service1Client();
+                TBL_TARIFAAUTOBUS objAutobus = new TBL_TARIFAAUTOBUS();
+               
+                if (dlEstadoBuses.SelectedIndex == 0)
+                {
+                    estado = 10;
+                }
+                else if (dlEstadoBuses.SelectedIndex == 1)
+                {
+                    estado = 9;
+                }
+                objAutobus.CODIGORUTA = (TbxIdRutaBus.Text);
+                objAutobus.FECHAVIGENCIA = Convert.ToDateTime(TbxFechaVigenteBus.Text);
+                objAutobus.TARIFAREGISTRADA = Convert.ToDecimal(TbxTarifaBus.Text);
+                objAutobus.ESTADORUTA = estado;
+                objAutobus.DESCRIPCIONRUTA = TbxDescripcionBus.Text;
+
+                /*Se crea un objeto de tipo clsUsario del BLL, para encapsular la informacion
+                 digitada por el usuario y manipular la misma en la capa de negocios*/
+
+               respuesta = servicio.ActualizarTarifaAutobus(objAutobus);
+
+                if (respuesta == 0)
+                {
+                    this.Page.Response.Write("<script language='JavaScript'>window.alert('" + " NO SE PUDO REALIZAR LA ACTUALIZACION" + "');</script>");
+                }
+
+                BorrarAutobuses();
+                CargarTarifasAutoBuses();
+
+
+            }
+            catch (Exception)
+            {
+
+                this.Page.Response.Write("<script language='JavaScript'>window.alert('" + " NO SE PUDO REALIZAR LA ACTUALIZACION" + "');</script>");
+            }
+
+       }
+
+      public void BorrarAutobuses()
+        {
+            TbxDescripcionBus.Text = "";
+            TbxFechaVigenteBus.Text = "";
+            TbxIdRutaBus.Text = "";
+            TbxTarifaBus.Text = "";
+            dlEstadoBuses.SelectedIndex = 0;
+            Btn_ActualizarBus.Enabled = false;
+
+        }
+
+        protected void Btn_Buscar_Click(object sender, EventArgs e)
+        {
+            WCFServicio.Service1Client servicio = new WCFServicio.Service1Client();
+
+            //Asiga lo cargado en la variable de sesion
+            List<SP_BUSCAR_TARIFAAUTOBUS_Result> listRutasBuses = new List<SP_BUSCAR_TARIFAAUTOBUS_Result>();
+            //se crea objeto tipos Ids            
+            TBL_TARIFAAUTOBUS objAutubus = new TBL_TARIFAAUTOBUS();
+            //se crea lista Array donde se almacenaran los IDs de Canton y Provincia
+            ArrayList lstIDS = new ArrayList();
+            //se carga objeto tipo Ids con los ids de provincia y canton
+
+            objAutubus.CODIGORUTA = (TbxIdRutaBus.Text);
+
+            listRutasBuses = servicio.BuscarTarifaAutobusXId(objAutubus);
+            if (listRutasBuses.Count != 0)
+            {
+                foreach (SP_BUSCAR_TARIFAAUTOBUS_Result item in listRutasBuses)
+                {
+
+                    TbxDescripcionBus.Text = item.DESCRIPCIONRUTA;
+                    TbxFechaVigenteBus.Text = item.FECHAVIGENCIA.ToShortDateString();
+                    TbxTarifaBus.Text = item.TARIFAREGISTRADA.ToString();
+                    if (item.ESTADORUTA == 10)
+                    {
+                        dlEstadoBuses.SelectedIndex = 0;
+                    }
+                    else if (item.ESTADORUTA == 9)
+                    {
+                        dlEstadoBuses.SelectedIndex = 1;
+                    }
+                    Btn_ActualizarBus.Enabled=true;
+
+                }
+            }
+
+        }
     }
+
+
     }
