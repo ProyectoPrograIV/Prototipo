@@ -39,6 +39,7 @@ namespace S
         List<SP_OBTENER_ORDEN_VIATICOS_Result> ObtenerOrden(OrdenDeViaticos obj);
         [OperationContract]
         List<TBL_CABECERAORDENVIATICO> ListarOrdenes(TBL_CABECERAORDENVIATICO orden);
+
         #endregion
 
 

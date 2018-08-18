@@ -21,19 +21,10 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
                 ddlEstadosActualizar.Items.Add("Activo");
 
                 CargarOrden();
+                CargarGVActualizar();
             }
         }
         #region Metodos Para Obtener y buscar
-
-        private List<SP_OBTENER_ORDEN_VIATICOS_Result> ObtenerListaOrden(OrdenDeViaticos obj)
-        {
-            WCFServicio.Service1Client servicio = new WCFServicio.Service1Client();
-            List<SP_OBTENER_ORDEN_VIATICOS_Result> lista = null;
-            lista = servicio.ObtenerOrden(obj);
-            servicio.Close();
-            return lista;
-
-        }
 
         private void CargarOrden()
         {
@@ -50,6 +41,33 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
             {
                 throw ex;
             }
+        }
+
+        private void CargarGVActualizar()
+        {
+            try
+            {
+                List<TBL_CABECERAORDENVIATICO> lista = ListarOrdenes();
+                ViewState["lstOrdenes"] = lista;
+
+                this.GvActualizar.DataSource = null;
+                this.GvActualizar.DataBind();
+                this.GvActualizar.DataSource = lista;
+                this.GvActualizar.DataBind();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private List<SP_OBTENER_ORDEN_VIATICOS_Result> ObtenerListaOrden(OrdenDeViaticos obj)
+        {
+            WCFServicio.Service1Client servicio = new WCFServicio.Service1Client();
+            List<SP_OBTENER_ORDEN_VIATICOS_Result> lista = null;
+            lista = servicio.ObtenerOrden(obj);
+            servicio.Close();
+            return lista;
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
@@ -93,18 +111,18 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
 
         public static int GenerarOrdenViaticos(TBL_CABECERAORDENVIATICO orden, TBL_SOLICITUDVIATICOS solicitud)
         {
-            WCFServicio.Service1Client objservicio = null;
+            WCFServicio.Service1Client servicio = null;
 
             try
             {
-                objservicio = new WCFServicio.Service1Client();
+                servicio = new WCFServicio.Service1Client();
 
-                return objservicio.GenerarOrdenViaticos(orden, solicitud);
+                return servicio.GenerarOrdenViaticos(orden, solicitud);
             }
             finally
             {
-                if (objservicio != null)
-                    objservicio.Close();
+                if (servicio != null)
+                    servicio.Close();
             }
         }
 
@@ -116,31 +134,21 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
         {
 
         }
-
-        /*private List<SP_LISTAR_ORDEN_Result> ListarOrdenes()
-        {
-            WCFSolicitud.SolicitudClient Cliente = new WCFSolicitud.SolicitudClient();
-            TBL_SOLICITUDVIATICOS Obj_Solicitud = new TBL_SOLICITUDVIATICOS();
-            Obj_Solicitud.NOMBREUSUARIO = "davidotno";
-            List<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> ListaSolicitudes = Cliente.ListarSolicitudes(Obj_Solicitud);
-            return ListaSolicitudes;
-        }*/
-
+        
         public static List<TBL_CABECERAORDENVIATICO> ListarOrdenes()
         {
-            WCFServicio.Service1Client objservicio = null;
+            WCFServicio.Service1Client servicio = null;
 
             try
             {
-                objservicio = new WCFServicio.Service1Client();
+                servicio = new WCFServicio.Service1Client();
 
-                //return objservicio.listar(); // Aparentemente esto se perdio o no estaba.
-                return null;
+                return servicio.ListarOrdenes();
             }
             finally
             {
-                if (objservicio != null)
-                    objservicio.Close();
+                if (servicio != null)
+                    servicio.Close();
             }
         }
 
