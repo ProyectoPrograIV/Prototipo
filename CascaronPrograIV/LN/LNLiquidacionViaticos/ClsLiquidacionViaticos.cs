@@ -11,5 +11,8 @@ namespace LN.LNLiquidacionViaticos
 {
     class ClsLiquidacionViaticos
     {
+        // Metodo para Buscar la Orden a Liquidar
+        public 
+
     }
 }
