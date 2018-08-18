@@ -21,6 +21,9 @@ namespace LN
             return AD.ADOrdenViaticos.GenerarOrdenViaticos(orden, solicitud);
         }
 
-
+        public static int ActualizarOrdenViaticos(TBL_CABECERAORDENVIATICO orden)
+        {
+            return AD.ADOrdenViaticos.ActualizarOrdenViaticos(orden);
+        }
     }
 }

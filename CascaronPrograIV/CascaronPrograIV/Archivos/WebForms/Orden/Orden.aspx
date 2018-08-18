@@ -90,11 +90,12 @@
             <asp:TextBox CssClass="Textbox" ID="txtUsuario" runat="server" Placeholder="Usuario"></asp:TextBox>
             <asp:DropDownList ID="ddlEstado" CssClass="auto-style5" runat="server" Width="280px"></asp:DropDownList>
             <asp:TextBox CssClass="Textbox" ID="txtFecha" runat="server" Placeholder="Fecha de Creacion"></asp:TextBox><br/>
-            <asp:Button ID="Btn_Generar" CssClass="Button" runat="server" Text="Generar" OnClick="Btn_Generar_Click" />
             <div id="DivValidaciones">
-                <br /><asp:Label ID="Validaciones" runat="server"></asp:Label><br />
-                <asp:RegularExpressionValidator ID="ValidadorFecha" runat="server" ErrorMessage="Fecha de creacion de solicitud incorrecta, forma correcta DD/MM/YYYY" ValidationExpression="^\d{2}(/)\d{2}(/)\d{4}$" Display="Dynamic" ControlToValidate="txtFecha"></asp:RegularExpressionValidator><br />
+                <asp:Label ID="Validaciones" runat="server"></asp:Label><br />
+                <asp:RegularExpressionValidator ID="ValidadorFecha" runat="server" ErrorMessage="Fecha de creacion de solicitud incorrecta, forma correcta DD/MM/YYYY" ValidationExpression="^\d{2}(/)\d{2}(/)\d{4}$" Display="Dynamic" ControlToValidate="txtFecha" ForeColor="#CC0000"></asp:RegularExpressionValidator>
+                <br /><br />
             </div>
+            <asp:Button ID="Btn_Generar" CssClass="Button" runat="server" Text="Generar" OnClick="Btn_Generar_Click" />           
         </div>
         <br />
         <br />
@@ -102,7 +103,7 @@
             <h1 id="h1Consultar">Consultar Orden de Viaticos
                 <img src="../../Recursos/Mostrar.png" /></h1>
             <asp:TextBox ID="txtBuscar" CssClass="Textbox" runat="server" PlaceHolder="Buscar" Height="39px" Width="177px"></asp:TextBox> <br/>
-            <asp:Button ID="btnBuscar" CssClass="auto-style4" runat="server" Text="Buscar" Height="46px" OnClick="btnBuscar_Click" Width="150px" /> <br />
+            <asp:Button ID="btnBuscar" CssClass="auto-style4" runat="server" Text="Buscar" Height="46px" OnClick="btnBuscar_Click" Width="150px" /><br/><br/>
             <div>
                 <asp:GridView CssClass="GridView" ID="GvConsultarSolicitud" AutoGenerateColumns="true" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
                     <AlternatingRowStyle BackColor="White" />
@@ -125,7 +126,7 @@
             <h1 id="h1Actualizar">Actualizar Orden de Viaticos
                 <img src="../../Recursos/Mostrar.png" /></h1>
             <br />
-            <asp:TextBox CssClass="Textbox" ID="TextBox20" runat="server" PlaceHolder="nombre usuario"></asp:TextBox>
+            <asp:TextBox CssClass="Textbox" ID="txtActualizar" runat="server" PlaceHolder="ID Orden"></asp:TextBox>
             <br />
             <br />
             <asp:GridView ID="GvActualizar" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GvActualizar_SelectedIndexChanged">
@@ -142,10 +143,9 @@
                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
             </asp:GridView>
             <br />
-            <asp:TextBox CssClass="Textbox" ID="TextBox10" runat="server" PlaceHolder="Fecha de Creacion"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TextBox11" runat="server" PlaceHolder="Fecha de Regreso"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TextBox12" runat="server" PlaceHolder="Estado de Solicitud"></asp:TextBox><br />
-
+            <asp:TextBox CssClass="Textbox" ID="txtFechaOrden" runat="server" PlaceHolder="Fecha de Creacion"></asp:TextBox>
+            <asp:DropDownList ID="ddlEstadosActualizar" CssClass="auto-style5" runat="server" Width="280px"></asp:DropDownList>
+            <br/>
             <asp:TextBox CssClass="Textbox" ID="TextBox13" runat="server" PlaceHolder="Usuario"></asp:TextBox>
             <asp:TextBox CssClass="Textbox" ID="TextBox14" runat="server" PlaceHolder="Justificacion"></asp:TextBox>
             <asp:TextBox CssClass="Textbox" ID="TextBox15" runat="server" PlaceHolder="Destino"></asp:TextBox><br />
@@ -153,7 +153,7 @@
             <asp:TextBox CssClass="Textbox" ID="TextBox16" runat="server" PlaceHolder="Fecha de Salida"></asp:TextBox>
             <asp:TextBox CssClass="Textbox" ID="TextBox17" runat="server" PlaceHolder="Hora de Salida"></asp:TextBox>
             <asp:TextBox CssClass="Textbox" ID="TextBox18" runat="server" PlaceHolder="Hora de Regreso"></asp:TextBox><br />
-            <br />
+            <br/>
             <asp:Button ID="btnGuardar" CssClass="Button" runat="server" Text="Guardar" />
         </div>
         <br />
