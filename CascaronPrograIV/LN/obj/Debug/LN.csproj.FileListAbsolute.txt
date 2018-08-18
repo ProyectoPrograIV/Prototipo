@@ -65,17 +65,6 @@ C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\LN\obj\Debug
 C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\LN\obj\Debug\LN.csproj.CopyComplete
 C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\LN\obj\Debug\LN.dll
 C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\LN\obj\Debug\LN.pdb
-C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\LN\bin\Debug\EntityFramework.dll
-C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\LN\bin\Debug\LN.dll
-C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\LN\bin\Debug\LN.pdb
-C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\LN\bin\Debug\AD.dll
-C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\LN\bin\Debug\Entidades.dll
-C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\LN\bin\Debug\AD.pdb
-C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\LN\bin\Debug\Entidades.pdb
-C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\LN\bin\Debug\EntityFramework.xml
-C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\LN\obj\Debug\LN.csprojResolveAssemblyReference.cache
-C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\LN\obj\Debug\LN.dll
-C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\LN\obj\Debug\LN.pdb
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\LN\bin\Debug\LN.dll
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\LN\bin\Debug\LN.pdb
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\LN\bin\Debug\AD.dll
@@ -90,3 +79,14 @@ C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\LN\obj\Debug\LN.
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\LN\obj\Debug\LN.csproj.CopyComplete
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\LN\obj\Debug\LN.dll
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\LN\obj\Debug\LN.pdb
+C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\LN\bin\Debug\LN.dll
+C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\LN\bin\Debug\LN.pdb
+C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\LN\bin\Debug\AD.dll
+C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\LN\bin\Debug\Entidades.dll
+C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\LN\bin\Debug\EntityFramework.dll
+C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\LN\bin\Debug\AD.pdb
+C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\LN\bin\Debug\Entidades.pdb
+C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\LN\bin\Debug\EntityFramework.xml
+C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\LN\obj\Debug\LN.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\LN\obj\Debug\LN.dll
+C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\LN\obj\Debug\LN.pdb
