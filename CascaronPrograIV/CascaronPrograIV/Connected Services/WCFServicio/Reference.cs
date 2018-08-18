@@ -125,6 +125,12 @@ namespace CascaronPrograIV.WCFServicio
         [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IServicios/ListarOrdenes", ReplyAction = "http://tempuri.org/IServicios/ListarOrdenesResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.TBL_CABECERAORDENVIATICO>> ListarOrdenesAsync();
 
+        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IServicios/ActualizarOrdenViatico", ReplyAction = "http://tempuri.org/IServicios/ActualizarOrdenViaticoResponse")]
+        int ActualizarOrdenViatico(Entidades.TBL_CABECERAORDENVIATICO obj);
+
+        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IServiciosActualizarOrdenViatico", ReplyAction = "http://tempuri.org/IServiciosActualizarOrdenViaticoResponse")]
+        System.Threading.Tasks.Task<int> ActualizarOrdenViaticoAsync(Entidades.TBL_CABECERAORDENVIATICO obj);
+
     }
 
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -340,6 +346,16 @@ namespace CascaronPrograIV.WCFServicio
         {
             return base.Channel.ListarOrdenesAsync();
 
+        }
+
+        public int ActualizarOrdenViatico(Entidades.TBL_CABECERAORDENVIATICO obj)
+        {
+            return base.Channel.ActualizarOrdenViatico(obj);
+        }
+
+        public System.Threading.Tasks.Task<int> ActualizarOrdenViaticoAsync(Entidades.TBL_CABECERAORDENVIATICO obj)
+        {
+            return base.Channel.ActualizarOrdenViaticoAsync(obj);
         }
     }
 }

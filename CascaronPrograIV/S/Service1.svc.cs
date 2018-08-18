@@ -81,6 +81,11 @@ namespace S
             return LNOrdenViaticos.GenerarOrdenViaticos(orden, solicitud);
         }
 
+        public int ActualizarOrdenViaticos(TBL_CABECERAORDENVIATICO orden)
+        {
+            return LNOrdenViaticos.ActualizarOrdenViaticos(orden);
+        }
+
         #endregion
 
         #region Metodos de Parametrizaciones

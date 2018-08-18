@@ -172,7 +172,7 @@
                 <br />
                 <br />
             </div>
-            <asp:Button ID="btnGuardar" CssClass="Button" runat="server" Text="Guardar Cambios" />
+            <asp:Button ID="btnGuardar" CssClass="Button" runat="server" Text="Guardar Cambios" OnClick="btnGuardar_Click" />
         </div>
         <br />
         <br />

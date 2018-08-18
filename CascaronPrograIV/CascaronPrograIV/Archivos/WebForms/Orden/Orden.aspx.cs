@@ -42,7 +42,7 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
                 throw ex;
             }
         }
-        
+
         private void CargarGVActualizar()
         {
             try
@@ -104,22 +104,22 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
             }
         }
 
-        /*public static int ActualizarOrdenViatico(TBL_CABECERAORDENVIATICO orden)
+        public static int ActualizarOrdenViatico(TBL_CABECERAORDENVIATICO orden)
         {
             WCFServicio.Service1Client servicio = null;
 
             try
             {
-                objservicio = new WCFServicio.Service1Client();
+                servicio = new WCFServicio.Service1Client();
 
-                return servicio.ModificarUsuario(orden);
+                return servicio.ActualizarOrdenViatico(orden);
             }
             finally
             {
-                if (objservicio != null)
-                    objservicio.Close();
+                if (servicio != null)
+                    servicio.Close();
             }
-        }*/
+        }
 
         #endregion
 
@@ -164,6 +164,14 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
 
         }
 
+
+
+
+        protected void btnGuardar_Click(object sender, EventArgs e)
+        {
+
+            CargarGVActualizar();
+        }
 
 
         #endregion

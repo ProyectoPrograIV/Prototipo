@@ -413,7 +413,7 @@
         <Function Name="SP_LISTAR_PERSONAS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_SEGURIDAD" />
         <Function Name="SP_OBTENER_ESTADOS_ACTIVOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_SEGURIDAD" />
         <Function Name="SP_ACTUALIZAR_ORDEN_VIATICO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS">
-          <Parameter Name="ID_ORDEN" Type="nvarchar" Mode="In" />
+          <Parameter Name="ID_ORDEN" Type="int" Mode="In" />
           <Parameter Name="ID_SOLICITUD" Type="nvarchar" Mode="In" />
           <Parameter Name="ESTADOORDEN" Type="smallint" Mode="In" />
           <Parameter Name="FECHAORDEN" Type="date" Mode="In" />
@@ -771,7 +771,7 @@
           <FunctionImport Name="SP_LISTAR_ORDEN" ReturnType="Collection(EmpresaPK2Model.SP_LISTAR_ORDEN_Result)">
           </FunctionImport>
           <FunctionImport Name="SP_ACTUALIZAR_ORDEN_VIATICO">
-            <Parameter Name="ID_ORDEN" Mode="In" Type="String" />
+            <Parameter Name="ID_ORDEN" Mode="In" Type="Int32" />
             <Parameter Name="ID_SOLICITUD" Mode="In" Type="String" />
             <Parameter Name="ESTADOORDEN" Mode="In" Type="Int16" />
             <Parameter Name="FECHAORDEN" Mode="In" Type="DateTime" />
