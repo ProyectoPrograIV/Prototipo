@@ -42,7 +42,7 @@ namespace AD
             return lista;
         }
        
-        public static List<TBL_CABECERAORDENVIATICO> ListarOrdenes(TBL_CABECERAORDENVIATICO orden)
+        public static List<TBL_CABECERAORDENVIATICO> ListarOrdenes()
         {
             List<TBL_CABECERAORDENVIATICO> lista = new List<TBL_CABECERAORDENVIATICO>();
             try

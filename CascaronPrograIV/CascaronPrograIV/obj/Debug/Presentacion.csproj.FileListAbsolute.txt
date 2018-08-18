@@ -142,8 +142,8 @@ C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\CascaronPrograIV.pdb
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\Presentacion.csprojAssemblyReference.cache
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\Presentacion.csproj.CopyComplete
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\CascaronPrograIV.dll
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\CascaronPrograIV.pdb
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\Presentacion.csprojAssemblyReference.cache

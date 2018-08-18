@@ -24,7 +24,7 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
                 CargarGVActualizar();
             }
         }
-        #region Metodos Para Obtener y buscar
+        #region Metodos Para Cargar Gridviews
 
         private void CargarOrden()
         {
@@ -42,17 +42,14 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
                 throw ex;
             }
         }
-
+        
         private void CargarGVActualizar()
         {
             try
             {
-                List<TBL_CABECERAORDENVIATICO> lista = ListarOrdenes();
-                ViewState["lstOrdenes"] = lista;
-
                 this.GvActualizar.DataSource = null;
                 this.GvActualizar.DataBind();
-                this.GvActualizar.DataSource = lista;
+                this.GvActualizar.DataSource = ListarOrdenes();
                 this.GvActualizar.DataBind();
             }
             catch (Exception ex)
@@ -60,6 +57,9 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
                 throw ex;
             }
         }
+        #endregion
+
+        #region Metodos de WFC 
 
         private List<SP_OBTENER_ORDEN_VIATICOS_Result> ObtenerListaOrden(OrdenDeViaticos obj)
         {
@@ -70,22 +70,60 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
             return lista;
         }
 
-        protected void btnBuscar_Click(object sender, EventArgs e)
+        public static List<TBL_CABECERAORDENVIATICO> ListarOrdenes()
         {
-            OrdenDeViaticos obj = new OrdenDeViaticos();
-            obj.NomUsuario = txtBuscar.Text.Trim();
-            GvConsultarSolicitud.DataSource = this.ObtenerListaOrden(obj);
-            CargarOrden();
+            WCFServicio.Service1Client servicio = null;
+
+            try
+            {
+                servicio = new WCFServicio.Service1Client();
+
+                return servicio.ListarOrdenes();
+            }
+            finally
+            {
+                if (servicio != null)
+                    servicio.Close();
+            }
         }
+
+        public static int GenerarOrdenViaticos(TBL_CABECERAORDENVIATICO orden, TBL_SOLICITUDVIATICOS solicitud)
+        {
+            WCFServicio.Service1Client servicio = null;
+
+            try
+            {
+                servicio = new WCFServicio.Service1Client();
+
+                return servicio.GenerarOrdenViaticos(orden, solicitud);
+            }
+            finally
+            {
+                if (servicio != null)
+                    servicio.Close();
+            }
+        }
+
+        /*public static int ActualizarOrdenViatico(TBL_CABECERAORDENVIATICO orden)
+        {
+            WCFServicio.Service1Client servicio = null;
+
+            try
+            {
+                objservicio = new WCFServicio.Service1Client();
+
+                return servicio.ModificarUsuario(orden);
+            }
+            finally
+            {
+                if (objservicio != null)
+                    objservicio.Close();
+            }
+        }*/
 
         #endregion
 
-        #region Metodos Para Generar
-
-        protected void Btn_Generar_Click(object sender, EventArgs e)
-        {
-            GenerarOrden();
-        }
+        #region Metodos para Funciones
 
         private void GenerarOrden()
         {
@@ -109,48 +147,24 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
 
         }
 
-        public static int GenerarOrdenViaticos(TBL_CABECERAORDENVIATICO orden, TBL_SOLICITUDVIATICOS solicitud)
+        protected void Btn_Generar_Click(object sender, EventArgs e)
         {
-            WCFServicio.Service1Client servicio = null;
-
-            try
-            {
-                servicio = new WCFServicio.Service1Client();
-
-                return servicio.GenerarOrdenViaticos(orden, solicitud);
-            }
-            finally
-            {
-                if (servicio != null)
-                    servicio.Close();
-            }
+            GenerarOrden();
         }
 
-        #endregion
-
-        #region Metodos para Actualizar
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            OrdenDeViaticos obj = new OrdenDeViaticos();
+            obj.NomUsuario = txtBuscar.Text.Trim();
+            GvConsultarSolicitud.DataSource = this.ObtenerListaOrden(obj);
+        }
 
         protected void GvActualizar_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-        
-        public static List<TBL_CABECERAORDENVIATICO> ListarOrdenes()
-        {
-            WCFServicio.Service1Client servicio = null;
 
-            try
-            {
-                servicio = new WCFServicio.Service1Client();
 
-                return servicio.ListarOrdenes();
-            }
-            finally
-            {
-                if (servicio != null)
-                    servicio.Close();
-            }
-        }
 
         #endregion
 

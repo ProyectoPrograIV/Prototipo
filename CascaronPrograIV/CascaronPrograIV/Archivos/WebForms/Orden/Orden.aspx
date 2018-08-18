@@ -104,13 +104,22 @@
         <div id="DivConsultar">
             <h1 id="h1Consultar">Consultar Orden de Viaticos
                 <img src="../../Recursos/Mostrar.png" /></h1>
-            <asp:TextBox ID="txtBuscar" CssClass="Textbox" runat="server" PlaceHolder="Buscar" Height="39px" Width="177px"></asp:TextBox>
+            <asp:TextBox ID="txtBuscar" CssClass="Textbox" runat="server" PlaceHolder="Nombre de Usuario
+                "
+                Height="39px" Width="177px"></asp:TextBox>
             <br />
             <asp:Button ID="btnBuscar" CssClass="auto-style4" runat="server" Text="Buscar" Height="46px" OnClick="btnBuscar_Click" Width="150px" /><br />
             <br />
             <div>
-                <asp:GridView CssClass="GridView" ID="GvConsultarSolicitud" AutoGenerateColumns="true" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
+                <asp:GridView CssClass="GridView" ID="GvConsultarSolicitud" AutoGenerateColumns="False" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
                     <AlternatingRowStyle BackColor="White" />
+                    <Columns>
+                        <asp:BoundField DataField="FECHAORDEN" HeaderText="Fecha de Orden" />
+                        <asp:BoundField DataField="IDOREDEN" HeaderText="ID Orden" />
+                        <asp:BoundField DataField="IDSOLICITUD" HeaderText="ID Solicitud" />
+                        <asp:BoundField DataField="NOMBREUSUARIO" HeaderText="Nombre Usuario" />
+                        <asp:BoundField DataField="ESTADOORDEN" HeaderText="Estado Orden" />
+                    </Columns>
                     <EditRowStyle BackColor="#2461BF" />
                     <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
                     <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -130,11 +139,15 @@
             <h1 id="h1Actualizar">Actualizar Orden de Viaticos
                 <img src="../../Recursos/Mostrar.png" /></h1>
             <br />
-            <asp:TextBox CssClass="Textbox" ID="txtActualizar" runat="server" PlaceHolder="ID Orden"></asp:TextBox>
-            <br />
-            <br />
-            <asp:GridView ID="GvActualizar" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GvActualizar_SelectedIndexChanged">
+            <asp:GridView ID="GvActualizar" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GvActualizar_SelectedIndexChanged" AutoGenerateColumns="False">
                 <AlternatingRowStyle BackColor="White" />
+                <Columns>
+                    <asp:ButtonField ButtonType="Button" CommandName="Select" Text="Seleccione" />
+                    <asp:BoundField DataField="ID_ORDEN" HeaderText="ID Orden" />
+                    <asp:BoundField DataField="ID_SOLICITUD" HeaderText="ID Solicitud" />
+                    <asp:BoundField DataField="ESTADOORDEN" HeaderText="Estado de Orden" />
+                    <asp:BoundField DataField="FECHAORDEN" HeaderText="Fecha de Orden" />
+                </Columns>
                 <EditRowStyle BackColor="#2461BF" />
                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
                 <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -147,20 +160,15 @@
                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
             </asp:GridView>
             <br />
-            <asp:TextBox CssClass="Textbox" ID="txtFechaOrden" runat="server" PlaceHolder="Fecha de Creacion" ></asp:TextBox>
-            <asp:DropDownList ID="ddlEstadosActualizar" CssClass="auto-style5" runat="server" Width="280px"></asp:DropDownList>
+            <asp:TextBox CssClass="Textbox" ID="txtIdOrdenAct" runat="server" PlaceHolder="ID Orden" ReadOnly="True"></asp:TextBox>
+            <asp:TextBox CssClass="Textbox" ID="txtIdSolicitudAct" runat="server" PlaceHolder="ID Solicitud" ReadOnly="True"></asp:TextBox>
             <br />
-            <asp:TextBox CssClass="Textbox" ID="TextBox13" runat="server" PlaceHolder="Usuario"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TextBox14" runat="server" PlaceHolder="Justificacion"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TextBox15" runat="server" PlaceHolder="Destino"></asp:TextBox><br />
-
-            <asp:TextBox CssClass="Textbox" ID="TextBox16" runat="server" PlaceHolder="Fecha de Salida"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TextBox17" runat="server" PlaceHolder="Hora de Salida"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TextBox18" runat="server" PlaceHolder="Hora de Regreso"></asp:TextBox><br />
+            <asp:DropDownList ID="ddlEstadosActualizar" CssClass="auto-style5" runat="server" Width="280px"></asp:DropDownList>
+            <asp:TextBox CssClass="Textbox" ID="txtFechaAct" runat="server" PlaceHolder="Fecha Creacion"></asp:TextBox><br /><br />
             <br />
             <div id="DivValidaciones2">
                 <asp:Label ID="Validar" runat="server"></asp:Label><br />
-                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Fecha de creacion de solicitud incorrecta, forma correcta DD/MM/YYYY" ValidationExpression="^\d{2}(/)\d{2}(/)\d{4}$" Display="Dynamic" ControlToValidate="txtFechaOrden" ForeColor="#CC0000"></asp:RegularExpressionValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Fecha de creacion de solicitud incorrecta, forma correcta DD/MM/YYYY" ValidationExpression="^\d{2}(/)\d{2}(/)\d{4}$" Display="Dynamic" ControlToValidate="txtFechaAct" ForeColor="#CC0000"></asp:RegularExpressionValidator>
                 <br />
                 <br />
             </div>

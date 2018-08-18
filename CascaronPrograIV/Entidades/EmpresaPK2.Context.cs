@@ -462,5 +462,26 @@ namespace Entidades
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_ORDEN_Result>("SP_LISTAR_ORDEN");
         }
+    
+        public virtual int SP_ACTUALIZAR_ORDEN_VIATICO(string iD_ORDEN, string iD_SOLICITUD, Nullable<short> eSTADOORDEN, Nullable<System.DateTime> fECHAORDEN)
+        {
+            var iD_ORDENParameter = iD_ORDEN != null ?
+                new ObjectParameter("ID_ORDEN", iD_ORDEN) :
+                new ObjectParameter("ID_ORDEN", typeof(string));
+    
+            var iD_SOLICITUDParameter = iD_SOLICITUD != null ?
+                new ObjectParameter("ID_SOLICITUD", iD_SOLICITUD) :
+                new ObjectParameter("ID_SOLICITUD", typeof(string));
+    
+            var eSTADOORDENParameter = eSTADOORDEN.HasValue ?
+                new ObjectParameter("ESTADOORDEN", eSTADOORDEN) :
+                new ObjectParameter("ESTADOORDEN", typeof(short));
+    
+            var fECHAORDENParameter = fECHAORDEN.HasValue ?
+                new ObjectParameter("FECHAORDEN", fECHAORDEN) :
+                new ObjectParameter("FECHAORDEN", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACTUALIZAR_ORDEN_VIATICO", iD_ORDENParameter, iD_SOLICITUDParameter, eSTADOORDENParameter, fECHAORDENParameter);
+        }
     }
 }
