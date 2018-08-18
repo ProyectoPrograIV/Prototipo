@@ -20,7 +20,7 @@ namespace LN
         public int n_MontoCena { get; set; }
         public int n_MontoHospedaje { get; set; }
         public int n_MontoPasaje { get; set; }
-
+        
         Cls M = new AD.ADSolicitudViaticos();
 
         // Bucar

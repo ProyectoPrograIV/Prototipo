@@ -15,6 +15,10 @@ namespace LN
             return ADOrdenViaticos.ObtenerOrden(obj);
         }
 
+        public static List<TBL_CABECERAORDENVIATICO> ListarOrdenes(TBL_CABECERAORDENVIATICO orden)
+        {
+            return ADOrdenViaticos.ListarOrdenes(orden);
+        }
 
         public static int GenerarOrdenViaticos(TBL_CABECERAORDENVIATICO orden, TBL_SOLICITUDVIATICOS solicitud)
         {

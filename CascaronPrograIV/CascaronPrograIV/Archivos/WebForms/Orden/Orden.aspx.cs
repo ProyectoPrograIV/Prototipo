@@ -126,6 +126,22 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
             return ListaSolicitudes;
         }*/
 
+        public static List<TBL_CABECERAORDENVIATICO> ListarOrdenes()
+        {
+            WCFServicio.Service1Client objservicio = null;
+
+            try
+            {
+                objservicio = new WCFServicio.Service1Client();
+
+                return objservicio.listar ();
+            }
+            finally
+            {
+                if (objservicio != null)
+                    objservicio.Close();
+            }
+        }
 
         #endregion
 

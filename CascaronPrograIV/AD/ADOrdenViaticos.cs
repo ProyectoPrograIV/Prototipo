@@ -41,6 +41,43 @@ namespace AD
 
             return lista;
         }
+       
+        public static List<TBL_CABECERAORDENVIATICO> ListarOrdenes(TBL_CABECERAORDENVIATICO orden)
+        {
+            List<TBL_CABECERAORDENVIATICO> lista = new List<TBL_CABECERAORDENVIATICO>();
+            try
+            {
+                contexto = new EmpresaPK2Entities();
+
+                var consulta = contexto.SP_LISTAR_ORDEN().ToList();
+
+                if (consulta != null)
+                {
+                    foreach (var item in consulta)
+                    {
+                        TBL_CABECERAORDENVIATICO ov = new TBL_CABECERAORDENVIATICO();
+
+                        ov.ID_ORDEN = item.ID_ORDEN;
+                        ov.ID_SOLICITUD = item.ID_SOLICITUD;
+                        ov.ESTADOORDEN = item.ESTADOORDEN;
+                        ov.FECHAORDEN = item.FECHAORDEN;
+
+                        lista.Add(ov); 
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (contexto != null) contexto.Dispose();
+            }
+
+            return lista;
+        }
 
         public static int GenerarOrdenViaticos(TBL_CABECERAORDENVIATICO orden, TBL_SOLICITUDVIATICOS solicitud)
         {
