@@ -126,7 +126,7 @@
                   <asp:BoundField HeaderText="ESTADO RUTA" DataField="ESTADORUTA"  ItemStyle-Width="12%" />
                   <asp:BoundField HeaderText="TARIFA REGISTRADA" DataField="TARIFAREGISTRADA"  ItemStyle-Width="12%" />
                   <asp:BoundField HeaderText="DESCRIPCION RUTA" DataField="DESCRIPCIONRUTA"  ItemStyle-Width="50%" />
-                  <asp:BoundField HeaderText="FECHA VIGENCIA" DataField="FECHA VIGENCIA"  ItemStyle-Width="12%"/>                        
+                  <asp:BoundField HeaderText="FECHA VIGENCIA" DataField="FECHAVIGENCIA"  ItemStyle-Width="12%"/>                        
               </Columns>
 
             </asp:GridView>

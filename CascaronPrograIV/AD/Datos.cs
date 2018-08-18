@@ -185,12 +185,16 @@ namespace AD
             {
 
                 var consulta = Entidad.SP_LISTAR_MODTARIFAVIATICO();
+                
                 if (consulta != null)//se consulta si no es nula la respuesta
                 {
                     foreach (var item in consulta)//recorre el resultado de la consulta
                     {
                         //se instancia un objeto tipo Atencion Odontologica para cargarlo con lo obtenido en BD
                         SP_LISTAR_MODTARIFAVIATICO_Result u = new SP_LISTAR_MODTARIFAVIATICO_Result();
+                      
+
+                        
                         u.CODIGOCANTON = item.CODIGOCANTON;
                         u.CODIGOPROVINCIA = item.CODIGOPROVINCIA;
                         u.ESTADOTARIFA = item.ESTADOTARIFA;
@@ -199,9 +203,9 @@ namespace AD
                         u.LOCALIDAD = item.LOCALIDAD;
                         u.MONTOTARIFA = item.MONTOTARIFA;
                         u.TIPOTARIFA = item.TIPOTARIFA;
-
+                        
                         //se agregar  el objeto cargado obtenido de BD al array
-                        lstresultado.Add(u);
+                       lstresultado.Add(u);
                     }
                 }
 

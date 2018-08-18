@@ -12,13 +12,14 @@ namespace CascaronPrograIV.Archivos.WebForms.Parametrizaciones
 {
     public partial class Parametrizaciones : System.Web.UI.Page
     {
-     
-        
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (!IsPostBack) { 
                 CargarTarifasHospedaje();
-           // CargarTarifasAutoBuses();
+            CargarTarifasAutoBuses();
+        }
         }
 
         private void CargarTarifasHospedaje()//metodo carga el el modelo tarifa viatico en data view
@@ -32,7 +33,7 @@ namespace CascaronPrograIV.Archivos.WebForms.Parametrizaciones
                se crea variable de sesion para cargar el listado de la tabla MOD TarifaViatico, para 
                 poder utilizarlo a la hora de poner los datos en los textbox con seleccione de GV,
                 y evitar que se pierda por la paginacion del GV*/
-                ViewState["lstMODTARIFAVIATICO"] = resultado;
+               // ViewState["lstMODTARIFAVIATICO"] = resultado;
                 //carga el DV 
                 this.GvTarifaViaticos.DataSource = null;
                 this.GvTarifaViaticos.DataBind();
@@ -197,6 +198,7 @@ namespace CascaronPrograIV.Archivos.WebForms.Parametrizaciones
         protected void GvTarifaAutobus_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             this.GvTarifaAutobus.PageIndex = e.NewPageIndex;//crea los nuevos indices de pagina
+            CargarTarifasAutoBuses();
 
         }
     }
