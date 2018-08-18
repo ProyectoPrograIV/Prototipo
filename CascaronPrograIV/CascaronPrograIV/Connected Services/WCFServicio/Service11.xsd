@@ -312,7 +312,7 @@
   <xs:complexType name="SP_OBTENER_ORDEN_VIATICOS_Result">
     <xs:sequence>
       <xs:element minOccurs="0" name="ESTADOORDEN" type="xs:short" />
-      <xs:element minOccurs="0" name="FECHAORDEN" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FECHAORDEN" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="ID_ORDEN" type="xs:int" />
       <xs:element minOccurs="0" name="ID_SOLICITUD" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NOMBREUSUARIO" nillable="true" type="xs:string" />

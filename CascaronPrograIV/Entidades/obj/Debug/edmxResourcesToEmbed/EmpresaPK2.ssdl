@@ -455,9 +455,7 @@
     <Parameter Name="HORASALIDA" Type="time" Mode="In" />
   </Function>
   <Function Name="SP_LISTAR_LOCALIDAD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS" />
-  <Function Name="SP_LISTAR_ORDEN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS">
-    <Parameter Name="ID_ORDEN" Type="int" Mode="In" />
-  </Function>
+  <Function Name="SP_LISTAR_ORDEN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS" />
   <Function Name="SP_LISTAR_SOLICITUDES_ACTUALIZAR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS">
     <Parameter Name="NOMBREUSUARIO" Type="nvarchar" Mode="In" />
   </Function>

@@ -21,7 +21,7 @@ namespace LN
         public int n_MontoHospedaje { get; set; }
         public int n_MontoPasaje { get; set; }
         
-        Cls M = new AD.ADSolicitudViaticos();
+        //Cls M = new AD.ADSolicitudViaticos();
 
         // Bucar
     }

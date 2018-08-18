@@ -93,29 +93,32 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GenerarOrden">
+  <xs:element name="GenerarOrdenViaticos">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="obj" nillable="true" type="q12:TBL_CABECERAORDENVIATICO" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="orden" nillable="true" type="q12:TBL_CABECERAORDENVIATICO" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="solicitud" nillable="true" type="q13:TBL_SOLICITUDVIATICOS" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GenerarOrdenResponse">
+  <xs:element name="GenerarOrdenViaticosResponse">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GenerarOrdenViaticosResult" type="xs:int" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ObtenerOrden">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="obj" nillable="true" type="q13:OrdenDeViaticos" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="obj" nillable="true" type="q14:OrdenDeViaticos" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ObtenerOrdenResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="ObtenerOrdenResult" nillable="true" type="q14:ArrayOfSP_OBTENER_ORDEN_VIATICOS_Result" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="ObtenerOrdenResult" nillable="true" type="q15:ArrayOfSP_OBTENER_ORDEN_VIATICOS_Result" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -127,7 +130,7 @@
   <xs:element name="ObtenerRolesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="ObtenerRolesResult" nillable="true" type="q15:ArrayOfTBL_ROLUSUARIO" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="ObtenerRolesResult" nillable="true" type="q16:ArrayOfTBL_ROLUSUARIO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -139,7 +142,7 @@
   <xs:element name="ObtenerEstadosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="ObtenerEstadosResult" nillable="true" type="q16:ArrayOfTBL_ESTADOS" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="ObtenerEstadosResult" nillable="true" type="q17:ArrayOfTBL_ESTADOS" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -151,14 +154,14 @@
   <xs:element name="ObtenerMODTARIFASVIATICOSResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="ObtenerMODTARIFASVIATICOSResult" nillable="true" type="q17:ArrayOfSP_LISTAR_MODTARIFAVIATICO_Result" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="ObtenerMODTARIFASVIATICOSResult" nillable="true" type="q18:ArrayOfSP_LISTAR_MODTARIFAVIATICO_Result" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ActualizarMODTARIFASVIATICOS">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="obj" nillable="true" type="q18:SP_LISTAR_MODTARIFAVIATICO_Result" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="obj" nillable="true" type="q19:SP_LISTAR_MODTARIFAVIATICO_Result" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -172,14 +175,14 @@
   <xs:element name="ObtenerIDS_CANTON_PROVINCIA">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="obj" nillable="true" type="q19:IdCantonIdProvincia" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="obj" nillable="true" type="q20:IdCantonIdProvincia" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ObtenerIDS_CANTON_PROVINCIAResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="ObtenerIDS_CANTON_PROVINCIAResult" nillable="true" type="q20:ArrayOfSP_OBTENER_CANTON_PROVINCIA_Result" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="ObtenerIDS_CANTON_PROVINCIAResult" nillable="true" type="q21:ArrayOfSP_OBTENER_CANTON_PROVINCIA_Result" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -191,28 +194,28 @@
   <xs:element name="ObtenerTARIFASAUTOBUSESResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="ObtenerTARIFASAUTOBUSESResult" nillable="true" type="q21:ArrayOfSP_LISTAR_TARIFASAUTOBUSES_Result" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="ObtenerTARIFASAUTOBUSESResult" nillable="true" type="q22:ArrayOfSP_LISTAR_TARIFASAUTOBUSES_Result" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="BuscarTarifaAutobusXId">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="obj" nillable="true" type="q22:TBL_TARIFAAUTOBUS" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="obj" nillable="true" type="q23:TBL_TARIFAAUTOBUS" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="BuscarTarifaAutobusXIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="BuscarTarifaAutobusXIdResult" nillable="true" type="q23:ArrayOfSP_BUSCAR_TARIFAAUTOBUS_Result" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="BuscarTarifaAutobusXIdResult" nillable="true" type="q24:ArrayOfSP_BUSCAR_TARIFAAUTOBUS_Result" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ActualizarTarifaAutobus">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="obj" nillable="true" type="q24:TBL_TARIFAAUTOBUS" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="obj" nillable="true" type="q25:TBL_TARIFAAUTOBUS" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

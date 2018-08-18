@@ -202,9 +202,7 @@
       <Parameter Name="CODIGORUTA" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="SP_LISTAR_TARIFASAUTOBUSES" ReturnType="Collection(EmpresaPK2Model.SP_LISTAR_TARIFASAUTOBUSES_Result)" />
-    <FunctionImport Name="SP_LISTAR_ORDEN" ReturnType="Collection(EmpresaPK2Model.SP_LISTAR_ORDEN_Result)">
-      <Parameter Name="ID_ORDEN" Mode="In" Type="Int32" />
-    </FunctionImport>
+    <FunctionImport Name="SP_LISTAR_ORDEN" ReturnType="Collection(EmpresaPK2Model.SP_LISTAR_ORDEN_Result)" />
   </EntityContainer>
   <ComplexType Name="SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result">
     <Property Type="Int32" Name="ID_SOLICITUD" Nullable="false" />

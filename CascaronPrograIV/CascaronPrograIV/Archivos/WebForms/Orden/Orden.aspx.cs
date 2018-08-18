@@ -134,7 +134,8 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
             {
                 objservicio = new WCFServicio.Service1Client();
 
-                return objservicio.listar ();
+                //return objservicio.listar(); // Aparentemente esto se perdio o no estaba.
+                return null;
             }
             finally
             {
