@@ -13,14 +13,15 @@ namespace CascaronPrograIV.Archivos.WebForms.Parametrizaciones
     public partial class Parametrizaciones : System.Web.UI.Page
     {
         //variable para almacenar el resultado de el listado de modtarifaviatico
-       static List<SP_LISTAR_MODTARIFAVIATICO_Result> VarSesionresultado = null;
+        static List<SP_LISTAR_MODTARIFAVIATICO_Result> VarSesionresultado = null;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack) { 
+            if (!IsPostBack)
+            {
                 CargarTarifasHospedaje();
-            CargarTarifasAutoBuses();
-        }
+                CargarTarifasAutoBuses();
+            }
         }
 
         private void CargarTarifasHospedaje()//metodo carga el el modelo tarifa viatico en data view
@@ -35,13 +36,12 @@ namespace CascaronPrograIV.Archivos.WebForms.Parametrizaciones
                se crea variable de sesion para cargar el listado de la tabla MOD TarifaViatico, para 
                 poder utilizarlo a la hora de poner los datos en los textbox con seleccione de GV,
                 y evitar que se pierda por la paginacion del GV*/
-                // ViewState["lstMODTARIFAVIATICO"] = resultado;
                 //carga el DV 
                 this.GvTarifaViaticos.DataSource = null;
                 this.GvTarifaViaticos.DataBind();
                 this.GvTarifaViaticos.DataSource = resultado;
                 this.GvTarifaViaticos.DataBind();
-                
+
             }
             catch (Exception)
             {
@@ -59,7 +59,7 @@ namespace CascaronPrograIV.Archivos.WebForms.Parametrizaciones
                 WCFServicio.Service1Client servicio = new WCFServicio.Service1Client();
 
                 List<Entidades.SP_LISTAR_TARIFASAUTOBUSES_Result> resultado = servicio.ObtenerTARIFASAUTOBUSES();
-              
+
                 //carga el DV 
                 this.GvTarifaAutobus.DataSource = null;
                 this.GvTarifaAutobus.DataBind();
@@ -85,7 +85,7 @@ namespace CascaronPrograIV.Archivos.WebForms.Parametrizaciones
 
         protected void GvTarifaViaticos_SelectedIndexChanged(object sender, EventArgs e)
         {
-          
+
         }
 
         protected void GvTarifaViaticos_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -97,20 +97,20 @@ namespace CascaronPrograIV.Archivos.WebForms.Parametrizaciones
         protected void GvTarifaViaticos_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
         {
             WCFServicio.Service1Client servicio = new WCFServicio.Service1Client();
-           
+
             int IndicePagina = GvTarifaViaticos.PageIndex;
-            int index = (IndicePagina*10)+e.NewSelectedIndex;
+            int index = (IndicePagina * 10) + e.NewSelectedIndex;
             //Asiga lo cargado en la variable de sesion
             List<SP_OBTENER_CANTON_PROVINCIA_Result> listaIDs = new List<SP_OBTENER_CANTON_PROVINCIA_Result>();
-            List<SP_LISTAR_MODTARIFAVIATICO_Result> resultado=new List<SP_LISTAR_MODTARIFAVIATICO_Result>();
+            List<SP_LISTAR_MODTARIFAVIATICO_Result> resultado = new List<SP_LISTAR_MODTARIFAVIATICO_Result>();
             //se crea objeto tipos Ids 
             IdCantonIdProvincia IDS = new IdCantonIdProvincia();
             //se crea lista Array donde se almacenaran los IDs de Canton y Provincia
             ArrayList lstIDS = new ArrayList();
             //se carga objeto tipo Ids con los ids de provincia y canton que tiene almacena la variable VarSesionresultado
 
-            IDS.PropIdCanton= VarSesionresultado[index].CODIGOCANTON;
-            IDS.PropIdProvincia= VarSesionresultado[index].CODIGOPROVINCIA;
+            IDS.PropIdCanton = VarSesionresultado[index].CODIGOCANTON;
+            IDS.PropIdProvincia = VarSesionresultado[index].CODIGOPROVINCIA;
             lstIDS.Add(IDS);//se agrega objeto a la lista
             ViewState["lstIdCantonIdProvincia"] = lstIDS;//se almacena lista en variable de sesion         
             listaIDs = servicio.ObtenerIDS_CANTON_PROVINCIA(IDS);
@@ -120,16 +120,17 @@ namespace CascaronPrograIV.Archivos.WebForms.Parametrizaciones
                 {
                     Tbxprovincia.Text = item.DESCRIPCIONPROVINCIA;
                     TbxCanton.Text = item.DESCRIPCIONCANTON;
-               
+
                 }
             }
-            if((VarSesionresultado[index].ESTADOTARIFA)==10)
+            if ((VarSesionresultado[index].ESTADOTARIFA) == 10)
             {
-                this.cbEstado.SelectedIndex= 0;
-            }else if ((VarSesionresultado[index].ESTADOTARIFA) == 9)
-                {
+                this.cbEstado.SelectedIndex = 0;
+            }
+            else if ((VarSesionresultado[index].ESTADOTARIFA) == 9)
+            {
                 this.cbEstado.SelectedIndex = 1;
-                }
+            }
 
 
             this.TbxFecha.Text = (VarSesionresultado[index].FECHATARIFA).ToShortDateString();
@@ -148,9 +149,9 @@ namespace CascaronPrograIV.Archivos.WebForms.Parametrizaciones
             this.TbxLocalidad.Text = "";
             this.TbxMonto.Text = "";
             this.TbxTipoTarifa.Text = "";
-            this.TbxCanton.Text= "";
-            this.Tbxprovincia.Text= "";
-            this.cbEstado.SelectedIndex= 0;
+            this.TbxCanton.Text = "";
+            this.Tbxprovincia.Text = "";
+            this.cbEstado.SelectedIndex = 0;
         }
 
         protected void btnActualizar_Click(object sender, EventArgs e)
@@ -158,21 +159,22 @@ namespace CascaronPrograIV.Archivos.WebForms.Parametrizaciones
             try
             {
                 int respuesta = 0;
-                Int16 estado=0;
+                Int16 estado = 0;
                 WCFServicio.Service1Client servicio = new WCFServicio.Service1Client();
                 SP_LISTAR_MODTARIFAVIATICO_Result objModelo = new SP_LISTAR_MODTARIFAVIATICO_Result();
                 ArrayList listModelo = new ArrayList();
-                if (cbEstado.SelectedIndex==0)
+                if (cbEstado.SelectedIndex == 0)
                 {
                     estado = 10;
-                }else if (cbEstado.SelectedIndex==1)
+                }
+                else if (cbEstado.SelectedIndex == 1)
                 {
                     estado = 9;
                 }
                 objModelo.ID_MODTARIFA = Convert.ToInt16(TbxFiltrar.Text);
                 objModelo.FECHATARIFA = Convert.ToDateTime(TbxFecha.Text);
                 objModelo.MONTOTARIFA = Convert.ToDecimal(TbxMonto.Text);
-                objModelo.ESTADOTARIFA= estado;
+                objModelo.ESTADOTARIFA = estado;
 
                 /*Se crea un objeto de tipo clsUsario del BLL, para encapsular la informacion
                  digitada por el usuario y manipular la misma en la capa de negocios*/
@@ -194,7 +196,7 @@ namespace CascaronPrograIV.Archivos.WebForms.Parametrizaciones
 
                 this.Page.Response.Write("<script language='JavaScript'>window.alert('" + " NO SE PUDO REALIZAR LA ACTUALIZACION" + "');</script>");
             }
-            
+
         }
 
         protected void GvTarifaAutobus_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -206,13 +208,13 @@ namespace CascaronPrograIV.Archivos.WebForms.Parametrizaciones
 
         protected void Btn_ActualizarBus_Click(object sender, EventArgs e)
         {
-           try
+            try
             {
                 int respuesta = 0;
                 Int16 estado = 0;
                 WCFServicio.Service1Client servicio = new WCFServicio.Service1Client();
                 TBL_TARIFAAUTOBUS objAutobus = new TBL_TARIFAAUTOBUS();
-               
+
                 if (dlEstadoBuses.SelectedIndex == 0)
                 {
                     estado = 10;
@@ -230,7 +232,7 @@ namespace CascaronPrograIV.Archivos.WebForms.Parametrizaciones
                 /*Se crea un objeto de tipo clsUsario del BLL, para encapsular la informacion
                  digitada por el usuario y manipular la misma en la capa de negocios*/
 
-               respuesta = servicio.ActualizarTarifaAutobus(objAutobus);
+                respuesta = servicio.ActualizarTarifaAutobus(objAutobus);
 
                 if (respuesta == 0)
                 {
@@ -248,9 +250,9 @@ namespace CascaronPrograIV.Archivos.WebForms.Parametrizaciones
                 this.Page.Response.Write("<script language='JavaScript'>window.alert('" + " NO SE PUDO REALIZAR LA ACTUALIZACION" + "');</script>");
             }
 
-       }
+        }
 
-      public void BorrarAutobuses()
+        public void BorrarAutobuses()
         {
             TbxDescripcionBus.Text = "";
             TbxFechaVigenteBus.Text = "";
@@ -292,7 +294,7 @@ namespace CascaronPrograIV.Archivos.WebForms.Parametrizaciones
                     {
                         dlEstadoBuses.SelectedIndex = 1;
                     }
-                    Btn_ActualizarBus.Enabled=true;
+                    Btn_ActualizarBus.Enabled = true;
 
                 }
             }
@@ -301,4 +303,4 @@ namespace CascaronPrograIV.Archivos.WebForms.Parametrizaciones
     }
 
 
-    }
+}
