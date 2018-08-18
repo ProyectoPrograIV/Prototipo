@@ -43,13 +43,6 @@ C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\Entidades\obj\De
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\Entidades\obj\Debug\E.csproj.CopyComplete
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\Entidades\obj\Debug\Entidades.dll
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\Entidades\obj\Debug\Entidades.pdb
-C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\Entidades\bin\Debug\Entidades.dll.config
-C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\Entidades\bin\Debug\Entidades.dll
-C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\Entidades\bin\Debug\Entidades.pdb
-C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\Entidades\bin\Debug\EntityFramework.dll
-C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\Entidades\bin\Debug\EntityFramework.xml
-C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\Entidades\obj\Debug\Entidades.dll
-C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\Entidades\obj\Debug\Entidades.pdb
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Entidades\bin\Debug\Entidades.dll.config
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Entidades\bin\Debug\Entidades.dll
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Entidades\bin\Debug\Entidades.pdb
@@ -59,3 +52,11 @@ C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Entidades\obj\Debug\E.csp
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Entidades\obj\Debug\E.csproj.CopyComplete
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Entidades\obj\Debug\Entidades.dll
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\Entidades\obj\Debug\Entidades.pdb
+C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\Entidades\bin\Debug\Entidades.dll.config
+C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\Entidades\bin\Debug\Entidades.dll
+C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\Entidades\bin\Debug\EntityFramework.dll
+C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\Entidades\bin\Debug\EntityFramework.xml
+C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\Entidades\obj\Debug\E.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\Entidades\obj\Debug\Entidades.dll
+C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\Entidades\obj\Debug\Entidades.pdb

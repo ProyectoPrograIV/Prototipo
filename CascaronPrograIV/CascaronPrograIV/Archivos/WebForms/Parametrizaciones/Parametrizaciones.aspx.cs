@@ -12,7 +12,8 @@ namespace CascaronPrograIV.Archivos.WebForms.Parametrizaciones
 {
     public partial class Parametrizaciones : System.Web.UI.Page
     {
-
+        //variable para almacenar el resultado de el listado de modtarifaviatico
+       static List<SP_LISTAR_MODTARIFAVIATICO_Result> VarSesionresultado = null;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -29,11 +30,12 @@ namespace CascaronPrograIV.Archivos.WebForms.Parametrizaciones
                 Entidades.SP_LISTAR_MODTARIFAVIATICO_Result Consulta = new Entidades.SP_LISTAR_MODTARIFAVIATICO_Result();
                 WCFServicio.Service1Client servicio = new WCFServicio.Service1Client();
                 List<Entidades.SP_LISTAR_MODTARIFAVIATICO_Result> resultado = servicio.ObtenerMODTARIFASVIATICOS();
+                VarSesionresultado = resultado;
                 /*el view state es un tipo de variable de sesion solo funciona cuando se está en la pagina
                se crea variable de sesion para cargar el listado de la tabla MOD TarifaViatico, para 
                 poder utilizarlo a la hora de poner los datos en los textbox con seleccione de GV,
                 y evitar que se pierda por la paginacion del GV*/
-               // ViewState["lstMODTARIFAVIATICO"] = resultado;
+                // ViewState["lstMODTARIFAVIATICO"] = resultado;
                 //carga el DV 
                 this.GvTarifaViaticos.DataSource = null;
                 this.GvTarifaViaticos.DataBind();
@@ -100,15 +102,15 @@ namespace CascaronPrograIV.Archivos.WebForms.Parametrizaciones
             int index = (IndicePagina*10)+e.NewSelectedIndex;
             //Asiga lo cargado en la variable de sesion
             List<SP_OBTENER_CANTON_PROVINCIA_Result> listaIDs = new List<SP_OBTENER_CANTON_PROVINCIA_Result>();
-            List<SP_LISTAR_MODTARIFAVIATICO_Result> resultado=(List<SP_LISTAR_MODTARIFAVIATICO_Result>)ViewState["lstMODTARIFAVIATICO"];
+            List<SP_LISTAR_MODTARIFAVIATICO_Result> resultado=new List<SP_LISTAR_MODTARIFAVIATICO_Result>();
             //se crea objeto tipos Ids 
             IdCantonIdProvincia IDS = new IdCantonIdProvincia();
             //se crea lista Array donde se almacenaran los IDs de Canton y Provincia
             ArrayList lstIDS = new ArrayList();
-            //se carga objeto tipo Ids con los ids de provincia y canton
-            
-            IDS.PropIdCanton= resultado[index].CODIGOCANTON;
-            IDS.PropIdProvincia= resultado[index].CODIGOPROVINCIA;
+            //se carga objeto tipo Ids con los ids de provincia y canton que tiene almacena la variable VarSesionresultado
+
+            IDS.PropIdCanton= VarSesionresultado[index].CODIGOCANTON;
+            IDS.PropIdProvincia= VarSesionresultado[index].CODIGOPROVINCIA;
             lstIDS.Add(IDS);//se agrega objeto a la lista
             ViewState["lstIdCantonIdProvincia"] = lstIDS;//se almacena lista en variable de sesion         
             listaIDs = servicio.ObtenerIDS_CANTON_PROVINCIA(IDS);
@@ -121,20 +123,20 @@ namespace CascaronPrograIV.Archivos.WebForms.Parametrizaciones
                
                 }
             }
-            if((resultado[index].ESTADOTARIFA)==10)
+            if((VarSesionresultado[index].ESTADOTARIFA)==10)
             {
                 this.cbEstado.SelectedIndex= 0;
-            }else if ((resultado[index].ESTADOTARIFA) == 9)
+            }else if ((VarSesionresultado[index].ESTADOTARIFA) == 9)
                 {
                 this.cbEstado.SelectedIndex = 1;
                 }
 
 
-            this.TbxFecha.Text = (resultado[index].FECHATARIFA).ToShortDateString();
-            this.TbxFiltrar.Text = resultado[index].ID_MODTARIFA.ToString();
-            this.TbxLocalidad.Text = resultado[index].LOCALIDAD.ToString();
-            this.TbxMonto.Text = resultado[index].MONTOTARIFA.ToString();
-            this.TbxTipoTarifa.Text = resultado[index].TIPOTARIFA.ToString();
+            this.TbxFecha.Text = (VarSesionresultado[index].FECHATARIFA).ToShortDateString();
+            this.TbxFiltrar.Text = VarSesionresultado[index].ID_MODTARIFA.ToString();
+            this.TbxLocalidad.Text = VarSesionresultado[index].LOCALIDAD.ToString();
+            this.TbxMonto.Text = VarSesionresultado[index].MONTOTARIFA.ToString();
+            this.TbxTipoTarifa.Text = VarSesionresultado[index].TIPOTARIFA.ToString();
 
 
         }
