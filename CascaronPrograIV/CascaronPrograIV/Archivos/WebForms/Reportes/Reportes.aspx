@@ -7,7 +7,7 @@
     <script src="../../script/jquery-3.3.1.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            
+
         });
         $(document).ready(function () {
             $('#Div1').show();
@@ -22,7 +22,7 @@
     <br />
 
     <div id="DivContenido">
-        <div id="Div1" style="margin-left:5%">
+        <div id="Div1" style="margin-left: 5%">
 
 
             <h1 id="h1TituloDiv" runat="server">Listado de Viaticos</h1>
@@ -30,25 +30,27 @@
 
             <div class="Fecha">
                 <h3>Filtrar por Tipo</h3>
-                <asp:DropDownList CssClass="TbxFecha"  ID="ddlTipoReporte" runat="server" AutoPostBack="false" OnTextChanged="ddlTipoReporte_TextChanged"></asp:DropDownList>
+                <asp:DropDownList CssClass="TbxFecha" ID="ddlTipoReporte" runat="server" AutoPostBack="false" OnTextChanged="ddlTipoReporte_TextChanged"></asp:DropDownList>
             </div>
 
             <div class="Fecha">
                 <h3>Fecha Inicial</h3>
                 <asp:TextBox CssClass="TbxFecha" ID="txtFechaInicial" runat="server" TextMode="Date"></asp:TextBox>
             </div>
-            <asp:RequiredFieldValidator ID="RFV1" runat="server" ErrorMessage="Debe llenar este espacio"  Display="Dynamic" ControlToValidate="txtFechaInicial" ForeColor="Red"></asp:RequiredFieldValidator>
 
             <div class="Fecha">
                 <h3>Fecha Final</h3>
                 <asp:TextBox CssClass="TbxFecha" ID="txtFechaFinal" runat="server" TextMode="Date"></asp:TextBox>
             </div>
-            <asp:RequiredFieldValidator ID="RFV2" runat="server" ErrorMessage="Debe llenar este espacio"  Display="Dynamic" ControlToValidate="txtFechaFinal" ForeColor="Red"></asp:RequiredFieldValidator>
 
             <div class="Fecha">
                 <h3>Estado</h3>
-                <asp:DropDownList CssClass="TbxFecha"  ID="ddlEstados" runat="server" AutoPostBack="false" OnTextChanged="ddlEstados_TextChanged"></asp:DropDownList>
+                <asp:DropDownList CssClass="TbxFecha" ID="ddlEstados" runat="server" AutoPostBack="false" OnTextChanged="ddlEstados_TextChanged"></asp:DropDownList>
             </div>
+            <br />
+            <asp:RequiredFieldValidator ID="RFV1" runat="server" ErrorMessage="Debe Completar la Fecha Inicial." Display="Dynamic" ControlToValidate="txtFechaInicial" ForeColor="Red"></asp:RequiredFieldValidator>
+            <br />
+            <asp:RequiredFieldValidator ID="RFV2" runat="server" ErrorMessage="Debe Completar la Fecha Final." Display="Dynamic" ControlToValidate="txtFechaFinal" ForeColor="Red"></asp:RequiredFieldValidator>
 
             <br />
             <asp:Button CssClass="Button" ID="btnBuscarViaticos" UseSubmitBehavior="false" runat="server" Text="Buscar Viaticos" OnClick="btnBuscar_Click" />
