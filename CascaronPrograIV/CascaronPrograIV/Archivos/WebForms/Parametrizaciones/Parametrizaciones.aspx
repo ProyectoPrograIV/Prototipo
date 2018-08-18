@@ -88,22 +88,37 @@
 
             <table style="width: 100%;">
                 <tr>
-                    <td><h3>Id Ruta</h3><asp:TextBox CssClass="auto-style3" ID="TbxIdRuta" runat="server" placeholder="Ingrese Id Ruta" Width="202px" Height="35px"></asp:TextBox></td>
-                    <td><h3>Estado Ruta</h3>  <asp:DropDownList ID="DropDownList1" runat="server" Height="52px" Width="191px">
+                    <td><h3>Id Ruta</h3><asp:TextBox CssClass="auto-style3" ID="TbxIdRutaBus" runat="server" placeholder="Ingrese Id Ruta" Width="202px" Height="35px"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="TbxIdRutaBus" ErrorMessage="Debe de Ingresar el ID de Ruta para Actualizar" ForeColor="Red" ValidationGroup="TARIFABUSES">*</asp:RequiredFieldValidator>
+                        <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="TbxIdRutaBus" ErrorMessage="Rango de IDs de Ruta Permitidos es de 1-3560" ForeColor="Red" MaximumValue="3560" MinimumValue="1" ValidationGroup="TARIFABUSES">*</asp:RangeValidator>
+                        <asp:RangeValidator ID="RangeValidator2" runat="server" ControlToValidate="TbxIdRutaBus" ErrorMessage="Rango de IDs de Ruta Permitidos es de 1-3560" ForeColor="Red" MaximumValue="3560" MinimumValue="1" ValidationGroup="TARIFABUSES2">*</asp:RangeValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="TbxIdRutaBus" ErrorMessage="Debe de Ingresar el ID de Ruta para poder realizar la busqueda y luego proceder a Actualizar" ForeColor="Red" ValidationGroup="TARIFABUSES2">*</asp:RequiredFieldValidator>
+                    </td>
+                    <td><h3>Estado Ruta</h3>  <asp:DropDownList ID="dlEstadoBuses"  runat="server" Height="52px" Width="191px">
                         <asp:ListItem Value="10">Activo</asp:ListItem>
                         <asp:ListItem Value="9">Inactivo</asp:ListItem>
                         </asp:DropDownList> </td>
-                    <td><h3>Tarifa</h3><asp:TextBox CssClass="Textbox" ID="TbxTarifa" runat="server" placeholder="Tarifa"></asp:TextBox></td>
+                    <td><h3>Tarifa</h3><asp:TextBox CssClass="Textbox" ID="TbxTarifaBus" runat="server" placeholder="Tarifa"></asp:TextBox>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="TbxTarifaBus" ErrorMessage="Debe Ingresar Numeros en este Campo, se aceptan decimales" ForeColor="Red" ValidationExpression="^(\d|-)?(\d|,)*\.?\d*$" ValidationGroup="TARIFABUSES">*</asp:RegularExpressionValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Debe de Ingresar la Tarifa" ForeColor="Red" ControlToValidate="TbxTarifaBus" ValidationGroup="TARIFABUSES">*</asp:RequiredFieldValidator>
+                    </td>
                 </tr>
                 <tr>
                     
-                    <td><h3>Descripcion</h3><asp:TextBox CssClass="Textbox" ID="TbxDescripcion" runat="server" placeholder="Descripcion"></asp:TextBox></td>
-                    <td><h3>Fecha Vigencia</h3><asp:TextBox CssClass="Textbox" ID="TbxFechaVigente" runat="server" placeholder="Fecha Vigente"></asp:TextBox></td>
-                    <td><asp:Button ID="Btn_Actualizar" CssClass="Button" runat="server" Text="Actualizar"/></td>
+                    <td><h3>Descripcion</h3><asp:TextBox CssClass="Textbox" ID="TbxDescripcionBus" runat="server" placeholder="Descripcion"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Debe de Ingresar el Nombre de la Ruta" ControlToValidate="TbxDescripcionBus" ForeColor="Red" ValidationGroup="TARIFABUSES">*</asp:RequiredFieldValidator>
+                    </td>
+                    <td><h3>Fecha Vigencia</h3><asp:TextBox CssClass="Textbox" ID="TbxFechaVigenteBus" runat="server" placeholder="Fecha Vigente"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Debe de Ingresar Fecha de Vigencia de la Ruta de Autobus" ControlToValidate="TbxFechaVigenteBus" ForeColor="Red" ValidationGroup="TARIFABUSES">*</asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="TbxFechaVigenteBus" ErrorMessage="Formato de Fecha Invalido debe de ingresar por Ejm: dd/mm/yyyy" ForeColor="Red" ValidationExpression="^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$" ValidationGroup="TARIFABUSES">*</asp:RegularExpressionValidator>
+                    </td>
+                    <td><asp:Button ID="Btn_ActualizarBus" CssClass="auto-style4" runat="server" Text="ActualizarBus"  ValidationGroup="TARIFABUSES" Enabled="False" OnClick="Btn_ActualizarBus_Click" Height="48px"/></td>
                 </tr>
                 <tr>                     
-                    <td colspan="2"><asp:ValidationSummary ID="ValidationTarifaBuses" runat="server" /></td>  
-                    <td><asp:Button ID="Btn_Buscar" CssClass="auto-style4" runat="server" Text="BUSCAR CON ID TARIFA" Width="258px"/> </td>                             
+                    <td colspan="2">
+                        <asp:ValidationSummary ID="ValidationSummary2" runat="server" ForeColor="Red" ValidationGroup="TARIFABUSES2" />
+                        <asp:ValidationSummary ID="ValidationTarifaBuses" runat="server" ForeColor="Red" ValidationGroup="TARIFABUSES" Width="605px" /></td>  
+                    <td><asp:Button ID="Btn_Buscar" CssClass="auto-style4" runat="server" Text="BUSCAR CON ID TARIFA" Width="258px" OnClick="Btn_Buscar_Click" ValidationGroup="TARIFABUSES2" Height="57px"/> </td>                             
                 </tr>
             </table>
            

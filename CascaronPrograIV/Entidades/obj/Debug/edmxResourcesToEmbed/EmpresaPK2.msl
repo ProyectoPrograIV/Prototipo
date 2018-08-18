@@ -341,5 +341,15 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_LISTAR_ORDEN" FunctionName="EmpresaPK2Model.Store.SP_LISTAR_ORDEN">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTAR_ORDEN_Result">
+          <ScalarProperty Name="ID_ORDEN" ColumnName="ID_ORDEN" />
+          <ScalarProperty Name="ID_SOLICITUD" ColumnName="ID_SOLICITUD" />
+          <ScalarProperty Name="ESTADOORDEN" ColumnName="ESTADOORDEN" />
+          <ScalarProperty Name="FECHAORDEN" ColumnName="FECHAORDEN" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>
