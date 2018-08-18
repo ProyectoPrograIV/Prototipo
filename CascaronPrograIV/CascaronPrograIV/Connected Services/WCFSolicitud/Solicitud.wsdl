@@ -7,11 +7,11 @@
       <xsd:import schemaLocation="http://localhost:64695/Solicitud.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Entidades" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="ISolicitud_GuardarSolicitud_InputMessage">
-    <wsdl:part name="parameters" element="tns:GuardarSolicitud" />
+  <wsdl:message name="ISolicitud_GuardarSolicitudDetalle_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarSolicitudDetalle" />
   </wsdl:message>
-  <wsdl:message name="ISolicitud_GuardarSolicitud_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GuardarSolicitudResponse" />
+  <wsdl:message name="ISolicitud_GuardarSolicitudDetalle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarSolicitudDetalleResponse" />
   </wsdl:message>
   <wsdl:message name="ISolicitud_ListarSolicitudes_InputMessage">
     <wsdl:part name="parameters" element="tns:ListarSolicitudes" />
@@ -19,20 +19,70 @@
   <wsdl:message name="ISolicitud_ListarSolicitudes_OutputMessage">
     <wsdl:part name="parameters" element="tns:ListarSolicitudesResponse" />
   </wsdl:message>
+  <wsdl:message name="ISolicitud_ListarLocalidad_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarLocalidad" />
+  </wsdl:message>
+  <wsdl:message name="ISolicitud_ListarLocalidad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarLocalidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISolicitud_ListarRutas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarRutas" />
+  </wsdl:message>
+  <wsdl:message name="ISolicitud_ListarRutas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarRutasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISolicitud_ListarPersonas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPersonas" />
+  </wsdl:message>
+  <wsdl:message name="ISolicitud_ListarPersonas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPersonasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISolicitud_MontoRuta_InputMessage">
+    <wsdl:part name="parameters" element="tns:MontoRuta" />
+  </wsdl:message>
+  <wsdl:message name="ISolicitud_MontoRuta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MontoRutaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISolicitud_Montos_InputMessage">
+    <wsdl:part name="parameters" element="tns:Montos" />
+  </wsdl:message>
+  <wsdl:message name="ISolicitud_Montos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MontosResponse" />
+  </wsdl:message>
   <wsdl:portType name="ISolicitud">
-    <wsdl:operation name="GuardarSolicitud">
-      <wsdl:input wsaw:Action="http://tempuri.org/ISolicitud/GuardarSolicitud" message="tns:ISolicitud_GuardarSolicitud_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ISolicitud/GuardarSolicitudResponse" message="tns:ISolicitud_GuardarSolicitud_OutputMessage" />
+    <wsdl:operation name="GuardarSolicitudDetalle">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISolicitud/GuardarSolicitudDetalle" message="tns:ISolicitud_GuardarSolicitudDetalle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISolicitud/GuardarSolicitudDetalleResponse" message="tns:ISolicitud_GuardarSolicitudDetalle_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ListarSolicitudes">
       <wsdl:input wsaw:Action="http://tempuri.org/ISolicitud/ListarSolicitudes" message="tns:ISolicitud_ListarSolicitudes_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISolicitud/ListarSolicitudesResponse" message="tns:ISolicitud_ListarSolicitudes_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="ListarLocalidad">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISolicitud/ListarLocalidad" message="tns:ISolicitud_ListarLocalidad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISolicitud/ListarLocalidadResponse" message="tns:ISolicitud_ListarLocalidad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarRutas">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISolicitud/ListarRutas" message="tns:ISolicitud_ListarRutas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISolicitud/ListarRutasResponse" message="tns:ISolicitud_ListarRutas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarPersonas">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISolicitud/ListarPersonas" message="tns:ISolicitud_ListarPersonas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISolicitud/ListarPersonasResponse" message="tns:ISolicitud_ListarPersonas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MontoRuta">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISolicitud/MontoRuta" message="tns:ISolicitud_MontoRuta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISolicitud/MontoRutaResponse" message="tns:ISolicitud_MontoRuta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Montos">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISolicitud/Montos" message="tns:ISolicitud_Montos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISolicitud/MontosResponse" message="tns:ISolicitud_Montos_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ISolicitud" type="tns:ISolicitud">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GuardarSolicitud">
-      <soap:operation soapAction="http://tempuri.org/ISolicitud/GuardarSolicitud" style="document" />
+    <wsdl:operation name="GuardarSolicitudDetalle">
+      <soap:operation soapAction="http://tempuri.org/ISolicitud/GuardarSolicitudDetalle" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -42,6 +92,51 @@
     </wsdl:operation>
     <wsdl:operation name="ListarSolicitudes">
       <soap:operation soapAction="http://tempuri.org/ISolicitud/ListarSolicitudes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarLocalidad">
+      <soap:operation soapAction="http://tempuri.org/ISolicitud/ListarLocalidad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarRutas">
+      <soap:operation soapAction="http://tempuri.org/ISolicitud/ListarRutas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarPersonas">
+      <soap:operation soapAction="http://tempuri.org/ISolicitud/ListarPersonas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MontoRuta">
+      <soap:operation soapAction="http://tempuri.org/ISolicitud/MontoRuta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Montos">
+      <soap:operation soapAction="http://tempuri.org/ISolicitud/Montos" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -20,13 +20,11 @@ namespace Entidades
         }
     
         public string CODIGORUTA { get; set; }
-        public byte CODIGOPROVINCIA { get; set; }
         public short ESTADORUTA { get; set; }
         public decimal TARIFAREGISTRADA { get; set; }
         public string DESCRIPCIONRUTA { get; set; }
         public System.DateTime FECHAVIGENCIA { get; set; }
     
-        public virtual TBL_PROVINCIA TBL_PROVINCIA { get; set; }
         public virtual ICollection<TBL_DETALLESOLICITUDVIATICOS> TBL_DETALLESOLICITUDVIATICOS { get; set; }
         public virtual TBL_ESTADOS TBL_ESTADOS { get; set; }
     }

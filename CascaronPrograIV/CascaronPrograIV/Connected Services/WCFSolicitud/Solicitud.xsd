@@ -5,12 +5,12 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="DESTINO" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ESTADOSOLICITUD" type="xs:short" />
-      <xs:element minOccurs="0" name="FECHACREACION" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FECHACREACION" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="FECHAREGRESO" type="xs:dateTime" />
       <xs:element minOccurs="0" name="FECHASALIDA" type="xs:dateTime" />
       <xs:element minOccurs="0" name="HORAREGRESO" type="ser:duration" />
       <xs:element minOccurs="0" name="HORASALIDA" type="ser:duration" />
-      <xs:element minOccurs="0" name="ID_SOLICITUD" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_SOLICITUD" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="JUSTIFICACION" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NOMBREUSUARIO" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TBL_CABECERAORDENVIATICO" nillable="true" type="tns:ArrayOfTBL_CABECERAORDENVIATICO" />
@@ -29,13 +29,10 @@
   <xs:complexType name="TBL_CABECERAORDENVIATICO">
     <xs:sequence>
       <xs:element minOccurs="0" name="ESTADOORDEN" type="xs:short" />
-      <xs:element minOccurs="0" name="FECHAORDEN" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="ID_LIQUIDACION" type="xs:int" />
+      <xs:element minOccurs="0" name="FECHAORDEN" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="ID_ORDEN" type="xs:int" />
-      <xs:element minOccurs="0" name="ID_SOLICITUD" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_SOLICITUD" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TBL_CABECERALIQUIDACION" nillable="true" type="tns:ArrayOfTBL_CABECERALIQUIDACION" />
-      <xs:element minOccurs="0" name="TBL_CABECERALIQUIDACION1" nillable="true" type="tns:TBL_CABECERALIQUIDACION" />
-      <xs:element minOccurs="0" name="TBL_DETALLEVIATICO" nillable="true" type="tns:ArrayOfTBL_DETALLEVIATICO" />
       <xs:element minOccurs="0" name="TBL_ESTADOS" nillable="true" type="tns:TBL_ESTADOS" />
       <xs:element minOccurs="0" name="TBL_SOLICITUDVIATICOS" nillable="true" type="tns:TBL_SOLICITUDVIATICOS" />
     </xs:sequence>
@@ -50,16 +47,15 @@
   <xs:complexType name="TBL_CABECERALIQUIDACION">
     <xs:sequence>
       <xs:element minOccurs="0" name="ESTADOLIQUIDACION" type="xs:short" />
-      <xs:element minOccurs="0" name="FECHALIQUIDACION" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FECHALIQUIDACION" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="ID_LIQUIDACION" type="xs:int" />
       <xs:element minOccurs="0" name="ID_ORDEN" type="xs:int" />
-      <xs:element minOccurs="0" name="MONTOALMUERZO" type="xs:decimal" />
-      <xs:element minOccurs="0" name="MONTOCENA" type="xs:decimal" />
-      <xs:element minOccurs="0" name="MONTODESAYUNO" type="xs:decimal" />
-      <xs:element minOccurs="0" name="MONTOHOSPEDAJE" type="xs:decimal" />
-      <xs:element minOccurs="0" name="MONTOPASAJE" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MONTOALMUERZO" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MONTOCENA" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MONTODESAYUNO" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MONTOHOSPEDAJE" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MONTOPASAJE" nillable="true" type="xs:decimal" />
       <xs:element minOccurs="0" name="TBL_CABECERAORDENVIATICO" nillable="true" type="tns:TBL_CABECERAORDENVIATICO" />
-      <xs:element minOccurs="0" name="TBL_CABECERAORDENVIATICO1" nillable="true" type="tns:ArrayOfTBL_CABECERAORDENVIATICO" />
       <xs:element minOccurs="0" name="TBL_ESTADOS" nillable="true" type="tns:TBL_ESTADOS" />
     </xs:sequence>
   </xs:complexType>
@@ -105,7 +101,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="CODIGOCANTON" type="xs:unsignedByte" />
       <xs:element minOccurs="0" name="CODIGOPROVINCIA" type="xs:unsignedByte" />
-      <xs:element minOccurs="0" name="DESCRIPCIONPROVINCIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DESCRIPCIONCANTON" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TBL_MODTARIFARIOVIATICO" nillable="true" type="tns:ArrayOfTBL_MODTARIFARIOVIATICO" />
       <xs:element minOccurs="0" name="TBL_PROVINCIA" nillable="true" type="tns:TBL_PROVINCIA" />
     </xs:sequence>
@@ -117,7 +113,6 @@
       <xs:element minOccurs="0" name="DESCRIPCIONPROVINCIA" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TBL_CANTON" nillable="true" type="tns:ArrayOfTBL_CANTON" />
       <xs:element minOccurs="0" name="TBL_MODTARIFARIOVIATICO" nillable="true" type="tns:ArrayOfTBL_MODTARIFARIOVIATICO" />
-      <xs:element minOccurs="0" name="TBL_TARIFAAUTOBUS" nillable="true" type="tns:ArrayOfTBL_TARIFAAUTOBUS" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="TBL_PROVINCIA" nillable="true" type="tns:TBL_PROVINCIA" />
@@ -127,26 +122,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfTBL_CANTON" nillable="true" type="tns:ArrayOfTBL_CANTON" />
-  <xs:complexType name="ArrayOfTBL_TARIFAAUTOBUS">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="TBL_TARIFAAUTOBUS" nillable="true" type="tns:TBL_TARIFAAUTOBUS" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfTBL_TARIFAAUTOBUS" nillable="true" type="tns:ArrayOfTBL_TARIFAAUTOBUS" />
-  <xs:complexType name="TBL_TARIFAAUTOBUS">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="CODIGOPROVINCIA" type="xs:unsignedByte" />
-      <xs:element minOccurs="0" name="CODIGORUTA" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="DESCRIPCIONRUTA" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ESTADORUTA" type="xs:short" />
-      <xs:element minOccurs="0" name="FECHAVIGENCIA" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="TARIFAREGISTRADA" type="xs:decimal" />
-      <xs:element minOccurs="0" name="TBL_DETALLESOLICITUDVIATICOS" nillable="true" type="tns:ArrayOfTBL_DETALLESOLICITUDVIATICOS" />
-      <xs:element minOccurs="0" name="TBL_ESTADOS" nillable="true" type="tns:TBL_ESTADOS" />
-      <xs:element minOccurs="0" name="TBL_PROVINCIA" nillable="true" type="tns:TBL_PROVINCIA" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="TBL_TARIFAAUTOBUS" nillable="true" type="tns:TBL_TARIFAAUTOBUS" />
   <xs:complexType name="ArrayOfTBL_DETALLESOLICITUDVIATICOS">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="TBL_DETALLESOLICITUDVIATICOS" nillable="true" type="tns:TBL_DETALLESOLICITUDVIATICOS" />
@@ -155,15 +130,21 @@
   <xs:element name="ArrayOfTBL_DETALLESOLICITUDVIATICOS" nillable="true" type="tns:ArrayOfTBL_DETALLESOLICITUDVIATICOS" />
   <xs:complexType name="TBL_DETALLESOLICITUDVIATICOS">
     <xs:sequence>
-      <xs:element minOccurs="0" name="CANTIDADPASAJE" type="xs:short" />
+      <xs:element minOccurs="0" name="CANTIDADALMUERZO" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="CANTIDADCENA" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="CANTIDADDESAYUNO" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="CANTIDADPASAJE" nillable="true" type="xs:short" />
       <xs:element minOccurs="0" name="CANTIDADVIATICOS" type="xs:short" />
       <xs:element minOccurs="0" name="CODIGORUTA" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FECHAVIATICOS" type="xs:dateTime" />
       <xs:element minOccurs="0" name="ID_DETALLE" type="xs:int" />
-      <xs:element minOccurs="0" name="ID_MODTARIFA" type="xs:short" />
       <xs:element minOccurs="0" name="ID_PERSONA" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ID_SOLICITUD" type="xs:int" />
-      <xs:element minOccurs="0" name="TBL_DETALLEVIATICO" nillable="true" type="tns:ArrayOfTBL_DETALLEVIATICO" />
+      <xs:element minOccurs="0" name="ID_SOLICITUD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LOCALIDADHOSPEDAJE" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="MONTOALMUERZO" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MONTOCENA" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MONTODESAYUNO" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MONTOHOSPEDAJE" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MONTOPASAJE" nillable="true" type="xs:decimal" />
       <xs:element minOccurs="0" name="TBL_MODTARIFARIOVIATICO" nillable="true" type="tns:TBL_MODTARIFARIOVIATICO" />
       <xs:element minOccurs="0" name="TBL_PERSONA" nillable="true" type="tns:TBL_PERSONA" />
       <xs:element minOccurs="0" name="TBL_SOLICITUDVIATICOS" nillable="true" type="tns:TBL_SOLICITUDVIATICOS" />
@@ -171,29 +152,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="TBL_DETALLESOLICITUDVIATICOS" nillable="true" type="tns:TBL_DETALLESOLICITUDVIATICOS" />
-  <xs:complexType name="ArrayOfTBL_DETALLEVIATICO">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="TBL_DETALLEVIATICO" nillable="true" type="tns:TBL_DETALLEVIATICO" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfTBL_DETALLEVIATICO" nillable="true" type="tns:ArrayOfTBL_DETALLEVIATICO" />
-  <xs:complexType name="TBL_DETALLEVIATICO">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="CANTIDADALMUERZO" type="xs:short" />
-      <xs:element minOccurs="0" name="CANTIDADCENA" type="xs:short" />
-      <xs:element minOccurs="0" name="CANTIDADDESAYUNO" type="xs:short" />
-      <xs:element minOccurs="0" name="CANTIDADPASAJE" type="xs:short" />
-      <xs:element minOccurs="0" name="ID_DETALLE" type="xs:int" />
-      <xs:element minOccurs="0" name="ID_ORDEN" type="xs:int" />
-      <xs:element minOccurs="0" name="MONTOALMUERZO" type="xs:decimal" />
-      <xs:element minOccurs="0" name="MONTOCENA" type="xs:decimal" />
-      <xs:element minOccurs="0" name="MONTODESAYUNO" type="xs:decimal" />
-      <xs:element minOccurs="0" name="MONTOPASAJE" type="xs:decimal" />
-      <xs:element minOccurs="0" name="TBL_CABECERAORDENVIATICO" nillable="true" type="tns:TBL_CABECERAORDENVIATICO" />
-      <xs:element minOccurs="0" name="TBL_DETALLESOLICITUDVIATICOS" nillable="true" type="tns:TBL_DETALLESOLICITUDVIATICOS" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="TBL_DETALLEVIATICO" nillable="true" type="tns:TBL_DETALLEVIATICO" />
   <xs:complexType name="TBL_PERSONA">
     <xs:sequence>
       <xs:element minOccurs="0" name="APELLIDOS" nillable="true" type="xs:string" />
@@ -246,6 +204,24 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfTBL_SOLICITUDVIATICOS" nillable="true" type="tns:ArrayOfTBL_SOLICITUDVIATICOS" />
+  <xs:complexType name="TBL_TARIFAAUTOBUS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGORUTA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DESCRIPCIONRUTA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADORUTA" type="xs:short" />
+      <xs:element minOccurs="0" name="FECHAVIGENCIA" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TARIFAREGISTRADA" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TBL_DETALLESOLICITUDVIATICOS" nillable="true" type="tns:ArrayOfTBL_DETALLESOLICITUDVIATICOS" />
+      <xs:element minOccurs="0" name="TBL_ESTADOS" nillable="true" type="tns:TBL_ESTADOS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TBL_TARIFAAUTOBUS" nillable="true" type="tns:TBL_TARIFAAUTOBUS" />
+  <xs:complexType name="ArrayOfTBL_TARIFAAUTOBUS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TBL_TARIFAAUTOBUS" nillable="true" type="tns:TBL_TARIFAAUTOBUS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTBL_TARIFAAUTOBUS" nillable="true" type="tns:ArrayOfTBL_TARIFAAUTOBUS" />
   <xs:complexType name="ArrayOfSP_LISTAR_SOLICITUDES_FUNCIONARIO_Result">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result" nillable="true" type="tns:SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result" />
@@ -267,4 +243,70 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result" nillable="true" type="tns:SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result" />
+  <xs:complexType name="ArrayOfSP_LISTAR_LOCALIDAD_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SP_LISTAR_LOCALIDAD_Result" nillable="true" type="tns:SP_LISTAR_LOCALIDAD_Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSP_LISTAR_LOCALIDAD_Result" nillable="true" type="tns:ArrayOfSP_LISTAR_LOCALIDAD_Result" />
+  <xs:complexType name="SP_LISTAR_LOCALIDAD_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID_MODTARIFA" type="xs:short" />
+      <xs:element minOccurs="0" name="LOCALIDAD" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SP_LISTAR_LOCALIDAD_Result" nillable="true" type="tns:SP_LISTAR_LOCALIDAD_Result" />
+  <xs:complexType name="ArrayOfSP_LISTAR_RUTAS_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SP_LISTAR_RUTAS_Result" nillable="true" type="tns:SP_LISTAR_RUTAS_Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSP_LISTAR_RUTAS_Result" nillable="true" type="tns:ArrayOfSP_LISTAR_RUTAS_Result" />
+  <xs:complexType name="SP_LISTAR_RUTAS_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGORUTA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DESCRIPCIONRUTA" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SP_LISTAR_RUTAS_Result" nillable="true" type="tns:SP_LISTAR_RUTAS_Result" />
+  <xs:complexType name="ArrayOfSP_LISTAR_PERSONAS_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SP_LISTAR_PERSONAS_Result" nillable="true" type="tns:SP_LISTAR_PERSONAS_Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSP_LISTAR_PERSONAS_Result" nillable="true" type="tns:ArrayOfSP_LISTAR_PERSONAS_Result" />
+  <xs:complexType name="SP_LISTAR_PERSONAS_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID_PERSONA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRECOMPLETO" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SP_LISTAR_PERSONAS_Result" nillable="true" type="tns:SP_LISTAR_PERSONAS_Result" />
+  <xs:complexType name="ArrayOfSP_LISTARMONTORUTA_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SP_LISTARMONTORUTA_Result" nillable="true" type="tns:SP_LISTARMONTORUTA_Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSP_LISTARMONTORUTA_Result" nillable="true" type="tns:ArrayOfSP_LISTARMONTORUTA_Result" />
+  <xs:complexType name="SP_LISTARMONTORUTA_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGORUTA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TARIFAREGISTRADA" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SP_LISTARMONTORUTA_Result" nillable="true" type="tns:SP_LISTARMONTORUTA_Result" />
+  <xs:complexType name="ArrayOfSP_LISTARMONTOS_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SP_LISTARMONTOS_Result" nillable="true" type="tns:SP_LISTARMONTOS_Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSP_LISTARMONTOS_Result" nillable="true" type="tns:ArrayOfSP_LISTARMONTOS_Result" />
+  <xs:complexType name="SP_LISTARMONTOS_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID_MODTARIFA" type="xs:short" />
+      <xs:element minOccurs="0" name="MONTOTARIFA" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TIPOTARIFA" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SP_LISTARMONTOS_Result" nillable="true" type="tns:SP_LISTARMONTOS_Result" />
 </xs:schema>

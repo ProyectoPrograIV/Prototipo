@@ -18,7 +18,6 @@ namespace Entidades
         {
             this.TBL_CANTON = new HashSet<TBL_CANTON>();
             this.TBL_MODTARIFARIOVIATICO = new HashSet<TBL_MODTARIFARIOVIATICO>();
-            this.TBL_TARIFAAUTOBUS = new HashSet<TBL_TARIFAAUTOBUS>();
         }
     
         public byte CODIGOPROVINCIA { get; set; }
@@ -26,6 +25,5 @@ namespace Entidades
     
         public virtual ICollection<TBL_CANTON> TBL_CANTON { get; set; }
         public virtual ICollection<TBL_MODTARIFARIOVIATICO> TBL_MODTARIFARIOVIATICO { get; set; }
-        public virtual ICollection<TBL_TARIFAAUTOBUS> TBL_TARIFAAUTOBUS { get; set; }
     }
 }

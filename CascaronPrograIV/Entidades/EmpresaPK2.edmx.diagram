@@ -4,26 +4,24 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="df919bb0259d44638e2e5a44eae3ba8c" Name="Diagram1" ZoomLevel="68">
-        <EntityTypeShape EntityType="EmpresaPK2Model.TBL_CANTON" Width="1.5" PointX="3.75" PointY="0.75" />
-        <EntityTypeShape EntityType="EmpresaPK2Model.TBL_MODTARIFARIOVIATICO" Width="1.5" PointX="6" PointY="7.125" />
+      <Diagram DiagramId="df919bb0259d44638e2e5a44eae3ba8c" Name="Diagram1" ZoomLevel="82">
+        <EntityTypeShape EntityType="EmpresaPK2Model.TBL_CANTON" Width="1.5" PointX="0.75" PointY="8.375" />
+        <EntityTypeShape EntityType="EmpresaPK2Model.TBL_MODTARIFARIOVIATICO" Width="1.5" PointX="3" PointY="7.625" />
         <EntityTypeShape EntityType="EmpresaPK2Model.TBL_PROVINCIA" Width="1.5" PointX="1.5" PointY="4.5" />
-        <EntityTypeShape EntityType="EmpresaPK2Model.TBL_TARIFAAUTOBUS" Width="1.5" PointX="6" PointY="11.375" />
-        <EntityTypeShape EntityType="EmpresaPK2Model.TBL_ESTADOS" Width="1.5" PointX="0.75" PointY="11.375" />
-        <EntityTypeShape EntityType="EmpresaPK2Model.TBL_PERSONA" Width="1.5" PointX="5.25" PointY="3.625" />
-        <EntityTypeShape EntityType="EmpresaPK2Model.TBL_ROLUSUARIO" Width="1.5" PointX="0.75" PointY="7.875" />
-        <EntityTypeShape EntityType="EmpresaPK2Model.TBL_USUARIO" Width="1.5" PointX="3" PointY="7.375" />
-        <EntityTypeShape EntityType="EmpresaPK2Model.TBL_CABECERALIQUIDACION" Width="1.5" PointX="3" PointY="11.125" />
-        <EntityTypeShape EntityType="EmpresaPK2Model.TBL_CABECERAORDENVIATICO" Width="1.5" PointX="10.5" PointY="12.125" />
-        <EntityTypeShape EntityType="EmpresaPK2Model.TBL_DETALLESOLICITUDVIATICOS" Width="1.5" PointX="10.5" PointY="7.125" />
-        <EntityTypeShape EntityType="EmpresaPK2Model.TBL_SOLICITUDVIATICOS" Width="1.5" PointX="8.25" PointY="8.875" />
-        <EntityTypeShape EntityType="EmpresaPK2Model.TBL_DETALLEVIATICO" Width="1.5" PointX="12.75" PointY="9.5" />
+        <EntityTypeShape EntityType="EmpresaPK2Model.TBL_TARIFAAUTOBUS" Width="1.5" PointX="3" PointY="31.25" />
+        <EntityTypeShape EntityType="EmpresaPK2Model.TBL_ESTADOS" Width="1.5" PointX="0.75" PointY="12" />
+        <EntityTypeShape EntityType="EmpresaPK2Model.TBL_PERSONA" Width="1.5" PointX="8.25" PointY="16.25" />
+        <EntityTypeShape EntityType="EmpresaPK2Model.TBL_ROLUSUARIO" Width="1.5" PointX="3.75" PointY="15.5" />
+        <EntityTypeShape EntityType="EmpresaPK2Model.TBL_USUARIO" Width="1.5" PointX="6" PointY="12" />
+        <EntityTypeShape EntityType="EmpresaPK2Model.TBL_CABECERALIQUIDACION" Width="1.5" PointX="5.25" PointY="7.75" />
+        <EntityTypeShape EntityType="EmpresaPK2Model.TBL_CABECERAORDENVIATICO" Width="1.5" PointX="3" PointY="12.125" />
+        <EntityTypeShape EntityType="EmpresaPK2Model.TBL_DETALLESOLICITUDVIATICOS" Width="1.5" PointX="10.5" PointY="18.25" />
+        <EntityTypeShape EntityType="EmpresaPK2Model.TBL_SOLICITUDVIATICOS" Width="1.5" PointX="8.25" PointY="11.5" />
         <AssociationConnector Association="EmpresaPK2Model.FK_TBLCANTON_TBLPROVINCIA" />
         <AssociationConnector Association="EmpresaPK2Model.FK_TBLMODTARIFARIOVIATICO_TBLCANTON" />
-        <AssociationConnector Association="EmpresaPK2Model.FK_TBLDETALLESOLICITUDVIATICOS_TBLMODTARIFARIOVIATICO" />
+        <AssociationConnector Association="EmpresaPK2Model.FK_TBLDETALLESOLICITUDVIATICO_TBLMODTARIFARIOVIATICO" />
         <AssociationConnector Association="EmpresaPK2Model.FK_TBLMODTARIFARIOVIATICO_TBL_ESTADOS" />
         <AssociationConnector Association="EmpresaPK2Model.FK_TBLMODTARIFARIOVIATICO_TBLPROVINCIA" />
-        <AssociationConnector Association="EmpresaPK2Model.FK_TBLTARIFAAUTOBUS_TBLPROVINCIA" />
         <AssociationConnector Association="EmpresaPK2Model.FK_TBLDETALLESOLICITUDVIATICOS_TBLTARIFAAUTOBUS" />
         <AssociationConnector Association="EmpresaPK2Model.FK_TBLTARIFAAUTOBUS_TBLESTADOS" />
         <AssociationConnector Association="EmpresaPK2Model.FK_TBLCABECERALIQUIDACION_TBLESTADOS" />
@@ -35,11 +33,8 @@
         <AssociationConnector Association="EmpresaPK2Model.FK_TBLUSUARIO_TBLROLUSUARIO" />
         <AssociationConnector Association="EmpresaPK2Model.FK_TBLSOLICITUDVIATICOS_TBLUSUARIO" />
         <AssociationConnector Association="EmpresaPK2Model.FK_TBLCABECERALIQUIDACION_TBLCABECERAORDENVIATICO" />
-        <AssociationConnector Association="EmpresaPK2Model.FK_TBLCABECERAORDENVIATICO_TBLCABECERALIQUIDACION" />
         <AssociationConnector Association="EmpresaPK2Model.FK_TBLCABECERAORDENVIATICO_TBLSOLICITUDVIATICOS" />
-        <AssociationConnector Association="EmpresaPK2Model.FK_TBLDETALLEVIATICO_TBLCABECERAORDENVIATICO" />
         <AssociationConnector Association="EmpresaPK2Model.FK_TBLDETALLESOLICITUDVIATICOS_TBLSOLICITUDVIATICOS" />
-        <AssociationConnector Association="EmpresaPK2Model.FK_TBLDETALLEVIATICO_TBLDETALLESOLICITUDVIATICOS" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

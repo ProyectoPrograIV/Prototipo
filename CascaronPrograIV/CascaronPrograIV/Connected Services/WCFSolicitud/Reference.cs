@@ -15,17 +15,47 @@ namespace CascaronPrograIV.WCFSolicitud {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WCFSolicitud.ISolicitud")]
     public interface ISolicitud {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISolicitud/GuardarSolicitud", ReplyAction="http://tempuri.org/ISolicitud/GuardarSolicitudResponse")]
-        bool GuardarSolicitud(Entidades.TBL_SOLICITUDVIATICOS Obj_Solicitud);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISolicitud/GuardarSolicitudDetalle", ReplyAction="http://tempuri.org/ISolicitud/GuardarSolicitudDetalleResponse")]
+        bool GuardarSolicitudDetalle(Entidades.TBL_SOLICITUDVIATICOS Obj_Solicitud, System.Collections.Generic.List<Entidades.TBL_DETALLESOLICITUDVIATICOS> Obj_SolicitudDetalle);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISolicitud/GuardarSolicitud", ReplyAction="http://tempuri.org/ISolicitud/GuardarSolicitudResponse")]
-        System.Threading.Tasks.Task<bool> GuardarSolicitudAsync(Entidades.TBL_SOLICITUDVIATICOS Obj_Solicitud);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISolicitud/GuardarSolicitudDetalle", ReplyAction="http://tempuri.org/ISolicitud/GuardarSolicitudDetalleResponse")]
+        System.Threading.Tasks.Task<bool> GuardarSolicitudDetalleAsync(Entidades.TBL_SOLICITUDVIATICOS Obj_Solicitud, System.Collections.Generic.List<Entidades.TBL_DETALLESOLICITUDVIATICOS> Obj_SolicitudDetalle);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISolicitud/ListarSolicitudes", ReplyAction="http://tempuri.org/ISolicitud/ListarSolicitudesResponse")]
         System.Collections.Generic.List<Entidades.SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> ListarSolicitudes(Entidades.TBL_SOLICITUDVIATICOS Obj_Solicitud);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISolicitud/ListarSolicitudes", ReplyAction="http://tempuri.org/ISolicitud/ListarSolicitudesResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result>> ListarSolicitudesAsync(Entidades.TBL_SOLICITUDVIATICOS Obj_Solicitud);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISolicitud/ListarLocalidad", ReplyAction="http://tempuri.org/ISolicitud/ListarLocalidadResponse")]
+        System.Collections.Generic.List<Entidades.SP_LISTAR_LOCALIDAD_Result> ListarLocalidad();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISolicitud/ListarLocalidad", ReplyAction="http://tempuri.org/ISolicitud/ListarLocalidadResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTAR_LOCALIDAD_Result>> ListarLocalidadAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISolicitud/ListarRutas", ReplyAction="http://tempuri.org/ISolicitud/ListarRutasResponse")]
+        System.Collections.Generic.List<Entidades.SP_LISTAR_RUTAS_Result> ListarRutas();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISolicitud/ListarRutas", ReplyAction="http://tempuri.org/ISolicitud/ListarRutasResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTAR_RUTAS_Result>> ListarRutasAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISolicitud/ListarPersonas", ReplyAction="http://tempuri.org/ISolicitud/ListarPersonasResponse")]
+        System.Collections.Generic.List<Entidades.SP_LISTAR_PERSONAS_Result> ListarPersonas();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISolicitud/ListarPersonas", ReplyAction="http://tempuri.org/ISolicitud/ListarPersonasResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTAR_PERSONAS_Result>> ListarPersonasAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISolicitud/MontoRuta", ReplyAction="http://tempuri.org/ISolicitud/MontoRutaResponse")]
+        System.Collections.Generic.List<Entidades.SP_LISTARMONTORUTA_Result> MontoRuta(string sIdRuta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISolicitud/MontoRuta", ReplyAction="http://tempuri.org/ISolicitud/MontoRutaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTARMONTORUTA_Result>> MontoRutaAsync(string sIdRuta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISolicitud/Montos", ReplyAction="http://tempuri.org/ISolicitud/MontosResponse")]
+        System.Collections.Generic.List<Entidades.SP_LISTARMONTOS_Result> Montos(int iIdHospedaje);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISolicitud/Montos", ReplyAction="http://tempuri.org/ISolicitud/MontosResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTARMONTOS_Result>> MontosAsync(int iIdHospedaje);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -55,12 +85,12 @@ namespace CascaronPrograIV.WCFSolicitud {
                 base(binding, remoteAddress) {
         }
         
-        public bool GuardarSolicitud(Entidades.TBL_SOLICITUDVIATICOS Obj_Solicitud) {
-            return base.Channel.GuardarSolicitud(Obj_Solicitud);
+        public bool GuardarSolicitudDetalle(Entidades.TBL_SOLICITUDVIATICOS Obj_Solicitud, System.Collections.Generic.List<Entidades.TBL_DETALLESOLICITUDVIATICOS> Obj_SolicitudDetalle) {
+            return base.Channel.GuardarSolicitudDetalle(Obj_Solicitud, Obj_SolicitudDetalle);
         }
         
-        public System.Threading.Tasks.Task<bool> GuardarSolicitudAsync(Entidades.TBL_SOLICITUDVIATICOS Obj_Solicitud) {
-            return base.Channel.GuardarSolicitudAsync(Obj_Solicitud);
+        public System.Threading.Tasks.Task<bool> GuardarSolicitudDetalleAsync(Entidades.TBL_SOLICITUDVIATICOS Obj_Solicitud, System.Collections.Generic.List<Entidades.TBL_DETALLESOLICITUDVIATICOS> Obj_SolicitudDetalle) {
+            return base.Channel.GuardarSolicitudDetalleAsync(Obj_Solicitud, Obj_SolicitudDetalle);
         }
         
         public System.Collections.Generic.List<Entidades.SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> ListarSolicitudes(Entidades.TBL_SOLICITUDVIATICOS Obj_Solicitud) {
@@ -69,6 +99,46 @@ namespace CascaronPrograIV.WCFSolicitud {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result>> ListarSolicitudesAsync(Entidades.TBL_SOLICITUDVIATICOS Obj_Solicitud) {
             return base.Channel.ListarSolicitudesAsync(Obj_Solicitud);
+        }
+        
+        public System.Collections.Generic.List<Entidades.SP_LISTAR_LOCALIDAD_Result> ListarLocalidad() {
+            return base.Channel.ListarLocalidad();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTAR_LOCALIDAD_Result>> ListarLocalidadAsync() {
+            return base.Channel.ListarLocalidadAsync();
+        }
+        
+        public System.Collections.Generic.List<Entidades.SP_LISTAR_RUTAS_Result> ListarRutas() {
+            return base.Channel.ListarRutas();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTAR_RUTAS_Result>> ListarRutasAsync() {
+            return base.Channel.ListarRutasAsync();
+        }
+        
+        public System.Collections.Generic.List<Entidades.SP_LISTAR_PERSONAS_Result> ListarPersonas() {
+            return base.Channel.ListarPersonas();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTAR_PERSONAS_Result>> ListarPersonasAsync() {
+            return base.Channel.ListarPersonasAsync();
+        }
+        
+        public System.Collections.Generic.List<Entidades.SP_LISTARMONTORUTA_Result> MontoRuta(string sIdRuta) {
+            return base.Channel.MontoRuta(sIdRuta);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTARMONTORUTA_Result>> MontoRutaAsync(string sIdRuta) {
+            return base.Channel.MontoRutaAsync(sIdRuta);
+        }
+        
+        public System.Collections.Generic.List<Entidades.SP_LISTARMONTOS_Result> Montos(int iIdHospedaje) {
+            return base.Channel.Montos(iIdHospedaje);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTARMONTOS_Result>> MontosAsync(int iIdHospedaje) {
+            return base.Channel.MontosAsync(iIdHospedaje);
         }
     }
 }

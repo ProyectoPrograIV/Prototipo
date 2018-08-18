@@ -9,6 +9,11 @@
     <link href="../HojasdeEstilos/EstiloMenu.css" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 97%;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -16,24 +21,27 @@
             <h1>Empresa PK2</h1>
         </div>
         <div class="divMenu">
-            <ul id="menu">
+            <ul id="menu" class="auto-style1">
                 <li>
                     <asp:HyperLink runat="server" NavigateUrl="~/Archivos/WebForms/Default.aspx">Inicio</asp:HyperLink>
                 </li>
                 <li>
-                    <asp:HyperLink runat="server" NavigateUrl="~/Archivos/WebForms/Parametrizaciones/Parametrizaciones.aspx">Parametrizaciones</asp:HyperLink>
+                    <asp:HyperLink Visible="false" id="hlParametrizaciones" runat="server" NavigateUrl="~/Archivos/WebForms/Parametrizaciones/Parametrizaciones.aspx">Parametrizaciones</asp:HyperLink>
                 </li>
                 <li>
-                    <asp:HyperLink runat="server" NavigateUrl="~/Archivos/WebForms/Solicitud/Solicitud.aspx">Solicitud de Viaticos</asp:HyperLink>
+                    <asp:HyperLink Visible="false" id="hlSolicitud" runat="server" NavigateUrl="~/Archivos/WebForms/Solicitud/Solicitud.aspx">Solicitud de Viaticos</asp:HyperLink>
                 </li>
                 <li>
-                    <asp:HyperLink runat="server" NavigateUrl="~/Archivos/WebForms/Orden/Orden.aspx">Orden de Viaticos</asp:HyperLink>
+                    <asp:HyperLink Visible="false" id="hlOrden" runat="server" NavigateUrl="~/Archivos/WebForms/Orden/Orden.aspx">Orden de Viaticos</asp:HyperLink>
                 </li>
                 <li>
-                    <asp:HyperLink runat="server" NavigateUrl="~/Archivos/WebForms/Liquidacion/Liquidacion.aspx">Liquidacion de Viaticos</asp:HyperLink>
+                    <asp:HyperLink Visible="false" id="hlLiquidacion" runat="server" NavigateUrl="~/Archivos/WebForms/Liquidacion/Liquidacion.aspx">Liquidacion de Viaticos</asp:HyperLink>
                 </li>
                 <li>
-                    <asp:HyperLink runat="server" NavigateUrl="~/Archivos/WebForms/Reportes/Reportes.aspx">Reportes</asp:HyperLink>
+                    <asp:HyperLink Visible="false" id="hlReportes" runat="server" NavigateUrl="~/Archivos/WebForms/Reportes/Reportes.aspx">Reportes</asp:HyperLink>
+                </li>
+                <li>
+                    <asp:HyperLink Visible="false" id="hlRegistro" runat="server" NavigateUrl="~/Archivos/WebForms/RegistroUsuario.aspx">Registro</asp:HyperLink>
                 </li>
             </ul>
         </div>

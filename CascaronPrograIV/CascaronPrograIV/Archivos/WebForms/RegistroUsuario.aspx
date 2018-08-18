@@ -38,6 +38,7 @@
         <asp:TextBox CssClass="BtnRight" placeholder="Apellidos" ID="Tbx_Apellidos" runat="server"></asp:TextBox>
         <br />
         <asp:TextBox CssClass="BtnRight" placeholder="Identificacion" ID="Tbx_Identificacion" runat="server"></asp:TextBox>
+        <asp:TextBox CssClass="BtnLeft" placeholder="Codigo Rol" ID="Tbx_Cod_Rol" runat="server"></asp:TextBox>
         <br />
         <asp:TextBox CssClass="BtnLeft" placeholder="Usuario" ID="Tbx_Usuario" runat="server"></asp:TextBox>
         <asp:TextBox CssClass="BtnRight" placeholder="Contraseña" ID="Tbx_Password" runat="server"></asp:TextBox>

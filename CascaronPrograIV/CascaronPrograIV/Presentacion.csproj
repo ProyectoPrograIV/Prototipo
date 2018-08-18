@@ -25,6 +25,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <Use64BitIISExpress />
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -52,6 +53,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -124,6 +126,14 @@
     <None Include="Connected Services\WCFServicio\Service12.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <Content Include="Properties\DataSources\Entidades.SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result.datasource" />
+    <Content Include="Properties\DataSources\Entidades.SP_INICIO_SESION_Result.datasource" />
+    <Content Include="Properties\DataSources\Entidades.SP_LISTAR_LOCALIDAD_Result.datasource" />
+    <Content Include="Properties\DataSources\Entidades.SP_LISTAR_RUTAS_Result.datasource" />
+    <Content Include="Properties\DataSources\Entidades.SP_LISTAR_PERSONAS_Result.datasource" />
+    <Content Include="Properties\DataSources\Entidades.SP_LISTARMONTORUTA_Result.datasource" />
+    <Content Include="Properties\DataSources\Entidades.SP_LISTARMONTOS_Result.datasource" />
     <None Include="Connected Services\WCFSolicitud\Solicitud.wsdl" />
     <None Include="Connected Services\WCFSolicitud\Solicitud.xsd">
       <SubType>Designer</SubType>
@@ -134,8 +144,16 @@
     <None Include="Connected Services\WCFSolicitud\Solicitud2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Properties\DataSources\System.Data.DataTable.datasource" />
-    <Content Include="Properties\DataSources\Entidades.SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result.datasource" />
+    <Content Include="Properties\DataSources\Entidades.SP_LISTADO_LIQUIDACION_VIATICOS_Result2.datasource" />
+    <Content Include="Properties\DataSources\Entidades.SP_LISTADO_ORDEN_VIATICOS_Result2.datasource" />
+    <Content Include="Properties\DataSources\Entidades.SP_LISTADO_SOLICITUD_VIATICOS_Result2.datasource" />
+    <Content Include="Properties\DataSources\Entidades.SP_LISTAR_MODTARIFAVIATICO_Result.datasource" />
+    <Content Include="Properties\DataSources\Entidades.SP_OBTENER_ORDEN_VIATICOS_Result.datasource" />
+    <Content Include="Properties\DataSources\Entidades.TBL_ESTADOS2.datasource" />
+    <Content Include="Properties\DataSources\Entidades.TBL_ROLUSUARIO2.datasource" />
+    <Content Include="Properties\DataSources\Entidades.SP_OBTENER_CANTON_PROVINCIA_Result.datasource" />
+    <Content Include="Properties\DataSources\Entidades.SP_BUSCAR_TARIFAAUTOBUS_Result.datasource" />
+    <Content Include="Properties\DataSources\Entidades.SP_LISTAR_TARIFASAUTOBUSES_Result.datasource" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

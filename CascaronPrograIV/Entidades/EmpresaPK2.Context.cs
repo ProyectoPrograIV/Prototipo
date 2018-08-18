@@ -40,7 +40,6 @@ namespace Entidades
         public DbSet<TBL_CABECERAORDENVIATICO> TBL_CABECERAORDENVIATICO { get; set; }
         public DbSet<TBL_DETALLESOLICITUDVIATICOS> TBL_DETALLESOLICITUDVIATICOS { get; set; }
         public DbSet<TBL_SOLICITUDVIATICOS> TBL_SOLICITUDVIATICOS { get; set; }
-        public DbSet<TBL_DETALLEVIATICO> TBL_DETALLEVIATICO { get; set; }
     
         public virtual int SP_InsertarUsuario(string nOMBREUSUARIO, string cLAVEACCESO, Nullable<short> iD_Rol, Nullable<short> estadoUsuario, string email)
         {
@@ -117,7 +116,204 @@ namespace Entidades
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ELIMINAR_SOLICITUDES", iDSOLICITUDParameter);
         }
     
-        public virtual int SP_GUARDAR_SOLICITUDES_FUNCIONARIO(string nOMBREUSUARIO, Nullable<System.DateTime> fECHACREACION, Nullable<System.DateTime> fECHASALIDA, Nullable<System.DateTime> fECHAREGRESO, string jUSTIFICACION, string dESTINO, Nullable<System.TimeSpan> hORAREGRESO, Nullable<System.TimeSpan> hORASALIDA)
+        public virtual ObjectResult<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> SP_LISTAR_SOLICITUDES_FUNCIONARIO(string uSUARIO)
+        {
+            var uSUARIOParameter = uSUARIO != null ?
+                new ObjectParameter("USUARIO", uSUARIO) :
+                new ObjectParameter("USUARIO", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result>("SP_LISTAR_SOLICITUDES_FUNCIONARIO", uSUARIOParameter);
+        }
+    
+        public virtual ObjectResult<SP_LISTADO_SOLICITUD_VIATICOS_Result> SP_LISTADO_SOLICITUD_VIATICOS(Nullable<System.DateTime> fECHAINICIO, Nullable<System.DateTime> fECHAFINAL, string iD_PERSONA, Nullable<short> eSTADOS_SOLICITUD)
+        {
+            var fECHAINICIOParameter = fECHAINICIO.HasValue ?
+                new ObjectParameter("FECHAINICIO", fECHAINICIO) :
+                new ObjectParameter("FECHAINICIO", typeof(System.DateTime));
+    
+            var fECHAFINALParameter = fECHAFINAL.HasValue ?
+                new ObjectParameter("FECHAFINAL", fECHAFINAL) :
+                new ObjectParameter("FECHAFINAL", typeof(System.DateTime));
+    
+            var iD_PERSONAParameter = iD_PERSONA != null ?
+                new ObjectParameter("ID_PERSONA", iD_PERSONA) :
+                new ObjectParameter("ID_PERSONA", typeof(string));
+    
+            var eSTADOS_SOLICITUDParameter = eSTADOS_SOLICITUD.HasValue ?
+                new ObjectParameter("ESTADOS_SOLICITUD", eSTADOS_SOLICITUD) :
+                new ObjectParameter("ESTADOS_SOLICITUD", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTADO_SOLICITUD_VIATICOS_Result>("SP_LISTADO_SOLICITUD_VIATICOS", fECHAINICIOParameter, fECHAFINALParameter, iD_PERSONAParameter, eSTADOS_SOLICITUDParameter);
+        }
+    
+        public virtual ObjectResult<SP_INICIO_SESION_Result> SP_INICIO_SESION(string nombreUsuario, string claveAcceso)
+        {
+            var nombreUsuarioParameter = nombreUsuario != null ?
+                new ObjectParameter("NombreUsuario", nombreUsuario) :
+                new ObjectParameter("NombreUsuario", typeof(string));
+    
+            var claveAccesoParameter = claveAcceso != null ?
+                new ObjectParameter("ClaveAcceso", claveAcceso) :
+                new ObjectParameter("ClaveAcceso", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_INICIO_SESION_Result>("SP_INICIO_SESION", nombreUsuarioParameter, claveAccesoParameter);
+        }
+    
+        public virtual ObjectResult<SP_LISTADO_LIQUIDACION_VIATICOS_Result> SP_LISTADO_LIQUIDACION_VIATICOS(Nullable<System.DateTime> fECHAINICIO, Nullable<System.DateTime> fECHAFINAL, string nOMBREUSUARIO, Nullable<short> eSTADOS_SOLICITUD)
+        {
+            var fECHAINICIOParameter = fECHAINICIO.HasValue ?
+                new ObjectParameter("FECHAINICIO", fECHAINICIO) :
+                new ObjectParameter("FECHAINICIO", typeof(System.DateTime));
+    
+            var fECHAFINALParameter = fECHAFINAL.HasValue ?
+                new ObjectParameter("FECHAFINAL", fECHAFINAL) :
+                new ObjectParameter("FECHAFINAL", typeof(System.DateTime));
+    
+            var nOMBREUSUARIOParameter = nOMBREUSUARIO != null ?
+                new ObjectParameter("NOMBREUSUARIO", nOMBREUSUARIO) :
+                new ObjectParameter("NOMBREUSUARIO", typeof(string));
+    
+            var eSTADOS_SOLICITUDParameter = eSTADOS_SOLICITUD.HasValue ?
+                new ObjectParameter("ESTADOS_SOLICITUD", eSTADOS_SOLICITUD) :
+                new ObjectParameter("ESTADOS_SOLICITUD", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTADO_LIQUIDACION_VIATICOS_Result>("SP_LISTADO_LIQUIDACION_VIATICOS", fECHAINICIOParameter, fECHAFINALParameter, nOMBREUSUARIOParameter, eSTADOS_SOLICITUDParameter);
+        }
+    
+        public virtual ObjectResult<SP_LISTADO_ORDEN_VIATICOS_Result> SP_LISTADO_ORDEN_VIATICOS(Nullable<System.DateTime> fECHAINICIO, Nullable<System.DateTime> fECHAFINAL, string nOMBREUSUARIO, Nullable<short> eSTADOS_SOLICITUD)
+        {
+            var fECHAINICIOParameter = fECHAINICIO.HasValue ?
+                new ObjectParameter("FECHAINICIO", fECHAINICIO) :
+                new ObjectParameter("FECHAINICIO", typeof(System.DateTime));
+    
+            var fECHAFINALParameter = fECHAFINAL.HasValue ?
+                new ObjectParameter("FECHAFINAL", fECHAFINAL) :
+                new ObjectParameter("FECHAFINAL", typeof(System.DateTime));
+    
+            var nOMBREUSUARIOParameter = nOMBREUSUARIO != null ?
+                new ObjectParameter("NOMBREUSUARIO", nOMBREUSUARIO) :
+                new ObjectParameter("NOMBREUSUARIO", typeof(string));
+    
+            var eSTADOS_SOLICITUDParameter = eSTADOS_SOLICITUD.HasValue ?
+                new ObjectParameter("ESTADOS_SOLICITUD", eSTADOS_SOLICITUD) :
+                new ObjectParameter("ESTADOS_SOLICITUD", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTADO_ORDEN_VIATICOS_Result>("SP_LISTADO_ORDEN_VIATICOS", fECHAINICIOParameter, fECHAFINALParameter, nOMBREUSUARIOParameter, eSTADOS_SOLICITUDParameter);
+        }
+    
+        public virtual ObjectResult<SP_LISTAR_LOCALIDAD_Result> SP_LISTAR_LOCALIDAD()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_LOCALIDAD_Result>("SP_LISTAR_LOCALIDAD");
+        }
+    
+        public virtual ObjectResult<SP_LISTAR_RUTAS_Result> SP_LISTAR_RUTAS()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_RUTAS_Result>("SP_LISTAR_RUTAS");
+        }
+    
+        public virtual int SP_GUARDAR_DETALLEVIATICOS(string iD_SOLICITUD, string iD_PERSONA, Nullable<short> cANTIDADVIATICOS, Nullable<short> cANTIDADDESAYUNOS, Nullable<short> cANTIDADALMUERZOS, Nullable<short> cANTIDADCENAS, Nullable<short> cANTIDADPASAJE, Nullable<decimal> mONTODESAYUNO, Nullable<decimal> mONTOALMUERZO, Nullable<decimal> mONTOCENA, Nullable<decimal> mONTOPASAJE, Nullable<decimal> mONTOHOSPEDAJE, string cODIGORUTA, Nullable<short> lOCALIDADHOSPEDAJE)
+        {
+            var iD_SOLICITUDParameter = iD_SOLICITUD != null ?
+                new ObjectParameter("ID_SOLICITUD", iD_SOLICITUD) :
+                new ObjectParameter("ID_SOLICITUD", typeof(string));
+    
+            var iD_PERSONAParameter = iD_PERSONA != null ?
+                new ObjectParameter("ID_PERSONA", iD_PERSONA) :
+                new ObjectParameter("ID_PERSONA", typeof(string));
+    
+            var cANTIDADVIATICOSParameter = cANTIDADVIATICOS.HasValue ?
+                new ObjectParameter("CANTIDADVIATICOS", cANTIDADVIATICOS) :
+                new ObjectParameter("CANTIDADVIATICOS", typeof(short));
+    
+            var cANTIDADDESAYUNOSParameter = cANTIDADDESAYUNOS.HasValue ?
+                new ObjectParameter("CANTIDADDESAYUNOS", cANTIDADDESAYUNOS) :
+                new ObjectParameter("CANTIDADDESAYUNOS", typeof(short));
+    
+            var cANTIDADALMUERZOSParameter = cANTIDADALMUERZOS.HasValue ?
+                new ObjectParameter("CANTIDADALMUERZOS", cANTIDADALMUERZOS) :
+                new ObjectParameter("CANTIDADALMUERZOS", typeof(short));
+    
+            var cANTIDADCENASParameter = cANTIDADCENAS.HasValue ?
+                new ObjectParameter("CANTIDADCENAS", cANTIDADCENAS) :
+                new ObjectParameter("CANTIDADCENAS", typeof(short));
+    
+            var cANTIDADPASAJEParameter = cANTIDADPASAJE.HasValue ?
+                new ObjectParameter("CANTIDADPASAJE", cANTIDADPASAJE) :
+                new ObjectParameter("CANTIDADPASAJE", typeof(short));
+    
+            var mONTODESAYUNOParameter = mONTODESAYUNO.HasValue ?
+                new ObjectParameter("MONTODESAYUNO", mONTODESAYUNO) :
+                new ObjectParameter("MONTODESAYUNO", typeof(decimal));
+    
+            var mONTOALMUERZOParameter = mONTOALMUERZO.HasValue ?
+                new ObjectParameter("MONTOALMUERZO", mONTOALMUERZO) :
+                new ObjectParameter("MONTOALMUERZO", typeof(decimal));
+    
+            var mONTOCENAParameter = mONTOCENA.HasValue ?
+                new ObjectParameter("MONTOCENA", mONTOCENA) :
+                new ObjectParameter("MONTOCENA", typeof(decimal));
+    
+            var mONTOPASAJEParameter = mONTOPASAJE.HasValue ?
+                new ObjectParameter("MONTOPASAJE", mONTOPASAJE) :
+                new ObjectParameter("MONTOPASAJE", typeof(decimal));
+    
+            var mONTOHOSPEDAJEParameter = mONTOHOSPEDAJE.HasValue ?
+                new ObjectParameter("MONTOHOSPEDAJE", mONTOHOSPEDAJE) :
+                new ObjectParameter("MONTOHOSPEDAJE", typeof(decimal));
+    
+            var cODIGORUTAParameter = cODIGORUTA != null ?
+                new ObjectParameter("CODIGORUTA", cODIGORUTA) :
+                new ObjectParameter("CODIGORUTA", typeof(string));
+    
+            var lOCALIDADHOSPEDAJEParameter = lOCALIDADHOSPEDAJE.HasValue ?
+                new ObjectParameter("LOCALIDADHOSPEDAJE", lOCALIDADHOSPEDAJE) :
+                new ObjectParameter("LOCALIDADHOSPEDAJE", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_GUARDAR_DETALLEVIATICOS", iD_SOLICITUDParameter, iD_PERSONAParameter, cANTIDADVIATICOSParameter, cANTIDADDESAYUNOSParameter, cANTIDADALMUERZOSParameter, cANTIDADCENASParameter, cANTIDADPASAJEParameter, mONTODESAYUNOParameter, mONTOALMUERZOParameter, mONTOCENAParameter, mONTOPASAJEParameter, mONTOHOSPEDAJEParameter, cODIGORUTAParameter, lOCALIDADHOSPEDAJEParameter);
+        }
+    
+        public virtual ObjectResult<SP_LISTAR_SOLICITUDES_ACTUALIZAR_Result> SP_LISTAR_SOLICITUDES_ACTUALIZAR(string nOMBREUSUARIO)
+        {
+            var nOMBREUSUARIOParameter = nOMBREUSUARIO != null ?
+                new ObjectParameter("NOMBREUSUARIO", nOMBREUSUARIO) :
+                new ObjectParameter("NOMBREUSUARIO", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_SOLICITUDES_ACTUALIZAR_Result>("SP_LISTAR_SOLICITUDES_ACTUALIZAR", nOMBREUSUARIOParameter);
+        }
+    
+        public virtual ObjectResult<SP_LISTAR_PERSONAS_Result> SP_LISTAR_PERSONAS()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_PERSONAS_Result>("SP_LISTAR_PERSONAS");
+        }
+    
+        public virtual ObjectResult<SP_OBTENER_ORDEN_VIATICOS_Result> SP_OBTENER_ORDEN_VIATICOS(string nOMBREUSUARIO)
+        {
+            var nOMBREUSUARIOParameter = nOMBREUSUARIO != null ?
+                new ObjectParameter("NOMBREUSUARIO", nOMBREUSUARIO) :
+                new ObjectParameter("NOMBREUSUARIO", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_OBTENER_ORDEN_VIATICOS_Result>("SP_OBTENER_ORDEN_VIATICOS", nOMBREUSUARIOParameter);
+        }
+    
+        public virtual ObjectResult<SP_LISTARMONTORUTA_Result> SP_LISTARMONTORUTA(string iDRUTA)
+        {
+            var iDRUTAParameter = iDRUTA != null ?
+                new ObjectParameter("IDRUTA", iDRUTA) :
+                new ObjectParameter("IDRUTA", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTARMONTORUTA_Result>("SP_LISTARMONTORUTA", iDRUTAParameter);
+        }
+    
+        public virtual ObjectResult<SP_LISTARMONTOS_Result> SP_LISTARMONTOS(Nullable<int> iDHOSPEDAJE)
+        {
+            var iDHOSPEDAJEParameter = iDHOSPEDAJE.HasValue ?
+                new ObjectParameter("IDHOSPEDAJE", iDHOSPEDAJE) :
+                new ObjectParameter("IDHOSPEDAJE", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTARMONTOS_Result>("SP_LISTARMONTOS", iDHOSPEDAJEParameter);
+        }
+    
+        public virtual ObjectResult<string> SP_GUARDAR_SOLICITUDES_FUNCIONARIO(string nOMBREUSUARIO, Nullable<System.DateTime> fECHACREACION, Nullable<System.DateTime> fECHASALIDA, Nullable<System.DateTime> fECHAREGRESO, string jUSTIFICACION, string dESTINO, Nullable<System.TimeSpan> hORAREGRESO, Nullable<System.TimeSpan> hORASALIDA)
         {
             var nOMBREUSUARIOParameter = nOMBREUSUARIO != null ?
                 new ObjectParameter("NOMBREUSUARIO", nOMBREUSUARIO) :
@@ -151,16 +347,124 @@ namespace Entidades
                 new ObjectParameter("HORASALIDA", hORASALIDA) :
                 new ObjectParameter("HORASALIDA", typeof(System.TimeSpan));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_GUARDAR_SOLICITUDES_FUNCIONARIO", nOMBREUSUARIOParameter, fECHACREACIONParameter, fECHASALIDAParameter, fECHAREGRESOParameter, jUSTIFICACIONParameter, dESTINOParameter, hORAREGRESOParameter, hORASALIDAParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("SP_GUARDAR_SOLICITUDES_FUNCIONARIO", nOMBREUSUARIOParameter, fECHACREACIONParameter, fECHASALIDAParameter, fECHAREGRESOParameter, jUSTIFICACIONParameter, dESTINOParameter, hORAREGRESOParameter, hORASALIDAParameter);
         }
     
-        public virtual ObjectResult<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> SP_LISTAR_SOLICITUDES_FUNCIONARIO(string uSUARIO)
+        public virtual ObjectResult<SP_OBTENER_ESTADOS_ACTIVOS_Result> SP_OBTENER_ESTADOS_ACTIVOS()
         {
-            var uSUARIOParameter = uSUARIO != null ?
-                new ObjectParameter("USUARIO", uSUARIO) :
-                new ObjectParameter("USUARIO", typeof(string));
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_OBTENER_ESTADOS_ACTIVOS_Result>("SP_OBTENER_ESTADOS_ACTIVOS");
+        }
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result>("SP_LISTAR_SOLICITUDES_FUNCIONARIO", uSUARIOParameter);
+        public virtual int SP_ACTUALIZAR_MODTARIFAVIATICO(Nullable<short> iD_MODTARIFA, Nullable<System.DateTime> fECHATARIFA, Nullable<decimal> mONTOTARIFA, Nullable<short> eSTADOTARIFA)
+        {
+            var iD_MODTARIFAParameter = iD_MODTARIFA.HasValue ?
+                new ObjectParameter("ID_MODTARIFA", iD_MODTARIFA) :
+                new ObjectParameter("ID_MODTARIFA", typeof(short));
+    
+            var fECHATARIFAParameter = fECHATARIFA.HasValue ?
+                new ObjectParameter("FECHATARIFA", fECHATARIFA) :
+                new ObjectParameter("FECHATARIFA", typeof(System.DateTime));
+    
+            var mONTOTARIFAParameter = mONTOTARIFA.HasValue ?
+                new ObjectParameter("MONTOTARIFA", mONTOTARIFA) :
+                new ObjectParameter("MONTOTARIFA", typeof(decimal));
+    
+            var eSTADOTARIFAParameter = eSTADOTARIFA.HasValue ?
+                new ObjectParameter("ESTADOTARIFA", eSTADOTARIFA) :
+                new ObjectParameter("ESTADOTARIFA", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACTUALIZAR_MODTARIFAVIATICO", iD_MODTARIFAParameter, fECHATARIFAParameter, mONTOTARIFAParameter, eSTADOTARIFAParameter);
+        }
+    
+        public virtual ObjectResult<SP_LISTAR_MODTARIFAVIATICO_Result> SP_LISTAR_MODTARIFAVIATICO()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_MODTARIFAVIATICO_Result>("SP_LISTAR_MODTARIFAVIATICO");
+        }
+    
+        public virtual ObjectResult<SP_OBTENER_CANTON_PROVINCIA_Result> SP_OBTENER_CANTON_PROVINCIA(Nullable<int> cODIGOCANTON, Nullable<int> cODIGOPROVINCIA)
+        {
+            var cODIGOCANTONParameter = cODIGOCANTON.HasValue ?
+                new ObjectParameter("CODIGOCANTON", cODIGOCANTON) :
+                new ObjectParameter("CODIGOCANTON", typeof(int));
+    
+            var cODIGOPROVINCIAParameter = cODIGOPROVINCIA.HasValue ?
+                new ObjectParameter("CODIGOPROVINCIA", cODIGOPROVINCIA) :
+                new ObjectParameter("CODIGOPROVINCIA", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_OBTENER_CANTON_PROVINCIA_Result>("SP_OBTENER_CANTON_PROVINCIA", cODIGOCANTONParameter, cODIGOPROVINCIAParameter);
+        }
+    
+        public virtual int SP_GENERAR_ORDEN_VIATICOS(string iDSOLICITUD, string nOMBREUSUARIO, Nullable<short> eSTADOSOLICITUD, Nullable<System.DateTime> fECHAORDEN, Nullable<short> eSTADOORDEN)
+        {
+            var iDSOLICITUDParameter = iDSOLICITUD != null ?
+                new ObjectParameter("IDSOLICITUD", iDSOLICITUD) :
+                new ObjectParameter("IDSOLICITUD", typeof(string));
+    
+            var nOMBREUSUARIOParameter = nOMBREUSUARIO != null ?
+                new ObjectParameter("NOMBREUSUARIO", nOMBREUSUARIO) :
+                new ObjectParameter("NOMBREUSUARIO", typeof(string));
+    
+            var eSTADOSOLICITUDParameter = eSTADOSOLICITUD.HasValue ?
+                new ObjectParameter("ESTADOSOLICITUD", eSTADOSOLICITUD) :
+                new ObjectParameter("ESTADOSOLICITUD", typeof(short));
+    
+            var fECHAORDENParameter = fECHAORDEN.HasValue ?
+                new ObjectParameter("FECHAORDEN", fECHAORDEN) :
+                new ObjectParameter("FECHAORDEN", typeof(System.DateTime));
+    
+            var eSTADOORDENParameter = eSTADOORDEN.HasValue ?
+                new ObjectParameter("ESTADOORDEN", eSTADOORDEN) :
+                new ObjectParameter("ESTADOORDEN", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_GENERAR_ORDEN_VIATICOS", iDSOLICITUDParameter, nOMBREUSUARIOParameter, eSTADOSOLICITUDParameter, fECHAORDENParameter, eSTADOORDENParameter);
+        }
+    
+        public virtual int SP_ACTUALIZAR_TARIFASAUTOBUSES(string cODIGORUTA, Nullable<short> eSTADO, Nullable<decimal> tARIFA, string dESCRIPCION, Nullable<System.DateTime> fECHAVIGENCIA)
+        {
+            var cODIGORUTAParameter = cODIGORUTA != null ?
+                new ObjectParameter("CODIGORUTA", cODIGORUTA) :
+                new ObjectParameter("CODIGORUTA", typeof(string));
+    
+            var eSTADOParameter = eSTADO.HasValue ?
+                new ObjectParameter("ESTADO", eSTADO) :
+                new ObjectParameter("ESTADO", typeof(short));
+    
+            var tARIFAParameter = tARIFA.HasValue ?
+                new ObjectParameter("TARIFA", tARIFA) :
+                new ObjectParameter("TARIFA", typeof(decimal));
+    
+            var dESCRIPCIONParameter = dESCRIPCION != null ?
+                new ObjectParameter("DESCRIPCION", dESCRIPCION) :
+                new ObjectParameter("DESCRIPCION", typeof(string));
+    
+            var fECHAVIGENCIAParameter = fECHAVIGENCIA.HasValue ?
+                new ObjectParameter("FECHAVIGENCIA", fECHAVIGENCIA) :
+                new ObjectParameter("FECHAVIGENCIA", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACTUALIZAR_TARIFASAUTOBUSES", cODIGORUTAParameter, eSTADOParameter, tARIFAParameter, dESCRIPCIONParameter, fECHAVIGENCIAParameter);
+        }
+    
+        public virtual ObjectResult<SP_BUSCAR_TARIFAAUTOBUS_Result> SP_BUSCAR_TARIFAAUTOBUS(string cODIGORUTA)
+        {
+            var cODIGORUTAParameter = cODIGORUTA != null ?
+                new ObjectParameter("CODIGORUTA", cODIGORUTA) :
+                new ObjectParameter("CODIGORUTA", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_BUSCAR_TARIFAAUTOBUS_Result>("SP_BUSCAR_TARIFAAUTOBUS", cODIGORUTAParameter);
+        }
+    
+        public virtual ObjectResult<SP_LISTAR_TARIFASAUTOBUSES_Result> SP_LISTAR_TARIFASAUTOBUSES()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_TARIFASAUTOBUSES_Result>("SP_LISTAR_TARIFASAUTOBUSES");
+        }
+    
+        public virtual ObjectResult<SP_LISTAR_ORDEN_Result> SP_LISTAR_ORDEN(Nullable<int> iD_ORDEN)
+        {
+            var iD_ORDENParameter = iD_ORDEN.HasValue ?
+                new ObjectParameter("ID_ORDEN", iD_ORDEN) :
+                new ObjectParameter("ID_ORDEN", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_ORDEN_Result>("SP_LISTAR_ORDEN", iD_ORDENParameter);
         }
     }
 }

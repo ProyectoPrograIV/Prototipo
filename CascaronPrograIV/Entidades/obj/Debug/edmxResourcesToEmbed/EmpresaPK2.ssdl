@@ -6,7 +6,7 @@
     </Key>
     <Property Name="CODIGOCANTON" Type="tinyint" Nullable="false" />
     <Property Name="CODIGOPROVINCIA" Type="tinyint" Nullable="false" />
-    <Property Name="DESCRIPCIONPROVINCIA" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DESCRIPCIONCANTON" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="TBL_MODTARIFARIOVIATICO">
     <Key>
@@ -16,7 +16,7 @@
     <Property Name="CODIGOPROVINCIA" Type="tinyint" Nullable="false" />
     <Property Name="CODIGOCANTON" Type="tinyint" Nullable="false" />
     <Property Name="TIPOTARIFA" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="FECHATARIFA" Type="datetime" Nullable="false" />
+    <Property Name="FECHATARIFA" Type="date" Nullable="false" />
     <Property Name="MONTOTARIFA" Type="money" Nullable="false" />
     <Property Name="ESTADOTARIFA" Type="smallint" Nullable="false" />
     <Property Name="LOCALIDAD" Type="varchar" MaxLength="50" Nullable="false" />
@@ -33,11 +33,10 @@
       <PropertyRef Name="CODIGORUTA" />
     </Key>
     <Property Name="CODIGORUTA" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="CODIGOPROVINCIA" Type="tinyint" Nullable="false" />
     <Property Name="ESTADORUTA" Type="smallint" Nullable="false" />
     <Property Name="TARIFAREGISTRADA" Type="money" Nullable="false" />
-    <Property Name="DESCRIPCIONRUTA" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="FECHAVIGENCIA" Type="datetime" Nullable="false" />
+    <Property Name="DESCRIPCIONRUTA" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="FECHAVIGENCIA" Type="date" Nullable="false" />
   </EntityType>
   <EntityType Name="TBL_ESTADOS">
     <Key>
@@ -81,69 +80,49 @@
     <Property Name="ID_LIQUIDACION" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ID_ORDEN" Type="int" Nullable="false" />
     <Property Name="ESTADOLIQUIDACION" Type="smallint" Nullable="false" />
-    <Property Name="FECHALIQUIDACION" Type="datetime" Nullable="false" />
-    <Property Name="MONTODESAYUNO" Type="money" Nullable="false" />
-    <Property Name="MONTOALMUERZO" Type="money" Nullable="false" />
-    <Property Name="MONTOCENA" Type="money" Nullable="false" />
-    <Property Name="MONTOHOSPEDAJE" Type="money" Nullable="false" />
-    <Property Name="MONTOPASAJE" Type="money" Nullable="false" />
+    <Property Name="FECHALIQUIDACION" Type="date" />
+    <Property Name="MONTODESAYUNO" Type="money" />
+    <Property Name="MONTOALMUERZO" Type="money" />
+    <Property Name="MONTOCENA" Type="money" />
+    <Property Name="MONTOHOSPEDAJE" Type="money" />
+    <Property Name="MONTOPASAJE" Type="money" />
   </EntityType>
   <EntityType Name="TBL_CABECERAORDENVIATICO">
     <Key>
       <PropertyRef Name="ID_ORDEN" />
     </Key>
     <Property Name="ID_ORDEN" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ID_SOLICITUD" Type="int" Nullable="false" />
-    <Property Name="ID_LIQUIDACION" Type="int" Nullable="false" />
+    <Property Name="ID_SOLICITUD" Type="nvarchar" MaxLength="30" Nullable="false" />
     <Property Name="ESTADOORDEN" Type="smallint" Nullable="false" />
-    <Property Name="FECHAORDEN" Type="datetime" Nullable="false" />
+    <Property Name="FECHAORDEN" Type="date" />
   </EntityType>
   <EntityType Name="TBL_DETALLESOLICITUDVIATICOS">
     <Key>
       <PropertyRef Name="ID_DETALLE" />
     </Key>
     <Property Name="ID_DETALLE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ID_SOLICITUD" Type="int" Nullable="false" />
+    <Property Name="ID_SOLICITUD" Type="nvarchar" MaxLength="30" Nullable="false" />
     <Property Name="ID_PERSONA" Type="nvarchar" MaxLength="15" Nullable="false" />
-    <Property Name="ID_MODTARIFA" Type="smallint" Nullable="false" />
     <Property Name="CANTIDADVIATICOS" Type="smallint" Nullable="false" />
-    <Property Name="FECHAVIATICOS" Type="datetime" Nullable="false" />
+    <Property Name="CANTIDADDESAYUNO" Type="smallint" />
+    <Property Name="MONTODESAYUNO" Type="money" />
+    <Property Name="CANTIDADALMUERZO" Type="smallint" />
+    <Property Name="MONTOALMUERZO" Type="money" />
+    <Property Name="CANTIDADCENA" Type="smallint" />
+    <Property Name="MONTOCENA" Type="money" />
+    <Property Name="CANTIDADPASAJE" Type="smallint" />
+    <Property Name="MONTOPASAJE" Type="money" />
     <Property Name="CODIGORUTA" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="CANTIDADPASAJE" Type="smallint" Nullable="false" />
-  </EntityType>
-  <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'EmpresaPK2.SCH_VIATICOS.TBL_DETALLEVIATICO' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
-  <EntityType Name="TBL_DETALLEVIATICO">
-    <Key>
-      <PropertyRef Name="ID_DETALLE" />
-      <PropertyRef Name="ID_ORDEN" />
-      <PropertyRef Name="CANTIDADDESAYUNO" />
-      <PropertyRef Name="MONTODESAYUNO" />
-      <PropertyRef Name="CANTIDADALMUERZO" />
-      <PropertyRef Name="MONTOALMUERZO" />
-      <PropertyRef Name="CANTIDADCENA" />
-      <PropertyRef Name="MONTOCENA" />
-      <PropertyRef Name="CANTIDADPASAJE" />
-      <PropertyRef Name="MONTOPASAJE" />
-    </Key>
-    <Property Name="ID_DETALLE" Type="int" Nullable="false" />
-    <Property Name="ID_ORDEN" Type="int" Nullable="false" />
-    <Property Name="CANTIDADDESAYUNO" Type="smallint" Nullable="false" />
-    <Property Name="MONTODESAYUNO" Type="money" Nullable="false" />
-    <Property Name="CANTIDADALMUERZO" Type="smallint" Nullable="false" />
-    <Property Name="MONTOALMUERZO" Type="money" Nullable="false" />
-    <Property Name="CANTIDADCENA" Type="smallint" Nullable="false" />
-    <Property Name="MONTOCENA" Type="money" Nullable="false" />
-    <Property Name="CANTIDADPASAJE" Type="smallint" Nullable="false" />
-    <Property Name="MONTOPASAJE" Type="money" Nullable="false" />
+    <Property Name="LOCALIDADHOSPEDAJE" Type="smallint" />
+    <Property Name="MONTOHOSPEDAJE" Type="money" />
   </EntityType>
   <EntityType Name="TBL_SOLICITUDVIATICOS">
     <Key>
       <PropertyRef Name="ID_SOLICITUD" />
     </Key>
-    <Property Name="ID_SOLICITUD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_SOLICITUD" Type="nvarchar" MaxLength="30" Nullable="false" />
     <Property Name="NOMBREUSUARIO" Type="nvarchar" MaxLength="24" Nullable="false" />
-    <Property Name="FECHACREACION" Type="datetime" Nullable="false" />
+    <Property Name="FECHACREACION" Type="date" />
     <Property Name="FECHASALIDA" Type="datetime" Nullable="false" />
     <Property Name="FECHAREGRESO" Type="datetime" Nullable="false" />
     <Property Name="ESTADOSOLICITUD" Type="smallint" Nullable="false" />
@@ -173,18 +152,6 @@ advertencia 6002: La tabla o vista 'EmpresaPK2.SCH_VIATICOS.TBL_DETALLEVIATICO' 
       </Principal>
       <Dependent Role="TBL_CABECERALIQUIDACION">
         <PropertyRef Name="ESTADOLIQUIDACION" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_TBLCABECERAORDENVIATICO_TBLCABECERALIQUIDACION">
-    <End Role="TBL_CABECERALIQUIDACION" Type="Self.TBL_CABECERALIQUIDACION" Multiplicity="1" />
-    <End Role="TBL_CABECERAORDENVIATICO" Type="Self.TBL_CABECERAORDENVIATICO" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TBL_CABECERALIQUIDACION">
-        <PropertyRef Name="ID_LIQUIDACION" />
-      </Principal>
-      <Dependent Role="TBL_CABECERAORDENVIATICO">
-        <PropertyRef Name="ID_LIQUIDACION" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -224,15 +191,15 @@ advertencia 6002: La tabla o vista 'EmpresaPK2.SCH_VIATICOS.TBL_DETALLEVIATICO' 
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_TBLDETALLESOLICITUDVIATICOS_TBLMODTARIFARIOVIATICO">
-    <End Role="TBL_MODTARIFARIOVIATICO" Type="Self.TBL_MODTARIFARIOVIATICO" Multiplicity="1" />
+  <Association Name="FK_TBLDETALLESOLICITUDVIATICO_TBLMODTARIFARIOVIATICO">
+    <End Role="TBL_MODTARIFARIOVIATICO" Type="Self.TBL_MODTARIFARIOVIATICO" Multiplicity="0..1" />
     <End Role="TBL_DETALLESOLICITUDVIATICOS" Type="Self.TBL_DETALLESOLICITUDVIATICOS" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="TBL_MODTARIFARIOVIATICO">
         <PropertyRef Name="ID_MODTARIFA" />
       </Principal>
       <Dependent Role="TBL_DETALLESOLICITUDVIATICOS">
-        <PropertyRef Name="ID_MODTARIFA" />
+        <PropertyRef Name="LOCALIDADHOSPEDAJE" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -269,30 +236,6 @@ advertencia 6002: La tabla o vista 'EmpresaPK2.SCH_VIATICOS.TBL_DETALLEVIATICO' 
       </Principal>
       <Dependent Role="TBL_DETALLESOLICITUDVIATICOS">
         <PropertyRef Name="CODIGORUTA" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_TBLDETALLEVIATICO_TBLCABECERAORDENVIATICO">
-    <End Role="TBL_CABECERAORDENVIATICO" Type="Self.TBL_CABECERAORDENVIATICO" Multiplicity="1" />
-    <End Role="TBL_DETALLEVIATICO" Type="Self.TBL_DETALLEVIATICO" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TBL_CABECERAORDENVIATICO">
-        <PropertyRef Name="ID_ORDEN" />
-      </Principal>
-      <Dependent Role="TBL_DETALLEVIATICO">
-        <PropertyRef Name="ID_ORDEN" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_TBLDETALLEVIATICO_TBLDETALLESOLICITUDVIATICOS">
-    <End Role="TBL_DETALLESOLICITUDVIATICOS" Type="Self.TBL_DETALLESOLICITUDVIATICOS" Multiplicity="1" />
-    <End Role="TBL_DETALLEVIATICO" Type="Self.TBL_DETALLEVIATICO" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TBL_DETALLESOLICITUDVIATICOS">
-        <PropertyRef Name="ID_DETALLE" />
-      </Principal>
-      <Dependent Role="TBL_DETALLEVIATICO">
-        <PropertyRef Name="ID_DETALLE" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -380,18 +323,6 @@ advertencia 6002: La tabla o vista 'EmpresaPK2.SCH_VIATICOS.TBL_DETALLEVIATICO' 
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_TBLTARIFAAUTOBUS_TBLPROVINCIA">
-    <End Role="TBL_PROVINCIA" Type="Self.TBL_PROVINCIA" Multiplicity="1" />
-    <End Role="TBL_TARIFAAUTOBUS" Type="Self.TBL_TARIFAAUTOBUS" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TBL_PROVINCIA">
-        <PropertyRef Name="CODIGOPROVINCIA" />
-      </Principal>
-      <Dependent Role="TBL_TARIFAAUTOBUS">
-        <PropertyRef Name="CODIGOPROVINCIA" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_TBLUSUARIO_TBLESTADOS">
     <End Role="TBL_ESTADOS" Type="Self.TBL_ESTADOS" Multiplicity="1" />
     <End Role="TBL_USUARIO" Type="Self.TBL_USUARIO" Multiplicity="*" />
@@ -423,6 +354,59 @@ advertencia 6002: La tabla o vista 'EmpresaPK2.SCH_VIATICOS.TBL_DETALLEVIATICO' 
     <Parameter Name="EstadoUsuario" Type="smallint" Mode="In" />
     <Parameter Name="email" Type="nvarchar" Mode="In" />
   </Function>
+  <Function Name="SP_ACTUALIZAR_MODTARIFAVIATICO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_PARAMETROS">
+    <Parameter Name="ID_MODTARIFA" Type="smallint" Mode="In" />
+    <Parameter Name="FECHATARIFA" Type="date" Mode="In" />
+    <Parameter Name="MONTOTARIFA" Type="money" Mode="In" />
+    <Parameter Name="ESTADOTARIFA" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="SP_ACTUALIZAR_TARIFASAUTOBUSES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_PARAMETROS">
+    <Parameter Name="CODIGORUTA" Type="nvarchar" Mode="In" />
+    <Parameter Name="ESTADO" Type="smallint" Mode="In" />
+    <Parameter Name="TARIFA" Type="money" Mode="In" />
+    <Parameter Name="DESCRIPCION" Type="nvarchar" Mode="In" />
+    <Parameter Name="FECHAVIGENCIA" Type="date" Mode="In" />
+  </Function>
+  <Function Name="SP_BUSCAR_TARIFAAUTOBUS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_PARAMETROS">
+    <Parameter Name="CODIGORUTA" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SP_LISTAR_MODTARIFAVIATICO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_PARAMETROS" />
+  <Function Name="SP_LISTAR_RUTAS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_PARAMETROS" />
+  <Function Name="SP_LISTAR_TARIFASAUTOBUSES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_PARAMETROS" />
+  <Function Name="SP_LISTARMONTORUTA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_PARAMETROS">
+    <Parameter Name="IDRUTA" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SP_LISTARMONTOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_PARAMETROS">
+    <Parameter Name="IDHOSPEDAJE" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_OBTENER_CANTON_PROVINCIA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_PARAMETROS">
+    <Parameter Name="CODIGOCANTON" Type="int" Mode="In" />
+    <Parameter Name="CODIGOPROVINCIA" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_LISTADO_LIQUIDACION_VIATICOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_REPORTES">
+    <Parameter Name="FECHAINICIO" Type="date" Mode="In" />
+    <Parameter Name="FECHAFINAL" Type="date" Mode="In" />
+    <Parameter Name="NOMBREUSUARIO" Type="nvarchar" Mode="In" />
+    <Parameter Name="ESTADOS_SOLICITUD" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="SP_LISTADO_ORDEN_VIATICOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_REPORTES">
+    <Parameter Name="FECHAINICIO" Type="date" Mode="In" />
+    <Parameter Name="FECHAFINAL" Type="date" Mode="In" />
+    <Parameter Name="NOMBREUSUARIO" Type="nvarchar" Mode="In" />
+    <Parameter Name="ESTADOS_SOLICITUD" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="SP_LISTADO_SOLICITUD_VIATICOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_REPORTES">
+    <Parameter Name="FECHAINICIO" Type="date" Mode="In" />
+    <Parameter Name="FECHAFINAL" Type="date" Mode="In" />
+    <Parameter Name="ID_PERSONA" Type="nvarchar" Mode="In" />
+    <Parameter Name="ESTADOS_SOLICITUD" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="SP_INICIO_SESION" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_SEGURIDAD">
+    <Parameter Name="NombreUsuario" Type="nvarchar" Mode="In" />
+    <Parameter Name="ClaveAcceso" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SP_LISTAR_PERSONAS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_SEGURIDAD" />
+  <Function Name="SP_OBTENER_ESTADOS_ACTIVOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_SEGURIDAD" />
   <Function Name="SP_ACTUALIZAR_SOLICITUDES_FUNCIONARIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS">
     <Parameter Name="IDSOLICITUD" Type="int" Mode="In" />
     <Parameter Name="NOMBREUSUARIO" Type="nvarchar" Mode="In" />
@@ -437,6 +421,29 @@ advertencia 6002: La tabla o vista 'EmpresaPK2.SCH_VIATICOS.TBL_DETALLEVIATICO' 
   <Function Name="SP_ELIMINAR_SOLICITUDES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS">
     <Parameter Name="IDSOLICITUD" Type="int" Mode="In" />
   </Function>
+  <Function Name="SP_GENERAR_ORDEN_VIATICOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS">
+    <Parameter Name="IDSOLICITUD" Type="nvarchar" Mode="In" />
+    <Parameter Name="NOMBREUSUARIO" Type="nvarchar" Mode="In" />
+    <Parameter Name="ESTADOSOLICITUD" Type="smallint" Mode="In" />
+    <Parameter Name="FECHAORDEN" Type="datetime" Mode="In" />
+    <Parameter Name="ESTADOORDEN" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="SP_GUARDAR_DETALLEVIATICOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS">
+    <Parameter Name="ID_SOLICITUD" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_PERSONA" Type="nvarchar" Mode="In" />
+    <Parameter Name="CANTIDADVIATICOS" Type="smallint" Mode="In" />
+    <Parameter Name="CANTIDADDESAYUNOS" Type="smallint" Mode="In" />
+    <Parameter Name="CANTIDADALMUERZOS" Type="smallint" Mode="In" />
+    <Parameter Name="CANTIDADCENAS" Type="smallint" Mode="In" />
+    <Parameter Name="CANTIDADPASAJE" Type="smallint" Mode="In" />
+    <Parameter Name="MONTODESAYUNO" Type="money" Mode="In" />
+    <Parameter Name="MONTOALMUERZO" Type="money" Mode="In" />
+    <Parameter Name="MONTOCENA" Type="money" Mode="In" />
+    <Parameter Name="MONTOPASAJE" Type="money" Mode="In" />
+    <Parameter Name="MONTOHOSPEDAJE" Type="money" Mode="In" />
+    <Parameter Name="CODIGORUTA" Type="nvarchar" Mode="In" />
+    <Parameter Name="LOCALIDADHOSPEDAJE" Type="smallint" Mode="In" />
+  </Function>
   <Function Name="SP_GUARDAR_SOLICITUDES_FUNCIONARIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS">
     <Parameter Name="NOMBREUSUARIO" Type="nvarchar" Mode="In" />
     <Parameter Name="FECHACREACION" Type="datetime" Mode="In" />
@@ -447,8 +454,15 @@ advertencia 6002: La tabla o vista 'EmpresaPK2.SCH_VIATICOS.TBL_DETALLEVIATICO' 
     <Parameter Name="HORAREGRESO" Type="time" Mode="In" />
     <Parameter Name="HORASALIDA" Type="time" Mode="In" />
   </Function>
+  <Function Name="SP_LISTAR_LOCALIDAD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS" />
+  <Function Name="SP_LISTAR_SOLICITUDES_ACTUALIZAR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS">
+    <Parameter Name="NOMBREUSUARIO" Type="nvarchar" Mode="In" />
+  </Function>
   <Function Name="SP_LISTAR_SOLICITUDES_FUNCIONARIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS">
     <Parameter Name="USUARIO" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SP_OBTENER_ORDEN_VIATICOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS">
+    <Parameter Name="NOMBREUSUARIO" Type="nvarchar" Mode="In" />
   </Function>
   <EntityContainer Name="EmpresaPK2ModelStoreContainer">
     <EntitySet Name="TBL_CANTON" EntityType="Self.TBL_CANTON" Schema="SCH_PARAMETROS" store:Type="Tables" />
@@ -463,20 +477,6 @@ advertencia 6002: La tabla o vista 'EmpresaPK2.SCH_VIATICOS.TBL_DETALLEVIATICO' 
     <EntitySet Name="TBL_CABECERAORDENVIATICO" EntityType="Self.TBL_CABECERAORDENVIATICO" Schema="SCH_VIATICOS" store:Type="Tables" />
     <EntitySet Name="TBL_DETALLESOLICITUDVIATICOS" EntityType="Self.TBL_DETALLESOLICITUDVIATICOS" Schema="SCH_VIATICOS" store:Type="Tables" />
     <EntitySet Name="TBL_SOLICITUDVIATICOS" EntityType="Self.TBL_SOLICITUDVIATICOS" Schema="SCH_VIATICOS" store:Type="Tables" />
-    <EntitySet Name="TBL_DETALLEVIATICO" EntityType="Self.TBL_DETALLEVIATICO" store:Type="Tables" store:Schema="SCH_VIATICOS">
-      <DefiningQuery>SELECT 
-[TBL_DETALLEVIATICO].[ID_DETALLE] AS [ID_DETALLE], 
-[TBL_DETALLEVIATICO].[ID_ORDEN] AS [ID_ORDEN], 
-[TBL_DETALLEVIATICO].[CANTIDADDESAYUNO] AS [CANTIDADDESAYUNO], 
-[TBL_DETALLEVIATICO].[MONTODESAYUNO] AS [MONTODESAYUNO], 
-[TBL_DETALLEVIATICO].[CANTIDADALMUERZO] AS [CANTIDADALMUERZO], 
-[TBL_DETALLEVIATICO].[MONTOALMUERZO] AS [MONTOALMUERZO], 
-[TBL_DETALLEVIATICO].[CANTIDADCENA] AS [CANTIDADCENA], 
-[TBL_DETALLEVIATICO].[MONTOCENA] AS [MONTOCENA], 
-[TBL_DETALLEVIATICO].[CANTIDADPASAJE] AS [CANTIDADPASAJE], 
-[TBL_DETALLEVIATICO].[MONTOPASAJE] AS [MONTOPASAJE]
-FROM [SCH_VIATICOS].[TBL_DETALLEVIATICO] AS [TBL_DETALLEVIATICO]</DefiningQuery>
-    </EntitySet>
     <AssociationSet Name="FK_TBLCABECERALIQUIDACION_TBLCABECERAORDENVIATICO" Association="Self.FK_TBLCABECERALIQUIDACION_TBLCABECERAORDENVIATICO">
       <End Role="TBL_CABECERAORDENVIATICO" EntitySet="TBL_CABECERAORDENVIATICO" />
       <End Role="TBL_CABECERALIQUIDACION" EntitySet="TBL_CABECERALIQUIDACION" />
@@ -484,10 +484,6 @@ FROM [SCH_VIATICOS].[TBL_DETALLEVIATICO] AS [TBL_DETALLEVIATICO]</DefiningQuery>
     <AssociationSet Name="FK_TBLCABECERALIQUIDACION_TBLESTADOS" Association="Self.FK_TBLCABECERALIQUIDACION_TBLESTADOS">
       <End Role="TBL_ESTADOS" EntitySet="TBL_ESTADOS" />
       <End Role="TBL_CABECERALIQUIDACION" EntitySet="TBL_CABECERALIQUIDACION" />
-    </AssociationSet>
-    <AssociationSet Name="FK_TBLCABECERAORDENVIATICO_TBLCABECERALIQUIDACION" Association="Self.FK_TBLCABECERAORDENVIATICO_TBLCABECERALIQUIDACION">
-      <End Role="TBL_CABECERALIQUIDACION" EntitySet="TBL_CABECERALIQUIDACION" />
-      <End Role="TBL_CABECERAORDENVIATICO" EntitySet="TBL_CABECERAORDENVIATICO" />
     </AssociationSet>
     <AssociationSet Name="FK_TBLCABECERAORDENVIATICO_TBLESTADOS" Association="Self.FK_TBLCABECERAORDENVIATICO_TBLESTADOS">
       <End Role="TBL_ESTADOS" EntitySet="TBL_ESTADOS" />
@@ -501,7 +497,7 @@ FROM [SCH_VIATICOS].[TBL_DETALLEVIATICO] AS [TBL_DETALLEVIATICO]</DefiningQuery>
       <End Role="TBL_PROVINCIA" EntitySet="TBL_PROVINCIA" />
       <End Role="TBL_CANTON" EntitySet="TBL_CANTON" />
     </AssociationSet>
-    <AssociationSet Name="FK_TBLDETALLESOLICITUDVIATICOS_TBLMODTARIFARIOVIATICO" Association="Self.FK_TBLDETALLESOLICITUDVIATICOS_TBLMODTARIFARIOVIATICO">
+    <AssociationSet Name="FK_TBLDETALLESOLICITUDVIATICO_TBLMODTARIFARIOVIATICO" Association="Self.FK_TBLDETALLESOLICITUDVIATICO_TBLMODTARIFARIOVIATICO">
       <End Role="TBL_MODTARIFARIOVIATICO" EntitySet="TBL_MODTARIFARIOVIATICO" />
       <End Role="TBL_DETALLESOLICITUDVIATICOS" EntitySet="TBL_DETALLESOLICITUDVIATICOS" />
     </AssociationSet>
@@ -516,14 +512,6 @@ FROM [SCH_VIATICOS].[TBL_DETALLEVIATICO] AS [TBL_DETALLEVIATICO]</DefiningQuery>
     <AssociationSet Name="FK_TBLDETALLESOLICITUDVIATICOS_TBLTARIFAAUTOBUS" Association="Self.FK_TBLDETALLESOLICITUDVIATICOS_TBLTARIFAAUTOBUS">
       <End Role="TBL_TARIFAAUTOBUS" EntitySet="TBL_TARIFAAUTOBUS" />
       <End Role="TBL_DETALLESOLICITUDVIATICOS" EntitySet="TBL_DETALLESOLICITUDVIATICOS" />
-    </AssociationSet>
-    <AssociationSet Name="FK_TBLDETALLEVIATICO_TBLCABECERAORDENVIATICO" Association="Self.FK_TBLDETALLEVIATICO_TBLCABECERAORDENVIATICO">
-      <End Role="TBL_CABECERAORDENVIATICO" EntitySet="TBL_CABECERAORDENVIATICO" />
-      <End Role="TBL_DETALLEVIATICO" EntitySet="TBL_DETALLEVIATICO" />
-    </AssociationSet>
-    <AssociationSet Name="FK_TBLDETALLEVIATICO_TBLDETALLESOLICITUDVIATICOS" Association="Self.FK_TBLDETALLEVIATICO_TBLDETALLESOLICITUDVIATICOS">
-      <End Role="TBL_DETALLESOLICITUDVIATICOS" EntitySet="TBL_DETALLESOLICITUDVIATICOS" />
-      <End Role="TBL_DETALLEVIATICO" EntitySet="TBL_DETALLEVIATICO" />
     </AssociationSet>
     <AssociationSet Name="FK_TBLMODTARIFARIOVIATICO_TBL_ESTADOS" Association="Self.FK_TBLMODTARIFARIOVIATICO_TBL_ESTADOS">
       <End Role="TBL_ESTADOS" EntitySet="TBL_ESTADOS" />
@@ -551,10 +539,6 @@ FROM [SCH_VIATICOS].[TBL_DETALLEVIATICO] AS [TBL_DETALLEVIATICO]</DefiningQuery>
     </AssociationSet>
     <AssociationSet Name="FK_TBLTARIFAAUTOBUS_TBLESTADOS" Association="Self.FK_TBLTARIFAAUTOBUS_TBLESTADOS">
       <End Role="TBL_ESTADOS" EntitySet="TBL_ESTADOS" />
-      <End Role="TBL_TARIFAAUTOBUS" EntitySet="TBL_TARIFAAUTOBUS" />
-    </AssociationSet>
-    <AssociationSet Name="FK_TBLTARIFAAUTOBUS_TBLPROVINCIA" Association="Self.FK_TBLTARIFAAUTOBUS_TBLPROVINCIA">
-      <End Role="TBL_PROVINCIA" EntitySet="TBL_PROVINCIA" />
       <End Role="TBL_TARIFAAUTOBUS" EntitySet="TBL_TARIFAAUTOBUS" />
     </AssociationSet>
     <AssociationSet Name="FK_TBLUSUARIO_TBLESTADOS" Association="Self.FK_TBLUSUARIO_TBLESTADOS">

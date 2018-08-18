@@ -32,5 +32,86 @@ namespace S
         {
             Negocios.InsertarUsuario(obj);
         }
+
+
+        #region Metodos para reportería.
+        public  List<SP_LISTADO_LIQUIDACION_VIATICOS_Result> ObtenerListaLiquidacion(ReporteXFecha obj)
+        {
+            return LNReportes.ObtenerListaLiquidacion(obj);
+        }
+
+        public  List<SP_LISTADO_ORDEN_VIATICOS_Result> ObtenerListaOrden(ReporteXFecha obj)
+        {
+            return LNReportes.ObtenerListaOrden(obj);
+        }
+
+        public  List<SP_LISTADO_SOLICITUD_VIATICOS_Result> ObtenerListaSolicitud(ReporteXFecha obj)
+        {
+            return LNReportes.ObtenerListaSolicitud(obj);
+        }
+        #endregion
+
+        #region Obtener Valores de Sistema
+        public List<TBL_ROLUSUARIO> ObtenerRoles()
+        {
+
+            return Negocios.ObtenerRoles();
+        }
+
+        public List<TBL_ESTADOS> ObtenerEstados()
+        {
+            return Negocios.ObtenerEstados();
+        }
+        #endregion
+
+        #region Metodos Orden Viaticos
+
+        public List<SP_OBTENER_ORDEN_VIATICOS_Result> ObtenerOrden(OrdenDeViaticos obj)
+        {
+            return LNOrdenViaticos.ObtenerOrden(obj);
+        }
+
+        public int GenerarOrdenViaticos(TBL_CABECERAORDENVIATICO orden, TBL_SOLICITUDVIATICOS solicitud)
+        {
+            return LNOrdenViaticos.GenerarOrdenViaticos(orden, solicitud);
+        }
+
+        #endregion
+
+        #region Metodos de Parametrizaciones
+        public List<SP_LISTAR_MODTARIFAVIATICO_Result> ObtenerMODTARIFASVIATICOS()
+        {
+
+           return Negocios.ObtenerMODTARIFASVIATICOS();
+        }
+
+        public int ActualizarMODTARIFASVIATICOS(SP_LISTAR_MODTARIFAVIATICO_Result obj)
+        {
+            return Negocios.ActualizarMODTARIFASVIATICOS(obj);
+        }
+        public List<SP_OBTENER_CANTON_PROVINCIA_Result> ObtenerIDS_CANTON_PROVINCIA(IdCantonIdProvincia obj)
+        {
+            return Negocios.ObtenerIDS_CANTON_PROVINCIA(obj);
+        }
+
+        //se carga todo lo que tiene la tabla de Tarifas Autobuses
+        public  List<SP_LISTAR_TARIFASAUTOBUSES_Result> ObtenerTARIFASAUTOBUSES()
+        {
+            return Negocios.ObtenerTARIFASAUTOBUSES();
+        }
+        //se pasa el metodo Buscar Tarifas por ID de tarifa
+        public List<SP_BUSCAR_TARIFAAUTOBUS_Result> BuscarTarifaAutobusXId(TBL_TARIFAAUTOBUS obj)
+        {
+            return Negocios.BuscarTarifaAutobusXId(obj);
+        }
+        //se pasa hacia las otras capas el metodo para actualizar las Tarifas de Bus
+        public int ActualizarTarifaAutobus(TBL_TARIFAAUTOBUS obj)
+        {
+            return Negocios.ActualizarTarifaAutobus(obj);
+        }
+
+        #endregion
+
+        public SP_INICIO_SESION_Result InicioSesion(TBL_USUARIO obj) => Negocios.InicioSesion(obj);
     }
 }

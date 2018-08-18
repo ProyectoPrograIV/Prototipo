@@ -21,7 +21,7 @@ namespace Entidades
     
         public byte CODIGOCANTON { get; set; }
         public byte CODIGOPROVINCIA { get; set; }
-        public string DESCRIPCIONPROVINCIA { get; set; }
+        public string DESCRIPCIONCANTON { get; set; }
     
         public virtual TBL_PROVINCIA TBL_PROVINCIA { get; set; }
         public virtual ICollection<TBL_MODTARIFARIOVIATICO> TBL_MODTARIFARIOVIATICO { get; set; }

@@ -49,6 +49,15 @@ namespace CascaronPrograIV.Archivos.WebForms {
         protected global::System.Web.UI.WebControls.TextBox Tbx_Identificacion;
         
         /// <summary>
+        /// Control Tbx_Cod_Rol.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Tbx_Cod_Rol;
+        
+        /// <summary>
         /// Control Tbx_Usuario.
         /// </summary>
         /// <remarks>

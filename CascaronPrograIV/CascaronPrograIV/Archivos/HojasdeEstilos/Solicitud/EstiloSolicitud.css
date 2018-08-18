@@ -1,5 +1,24 @@
-﻿body {
-    
+﻿
+.GvPersonas {
+    width: 50%;
+    height: auto;
+    margin: 30px auto;
+}
+
+.DDL{
+    width:auto;
+    height: 40px;
+    padding: 0;
+    font-size: 20px;
+    color: #ADADAD;
+    text-align: center;
+    background: White;
+    border: solid 1px #ADADAD;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:900;
 }
 
 .Button {
@@ -7,7 +26,7 @@
   height: 40px;
   padding: 0;
   font-size: 20px;
-  color: #fff;
+  color: #ffffff;
   text-align: center;
   background: #2d343d;
   border: 0;
@@ -155,7 +174,7 @@
     height:100%;
     background: transparent;
     width: 100%;
-    margin-left: 0px;
+    margin-left: 0;
 }
 
 #menu li {
@@ -163,7 +182,6 @@
     text-align:left;
     padding: 4px 10px 4px 10px;
     border:none;
-    display:block;
     outline:0;
     text-decoration:solid;
     width:auto;

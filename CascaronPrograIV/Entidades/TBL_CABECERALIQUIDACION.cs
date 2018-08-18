@@ -14,23 +14,17 @@ namespace Entidades
     
     public partial class TBL_CABECERALIQUIDACION
     {
-        public TBL_CABECERALIQUIDACION()
-        {
-            this.TBL_CABECERAORDENVIATICO1 = new HashSet<TBL_CABECERAORDENVIATICO>();
-        }
-    
         public int ID_LIQUIDACION { get; set; }
         public int ID_ORDEN { get; set; }
         public short ESTADOLIQUIDACION { get; set; }
-        public System.DateTime FECHALIQUIDACION { get; set; }
-        public decimal MONTODESAYUNO { get; set; }
-        public decimal MONTOALMUERZO { get; set; }
-        public decimal MONTOCENA { get; set; }
-        public decimal MONTOHOSPEDAJE { get; set; }
-        public decimal MONTOPASAJE { get; set; }
+        public Nullable<System.DateTime> FECHALIQUIDACION { get; set; }
+        public Nullable<decimal> MONTODESAYUNO { get; set; }
+        public Nullable<decimal> MONTOALMUERZO { get; set; }
+        public Nullable<decimal> MONTOCENA { get; set; }
+        public Nullable<decimal> MONTOHOSPEDAJE { get; set; }
+        public Nullable<decimal> MONTOPASAJE { get; set; }
     
         public virtual TBL_ESTADOS TBL_ESTADOS { get; set; }
         public virtual TBL_CABECERAORDENVIATICO TBL_CABECERAORDENVIATICO { get; set; }
-        public virtual ICollection<TBL_CABECERAORDENVIATICO> TBL_CABECERAORDENVIATICO1 { get; set; }
     }
 }
