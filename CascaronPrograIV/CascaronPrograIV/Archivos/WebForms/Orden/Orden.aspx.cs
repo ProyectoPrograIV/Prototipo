@@ -24,6 +24,7 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
                 CargarGVActualizar();
             }
         }
+
         #region Metodos Para Cargar Gridviews
 
         private void CargarOrden()
@@ -56,6 +57,14 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
             {
                 throw ex;
             }
+        }
+
+        protected void GvActualizar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtIdOrdenAct.Text = GvActualizar.SelectedRow.Cells[0].Text;
+            txtIdSolicitudAct.Text = GvActualizar.SelectedRow.Cells[1].Text;
+            ddlEstadosActualizar.SelectedIndex = Convert.ToInt16(GvActualizar.SelectedRow.Cells[2].Text);
+            txtFechaAct.Text = GvActualizar.SelectedRow.Cells[3].Text;
         }
         #endregion
 
@@ -159,17 +168,30 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
             GvConsultarSolicitud.DataSource = this.ObtenerListaOrden(obj);
         }
 
-        protected void GvActualizar_SelectedIndexChanged(object sender, EventArgs e)
+        private void ActualizarOrden()
         {
+            try
+            {
+                TBL_CABECERAORDENVIATICO orden = new TBL_CABECERAORDENVIATICO();
+
+                orden.ID_ORDEN = Convert.ToInt32(txtIdOrdenAct.Text.Trim());
+                orden.ID_SOLICITUD = txtID.Text.Trim();
+                orden.ESTADOORDEN = Convert.ToInt16(ddlEstado.SelectedValue.ToString());
+                orden.FECHAORDEN = Convert.ToDateTime(txtFecha.Text.Trim());
+
+                ActualizarOrdenViatico(orden);
+                CargarGVActualizar();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
         }
-
-
-
-
+        
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-
+            ActualizarOrden();
             CargarGVActualizar();
         }
 

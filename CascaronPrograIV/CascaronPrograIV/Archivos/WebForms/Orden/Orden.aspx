@@ -93,8 +93,12 @@
             <asp:TextBox CssClass="Textbox" ID="txtFecha" runat="server" Placeholder="Fecha de Creacion"></asp:TextBox><br />
             <div id="DivValidaciones">
                 <asp:Label ID="Validaciones" runat="server"></asp:Label><br />
-                <asp:RegularExpressionValidator ID="ValidadorFecha" runat="server" ErrorMessage="Fecha de creacion de solicitud incorrecta, forma correcta DD/MM/YYYY" ValidationExpression="^\d{2}(/)\d{2}(/)\d{4}$" Display="Dynamic" ControlToValidate="txtFecha" ForeColor="#CC0000"></asp:RegularExpressionValidator>
-                <br />
+                <asp:RegularExpressionValidator ID="ValidadorFecha" runat="server" ErrorMessage="Fecha de creacion de solicitud incorrecta, forma correcta DD/MM/YYYY" ValidationExpression="^\d{2}(/)\d{2}(/)\d{4}$" Display="Dynamic" ControlToValidate="txtFecha" ForeColor="#CC0000"></asp:RegularExpressionValidator><br/>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Espacio de ID en Blanco" ControlToValidate="txtID" Display="Dynamic" ForeColor="#CC0000"></asp:RequiredFieldValidator>    
+                &nbsp;&nbsp;&nbsp;    
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Espacio de Usuario en Blanco" ControlToValidate="txtUsuario" Display="Dynamic" ForeColor="#CC0000"></asp:RequiredFieldValidator><br/>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Espacio de Fecha en Blanco" ControlToValidate="txtFecha" Display="Dynamic" ForeColor="#CC0000"></asp:RequiredFieldValidator><br/>
+
                 <br />
             </div>
             <asp:Button ID="Btn_Generar" CssClass="Button" runat="server" Text="Generar" OnClick="Btn_Generar_Click" />
@@ -104,9 +108,8 @@
         <div id="DivConsultar">
             <h1 id="h1Consultar">Consultar Orden de Viaticos
                 <img src="../../Recursos/Mostrar.png" /></h1>
-            <asp:TextBox ID="txtBuscar" CssClass="Textbox" runat="server" PlaceHolder="Nombre de Usuario
-                "
-                Height="39px" Width="177px"></asp:TextBox>
+            <asp:TextBox ID="txtBuscar" CssClass="Textbox" runat="server" PlaceHolder="Nombre de Usuario" Height="39px" Width="177px"></asp:TextBox><br/>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Espacio en Blanco" ControlToValidate="txtBuscar" Display="Dynamic" ForeColor="#CC0000"></asp:RequiredFieldValidator>
             <br />
             <asp:Button ID="btnBuscar" CssClass="auto-style4" runat="server" Text="Buscar" Height="46px" OnClick="btnBuscar_Click" Width="150px" /><br />
             <br />
@@ -164,13 +167,14 @@
             <asp:TextBox CssClass="Textbox" ID="txtIdSolicitudAct" runat="server" PlaceHolder="ID Solicitud" ReadOnly="True"></asp:TextBox>
             <br />
             <asp:DropDownList ID="ddlEstadosActualizar" CssClass="auto-style5" runat="server" Width="280px"></asp:DropDownList>
-            <asp:TextBox CssClass="Textbox" ID="txtFechaAct" runat="server" PlaceHolder="Fecha Creacion"></asp:TextBox><br /><br />
+            <asp:TextBox CssClass="Textbox" ID="txtFechaAct" runat="server" PlaceHolder="Fecha Creacion"></asp:TextBox><br/>
             <br />
             <div id="DivValidaciones2">
                 <asp:Label ID="Validar" runat="server"></asp:Label><br />
-                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Fecha de creacion de solicitud incorrecta, forma correcta DD/MM/YYYY" ValidationExpression="^\d{2}(/)\d{2}(/)\d{4}$" Display="Dynamic" ControlToValidate="txtFechaAct" ForeColor="#CC0000"></asp:RegularExpressionValidator>
-                <br />
-                <br />
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Fecha de creacion de solicitud incorrecta, forma correcta DD/MM/YYYY" ValidationExpression="^\d{2}(/)\d{2}(/)\d{4}$" Display="Dynamic" ControlToValidate="txtFechaAct" ForeColor="#CC0000"></asp:RegularExpressionValidator><br/>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Espacio en Blanco" ControlToValidate="txtFechaAct" Display="Dynamic" ForeColor="#CC0000"></asp:RequiredFieldValidator>
+                <br/>
+                <br/>
             </div>
             <asp:Button ID="btnGuardar" CssClass="Button" runat="server" Text="Guardar Cambios" OnClick="btnGuardar_Click" />
         </div>

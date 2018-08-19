@@ -351,5 +351,6 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_ORDEN_VIATICO" FunctionName="EmpresaPK2Model.Store.SP_ACTUALIZAR_ORDEN_VIATICO" />
   </EntityContainerMapping>
 </Mapping>

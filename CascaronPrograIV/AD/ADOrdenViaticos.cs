@@ -110,7 +110,8 @@ namespace AD
             try
             {
                 contexto = new EmpresaPK2Entities();
-                contexto.SP_ACTUALIZAR_ORDEN_VIATICO(orden.ID_ORDEN, orden.ID_SOLICITUD, orden.ESTADOORDEN, orden.FECHAORDEN);
+                contexto.SP_ACTUALIZAR_ORDEN_VIATICO(orden.ID_ORDEN, orden.ID_SOLICITUD,
+                                                    orden.ESTADOORDEN, orden.FECHAORDEN);
             }
             catch (Exception ex)
             {
