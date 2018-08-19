@@ -76,15 +76,6 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud {
         protected global::System.Web.UI.WebControls.TextBox TbxUsuario;
         
         /// <summary>
-        /// Control TbxFechaRegreso.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TbxFechaRegreso;
-        
-        /// <summary>
         /// Control TbxFechaSalida.
         /// </summary>
         /// <remarks>
@@ -92,6 +83,15 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TbxFechaSalida;
+        
+        /// <summary>
+        /// Control TbxFechaRegreso.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TbxFechaRegreso;
         
         /// <summary>
         /// Control TbxJustificacion.
@@ -175,6 +175,24 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator ValidadorFechaRegreso;
         
         /// <summary>
+        /// Control RegularExpressionValidator1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
+        
+        /// <summary>
+        /// Control RegularExpressionValidator2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator2;
+        
+        /// <summary>
         /// Control Tbx_CantDes.
         /// </summary>
         /// <remarks>
@@ -209,42 +227,6 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Tbx_CantPasaj;
-        
-        /// <summary>
-        /// Control Tbx_MontDes.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Tbx_MontDes;
-        
-        /// <summary>
-        /// Control Tbx_MontAlm.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Tbx_MontAlm;
-        
-        /// <summary>
-        /// Control Tbx_MontCenas.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Tbx_MontCenas;
-        
-        /// <summary>
-        /// Control Tbx_MontPasaj.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Tbx_MontPasaj;
         
         /// <summary>
         /// Control Ddl_Ruta.
@@ -416,42 +398,6 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TbxActuCantPasajes;
-        
-        /// <summary>
-        /// Control TbxActuMontDesayunos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TbxActuMontDesayunos;
-        
-        /// <summary>
-        /// Control TbxActuMontAlmuerzos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TbxActuMontAlmuerzos;
-        
-        /// <summary>
-        /// Control TbxActuMontCenas.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TbxActuMontCenas;
-        
-        /// <summary>
-        /// Control TbxActuMontPasajes.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TbxActuMontPasajes;
         
         /// <summary>
         /// Control Ddl_ActuRutas.

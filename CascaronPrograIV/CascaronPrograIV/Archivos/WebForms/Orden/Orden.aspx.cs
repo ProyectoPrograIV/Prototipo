@@ -121,7 +121,7 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
             {
                 servicio = new WCFServicio.Service1Client();
 
-                return servicio.ActualizarOrdenViatico(orden);
+                return servicio.ActualizarOrdenViaticos(orden);
             }
             finally
             {

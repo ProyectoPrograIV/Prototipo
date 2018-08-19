@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Entidades;
 using System.Data;
+using System.Globalization;
 
 namespace CascaronPrograIV.Archivos.WebForms.Solicitud
 {
@@ -13,7 +14,6 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
     {
         SP_INICIO_SESION_Result sesion;
         static DataTable dt;
-        string idSolicitud = "2";
         protected void Page_Load(object sender, EventArgs e)
         {
             sesion = (SP_INICIO_SESION_Result)Session["sesion"];
@@ -25,30 +25,15 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
                 CargarLocalidad();
                 CargarRutas();
                 CargarPersonas();
+                BtnAgregarPersona_Click(null, null);
             }
         }
 
         private void ReadOnlyFields()
         {
             TbxUsuario.ReadOnly = true;
-            Tbx_MontAlm.ReadOnly = true;
-            Tbx_MontCenas.ReadOnly = true;
-            Tbx_MontDes.ReadOnly = true;
-            Tbx_MontPasaj.ReadOnly = true;
         }
 
-        protected void Btn_SolicitudSig_Click(object sender, EventArgs e)
-        {
-            if (Vacio() == false)
-            {
-                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Solicitud()", true);
-            }
-            else
-            {
-                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Inicio()", true);
-            }
-        }
-        
         protected void TbxFiltrar_TextChanged(object sender, EventArgs e)
         {
 
@@ -71,6 +56,65 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
         }
 
         #region Metodos Crear
+        protected void Btn_SolicitudSig_Click(object sender, EventArgs e)
+        {
+            if (Vacio() == false)
+            {
+                if (RequisitosFechas(TbxFechaSalida.Text, TbxFechaRegreso.Text, TbxHoraSalida.Text, TbxHoraRegreso.Text))
+                {
+                    ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Solicitud()", true);
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Inicio()", true);
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Diferencia de dias mayor a 5 o se incluyen fines de semana entre fechas o en las mismas')", true);
+                }
+            }
+            else
+            {
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Inicio()", true);
+            }
+        }
+        private Boolean RequisitosFechas(String sFechaSalida, String sFechaRegreso, String sHoraSalida, String sHoraRegreso)
+        {
+            Boolean FechasAceptadas = false;
+            int result = DateTime.Compare(DateTime.Parse(sFechaSalida), DateTime.Today);
+            if (result > 0)
+            {
+                int diferencia = (DateTime.Parse(sFechaRegreso).AddHours(DateTime.ParseExact(sHoraRegreso, "HH:mm", CultureInfo.InvariantCulture).Hour) - DateTime.Parse(sFechaSalida).AddHours(DateTime.ParseExact(sHoraSalida, "HH:mm", CultureInfo.InvariantCulture).Hour)).Days;
+                DateTime[] Fechas = new DateTime[diferencia + 1];
+                for (int i = 0; i <= diferencia; i++)
+                {
+                    Fechas.SetValue((DateTime.Parse(sFechaSalida)).AddDays(i), i);
+                }
+                if (diferencia <= 5)
+                {
+                    foreach (DateTime Fecha in Fechas)
+                    {
+                        if (Fecha.DayOfWeek == DayOfWeek.Saturday || Fecha.DayOfWeek == DayOfWeek.Sunday)
+                        {
+                            FechasAceptadas = false;
+                            return false;
+                        }
+                        else
+                        {
+                            FechasAceptadas = true;
+                        }
+                    }
+                }
+                else
+                {
+                    FechasAceptadas = false;
+                    return false;
+                }
+            }
+            else
+            {
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Inicio()", true);
+                ScriptManager.RegisterClientScriptBlock(this.Page, Page.GetType(), "alertMessage", "alert('Fecha extemporánea, ingrese una fecha mayor a la actual en fecha de salida')", true);
+            }
+            return FechasAceptadas;
+        }
         private Boolean Vacio()
         {
             if (TbxDestino.Text == "" ||
@@ -86,7 +130,6 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
                 return false;
             }
         }
-
         private TBL_SOLICITUDVIATICOS AsignarDatosSolicitud()
         {
             TBL_SOLICITUDVIATICOS Obj_Solicitud;
@@ -181,7 +224,6 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
             Ddl_PersonasSolicitud.DataTextField = "NOMBRECOMPLETO";
             DataBind();
             Ddl_PersonasSolicitud.Items.Insert(0, new ListItem("Añadir personas adicionales a la solicitud", "null"));
-
         }
         private void CargarLocalidad()
         {
@@ -220,19 +262,6 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
                         GvPersonas.DataBind();
                         ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Negado()", true);
                     }
-                    else
-                    {
-                        dt = new DataTable();
-                        dt.Columns.Add(new DataColumn("Idetificacion", typeof(string)));
-                        dt.Columns.Add(new DataColumn("Nombre Completo", typeof(string)));
-                        DataRow Row = dt.NewRow();
-                        Row[0] = Ddl_PersonasSolicitud.SelectedValue.ToString();
-                        Row[1] = Ddl_PersonasSolicitud.SelectedItem.ToString();
-                        dt.Rows.Add(Row);
-                        GvPersonas.DataSource = dt;
-                        GvPersonas.DataBind();
-                        ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Negado()", true);
-                    }
                 }
                 else
                 {
@@ -241,7 +270,19 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
             }
             else
             {
-                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Negado()", true);
+                if (!IsPostBack)
+                {
+                    dt = new DataTable();
+                    dt.Columns.Add(new DataColumn("Idetificacion", typeof(string)));
+                    dt.Columns.Add(new DataColumn("Nombre Completo", typeof(string)));
+                    DataRow Row = dt.NewRow();
+                    Row[0] = sesion.ID_PERSONA;
+                    Row[1] = Ddl_PersonasSolicitud.Items.FindByValue(sesion.ID_PERSONA);
+                    dt.Rows.Add(Row);
+                    GvPersonas.DataSource = dt;
+                    GvPersonas.DataBind();
+                    ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Negado()", true);
+                }
             }
 
         }
@@ -274,11 +315,21 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
             if (e.CommandName == "Delete")
             {
                 int index = Convert.ToInt32(e.CommandArgument);
-                dt.Rows.RemoveAt(index);
-                GvPersonas.DeleteRow(index);
-                GvPersonas.DataSource = dt;
-                GvPersonas.DataBind();
-                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Negado()", true);
+                GvPersonas.SelectRow(index);
+                string id = GvPersonas.SelectedRow.Cells[1].Text;
+                if (sesion.ID_PERSONA.Equals(id))
+                {
+                    ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Negado()", true);
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('No se puede borrar usted mismo de la solicitud')", true);
+                }
+                else
+                {
+                    dt.Rows.RemoveAt(index);
+                    GvPersonas.DeleteRow(index);
+                    GvPersonas.DataSource = dt;
+                    GvPersonas.DataBind();
+                    ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Negado()", true);
+                }
             }
             else
             {
@@ -291,14 +342,23 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
         protected void BtnGuardar_Click(object sender, EventArgs e)
         {
             WCFSolicitud.SolicitudClient Cliente = new WCFSolicitud.SolicitudClient();
-            if(Cliente.GuardarSolicitudDetalle(AsignarDatosSolicitud(), AsignarDetalles()) == true)
+            if (Convert.ToInt16(Tbx_CantAlm.Text) <= 5 && Convert.ToInt16(Tbx_CantCenas.Text) <= 4 
+                && Convert.ToInt16(Tbx_CantDes.Text) <= 5 && Convert.ToInt16(Tbx_CantPasaj.Text) <= 5)
             {
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Solicitud Guardada')", true);
-                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Negado()", true);
+                if (Cliente.GuardarSolicitudDetalle(AsignarDatosSolicitud(), AsignarDetalles()) == true)
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Solicitud Guardada')", true);
+                    ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Negado()", true);
+                }
+                else
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Solicitud No Guardada')", true);
+                    ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Solicitud()", true);
+                }
             }
             else
             {
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Solicitud No Guardada')", true);
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Hay valores Mayores a 5, siendo 5 la maxima cantidad que se puede solicitar de un viatico')", true);
                 ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Hello", "Solicitud()", true);
             }
         }

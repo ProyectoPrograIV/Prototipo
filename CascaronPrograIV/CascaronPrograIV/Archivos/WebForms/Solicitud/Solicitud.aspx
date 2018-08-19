@@ -117,8 +117,8 @@
                     <div id="Solicitud">
                         <asp:TextBox ID="TbxUsuario" runat="server" CssClass="Textbox" placeholder="Usuario" ReadOnly="True"></asp:TextBox>
                         <br />
-                        <asp:TextBox CssClass="Textbox" ID="TbxFechaRegreso" runat="server" placeholder="Fecha de Regreso"></asp:TextBox>
                         <asp:TextBox CssClass="Textbox" ID="TbxFechaSalida" runat="server" placeholder="Fecha de Salida"></asp:TextBox>
+                        <asp:TextBox CssClass="Textbox" ID="TbxFechaRegreso" runat="server" placeholder="Fecha de Regreso"></asp:TextBox>
                         <br />
                         <asp:TextBox CssClass="Textbox" ID="TbxJustificacion" runat="server" placeholder="Justificacion"></asp:TextBox>
                         <asp:TextBox CssClass="Textbox" ID="TbxDestino" runat="server" placeholder="Destino"></asp:TextBox>
@@ -126,12 +126,16 @@
                         <asp:TextBox CssClass="Textbox" ID="TbxHoraSalida" runat="server" placeholder="Hora de Salida"></asp:TextBox>
                         <asp:TextBox CssClass="Textbox" ID="TbxHoraRegreso" runat="server" placeholder="Hora de Regreso"></asp:TextBox><br />
                         <br />
+                        <p>**Debe ingresar las horas en el formato de 24hrs**</p>
+                        <br />
                         <asp:Button ID="Btn_SolcitudReg" CssClass="Button" runat="server" Text="Regresar" OnClick="Btn_SolcitudReg_Click" />
                         <asp:Button ID="Btn_SolicitudSig" CssClass="Button" runat="server" Text="Siguiente" OnClick="Btn_SolicitudSig_Click" />
                         <div id="DivValidaciones">
                             <asp:Label ID="Validaciones" runat="server"></asp:Label><br />
-                            <asp:RegularExpressionValidator ID="ValidadorFechaSalida" runat="server" ErrorMessage="Fecha de salida incorrecta, forma correcta ##/##/####" ControlToValidate="TbxFechaSalida" ValidationExpression="^\d{2}(/)\d{2}(/)\d{4}$"></asp:RegularExpressionValidator><br />
-                            <asp:RegularExpressionValidator ID="ValidadorFechaRegreso" runat="server" ErrorMessage="Fecha de regreso incorrecta, forma correcta ##/##/####" ControlToValidate="TbxFechaRegreso" ValidationExpression="^\d{2}(/)\d{2}(/)\d{4}$"></asp:RegularExpressionValidator><br />
+                            <asp:RegularExpressionValidator ID="ValidadorFechaSalida" runat="server" ErrorMessage="Fecha de salida incorrecta, forma correcta dd/mm/yyyy" ControlToValidate="TbxFechaSalida" ValidationExpression="^\d{2}(/)\d{2}(/)\d{4}$"></asp:RegularExpressionValidator><br />
+                            <asp:RegularExpressionValidator ID="ValidadorFechaRegreso" runat="server" ErrorMessage="Fecha de regreso incorrecta, forma correcta dd/mm/yyyy" ControlToValidate="TbxFechaRegreso" ValidationExpression="^\d{2}(/)\d{2}(/)\d{4}$"></asp:RegularExpressionValidator><br />
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Hora incorrecta, forma correcta hh:mm" ControlToValidate="TbxHoraSalida" ValidationExpression="^\d{2}(:)\d{2}$"></asp:RegularExpressionValidator><br />
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="Hora incorrecta, forma correcta hh:mm" ControlToValidate="TbxHoraRegreso" ValidationExpression="^\d{2}(:)\d{2}$"></asp:RegularExpressionValidator>
                         </div>
                     </div>
 
@@ -139,13 +143,11 @@
                         <br />
                         <asp:TextBox CssClass="Textbox" ID="Tbx_CantDes" runat="server" placeholder="Cantidad de Desayunos"></asp:TextBox>
                         <asp:TextBox CssClass="Textbox" ID="Tbx_CantAlm" runat="server" placeholder="Cantidad de Almuerzos"></asp:TextBox>
+                        <br />
                         <asp:TextBox CssClass="Textbox" ID="Tbx_CantCenas" runat="server" placeholder="Cantidad de Cenas"></asp:TextBox>
                         <asp:TextBox CssClass="Textbox" ID="Tbx_CantPasaj" runat="server" placeholder="Cantidad de Pasajes"></asp:TextBox>
                         <br />
-                        <asp:TextBox CssClass="Textbox" ID="Tbx_MontDes" runat="server" placeholder="Monto Total de Desayunos"></asp:TextBox>
-                        <asp:TextBox CssClass="Textbox" ID="Tbx_MontAlm" runat="server" placeholder="Monto Total de Almuerzos"></asp:TextBox>
-                        <asp:TextBox CssClass="Textbox" ID="Tbx_MontCenas" runat="server" placeholder="Monto Total de Cenas"></asp:TextBox>
-                        <asp:TextBox CssClass="Textbox" ID="Tbx_MontPasaj" runat="server" placeholder="Monto Total de Pasajes"></asp:TextBox>
+                        <p>**La cantidad de viaticos ingresados deben ser valores por persona no el total**</p>
                         <br />
                         <asp:DropDownList CssClass="DDL" ID="Ddl_Ruta" runat="server"></asp:DropDownList>
                         <br />
@@ -221,11 +223,7 @@
             <br />
             <asp:TextBox CssClass="Textbox" ID="TbxActuCantCenas" runat="server"></asp:TextBox>
             <asp:TextBox CssClass="Textbox" ID="TbxActuCantPasajes" runat="server"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TbxActuMontDesayunos" runat="server"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TbxActuMontAlmuerzos" runat="server"></asp:TextBox>
             <br />
-            <asp:TextBox CssClass="Textbox" ID="TbxActuMontCenas" runat="server"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TbxActuMontPasajes" runat="server"></asp:TextBox>
             <br />
             <asp:DropDownList CssClass="DDL" ID="Ddl_ActuRutas" runat="server"></asp:DropDownList>
             <br />
