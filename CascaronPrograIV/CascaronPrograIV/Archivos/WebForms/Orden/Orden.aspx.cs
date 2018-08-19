@@ -15,7 +15,6 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
         {
             if (!IsPostBack)
             {
-                ddlEstado.Items.Add("Inactivo");
                 ddlEstado.Items.Add("Activo");
                 ddlEstadosActualizar.Items.Add("Inactivo");
                 ddlEstadosActualizar.Items.Add("Activo");
@@ -143,8 +142,8 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
 
                 orden.ID_SOLICITUD = txtID.Text.Trim();
                 solicitudv.NOMBREUSUARIO = txtUsuario.Text.Trim();
-                solicitudv.ESTADOSOLICITUD = Convert.ToInt16(ddlEstado.SelectedValue.ToString());
-                orden.ESTADOORDEN = Convert.ToInt16(ddlEstado.SelectedValue.ToString());
+                solicitudv.ESTADOSOLICITUD = 10;
+                orden.ESTADOORDEN = 10;
                 orden.FECHAORDEN = Convert.ToDateTime(txtFecha.Text.Trim());
 
                 GenerarOrdenViaticos(orden, solicitudv);
@@ -176,7 +175,14 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
 
                 orden.ID_ORDEN = Convert.ToInt32(txtIdOrdenAct.Text.Trim());
                 orden.ID_SOLICITUD = txtID.Text.Trim();
-                orden.ESTADOORDEN = Convert.ToInt16(ddlEstado.SelectedValue.ToString());
+                if(ddlEstadosActualizar.SelectedValue == "Activo")
+                {
+                    orden.ESTADOORDEN = 10;
+                }
+                else
+                {
+                    orden.ESTADOORDEN = 9;
+                }
                 orden.FECHAORDEN = Convert.ToDateTime(txtFecha.Text.Trim());
 
                 ActualizarOrdenViatico(orden);
@@ -186,7 +192,6 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
             {
                 throw ex;
             }
-
         }
         
         protected void btnGuardar_Click(object sender, EventArgs e)

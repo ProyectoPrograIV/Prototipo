@@ -87,7 +87,7 @@
             <h1 id="h1Generar">Generar Orden de Viaticos
             <img src="../../Recursos/Mostrar.png" /></h1>
 
-            <asp:TextBox CssClass="Textbox" ID="txtID" runat="server" Placeholder="ID Solicitud"></asp:TextBox>
+            <asp:TextBox CssClass="Textbox" ID="txtID" runat="server" Placeholder="ID Solicitud" ReadOnly="True"></asp:TextBox>
             <asp:TextBox CssClass="Textbox" ID="txtUsuario" runat="server" Placeholder="Usuario"></asp:TextBox>
             <asp:DropDownList ID="ddlEstado" CssClass="auto-style5" runat="server" Width="280px"></asp:DropDownList>
             <asp:TextBox CssClass="Textbox" ID="txtFecha" runat="server" Placeholder="Fecha de Creacion"></asp:TextBox><br />
