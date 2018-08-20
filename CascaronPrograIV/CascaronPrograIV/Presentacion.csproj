@@ -101,7 +101,6 @@
     <Content Include="Archivos\WebForms\RecuperarDatos.aspx" />
     <Content Include="Archivos\WebForms\RegistroUsuario.aspx" />
     <Content Include="Archivos\WebForms\Reportes\Reportes.aspx" />
-    <Content Include="Archivos\WebForms\Solicitud\Solicitud.aspx" />
     <None Include="Connected Services\WCFServicio\Service1.disco" />
     <None Include="Connected Services\WCFServicio\configuration91.svcinfo" />
     <None Include="Connected Services\WCFServicio\configuration.svcinfo" />
@@ -116,6 +115,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Archivos\WebForms\Solicitud\Solicitud.aspx" />
     <Content Include="packages.config" />
     <Content Include="Archivos\WebForms\PaginaMaestra.Master" />
     <None Include="Connected Services\WCFServicio\Service1.wsdl" />
@@ -148,6 +148,8 @@
     <Content Include="Properties\DataSources\Entidades.SP_LISTAR_TARIFASAUTOBUSES_Result.datasource" />
     <Content Include="Properties\DataSources\Entidades.TBL_CABECERAORDENVIATICO1.datasource" />
     <Content Include="Properties\DataSources\Entidades.SP_LISTAR_SOLICITUDES_ACTUALIZAR_Result.datasource" />
+    <Content Include="Properties\DataSources\Entidades.SP_LISTAR_SOLICITUDES_UPDATE_Result.datasource" />
+    <Content Include="Properties\DataSources\Entidades.SP_LISTAR_SOLICITUDES_VERIFICAR_Result.datasource" />
     <None Include="Connected Services\WCFSolicitud\Solicitud.wsdl" />
     <None Include="Connected Services\WCFSolicitud\Solicitud.xsd">
       <SubType>Designer</SubType>
@@ -158,8 +160,6 @@
     <None Include="Connected Services\WCFSolicitud\Solicitud2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Properties\DataSources\Entidades.SP_LISTAR_SOLICITUDES_UPDATE_Result.datasource" />
-    <Content Include="Properties\DataSources\Entidades.SP_LISTAR_SOLICITUDES_VERIFICAR_Result.datasource" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -266,6 +266,7 @@
       <Name>E</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -16,7 +16,7 @@ namespace Entidades
         public Nullable<System.DateTime> FECHAORDEN { get; set; }
         public int ID_ORDEN { get; set; }
         public string ID_SOLICITUD { get; set; }
-        public string NOMBREUSUARIO { get; set; }
         public short ESTADOORDEN { get; set; }
+        public string NOMBREUSUARIO { get; set; }
     }
 }

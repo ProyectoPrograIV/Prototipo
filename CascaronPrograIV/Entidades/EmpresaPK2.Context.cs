@@ -66,97 +66,123 @@ namespace Entidades
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_InsertarUsuario", nOMBREUSUARIOParameter, cLAVEACCESOParameter, iD_RolParameter, estadoUsuarioParameter, emailParameter);
         }
     
-        public virtual int SP_ACTUALIZAR_SOLICITUDES_FUNCIONARIO(Nullable<int> iDSOLICITUD, string nOMBREUSUARIO, Nullable<System.DateTime> fECHASALIDA, Nullable<System.DateTime> fECHAREGRESO, Nullable<short> eSTADOSOLICITUD, string jUSTIFICACION, string dESTINO, Nullable<System.TimeSpan> hORAREGRESO, Nullable<System.TimeSpan> hORASALIDA)
+        public virtual ObjectResult<SP_LISTAR_SOLICITUDES_VERIFICAR_Result> SP_LISTAR_SOLICITUDES_VERIFICAR()
         {
-            var iDSOLICITUDParameter = iDSOLICITUD.HasValue ?
-                new ObjectParameter("IDSOLICITUD", iDSOLICITUD) :
-                new ObjectParameter("IDSOLICITUD", typeof(int));
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_SOLICITUDES_VERIFICAR_Result>("SP_LISTAR_SOLICITUDES_VERIFICAR");
+        }
     
+        public virtual int SP_ACTUALIZAR_MODTARIFAVIATICO(Nullable<short> iD_MODTARIFA, Nullable<System.DateTime> fECHATARIFA, Nullable<decimal> mONTOTARIFA, Nullable<short> eSTADOTARIFA)
+        {
+            var iD_MODTARIFAParameter = iD_MODTARIFA.HasValue ?
+                new ObjectParameter("ID_MODTARIFA", iD_MODTARIFA) :
+                new ObjectParameter("ID_MODTARIFA", typeof(short));
+    
+            var fECHATARIFAParameter = fECHATARIFA.HasValue ?
+                new ObjectParameter("FECHATARIFA", fECHATARIFA) :
+                new ObjectParameter("FECHATARIFA", typeof(System.DateTime));
+    
+            var mONTOTARIFAParameter = mONTOTARIFA.HasValue ?
+                new ObjectParameter("MONTOTARIFA", mONTOTARIFA) :
+                new ObjectParameter("MONTOTARIFA", typeof(decimal));
+    
+            var eSTADOTARIFAParameter = eSTADOTARIFA.HasValue ?
+                new ObjectParameter("ESTADOTARIFA", eSTADOTARIFA) :
+                new ObjectParameter("ESTADOTARIFA", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACTUALIZAR_MODTARIFAVIATICO", iD_MODTARIFAParameter, fECHATARIFAParameter, mONTOTARIFAParameter, eSTADOTARIFAParameter);
+        }
+    
+        public virtual int SP_ACTUALIZAR_TARIFASAUTOBUSES(string cODIGORUTA, Nullable<short> eSTADO, Nullable<decimal> tARIFA, string dESCRIPCION, Nullable<System.DateTime> fECHAVIGENCIA)
+        {
+            var cODIGORUTAParameter = cODIGORUTA != null ?
+                new ObjectParameter("CODIGORUTA", cODIGORUTA) :
+                new ObjectParameter("CODIGORUTA", typeof(string));
+    
+            var eSTADOParameter = eSTADO.HasValue ?
+                new ObjectParameter("ESTADO", eSTADO) :
+                new ObjectParameter("ESTADO", typeof(short));
+    
+            var tARIFAParameter = tARIFA.HasValue ?
+                new ObjectParameter("TARIFA", tARIFA) :
+                new ObjectParameter("TARIFA", typeof(decimal));
+    
+            var dESCRIPCIONParameter = dESCRIPCION != null ?
+                new ObjectParameter("DESCRIPCION", dESCRIPCION) :
+                new ObjectParameter("DESCRIPCION", typeof(string));
+    
+            var fECHAVIGENCIAParameter = fECHAVIGENCIA.HasValue ?
+                new ObjectParameter("FECHAVIGENCIA", fECHAVIGENCIA) :
+                new ObjectParameter("FECHAVIGENCIA", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACTUALIZAR_TARIFASAUTOBUSES", cODIGORUTAParameter, eSTADOParameter, tARIFAParameter, dESCRIPCIONParameter, fECHAVIGENCIAParameter);
+        }
+    
+        public virtual ObjectResult<SP_BUSCAR_TARIFAAUTOBUS_Result> SP_BUSCAR_TARIFAAUTOBUS(string cODIGORUTA)
+        {
+            var cODIGORUTAParameter = cODIGORUTA != null ?
+                new ObjectParameter("CODIGORUTA", cODIGORUTA) :
+                new ObjectParameter("CODIGORUTA", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_BUSCAR_TARIFAAUTOBUS_Result>("SP_BUSCAR_TARIFAAUTOBUS", cODIGORUTAParameter);
+        }
+    
+        public virtual ObjectResult<SP_LISTAR_MODTARIFAVIATICO_Result> SP_LISTAR_MODTARIFAVIATICO()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_MODTARIFAVIATICO_Result>("SP_LISTAR_MODTARIFAVIATICO");
+        }
+    
+        public virtual ObjectResult<SP_LISTAR_RUTAS_Result> SP_LISTAR_RUTAS()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_RUTAS_Result>("SP_LISTAR_RUTAS");
+        }
+    
+        public virtual ObjectResult<SP_LISTAR_TARIFASAUTOBUSES_Result> SP_LISTAR_TARIFASAUTOBUSES()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_TARIFASAUTOBUSES_Result>("SP_LISTAR_TARIFASAUTOBUSES");
+        }
+    
+        public virtual ObjectResult<SP_LISTARMONTORUTA_Result> SP_LISTARMONTORUTA(string iDRUTA)
+        {
+            var iDRUTAParameter = iDRUTA != null ?
+                new ObjectParameter("IDRUTA", iDRUTA) :
+                new ObjectParameter("IDRUTA", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTARMONTORUTA_Result>("SP_LISTARMONTORUTA", iDRUTAParameter);
+        }
+    
+        public virtual ObjectResult<SP_LISTARMONTOS_Result> SP_LISTARMONTOS(Nullable<int> iDHOSPEDAJE)
+        {
+            var iDHOSPEDAJEParameter = iDHOSPEDAJE.HasValue ?
+                new ObjectParameter("IDHOSPEDAJE", iDHOSPEDAJE) :
+                new ObjectParameter("IDHOSPEDAJE", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTARMONTOS_Result>("SP_LISTARMONTOS", iDHOSPEDAJEParameter);
+        }
+    
+        public virtual ObjectResult<SP_OBTENER_CANTON_PROVINCIA_Result> SP_OBTENER_CANTON_PROVINCIA(Nullable<int> cODIGOCANTON, Nullable<int> cODIGOPROVINCIA)
+        {
+            var cODIGOCANTONParameter = cODIGOCANTON.HasValue ?
+                new ObjectParameter("CODIGOCANTON", cODIGOCANTON) :
+                new ObjectParameter("CODIGOCANTON", typeof(int));
+    
+            var cODIGOPROVINCIAParameter = cODIGOPROVINCIA.HasValue ?
+                new ObjectParameter("CODIGOPROVINCIA", cODIGOPROVINCIA) :
+                new ObjectParameter("CODIGOPROVINCIA", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_OBTENER_CANTON_PROVINCIA_Result>("SP_OBTENER_CANTON_PROVINCIA", cODIGOCANTONParameter, cODIGOPROVINCIAParameter);
+        }
+    
+        public virtual ObjectResult<SP_LIST_ORDEN_VIATICOS_Result> SP_LIST_ORDEN_VIATICOS(string nOMBREUSUARIO, string iD_SOLICITUD)
+        {
             var nOMBREUSUARIOParameter = nOMBREUSUARIO != null ?
                 new ObjectParameter("NOMBREUSUARIO", nOMBREUSUARIO) :
                 new ObjectParameter("NOMBREUSUARIO", typeof(string));
     
-            var fECHASALIDAParameter = fECHASALIDA.HasValue ?
-                new ObjectParameter("FECHASALIDA", fECHASALIDA) :
-                new ObjectParameter("FECHASALIDA", typeof(System.DateTime));
+            var iD_SOLICITUDParameter = iD_SOLICITUD != null ?
+                new ObjectParameter("ID_SOLICITUD", iD_SOLICITUD) :
+                new ObjectParameter("ID_SOLICITUD", typeof(string));
     
-            var fECHAREGRESOParameter = fECHAREGRESO.HasValue ?
-                new ObjectParameter("FECHAREGRESO", fECHAREGRESO) :
-                new ObjectParameter("FECHAREGRESO", typeof(System.DateTime));
-    
-            var eSTADOSOLICITUDParameter = eSTADOSOLICITUD.HasValue ?
-                new ObjectParameter("ESTADOSOLICITUD", eSTADOSOLICITUD) :
-                new ObjectParameter("ESTADOSOLICITUD", typeof(short));
-    
-            var jUSTIFICACIONParameter = jUSTIFICACION != null ?
-                new ObjectParameter("JUSTIFICACION", jUSTIFICACION) :
-                new ObjectParameter("JUSTIFICACION", typeof(string));
-    
-            var dESTINOParameter = dESTINO != null ?
-                new ObjectParameter("DESTINO", dESTINO) :
-                new ObjectParameter("DESTINO", typeof(string));
-    
-            var hORAREGRESOParameter = hORAREGRESO.HasValue ?
-                new ObjectParameter("HORAREGRESO", hORAREGRESO) :
-                new ObjectParameter("HORAREGRESO", typeof(System.TimeSpan));
-    
-            var hORASALIDAParameter = hORASALIDA.HasValue ?
-                new ObjectParameter("HORASALIDA", hORASALIDA) :
-                new ObjectParameter("HORASALIDA", typeof(System.TimeSpan));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACTUALIZAR_SOLICITUDES_FUNCIONARIO", iDSOLICITUDParameter, nOMBREUSUARIOParameter, fECHASALIDAParameter, fECHAREGRESOParameter, eSTADOSOLICITUDParameter, jUSTIFICACIONParameter, dESTINOParameter, hORAREGRESOParameter, hORASALIDAParameter);
-        }
-    
-        public virtual int SP_ELIMINAR_SOLICITUDES(Nullable<int> iDSOLICITUD)
-        {
-            var iDSOLICITUDParameter = iDSOLICITUD.HasValue ?
-                new ObjectParameter("IDSOLICITUD", iDSOLICITUD) :
-                new ObjectParameter("IDSOLICITUD", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ELIMINAR_SOLICITUDES", iDSOLICITUDParameter);
-        }
-    
-        public virtual ObjectResult<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> SP_LISTAR_SOLICITUDES_FUNCIONARIO(string uSUARIO)
-        {
-            var uSUARIOParameter = uSUARIO != null ?
-                new ObjectParameter("USUARIO", uSUARIO) :
-                new ObjectParameter("USUARIO", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result>("SP_LISTAR_SOLICITUDES_FUNCIONARIO", uSUARIOParameter);
-        }
-    
-        public virtual ObjectResult<SP_LISTADO_SOLICITUD_VIATICOS_Result> SP_LISTADO_SOLICITUD_VIATICOS(Nullable<System.DateTime> fECHAINICIO, Nullable<System.DateTime> fECHAFINAL, string iD_PERSONA, Nullable<short> eSTADOS_SOLICITUD)
-        {
-            var fECHAINICIOParameter = fECHAINICIO.HasValue ?
-                new ObjectParameter("FECHAINICIO", fECHAINICIO) :
-                new ObjectParameter("FECHAINICIO", typeof(System.DateTime));
-    
-            var fECHAFINALParameter = fECHAFINAL.HasValue ?
-                new ObjectParameter("FECHAFINAL", fECHAFINAL) :
-                new ObjectParameter("FECHAFINAL", typeof(System.DateTime));
-    
-            var iD_PERSONAParameter = iD_PERSONA != null ?
-                new ObjectParameter("ID_PERSONA", iD_PERSONA) :
-                new ObjectParameter("ID_PERSONA", typeof(string));
-    
-            var eSTADOS_SOLICITUDParameter = eSTADOS_SOLICITUD.HasValue ?
-                new ObjectParameter("ESTADOS_SOLICITUD", eSTADOS_SOLICITUD) :
-                new ObjectParameter("ESTADOS_SOLICITUD", typeof(short));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTADO_SOLICITUD_VIATICOS_Result>("SP_LISTADO_SOLICITUD_VIATICOS", fECHAINICIOParameter, fECHAFINALParameter, iD_PERSONAParameter, eSTADOS_SOLICITUDParameter);
-        }
-    
-        public virtual ObjectResult<SP_INICIO_SESION_Result> SP_INICIO_SESION(string nombreUsuario, string claveAcceso)
-        {
-            var nombreUsuarioParameter = nombreUsuario != null ?
-                new ObjectParameter("NombreUsuario", nombreUsuario) :
-                new ObjectParameter("NombreUsuario", typeof(string));
-    
-            var claveAccesoParameter = claveAcceso != null ?
-                new ObjectParameter("ClaveAcceso", claveAcceso) :
-                new ObjectParameter("ClaveAcceso", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_INICIO_SESION_Result>("SP_INICIO_SESION", nombreUsuarioParameter, claveAccesoParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LIST_ORDEN_VIATICOS_Result>("SP_LIST_ORDEN_VIATICOS", nOMBREUSUARIOParameter, iD_SOLICITUDParameter);
         }
     
         public virtual ObjectResult<SP_LISTADO_LIQUIDACION_VIATICOS_Result> SP_LISTADO_LIQUIDACION_VIATICOS(Nullable<System.DateTime> fECHAINICIO, Nullable<System.DateTime> fECHAFINAL, string nOMBREUSUARIO, Nullable<short> eSTADOS_SOLICITUD)
@@ -201,14 +227,153 @@ namespace Entidades
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTADO_ORDEN_VIATICOS_Result>("SP_LISTADO_ORDEN_VIATICOS", fECHAINICIOParameter, fECHAFINALParameter, nOMBREUSUARIOParameter, eSTADOS_SOLICITUDParameter);
         }
     
-        public virtual ObjectResult<SP_LISTAR_LOCALIDAD_Result> SP_LISTAR_LOCALIDAD()
+        public virtual ObjectResult<SP_LISTADO_SOLICITUD_VIATICOS_Result> SP_LISTADO_SOLICITUD_VIATICOS(Nullable<System.DateTime> fECHAINICIO, Nullable<System.DateTime> fECHAFINAL, string iD_PERSONA, Nullable<short> eSTADOS_SOLICITUD)
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_LOCALIDAD_Result>("SP_LISTAR_LOCALIDAD");
+            var fECHAINICIOParameter = fECHAINICIO.HasValue ?
+                new ObjectParameter("FECHAINICIO", fECHAINICIO) :
+                new ObjectParameter("FECHAINICIO", typeof(System.DateTime));
+    
+            var fECHAFINALParameter = fECHAFINAL.HasValue ?
+                new ObjectParameter("FECHAFINAL", fECHAFINAL) :
+                new ObjectParameter("FECHAFINAL", typeof(System.DateTime));
+    
+            var iD_PERSONAParameter = iD_PERSONA != null ?
+                new ObjectParameter("ID_PERSONA", iD_PERSONA) :
+                new ObjectParameter("ID_PERSONA", typeof(string));
+    
+            var eSTADOS_SOLICITUDParameter = eSTADOS_SOLICITUD.HasValue ?
+                new ObjectParameter("ESTADOS_SOLICITUD", eSTADOS_SOLICITUD) :
+                new ObjectParameter("ESTADOS_SOLICITUD", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTADO_SOLICITUD_VIATICOS_Result>("SP_LISTADO_SOLICITUD_VIATICOS", fECHAINICIOParameter, fECHAFINALParameter, iD_PERSONAParameter, eSTADOS_SOLICITUDParameter);
         }
     
-        public virtual ObjectResult<SP_LISTAR_RUTAS_Result> SP_LISTAR_RUTAS()
+        public virtual ObjectResult<SP_INICIO_SESION_Result> SP_INICIO_SESION(string nombreUsuario, string claveAcceso)
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_RUTAS_Result>("SP_LISTAR_RUTAS");
+            var nombreUsuarioParameter = nombreUsuario != null ?
+                new ObjectParameter("NombreUsuario", nombreUsuario) :
+                new ObjectParameter("NombreUsuario", typeof(string));
+    
+            var claveAccesoParameter = claveAcceso != null ?
+                new ObjectParameter("ClaveAcceso", claveAcceso) :
+                new ObjectParameter("ClaveAcceso", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_INICIO_SESION_Result>("SP_INICIO_SESION", nombreUsuarioParameter, claveAccesoParameter);
+        }
+    
+        public virtual ObjectResult<SP_LISTAR_PERSONAS_Result> SP_LISTAR_PERSONAS()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_PERSONAS_Result>("SP_LISTAR_PERSONAS");
+        }
+    
+        public virtual ObjectResult<SP_OBTENER_ESTADOS_ACTIVOS_Result> SP_OBTENER_ESTADOS_ACTIVOS()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_OBTENER_ESTADOS_ACTIVOS_Result>("SP_OBTENER_ESTADOS_ACTIVOS");
+        }
+    
+        public virtual int SP_ACTUALIZAR_ORDEN_VIATICO(Nullable<int> iD_ORDEN, string iD_SOLICITUD, Nullable<short> eSTADOORDEN, Nullable<System.DateTime> fECHAORDEN)
+        {
+            var iD_ORDENParameter = iD_ORDEN.HasValue ?
+                new ObjectParameter("ID_ORDEN", iD_ORDEN) :
+                new ObjectParameter("ID_ORDEN", typeof(int));
+    
+            var iD_SOLICITUDParameter = iD_SOLICITUD != null ?
+                new ObjectParameter("ID_SOLICITUD", iD_SOLICITUD) :
+                new ObjectParameter("ID_SOLICITUD", typeof(string));
+    
+            var eSTADOORDENParameter = eSTADOORDEN.HasValue ?
+                new ObjectParameter("ESTADOORDEN", eSTADOORDEN) :
+                new ObjectParameter("ESTADOORDEN", typeof(short));
+    
+            var fECHAORDENParameter = fECHAORDEN.HasValue ?
+                new ObjectParameter("FECHAORDEN", fECHAORDEN) :
+                new ObjectParameter("FECHAORDEN", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACTUALIZAR_ORDEN_VIATICO", iD_ORDENParameter, iD_SOLICITUDParameter, eSTADOORDENParameter, fECHAORDENParameter);
+        }
+    
+        public virtual int SP_ACTUALIZAR_SOLICITUDES_FUNCIONARIO(Nullable<int> iDSOLICITUD, string nOMBREUSUARIO, Nullable<System.DateTime> fECHASALIDA, Nullable<System.DateTime> fECHAREGRESO, Nullable<short> eSTADOSOLICITUD, string jUSTIFICACION, string dESTINO, Nullable<System.TimeSpan> hORAREGRESO, Nullable<System.TimeSpan> hORASALIDA)
+        {
+            var iDSOLICITUDParameter = iDSOLICITUD.HasValue ?
+                new ObjectParameter("IDSOLICITUD", iDSOLICITUD) :
+                new ObjectParameter("IDSOLICITUD", typeof(int));
+    
+            var nOMBREUSUARIOParameter = nOMBREUSUARIO != null ?
+                new ObjectParameter("NOMBREUSUARIO", nOMBREUSUARIO) :
+                new ObjectParameter("NOMBREUSUARIO", typeof(string));
+    
+            var fECHASALIDAParameter = fECHASALIDA.HasValue ?
+                new ObjectParameter("FECHASALIDA", fECHASALIDA) :
+                new ObjectParameter("FECHASALIDA", typeof(System.DateTime));
+    
+            var fECHAREGRESOParameter = fECHAREGRESO.HasValue ?
+                new ObjectParameter("FECHAREGRESO", fECHAREGRESO) :
+                new ObjectParameter("FECHAREGRESO", typeof(System.DateTime));
+    
+            var eSTADOSOLICITUDParameter = eSTADOSOLICITUD.HasValue ?
+                new ObjectParameter("ESTADOSOLICITUD", eSTADOSOLICITUD) :
+                new ObjectParameter("ESTADOSOLICITUD", typeof(short));
+    
+            var jUSTIFICACIONParameter = jUSTIFICACION != null ?
+                new ObjectParameter("JUSTIFICACION", jUSTIFICACION) :
+                new ObjectParameter("JUSTIFICACION", typeof(string));
+    
+            var dESTINOParameter = dESTINO != null ?
+                new ObjectParameter("DESTINO", dESTINO) :
+                new ObjectParameter("DESTINO", typeof(string));
+    
+            var hORAREGRESOParameter = hORAREGRESO.HasValue ?
+                new ObjectParameter("HORAREGRESO", hORAREGRESO) :
+                new ObjectParameter("HORAREGRESO", typeof(System.TimeSpan));
+    
+            var hORASALIDAParameter = hORASALIDA.HasValue ?
+                new ObjectParameter("HORASALIDA", hORASALIDA) :
+                new ObjectParameter("HORASALIDA", typeof(System.TimeSpan));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACTUALIZAR_SOLICITUDES_FUNCIONARIO", iDSOLICITUDParameter, nOMBREUSUARIOParameter, fECHASALIDAParameter, fECHAREGRESOParameter, eSTADOSOLICITUDParameter, jUSTIFICACIONParameter, dESTINOParameter, hORAREGRESOParameter, hORASALIDAParameter);
+        }
+    
+        public virtual ObjectResult<SP_BUSCAR_IDVIATICOS_Result> SP_BUSCAR_IDVIATICOS(Nullable<int> iD_ORDEN)
+        {
+            var iD_ORDENParameter = iD_ORDEN.HasValue ?
+                new ObjectParameter("ID_ORDEN", iD_ORDEN) :
+                new ObjectParameter("ID_ORDEN", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_BUSCAR_IDVIATICOS_Result>("SP_BUSCAR_IDVIATICOS", iD_ORDENParameter);
+        }
+    
+        public virtual int SP_ELIMINAR_SOLICITUDES(Nullable<int> iDSOLICITUD)
+        {
+            var iDSOLICITUDParameter = iDSOLICITUD.HasValue ?
+                new ObjectParameter("IDSOLICITUD", iDSOLICITUD) :
+                new ObjectParameter("IDSOLICITUD", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ELIMINAR_SOLICITUDES", iDSOLICITUDParameter);
+        }
+    
+        public virtual int SP_GENERAR_ORDEN_VIATICOS(string iDSOLICITUD, string nOMBREUSUARIO, Nullable<short> eSTADOSOLICITUD, Nullable<System.DateTime> fECHAORDEN, Nullable<short> eSTADOORDEN)
+        {
+            var iDSOLICITUDParameter = iDSOLICITUD != null ?
+                new ObjectParameter("IDSOLICITUD", iDSOLICITUD) :
+                new ObjectParameter("IDSOLICITUD", typeof(string));
+    
+            var nOMBREUSUARIOParameter = nOMBREUSUARIO != null ?
+                new ObjectParameter("NOMBREUSUARIO", nOMBREUSUARIO) :
+                new ObjectParameter("NOMBREUSUARIO", typeof(string));
+    
+            var eSTADOSOLICITUDParameter = eSTADOSOLICITUD.HasValue ?
+                new ObjectParameter("ESTADOSOLICITUD", eSTADOSOLICITUD) :
+                new ObjectParameter("ESTADOSOLICITUD", typeof(short));
+    
+            var fECHAORDENParameter = fECHAORDEN.HasValue ?
+                new ObjectParameter("FECHAORDEN", fECHAORDEN) :
+                new ObjectParameter("FECHAORDEN", typeof(System.DateTime));
+    
+            var eSTADOORDENParameter = eSTADOORDEN.HasValue ?
+                new ObjectParameter("ESTADOORDEN", eSTADOORDEN) :
+                new ObjectParameter("ESTADOORDEN", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_GENERAR_ORDEN_VIATICOS", iDSOLICITUDParameter, nOMBREUSUARIOParameter, eSTADOSOLICITUDParameter, fECHAORDENParameter, eSTADOORDENParameter);
         }
     
         public virtual int SP_GUARDAR_DETALLEVIATICOS(string iD_SOLICITUD, string iD_PERSONA, Nullable<short> cANTIDADVIATICOS, Nullable<short> cANTIDADDESAYUNOS, Nullable<short> cANTIDADALMUERZOS, Nullable<short> cANTIDADCENAS, Nullable<short> cANTIDADPASAJE, Nullable<decimal> mONTODESAYUNO, Nullable<decimal> mONTOALMUERZO, Nullable<decimal> mONTOCENA, Nullable<decimal> mONTOPASAJE, Nullable<decimal> mONTOHOSPEDAJE, string cODIGORUTA, Nullable<short> lOCALIDADHOSPEDAJE)
@@ -272,47 +437,6 @@ namespace Entidades
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_GUARDAR_DETALLEVIATICOS", iD_SOLICITUDParameter, iD_PERSONAParameter, cANTIDADVIATICOSParameter, cANTIDADDESAYUNOSParameter, cANTIDADALMUERZOSParameter, cANTIDADCENASParameter, cANTIDADPASAJEParameter, mONTODESAYUNOParameter, mONTOALMUERZOParameter, mONTOCENAParameter, mONTOPASAJEParameter, mONTOHOSPEDAJEParameter, cODIGORUTAParameter, lOCALIDADHOSPEDAJEParameter);
         }
     
-        public virtual ObjectResult<SP_LISTAR_SOLICITUDES_ACTUALIZAR_Result> SP_LISTAR_SOLICITUDES_ACTUALIZAR(string nOMBREUSUARIO)
-        {
-            var nOMBREUSUARIOParameter = nOMBREUSUARIO != null ?
-                new ObjectParameter("NOMBREUSUARIO", nOMBREUSUARIO) :
-                new ObjectParameter("NOMBREUSUARIO", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_SOLICITUDES_ACTUALIZAR_Result>("SP_LISTAR_SOLICITUDES_ACTUALIZAR", nOMBREUSUARIOParameter);
-        }
-    
-        public virtual ObjectResult<SP_LISTAR_PERSONAS_Result> SP_LISTAR_PERSONAS()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_PERSONAS_Result>("SP_LISTAR_PERSONAS");
-        }
-    
-        public virtual ObjectResult<SP_OBTENER_ORDEN_VIATICOS_Result> SP_OBTENER_ORDEN_VIATICOS(string nOMBREUSUARIO)
-        {
-            var nOMBREUSUARIOParameter = nOMBREUSUARIO != null ?
-                new ObjectParameter("NOMBREUSUARIO", nOMBREUSUARIO) :
-                new ObjectParameter("NOMBREUSUARIO", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_OBTENER_ORDEN_VIATICOS_Result>("SP_OBTENER_ORDEN_VIATICOS", nOMBREUSUARIOParameter);
-        }
-    
-        public virtual ObjectResult<SP_LISTARMONTORUTA_Result> SP_LISTARMONTORUTA(string iDRUTA)
-        {
-            var iDRUTAParameter = iDRUTA != null ?
-                new ObjectParameter("IDRUTA", iDRUTA) :
-                new ObjectParameter("IDRUTA", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTARMONTORUTA_Result>("SP_LISTARMONTORUTA", iDRUTAParameter);
-        }
-    
-        public virtual ObjectResult<SP_LISTARMONTOS_Result> SP_LISTARMONTOS(Nullable<int> iDHOSPEDAJE)
-        {
-            var iDHOSPEDAJEParameter = iDHOSPEDAJE.HasValue ?
-                new ObjectParameter("IDHOSPEDAJE", iDHOSPEDAJE) :
-                new ObjectParameter("IDHOSPEDAJE", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTARMONTOS_Result>("SP_LISTARMONTOS", iDHOSPEDAJEParameter);
-        }
-    
         public virtual ObjectResult<string> SP_GUARDAR_SOLICITUDES_FUNCIONARIO(string nOMBREUSUARIO, Nullable<System.DateTime> fECHACREACION, Nullable<System.DateTime> fECHASALIDA, Nullable<System.DateTime> fECHAREGRESO, string jUSTIFICACION, string dESTINO, Nullable<System.TimeSpan> hORAREGRESO, Nullable<System.TimeSpan> hORASALIDA)
         {
             var nOMBREUSUARIOParameter = nOMBREUSUARIO != null ?
@@ -350,112 +474,9 @@ namespace Entidades
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("SP_GUARDAR_SOLICITUDES_FUNCIONARIO", nOMBREUSUARIOParameter, fECHACREACIONParameter, fECHASALIDAParameter, fECHAREGRESOParameter, jUSTIFICACIONParameter, dESTINOParameter, hORAREGRESOParameter, hORASALIDAParameter);
         }
     
-        public virtual ObjectResult<SP_OBTENER_ESTADOS_ACTIVOS_Result> SP_OBTENER_ESTADOS_ACTIVOS()
+        public virtual ObjectResult<SP_LISTAR_LOCALIDAD_Result> SP_LISTAR_LOCALIDAD()
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_OBTENER_ESTADOS_ACTIVOS_Result>("SP_OBTENER_ESTADOS_ACTIVOS");
-        }
-    
-        public virtual int SP_ACTUALIZAR_MODTARIFAVIATICO(Nullable<short> iD_MODTARIFA, Nullable<System.DateTime> fECHATARIFA, Nullable<decimal> mONTOTARIFA, Nullable<short> eSTADOTARIFA)
-        {
-            var iD_MODTARIFAParameter = iD_MODTARIFA.HasValue ?
-                new ObjectParameter("ID_MODTARIFA", iD_MODTARIFA) :
-                new ObjectParameter("ID_MODTARIFA", typeof(short));
-    
-            var fECHATARIFAParameter = fECHATARIFA.HasValue ?
-                new ObjectParameter("FECHATARIFA", fECHATARIFA) :
-                new ObjectParameter("FECHATARIFA", typeof(System.DateTime));
-    
-            var mONTOTARIFAParameter = mONTOTARIFA.HasValue ?
-                new ObjectParameter("MONTOTARIFA", mONTOTARIFA) :
-                new ObjectParameter("MONTOTARIFA", typeof(decimal));
-    
-            var eSTADOTARIFAParameter = eSTADOTARIFA.HasValue ?
-                new ObjectParameter("ESTADOTARIFA", eSTADOTARIFA) :
-                new ObjectParameter("ESTADOTARIFA", typeof(short));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACTUALIZAR_MODTARIFAVIATICO", iD_MODTARIFAParameter, fECHATARIFAParameter, mONTOTARIFAParameter, eSTADOTARIFAParameter);
-        }
-    
-        public virtual ObjectResult<SP_LISTAR_MODTARIFAVIATICO_Result> SP_LISTAR_MODTARIFAVIATICO()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_MODTARIFAVIATICO_Result>("SP_LISTAR_MODTARIFAVIATICO");
-        }
-    
-        public virtual ObjectResult<SP_OBTENER_CANTON_PROVINCIA_Result> SP_OBTENER_CANTON_PROVINCIA(Nullable<int> cODIGOCANTON, Nullable<int> cODIGOPROVINCIA)
-        {
-            var cODIGOCANTONParameter = cODIGOCANTON.HasValue ?
-                new ObjectParameter("CODIGOCANTON", cODIGOCANTON) :
-                new ObjectParameter("CODIGOCANTON", typeof(int));
-    
-            var cODIGOPROVINCIAParameter = cODIGOPROVINCIA.HasValue ?
-                new ObjectParameter("CODIGOPROVINCIA", cODIGOPROVINCIA) :
-                new ObjectParameter("CODIGOPROVINCIA", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_OBTENER_CANTON_PROVINCIA_Result>("SP_OBTENER_CANTON_PROVINCIA", cODIGOCANTONParameter, cODIGOPROVINCIAParameter);
-        }
-    
-        public virtual int SP_GENERAR_ORDEN_VIATICOS(string iDSOLICITUD, string nOMBREUSUARIO, Nullable<short> eSTADOSOLICITUD, Nullable<System.DateTime> fECHAORDEN, Nullable<short> eSTADOORDEN)
-        {
-            var iDSOLICITUDParameter = iDSOLICITUD != null ?
-                new ObjectParameter("IDSOLICITUD", iDSOLICITUD) :
-                new ObjectParameter("IDSOLICITUD", typeof(string));
-    
-            var nOMBREUSUARIOParameter = nOMBREUSUARIO != null ?
-                new ObjectParameter("NOMBREUSUARIO", nOMBREUSUARIO) :
-                new ObjectParameter("NOMBREUSUARIO", typeof(string));
-    
-            var eSTADOSOLICITUDParameter = eSTADOSOLICITUD.HasValue ?
-                new ObjectParameter("ESTADOSOLICITUD", eSTADOSOLICITUD) :
-                new ObjectParameter("ESTADOSOLICITUD", typeof(short));
-    
-            var fECHAORDENParameter = fECHAORDEN.HasValue ?
-                new ObjectParameter("FECHAORDEN", fECHAORDEN) :
-                new ObjectParameter("FECHAORDEN", typeof(System.DateTime));
-    
-            var eSTADOORDENParameter = eSTADOORDEN.HasValue ?
-                new ObjectParameter("ESTADOORDEN", eSTADOORDEN) :
-                new ObjectParameter("ESTADOORDEN", typeof(short));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_GENERAR_ORDEN_VIATICOS", iDSOLICITUDParameter, nOMBREUSUARIOParameter, eSTADOSOLICITUDParameter, fECHAORDENParameter, eSTADOORDENParameter);
-        }
-    
-        public virtual int SP_ACTUALIZAR_TARIFASAUTOBUSES(string cODIGORUTA, Nullable<short> eSTADO, Nullable<decimal> tARIFA, string dESCRIPCION, Nullable<System.DateTime> fECHAVIGENCIA)
-        {
-            var cODIGORUTAParameter = cODIGORUTA != null ?
-                new ObjectParameter("CODIGORUTA", cODIGORUTA) :
-                new ObjectParameter("CODIGORUTA", typeof(string));
-    
-            var eSTADOParameter = eSTADO.HasValue ?
-                new ObjectParameter("ESTADO", eSTADO) :
-                new ObjectParameter("ESTADO", typeof(short));
-    
-            var tARIFAParameter = tARIFA.HasValue ?
-                new ObjectParameter("TARIFA", tARIFA) :
-                new ObjectParameter("TARIFA", typeof(decimal));
-    
-            var dESCRIPCIONParameter = dESCRIPCION != null ?
-                new ObjectParameter("DESCRIPCION", dESCRIPCION) :
-                new ObjectParameter("DESCRIPCION", typeof(string));
-    
-            var fECHAVIGENCIAParameter = fECHAVIGENCIA.HasValue ?
-                new ObjectParameter("FECHAVIGENCIA", fECHAVIGENCIA) :
-                new ObjectParameter("FECHAVIGENCIA", typeof(System.DateTime));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACTUALIZAR_TARIFASAUTOBUSES", cODIGORUTAParameter, eSTADOParameter, tARIFAParameter, dESCRIPCIONParameter, fECHAVIGENCIAParameter);
-        }
-    
-        public virtual ObjectResult<SP_BUSCAR_TARIFAAUTOBUS_Result> SP_BUSCAR_TARIFAAUTOBUS(string cODIGORUTA)
-        {
-            var cODIGORUTAParameter = cODIGORUTA != null ?
-                new ObjectParameter("CODIGORUTA", cODIGORUTA) :
-                new ObjectParameter("CODIGORUTA", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_BUSCAR_TARIFAAUTOBUS_Result>("SP_BUSCAR_TARIFAAUTOBUS", cODIGORUTAParameter);
-        }
-    
-        public virtual ObjectResult<SP_LISTAR_TARIFASAUTOBUSES_Result> SP_LISTAR_TARIFASAUTOBUSES()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_TARIFASAUTOBUSES_Result>("SP_LISTAR_TARIFASAUTOBUSES");
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_LOCALIDAD_Result>("SP_LISTAR_LOCALIDAD");
         }
     
         public virtual ObjectResult<SP_LISTAR_ORDEN_Result> SP_LISTAR_ORDEN()
@@ -463,47 +484,31 @@ namespace Entidades
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_ORDEN_Result>("SP_LISTAR_ORDEN");
         }
     
-        public virtual int SP_ACTUALIZAR_ORDEN_VIATICO(Nullable<int> iD_ORDEN, string iD_SOLICITUD, Nullable<short> eSTADOORDEN, Nullable<System.DateTime> fECHAORDEN)
+        public virtual ObjectResult<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> SP_LISTAR_SOLICITUDES_FUNCIONARIO(string uSUARIO)
         {
-            var iD_ORDENParameter = iD_ORDEN.HasValue ?
-                new ObjectParameter("ID_ORDEN", iD_ORDEN) :
-                new ObjectParameter("ID_ORDEN", typeof(int));
+            var uSUARIOParameter = uSUARIO != null ?
+                new ObjectParameter("USUARIO", uSUARIO) :
+                new ObjectParameter("USUARIO", typeof(string));
     
-            var iD_SOLICITUDParameter = iD_SOLICITUD != null ?
-                new ObjectParameter("ID_SOLICITUD", iD_SOLICITUD) :
-                new ObjectParameter("ID_SOLICITUD", typeof(string));
-    
-            var eSTADOORDENParameter = eSTADOORDEN.HasValue ?
-                new ObjectParameter("ESTADOORDEN", eSTADOORDEN) :
-                new ObjectParameter("ESTADOORDEN", typeof(short));
-    
-            var fECHAORDENParameter = fECHAORDEN.HasValue ?
-                new ObjectParameter("FECHAORDEN", fECHAORDEN) :
-                new ObjectParameter("FECHAORDEN", typeof(System.DateTime));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACTUALIZAR_ORDEN_VIATICO", iD_ORDENParameter, iD_SOLICITUDParameter, eSTADOORDENParameter, fECHAORDENParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result>("SP_LISTAR_SOLICITUDES_FUNCIONARIO", uSUARIOParameter);
         }
     
-        public virtual ObjectResult<SP_LIST_ORDEN_VIATICOS_Result> SP_LIST_ORDEN_VIATICOS(string nOMBREUSUARIO, string iD_SOLICITUD)
+        public virtual ObjectResult<SP_LISTAR_SOLICITUDES_UPDATE_Result> SP_LISTAR_SOLICITUDES_UPDATE(string uSUARIO)
+        {
+            var uSUARIOParameter = uSUARIO != null ?
+                new ObjectParameter("USUARIO", uSUARIO) :
+                new ObjectParameter("USUARIO", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_SOLICITUDES_UPDATE_Result>("SP_LISTAR_SOLICITUDES_UPDATE", uSUARIOParameter);
+        }
+    
+        public virtual ObjectResult<SP_OBTENER_ORDEN_VIATICOS_Result> SP_OBTENER_ORDEN_VIATICOS(string nOMBREUSUARIO)
         {
             var nOMBREUSUARIOParameter = nOMBREUSUARIO != null ?
                 new ObjectParameter("NOMBREUSUARIO", nOMBREUSUARIO) :
                 new ObjectParameter("NOMBREUSUARIO", typeof(string));
     
-            var iD_SOLICITUDParameter = iD_SOLICITUD != null ?
-                new ObjectParameter("ID_SOLICITUD", iD_SOLICITUD) :
-                new ObjectParameter("ID_SOLICITUD", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LIST_ORDEN_VIATICOS_Result>("SP_LIST_ORDEN_VIATICOS", nOMBREUSUARIOParameter, iD_SOLICITUDParameter);
-        }
-    
-        public virtual ObjectResult<SP_BUSCAR_IDVIATICOS_Result> SP_BUSCAR_IDVIATICOS(Nullable<int> iD_ORDEN)
-        {
-            var iD_ORDENParameter = iD_ORDEN.HasValue ?
-                new ObjectParameter("ID_ORDEN", iD_ORDEN) :
-                new ObjectParameter("ID_ORDEN", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_BUSCAR_IDVIATICOS_Result>("SP_BUSCAR_IDVIATICOS", iD_ORDENParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_OBTENER_ORDEN_VIATICOS_Result>("SP_OBTENER_ORDEN_VIATICOS", nOMBREUSUARIOParameter);
         }
     
         public virtual ObjectResult<SP_OBTENER_ORDENES_Result> SP_OBTENER_ORDENES()

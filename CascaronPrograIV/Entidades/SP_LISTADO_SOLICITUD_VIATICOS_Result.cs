@@ -17,7 +17,7 @@ namespace Entidades
         public string ID_PERSONA { get; set; }
         public Nullable<short> CANTIDADPASAJE { get; set; }
         public short CANTIDADVIATICOS { get; set; }
-        public System.DateTime FECHACREACION { get; set; }
+        public Nullable<System.DateTime> FECHACREACION { get; set; }
         public string JUSTIFICACION { get; set; }
         public string DESTINO { get; set; }
         public short ESTADOSOLICITUD { get; set; }

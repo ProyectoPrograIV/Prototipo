@@ -1,51 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="EmpresaPK2ModelStoreContainer" CdmEntityContainer="EmpresaPK2Entities">
-    <FunctionImportMapping FunctionImportName="SP_InsertarUsuario" FunctionName="EmpresaPK2Model.Store.SP_InsertarUsuario" />
-    <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_SOLICITUDES_FUNCIONARIO" FunctionName="EmpresaPK2Model.Store.SP_ACTUALIZAR_SOLICITUDES_FUNCIONARIO" />
-    <FunctionImportMapping FunctionImportName="SP_ELIMINAR_SOLICITUDES" FunctionName="EmpresaPK2Model.Store.SP_ELIMINAR_SOLICITUDES" />
-    <FunctionImportMapping FunctionImportName="SP_LISTAR_SOLICITUDES_FUNCIONARIO" FunctionName="EmpresaPK2Model.Store.SP_LISTAR_SOLICITUDES_FUNCIONARIO">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result">
-          <ScalarProperty Name="ID_SOLICITUD" ColumnName="ID_SOLICITUD" />
-          <ScalarProperty Name="NOMBREUSUARIO" ColumnName="NOMBREUSUARIO" />
-          <ScalarProperty Name="FECHACREACION" ColumnName="FECHACREACION" />
-          <ScalarProperty Name="FECHASALIDA" ColumnName="FECHASALIDA" />
-          <ScalarProperty Name="FECHAREGRESO" ColumnName="FECHAREGRESO" />
-          <ScalarProperty Name="ESTADOSOLICITUD" ColumnName="ESTADOSOLICITUD" />
-          <ScalarProperty Name="JUSTIFICACION" ColumnName="JUSTIFICACION" />
-          <ScalarProperty Name="DESTINO" ColumnName="DESTINO" />
-          <ScalarProperty Name="HORAREGRESO" ColumnName="HORAREGRESO" />
-          <ScalarProperty Name="HORASALIDA" ColumnName="HORASALIDA" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="SP_LISTADO_SOLICITUD_VIATICOS" FunctionName="EmpresaPK2Model.Store.SP_LISTADO_SOLICITUD_VIATICOS">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTADO_SOLICITUD_VIATICOS_Result">
-          <ScalarProperty Name="ID_SOLICITUD" ColumnName="ID_SOLICITUD" />
-          <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
-          <ScalarProperty Name="CANTIDADPASAJE" ColumnName="CANTIDADPASAJE" />
-          <ScalarProperty Name="CANTIDADVIATICOS" ColumnName="CANTIDADVIATICOS" />
-          <ScalarProperty Name="FECHACREACION" ColumnName="FECHACREACION" />
-          <ScalarProperty Name="JUSTIFICACION" ColumnName="JUSTIFICACION" />
-          <ScalarProperty Name="DESTINO" ColumnName="DESTINO" />
-          <ScalarProperty Name="ESTADOSOLICITUD" ColumnName="ESTADOSOLICITUD" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="SP_INICIO_SESION" FunctionName="EmpresaPK2Model.Store.SP_INICIO_SESION">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_INICIO_SESION_Result">
-          <ScalarProperty Name="NOMBREUSUARIO" ColumnName="NOMBREUSUARIO" />
-          <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
-          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
-          <ScalarProperty Name="ID_ROL" ColumnName="ID_ROL" />
-          <ScalarProperty Name="ROL" ColumnName="ROL" />
-          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
     <EntitySetMapping Name="TBL_CANTON">
       <EntityTypeMapping TypeName="EmpresaPK2Model.TBL_CANTON">
         <MappingFragment StoreEntitySet="TBL_CANTON">
@@ -189,6 +144,115 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_InsertarUsuario" FunctionName="EmpresaPK2Model.Store.SP_InsertarUsuario" />
+    <FunctionImportMapping FunctionImportName="SP_LISTAR_SOLICITUDES_VERIFICAR" FunctionName="EmpresaPK2Model.Store.SP_LISTAR_SOLICITUDES_VERIFICAR">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTAR_SOLICITUDES_VERIFICAR_Result">
+          <ScalarProperty Name="ID_SOLICITUD" ColumnName="ID_SOLICITUD" />
+          <ScalarProperty Name="FECHACREACION" ColumnName="FECHACREACION" />
+          <ScalarProperty Name="FECHASALIDA" ColumnName="FECHASALIDA" />
+          <ScalarProperty Name="FECHAREGRESO" ColumnName="FECHAREGRESO" />
+          <ScalarProperty Name="JUSTIFICACION" ColumnName="JUSTIFICACION" />
+          <ScalarProperty Name="DESTINO" ColumnName="DESTINO" />
+          <ScalarProperty Name="HORAREGRESO" ColumnName="HORAREGRESO" />
+          <ScalarProperty Name="HORASALIDA" ColumnName="HORASALIDA" />
+          <ScalarProperty Name="CANTIDADDESAYUNO" ColumnName="CANTIDADDESAYUNO" />
+          <ScalarProperty Name="MONTODESAYUNO" ColumnName="MONTODESAYUNO" />
+          <ScalarProperty Name="CANTIDADALMUERZO" ColumnName="CANTIDADALMUERZO" />
+          <ScalarProperty Name="MONTOALMUERZO" ColumnName="MONTOALMUERZO" />
+          <ScalarProperty Name="CANTIDADCENA" ColumnName="CANTIDADCENA" />
+          <ScalarProperty Name="MONTOCENA" ColumnName="MONTOCENA" />
+          <ScalarProperty Name="CANTIDADPASAJE" ColumnName="CANTIDADPASAJE" />
+          <ScalarProperty Name="MONTOPASAJE" ColumnName="MONTOPASAJE" />
+          <ScalarProperty Name="LOCALIDAD" ColumnName="LOCALIDAD" />
+          <ScalarProperty Name="MONTOHOSPEDAJE" ColumnName="MONTOHOSPEDAJE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_MODTARIFAVIATICO" FunctionName="EmpresaPK2Model.Store.SP_ACTUALIZAR_MODTARIFAVIATICO" />
+    <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_TARIFASAUTOBUSES" FunctionName="EmpresaPK2Model.Store.SP_ACTUALIZAR_TARIFASAUTOBUSES" />
+    <FunctionImportMapping FunctionImportName="SP_BUSCAR_TARIFAAUTOBUS" FunctionName="EmpresaPK2Model.Store.SP_BUSCAR_TARIFAAUTOBUS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_BUSCAR_TARIFAAUTOBUS_Result">
+          <ScalarProperty Name="CODIGORUTA" ColumnName="CODIGORUTA" />
+          <ScalarProperty Name="ESTADORUTA" ColumnName="ESTADORUTA" />
+          <ScalarProperty Name="TARIFAREGISTRADA" ColumnName="TARIFAREGISTRADA" />
+          <ScalarProperty Name="DESCRIPCIONRUTA" ColumnName="DESCRIPCIONRUTA" />
+          <ScalarProperty Name="FECHAVIGENCIA" ColumnName="FECHAVIGENCIA" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_LISTAR_MODTARIFAVIATICO" FunctionName="EmpresaPK2Model.Store.SP_LISTAR_MODTARIFAVIATICO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTAR_MODTARIFAVIATICO_Result">
+          <ScalarProperty Name="ID_MODTARIFA" ColumnName="ID_MODTARIFA" />
+          <ScalarProperty Name="CODIGOPROVINCIA" ColumnName="CODIGOPROVINCIA" />
+          <ScalarProperty Name="CODIGOCANTON" ColumnName="CODIGOCANTON" />
+          <ScalarProperty Name="TIPOTARIFA" ColumnName="TIPOTARIFA" />
+          <ScalarProperty Name="FECHATARIFA" ColumnName="FECHATARIFA" />
+          <ScalarProperty Name="MONTOTARIFA" ColumnName="MONTOTARIFA" />
+          <ScalarProperty Name="ESTADOTARIFA" ColumnName="ESTADOTARIFA" />
+          <ScalarProperty Name="LOCALIDAD" ColumnName="LOCALIDAD" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_LISTAR_RUTAS" FunctionName="EmpresaPK2Model.Store.SP_LISTAR_RUTAS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTAR_RUTAS_Result">
+          <ScalarProperty Name="CODIGORUTA" ColumnName="CODIGORUTA" />
+          <ScalarProperty Name="DESCRIPCIONRUTA" ColumnName="DESCRIPCIONRUTA" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_LISTAR_TARIFASAUTOBUSES" FunctionName="EmpresaPK2Model.Store.SP_LISTAR_TARIFASAUTOBUSES">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTAR_TARIFASAUTOBUSES_Result">
+          <ScalarProperty Name="CODIGORUTA" ColumnName="CODIGORUTA" />
+          <ScalarProperty Name="ESTADORUTA" ColumnName="ESTADORUTA" />
+          <ScalarProperty Name="TARIFAREGISTRADA" ColumnName="TARIFAREGISTRADA" />
+          <ScalarProperty Name="DESCRIPCIONRUTA" ColumnName="DESCRIPCIONRUTA" />
+          <ScalarProperty Name="FECHAVIGENCIA" ColumnName="FECHAVIGENCIA" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_LISTARMONTORUTA" FunctionName="EmpresaPK2Model.Store.SP_LISTARMONTORUTA">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTARMONTORUTA_Result">
+          <ScalarProperty Name="CODIGORUTA" ColumnName="CODIGORUTA" />
+          <ScalarProperty Name="TARIFAREGISTRADA" ColumnName="TARIFAREGISTRADA" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_LISTARMONTOS" FunctionName="EmpresaPK2Model.Store.SP_LISTARMONTOS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTARMONTOS_Result">
+          <ScalarProperty Name="ID_MODTARIFA" ColumnName="ID_MODTARIFA" />
+          <ScalarProperty Name="TIPOTARIFA" ColumnName="TIPOTARIFA" />
+          <ScalarProperty Name="MONTOTARIFA" ColumnName="MONTOTARIFA" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_OBTENER_CANTON_PROVINCIA" FunctionName="EmpresaPK2Model.Store.SP_OBTENER_CANTON_PROVINCIA">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_OBTENER_CANTON_PROVINCIA_Result">
+          <ScalarProperty Name="DESCRIPCIONCANTON" ColumnName="DESCRIPCIONCANTON" />
+          <ScalarProperty Name="DESCRIPCIONPROVINCIA" ColumnName="DESCRIPCIONPROVINCIA" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_LIST_ORDEN_VIATICOS" FunctionName="EmpresaPK2Model.Store.SP_LIST_ORDEN_VIATICOS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LIST_ORDEN_VIATICOS_Result">
+          <ScalarProperty Name="FECHAORDEN" ColumnName="FECHAORDEN" />
+          <ScalarProperty Name="ID_SOLICITUD" ColumnName="ID_SOLICITUD" />
+          <ScalarProperty Name="MONTODESAYUNO" ColumnName="MONTODESAYUNO" />
+          <ScalarProperty Name="MONTOALMUERZO" ColumnName="MONTOALMUERZO" />
+          <ScalarProperty Name="MONTOCENA" ColumnName="MONTOCENA" />
+          <ScalarProperty Name="MONTOHOSPEDAJE" ColumnName="MONTOHOSPEDAJE" />
+          <ScalarProperty Name="MONTOPASAJE" ColumnName="MONTOPASAJE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="SP_LISTADO_LIQUIDACION_VIATICOS" FunctionName="EmpresaPK2Model.Store.SP_LISTADO_LIQUIDACION_VIATICOS">
       <ResultMapping>
         <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTADO_LIQUIDACION_VIATICOS_Result">
@@ -214,38 +278,29 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="SP_LISTAR_LOCALIDAD" FunctionName="EmpresaPK2Model.Store.SP_LISTAR_LOCALIDAD">
+    <FunctionImportMapping FunctionImportName="SP_LISTADO_SOLICITUD_VIATICOS" FunctionName="EmpresaPK2Model.Store.SP_LISTADO_SOLICITUD_VIATICOS">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTAR_LOCALIDAD_Result">
-          <ScalarProperty Name="ID_MODTARIFA" ColumnName="ID_MODTARIFA" />
-          <ScalarProperty Name="LOCALIDAD" ColumnName="LOCALIDAD" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="SP_LISTAR_RUTAS" FunctionName="EmpresaPK2Model.Store.SP_LISTAR_RUTAS">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTAR_RUTAS_Result">
-          <ScalarProperty Name="CODIGORUTA" ColumnName="CODIGORUTA" />
-          <ScalarProperty Name="DESCRIPCIONRUTA" ColumnName="DESCRIPCIONRUTA" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="SP_GUARDAR_DETALLEVIATICOS" FunctionName="EmpresaPK2Model.Store.SP_GUARDAR_DETALLEVIATICOS" />
-    <FunctionImportMapping FunctionImportName="SP_LISTAR_SOLICITUDES_ACTUALIZAR" FunctionName="EmpresaPK2Model.Store.SP_LISTAR_SOLICITUDES_ACTUALIZAR">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTAR_SOLICITUDES_ACTUALIZAR_Result">
-          <ScalarProperty Name="FECHASALIDA" ColumnName="FECHASALIDA" />
-          <ScalarProperty Name="FECHAREGRESO" ColumnName="FECHAREGRESO" />
+        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTADO_SOLICITUD_VIATICOS_Result">
+          <ScalarProperty Name="ID_SOLICITUD" ColumnName="ID_SOLICITUD" />
+          <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+          <ScalarProperty Name="CANTIDADPASAJE" ColumnName="CANTIDADPASAJE" />
+          <ScalarProperty Name="CANTIDADVIATICOS" ColumnName="CANTIDADVIATICOS" />
+          <ScalarProperty Name="FECHACREACION" ColumnName="FECHACREACION" />
           <ScalarProperty Name="JUSTIFICACION" ColumnName="JUSTIFICACION" />
           <ScalarProperty Name="DESTINO" ColumnName="DESTINO" />
-          <ScalarProperty Name="HORAREGRESO" ColumnName="HORAREGRESO" />
-          <ScalarProperty Name="HORASALIDA" ColumnName="HORASALIDA" />
-          <ScalarProperty Name="CANTIDADDESAYUNO" ColumnName="CANTIDADDESAYUNO" />
-          <ScalarProperty Name="CANTIDADALMUERZO" ColumnName="CANTIDADALMUERZO" />
-          <ScalarProperty Name="CANTIDADCENA" ColumnName="CANTIDADCENA" />
-          <ScalarProperty Name="CANTIDADPASAJE" ColumnName="CANTIDADPASAJE" />
-          <ScalarProperty Name="CODIGORUTA" ColumnName="CODIGORUTA" />
-          <ScalarProperty Name="LOCALIDADHOSPEDAJE" ColumnName="LOCALIDADHOSPEDAJE" />
+          <ScalarProperty Name="ESTADOSOLICITUD" ColumnName="ESTADOSOLICITUD" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_INICIO_SESION" FunctionName="EmpresaPK2Model.Store.SP_INICIO_SESION">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_INICIO_SESION_Result">
+          <ScalarProperty Name="NOMBREUSUARIO" ColumnName="NOMBREUSUARIO" />
+          <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID_ROL" ColumnName="ID_ROL" />
+          <ScalarProperty Name="ROL" ColumnName="ROL" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
@@ -257,35 +312,6 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="SP_OBTENER_ORDEN_VIATICOS" FunctionName="EmpresaPK2Model.Store.SP_OBTENER_ORDEN_VIATICOS">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_OBTENER_ORDEN_VIATICOS_Result">
-          <ScalarProperty Name="FECHAORDEN" ColumnName="FECHAORDEN" />
-          <ScalarProperty Name="ID_ORDEN" ColumnName="ID_ORDEN" />
-          <ScalarProperty Name="ID_SOLICITUD" ColumnName="ID_SOLICITUD" />
-          <ScalarProperty Name="NOMBREUSUARIO" ColumnName="NOMBREUSUARIO" />
-          <ScalarProperty Name="ESTADOORDEN" ColumnName="ESTADOORDEN" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="SP_LISTARMONTORUTA" FunctionName="EmpresaPK2Model.Store.SP_LISTARMONTORUTA">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTARMONTORUTA_Result">
-          <ScalarProperty Name="CODIGORUTA" ColumnName="CODIGORUTA" />
-          <ScalarProperty Name="TARIFAREGISTRADA" ColumnName="TARIFAREGISTRADA" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="SP_LISTARMONTOS" FunctionName="EmpresaPK2Model.Store.SP_LISTARMONTOS">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTARMONTOS_Result">
-          <ScalarProperty Name="ID_MODTARIFA" ColumnName="ID_MODTARIFA" />
-          <ScalarProperty Name="TIPOTARIFA" ColumnName="TIPOTARIFA" />
-          <ScalarProperty Name="MONTOTARIFA" ColumnName="MONTOTARIFA" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="SP_GUARDAR_SOLICITUDES_FUNCIONARIO" FunctionName="EmpresaPK2Model.Store.SP_GUARDAR_SOLICITUDES_FUNCIONARIO" />
     <FunctionImportMapping FunctionImportName="SP_OBTENER_ESTADOS_ACTIVOS" FunctionName="EmpresaPK2Model.Store.SP_OBTENER_ESTADOS_ACTIVOS">
       <ResultMapping>
         <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_OBTENER_ESTADOS_ACTIVOS_Result">
@@ -294,50 +320,28 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_MODTARIFAVIATICO" FunctionName="EmpresaPK2Model.Store.SP_ACTUALIZAR_MODTARIFAVIATICO" />
-    <FunctionImportMapping FunctionImportName="SP_LISTAR_MODTARIFAVIATICO" FunctionName="EmpresaPK2Model.Store.SP_LISTAR_MODTARIFAVIATICO">
+    <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_ORDEN_VIATICO" FunctionName="EmpresaPK2Model.Store.SP_ACTUALIZAR_ORDEN_VIATICO" />
+    <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_SOLICITUDES_FUNCIONARIO" FunctionName="EmpresaPK2Model.Store.SP_ACTUALIZAR_SOLICITUDES_FUNCIONARIO" />
+    <FunctionImportMapping FunctionImportName="SP_BUSCAR_IDVIATICOS" FunctionName="EmpresaPK2Model.Store.SP_BUSCAR_IDVIATICOS">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTAR_MODTARIFAVIATICO_Result">
-          <ScalarProperty Name="ID_MODTARIFA" ColumnName="ID_MODTARIFA" />
-          <ScalarProperty Name="CODIGOPROVINCIA" ColumnName="CODIGOPROVINCIA" />
-          <ScalarProperty Name="CODIGOCANTON" ColumnName="CODIGOCANTON" />
-          <ScalarProperty Name="TIPOTARIFA" ColumnName="TIPOTARIFA" />
-          <ScalarProperty Name="FECHATARIFA" ColumnName="FECHATARIFA" />
-          <ScalarProperty Name="MONTOTARIFA" ColumnName="MONTOTARIFA" />
-          <ScalarProperty Name="ESTADOTARIFA" ColumnName="ESTADOTARIFA" />
-          <ScalarProperty Name="LOCALIDAD" ColumnName="LOCALIDAD" />
+        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_BUSCAR_IDVIATICOS_Result">
+          <ScalarProperty Name="MontoDesayuno" ColumnName="MontoDesayuno" />
+          <ScalarProperty Name="MontoAlmuerzo" ColumnName="MontoAlmuerzo" />
+          <ScalarProperty Name="MontoCena" ColumnName="MontoCena" />
+          <ScalarProperty Name="MontoHospedaje" ColumnName="MontoHospedaje" />
+          <ScalarProperty Name="MontoPasaje" ColumnName="MontoPasaje" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="SP_OBTENER_CANTON_PROVINCIA" FunctionName="EmpresaPK2Model.Store.SP_OBTENER_CANTON_PROVINCIA">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_OBTENER_CANTON_PROVINCIA_Result">
-          <ScalarProperty Name="DESCRIPCIONCANTON" ColumnName="DESCRIPCIONCANTON" />
-          <ScalarProperty Name="DESCRIPCIONPROVINCIA" ColumnName="DESCRIPCIONPROVINCIA" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_ELIMINAR_SOLICITUDES" FunctionName="EmpresaPK2Model.Store.SP_ELIMINAR_SOLICITUDES" />
     <FunctionImportMapping FunctionImportName="SP_GENERAR_ORDEN_VIATICOS" FunctionName="EmpresaPK2Model.Store.SP_GENERAR_ORDEN_VIATICOS" />
-    <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_TARIFASAUTOBUSES" FunctionName="EmpresaPK2Model.Store.SP_ACTUALIZAR_TARIFASAUTOBUSES" />
-    <FunctionImportMapping FunctionImportName="SP_BUSCAR_TARIFAAUTOBUS" FunctionName="EmpresaPK2Model.Store.SP_BUSCAR_TARIFAAUTOBUS">
+    <FunctionImportMapping FunctionImportName="SP_GUARDAR_DETALLEVIATICOS" FunctionName="EmpresaPK2Model.Store.SP_GUARDAR_DETALLEVIATICOS" />
+    <FunctionImportMapping FunctionImportName="SP_GUARDAR_SOLICITUDES_FUNCIONARIO" FunctionName="EmpresaPK2Model.Store.SP_GUARDAR_SOLICITUDES_FUNCIONARIO" />
+    <FunctionImportMapping FunctionImportName="SP_LISTAR_LOCALIDAD" FunctionName="EmpresaPK2Model.Store.SP_LISTAR_LOCALIDAD">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_BUSCAR_TARIFAAUTOBUS_Result">
-          <ScalarProperty Name="CODIGORUTA" ColumnName="CODIGORUTA" />
-          <ScalarProperty Name="ESTADORUTA" ColumnName="ESTADORUTA" />
-          <ScalarProperty Name="TARIFAREGISTRADA" ColumnName="TARIFAREGISTRADA" />
-          <ScalarProperty Name="DESCRIPCIONRUTA" ColumnName="DESCRIPCIONRUTA" />
-          <ScalarProperty Name="FECHAVIGENCIA" ColumnName="FECHAVIGENCIA" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="SP_LISTAR_TARIFASAUTOBUSES" FunctionName="EmpresaPK2Model.Store.SP_LISTAR_TARIFASAUTOBUSES">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTAR_TARIFASAUTOBUSES_Result">
-          <ScalarProperty Name="CODIGORUTA" ColumnName="CODIGORUTA" />
-          <ScalarProperty Name="ESTADORUTA" ColumnName="ESTADORUTA" />
-          <ScalarProperty Name="TARIFAREGISTRADA" ColumnName="TARIFAREGISTRADA" />
-          <ScalarProperty Name="DESCRIPCIONRUTA" ColumnName="DESCRIPCIONRUTA" />
-          <ScalarProperty Name="FECHAVIGENCIA" ColumnName="FECHAVIGENCIA" />
+        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTAR_LOCALIDAD_Result">
+          <ScalarProperty Name="ID_MODTARIFA" ColumnName="ID_MODTARIFA" />
+          <ScalarProperty Name="LOCALIDAD" ColumnName="LOCALIDAD" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
@@ -351,28 +355,50 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_ORDEN_VIATICO" FunctionName="EmpresaPK2Model.Store.SP_ACTUALIZAR_ORDEN_VIATICO" />
-    <FunctionImportMapping FunctionImportName="SP_LIST_ORDEN_VIATICOS" FunctionName="EmpresaPK2Model.Store.SP_LIST_ORDEN_VIATICOS">
+    <FunctionImportMapping FunctionImportName="SP_LISTAR_SOLICITUDES_FUNCIONARIO" FunctionName="EmpresaPK2Model.Store.SP_LISTAR_SOLICITUDES_FUNCIONARIO">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LIST_ORDEN_VIATICOS_Result">
-          <ScalarProperty Name="FECHAORDEN" ColumnName="FECHAORDEN" />
+        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result">
           <ScalarProperty Name="ID_SOLICITUD" ColumnName="ID_SOLICITUD" />
-          <ScalarProperty Name="MONTODESAYUNO" ColumnName="MONTODESAYUNO" />
-          <ScalarProperty Name="MONTOALMUERZO" ColumnName="MONTOALMUERZO" />
-          <ScalarProperty Name="MONTOCENA" ColumnName="MONTOCENA" />
-          <ScalarProperty Name="MONTOHOSPEDAJE" ColumnName="MONTOHOSPEDAJE" />
-          <ScalarProperty Name="MONTOPASAJE" ColumnName="MONTOPASAJE" />
+          <ScalarProperty Name="NOMBREUSUARIO" ColumnName="NOMBREUSUARIO" />
+          <ScalarProperty Name="FECHACREACION" ColumnName="FECHACREACION" />
+          <ScalarProperty Name="FECHASALIDA" ColumnName="FECHASALIDA" />
+          <ScalarProperty Name="FECHAREGRESO" ColumnName="FECHAREGRESO" />
+          <ScalarProperty Name="ESTADOSOLICITUD" ColumnName="ESTADOSOLICITUD" />
+          <ScalarProperty Name="JUSTIFICACION" ColumnName="JUSTIFICACION" />
+          <ScalarProperty Name="DESTINO" ColumnName="DESTINO" />
+          <ScalarProperty Name="HORAREGRESO" ColumnName="HORAREGRESO" />
+          <ScalarProperty Name="HORASALIDA" ColumnName="HORASALIDA" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="SP_BUSCAR_IDVIATICOS" FunctionName="EmpresaPK2Model.Store.SP_BUSCAR_IDVIATICOS">
+    <FunctionImportMapping FunctionImportName="SP_LISTAR_SOLICITUDES_UPDATE" FunctionName="EmpresaPK2Model.Store.SP_LISTAR_SOLICITUDES_UPDATE">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_BUSCAR_IDVIATICOS_Result">
-          <ScalarProperty Name="MontoDesayuno" ColumnName="MontoDesayuno" />
-          <ScalarProperty Name="MontoAlmuerzo" ColumnName="MontoAlmuerzo" />
-          <ScalarProperty Name="MontoCena" ColumnName="MontoCena" />
-          <ScalarProperty Name="MontoHospedaje" ColumnName="MontoHospedaje" />
-          <ScalarProperty Name="MontoPasaje" ColumnName="MontoPasaje" />
+        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTAR_SOLICITUDES_UPDATE_Result">
+          <ScalarProperty Name="ID_SOLICITUD" ColumnName="ID_SOLICITUD" />
+          <ScalarProperty Name="FECHACREACION" ColumnName="FECHACREACION" />
+          <ScalarProperty Name="JUSTIFICACION" ColumnName="JUSTIFICACION" />
+          <ScalarProperty Name="FECHASALIDA" ColumnName="FECHASALIDA" />
+          <ScalarProperty Name="FECHAREGRESO" ColumnName="FECHAREGRESO" />
+          <ScalarProperty Name="DESTINO" ColumnName="DESTINO" />
+          <ScalarProperty Name="HORAREGRESO" ColumnName="HORAREGRESO" />
+          <ScalarProperty Name="HORASALIDA" ColumnName="HORASALIDA" />
+          <ScalarProperty Name="CANTIDADDESAYUNO" ColumnName="CANTIDADDESAYUNO" />
+          <ScalarProperty Name="CANTIDADALMUERZO" ColumnName="CANTIDADALMUERZO" />
+          <ScalarProperty Name="CANTIDADCENA" ColumnName="CANTIDADCENA" />
+          <ScalarProperty Name="CANTIDADPASAJE" ColumnName="CANTIDADPASAJE" />
+          <ScalarProperty Name="LOCALIDADHOSPEDAJE" ColumnName="LOCALIDADHOSPEDAJE" />
+          <ScalarProperty Name="CODIGORUTA" ColumnName="CODIGORUTA" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_OBTENER_ORDEN_VIATICOS" FunctionName="EmpresaPK2Model.Store.SP_OBTENER_ORDEN_VIATICOS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_OBTENER_ORDEN_VIATICOS_Result">
+          <ScalarProperty Name="FECHAORDEN" ColumnName="FECHAORDEN" />
+          <ScalarProperty Name="ID_ORDEN" ColumnName="ID_ORDEN" />
+          <ScalarProperty Name="ID_SOLICITUD" ColumnName="ID_SOLICITUD" />
+          <ScalarProperty Name="ESTADOORDEN" ColumnName="ESTADOORDEN" />
+          <ScalarProperty Name="NOMBREUSUARIO" ColumnName="NOMBREUSUARIO" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>

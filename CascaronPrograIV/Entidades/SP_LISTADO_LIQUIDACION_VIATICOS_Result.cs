@@ -13,7 +13,7 @@ namespace Entidades
     
     public partial class SP_LISTADO_LIQUIDACION_VIATICOS_Result
     {
-        public System.DateTime FECHALIQUIDACION { get; set; }
+        public Nullable<System.DateTime> FECHALIQUIDACION { get; set; }
         public int ID_LIQUIDACION { get; set; }
         public int ID_ORDEN { get; set; }
         public Nullable<decimal> MONTODESAYUNO { get; set; }

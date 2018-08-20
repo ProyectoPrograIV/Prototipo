@@ -49,18 +49,6 @@ C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\AD\bin\Debug
 C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\AD\obj\Debug\AD.csprojResolveAssemblyReference.cache
 C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\AD\obj\Debug\AD.dll
 C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\AD\obj\Debug\AD.pdb
-C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\AD\bin\Debug\AD.dll
-C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\AD\bin\Debug\AD.pdb
-C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\AD\bin\Debug\Entidades.dll
-C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\AD\bin\Debug\EntityFramework.dll
-C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\AD\bin\Debug\Entidades.pdb
-C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\AD\bin\Debug\Entidades.dll.config
-C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\AD\bin\Debug\EntityFramework.xml
-C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\AD\obj\Debug\AD.csprojAssemblyReference.cache
-C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\AD\obj\Debug\AD.csproj.CoreCompileInputs.cache
-C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\AD\obj\Debug\AD.csproj.CopyComplete
-C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\AD\obj\Debug\AD.dll
-C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\AD\obj\Debug\AD.pdb
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\AD\bin\Debug\AD.dll
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\AD\bin\Debug\AD.pdb
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\AD\bin\Debug\Entidades.dll
@@ -85,3 +73,12 @@ C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\AD\obj\Debug
 C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\AD\obj\Debug\AD.csproj.CopyComplete
 C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\AD\obj\Debug\AD.dll
 C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\AD\obj\Debug\AD.pdb
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\AD\bin\Debug\AD.dll
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\AD\bin\Debug\AD.pdb
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\AD\bin\Debug\Entidades.dll
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\AD\bin\Debug\EntityFramework.dll
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\AD\bin\Debug\Entidades.pdb
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\AD\bin\Debug\EntityFramework.xml
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\AD\obj\Debug\AD.dll
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\AD\obj\Debug\AD.pdb
+C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\AD\obj\Debug\AD.csprojResolveAssemblyReference.cache
