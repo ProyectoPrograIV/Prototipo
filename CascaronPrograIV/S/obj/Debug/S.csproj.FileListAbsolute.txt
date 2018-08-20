@@ -46,23 +46,6 @@ C:\Users\usuario\Source\Repos\Prototipo\CascaronPrograIV\S\bin\AD.pdb
 C:\Users\usuario\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.csprojResolveAssemblyReference.cache
 C:\Users\usuario\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.dll
 C:\Users\usuario\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.pdb
-C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\bin\S.dll.config
-C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\bin\S.dll
-C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\bin\S.pdb
-C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\bin\Entidades.dll
-C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\bin\LN.dll
-C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\bin\EntityFramework.dll
-C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\bin\AD.dll
-C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\bin\Entidades.pdb
-C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\bin\Entidades.dll.config
-C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\bin\LN.pdb
-C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\bin\EntityFramework.xml
-C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\bin\AD.pdb
-C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.csprojAssemblyReference.cache
-C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.csproj.CoreCompileInputs.cache
-C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.csproj.CopyComplete
-C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.dll
-C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.pdb
 C:\Users\Leo\Source\Repos\Prototipo\CascaronPrograIV\S\bin\S.dll.config
 C:\Users\Leo\Source\Repos\Prototipo\CascaronPrograIV\S\bin\S.dll
 C:\Users\Leo\Source\Repos\Prototipo\CascaronPrograIV\S\bin\S.pdb
@@ -78,23 +61,6 @@ C:\Users\Leo\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.csprojResolve
 C:\Users\Leo\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.dll
 C:\Users\Leo\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.pdb
 C:\Users\Admin\Desktop\UAM\Programacion 4\Proyecto\CascaronPrograIV\S\obj\Debug\S.csprojResolveAssemblyReference.cache
-C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\bin\S.dll.config
-C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\bin\S.dll
-C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\bin\S.pdb
-C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\bin\Entidades.dll
-C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\bin\LN.dll
-C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\bin\EntityFramework.dll
-C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\bin\AD.dll
-C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\bin\Entidades.pdb
-C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\bin\Entidades.dll.config
-C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\bin\LN.pdb
-C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\bin\EntityFramework.xml
-C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\bin\AD.pdb
-C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.csprojAssemblyReference.cache
-C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.csproj.CoreCompileInputs.cache
-C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.csproj.CopyComplete
-C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.dll
-C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.pdb
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\S\bin\S.dll.config
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\S\bin\S.dll
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\S\bin\S.pdb
@@ -112,3 +78,37 @@ C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.csproj.Core
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.csproj.CopyComplete
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.dll
 C:\Users\David\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.pdb
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\bin\S.dll.config
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\bin\S.dll
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\bin\S.pdb
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\bin\Entidades.dll
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\bin\LN.dll
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\bin\EntityFramework.dll
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\bin\AD.dll
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\bin\Entidades.pdb
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\bin\Entidades.dll.config
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\bin\LN.pdb
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\bin\EntityFramework.xml
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\bin\AD.pdb
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.csprojAssemblyReference.cache
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.csproj.CoreCompileInputs.cache
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.csproj.CopyComplete
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.dll
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.pdb
+C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\bin\S.dll.config
+C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\bin\S.dll
+C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\bin\S.pdb
+C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\bin\Entidades.dll
+C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\bin\LN.dll
+C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\bin\EntityFramework.dll
+C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\bin\AD.dll
+C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\bin\Entidades.pdb
+C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\bin\Entidades.dll.config
+C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\bin\LN.pdb
+C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\bin\EntityFramework.xml
+C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\bin\AD.pdb
+C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.csprojAssemblyReference.cache
+C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.csproj.CoreCompileInputs.cache
+C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.csproj.CopyComplete
+C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.dll
+C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\S\obj\Debug\S.pdb

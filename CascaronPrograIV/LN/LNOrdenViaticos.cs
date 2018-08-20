@@ -10,7 +10,7 @@ namespace LN
 {
     public class LNOrdenViaticos
     {
-        public static List<SP_OBTENER_ORDEN_VIATICOS_Result> ObtenerOrden(OrdenDeViaticos obj)
+        public static List<SP_OBTENER_ORDEN_VIATICOS_Result> ObtenerOrden(TBL_SOLICITUDVIATICOS obj)
         {
             return ADOrdenViaticos.ObtenerOrden(obj);
         }
@@ -18,6 +18,11 @@ namespace LN
         public static List<TBL_CABECERAORDENVIATICO> ListarOrdenes()
         {
             return ADOrdenViaticos.ListarOrdenes();
+        }
+
+        public static List<TBL_CABECERAORDENVIATICO> ObtenerOrdenes()
+        {
+            return ADOrdenViaticos.ObtenerOrdenes();
         }
 
         public static int GenerarOrdenViaticos(TBL_CABECERAORDENVIATICO orden, TBL_SOLICITUDVIATICOS solicitud)
@@ -29,5 +34,7 @@ namespace LN
         {
             return AD.ADOrdenViaticos.ActualizarOrdenViaticos(orden);
         }
+
+
     }
 }

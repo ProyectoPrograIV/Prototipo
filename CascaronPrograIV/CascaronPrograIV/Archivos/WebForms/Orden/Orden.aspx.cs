@@ -15,12 +15,9 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
         {
             if (!IsPostBack)
             {
-                ddlEstado.Items.Add("Inactivo");
-                ddlEstado.Items.Add("Activo");
                 ddlEstadosActualizar.Items.Add("Inactivo");
                 ddlEstadosActualizar.Items.Add("Activo");
-
-                CargarOrden();
+                CargarGVConsultas();
                 CargarGVActualizar();
             }
         }
@@ -31,11 +28,11 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
         {
             try
             {
-                OrdenDeViaticos obj = new OrdenDeViaticos();
+                TBL_SOLICITUDVIATICOS obj = new TBL_SOLICITUDVIATICOS();
 
                 this.GvConsultarSolicitud.DataSource = null;
                 this.GvConsultarSolicitud.DataBind();
-                this.GvConsultarSolicitud.DataSource = this.ObtenerListaOrden(obj);
+                this.GvConsultarSolicitud.DataSource = ObtenerListaOrden(obj);
                 this.GvConsultarSolicitud.DataBind();
             }
             catch (Exception ex)
@@ -59,18 +56,37 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
             }
         }
 
+        private void CargarGVConsultas()
+        {
+            try
+            {
+                this.GvActualizar.DataSource = null;
+                this.GvActualizar.DataBind();
+                this.GvActualizar.DataSource = ObtenerOrdenes();
+                this.GvActualizar.DataBind();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         protected void GvActualizar_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtIdOrdenAct.Text = GvActualizar.SelectedRow.Cells[0].Text;
-            txtIdSolicitudAct.Text = GvActualizar.SelectedRow.Cells[1].Text;
-            ddlEstadosActualizar.SelectedIndex = Convert.ToInt16(GvActualizar.SelectedRow.Cells[2].Text);
-            txtFechaAct.Text = GvActualizar.SelectedRow.Cells[3].Text;
+            txtIdOrdenAct.Text = GvActualizar.SelectedRow.Cells[1].Text;
+            txtIdSolicitudAct.Text = GvActualizar.SelectedRow.Cells[2].Text;
+            if (GvActualizar.SelectedRow.Cells[3].Text == "Activo")
+            {
+                ddlEstadosActualizar.SelectedIndex = 0;
+            }
+            //ddlEstadosActualizar.SelectedIndex = Convert.ToInt16(GvActualizar.SelectedRow.Cells[2].Text);
+            txtFechaAct.Text = GvActualizar.SelectedRow.Cells[4].Text;
         }
         #endregion
 
         #region Metodos de WFC 
 
-        private List<SP_OBTENER_ORDEN_VIATICOS_Result> ObtenerListaOrden(OrdenDeViaticos obj)
+        private List<SP_OBTENER_ORDEN_VIATICOS_Result> ObtenerListaOrden(TBL_SOLICITUDVIATICOS obj)
         {
             WCFServicio.Service1Client servicio = new WCFServicio.Service1Client();
             List<SP_OBTENER_ORDEN_VIATICOS_Result> lista = null;
@@ -88,6 +104,23 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
                 servicio = new WCFServicio.Service1Client();
 
                 return servicio.ListarOrdenes();
+            }
+            finally
+            {
+                if (servicio != null)
+                    servicio.Close();
+            }
+        }
+
+        public static List<TBL_CABECERAORDENVIATICO> ObtenerOrdenes()
+        {
+            WCFServicio.Service1Client servicio = null;
+
+            try
+            {
+                servicio = new WCFServicio.Service1Client();
+
+                return servicio.ObtenerOrdenes();
             }
             finally
             {
@@ -138,16 +171,6 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
         {
             try
             {
-                TBL_CABECERAORDENVIATICO orden = new TBL_CABECERAORDENVIATICO();
-                TBL_SOLICITUDVIATICOS solicitudv = new TBL_SOLICITUDVIATICOS();
-
-                orden.ID_SOLICITUD = txtID.Text.Trim();
-                solicitudv.NOMBREUSUARIO = txtUsuario.Text.Trim();
-                solicitudv.ESTADOSOLICITUD = Convert.ToInt16(ddlEstado.SelectedValue.ToString());
-                orden.ESTADOORDEN = Convert.ToInt16(ddlEstado.SelectedValue.ToString());
-                orden.FECHAORDEN = Convert.ToDateTime(txtFecha.Text.Trim());
-
-                GenerarOrdenViaticos(orden, solicitudv);
             }
             catch (Exception ex)
             {
@@ -163,9 +186,11 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            OrdenDeViaticos obj = new OrdenDeViaticos();
-            obj.NomUsuario = txtBuscar.Text.Trim();
-            GvConsultarSolicitud.DataSource = this.ObtenerListaOrden(obj);
+            TBL_SOLICITUDVIATICOS obj = new TBL_SOLICITUDVIATICOS();
+            obj.NOMBREUSUARIO = txtBuscar.Text.Trim();
+            GvConsultarSolicitud.DataSource = ObtenerListaOrden(obj);
+            GvConsultarSolicitud.DataBind();
+
         }
 
         private void ActualizarOrden()
@@ -175,9 +200,16 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
                 TBL_CABECERAORDENVIATICO orden = new TBL_CABECERAORDENVIATICO();
 
                 orden.ID_ORDEN = Convert.ToInt32(txtIdOrdenAct.Text.Trim());
-                orden.ID_SOLICITUD = txtID.Text.Trim();
-                orden.ESTADOORDEN = Convert.ToInt16(ddlEstado.SelectedValue.ToString());
-                orden.FECHAORDEN = Convert.ToDateTime(txtFecha.Text.Trim());
+                orden.ID_SOLICITUD = txtIdSolicitudAct.Text.Trim();
+                if (ddlEstadosActualizar.SelectedValue == "Activo")
+                {
+                    orden.ESTADOORDEN = 10;
+                }
+                else
+                {
+                    orden.ESTADOORDEN = 9;
+                }
+                orden.FECHAORDEN = Convert.ToDateTime(txtFechaAct.Text.Trim());
 
                 ActualizarOrdenViatico(orden);
                 CargarGVActualizar();
@@ -186,9 +218,8 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
             {
                 throw ex;
             }
-
         }
-        
+
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
             ActualizarOrden();

@@ -297,12 +297,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SP_LISTADO_SOLICITUD_VIATICOS_Result" nillable="true" type="tns:SP_LISTADO_SOLICITUD_VIATICOS_Result" />
-  <xs:complexType name="OrdenDeViaticos">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="NomUsuario" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="OrdenDeViaticos" nillable="true" type="tns:OrdenDeViaticos" />
   <xs:complexType name="ArrayOfSP_OBTENER_ORDEN_VIATICOS_Result">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="SP_OBTENER_ORDEN_VIATICOS_Result" nillable="true" type="tns:SP_OBTENER_ORDEN_VIATICOS_Result" />

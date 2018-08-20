@@ -4,6 +4,22 @@
     <FunctionImportMapping FunctionImportName="SP_InsertarUsuario" FunctionName="EmpresaPK2Model.Store.SP_InsertarUsuario" />
     <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_SOLICITUDES_FUNCIONARIO" FunctionName="EmpresaPK2Model.Store.SP_ACTUALIZAR_SOLICITUDES_FUNCIONARIO" />
     <FunctionImportMapping FunctionImportName="SP_ELIMINAR_SOLICITUDES" FunctionName="EmpresaPK2Model.Store.SP_ELIMINAR_SOLICITUDES" />
+    <FunctionImportMapping FunctionImportName="SP_LISTAR_SOLICITUDES_FUNCIONARIO" FunctionName="EmpresaPK2Model.Store.SP_LISTAR_SOLICITUDES_FUNCIONARIO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result">
+          <ScalarProperty Name="ID_SOLICITUD" ColumnName="ID_SOLICITUD" />
+          <ScalarProperty Name="NOMBREUSUARIO" ColumnName="NOMBREUSUARIO" />
+          <ScalarProperty Name="FECHACREACION" ColumnName="FECHACREACION" />
+          <ScalarProperty Name="FECHASALIDA" ColumnName="FECHASALIDA" />
+          <ScalarProperty Name="FECHAREGRESO" ColumnName="FECHAREGRESO" />
+          <ScalarProperty Name="ESTADOSOLICITUD" ColumnName="ESTADOSOLICITUD" />
+          <ScalarProperty Name="JUSTIFICACION" ColumnName="JUSTIFICACION" />
+          <ScalarProperty Name="DESTINO" ColumnName="DESTINO" />
+          <ScalarProperty Name="HORAREGRESO" ColumnName="HORAREGRESO" />
+          <ScalarProperty Name="HORASALIDA" ColumnName="HORASALIDA" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="SP_LISTADO_SOLICITUD_VIATICOS" FunctionName="EmpresaPK2Model.Store.SP_LISTADO_SOLICITUD_VIATICOS">
       <ResultMapping>
         <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTADO_SOLICITUD_VIATICOS_Result">
@@ -215,6 +231,24 @@
       </ResultMapping>
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="SP_GUARDAR_DETALLEVIATICOS" FunctionName="EmpresaPK2Model.Store.SP_GUARDAR_DETALLEVIATICOS" />
+    <FunctionImportMapping FunctionImportName="SP_LISTAR_SOLICITUDES_ACTUALIZAR" FunctionName="EmpresaPK2Model.Store.SP_LISTAR_SOLICITUDES_ACTUALIZAR">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTAR_SOLICITUDES_ACTUALIZAR_Result">
+          <ScalarProperty Name="FECHASALIDA" ColumnName="FECHASALIDA" />
+          <ScalarProperty Name="FECHAREGRESO" ColumnName="FECHAREGRESO" />
+          <ScalarProperty Name="JUSTIFICACION" ColumnName="JUSTIFICACION" />
+          <ScalarProperty Name="DESTINO" ColumnName="DESTINO" />
+          <ScalarProperty Name="HORAREGRESO" ColumnName="HORAREGRESO" />
+          <ScalarProperty Name="HORASALIDA" ColumnName="HORASALIDA" />
+          <ScalarProperty Name="CANTIDADDESAYUNO" ColumnName="CANTIDADDESAYUNO" />
+          <ScalarProperty Name="CANTIDADALMUERZO" ColumnName="CANTIDADALMUERZO" />
+          <ScalarProperty Name="CANTIDADCENA" ColumnName="CANTIDADCENA" />
+          <ScalarProperty Name="CANTIDADPASAJE" ColumnName="CANTIDADPASAJE" />
+          <ScalarProperty Name="CODIGORUTA" ColumnName="CODIGORUTA" />
+          <ScalarProperty Name="LOCALIDADHOSPEDAJE" ColumnName="LOCALIDADHOSPEDAJE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="SP_LISTAR_PERSONAS" FunctionName="EmpresaPK2Model.Store.SP_LISTAR_PERSONAS">
       <ResultMapping>
         <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTAR_PERSONAS_Result">
@@ -318,66 +352,41 @@
       </ResultMapping>
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_ORDEN_VIATICO" FunctionName="EmpresaPK2Model.Store.SP_ACTUALIZAR_ORDEN_VIATICO" />
-    <FunctionImportMapping FunctionImportName="SP_LISTAR_SOLICITUDES_FUNCIONARIO" FunctionName="EmpresaPK2Model.Store.SP_LISTAR_SOLICITUDES_FUNCIONARIO">
+    <FunctionImportMapping FunctionImportName="SP_LIST_ORDEN_VIATICOS" FunctionName="EmpresaPK2Model.Store.SP_LIST_ORDEN_VIATICOS">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result">
+        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LIST_ORDEN_VIATICOS_Result">
+          <ScalarProperty Name="FECHAORDEN" ColumnName="FECHAORDEN" />
           <ScalarProperty Name="ID_SOLICITUD" ColumnName="ID_SOLICITUD" />
-          <ScalarProperty Name="NOMBREUSUARIO" ColumnName="NOMBREUSUARIO" />
-          <ScalarProperty Name="FECHACREACION" ColumnName="FECHACREACION" />
-          <ScalarProperty Name="FECHASALIDA" ColumnName="FECHASALIDA" />
-          <ScalarProperty Name="FECHAREGRESO" ColumnName="FECHAREGRESO" />
-          <ScalarProperty Name="ESTADOSOLICITUD" ColumnName="ESTADOSOLICITUD" />
-          <ScalarProperty Name="JUSTIFICACION" ColumnName="JUSTIFICACION" />
-          <ScalarProperty Name="DESTINO" ColumnName="DESTINO" />
-          <ScalarProperty Name="HORAREGRESO" ColumnName="HORAREGRESO" />
-          <ScalarProperty Name="HORASALIDA" ColumnName="HORASALIDA" />
+          <ScalarProperty Name="MONTODESAYUNO" ColumnName="MONTODESAYUNO" />
+          <ScalarProperty Name="MONTOALMUERZO" ColumnName="MONTOALMUERZO" />
+          <ScalarProperty Name="MONTOCENA" ColumnName="MONTOCENA" />
+          <ScalarProperty Name="MONTOHOSPEDAJE" ColumnName="MONTOHOSPEDAJE" />
+          <ScalarProperty Name="MONTOPASAJE" ColumnName="MONTOPASAJE" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="SP_LISTAR_SOLICITUDES_UPDATE" FunctionName="EmpresaPK2Model.Store.SP_LISTAR_SOLICITUDES_UPDATE">
+    <FunctionImportMapping FunctionImportName="SP_BUSCAR_IDVIATICOS" FunctionName="EmpresaPK2Model.Store.SP_BUSCAR_IDVIATICOS">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTAR_SOLICITUDES_UPDATE_Result">
+        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_BUSCAR_IDVIATICOS_Result">
+          <ScalarProperty Name="MontoDesayuno" ColumnName="MontoDesayuno" />
+          <ScalarProperty Name="MontoAlmuerzo" ColumnName="MontoAlmuerzo" />
+          <ScalarProperty Name="MontoCena" ColumnName="MontoCena" />
+          <ScalarProperty Name="MontoHospedaje" ColumnName="MontoHospedaje" />
+          <ScalarProperty Name="MontoPasaje" ColumnName="MontoPasaje" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_OBTENER_ORDENES" FunctionName="EmpresaPK2Model.Store.SP_OBTENER_ORDENES">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_OBTENER_ORDENES_Result">
+          <ScalarProperty Name="FECHAORDEN" ColumnName="FECHAORDEN" />
+          <ScalarProperty Name="ID_ORDEN" ColumnName="ID_ORDEN" />
           <ScalarProperty Name="ID_SOLICITUD" ColumnName="ID_SOLICITUD" />
-          <ScalarProperty Name="FECHACREACION" ColumnName="FECHACREACION" />
-          <ScalarProperty Name="JUSTIFICACION" ColumnName="JUSTIFICACION" />
-          <ScalarProperty Name="FECHASALIDA" ColumnName="FECHASALIDA" />
-          <ScalarProperty Name="FECHAREGRESO" ColumnName="FECHAREGRESO" />
-          <ScalarProperty Name="DESTINO" ColumnName="DESTINO" />
-          <ScalarProperty Name="HORAREGRESO" ColumnName="HORAREGRESO" />
-          <ScalarProperty Name="HORASALIDA" ColumnName="HORASALIDA" />
-          <ScalarProperty Name="CANTIDADDESAYUNO" ColumnName="CANTIDADDESAYUNO" />
-          <ScalarProperty Name="CANTIDADALMUERZO" ColumnName="CANTIDADALMUERZO" />
-          <ScalarProperty Name="CANTIDADCENA" ColumnName="CANTIDADCENA" />
-          <ScalarProperty Name="CANTIDADPASAJE" ColumnName="CANTIDADPASAJE" />
-          <ScalarProperty Name="LOCALIDADHOSPEDAJE" ColumnName="LOCALIDADHOSPEDAJE" />
-          <ScalarProperty Name="CODIGORUTA" ColumnName="CODIGORUTA" />
+          <ScalarProperty Name="NOMBREUSUARIO" ColumnName="NOMBREUSUARIO" />
+          <ScalarProperty Name="ESTADOORDEN" ColumnName="ESTADOORDEN" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="SP_VERIFICAR_SOLICITUDES" FunctionName="EmpresaPK2Model.Store.SP_VERIFICAR_SOLICITUDES" />
-    <FunctionImportMapping FunctionImportName="SP_LISTAR_SOLICITUDES_VERIFICAR" FunctionName="EmpresaPK2Model.Store.SP_LISTAR_SOLICITUDES_VERIFICAR">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTAR_SOLICITUDES_VERIFICAR_Result">
-          <ScalarProperty Name="ID_SOLICITUD" ColumnName="ID_SOLICITUD" />
-          <ScalarProperty Name="FECHACREACION" ColumnName="FECHACREACION" />
-          <ScalarProperty Name="FECHASALIDA" ColumnName="FECHASALIDA" />
-          <ScalarProperty Name="FECHAREGRESO" ColumnName="FECHAREGRESO" />
-          <ScalarProperty Name="JUSTIFICACION" ColumnName="JUSTIFICACION" />
-          <ScalarProperty Name="DESTINO" ColumnName="DESTINO" />
-          <ScalarProperty Name="HORAREGRESO" ColumnName="HORAREGRESO" />
-          <ScalarProperty Name="HORASALIDA" ColumnName="HORASALIDA" />
-          <ScalarProperty Name="CANTIDADDESAYUNO" ColumnName="CANTIDADDESAYUNO" />
-          <ScalarProperty Name="MONTODESAYUNO" ColumnName="MONTODESAYUNO" />
-          <ScalarProperty Name="CANTIDADALMUERZO" ColumnName="CANTIDADALMUERZO" />
-          <ScalarProperty Name="MONTOALMUERZO" ColumnName="MONTOALMUERZO" />
-          <ScalarProperty Name="CANTIDADCENA" ColumnName="CANTIDADCENA" />
-          <ScalarProperty Name="MONTOCENA" ColumnName="MONTOCENA" />
-          <ScalarProperty Name="CANTIDADPASAJE" ColumnName="CANTIDADPASAJE" />
-          <ScalarProperty Name="MONTOPASAJE" ColumnName="MONTOPASAJE" />
-          <ScalarProperty Name="LOCALIDAD" ColumnName="LOCALIDAD" />
-          <ScalarProperty Name="MONTOHOSPEDAJE" ColumnName="MONTOHOSPEDAJE" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>
