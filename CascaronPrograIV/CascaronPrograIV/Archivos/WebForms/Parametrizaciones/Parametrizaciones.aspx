@@ -76,7 +76,7 @@
             </li>
             <li id="liViaticos">
                 <a href="#DivViaticos">Actualizar Tarifas<br />
-                    de Viaticos</a>
+                    de Viaticos y Hospedajes</a>
             </li>
         </ul>
     </div>
@@ -153,7 +153,7 @@
         <br />
         <br />
         <div id="DivViaticos">
-            <h1 id="h1Viaticos">Actualizar Tarifas de Viaticos
+            <h1 id="h1Viaticos">Actualizar Tarifas de Viaticos y Hospedajes
             <img src="../../Recursos/Mostrar.png" /></h1>
             
             
