@@ -792,11 +792,11 @@
             <Parameter Name="ID_SOLICITUD" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SP_BUSCAR_IDVIATICOS" ReturnType="Collection(EmpresaPK2Model.SP_BUSCAR_IDVIATICOS_Result)">
-            <Parameter Name="ID_ORDEN" Mode="In" Type="Int32" />
+          <Parameter Name="ID_ORDEN" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="SP_OBTENER_ORDENES" ReturnType="Collection(EmpresaPK2Model.SP_OBTENER_ORDENES_Result)" />
           <FunctionImport Name="SP_VERIFICAR_SOLICITUDES">
-            <Parameter Name="IDSOLICITUD" Mode="In" Type="String" />
+          <Parameter Name="IDSOLICITUD" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result">
