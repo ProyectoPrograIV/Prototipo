@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6ed156e7-9b0f-4bc2-ac1b-c625e47d153d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3afdfacc-dc2c-44e4-8ddc-e5ca2fb223dd" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -24,11 +24,11 @@
     <MetadataSource Address="http://localhost:64695/Solicitud.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Solicitud.xsd" MetadataType="Schema" ID="7cceb37c-45a0-4eb2-a877-c15fbf873a09" SourceId="1" SourceUrl="http://localhost:64695/Solicitud.svc?xsd=xsd2" />
-    <MetadataFile FileName="Solicitud1.xsd" MetadataType="Schema" ID="ba1f7ae3-75d4-480b-b83f-3cca71e9c6ae" SourceId="1" SourceUrl="http://localhost:64695/Solicitud.svc?xsd=xsd1" />
-    <MetadataFile FileName="Solicitud.wsdl" MetadataType="Wsdl" ID="aca98772-9751-4e49-bd62-9af5621ea598" SourceId="1" SourceUrl="http://localhost:64695/Solicitud.svc?wsdl" />
-    <MetadataFile FileName="Solicitud.disco" MetadataType="Disco" ID="67f803e6-9b06-4acb-90d4-f95e58bb650e" SourceId="1" SourceUrl="http://localhost:64695/Solicitud.svc?disco" />
-    <MetadataFile FileName="Solicitud2.xsd" MetadataType="Schema" ID="36eab9e2-06c1-4753-a3c1-fd199d1eced2" SourceId="1" SourceUrl="http://localhost:64695/Solicitud.svc?xsd=xsd0" />
+    <MetadataFile FileName="Solicitud.xsd" MetadataType="Schema" ID="facfe716-6202-46bf-9c94-742e27646cfa" SourceId="1" SourceUrl="http://localhost:64695/Solicitud.svc?xsd=xsd2" />
+    <MetadataFile FileName="Solicitud1.xsd" MetadataType="Schema" ID="66fb15c7-79d1-4757-b05e-f6cfd5fd8d5b" SourceId="1" SourceUrl="http://localhost:64695/Solicitud.svc?xsd=xsd1" />
+    <MetadataFile FileName="Solicitud.wsdl" MetadataType="Wsdl" ID="2e49eadf-1252-4967-a3ae-d7d7cb1a8633" SourceId="1" SourceUrl="http://localhost:64695/Solicitud.svc?wsdl" />
+    <MetadataFile FileName="Solicitud.disco" MetadataType="Disco" ID="2691a70e-48e6-4661-a28e-e88e9cbe39eb" SourceId="1" SourceUrl="http://localhost:64695/Solicitud.svc?disco" />
+    <MetadataFile FileName="Solicitud2.xsd" MetadataType="Schema" ID="e31ee3f5-23f7-4a9c-9e7c-fe16a05aedf8" SourceId="1" SourceUrl="http://localhost:64695/Solicitud.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

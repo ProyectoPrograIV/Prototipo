@@ -14,17 +14,19 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
     {
         SP_INICIO_SESION_Result sesion;
         static DataTable dt;
+        private static List<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> ListaGrid;
         protected void Page_Load(object sender, EventArgs e)
         {
             sesion = (SP_INICIO_SESION_Result)Session["sesion"];
             if (!IsPostBack)
             {
                 ReadOnlyFields();
-                LlenarGridConsulta();
-                LlenarGridActualizar();
+                LlenarGridConsulta(CargarDatosConsulta());
+                LlenarGridActualizar(CargarSolicitudesActualizar());
                 CargarLocalidad();
                 CargarRutas();
                 CargarPersonas();
+                CargarGridVerificar();
                 BtnAgregarPersona_Click(null, null);
             }
         }
@@ -32,11 +34,6 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
         private void ReadOnlyFields()
         {
             TbxUsuario.ReadOnly = true;
-        }
-
-        protected void TbxFiltrar_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         protected void BtnIniciar_Click(object sender, EventArgs e)
@@ -218,11 +215,10 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
         {
             WCFSolicitud.SolicitudClient Cliente = new WCFSolicitud.SolicitudClient();
             var ListaPersonas = Cliente.ListarPersonas();
-
             Ddl_PersonasSolicitud.DataSource = ListaPersonas;
             Ddl_PersonasSolicitud.DataValueField = "ID_PERSONA";
             Ddl_PersonasSolicitud.DataTextField = "NOMBRECOMPLETO";
-            DataBind();
+            Ddl_PersonasSolicitud.DataBind();
             Ddl_PersonasSolicitud.Items.Insert(0, new ListItem("Añadir personas adicionales a la solicitud", "null"));
         }
         private void CargarLocalidad()
@@ -365,17 +361,16 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
         #endregion
 
         #region Metodos Consulta
-        private void LlenarGridConsulta()
+        private void LlenarGridConsulta(List<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> Datos)
         {
-            GvConsultarSolicitud.DataSource = CargarDatos();
+            ListaGrid = Datos;
+            GvConsultarSolicitud.DataSource = ListaGrid;
             GvConsultarSolicitud.DataBind();
-            if (GvConsultarSolicitud.Columns.Count != 0)
+            if (ListaGrid.Count > 0)
             {
-                GvConsultarSolicitud.HeaderRow.Cells[0].Visible = false;
                 GvConsultarSolicitud.HeaderRow.Cells[5].Visible = false;
                 for (int i = 0; i < GvConsultarSolicitud.Rows.Count; i++)
                 {
-                    GvConsultarSolicitud.Rows[i].Cells[0].Visible = false;
                     GvConsultarSolicitud.Rows[i].Cells[5].Visible = false;
                 }
             }
@@ -390,31 +385,60 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
                 GvConsultarSolicitud.DataBind();
             }
         }
-        private List<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> CargarDatos()
+        private List<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> CargarDatosConsulta()
         {
             WCFSolicitud.SolicitudClient Cliente = new WCFSolicitud.SolicitudClient();
-            TBL_SOLICITUDVIATICOS Obj_Solicitud = new TBL_SOLICITUDVIATICOS();
-            Obj_Solicitud.NOMBREUSUARIO = "davidotno";
-            List<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> ListaSolicitudes = Cliente.ListarSolicitudes(Obj_Solicitud);
+            List<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> ListaSolicitudes = Cliente.ListarSolicitudes(sesion.NOMBREUSUARIO);
             return ListaSolicitudes;
         }
-        
+        protected void btnBuscar_Click(object sender, ImageClickEventArgs e)
+        {
+            List<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> listaFiltrada = new List<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result>();
+            Boolean Valores = false;
+            if (IsPostBack)
+            {
+                if (!TbxFiltrar.Text.Equals(""))
+                {
+                    foreach (SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result item in ListaGrid)
+                    {
+                        if (item.DESTINO.ToUpper().Equals(TbxFiltrar.Text.ToUpper()))
+                        {
+                            listaFiltrada.Add(item);
+                            Valores = true;
+                        }
+                    }
+                    if (Valores)
+                    {
+                        LlenarGridConsulta(listaFiltrada);
+                    }
+                    else
+                    {
+                        List<string> listavacia = new List<string>();
+                        listavacia.Add("No se encontraron coincidencias");
+                        GvConsultarSolicitud.DataSource = listavacia;
+                        GvConsultarSolicitud.DataBind();
+                    }
+                }
+                else
+                {
+                    LlenarGridConsulta(ListaGrid);
+                }
+            }
+        }
+        protected void btnRefrescar_Click(object sender, ImageClickEventArgs e)
+        {
+            LlenarGridConsulta(CargarDatosConsulta());
+        }
         #endregion
 
         #region Metodos Actualizar
-        private void LlenarGridActualizar()
+        private void LlenarGridActualizar(List<SP_LISTAR_SOLICITUDES_UPDATE_Result> Datos)
         {
-            GvActualizar.DataSource = CargarDatos();
+            GvActualizar.DataSource = Datos;
             GvActualizar.DataBind();
-            if (GvActualizar.Columns.Count != 0)
+            if (GvActualizar.Rows.Count > 0)
             {
-                GvActualizar.HeaderRow.Cells[0].Visible = false;
-                GvActualizar.HeaderRow.Cells[5].Visible = false;
-                for (int i = 0; i < GvActualizar.Rows.Count; i++)
-                {
-                    GvActualizar.Rows[i].Cells[0].Visible = false;
-                    GvActualizar.Rows[i].Cells[5].Visible = false;
-                }
+                
             }
             else
             {
@@ -442,7 +466,11 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
             Ddl_ActuRutas.SelectedIndex = Convert.ToInt32(GvActualizar.SelectedRow.Cells[10].Text);
             Ddl_ActuLocalidad.SelectedIndex = Convert.ToInt32(GvActualizar.SelectedRow.Cells[11].Text);
         }
-
+        private List<SP_LISTAR_SOLICITUDES_UPDATE_Result> CargarSolicitudesActualizar()
+        {
+            WCFSolicitud.SolicitudClient Cliente = new WCFSolicitud.SolicitudClient();
+            return Cliente.ListarSolcitudesActualizar(sesion.NOMBREUSUARIO);
+        }
         #endregion
 
         #region Metodos Verificar
@@ -452,6 +480,80 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud
         protected void Button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void GvActualizar_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName.ToString().Equals("Select"))
+            {
+                int index = Convert.ToInt32(e.CommandArgument);
+                GvActualizar.SelectRow(index);
+                TbxActuJustificacion.Text = GvActualizar.SelectedRow.Cells[3].Text.ToString().Trim();
+                TbxActuFechaSalida.Text = GvActualizar.SelectedRow.Cells[4].Text.ToString().Trim();
+                TbxActuFechaRegreso.Text = GvActualizar.SelectedRow.Cells[5].Text.ToString().Trim();
+                TbxActuDestino.Text = GvActualizar.SelectedRow.Cells[6].Text.ToString().Trim();
+                TbxActuHoraRegreso.Text = GvActualizar.SelectedRow.Cells[7].Text.ToString().Trim();
+                TbxActuHoraSalida.Text = GvActualizar.SelectedRow.Cells[8].Text.ToString().Trim();
+                TbxActuCantDesayunos.Text = GvActualizar.SelectedRow.Cells[9].Text.ToString().Trim();
+                TbxActuCantAlmuerzos.Text = GvActualizar.SelectedRow.Cells[10].Text.ToString().Trim();
+                TbxActuCantCenas.Text = GvActualizar.SelectedRow.Cells[11].Text.ToString().Trim();
+                TbxActuCantPasajes.Text = GvActualizar.SelectedRow.Cells[12].Text.ToString().Trim();
+                WCFSolicitud.SolicitudClient Cliente = new WCFSolicitud.SolicitudClient();
+                List<SP_LISTAR_LOCALIDAD_Result> ListaLocalidad = Cliente.ListarLocalidad();
+                Ddl_ActuLocalidad.DataSource = ListaLocalidad;
+                Ddl_ActuLocalidad.DataValueField = "ID_MODTARIFA";
+                Ddl_ActuLocalidad.DataTextField = "LOCALIDAD";
+                Ddl_ActuLocalidad.DataBind();
+                Ddl_ActuLocalidad.SelectedIndex = Convert.ToInt32(GvActualizar.SelectedRow.Cells[13].Text)-1;
+                List<SP_LISTAR_RUTAS_Result> ListaRutas = Cliente.ListarRutas();
+                Ddl_ActuRutas.DataSource = ListaRutas;
+                Ddl_ActuRutas.DataValueField = "CODIGORUTA";
+                Ddl_ActuRutas.DataTextField = "DESCRIPCIONRUTA";
+                Ddl_ActuRutas.DataBind();
+                Ddl_ActuRutas.SelectedIndex = Convert.ToInt32(GvActualizar.SelectedRow.Cells[14].Text)-1;
+            }
+        }
+
+        private void CargarGridVerificar()
+        {
+            WCFSolicitud.SolicitudClient Cliente = new WCFSolicitud.SolicitudClient();
+            GvVerificar.DataSource = Cliente.ListarSolicitudesVerificar();
+            GvVerificar.DataBind();
+            if (GvVerificar.Rows.Count > 0 )
+            {
+                GvVerificar.SelectRow(0);
+            }
+        }
+
+        protected void btnActualizar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void GvVerificar_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName.ToString().Equals("Select"))
+            {
+                int index = Convert.ToInt32(e.CommandArgument);
+                GvVerificar.SelectRow(index);
+            }
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            if(GvVerificar.Rows.Count > 0)
+            {
+                WCFSolicitud.SolicitudClient CLiente = new WCFSolicitud.SolicitudClient();
+                if (CLiente.VerificarSolicitud(GvVerificar.SelectedRow.Cells[1].Text))
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Solicitud Verificada')", true);
+                    CargarGridVerificar();
+                }
+                else
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Solcitud NO Verificada')", true);
+                }
+            }
         }
     }
 }

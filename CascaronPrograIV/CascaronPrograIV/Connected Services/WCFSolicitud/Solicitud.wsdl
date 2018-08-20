@@ -49,6 +49,24 @@
   <wsdl:message name="ISolicitud_Montos_OutputMessage">
     <wsdl:part name="parameters" element="tns:MontosResponse" />
   </wsdl:message>
+  <wsdl:message name="ISolicitud_ListarSolcitudesActualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarSolcitudesActualizar" />
+  </wsdl:message>
+  <wsdl:message name="ISolicitud_ListarSolcitudesActualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarSolcitudesActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISolicitud_ListarSolicitudesVerificar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarSolicitudesVerificar" />
+  </wsdl:message>
+  <wsdl:message name="ISolicitud_ListarSolicitudesVerificar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarSolicitudesVerificarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISolicitud_VerificarSolicitud_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerificarSolicitud" />
+  </wsdl:message>
+  <wsdl:message name="ISolicitud_VerificarSolicitud_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerificarSolicitudResponse" />
+  </wsdl:message>
   <wsdl:portType name="ISolicitud">
     <wsdl:operation name="GuardarSolicitudDetalle">
       <wsdl:input wsaw:Action="http://tempuri.org/ISolicitud/GuardarSolicitudDetalle" message="tns:ISolicitud_GuardarSolicitudDetalle_InputMessage" />
@@ -77,6 +95,18 @@
     <wsdl:operation name="Montos">
       <wsdl:input wsaw:Action="http://tempuri.org/ISolicitud/Montos" message="tns:ISolicitud_Montos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISolicitud/MontosResponse" message="tns:ISolicitud_Montos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarSolcitudesActualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISolicitud/ListarSolcitudesActualizar" message="tns:ISolicitud_ListarSolcitudesActualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISolicitud/ListarSolcitudesActualizarResponse" message="tns:ISolicitud_ListarSolcitudesActualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarSolicitudesVerificar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISolicitud/ListarSolicitudesVerificar" message="tns:ISolicitud_ListarSolicitudesVerificar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISolicitud/ListarSolicitudesVerificarResponse" message="tns:ISolicitud_ListarSolicitudesVerificar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerificarSolicitud">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISolicitud/VerificarSolicitud" message="tns:ISolicitud_VerificarSolicitud_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISolicitud/VerificarSolicitudResponse" message="tns:ISolicitud_VerificarSolicitud_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ISolicitud" type="tns:ISolicitud">
@@ -137,6 +167,33 @@
     </wsdl:operation>
     <wsdl:operation name="Montos">
       <soap:operation soapAction="http://tempuri.org/ISolicitud/Montos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarSolcitudesActualizar">
+      <soap:operation soapAction="http://tempuri.org/ISolicitud/ListarSolcitudesActualizar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarSolicitudesVerificar">
+      <soap:operation soapAction="http://tempuri.org/ISolicitud/ListarSolicitudesVerificar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificarSolicitud">
+      <soap:operation soapAction="http://tempuri.org/ISolicitud/VerificarSolicitud" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

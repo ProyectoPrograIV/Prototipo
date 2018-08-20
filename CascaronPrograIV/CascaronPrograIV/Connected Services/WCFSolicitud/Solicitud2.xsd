@@ -19,14 +19,14 @@
   <xs:element name="ListarSolicitudes">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="Obj_Solicitud" nillable="true" type="q3:TBL_SOLICITUDVIATICOS" />
+        <xs:element minOccurs="0" name="sNombreUsuario" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ListarSolicitudesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="ListarSolicitudesResult" nillable="true" type="q4:ArrayOfSP_LISTAR_SOLICITUDES_FUNCIONARIO_Result" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="ListarSolicitudesResult" nillable="true" type="q3:ArrayOfSP_LISTAR_SOLICITUDES_FUNCIONARIO_Result" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -38,7 +38,7 @@
   <xs:element name="ListarLocalidadResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="ListarLocalidadResult" nillable="true" type="q5:ArrayOfSP_LISTAR_LOCALIDAD_Result" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="ListarLocalidadResult" nillable="true" type="q4:ArrayOfSP_LISTAR_LOCALIDAD_Result" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -50,7 +50,7 @@
   <xs:element name="ListarRutasResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="ListarRutasResult" nillable="true" type="q6:ArrayOfSP_LISTAR_RUTAS_Result" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="ListarRutasResult" nillable="true" type="q5:ArrayOfSP_LISTAR_RUTAS_Result" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -62,7 +62,7 @@
   <xs:element name="ListarPersonasResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="ListarPersonasResult" nillable="true" type="q7:ArrayOfSP_LISTAR_PERSONAS_Result" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="ListarPersonasResult" nillable="true" type="q6:ArrayOfSP_LISTAR_PERSONAS_Result" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -76,7 +76,7 @@
   <xs:element name="MontoRutaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="MontoRutaResult" nillable="true" type="q8:ArrayOfSP_LISTARMONTORUTA_Result" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="MontoRutaResult" nillable="true" type="q7:ArrayOfSP_LISTARMONTORUTA_Result" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -90,7 +90,47 @@
   <xs:element name="MontosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="MontosResult" nillable="true" type="q9:ArrayOfSP_LISTARMONTOS_Result" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="MontosResult" nillable="true" type="q8:ArrayOfSP_LISTARMONTOS_Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarSolcitudesActualizar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sUsuario" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarSolcitudesActualizarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="ListarSolcitudesActualizarResult" nillable="true" type="q9:ArrayOfSP_LISTAR_SOLICITUDES_UPDATE_Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarSolicitudesVerificar">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarSolicitudesVerificarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="ListarSolicitudesVerificarResult" nillable="true" type="q10:ArrayOfSP_LISTAR_SOLICITUDES_VERIFICAR_Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerificarSolicitud">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sIdSolicitud" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerificarSolicitudResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VerificarSolicitudResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

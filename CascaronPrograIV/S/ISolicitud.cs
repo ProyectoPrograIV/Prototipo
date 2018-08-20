@@ -17,7 +17,7 @@ namespace S
         Boolean GuardarSolicitudDetalle(TBL_SOLICITUDVIATICOS Obj_Solicitud, List<TBL_DETALLESOLICITUDVIATICOS> Obj_SolicitudDetalle);
 
         [OperationContract]
-        List<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> ListarSolicitudes(TBL_SOLICITUDVIATICOS Obj_Solicitud);
+        List<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> ListarSolicitudes(String sNombreUsuario);
 
         [OperationContract]
         List<SP_LISTAR_LOCALIDAD_Result> ListarLocalidad();
@@ -33,5 +33,14 @@ namespace S
 
         [OperationContract]
         List<SP_LISTARMONTOS_Result> Montos(int iIdHospedaje);
+
+        [OperationContract]
+        List<SP_LISTAR_SOLICITUDES_UPDATE_Result> ListarSolcitudesActualizar(String sUsuario);
+
+        [OperationContract]
+        List<SP_LISTAR_SOLICITUDES_VERIFICAR_Result> ListarSolicitudesVerificar();
+
+        [OperationContract]
+        Boolean VerificarSolicitud(String sIdSolicitud);
     }
 }

@@ -359,6 +359,7 @@
           <Parameter Name="EstadoUsuario" Type="smallint" Mode="In" />
           <Parameter Name="email" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="SP_LISTAR_SOLICITUDES_VERIFICAR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_ACTUALIZAR_MODTARIFAVIATICO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_PARAMETROS">
           <Parameter Name="ID_MODTARIFA" Type="smallint" Mode="In" />
           <Parameter Name="FECHATARIFA" Type="date" Mode="In" />
@@ -467,14 +468,17 @@
         </Function>
         <Function Name="SP_LISTAR_LOCALIDAD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS" />
         <Function Name="SP_LISTAR_ORDEN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS" />
-        <Function Name="SP_LISTAR_SOLICITUDES_ACTUALIZAR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS">
-          <Parameter Name="NOMBREUSUARIO" Type="nvarchar" Mode="In" />
-        </Function>
         <Function Name="SP_LISTAR_SOLICITUDES_FUNCIONARIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS">
+          <Parameter Name="USUARIO" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SP_LISTAR_SOLICITUDES_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS">
           <Parameter Name="USUARIO" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="SP_OBTENER_ORDEN_VIATICOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS">
           <Parameter Name="NOMBREUSUARIO" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SP_VERIFICAR_SOLICITUDES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS">
+          <Parameter Name="IDSOLICITUD" Type="nvarchar" Mode="In" />
         </Function>
         <EntityContainer Name="EmpresaPK2ModelStoreContainer">
           <EntitySet Name="TBL_CANTON" EntityType="Self.TBL_CANTON" Schema="SCH_PARAMETROS" store:Type="Tables" />
@@ -587,9 +591,6 @@
           </FunctionImport>
           <FunctionImport Name="SP_ELIMINAR_SOLICITUDES">
           <Parameter Name="IDSOLICITUD" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="SP_LISTAR_SOLICITUDES_FUNCIONARIO" ReturnType="Collection(EmpresaPK2Model.SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result)">
-          <Parameter Name="USUARIO" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SP_LISTADO_SOLICITUD_VIATICOS" ReturnType="Collection(EmpresaPK2Model.SP_LISTADO_SOLICITUD_VIATICOS_Result)">
             <Parameter Name="FECHAINICIO" Mode="In" Type="DateTime" />
@@ -715,9 +716,6 @@
             <Parameter Name="CODIGORUTA" Mode="In" Type="String" />
             <Parameter Name="LOCALIDADHOSPEDAJE" Mode="In" Type="Int16" />
           </FunctionImport>
-          <FunctionImport Name="SP_LISTAR_SOLICITUDES_ACTUALIZAR" ReturnType="Collection(EmpresaPK2Model.SP_LISTAR_SOLICITUDES_ACTUALIZAR_Result)">
-          <Parameter Name="NOMBREUSUARIO" Mode="In" Type="String" />
-          </FunctionImport>
           <FunctionImport Name="SP_LISTAR_PERSONAS" ReturnType="Collection(EmpresaPK2Model.SP_LISTAR_PERSONAS_Result)" />
           <FunctionImport Name="SP_OBTENER_ORDEN_VIATICOS" ReturnType="Collection(EmpresaPK2Model.SP_OBTENER_ORDEN_VIATICOS_Result)">
           <Parameter Name="NOMBREUSUARIO" Mode="In" Type="String" />
@@ -776,19 +774,17 @@
             <Parameter Name="ESTADOORDEN" Mode="In" Type="Int16" />
             <Parameter Name="FECHAORDEN" Mode="In" Type="DateTime" />
           </FunctionImport>
+          <FunctionImport Name="SP_LISTAR_SOLICITUDES_FUNCIONARIO" ReturnType="Collection(EmpresaPK2Model.SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result)">
+          <Parameter Name="USUARIO" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_LISTAR_SOLICITUDES_UPDATE" ReturnType="Collection(EmpresaPK2Model.SP_LISTAR_SOLICITUDES_UPDATE_Result)">
+          <Parameter Name="USUARIO" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_VERIFICAR_SOLICITUDES">
+          <Parameter Name="IDSOLICITUD" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_LISTAR_SOLICITUDES_VERIFICAR" ReturnType="Collection(EmpresaPK2Model.SP_LISTAR_SOLICITUDES_VERIFICAR_Result)" />
         </EntityContainer>
-        <ComplexType Name="SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result">
-          <Property Type="Int32" Name="ID_SOLICITUD" Nullable="false" />
-          <Property Type="String" Name="NOMBREUSUARIO" Nullable="false" MaxLength="24" />
-          <Property Type="DateTime" Name="FECHACREACION" Nullable="false" Precision="23" />
-          <Property Type="DateTime" Name="FECHASALIDA" Nullable="false" Precision="23" />
-          <Property Type="DateTime" Name="FECHAREGRESO" Nullable="false" Precision="23" />
-          <Property Type="Int16" Name="ESTADOSOLICITUD" Nullable="false" />
-          <Property Type="String" Name="JUSTIFICACION" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="DESTINO" Nullable="false" MaxLength="50" />
-          <Property Type="Time" Name="HORAREGRESO" Nullable="false" />
-          <Property Type="Time" Name="HORASALIDA" Nullable="false" />
-        </ComplexType>
         <ComplexType Name="SP_LISTADO_SOLICITUD_VIATICOS_Result">
           <Property Type="String" Name="ID_SOLICITUD" Nullable="false" MaxLength="30" />
           <Property Type="String" Name="ID_PERSONA" Nullable="false" MaxLength="15" />
@@ -1215,20 +1211,6 @@
           <Property Type="String" Name="CODIGORUTA" Nullable="false" MaxLength="20" />
           <Property Type="String" Name="DESCRIPCIONRUTA" Nullable="false" MaxLength="100" />
         </ComplexType>
-        <ComplexType Name="SP_LISTAR_SOLICITUDES_ACTUALIZAR_Result">
-          <Property Type="DateTime" Name="FECHASALIDA" Nullable="false" Precision="23" />
-          <Property Type="DateTime" Name="FECHAREGRESO" Nullable="false" Precision="23" />
-          <Property Type="String" Name="JUSTIFICACION" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="DESTINO" Nullable="false" MaxLength="50" />
-          <Property Type="Time" Name="HORAREGRESO" Nullable="false" />
-          <Property Type="Time" Name="HORASALIDA" Nullable="false" />
-          <Property Type="Int16" Name="CANTIDADDESAYUNO" Nullable="true" />
-          <Property Type="Int16" Name="CANTIDADALMUERZO" Nullable="true" />
-          <Property Type="Int16" Name="CANTIDADCENA" Nullable="true" />
-          <Property Type="Int16" Name="CANTIDADPASAJE" Nullable="true" />
-          <Property Type="String" Name="CODIGORUTA" Nullable="false" MaxLength="20" />
-          <Property Type="Int16" Name="LOCALIDADHOSPEDAJE" Nullable="true" />
-        </ComplexType>
         <ComplexType Name="SP_LISTAR_PERSONAS_Result">
           <Property Type="String" Name="ID_PERSONA" Nullable="false" MaxLength="15" />
           <Property Type="String" Name="NOMBRECOMPLETO" Nullable="false" MaxLength="82" />
@@ -1287,6 +1269,54 @@
           <Property Type="Int16" Name="ESTADOORDEN" Nullable="false" />
           <Property Type="DateTime" Name="FECHAORDEN" Nullable="true" />
         </ComplexType>
+        <ComplexType Name="SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result">
+          <Property Type="String" Name="ID_SOLICITUD" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="NOMBREUSUARIO" Nullable="false" MaxLength="24" />
+          <Property Type="DateTime" Name="FECHACREACION" Nullable="true" />
+          <Property Type="DateTime" Name="FECHASALIDA" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="FECHAREGRESO" Nullable="false" Precision="23" />
+          <Property Type="Int16" Name="ESTADOSOLICITUD" Nullable="false" />
+          <Property Type="String" Name="JUSTIFICACION" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="DESTINO" Nullable="false" MaxLength="50" />
+          <Property Type="Time" Name="HORAREGRESO" Nullable="false" />
+          <Property Type="Time" Name="HORASALIDA" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="SP_LISTAR_SOLICITUDES_UPDATE_Result">
+          <Property Type="String" Name="ID_SOLICITUD" Nullable="false" MaxLength="30" />
+          <Property Type="DateTime" Name="FECHACREACION" Nullable="true" />
+          <Property Type="String" Name="JUSTIFICACION" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="FECHASALIDA" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="FECHAREGRESO" Nullable="false" Precision="23" />
+          <Property Type="String" Name="DESTINO" Nullable="false" MaxLength="50" />
+          <Property Type="Time" Name="HORAREGRESO" Nullable="false" />
+          <Property Type="Time" Name="HORASALIDA" Nullable="false" />
+          <Property Type="Int16" Name="CANTIDADDESAYUNO" Nullable="true" />
+          <Property Type="Int16" Name="CANTIDADALMUERZO" Nullable="true" />
+          <Property Type="Int16" Name="CANTIDADCENA" Nullable="true" />
+          <Property Type="Int16" Name="CANTIDADPASAJE" Nullable="true" />
+          <Property Type="Int16" Name="LOCALIDADHOSPEDAJE" Nullable="true" />
+          <Property Type="String" Name="CODIGORUTA" Nullable="false" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="SP_LISTAR_SOLICITUDES_VERIFICAR_Result">
+          <Property Type="String" Name="ID_SOLICITUD" Nullable="false" MaxLength="30" />
+          <Property Type="DateTime" Name="FECHACREACION" Nullable="true" />
+          <Property Type="DateTime" Name="FECHASALIDA" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="FECHAREGRESO" Nullable="false" Precision="23" />
+          <Property Type="String" Name="JUSTIFICACION" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="DESTINO" Nullable="false" MaxLength="50" />
+          <Property Type="Time" Name="HORAREGRESO" Nullable="false" />
+          <Property Type="Time" Name="HORASALIDA" Nullable="false" />
+          <Property Type="Int16" Name="CANTIDADDESAYUNO" Nullable="true" />
+          <Property Type="Decimal" Name="MONTODESAYUNO" Nullable="true" Precision="19" />
+          <Property Type="Int16" Name="CANTIDADALMUERZO" Nullable="true" />
+          <Property Type="Decimal" Name="MONTOALMUERZO" Nullable="true" Precision="19" />
+          <Property Type="Int16" Name="CANTIDADCENA" Nullable="true" />
+          <Property Type="Decimal" Name="MONTOCENA" Nullable="true" Precision="19" />
+          <Property Type="Int16" Name="CANTIDADPASAJE" Nullable="true" />
+          <Property Type="Decimal" Name="MONTOPASAJE" Nullable="true" Precision="19" />
+          <Property Type="String" Name="LOCALIDAD" Nullable="false" MaxLength="50" />
+          <Property Type="Decimal" Name="MONTOHOSPEDAJE" Nullable="true" Precision="19" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1296,22 +1326,6 @@
           <FunctionImportMapping FunctionImportName="SP_InsertarUsuario" FunctionName="EmpresaPK2Model.Store.SP_InsertarUsuario" />
           <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_SOLICITUDES_FUNCIONARIO" FunctionName="EmpresaPK2Model.Store.SP_ACTUALIZAR_SOLICITUDES_FUNCIONARIO" />
           <FunctionImportMapping FunctionImportName="SP_ELIMINAR_SOLICITUDES" FunctionName="EmpresaPK2Model.Store.SP_ELIMINAR_SOLICITUDES" />
-          <FunctionImportMapping FunctionImportName="SP_LISTAR_SOLICITUDES_FUNCIONARIO" FunctionName="EmpresaPK2Model.Store.SP_LISTAR_SOLICITUDES_FUNCIONARIO">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result">
-                <ScalarProperty Name="ID_SOLICITUD" ColumnName="ID_SOLICITUD" />
-                <ScalarProperty Name="NOMBREUSUARIO" ColumnName="NOMBREUSUARIO" />
-                <ScalarProperty Name="FECHACREACION" ColumnName="FECHACREACION" />
-                <ScalarProperty Name="FECHASALIDA" ColumnName="FECHASALIDA" />
-                <ScalarProperty Name="FECHAREGRESO" ColumnName="FECHAREGRESO" />
-                <ScalarProperty Name="ESTADOSOLICITUD" ColumnName="ESTADOSOLICITUD" />
-                <ScalarProperty Name="JUSTIFICACION" ColumnName="JUSTIFICACION" />
-                <ScalarProperty Name="DESTINO" ColumnName="DESTINO" />
-                <ScalarProperty Name="HORAREGRESO" ColumnName="HORAREGRESO" />
-                <ScalarProperty Name="HORASALIDA" ColumnName="HORASALIDA" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="SP_LISTADO_SOLICITUD_VIATICOS" FunctionName="EmpresaPK2Model.Store.SP_LISTADO_SOLICITUD_VIATICOS">
             <ResultMapping>
               <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTADO_SOLICITUD_VIATICOS_Result">
@@ -1523,24 +1537,6 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="SP_GUARDAR_DETALLEVIATICOS" FunctionName="EmpresaPK2Model.Store.SP_GUARDAR_DETALLEVIATICOS" />
-          <FunctionImportMapping FunctionImportName="SP_LISTAR_SOLICITUDES_ACTUALIZAR" FunctionName="EmpresaPK2Model.Store.SP_LISTAR_SOLICITUDES_ACTUALIZAR">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTAR_SOLICITUDES_ACTUALIZAR_Result">
-                <ScalarProperty Name="FECHASALIDA" ColumnName="FECHASALIDA" />
-                <ScalarProperty Name="FECHAREGRESO" ColumnName="FECHAREGRESO" />
-                <ScalarProperty Name="JUSTIFICACION" ColumnName="JUSTIFICACION" />
-                <ScalarProperty Name="DESTINO" ColumnName="DESTINO" />
-                <ScalarProperty Name="HORAREGRESO" ColumnName="HORAREGRESO" />
-                <ScalarProperty Name="HORASALIDA" ColumnName="HORASALIDA" />
-                <ScalarProperty Name="CANTIDADDESAYUNO" ColumnName="CANTIDADDESAYUNO" />
-                <ScalarProperty Name="CANTIDADALMUERZO" ColumnName="CANTIDADALMUERZO" />
-                <ScalarProperty Name="CANTIDADCENA" ColumnName="CANTIDADCENA" />
-                <ScalarProperty Name="CANTIDADPASAJE" ColumnName="CANTIDADPASAJE" />
-                <ScalarProperty Name="CODIGORUTA" ColumnName="CODIGORUTA" />
-                <ScalarProperty Name="LOCALIDADHOSPEDAJE" ColumnName="LOCALIDADHOSPEDAJE" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="SP_LISTAR_PERSONAS" FunctionName="EmpresaPK2Model.Store.SP_LISTAR_PERSONAS">
             <ResultMapping>
               <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTAR_PERSONAS_Result">
@@ -1644,6 +1640,67 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_ORDEN_VIATICO" FunctionName="EmpresaPK2Model.Store.SP_ACTUALIZAR_ORDEN_VIATICO" />
+          <FunctionImportMapping FunctionImportName="SP_LISTAR_SOLICITUDES_FUNCIONARIO" FunctionName="EmpresaPK2Model.Store.SP_LISTAR_SOLICITUDES_FUNCIONARIO">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result">
+                <ScalarProperty Name="ID_SOLICITUD" ColumnName="ID_SOLICITUD" />
+                <ScalarProperty Name="NOMBREUSUARIO" ColumnName="NOMBREUSUARIO" />
+                <ScalarProperty Name="FECHACREACION" ColumnName="FECHACREACION" />
+                <ScalarProperty Name="FECHASALIDA" ColumnName="FECHASALIDA" />
+                <ScalarProperty Name="FECHAREGRESO" ColumnName="FECHAREGRESO" />
+                <ScalarProperty Name="ESTADOSOLICITUD" ColumnName="ESTADOSOLICITUD" />
+                <ScalarProperty Name="JUSTIFICACION" ColumnName="JUSTIFICACION" />
+                <ScalarProperty Name="DESTINO" ColumnName="DESTINO" />
+                <ScalarProperty Name="HORAREGRESO" ColumnName="HORAREGRESO" />
+                <ScalarProperty Name="HORASALIDA" ColumnName="HORASALIDA" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_LISTAR_SOLICITUDES_UPDATE" FunctionName="EmpresaPK2Model.Store.SP_LISTAR_SOLICITUDES_UPDATE">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTAR_SOLICITUDES_UPDATE_Result">
+                <ScalarProperty Name="ID_SOLICITUD" ColumnName="ID_SOLICITUD" />
+                <ScalarProperty Name="FECHACREACION" ColumnName="FECHACREACION" />
+                <ScalarProperty Name="JUSTIFICACION" ColumnName="JUSTIFICACION" />
+                <ScalarProperty Name="FECHASALIDA" ColumnName="FECHASALIDA" />
+                <ScalarProperty Name="FECHAREGRESO" ColumnName="FECHAREGRESO" />
+                <ScalarProperty Name="DESTINO" ColumnName="DESTINO" />
+                <ScalarProperty Name="HORAREGRESO" ColumnName="HORAREGRESO" />
+                <ScalarProperty Name="HORASALIDA" ColumnName="HORASALIDA" />
+                <ScalarProperty Name="CANTIDADDESAYUNO" ColumnName="CANTIDADDESAYUNO" />
+                <ScalarProperty Name="CANTIDADALMUERZO" ColumnName="CANTIDADALMUERZO" />
+                <ScalarProperty Name="CANTIDADCENA" ColumnName="CANTIDADCENA" />
+                <ScalarProperty Name="CANTIDADPASAJE" ColumnName="CANTIDADPASAJE" />
+                <ScalarProperty Name="LOCALIDADHOSPEDAJE" ColumnName="LOCALIDADHOSPEDAJE" />
+                <ScalarProperty Name="CODIGORUTA" ColumnName="CODIGORUTA" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_VERIFICAR_SOLICITUDES" FunctionName="EmpresaPK2Model.Store.SP_VERIFICAR_SOLICITUDES" />
+          <FunctionImportMapping FunctionImportName="SP_LISTAR_SOLICITUDES_VERIFICAR" FunctionName="EmpresaPK2Model.Store.SP_LISTAR_SOLICITUDES_VERIFICAR">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EmpresaPK2Model.SP_LISTAR_SOLICITUDES_VERIFICAR_Result">
+                <ScalarProperty Name="ID_SOLICITUD" ColumnName="ID_SOLICITUD" />
+                <ScalarProperty Name="FECHACREACION" ColumnName="FECHACREACION" />
+                <ScalarProperty Name="FECHASALIDA" ColumnName="FECHASALIDA" />
+                <ScalarProperty Name="FECHAREGRESO" ColumnName="FECHAREGRESO" />
+                <ScalarProperty Name="JUSTIFICACION" ColumnName="JUSTIFICACION" />
+                <ScalarProperty Name="DESTINO" ColumnName="DESTINO" />
+                <ScalarProperty Name="HORAREGRESO" ColumnName="HORAREGRESO" />
+                <ScalarProperty Name="HORASALIDA" ColumnName="HORASALIDA" />
+                <ScalarProperty Name="CANTIDADDESAYUNO" ColumnName="CANTIDADDESAYUNO" />
+                <ScalarProperty Name="MONTODESAYUNO" ColumnName="MONTODESAYUNO" />
+                <ScalarProperty Name="CANTIDADALMUERZO" ColumnName="CANTIDADALMUERZO" />
+                <ScalarProperty Name="MONTOALMUERZO" ColumnName="MONTOALMUERZO" />
+                <ScalarProperty Name="CANTIDADCENA" ColumnName="CANTIDADCENA" />
+                <ScalarProperty Name="MONTOCENA" ColumnName="MONTOCENA" />
+                <ScalarProperty Name="CANTIDADPASAJE" ColumnName="CANTIDADPASAJE" />
+                <ScalarProperty Name="MONTOPASAJE" ColumnName="MONTOPASAJE" />
+                <ScalarProperty Name="LOCALIDAD" ColumnName="LOCALIDAD" />
+                <ScalarProperty Name="MONTOHOSPEDAJE" ColumnName="MONTOHOSPEDAJE" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

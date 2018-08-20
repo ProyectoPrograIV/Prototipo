@@ -116,15 +116,6 @@ namespace Entidades
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ELIMINAR_SOLICITUDES", iDSOLICITUDParameter);
         }
     
-        public virtual ObjectResult<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> SP_LISTAR_SOLICITUDES_FUNCIONARIO(string uSUARIO)
-        {
-            var uSUARIOParameter = uSUARIO != null ?
-                new ObjectParameter("USUARIO", uSUARIO) :
-                new ObjectParameter("USUARIO", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result>("SP_LISTAR_SOLICITUDES_FUNCIONARIO", uSUARIOParameter);
-        }
-    
         public virtual ObjectResult<SP_LISTADO_SOLICITUD_VIATICOS_Result> SP_LISTADO_SOLICITUD_VIATICOS(Nullable<System.DateTime> fECHAINICIO, Nullable<System.DateTime> fECHAFINAL, string iD_PERSONA, Nullable<short> eSTADOS_SOLICITUD)
         {
             var fECHAINICIOParameter = fECHAINICIO.HasValue ?
@@ -270,15 +261,6 @@ namespace Entidades
                 new ObjectParameter("LOCALIDADHOSPEDAJE", typeof(short));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_GUARDAR_DETALLEVIATICOS", iD_SOLICITUDParameter, iD_PERSONAParameter, cANTIDADVIATICOSParameter, cANTIDADDESAYUNOSParameter, cANTIDADALMUERZOSParameter, cANTIDADCENASParameter, cANTIDADPASAJEParameter, mONTODESAYUNOParameter, mONTOALMUERZOParameter, mONTOCENAParameter, mONTOPASAJEParameter, mONTOHOSPEDAJEParameter, cODIGORUTAParameter, lOCALIDADHOSPEDAJEParameter);
-        }
-    
-        public virtual ObjectResult<SP_LISTAR_SOLICITUDES_ACTUALIZAR_Result> SP_LISTAR_SOLICITUDES_ACTUALIZAR(string nOMBREUSUARIO)
-        {
-            var nOMBREUSUARIOParameter = nOMBREUSUARIO != null ?
-                new ObjectParameter("NOMBREUSUARIO", nOMBREUSUARIO) :
-                new ObjectParameter("NOMBREUSUARIO", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_SOLICITUDES_ACTUALIZAR_Result>("SP_LISTAR_SOLICITUDES_ACTUALIZAR", nOMBREUSUARIOParameter);
         }
     
         public virtual ObjectResult<SP_LISTAR_PERSONAS_Result> SP_LISTAR_PERSONAS()
@@ -482,6 +464,38 @@ namespace Entidades
                 new ObjectParameter("FECHAORDEN", typeof(System.DateTime));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACTUALIZAR_ORDEN_VIATICO", iD_ORDENParameter, iD_SOLICITUDParameter, eSTADOORDENParameter, fECHAORDENParameter);
+        }
+    
+        public virtual ObjectResult<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> SP_LISTAR_SOLICITUDES_FUNCIONARIO(string uSUARIO)
+        {
+            var uSUARIOParameter = uSUARIO != null ?
+                new ObjectParameter("USUARIO", uSUARIO) :
+                new ObjectParameter("USUARIO", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result>("SP_LISTAR_SOLICITUDES_FUNCIONARIO", uSUARIOParameter);
+        }
+    
+        public virtual ObjectResult<SP_LISTAR_SOLICITUDES_UPDATE_Result> SP_LISTAR_SOLICITUDES_UPDATE(string uSUARIO)
+        {
+            var uSUARIOParameter = uSUARIO != null ?
+                new ObjectParameter("USUARIO", uSUARIO) :
+                new ObjectParameter("USUARIO", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_SOLICITUDES_UPDATE_Result>("SP_LISTAR_SOLICITUDES_UPDATE", uSUARIOParameter);
+        }
+    
+        public virtual int SP_VERIFICAR_SOLICITUDES(string iDSOLICITUD)
+        {
+            var iDSOLICITUDParameter = iDSOLICITUD != null ?
+                new ObjectParameter("IDSOLICITUD", iDSOLICITUD) :
+                new ObjectParameter("IDSOLICITUD", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_VERIFICAR_SOLICITUDES", iDSOLICITUDParameter);
+        }
+    
+        public virtual ObjectResult<SP_LISTAR_SOLICITUDES_VERIFICAR_Result> SP_LISTAR_SOLICITUDES_VERIFICAR()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LISTAR_SOLICITUDES_VERIFICAR_Result>("SP_LISTAR_SOLICITUDES_VERIFICAR");
         }
     }
 }

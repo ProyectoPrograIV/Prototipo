@@ -283,6 +283,24 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud {
         protected global::System.Web.UI.WebControls.TextBox TbxFiltrar;
         
         /// <summary>
+        /// Control btnBuscar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton btnBuscar;
+        
+        /// <summary>
+        /// Control btnRefrescar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton btnRefrescar;
+        
+        /// <summary>
         /// Control GvConsultarSolicitud.
         /// </summary>
         /// <remarks>
@@ -290,15 +308,6 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GvConsultarSolicitud;
-        
-        /// <summary>
-        /// Control TextBox20.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox20;
         
         /// <summary>
         /// Control GvActualizar.
@@ -310,13 +319,13 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud {
         protected global::System.Web.UI.WebControls.GridView GvActualizar;
         
         /// <summary>
-        /// Control TbxActuFechaRegreso.
+        /// Control TbxActuJustificacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TbxActuFechaRegreso;
+        protected global::System.Web.UI.WebControls.TextBox TbxActuJustificacion;
         
         /// <summary>
         /// Control TbxActuFechaSalida.
@@ -328,13 +337,13 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud {
         protected global::System.Web.UI.WebControls.TextBox TbxActuFechaSalida;
         
         /// <summary>
-        /// Control TbxActuJustificacion.
+        /// Control TbxActuFechaRegreso.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TbxActuJustificacion;
+        protected global::System.Web.UI.WebControls.TextBox TbxActuFechaRegreso;
         
         /// <summary>
         /// Control TbxActuDestino.
@@ -346,15 +355,6 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud {
         protected global::System.Web.UI.WebControls.TextBox TbxActuDestino;
         
         /// <summary>
-        /// Control TbxActuHoraSalida.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TbxActuHoraSalida;
-        
-        /// <summary>
         /// Control TbxActuHoraRegreso.
         /// </summary>
         /// <remarks>
@@ -362,6 +362,15 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TbxActuHoraRegreso;
+        
+        /// <summary>
+        /// Control TbxActuHoraSalida.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TbxActuHoraSalida;
         
         /// <summary>
         /// Control TbxActuCantDesayunos.
@@ -418,22 +427,13 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud {
         protected global::System.Web.UI.WebControls.DropDownList Ddl_ActuLocalidad;
         
         /// <summary>
-        /// Control Button1.
+        /// Control btnActualizar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
-        
-        /// <summary>
-        /// Control TextBox19.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox19;
+        protected global::System.Web.UI.WebControls.Button btnActualizar;
         
         /// <summary>
         /// Control GvVerificar.
@@ -443,15 +443,6 @@ namespace CascaronPrograIV.Archivos.WebForms.Solicitud {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GvVerificar;
-        
-        /// <summary>
-        /// Control Button2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
         
         /// <summary>
         /// Control Button3.

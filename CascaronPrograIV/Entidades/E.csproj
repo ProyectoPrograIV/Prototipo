@@ -103,10 +103,13 @@
     <Compile Include="SP_LISTAR_RUTAS_Result.cs">
       <DependentUpon>EmpresaPK2.tt</DependentUpon>
     </Compile>
-    <Compile Include="SP_LISTAR_SOLICITUDES_ACTUALIZAR_Result.cs">
+    <Compile Include="SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result.cs">
       <DependentUpon>EmpresaPK2.tt</DependentUpon>
     </Compile>
-    <Compile Include="SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result.cs">
+    <Compile Include="SP_LISTAR_SOLICITUDES_UPDATE_Result.cs">
+      <DependentUpon>EmpresaPK2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_LISTAR_SOLICITUDES_VERIFICAR_Result.cs">
       <DependentUpon>EmpresaPK2.tt</DependentUpon>
     </Compile>
     <Compile Include="SP_LISTAR_TARIFASAUTOBUSES_Result.cs">

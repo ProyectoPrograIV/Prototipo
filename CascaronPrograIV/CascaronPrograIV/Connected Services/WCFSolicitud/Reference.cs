@@ -22,10 +22,10 @@ namespace CascaronPrograIV.WCFSolicitud {
         System.Threading.Tasks.Task<bool> GuardarSolicitudDetalleAsync(Entidades.TBL_SOLICITUDVIATICOS Obj_Solicitud, System.Collections.Generic.List<Entidades.TBL_DETALLESOLICITUDVIATICOS> Obj_SolicitudDetalle);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISolicitud/ListarSolicitudes", ReplyAction="http://tempuri.org/ISolicitud/ListarSolicitudesResponse")]
-        System.Collections.Generic.List<Entidades.SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> ListarSolicitudes(Entidades.TBL_SOLICITUDVIATICOS Obj_Solicitud);
+        System.Collections.Generic.List<Entidades.SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> ListarSolicitudes(string sNombreUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISolicitud/ListarSolicitudes", ReplyAction="http://tempuri.org/ISolicitud/ListarSolicitudesResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result>> ListarSolicitudesAsync(Entidades.TBL_SOLICITUDVIATICOS Obj_Solicitud);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result>> ListarSolicitudesAsync(string sNombreUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISolicitud/ListarLocalidad", ReplyAction="http://tempuri.org/ISolicitud/ListarLocalidadResponse")]
         System.Collections.Generic.List<Entidades.SP_LISTAR_LOCALIDAD_Result> ListarLocalidad();
@@ -56,6 +56,24 @@ namespace CascaronPrograIV.WCFSolicitud {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISolicitud/Montos", ReplyAction="http://tempuri.org/ISolicitud/MontosResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTARMONTOS_Result>> MontosAsync(int iIdHospedaje);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISolicitud/ListarSolcitudesActualizar", ReplyAction="http://tempuri.org/ISolicitud/ListarSolcitudesActualizarResponse")]
+        System.Collections.Generic.List<Entidades.SP_LISTAR_SOLICITUDES_UPDATE_Result> ListarSolcitudesActualizar(string sUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISolicitud/ListarSolcitudesActualizar", ReplyAction="http://tempuri.org/ISolicitud/ListarSolcitudesActualizarResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTAR_SOLICITUDES_UPDATE_Result>> ListarSolcitudesActualizarAsync(string sUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISolicitud/ListarSolicitudesVerificar", ReplyAction="http://tempuri.org/ISolicitud/ListarSolicitudesVerificarResponse")]
+        System.Collections.Generic.List<Entidades.SP_LISTAR_SOLICITUDES_VERIFICAR_Result> ListarSolicitudesVerificar();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISolicitud/ListarSolicitudesVerificar", ReplyAction="http://tempuri.org/ISolicitud/ListarSolicitudesVerificarResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTAR_SOLICITUDES_VERIFICAR_Result>> ListarSolicitudesVerificarAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISolicitud/VerificarSolicitud", ReplyAction="http://tempuri.org/ISolicitud/VerificarSolicitudResponse")]
+        bool VerificarSolicitud(string sIdSolicitud);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISolicitud/VerificarSolicitud", ReplyAction="http://tempuri.org/ISolicitud/VerificarSolicitudResponse")]
+        System.Threading.Tasks.Task<bool> VerificarSolicitudAsync(string sIdSolicitud);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -93,12 +111,12 @@ namespace CascaronPrograIV.WCFSolicitud {
             return base.Channel.GuardarSolicitudDetalleAsync(Obj_Solicitud, Obj_SolicitudDetalle);
         }
         
-        public System.Collections.Generic.List<Entidades.SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> ListarSolicitudes(Entidades.TBL_SOLICITUDVIATICOS Obj_Solicitud) {
-            return base.Channel.ListarSolicitudes(Obj_Solicitud);
+        public System.Collections.Generic.List<Entidades.SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> ListarSolicitudes(string sNombreUsuario) {
+            return base.Channel.ListarSolicitudes(sNombreUsuario);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result>> ListarSolicitudesAsync(Entidades.TBL_SOLICITUDVIATICOS Obj_Solicitud) {
-            return base.Channel.ListarSolicitudesAsync(Obj_Solicitud);
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result>> ListarSolicitudesAsync(string sNombreUsuario) {
+            return base.Channel.ListarSolicitudesAsync(sNombreUsuario);
         }
         
         public System.Collections.Generic.List<Entidades.SP_LISTAR_LOCALIDAD_Result> ListarLocalidad() {
@@ -139,6 +157,30 @@ namespace CascaronPrograIV.WCFSolicitud {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTARMONTOS_Result>> MontosAsync(int iIdHospedaje) {
             return base.Channel.MontosAsync(iIdHospedaje);
+        }
+        
+        public System.Collections.Generic.List<Entidades.SP_LISTAR_SOLICITUDES_UPDATE_Result> ListarSolcitudesActualizar(string sUsuario) {
+            return base.Channel.ListarSolcitudesActualizar(sUsuario);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTAR_SOLICITUDES_UPDATE_Result>> ListarSolcitudesActualizarAsync(string sUsuario) {
+            return base.Channel.ListarSolcitudesActualizarAsync(sUsuario);
+        }
+        
+        public System.Collections.Generic.List<Entidades.SP_LISTAR_SOLICITUDES_VERIFICAR_Result> ListarSolicitudesVerificar() {
+            return base.Channel.ListarSolicitudesVerificar();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_LISTAR_SOLICITUDES_VERIFICAR_Result>> ListarSolicitudesVerificarAsync() {
+            return base.Channel.ListarSolicitudesVerificarAsync();
+        }
+        
+        public bool VerificarSolicitud(string sIdSolicitud) {
+            return base.Channel.VerificarSolicitud(sIdSolicitud);
+        }
+        
+        public System.Threading.Tasks.Task<bool> VerificarSolicitudAsync(string sIdSolicitud) {
+            return base.Channel.VerificarSolicitudAsync(sIdSolicitud);
         }
     }
 }

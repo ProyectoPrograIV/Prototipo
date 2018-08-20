@@ -1,4 +1,10 @@
-﻿
+﻿.btnActions {
+    height: auto;
+    width: auto;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
 .GvPersonas {
     width: 50%;
     height: auto;

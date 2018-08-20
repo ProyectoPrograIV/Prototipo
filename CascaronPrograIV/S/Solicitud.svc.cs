@@ -26,9 +26,9 @@ namespace S
             }
         }
 
-        public List<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> ListarSolicitudes(TBL_SOLICITUDVIATICOS Obj_Solicitud)
+        public List<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> ListarSolicitudes(String sNombreUsuario)
         {
-            return Cls_Solicitud_LN.ListarSolicitudes(Obj_Solicitud);
+            return Cls_Solicitud_LN.ListarSolicitudes(sNombreUsuario);
         }
 
         public List<SP_LISTAR_LOCALIDAD_Result> ListarLocalidad()
@@ -54,6 +54,21 @@ namespace S
         public List<SP_LISTARMONTOS_Result> Montos(int iIdHospedaje)
         {
             return Cls_Solicitud_LN.Montos(iIdHospedaje);
+        }
+
+        public List<SP_LISTAR_SOLICITUDES_UPDATE_Result> ListarSolcitudesActualizar(String sUsuario)
+        {
+            return Cls_Solicitud_LN.ListarSolicitudesActualizar(sUsuario);
+        }
+
+        public List<SP_LISTAR_SOLICITUDES_VERIFICAR_Result> ListarSolicitudesVerificar()
+        {
+            return Cls_Solicitud_LN.ListarSolicitudesVerificar();
+        }
+
+        public Boolean VerificarSolicitud(String sIdSolicitud)
+        {
+            return Cls_Solicitud_LN.VerificarSolicitud(sIdSolicitud);
         }
     }
 }

@@ -87,7 +87,9 @@
     <Content Include="Archivos\Recursos\Mostrar.png" />
     <Content Include="Archivos\Recursos\Orden.png" />
     <Content Include="Archivos\Recursos\Parametros.png" />
+    <Content Include="Archivos\Recursos\reload.png" />
     <Content Include="Archivos\Recursos\Reportes.png" />
+    <Content Include="Archivos\Recursos\search.png" />
     <Content Include="Archivos\Recursos\Solicitud.png" />
     <Content Include="Archivos\Recursos\Usuario.png" />
     <Content Include="Archivos\script\jquery-3.3.1.min.js" />
@@ -134,16 +136,6 @@
     <Content Include="Properties\DataSources\Entidades.SP_LISTAR_PERSONAS_Result.datasource" />
     <Content Include="Properties\DataSources\Entidades.SP_LISTARMONTORUTA_Result.datasource" />
     <Content Include="Properties\DataSources\Entidades.SP_LISTARMONTOS_Result.datasource" />
-    <None Include="Connected Services\WCFSolicitud\Solicitud.wsdl" />
-    <None Include="Connected Services\WCFSolicitud\Solicitud.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\WCFSolicitud\Solicitud1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\WCFSolicitud\Solicitud2.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Properties\DataSources\Entidades.SP_LISTADO_LIQUIDACION_VIATICOS_Result2.datasource" />
     <Content Include="Properties\DataSources\Entidades.SP_LISTADO_ORDEN_VIATICOS_Result2.datasource" />
     <Content Include="Properties\DataSources\Entidades.SP_LISTADO_SOLICITUD_VIATICOS_Result2.datasource" />
@@ -155,6 +147,19 @@
     <Content Include="Properties\DataSources\Entidades.SP_BUSCAR_TARIFAAUTOBUS_Result.datasource" />
     <Content Include="Properties\DataSources\Entidades.SP_LISTAR_TARIFASAUTOBUSES_Result.datasource" />
     <Content Include="Properties\DataSources\Entidades.TBL_CABECERAORDENVIATICO1.datasource" />
+    <Content Include="Properties\DataSources\Entidades.SP_LISTAR_SOLICITUDES_ACTUALIZAR_Result.datasource" />
+    <None Include="Connected Services\WCFSolicitud\Solicitud.wsdl" />
+    <None Include="Connected Services\WCFSolicitud\Solicitud.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCFSolicitud\Solicitud1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCFSolicitud\Solicitud2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Properties\DataSources\Entidades.SP_LISTAR_SOLICITUDES_UPDATE_Result.datasource" />
+    <Content Include="Properties\DataSources\Entidades.SP_LISTAR_SOLICITUDES_VERIFICAR_Result.datasource" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

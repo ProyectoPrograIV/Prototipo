@@ -39,9 +39,7 @@ namespace AD.ADSolicitudViaticos
                 }
             }
         }
-        
-        
-        public static List<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> ListarSolicitudes(TBL_SOLICITUDVIATICOS Obj_Solicitud)
+        public static List<SP_LISTAR_SOLICITUDES_FUNCIONARIO_Result> ListarSolicitudes(String sNombreUsuario)
         {
             EmpresaPK2Entities entidad = null; //Se declara el objeto de entidad para la conexion
             //Se declara una Lista para llevar cada línea con un objeto resultado de la consulta
@@ -49,13 +47,10 @@ namespace AD.ADSolicitudViaticos
             try
             {
                 entidad = new EmpresaPK2Entities(); //Se instancia la entidad
-                var Resultado = entidad.SP_LISTAR_SOLICITUDES_FUNCIONARIO(Obj_Solicitud.NOMBREUSUARIO).ToList();
-                if (Resultado != null)
+                var templist = entidad.SP_LISTAR_SOLICITUDES_FUNCIONARIO(sNombreUsuario).ToList();
+                foreach (var item in templist)
                 {
-                    foreach (var item in Resultado) //Recorre lista
-                    {
-                        Lista.Add(item); //Agrega cada Linea a la lista que se devovlerá
-                    }
+                    Lista.Add(item);
                 }
             }
             catch (Exception e)
@@ -71,7 +66,6 @@ namespace AD.ADSolicitudViaticos
             }
             return Lista;
         }
-
         public static List<SP_LISTAR_LOCALIDAD_Result> ListarLocalidad()
         {
             EmpresaPK2Entities entidad = null; //Se declara el objeto de entidad para la conexion
@@ -102,7 +96,6 @@ namespace AD.ADSolicitudViaticos
             }
             return Lista;
         }
-
         public static List<SP_LISTAR_RUTAS_Result> ListarRutas()
         {
             EmpresaPK2Entities entidad = null; //Se declara el objeto de entidad para la conexion
@@ -133,7 +126,6 @@ namespace AD.ADSolicitudViaticos
             }
             return Lista;
         }
-
         public static List<SP_LISTAR_PERSONAS_Result> ListarPersonas()
         {
             EmpresaPK2Entities entidad = null; //Se declara el objeto de entidad para la conexion
@@ -164,16 +156,15 @@ namespace AD.ADSolicitudViaticos
             }
             return Lista;
         }
-
-        public static List<SP_LISTAR_SOLICITUDES_ACTUALIZAR_Result> ListarSolicitudesActualizar(String sUsuario)
+        public static List<SP_LISTAR_SOLICITUDES_UPDATE_Result> ListarSolicitudesActualizar(String sUsuario)
         {
             EmpresaPK2Entities entidad = null; //Se declara el objeto de entidad para la conexion
             //Se declara una Lista para llevar cada línea con un objeto resultado de la consulta
-            List<SP_LISTAR_SOLICITUDES_ACTUALIZAR_Result> Lista = new List<SP_LISTAR_SOLICITUDES_ACTUALIZAR_Result>();
+            List<SP_LISTAR_SOLICITUDES_UPDATE_Result> Lista = new List<SP_LISTAR_SOLICITUDES_UPDATE_Result>();
             try
             {
                 entidad = new EmpresaPK2Entities(); //Se instancia la entidad
-                var Resultado = entidad.SP_LISTAR_SOLICITUDES_ACTUALIZAR(sUsuario).ToList();
+                var Resultado = entidad.SP_LISTAR_SOLICITUDES_UPDATE(sUsuario).ToList();
                 if (Resultado != null)
                 {
                     foreach (var item in Resultado) //Recorre lista
@@ -195,7 +186,6 @@ namespace AD.ADSolicitudViaticos
             }
             return Lista;
         }
-
         public static List<SP_LISTARMONTORUTA_Result> MontoRuta(string sIdRuta)
         {
             EmpresaPK2Entities entidad = null; //Se declara el objeto de entidad para la conexion
@@ -226,7 +216,6 @@ namespace AD.ADSolicitudViaticos
             }
             return Lista;
         }
-
         public static List<SP_LISTARMONTOS_Result> Montos(int iIdHospedaje)
         {
             EmpresaPK2Entities entidad = null; //Se declara el objeto de entidad para la conexion
@@ -256,6 +245,57 @@ namespace AD.ADSolicitudViaticos
                 }
             }
             return Lista;
+        }
+        public static List<SP_LISTAR_SOLICITUDES_VERIFICAR_Result> ListarSolicitudesVerificar()
+        {
+            EmpresaPK2Entities entidad = null; //Se declara el objeto de entidad para la conexion
+            //Se declara una Lista para llevar cada línea con un objeto resultado de la consulta
+            List<SP_LISTAR_SOLICITUDES_VERIFICAR_Result> Lista = new List<SP_LISTAR_SOLICITUDES_VERIFICAR_Result>();
+            try
+            {
+                entidad = new EmpresaPK2Entities(); //Se instancia la entidad
+                var Resultado = entidad.SP_LISTAR_SOLICITUDES_VERIFICAR().ToList();
+                if (Resultado != null)
+                {
+                    foreach (var item in Resultado) //Recorre lista
+                    {
+                        Lista.Add(item); //Agrega cada Linea a la lista que se devovlerá
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                if (entidad != null)
+                {
+                    entidad.Dispose(); //En caso de que se haya inicializado la entidad pero falló la operación, cierra la conexion a la entidad.
+                }
+            }
+            return Lista;
+        }
+        public static Boolean VerificarSolicitud(String sIdSolicitud)
+        {
+            EmpresaPK2Entities Entidad = null;
+            try
+            {
+                Entidad = new EmpresaPK2Entities();
+                Entidad.SP_VERIFICAR_SOLICITUDES(sIdSolicitud);
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+            finally
+            {
+                if (Entidad != null)
+                {
+                    Entidad.Dispose();
+                }
+            }
         }
     }
 }

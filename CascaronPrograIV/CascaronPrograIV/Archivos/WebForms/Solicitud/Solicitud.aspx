@@ -171,22 +171,30 @@
         <div id="DivConsultar">
             <h1 id="h1Consultar" title="Click para mostrar contenido">Consultar Solicitudes de Viaticos
             <img src="../../Recursos/Mostrar.png" /></h1>
-            <asp:TextBox ID="TbxFiltrar" CssClass="TbxFiltrar" runat="server" Text="Buscar" OnTextChanged="TbxFiltrar_TextChanged"></asp:TextBox>
-            <div>
-                <asp:GridView CssClass="GridView" ID="GvConsultarSolicitud" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
-                    <AlternatingRowStyle BackColor="White" />
-                    <EditRowStyle BackColor="#2461BF" />
-                    <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                    <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                    <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                    <RowStyle BackColor="#EFF3FB" />
-                    <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                    <SortedAscendingCellStyle BackColor="#F5F7FB" />
-                    <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-                    <SortedDescendingCellStyle BackColor="#E9EBEF" />
-                    <SortedDescendingHeaderStyle BackColor="#4870BE" />
-                </asp:GridView>
-            </div>
+            <asp:UpdatePanel runat="server">
+                <ContentTemplate>
+                    <div>
+                        <asp:TextBox ID="TbxFiltrar" CssClass="TbxFiltrar" runat="server" placeholder="Buscar por Destino"></asp:TextBox>
+                        <asp:ImageButton CssClass="btnActions" ID="btnBuscar" runat="server" OnClick="btnBuscar_Click" ImageUrl="~/Archivos/Recursos/search.png" />
+                        <asp:ImageButton CssClass="btnActions" ID="btnRefrescar" runat="server" OnClick="btnRefrescar_Click" ImageUrl="~/Archivos/Recursos/reload.png" />
+                    </div>
+                    <div>
+                        <asp:GridView CssClass="GridView" ID="GvConsultarSolicitud" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" UseAccessibleHeader="False">
+                            <AlternatingRowStyle BackColor="White" />
+                            <EditRowStyle BackColor="#2461BF" />
+                            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                            <RowStyle BackColor="#EFF3FB" />
+                            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                            <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                            <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                            <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                            <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                        </asp:GridView>
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
         </div>
         <br />
         <br />
@@ -194,69 +202,72 @@
             <h1 id="h1Actualizar" title="Click para mostrar contenido">Actualizar Solicitud de Viaticos
             <img src="../../Recursos/Mostrar.png" /></h1>
             <br />
-            <asp:TextBox CssClass="Textbox" ID="TextBox20" runat="server" Text="Buscar"></asp:TextBox>
-            <br />
-            <br />
-            <asp:GridView CssClass="GridView" ID="GvActualizar" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
-                <AlternatingRowStyle BackColor="White" />
-                <EditRowStyle BackColor="#2461BF" />
-                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                <RowStyle BackColor="#EFF3FB" />
-                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                <SortedAscendingCellStyle BackColor="#F5F7FB" />
-                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-                <SortedDescendingCellStyle BackColor="#E9EBEF" />
-                <SortedDescendingHeaderStyle BackColor="#4870BE" />
-            </asp:GridView>
-            <br />
-            <asp:TextBox CssClass="Textbox" ID="TbxActuFechaRegreso" runat="server" placeholder="Fecha de Regreso"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TbxActuFechaSalida" runat="server" placeholder="Fecha de Salida"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TbxActuJustificacion" runat="server" placeholder="Justificacion"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TbxActuDestino" runat="server" placeholder="Destino"></asp:TextBox>
-            <br />
-            <asp:TextBox CssClass="Textbox" ID="TbxActuHoraSalida" runat="server" placeholder="Hora de Salida"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TbxActuHoraRegreso" runat="server" placeholder="Hora de Regreso"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TbxActuCantDesayunos" runat="server"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TbxActuCantAlmuerzos" runat="server"></asp:TextBox>
-            <br />
-            <asp:TextBox CssClass="Textbox" ID="TbxActuCantCenas" runat="server"></asp:TextBox>
-            <asp:TextBox CssClass="Textbox" ID="TbxActuCantPasajes" runat="server"></asp:TextBox>
-            <br />
-            <br />
-            <asp:DropDownList CssClass="DDL" ID="Ddl_ActuRutas" runat="server"></asp:DropDownList>
-            <br />
-            <br />
-            <asp:DropDownList CssClass="DDL" ID="Ddl_ActuLocalidad" runat="server"></asp:DropDownList>
-            <br />
-            <br />
-            <asp:Button ID="Button1" CssClass="Button" runat="server" Text="Modificar" />
+            <asp:UpdatePanel runat="server">
+                <ContentTemplate>
+                    <asp:GridView CssClass="GridView" ID="GvActualizar" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateSelectButton="True" OnRowCommand="GvActualizar_RowCommand">
+                        <AlternatingRowStyle BackColor="White" />
+                        <EditRowStyle BackColor="#2461BF" />
+                        <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                        <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                        <RowStyle BackColor="#EFF3FB" />
+                        <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                        <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                        <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                        <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                        <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                    </asp:GridView>
+                    <br />
+                    <asp:TextBox CssClass="Textbox" ID="TbxActuJustificacion" runat="server" placeholder="Justificacion"></asp:TextBox>
+                    <asp:TextBox CssClass="Textbox" ID="TbxActuFechaSalida" runat="server" placeholder="Fecha de Salida"></asp:TextBox>
+                    <asp:TextBox CssClass="Textbox" ID="TbxActuFechaRegreso" runat="server" placeholder="Fecha de Regreso"></asp:TextBox>
+                    <asp:TextBox CssClass="Textbox" ID="TbxActuDestino" runat="server" placeholder="Destino"></asp:TextBox>
+                    <br />
+                    <asp:TextBox CssClass="Textbox" ID="TbxActuHoraRegreso" runat="server" placeholder="Hora de Regreso"></asp:TextBox>
+                    <asp:TextBox CssClass="Textbox" ID="TbxActuHoraSalida" runat="server" placeholder="Hora de Salida"></asp:TextBox>
+                    <asp:TextBox CssClass="Textbox" ID="TbxActuCantDesayunos" runat="server" placeholder="Cantidad Desayunos"></asp:TextBox>
+                    <asp:TextBox CssClass="Textbox" ID="TbxActuCantAlmuerzos" runat="server" placeholder="Cantidad Almuerzos"></asp:TextBox>
+                    <br />
+                    <asp:TextBox CssClass="Textbox" ID="TbxActuCantCenas" runat="server" placeholder="Cantidad Cenas"></asp:TextBox>
+                    <asp:TextBox CssClass="Textbox" ID="TbxActuCantPasajes" runat="server" placeholder="Cantidad Pasajes"></asp:TextBox>
+                    <br />
+                    <br />
+                    <asp:DropDownList CssClass="DDL" ID="Ddl_ActuRutas" runat="server"></asp:DropDownList>
+                    <br />
+                    <br />
+                    <asp:DropDownList CssClass="DDL" ID="Ddl_ActuLocalidad" runat="server"></asp:DropDownList>
+                    <br />
+                    <br />
+                    <asp:Button ID="btnActualizar" CssClass="Button" runat="server" Text="Modificar" OnClick="btnActualizar_Click" />
+                </ContentTemplate>
+            </asp:UpdatePanel>
         </div>
         <br />
         <br />
         <div id="DivVerificar">
             <h1 id="h1Verificar" title="Click para mostrar contenido">Verificar Solicitudes de Viaticos
             <img src="../../Recursos/Mostrar.png" /></h1>
-            <asp:TextBox CssClass="Textbox" ID="TextBox19" runat="server" Text="Buscar"></asp:TextBox>
-            <asp:GridView ID="GvVerificar" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
-                <AlternatingRowStyle BackColor="White" />
-                <EditRowStyle BackColor="#2461BF" />
-                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                <RowStyle BackColor="#EFF3FB" />
-                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                <SortedAscendingCellStyle BackColor="#F5F7FB" />
-                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-                <SortedDescendingCellStyle BackColor="#E9EBEF" />
-                <SortedDescendingHeaderStyle BackColor="#4870BE" />
-            </asp:GridView>
-            <br />
-            <asp:Button CssClass="Button" ID="Button2" runat="server" Text="Rechazar" />
-            <asp:Button CssClass="Button" ID="Button3" runat="server" Text="Aceptar" />
-            <br />
-            <br />
+            <asp:UpdatePanel runat="server">
+                <ContentTemplate>
+                    <asp:GridView ID="GvVerificar" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateSelectButton="True" OnRowCommand="GvVerificar_RowCommand">
+                        <AlternatingRowStyle BackColor="White" />
+                        <EditRowStyle BackColor="#2461BF" />
+                        <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                        <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                        <RowStyle BackColor="#EFF3FB" />
+                        <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                        <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                        <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                        <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                        <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                    </asp:GridView>
+                    <br />
+                    <asp:Button CssClass="Button" ID="Button3" runat="server" Text="Aceptar" OnClick="Button3_Click" />
+                    <br />
+                    <br />
+                </ContentTemplate>
+            </asp:UpdatePanel>
         </div>
     </div>
 </asp:Content>
