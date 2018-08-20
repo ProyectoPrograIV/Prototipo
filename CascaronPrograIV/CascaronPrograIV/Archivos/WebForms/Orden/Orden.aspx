@@ -85,20 +85,20 @@
         <div id="DivConsultar">
             <h1 id="h1Consultar">Consultar Orden de Viaticos
                 <img src="../../Recursos/Mostrar.png" /></h1>
-            <asp:TextBox ID="txtBuscar" CssClass="Textbox" runat="server" PlaceHolder="Nombre de Usuario" Height="39px" Width="177px"></asp:TextBox><br/>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Espacio en Blanco" ControlToValidate="txtBuscar" Display="Dynamic" ForeColor="#CC0000"></asp:RequiredFieldValidator>
+            <asp:TextBox ID="txtBuscar" CssClass="Textbox" runat="server" ValidationGroup="ConsultaOrden" PlaceHolder="Nombre de Usuario" Height="39px" Width="177px"></asp:TextBox><br/>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ValidationGroup="ConsultaOrden" runat="server" ErrorMessage="Espacio en Blanco" ControlToValidate="txtBuscar" Display="Dynamic" ForeColor="#CC0000"></asp:RequiredFieldValidator>
             <br />
-            <asp:Button ID="btnBuscar" CssClass="auto-style4" runat="server" Text="Buscar" Height="46px" OnClick="btnBuscar_Click" Width="150px" /><br />
+            <asp:Button ID="btnBuscar" CssClass="auto-style4" ValidationGroup="ConsultaOrden" runat="server" Text="Buscar" Height="46px" OnClick="btnBuscar_Click" Width="150px" /><br />
             <br />
             <div>
                 <asp:GridView CssClass="GridView" ID="GvConsultarSolicitud" AutoGenerateColumns="False" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:BoundField DataField="FECHAORDEN" HeaderText="Fecha de Orden" />
-                        <asp:BoundField DataField="IDOREDEN" HeaderText="ID Orden" />
-                        <asp:BoundField DataField="IDSOLICITUD" HeaderText="ID Solicitud" />
+                        <asp:BoundField DataField="ID_ORDEN" HeaderText="ID Orden" />
+                        <asp:BoundField DataField="ID_SOLICITUD" HeaderText="ID Solicitud" />
                         <asp:BoundField DataField="NOMBREUSUARIO" HeaderText="Nombre Usuario" />
-                        <asp:BoundField DataField="ESTADOORDEN" HeaderText="Estado Orden" />
+                        <asp:BoundField DataField="ESTADOORDEN" HeaderText="Estado de Orden" />
                     </Columns>
                     <EditRowStyle BackColor="#2461BF" />
                     <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />

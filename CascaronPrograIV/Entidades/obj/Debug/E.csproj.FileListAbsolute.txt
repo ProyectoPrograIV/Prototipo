@@ -59,3 +59,4 @@ C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\Entidades\obj\De
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\Entidades\obj\Debug\E.csproj.CopyComplete
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\Entidades\obj\Debug\Entidades.dll
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\Entidades\obj\Debug\Entidades.pdb
+C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\Entidades\obj\Debug\E.csprojAssemblyReference.cache

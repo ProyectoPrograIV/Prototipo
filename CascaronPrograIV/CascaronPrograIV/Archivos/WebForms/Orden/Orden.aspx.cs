@@ -189,6 +189,7 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
             TBL_SOLICITUDVIATICOS obj = new TBL_SOLICITUDVIATICOS();
             obj.NOMBREUSUARIO = txtBuscar.Text.Trim();
             GvConsultarSolicitud.DataSource = ObtenerListaOrden(obj);
+            
         }
 
         private void ActualizarOrden()
