@@ -105,7 +105,6 @@ namespace AD
                         ov.FECHAORDEN = item.FECHAORDEN;
                         ov.ID_ORDEN = item.ID_ORDEN;
                         ov.ID_SOLICITUD = item.ID_SOLICITUD;
-                        sv.NOMBREUSUARIO = item.NOMBREUSUARIO;
                         ov.ESTADOORDEN = item.ESTADOORDEN;
 
                         lista.Add(ov); 

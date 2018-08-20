@@ -94,6 +94,15 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden {
         protected global::System.Web.UI.WebControls.TextBox txtFechaAct;
         
         /// <summary>
+        /// Control ValidadorFecha.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator ValidadorFecha;
+        
+        /// <summary>
         /// Control btnGuardar.
         /// </summary>
         /// <remarks>

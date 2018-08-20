@@ -97,7 +97,6 @@
                         <asp:BoundField DataField="FECHAORDEN" HeaderText="Fecha de Orden" />
                         <asp:BoundField DataField="ID_ORDEN" HeaderText="ID Orden" />
                         <asp:BoundField DataField="ID_SOLICITUD" HeaderText="ID Solicitud" />
-                        <asp:BoundField DataField="NOMBREUSUARIO" HeaderText="Nombre Usuario" />
                         <asp:BoundField DataField="ESTADOORDEN" HeaderText="Estado de Orden" />
                     </Columns>
                     <EditRowStyle BackColor="#2461BF" />
@@ -145,7 +144,10 @@
             <br />
             <asp:DropDownList ID="ddlEstadosActualizar" CssClass="auto-style5" runat="server" Width="280px"></asp:DropDownList>
             <asp:TextBox CssClass="Textbox" ID="txtFechaAct" runat="server" PlaceHolder="Fecha Creacion"></asp:TextBox><br/>
-            <br />            
+            <br />
+            <asp:RegularExpressionValidator ID="ValidadorFecha" runat="server" ErrorMessage="Formato correcto de fecha: dd/mm/yyyy" ControlToValidate="txtFechaAct" ValidationExpression="^\d{2}(/)\d{2}(/)\d{4}$" Display="Dynamic" ForeColor="#CC0000"></asp:RegularExpressionValidator><br />            
+            <br />  
+            <br />  
             <asp:Button ID="btnGuardar" CssClass="Button" runat="server" Text="Guardar Cambios" OnClick="btnGuardar_Click" />
         </div>
         <br />
