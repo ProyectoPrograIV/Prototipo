@@ -383,6 +383,10 @@
     <Parameter Name="CODIGOCANTON" Type="int" Mode="In" />
     <Parameter Name="CODIGOPROVINCIA" Type="int" Mode="In" />
   </Function>
+  <Function Name="SP_LIST_ORDEN_VIATICOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_REPORTES">
+    <Parameter Name="NOMBREUSUARIO" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_SOLICITUD" Type="nvarchar" Mode="In" />
+  </Function>
   <Function Name="SP_LISTADO_LIQUIDACION_VIATICOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_REPORTES">
     <Parameter Name="FECHAINICIO" Type="date" Mode="In" />
     <Parameter Name="FECHAFINAL" Type="date" Mode="In" />
@@ -423,6 +427,9 @@
     <Parameter Name="DESTINO" Type="varchar" Mode="In" />
     <Parameter Name="HORAREGRESO" Type="time" Mode="In" />
     <Parameter Name="HORASALIDA" Type="time" Mode="In" />
+  </Function>
+  <Function Name="SP_BUSCAR_IDVIATICOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS">
+    <Parameter Name="ID_ORDEN" Type="int" Mode="In" />
   </Function>
   <Function Name="SP_ELIMINAR_SOLICITUDES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS">
     <Parameter Name="IDSOLICITUD" Type="int" Mode="In" />
@@ -470,6 +477,10 @@
   </Function>
   <Function Name="SP_OBTENER_ORDEN_VIATICOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS">
     <Parameter Name="NOMBREUSUARIO" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SP_OBTENER_ORDENES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS" />
+  <Function Name="SP_VERIFICAR_SOLICITUDES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCH_VIATICOS">
+    <Parameter Name="IDSOLICITUD" Type="nvarchar" Mode="In" />
   </Function>
   <EntityContainer Name="EmpresaPK2ModelStoreContainer">
     <EntitySet Name="TBL_CANTON" EntityType="Self.TBL_CANTON" Schema="SCH_PARAMETROS" store:Type="Tables" />

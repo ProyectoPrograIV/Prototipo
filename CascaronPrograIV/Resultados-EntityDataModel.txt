@@ -1,3 +1,3 @@
 ﻿Archivo de modelo generado: EmpresaPK2.edmx.
-La carga de los metadatos desde la base de datos tardó 00:00:03.3539551.
-La generación del modelo tardó 00:00:04.2244951.
+La carga de los metadatos desde la base de datos tardó 00:00:04.0347460.
+La generación del modelo tardó 00:00:06.2594451.

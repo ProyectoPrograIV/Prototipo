@@ -64,17 +64,23 @@ namespace CascaronPrograIV.WCFServicio {
         System.Threading.Tasks.Task<int> GenerarOrdenViaticosAsync(Entidades.TBL_CABECERAORDENVIATICO orden, Entidades.TBL_SOLICITUDVIATICOS solicitud);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerOrden", ReplyAction="http://tempuri.org/IService1/ObtenerOrdenResponse")]
-        System.Collections.Generic.List<Entidades.SP_OBTENER_ORDEN_VIATICOS_Result> ObtenerOrden(Entidades.OrdenDeViaticos obj);
+        System.Collections.Generic.List<Entidades.TBL_CABECERAORDENVIATICO> ObtenerOrden(Entidades.TBL_SOLICITUDVIATICOS obj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerOrden", ReplyAction="http://tempuri.org/IService1/ObtenerOrdenResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_OBTENER_ORDEN_VIATICOS_Result>> ObtenerOrdenAsync(Entidades.OrdenDeViaticos obj);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.TBL_CABECERAORDENVIATICO>> ObtenerOrdenAsync(Entidades.TBL_SOLICITUDVIATICOS obj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ListarOrdenes", ReplyAction="http://tempuri.org/IService1/ListarOrdenesResponse")]
         System.Collections.Generic.List<Entidades.TBL_CABECERAORDENVIATICO> ListarOrdenes();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ListarOrdenes", ReplyAction="http://tempuri.org/IService1/ListarOrdenesResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.TBL_CABECERAORDENVIATICO>> ListarOrdenesAsync();
+
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerOrdenes", ReplyAction="http://tempuri.org/IService1/ObtenerOrdenesResponse")]
+        System.Collections.Generic.List<Entidades.TBL_CABECERAORDENVIATICO> ObtenerOrdenes();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ObtenerOrdenes", ReplyAction="http://tempuri.org/IService1/ObtenerOrdenesResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.TBL_CABECERAORDENVIATICO>> ObtenerOrdenesAsync();
+
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ActualizarOrdenViaticos", ReplyAction="http://tempuri.org/IService1/ActualizarOrdenViaticosResponse")]
         int ActualizarOrdenViaticos(Entidades.TBL_CABECERAORDENVIATICO orden);
         
@@ -221,11 +227,11 @@ namespace CascaronPrograIV.WCFServicio {
             return base.Channel.GenerarOrdenViaticosAsync(orden, solicitud);
         }
         
-        public System.Collections.Generic.List<Entidades.SP_OBTENER_ORDEN_VIATICOS_Result> ObtenerOrden(Entidades.OrdenDeViaticos obj) {
+        public System.Collections.Generic.List<Entidades.TBL_CABECERAORDENVIATICO> ObtenerOrden(Entidades.TBL_SOLICITUDVIATICOS obj) {
             return base.Channel.ObtenerOrden(obj);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.SP_OBTENER_ORDEN_VIATICOS_Result>> ObtenerOrdenAsync(Entidades.OrdenDeViaticos obj) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.TBL_CABECERAORDENVIATICO>> ObtenerOrdenAsync(Entidades.TBL_SOLICITUDVIATICOS obj) {
             return base.Channel.ObtenerOrdenAsync(obj);
         }
         
@@ -236,7 +242,15 @@ namespace CascaronPrograIV.WCFServicio {
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.TBL_CABECERAORDENVIATICO>> ListarOrdenesAsync() {
             return base.Channel.ListarOrdenesAsync();
         }
+
+        public System.Collections.Generic.List<Entidades.TBL_CABECERAORDENVIATICO> ObtenerOrdenes() {
+            return base.Channel.ObtenerOrdenes();
+        }
         
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Entidades.TBL_CABECERAORDENVIATICO>> ObtenerOrdenesAsync() {
+            return base.Channel.ObtenerOrdenesAsync();
+        }
+
         public int ActualizarOrdenViaticos(Entidades.TBL_CABECERAORDENVIATICO orden) {
             return base.Channel.ActualizarOrdenViaticos(orden);
         }

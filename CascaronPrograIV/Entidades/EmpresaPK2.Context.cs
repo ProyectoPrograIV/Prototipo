@@ -483,5 +483,41 @@ namespace Entidades
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACTUALIZAR_ORDEN_VIATICO", iD_ORDENParameter, iD_SOLICITUDParameter, eSTADOORDENParameter, fECHAORDENParameter);
         }
+    
+        public virtual ObjectResult<SP_LIST_ORDEN_VIATICOS_Result> SP_LIST_ORDEN_VIATICOS(string nOMBREUSUARIO, string iD_SOLICITUD)
+        {
+            var nOMBREUSUARIOParameter = nOMBREUSUARIO != null ?
+                new ObjectParameter("NOMBREUSUARIO", nOMBREUSUARIO) :
+                new ObjectParameter("NOMBREUSUARIO", typeof(string));
+    
+            var iD_SOLICITUDParameter = iD_SOLICITUD != null ?
+                new ObjectParameter("ID_SOLICITUD", iD_SOLICITUD) :
+                new ObjectParameter("ID_SOLICITUD", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_LIST_ORDEN_VIATICOS_Result>("SP_LIST_ORDEN_VIATICOS", nOMBREUSUARIOParameter, iD_SOLICITUDParameter);
+        }
+    
+        public virtual ObjectResult<SP_BUSCAR_IDVIATICOS_Result> SP_BUSCAR_IDVIATICOS(Nullable<int> iD_ORDEN)
+        {
+            var iD_ORDENParameter = iD_ORDEN.HasValue ?
+                new ObjectParameter("ID_ORDEN", iD_ORDEN) :
+                new ObjectParameter("ID_ORDEN", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_BUSCAR_IDVIATICOS_Result>("SP_BUSCAR_IDVIATICOS", iD_ORDENParameter);
+        }
+    
+        public virtual ObjectResult<SP_OBTENER_ORDENES_Result> SP_OBTENER_ORDENES()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_OBTENER_ORDENES_Result>("SP_OBTENER_ORDENES");
+        }
+    
+        public virtual int SP_VERIFICAR_SOLICITUDES(string iDSOLICITUD)
+        {
+            var iDSOLICITUDParameter = iDSOLICITUD != null ?
+                new ObjectParameter("IDSOLICITUD", iDSOLICITUD) :
+                new ObjectParameter("IDSOLICITUD", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_VERIFICAR_SOLICITUDES", iDSOLICITUDParameter);
+        }
     }
 }
