@@ -10,7 +10,7 @@ namespace LN
 {
     public class LNOrdenViaticos
     {
-        public static List<TBL_CABECERAORDENVIATICO> ObtenerOrden(TBL_SOLICITUDVIATICOS obj)
+        public static List<SP_OBTENER_ORDEN_VIATICOS_Result> ObtenerOrden(TBL_SOLICITUDVIATICOS obj)
         {
             return ADOrdenViaticos.ObtenerOrden(obj);
         }

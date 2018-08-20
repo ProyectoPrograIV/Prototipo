@@ -14,7 +14,7 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
-            {   
+            {
                 ddlEstadosActualizar.Items.Add("Inactivo");
                 ddlEstadosActualizar.Items.Add("Activo");
                 CargarGVConsultas();
@@ -40,7 +40,7 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
                 throw ex;
             }
         }
-        
+
         private void CargarGVActualizar()
         {
             try
@@ -86,10 +86,10 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
 
         #region Metodos de WFC 
 
-        private List<TBL_CABECERAORDENVIATICO> ObtenerListaOrden(TBL_SOLICITUDVIATICOS obj)
+        private List<SP_OBTENER_ORDEN_VIATICOS_Result> ObtenerListaOrden(TBL_SOLICITUDVIATICOS obj)
         {
             WCFServicio.Service1Client servicio = new WCFServicio.Service1Client();
-            List<TBL_CABECERAORDENVIATICO> lista = null;
+            List<SP_OBTENER_ORDEN_VIATICOS_Result> lista = null;
             lista = servicio.ObtenerOrden(obj);
             servicio.Close();
             return lista;
@@ -111,7 +111,7 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
                     servicio.Close();
             }
         }
-        
+
         public static List<TBL_CABECERAORDENVIATICO> ObtenerOrdenes()
         {
             WCFServicio.Service1Client servicio = null;
@@ -201,7 +201,7 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
 
                 orden.ID_ORDEN = Convert.ToInt32(txtIdOrdenAct.Text.Trim());
                 orden.ID_SOLICITUD = txtIdSolicitudAct.Text.Trim();
-                if(ddlEstadosActualizar.SelectedValue == "Activo")
+                if (ddlEstadosActualizar.SelectedValue == "Activo")
                 {
                     orden.ESTADOORDEN = 10;
                 }
@@ -219,7 +219,7 @@ namespace CascaronPrograIV.Archivos.WebForms.Orden
                 throw ex;
             }
         }
-        
+
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
             ActualizarOrden();

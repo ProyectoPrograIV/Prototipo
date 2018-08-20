@@ -36,7 +36,7 @@ namespace S
         [OperationContract]
         int GenerarOrdenViaticos(TBL_CABECERAORDENVIATICO orden, TBL_SOLICITUDVIATICOS solicitud);
         [OperationContract]
-        List<TBL_CABECERAORDENVIATICO> ObtenerOrden(TBL_SOLICITUDVIATICOS obj);
+        List<SP_OBTENER_ORDEN_VIATICOS_Result> ObtenerOrden(TBL_SOLICITUDVIATICOS obj);
         [OperationContract]
         List<TBL_CABECERAORDENVIATICO> ListarOrdenes();
         [OperationContract]

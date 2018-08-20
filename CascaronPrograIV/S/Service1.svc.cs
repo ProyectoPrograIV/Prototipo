@@ -66,7 +66,7 @@ namespace S
 
         #region Metodos Orden Viaticos
 
-        public List<TBL_CABECERAORDENVIATICO> ObtenerOrden(TBL_SOLICITUDVIATICOS obj)
+        public List<SP_OBTENER_ORDEN_VIATICOS_Result> ObtenerOrden(TBL_SOLICITUDVIATICOS obj)
         {
             return LNOrdenViaticos.ObtenerOrden(obj);
         }

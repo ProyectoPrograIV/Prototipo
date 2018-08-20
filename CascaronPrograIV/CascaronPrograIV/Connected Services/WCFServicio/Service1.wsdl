@@ -67,6 +67,12 @@
   <wsdl:message name="IService1_ListarOrdenes_OutputMessage">
     <wsdl:part name="parameters" element="tns:ListarOrdenesResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_ObtenerOrdenes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerOrdenes" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ObtenerOrdenes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerOrdenesResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_ActualizarOrdenViaticos_InputMessage">
     <wsdl:part name="parameters" element="tns:ActualizarOrdenViaticos" />
   </wsdl:message>
@@ -161,6 +167,10 @@
     <wsdl:operation name="ListarOrdenes">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ListarOrdenes" message="tns:IService1_ListarOrdenes_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/ListarOrdenesResponse" message="tns:IService1_ListarOrdenes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerOrdenes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ObtenerOrdenes" message="tns:IService1_ObtenerOrdenes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ObtenerOrdenesResponse" message="tns:IService1_ObtenerOrdenes_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ActualizarOrdenViaticos">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ActualizarOrdenViaticos" message="tns:IService1_ActualizarOrdenViaticos_InputMessage" />
@@ -284,6 +294,15 @@
     </wsdl:operation>
     <wsdl:operation name="ListarOrdenes">
       <soap:operation soapAction="http://tempuri.org/IService1/ListarOrdenes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerOrdenes">
+      <soap:operation soapAction="http://tempuri.org/IService1/ObtenerOrdenes" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

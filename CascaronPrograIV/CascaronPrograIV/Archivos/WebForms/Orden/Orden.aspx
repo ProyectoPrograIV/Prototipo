@@ -96,6 +96,7 @@
                     <Columns>
                         <asp:BoundField DataField="FECHAORDEN" HeaderText="Fecha de Orden" />
                         <asp:BoundField DataField="ID_ORDEN" HeaderText="ID Orden" />
+                         <asp:BoundField DataField="NOMBREUSUARIO" HeaderText="Nombre Usuario" />
                         <asp:BoundField DataField="ID_SOLICITUD" HeaderText="ID Solicitud" />
                         <asp:BoundField DataField="ESTADOORDEN" HeaderText="Estado de Orden" />
                     </Columns>
