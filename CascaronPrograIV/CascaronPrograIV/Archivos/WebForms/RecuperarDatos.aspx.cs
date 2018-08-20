@@ -67,7 +67,7 @@ namespace CascaronPrograIV.Archivos.WebForms
 
         protected void BtnRecuperar_Click(object sender, EventArgs e)
         {
-            string[] args;
+            
             TBL_USUARIO obj = new TBL_USUARIO();
             obj.NOMBREUSUARIO = this.TbxNombreCompleto.Text;
             obj.EMAIL = this.TbxCorreo.Text;
