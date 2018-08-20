@@ -62,7 +62,6 @@ C:\Users\usuario\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\Mi
 C:\Users\usuario\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\Presentacion.csprojResolveAssemblyReference.cache
 C:\Users\usuario\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\CascaronPrograIV.dll
 C:\Users\usuario\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\CascaronPrograIV.pdb
-C:\Users\usuario\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\EntityFramework.dll
 C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\csc.exe
 C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 C:\Users\rafael.CAMPBELLSCI\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -147,3 +146,4 @@ C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\Presentacion.csproj.CopyComplete
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\CascaronPrograIV.dll
 C:\Users\Hillary Obando\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\obj\Debug\CascaronPrograIV.pdb
+C:\Users\usuario\Source\Repos\Prototipo\CascaronPrograIV\CascaronPrograIV\bin\EntityFramework.dll
